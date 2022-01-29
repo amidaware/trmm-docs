@@ -119,7 +119,7 @@ No, you haven't.
 
 ## DNS can't find record
 
-Q. My dns isn’t working
+Q. My dns isn’t working.
 
 A. Make sure it’s correctly formatted, most DNS providers add in the domain automatically.
 
