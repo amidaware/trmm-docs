@@ -130,19 +130,19 @@ c:\ProgramData\TacticalRMM\
 ## Useful Reference Script Examples
 
 RunAsUser (since Tactical RMM runs as system)
-[https://github.com/wh1te909/tacticalrmm/blob/develop/scripts/Win_Display_Message_To_User.ps1](https://github.com/wh1te909/tacticalrmm/blob/develop/scripts/Win_Display_Message_To_User.ps1)
+<https://github.com/amidaware/community-scripts/blob/main/scripts/Win_Display_Message_To_User.ps1>
 
-Command Paramater Ninja
-[https://github.com/wh1te909/tacticalrmm/blob/develop/scripts/Win_ScreenConnectAIO.ps1](https://github.com/wh1te909/tacticalrmm/blob/develop/scripts/Win_ScreenConnectAIO.ps1)
+Command Parameter Ninja
+<https://github.com/amidaware/community-scripts/blob/main/scripts/Win_ScreenConnectAIO.ps1>
 
 Optional Command Parameters and testing for errors
-[https://github.com/wh1te909/tacticalrmm/blob/develop/scripts/Win_Rename_Computer.ps1](https://github.com/wh1te909/tacticalrmm/blob/develop/scripts/Win_Rename_Computer.ps1)
+<https://github.com/amidaware/community-scripts/blob/main/scripts/Win_Computer_Rename.ps1>
 
 *****
 
 ## Volunteers Needed
 
-If you want to contribute back to the project there are a lot of scripts that need some TLC (Tender Loving Care) please paruse thru them in The Script WIP (Work In Progress): [https://github.com/wh1te909/tacticalrmm/tree/develop/scripts_wip](https://github.com/wh1te909/tacticalrmm/tree/develop/scripts_wip)
+If you want to contribute back to the project there are a lot of scripts that need some TLC (Tender Loving Care) please peruse thru them in The Script WIP (Work In Progress): <https://github.com/amidaware/community-scripts/tree/main/scripts_wip>
 
 Discuss/ask questions in the Discord group [here](https://discord.com/channels/736478043522072608/744281869499105290)
 

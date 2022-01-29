@@ -5,7 +5,7 @@ The below instructions are for a non-production server that has Tactical RMM ins
 !!!warning
     Do not attempt development of this kind on your production server.
 
-## Install Tacticall RMM
+## Install Tactical RMM
 
 ### 1. Traditional install
 

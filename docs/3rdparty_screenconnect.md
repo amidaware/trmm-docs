@@ -63,7 +63,7 @@ It should ask you to sign into your Connectwise Control server if you are not al
 
 ## Install Screenconnect via Tactical
 
-Use the [Screenconnect AIO script](https://github.com/wh1te909/tacticalrmm/blob/develop/scripts/Win_ScreenConnectAIO.ps1)
+Use the [Screenconnect AIO script](https://github.com/amidaware/community-scripts/blob/main/scripts/Win_ScreenConnectAIO.ps1)
 
 ![AIO](images/3rdparty_sc_aio.png)
 
