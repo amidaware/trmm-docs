@@ -28,7 +28,7 @@ Has a postgres database located here:
 !!!description
     A web interface for the postgres database
 
-All Tactical RMM dependencies are listed [here](https://github.com/wh1te909/tacticalrmm/blob/develop/api/tacticalrmm/requirements.txt)
+All Tactical RMM dependencies are listed [here](https://github.com/amidaware/tacticalrmm/blob/develop/api/tacticalrmm/requirements.txt)
 
 ### Outbound Firewall Rules
 

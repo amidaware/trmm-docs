@@ -8,7 +8,7 @@ To setup a local environment to add/edit to this documentation site:
 
 ```bash
 mkdir ~/rmmdocs && cd ~/rmmdocs
-git clone https://github.com/wh1te909/tacticalrmm.git .
+git clone https://github.com/amidaware/tacticalrmm.git .
 python3 -m venv env
 source env/bin/activate
 pip install --upgrade pip

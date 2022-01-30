@@ -8,7 +8,7 @@ Funds donated will be used to setup a company to purchase a code signing certifi
 
 If you have signed up to be a sponsor and have not been added to the Sponsors role on discord after a few hours, or if your github username is different than your discord username, please DM wh1te909 on [Discord](https://discord.gg/upGTkWp) after sponsoring to be added to the Sponsors role.
 
-We are always looking for feedback and ways to improve Tactical RMM to better address your needs. Please feel free to open a [github issue](https://github.com/wh1te909/tacticalrmm/issues) or drop us a message on [Discord](https://discord.gg/upGTkWp) with your feedback or requests.
+We are always looking for feedback and ways to improve Tactical RMM to better address your needs. Please feel free to open a [github issue](https://github.com/amidaware/tacticalrmm/issues) or drop us a message on [Discord](https://discord.gg/upGTkWp) with your feedback or requests.
 
 [Sponsor with Github](https://github.com/wh1te909)
 
