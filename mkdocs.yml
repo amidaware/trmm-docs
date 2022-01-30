@@ -61,7 +61,7 @@ nav:
   - License: license.md
 site_description: "A remote monitoring and management tool"
 site_author: "wh1te909"
-site_url: "https://wh1te909.github.io/tacticalrmm/"
+site_url: "https://docs.tacticalrmm.com/"
 
 dev_addr: "0.0.0.0:8005"
 

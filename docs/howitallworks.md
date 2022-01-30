@@ -7,7 +7,7 @@ Everything that is queued, happens immediately when agents are online.
 The agent gets a nats command, server tells it to do xyz and it does it.
 
 When agents are not connected to the server nothing happens. The windows task scheduler says do x at some time, what it's asked to do is get x command from the server. If server is offline, nothing happens.
-If an agent comes online, every x interval (windows update, pending tasks etc) check and see is there something for me to do that I missed while I was offline. When that time occurs (eg agent sees if it needs to update itself at 35mins past every hr https://wh1te909.github.io/tacticalrmm/update_agents/ ) it'll get requested on the online agent.
+If an agent comes online, every x interval (windows update, pending tasks etc) check and see is there something for me to do that I missed while I was offline. When that time occurs (eg agent sees if it needs to update itself at 35mins past every hr [](update_agents.md) ) it'll get requested on the online agent.
 
 That's the simplified general rule for everything TRMM.
 
@@ -23,7 +23,7 @@ Still need graphics for
 
 Has a postgres database located here:
 
-[Django Admin](https://wh1te909.github.io/tacticalrmm/functions/django_admin.html)
+[Django Admin](functions/django_admin.md)
 
 !!!description
     A web interface for the postgres database

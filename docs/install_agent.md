@@ -127,7 +127,7 @@ if not defined Name (
 )
 ```
 
-There is also a full powershell version [here](https://wh1te909.github.io/tacticalrmm/3rdparty_screenconnect/#install-tactical-rmm-via-screeconnect-commands-window)
+There is also a full powershell version [here](3rdparty_screenconnect.md#install-tactical-rmm-via-screeconnect-commands-window)
 
 ## Script for full agent uninstall
 
