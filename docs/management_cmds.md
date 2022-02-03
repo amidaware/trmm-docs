@@ -1,6 +1,6 @@
 # Management Commands
 
-To run any of the management commands first login to your server as the user used to install TRMM (eg `tactical`) and activate the python virtual env:
+To run any of the management commands first login to your server as the user used to install TRMM (eg `su - tactical`) and activate the python virtual env:
 
 ???+ note "Activate python virtual env"
 
