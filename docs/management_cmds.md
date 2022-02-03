@@ -2,7 +2,7 @@
 
 To run any of the management commands first activate the python virtual env:
 
-???+ note "systemd config"
+???+ note "Activate python virtual env"
 
     === ":material-ubuntu: standard"
 
