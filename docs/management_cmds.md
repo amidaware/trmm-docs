@@ -1,21 +1,28 @@
 # Management Commands
 
-To run any of the management commands you must first activate the python virtual env:
+To run any of the management commands first activate the python virtual env:
 
-```bash
-cd /rmm/api/tacticalrmm
-source ../env/bin/activate
-```
+???+ note "systemd config"
 
-or docker version:
+    === ":material-ubuntu: standard"
 
-```bash
-docker exec -it trmm-backend /bin/bash
-/opt/venv/bin/python /opt/tactical/api/manage.py shell
-```
+        ```bash
+        cd /rmm/api/tacticalrmm
+        source ../env/bin/activate
+        ```
 
-!!!tip
-    The Dev Docker version it would be `docker exec -it trmm-api-dev env/bin/python manage.py shell`
+    === ":material-docker: docker"
+
+        ```bash
+        docker exec -it trmm-backend /bin/bash
+        /opt/venv/bin/python /opt/tactical/api/manage.py shell
+        ```
+
+    === ":material-docker: Dev Docker"
+
+        ```bash
+        docker exec -it trmm-api-dev env/bin/python manage.py shell
+        ```
 
 ## Bulk Delete old agents by last checkin date or agent version
 
