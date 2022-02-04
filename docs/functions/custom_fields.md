@@ -22,7 +22,7 @@ The following options are available to configure on custom fields:
     - Number
     - Single select dropdown
     - Multi-select dropdown
-    - Checkbox (`1` = Checked or `0` = Unchecked)
+    - Checkbox (`1` = Checked or `$null` = Unchecked)
     - DateTime
 - **Input Options** - *Only available on Single and Multiple-select dropdowns*. Sets the options to choose from.
 - **Default Value** - If no value is found when looking up the custom field; this value will instead be supplied.
