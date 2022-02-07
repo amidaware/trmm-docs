@@ -565,6 +565,8 @@ AUOptions (REG_DWORD):
 
 Uses this Microsoft API to handle updates: [https://docs.microsoft.com/en-us/windows/win32/api/_wua/](https://docs.microsoft.com/en-us/windows/win32/api/_wua/)
 
+Server Queries Agent every 8hrs to check for update status.
+
 ### Log files
 
 You can find 3 sets of detailed logs at `/rmm/api/tacticalrmm/tacticalrmm/private/log`
