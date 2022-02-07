@@ -39,7 +39,7 @@ A lot of features in the web UI are hidden behind right-click menus; almost ever
 
 ## Where are the Linux / Mac agents?
 
-Linux / Mac agents are currently under development. [MeshCentral](../mesh_integration) is a 2nd piece of software that installs along TRMM, it is Mac/Linux compatible but will only work when using your `https://mesh.EXAMPLE.COM` URL. it will *NOT* make agents appear in the TRMM admin interface. See the [MeshCentral User Guide](https://info.meshcentral.com/downloads/MeshCentral2/MeshCentral2UserGuide.pdf) on how to configure/use MeshCentral.
+Linux / Mac agents are currently under development. [MeshCentral](../mesh_integration) is a 2nd piece of software that installs along TRMM, it is Mac/Linux compatible but will only work when using your `https://mesh.EXAMPLE.COM` URL. It will *NOT* make agents appear in the TRMM admin interface. See the [MeshCentral User Guide](https://info.meshcentral.com/downloads/MeshCentral2/MeshCentral2UserGuide.pdf) on how to configure/use MeshCentral.
 
 ## Can I run Tactical RMM locally behind NAT **without** exposing my RMM server to the internet?
 
