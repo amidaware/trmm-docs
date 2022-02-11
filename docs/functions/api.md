@@ -110,3 +110,25 @@ Then visit `https://api.example.com/api/schema/swagger-ui/` to see it in action.
 
         Write-Host $commandResult
         ```
+
+## Examples
+
+### Running a script on agent using the api
+
+`POST` to the endpoint `/agents/<agentid>/runscript/` this
+
+```
+{
+    "output": "forget",
+    "email": [],
+    "emailMode": "default",
+    "custom_field": null,
+    "save_all_output": false,
+    "script": 102, // primary key of script in postgres
+    "args": [
+        "arg1",
+        "arg2"
+    ],
+    "timeout": 90 // seconds
+}
+```
