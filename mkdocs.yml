@@ -49,6 +49,7 @@ nav:
       - "Unsupported Guidelines": unsupported_guidelines.md
       - "Unsupported Configs": unsupported_scripts.md
       - "Securing nginx": securing_nginx.md
+      - "Unsupported Proxies": unsupported_proxies.md
       - "Installing in Synology docker": unsupported_synology_docker_install.md
   - Tips n' Tricks: tipsntricks.md
   - Contributing:
