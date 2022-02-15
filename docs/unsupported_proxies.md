@@ -385,3 +385,15 @@ or change certs location on nginx conf to whatever you want.
 Having mesh connection issues? 
 
 See <https://info.meshcentral.com/downloads/MeshCentral2/MeshCentral2UserGuide.pdf> page 30.
+
+## Synology NAS reverse proxy portal
+
+Follow [HAProxy](unsupported_proxies/#haproxy)
+
+And set the "CertUrl" to point to the IP address of my NAS that was running the reserve proxy and had the certificates installed.
+
+In Synology NAS reverse proxy portal and added websockets to the rmm domains, especially the mesh domain under custom headers, by just clicking the create button and choosing WebSocket:
+
+![Image1](images/synology_proxy.png)
+
+![Image2](images/synology_proxy2.png)
