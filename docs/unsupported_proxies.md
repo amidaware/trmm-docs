@@ -388,7 +388,7 @@ See <https://info.meshcentral.com/downloads/MeshCentral2/MeshCentral2UserGuide.p
 
 ## Synology NAS reverse proxy portal
 
-Follow [HAProxy](unsupported_proxies/#haproxy)
+Follow [HAProxy](#haproxy)
 
 And set the "CertUrl" to point to the IP address of my NAS that was running the reserve proxy and had the certificates installed.
 
