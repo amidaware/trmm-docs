@@ -1,10 +1,10 @@
 # Dev Notes
 
-## Running Tests
+## Running Tests with Python for community_scripts tests
 
-There are built/tests everywhere in TRMM, that make sure things haven't gone wrong (like in the `community-script` any file in the `scripts` folder must have a matching entry in .json file. And every field in the .json file just be in the right format, and no duplicate guide...and .json needs to be properly formatted and...and...and) so there's tests. 
+There are build/tests everywhere in TRMM, that make sure things haven't gone wrong (like in the `community-script` any file in the `scripts` folder must have a matching entry in .json file. And every field in the .json file should be in the right format, and no duplicates...and .json needs to be properly formatted and...and...and) so there's tests. 
 
-Here's how you run locally (make sure python is installed first)
+Here's how you run tests locally (make sure python is installed first)
 
 ???+ abstract "Running tests from VSCode"
 
@@ -27,7 +27,7 @@ Here's how you run locally (make sure python is installed first)
         pytest
         ```
 
-    === ":fontawesome-windows: `Windows`"
+    === ":fontawesome-brands-windows: `Windows`"
 
         - Make sure git isn't going to try and sync your python environment with the repo
 
