@@ -25,7 +25,7 @@ curl https://api.example.com/clients/ -H "X-API-KEY: Y57BXCFAA9WBCXH0XTEL6R5KAK6
 
 ## Querying the API
 
-Here's some examples
+Here are some examples:
 
 ???+ abstract "Example Code"
 
@@ -101,8 +101,6 @@ Here's some examples
         Write-Host $commandResult
         ```
 
-## Examples
-
 ### Running a script on agent using the api
 
 `POST` to the endpoint `/agents/<agentid>/runscript/` this
@@ -136,4 +134,3 @@ SWAGGER_ENABLED = True
 Restart django: `sudo systemctl restart rmm.service`
 
 Then visit `https://api.example.com/api/schema/swagger-ui/` to see it in action.
-
