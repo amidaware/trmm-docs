@@ -191,6 +191,8 @@ Test-NetConnection -ComputerName api.example.com -Port 443
 Test-NetConnection -ComputerName rmm.example.com -Port 443
 ```
 
+Check your SSL certs to make sure they are what they should be (no proxy stuff): <https://www.digicert.com/help/>
+
 Are you trying to use a proxy to share your single public IP with multiple services on 443? This is complicated and [unsupported by Tactical RMM](unsupported_scripts.md), test your setup.
 
 ## Take Control or Remote Background missing button / can't connect

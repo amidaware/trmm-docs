@@ -337,6 +337,14 @@ Log located at `/var/log/celery`
         - Left-side "My Server" > Choose "Console" > type `agentstats`
         - To view detailed logging goto "Trace" > click Tracing button and choose categories
 
+#### MeshCentral Agent
+
+Get Mesh Agent Version info with this command. Should match server version.
+
+```cmd
+"C:\Program Files\Mesh Agent\MeshAgent.exe" -info"
+```
+
 ### Other Dependencies
 
 [Django](https://www.djangoproject.com/) - Framework to integrate the server to interact with browser.
