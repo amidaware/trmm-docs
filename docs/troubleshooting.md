@@ -193,6 +193,18 @@ Test-NetConnection -ComputerName rmm.example.com -Port 443
 
 Are you trying to use a proxy to share your single public IP with multiple services on 443? This is complicated and [unsupported by Tactical RMM](unsupported_scripts.md), test your setup.
 
+## Take Control or Remote Background missing button / can't connect
+
+This is a MeshCentral Connection problem
+
+1. Don't use Firefox (test in vanilla Chrome first)
+2. Open `mesh.domain.com` and see if you see the agent is there
+3. If you don't see your agent (or it's offline), restart TRMM server (or [service](howitallworks/#meshcentral))
+4. Restart Mesh Agent on client PC. 
+5. Check again. Still not appearing in `mesh.domain.com` in mesh goto "My Server" > Trace tab > Click tracing button > Check MeshAgent traffic.
+6. Restart Mesh Agent on client PC. You should see something in trace like ![mesh trace](images/mesh_trace.png)
+7. If you don't, you have firewall/connectivity issues (open `mesh.domain.com` from agent and troubleshoot. You aren't using a proxy right?)
+
 ## Mesh Agent x86 x64 integration with TRMM 
 
 If you need to upload your 32 bit or 64 bit mesh agents again
