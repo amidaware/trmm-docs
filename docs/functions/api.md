@@ -21,21 +21,7 @@ Example curl request:
 
 ```bash
 curl https://api.example.com/clients/ -H "X-API-KEY: Y57BXCFAA9WBCXH0XTEL6R5KAK69CNCZ"
-```
-
-## Enable Swagger (Currently broken, but good to see what can be queried)
-
-This will let you add a browser interface to see how you can use the api better.
-
-Open `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py` and add 
-
-```conf
-SWAGGER_ENABLED = True
-```
-
-Restart django: `sudo systemctl restart rmm.service`
-
-Then visit `https://api.example.com/api/schema/swagger-ui/` to see it in action.
+``
 
 ## Querying the API
 
@@ -136,3 +122,18 @@ Here's some examples
     "timeout": 90 // seconds
 }
 ```
+
+## Enable Swagger (Currently broken, but good to see what can be queried)
+
+This will let you add a browser interface to see how you can use the api better.
+
+Open `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py` and add 
+
+```conf
+SWAGGER_ENABLED = True
+```
+
+Restart django: `sudo systemctl restart rmm.service`
+
+Then visit `https://api.example.com/api/schema/swagger-ui/` to see it in action.
+
