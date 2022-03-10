@@ -344,6 +344,7 @@ Get Mesh Agent Version info with this command. Should match server version.
 ```cmd
 "C:\Program Files\Mesh Agent\MeshAgent.exe" -info"
 ```
+Compare the hash with the tags in the repo at <https://github.com/Ylianst/MeshAgent/tags>
 
 ### Other Dependencies
 
