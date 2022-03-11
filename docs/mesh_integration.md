@@ -29,3 +29,14 @@ See *Section 14 - Embedding MeshCentral* in the [MeshCentral User Guide](https:/
 The Tactical RMM Agent keeps track of your Mesh Agents, and periodically interacts with them to synchronize the mesh agent's unique ID with the tactical rmm database.
 
 When you do a take control / terminal / file browser on an agent using the Tactical UI, behind the scenes, Tactical generates a login token for meshcentral's website and then "wraps" MeshCentral's UI in an iframe for that specific agent only, using it's unique ID to know what agent to render in the iframe.
+
+## Running your own existing or separate MeshCentral Server?
+
+We do testing to make sure everything works with the version found here: <https://github.com/wh1te909/tacticalrmm/blob/31830dc67daa100aa2cba77e1b29e27adc0eeb3b/api/tacticalrmm/tacticalrmm/settings.py#L27>
+
+Installation instructions for using your own MeshCentral server:
+
+1. Run standard installation
+2. When asked for mesh URL specify your existing mesh server URL
+3. After installation, you will need to run thru manually uploading installers and connecting token with [this](troubleshooting/#need-to-recover-your-mesh-token):
+4. Make sure DNS is pointing to your existing server
