@@ -3,6 +3,9 @@
 !!!info 
     v0.5.0 adds support for custom fields to be used in the dashboard and in scripts.
 
+!!!warning
+    `\` is an escape character, if you want to use that in a custom field you will need to use `\\` instead
+
 #### Adding Custom Fields
 
 In the dashboard, go to **Settings > Global Settings > Custom Fields** and click **Add Custom Field**.
@@ -44,7 +47,7 @@ In your script's arguments, use the notation `{{client.AV_KEY}}`. This will look
 
 The same is also true for `{{site.no_patching}}` and `{{agent.Another Field}}`
 
-For more information see SCRIPTING PAGE
+For more information see [SCRIPTING PAGE](./scripting.md)
 
 #### Populating Custom Fields automatically
 
