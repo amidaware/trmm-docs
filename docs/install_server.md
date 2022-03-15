@@ -87,18 +87,25 @@ ufw allow proto tcp from any to any port 4222
 
 !!!info
     SSH (port 22 tcp) is only required for you to remotely login and do basic linux server administration for your rmm. It is not needed for any agent communication.<br/>
-Allow ssh from everywhere (__not__ recommended)
 
-```bash
-ufw allow ssh
-```
+???+ note "SSH Firewall Rule"
 
-Allow ssh from only allowed IP's (__highly__ recommended)
+    === ":material-console-line: Restrict SSH"
 
-```bash
-ufw allow proto tcp from X.X.X.X to any port 22
-ufw allow proto tcp from X.X.X.X to any port 22
-```
+        Allow ssh from only allowed IP's (__highly__ recommended)
+
+        ```bash
+        ufw allow proto tcp from X.X.X.X to any port 22
+        ufw allow proto tcp from X.X.X.X to any port 22
+        ```
+
+    === ":material-console-line: Allow all SSH"
+
+        Allow ssh from everywhere (__not__ recommended)
+
+        ```bash
+        ufw allow ssh
+        ```
 
 Enable and activate the firewall
 
