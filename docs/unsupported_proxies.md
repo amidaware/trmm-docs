@@ -375,6 +375,7 @@ example:
 </VirtualHost>
 
 ### Updating certificate:
+
 In my case, auto DNS Challenge from apache, so every time we get new cert files, it must be copied inside rmm too.
 just overwrite default location:
 /etc/letsencrypt/archive/blablablabla

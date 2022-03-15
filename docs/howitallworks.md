@@ -258,7 +258,7 @@ The NATS API service is a very light golang wrapper to replace traditional http 
 
 Log located at `/var/log/celery`
 
-???+ note "systemd config"
+???+ note "celery config"
 
     - [Celery docs](https://docs.celeryproject.org/en/stable/index.html)
     - [Celery configuration docs](https://docs.celeryproject.org/en/stable/userguide/configuration.html)
@@ -308,13 +308,40 @@ Log located at `/var/log/celery`
     
         - Service: `celerybeat.service`
         - Exec: `/bin/sh -c '${CELERY_BIN} -A ${CELERY_APP} beat --pidfile=${CELERYBEAT_PID_FILE} --logfile=${CELERYBEAT_LOG_FILE} --loglevel=${CELERYD_LOG_LEVEL}'`
-        - Config: `/etc/conf.d/celery.conf`
+        - Config: `/etc/redis/redis.conf`
         - Log: `/var/log/celery/beat.log`
     
     === ":material-docker: docker"
     
         TBD - To Be Documented
 
+#### redis service
+
+[redis](https://github.com/redis/redis) is an in-memory data structure store, used as a database, cache, and message broker for django/celery.
+
+Log located at `/var/log/redis`
+
+???+ note "redis config"
+
+    - [Redis docs](https://redis.io/)
+
+    === ":material-console-line: status commands"
+
+        - Status: `systemctl status --full redis-server.service`
+        - Stop: `systemctl stop redis-server.service`
+        - Start: `systemctl start redis-server.service`
+        - Restart: `systemctl restart redis-server.service`
+        - Tail logs: `tail -F /var/log/redis/redis-server.log`
+
+    === ":material-ubuntu: standard"
+    
+        - Service: `redis-server.service`
+        - Log: `/var/log/redis/redis-server.log`
+    
+    === ":material-docker: docker"
+    
+        TBD - To Be Documented
+        
 #### MeshCentral
 
 [MeshCentral](https://github.com/Ylianst/MeshCentral) is used for: "Take Control" (connecting to machine for remote access), and 2 screens of the "Remote Background" (Terminal, and File Browser).
@@ -373,7 +400,6 @@ pytz==2021.1
   <summary>qrcode dependencies</summary>
 
 ```text
-redis==3.5.3
 requests==2.25.1
 six==1.16.0
 sqlparse==0.4.1
