@@ -6,7 +6,7 @@
 
 This is making a duplicate of the code under your Github that you can edit
 
-<https://github.com/wh1te909/tacticalrmm>
+<https://github.com/amidaware/tacticalrmm>
 
 ![ForkIt](images/vscode-forkit.png)
 
@@ -28,7 +28,7 @@ This is taking your changes and requesting they be integrated into the Tactical 
 
 Look at a summary of the changes you've requested, monitor for them to be accepted, or commented on.
 
-<https://github.com/wh1te909/tacticalrmm/pulls>
+<https://github.com/amidaware/tacticalrmm/pulls>
 
 Once they're accepted you can either:
 * Delete your fork
@@ -48,4 +48,4 @@ Goto Step 2. and contribute some more
 
 ## Notes
 
-After your changes are accepted, they won't be live in Tactical RMM until there is a new [release](https://github.com/wh1te909/tacticalrmm/releases). #BePatient
+After your changes are accepted, they won't be live in Tactical RMM until there is a new [release](https://github.com/amidaware/tacticalrmm/releases). #BePatient

@@ -10,7 +10,7 @@
 
 This is making a duplicate of the code under your Github that you can edit
 
-<https://github.com/wh1te909/tacticalrmm>
+<https://github.com/amidaware/tacticalrmm>
 
 ![ForkIt](images/vscode-forkit.png)
 
@@ -51,7 +51,7 @@ git remote -v
 Add upstream repo
 
 ```bash
-git remote add upstream https://github.com/wh1te909/tacticalrmm
+git remote add upstream https://github.com/amidaware/tacticalrmm
 ```
 
 Confirm changes
