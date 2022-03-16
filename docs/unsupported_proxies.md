@@ -387,6 +387,80 @@ Having mesh connection issues?
 
 See <https://info.meshcentral.com/downloads/MeshCentral2/MeshCentral2UserGuide.pdf> page 30.
 
+## Nginx Proxy Manager
+
+In NPM, declare the hosts with the parameters:
+
+```
+api.{domain}
+https | TRMM server IP | 433
+ON: Cache Assets | Block Common Exploits | Websockets Support
+
+mesh.{domain}
+https | TRMM server IP | 443
+ON: Cache Assets | Block Common Exploits | Websockets Support
+
+rmm.{domain}
+https | TRMM server IP | 443
+ON: Cache Assets | Block Common Exploits | Websockets Support
+
+proxy.{domain}
+http | NPM server IP | 81 (NPM web UI port)
+```
+
+Then connect in SSH to your TRMM server to modify the nginx config of Mesh:
+
+```bash
+nano meshcentral/meshcentral-data/config.json
+```
+
+Then modify in this file the `TlsOffload` field to put the local IP address of your NPM and the port that goes with it, then also modify the "CertUrl" field to put the public domain name of your NPM.
+
+```
+{
+"settings": {
+"Cert": "${meshdomain}",
+"MongoDb": "mongodb://127.0.0.1:27017",
+"MongoDbName": "meshcentral",
+"WANonly": true,
+"Minify": 1,
+"Port": 4430,
+"AliasPort": 443,
+"RedirPort": 800,
+"AllowLoginToken": true,
+"AllowFraming": true,
+"_AgentPing": 60,
+"AgentPong": 300,
+"AllowHighQualityDesktop": true,
+"TlsOffload": "{NPM LAN IP}:81",
+"agentCoreDump": false,
+"Compression": true,
+"WsCompression": true,
+"AgentWsCompression": true,
+"MaxInvalidLogin": { "time": 5, "count": 5, "coolofftime": 30 }
+},
+"domains": {
+"": {
+"Title": "Tactical RMM",
+"Title2": "Tactical RMM",
+"NewAccounts": false,
+"CertUrl": "https://proxy.{domain}:443/",
+"GeoLocation": true,
+"CookieIpCheck": false,
+"mstsc": true
+}
+}
+}
+```
+
+Then restart your mesh
+
+```bash
+systemctl restart meshcentral.service
+```
+
+At which point agents should be working. Use the "Recover Connection" button if necessary
+
 ## Synology NAS reverse proxy portal
 
 Follow [HAProxy](#haproxy)
