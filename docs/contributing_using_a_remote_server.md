@@ -1,6 +1,6 @@
 # Contributing Using a Remote Server
 
-The below instructions are for a non-production server that has Tactical RMM installed and configured with a real domain. You can then use your own GitHub to push changes to and then submit a PR request to the TRMM `develop` branch (<https://github.com/wh1te909/tacticalrmm>).
+The below instructions are for a non-production server that has Tactical RMM installed and configured with a real domain. You can then use your own GitHub to push changes to and then submit a PR request to the TRMM `develop` branch (<https://github.com/amidaware/tacticalrmm>).
 
 !!!warning
     Do not attempt development of this kind on your production server.
@@ -108,8 +108,8 @@ git remote -v should look like the following
 ```bash
 origin  https://github.com/yourusername/tacticalrmm.git (fetch)
 origin  https://github.com/yourusername/tacticalrmm.git (push)
-upstream https://github.com/wh1te909/tacticalrmm.git (fetch)
-upstream https://github.com/wh1te909/tacticalrmm.git (push)
+upstream https://github.com/amidaware/tacticalrmm.git (fetch)
+upstream https://github.com/amidaware/tacticalrmm.git (push)
 ```
 You will commit the change to your GitHub and from within GitHub you can then submit a PR to the develop branch of wh1te909 Tactical RMM.
 

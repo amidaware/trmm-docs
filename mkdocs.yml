@@ -68,7 +68,7 @@ dev_addr: "0.0.0.0:8005"
 
 # Repository
 repo_name: "wh1te909/tacticalrmm"
-repo_url: "https://github.com/wh1te909/tacticalrmm"
+repo_url: "https://github.com/amidaware/tacticalrmm"
 edit_uri: ""
 
 theme:
@@ -85,7 +85,7 @@ extra_css:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: "https://github.com/wh1te909/tacticalrmm"
+      link: "https://github.com/amidaware/tacticalrmm"
 
 markdown_extensions:
   - pymdownx.keys

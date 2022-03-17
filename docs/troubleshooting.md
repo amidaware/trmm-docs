@@ -122,7 +122,7 @@ Run the tacticalrpc service manually with debug logging:
 
 This will print out a ton of info. You should be able to see the error from the debug log output.
 
-Please then copy/paste the logs and post them either in our [Discord support chat](https://discord.gg/upGTkWp), or create a [github issue](https://github.com/wh1te909/tacticalrmm/issues).
+Please then copy/paste the logs and post them either in our [Discord support chat](https://discord.gg/upGTkWp), or create a [github issue](https://github.com/amidaware/tacticalrmm/issues).
 
 If all else fails, simply uninstall the agent either from control panel or silently with `"C:\Program Files\TacticalAgent\unins000.exe" /VERYSILENT` and then reinstall the agent.
 

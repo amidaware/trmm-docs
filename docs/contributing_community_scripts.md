@@ -62,6 +62,50 @@ Category or Function - What It Does
 
 ![json_name_examples](images/community_scripts_name_field_example1.png)
 
+### json field names
+
+Example
+
+```json
+{
+    "guid": "bfd61545-839b-45da-8b3d-75ffc4d43272",
+    "filename": "Win_Sophos_EndpointProtection_Install.ps1",
+    "submittedBy": "https://github.com/bc24fl/",
+    "name": "Sophos Endpoint Protection Install",
+    "description": "Installs Sophos Endpoint Protection via the Sophos API.  Products include Antivirus, InterceptX, MDR, Device Encryption.  The script requires API credentials, Custom Fields, and Arguments passed to script.  See script comments for details",
+    "args": [
+      "-ClientId {{client.SophosClientId}}",
+      "-ClientSecret {{client.SophosClientSecret}}",
+      "-TenantName {{client.SophosTenantName}}",
+      "-Products antivirus,intercept"
+    ],
+    "default_timeout": "3600",
+    "supported_platforms": ["windows"],
+    "shell": "powershell",
+    "category": "TRMM (Win):3rd Party Software"
+  },
+```
+
+**Notes**
+
+`guid`: Must be unique in the file
+
+`filename`: File with that name must exist in `/scripts` folder
+
+`submittedBy`: Get credit for creator
+
+`args`: default args pre-filled in arg field
+
+`default_timeout`: Sets the default timeout for the script
+
+`supported_platforms`: ["Windows", "Linux"] (if missing, assumes all platforms are supported)
+
+`shell`: can be `powershell`, `cmd`, `python`, `bash`
+
+`syntax`: See [scripting](../docs/functions/scripting.md#)
+
+`category`: Preferably use existing categories and format structure for library sorting, add new as needed
+
 *****
 
 ## Making Script Files

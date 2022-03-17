@@ -2,7 +2,7 @@
 
 ### Browser token expiration
 
-The default browser token expiration is set to 5 hours. See this [ticket](https://github.com/wh1te909/tacticalrmm/issues/503) for reference.
+The default browser token expiration is set to 5 hours. See this [ticket](https://github.com/amidaware/tacticalrmm/issues/503) for reference.
 
 To change it, add the following code block to the end of `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py`
 
