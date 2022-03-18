@@ -61,13 +61,13 @@ nav:
   - Security: security.md
   - License: license.md
 site_description: "A remote monitoring and management tool"
-site_author: "wh1te909"
+site_author: "amidaware"
 site_url: "https://docs.tacticalrmm.com/"
 
 dev_addr: "0.0.0.0:8005"
 
 # Repository
-repo_name: "wh1te909/tacticalrmm"
+repo_name: "amidaware/tacticalrmm"
 repo_url: "https://github.com/amidaware/tacticalrmm"
 edit_uri: ""
 
