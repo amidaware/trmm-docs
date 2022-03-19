@@ -52,9 +52,7 @@ as
 Customize to your tastes (it doesn't need to be internet configured, just add records in your `hosts` file) eg
 
 ```conf
-127.0.0.1    rmm.example.com
-127.0.0.1    api.example.com
-127.0.0.1    mesh.example.com
+127.0.0.1    rmm.example.com api.example.com mesh.example.com
 ```
 
 ## Launch your Dev VM in Docker
