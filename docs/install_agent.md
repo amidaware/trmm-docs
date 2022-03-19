@@ -166,10 +166,10 @@ If you changed the expiry time you could upload the script to any accessible ser
 
 Currently there are no deploy links for Linux Agents however you could use the following method if uploaded somewhere (website etc).
 
-An example deployment script would be:<br/>
-<br/>
-```wget scripturl
+An example deployment script would be:
 
+```bash
+wget scripturl
 chmod +x rmm.sh
-
-./rmm.sh```
+./rmm.sh
+```
