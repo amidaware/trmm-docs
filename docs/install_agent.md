@@ -150,15 +150,15 @@ Then use Agent Recovery | Mesh Agent and choose Recover
 
 ## Install Linux Agent (beta)
 
-To install:
-1. Go to rmm.yourdomain.com and login.
-2. Click on Agents > Install Agent
-3. Choose the Client, Site, Server or Workstation and Architecture (change expiry if required) as well as Linux.
-4. Click Download.
-5. If downloaded on the Linux machine you want to add as an agent (otherwise copy to machine using WinSCP or similar) open terminal 
-6. cd to the folder you have downloaded the script to
-7. Run `chmod +x rmm-clientname-sitename-type.sh`
-8. Run `./rmm-clientname-sitename-type.sh` and wait for script to complete.
+To install:<br/>
+1. Go to rmm.yourdomain.com and login.<br/>
+2. Click on Agents > Install Agent<br/>
+3. Choose the Client, Site, Server or Workstation and Architecture (change expiry if required) as well as Linux.<br/>
+4. Click Download.<br/>
+5. If downloaded on the Linux machine you want to add as an agent (otherwise copy to machine using WinSCP or similar) open terminal <br/>
+6. cd to the folder you have downloaded the script to<br/>
+7. Run `chmod +x rmm-clientname-sitename-type.sh`<br/>
+8. Run `./rmm-clientname-sitename-type.sh` and wait for script to complete.<br/>
 
 If you changed the expiry time you could upload the script to any accessible server and deploy to multiple devices.
 
@@ -166,8 +166,8 @@ If you changed the expiry time you could upload the script to any accessible ser
 
 Currently there are no deploy links for Linux Agents however you could use the following method if uploaded somewhere (website etc).
 
-An example deployment script would be:
-
+An example deployment script would be:<br/>
+<br/>
 ```wget scripturl
 chmod +x rmm.sh
 ./rmm.sh```
