@@ -30,6 +30,8 @@ Has a postgres database located here:
 
 All Tactical RMM dependencies are listed [here](https://github.com/amidaware/tacticalrmm/blob/develop/api/tacticalrmm/requirements.txt)
 
+A complete list of all packages used by Tactical RMM are listed [here](https://raw.githubusercontent.com/amidaware/tacticalrmm/develop/web/package-lock.json)
+
 ### Outbound Firewall Rules
 
 If you have strict firewall rules these are the only outbound rules from the server needed for all functionality:
