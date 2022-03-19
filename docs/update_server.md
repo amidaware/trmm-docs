@@ -75,19 +75,6 @@ After this you have renewed the cert, simply run the `update.sh` script, passing
 ./update.sh --force
 ```
 
-## Keep an eye on your disk space
-
-If you're running low, shrink you database
-
-1. Choose *Tools menu > Server Maintenance > Prune DB Tables*
-
-2. At server command prompt run
-
-```bash
-sudo -u postgres psql -d tacticalrmm -c "vacuum full logs_auditlog"
-sudo -u postgres psql -d tacticalrmm -c "vacuum full logs_pendingaction"
-```
-
 ## Video Walkthru
 
 <div class="video-wrapper">
