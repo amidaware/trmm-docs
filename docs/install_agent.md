@@ -168,6 +168,6 @@ Currently there are no deploy links for Linux Agents however you could use the f
 
 An example deployment script would be:<br/>
 <br/>
-```wget scripturl
-chmod +x rmm.sh
-./rmm.sh```
+```wget scripturl<br/>
+chmod +x rmm.sh<br/>
+./rmm.sh```<br/>
