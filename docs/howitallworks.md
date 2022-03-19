@@ -128,10 +128,10 @@ Nginx is the web server for the `rmm`, `api`, and `mesh` domains. All sites redi
 
     === ":material-docker: docker"
 
-        From the docker host view container status - `docker ps --filter "name=trmm-nginx"`
-            - View logs: `docker-compose logs tactical-nginx`
-            - "tail" logs: `docker-compose logs tactical-nginx | tail`
-            - Shell access: `docker exec -it trmm-nginx /bin/bash`
+        - From the docker host view container status - `docker ps --filter "name=trmm-nginx"`
+        - View logs: `docker-compose logs tactical-nginx`
+        - "tail" logs: `docker-compose logs tactical-nginx | tail`
+        - Shell access: `docker exec -it trmm-nginx /bin/bash`
 
 
 #### Tactical RMM (Django uWSGI) service
@@ -164,10 +164,10 @@ Built on the Django framework, the Tactical RMM service is the heart of the syst
     
     === ":material-docker: docker"
 
-        From the docker host view container status - `docker ps --filter "name=trmm-backend"`
-            - View logs: `docker-compose logs tactical-backend`
-            - "tail" logs: `docker-compose logs tactical-backend | tail`
-            - Shell access: `docker exec -it trmm-backend /bin/bash`
+        - From the docker host view container status - `docker ps --filter "name=trmm-backend"`
+        - View logs: `docker-compose logs tactical-backend`
+        - "tail" logs: `docker-compose logs tactical-backend | tail`
+        - Shell access: `docker exec -it trmm-backend /bin/bash`
 
 #### Daphne: Django channels daemon
 
@@ -197,10 +197,10 @@ Built on the Django framework, the Tactical RMM service is the heart of the syst
 
     === ":material-docker: docker"
 
-        From the docker host view container status - `docker ps --filter "name=trmm-websockets"`
-            - View logs: `docker-compose logs tactical-websockets`
-            - "tail" logs: `docker-compose logs tactical-websockets | tail`
-            - Shell access: `docker exec -it trmm-websockets /bin/bash`
+        - From the docker host view container status - `docker ps --filter "name=trmm-websockets"`
+        - View logs: `docker-compose logs tactical-websockets`
+        - "tail" logs: `docker-compose logs tactical-websockets | tail`
+        - Shell access: `docker exec -it trmm-websockets /bin/bash`
 
 #### NATS server service
 
@@ -237,7 +237,7 @@ Built on the Django framework, the Tactical RMM service is the heart of the syst
     
         - Get into bash in your docker with: `docker exec -it trmm-nats /bin/bash`
         - Log: `nats-api -log debug`
-        - Shell access: `docker exec -it trmm-nginx /bin/bash`
+        - Shell access: `docker exec -it trmm-nats /bin/bash`
 
 #### NATS API service
 
@@ -297,9 +297,10 @@ Log located at `/var/log/celery`
     
     === ":material-docker: docker"
     
-        From the docker host view container status - `docker ps --filter "name=trmm-celery"`
-            - View logs: `docker-compose logs tactical-celery`
-            - "tail" logs: `docker-compose logs tactical-celery | tail`
+        - From the docker host view container status - `docker ps --filter "name=trmm-celery"`
+        - View logs: `docker-compose logs tactical-celery`
+        - "tail" logs: `docker-compose logs tactical-celery | tail`
+        - Shell access: `docker exec -it trmm-celery /bin/bash`
 
 #### Celery Beat service
 
@@ -329,9 +330,10 @@ Log located at `/var/log/celery`
     
     === ":material-docker: docker"
     
-        From the docker host view container status - `docker ps --filter "name=trmm-celerybeat"`
-            - View logs: `docker-compose logs tactical-celerybeat`
-            - "tail" logs: `docker-compose logs tactical-celerybeat | tail`
+        - From the docker host view container status - `docker ps --filter "name=trmm-celerybeat"`
+        - View logs: `docker-compose logs tactical-celerybeat`
+        - "tail" logs: `docker-compose logs tactical-celerybeat | tail`
+        - Shell access: `docker exec -it trmm-celerybeat /bin/bash`
 
 #### redis service
 
@@ -358,10 +360,10 @@ Log located at `/var/log/redis`
     
     === ":material-docker: docker"
     
-        From the docker host view container status - `docker ps --filter "name=trmm-redis"`
-            - View logs: `docker-compose logs tactical-redis`
-            - "tail" logs: `docker-compose logs tactical-redis | tail`
-
+        - From the docker host view container status - `docker ps --filter "name=trmm-redis"`
+        - View logs: `docker-compose logs tactical-redis`
+        - "tail" logs: `docker-compose logs tactical-redis | tail`
+        - Shell access: `docker exec -it trmm-redis /bin/bash`
         
 #### MeshCentral
 
@@ -378,12 +380,20 @@ Log located at `/var/log/redis`
         - Start: `systemctl start meshcentral`
         - Restart: `systemctl restart meshcentral`
 
+    === ":material-docker: docker"
+
+        - From the docker host view container status - `docker ps --filter "name=trmm-meshcentral"`
+        - View logs: `docker-compose logs tactical-meshcentral`
+        - "tail" logs: `docker-compose logs tactical-meshcentral | tail`
+        - Shell access: `docker exec -it trmm-meshcentral /bin/bash`   
+
     === ":material-remote-desktop: Debugging"
 
         - Open either "Take Control" or "Remote Background" to get mesh login token
         - Open https://mesh.example.com to open native mesh admin interface
         - Left-side "My Server" > Choose "Console" > type `agentstats`
         - To view detailed logging goto "Trace" > click Tracing button and choose categories
+     
 
 #### MeshCentral Agent
 
