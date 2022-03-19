@@ -32,7 +32,7 @@ SSH into your server as the linux user you created during install (eg `tactical`
 Download the update script and run it:
 
 ```bash
-wget -N https://raw.githubusercontent.com/wh1te909/tacticalrmm/master/update.sh
+wget -N https://raw.githubusercontent.com/amidaware/tacticalrmm/master/update.sh
 chmod +x update.sh
 ./update.sh
 ```

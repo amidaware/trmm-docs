@@ -17,10 +17,11 @@ There's pluses and minuses to each install type. Be aware that:
 
 - It's a VM/machine. One storage device to backup if you want to do VM based backups
 - You have a [backup](backup.md) and [restore](restore.md) script
+- Much easier to troubleshoot when things go wrong
+- Faster performance / easier to fine tune and customize to your needs
 
 ## Docker Install
 
 - Docker is more complicated in concept: has volumes and images
-- If you're running multiple apps it uses less resources in the long run because you only have one OS base files underlying many Containers/Apps
 - Backup/restore is via Docker methods only
 - Docker has container replication/mirroring options for redundancy/multiple servers

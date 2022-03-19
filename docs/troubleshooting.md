@@ -7,7 +7,7 @@ If you've asked for help in [#support](https://discord.com/channels/736478043522
 Blur your domains if you desire privacy.
 
 ```bash
-wget -N https://raw.githubusercontent.com/wh1te909/tacticalrmm/master/troubleshoot_server.sh
+wget -N https://raw.githubusercontent.com/amidaware/tacticalrmm/master/troubleshoot_server.sh
 chmod +x troubleshoot_server.sh
 ./troubleshoot_server.sh
 ```

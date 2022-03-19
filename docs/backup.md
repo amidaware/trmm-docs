@@ -8,7 +8,7 @@ A backup script is provided for quick and easy way to backup all settings into o
 Download the backup script:
 
 ```bash
-wget -N https://raw.githubusercontent.com/wh1te909/tacticalrmm/master/backup.sh
+wget -N https://raw.githubusercontent.com/amidaware/tacticalrmm/master/backup.sh
 ```
 
 From the Web UI, click **Tools > Server Maintenance**
