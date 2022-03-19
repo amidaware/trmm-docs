@@ -140,7 +140,7 @@ su - tactical
 Download and run the install script
 
 ```bash
-wget https://raw.githubusercontent.com/wh1te909/tacticalrmm/master/install.sh
+wget https://raw.githubusercontent.com/amidaware/tacticalrmm/master/install.sh
 chmod +x install.sh
 ./install.sh
 ```
@@ -167,17 +167,13 @@ Create a login for the RMM web UI:
 
 A bunch of URLS / usernames / passwords will be printed out at the end of the install script. **Save these somewhere safe.** [Recover them if you didn't](faq.md#how-do-i-recover-my-meshcentral-login-credentials)
 
-### Upload mesh agents
-
-Copy the url for the meshagent exe (`https://mesh.example.com/agentinvite?c=......`), paste it in your browser and download the mesh agent:
-
-![meshagentdl](images/meshagentdl.png)
+### Login
 
 Navigate to `https://rmm.example.com` and login with the username/password you created during install.
 
 Once logged in, you will be redirected to the initial setup page.
 
-Create your first client/site, choose the default timezone and then upload the mesh agent you just downloaded.
+Create your first client/site and choose the default timezone.
 
 ### You're Done
 

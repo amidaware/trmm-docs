@@ -15,7 +15,7 @@
 ## Dynamically generated executable
 
 The generated exe is simply a wrapper around the Manual install method, using a single exe/command without the need to pass any command line flags to the installer.
-All it does is download the generic installer from the agent's github [release page](https://github.com/wh1te909/rmmagent/releases) and call it using predefined command line args that you choose from the web UI.
+All it does is download the generic installer from the agent's github [release page](https://github.com/amidaware/rmmagent/releases) and call it using predefined command line args that you choose from the web UI.
 It "bakes" the command line args into the executable.
 
 From the UI, click **Agents > Install Agent**

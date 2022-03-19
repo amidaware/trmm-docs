@@ -5,7 +5,7 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
 
 Tactical RMM is a remote monitoring & management tool for Windows computers, built with Django, Vue and Golang.
-It uses an [agent](https://github.com/wh1te909/rmmagent) written in Golang and integrates with [MeshCentral](https://github.com/Ylianst/MeshCentral)
+It uses an [agent](https://github.com/amidaware/rmmagent) written in Golang and integrates with [MeshCentral](https://github.com/Ylianst/MeshCentral)
 
 ## [LIVE DEMO](https://rmm.tacticalrmm.io/)
 

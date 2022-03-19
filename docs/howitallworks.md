@@ -446,42 +446,11 @@ If you have strict firewall rules these are the only outbound rules from the age
 
 #### Unsigned Agents
 
-Unsigned agents require access to: `https://github.com/wh1te909/rmmagent/releases/*`
+Unsigned agents require access to: `https://github.com/amidaware/rmmagent/releases/*`
 
 #### Signed Agents
 
-Signed agents will require: `https://exe.tacticalrmm.io/` and `https://exe2.tacticalrmm.io/` for downloading/updating agents
-
-### Services
-
-3 services exist on all clients
-
-* `Mesh Agent`
-![MeshService](images/trmm_services_mesh.png)
-![MeshAgentTaskManager](images/trmm_services__taskmanager_mesh.png)
-
-**AND**
-
-* `TacticalAgent` and `Tactical RMM RPC Service`
-![TacticalAgentServices](images/trmm_services.png)
-![TacticalAgentTaskManager](images/trmm_services__taskmanager_agent.png)
-
-The [MeshCentral](https://meshcentral.com/) system which is accessible from `https://mesh.example.com` and is used
-
-* It runs 2 goroutines
-  * one is the checkrunner which runs all the checks and then just sleeps until it's time to run more checks
-  * 2nd goroutine periodically sends info about the agent to the rmm and also handles agent recovery
-
-!!!note
-    In Task Manager you will see additional `Tactical RMM Agent` processes appear and disappear. These are your Checks and Tasks running at scheduled intervals
-
-`Tactical RMM RPC Service`
-
-* Uses the pub/sub model so anytime you do anything realtime from rmm (like a send command or run script)
-* It maintains a persistent connection to your to the api.example.com rmm server on `port:4222` and is listening for events (using [nats](https://nats.io/))
-* It handles your Agent updates (Auto triggers at 35mins past every hour or when run manually from server Agents | Update Agents menu)
-
-***
+Signed agents will require: `https://agents.tacticalrmm.com` for downloading/updating agents
 
 ### Agent Installation Process
 
@@ -503,91 +472,7 @@ Files create `c:\Windows\temp\Tacticalxxxx\` folder for install (and log files)
 
 ### Agent Debugging
 
-You can temporarily log to screen, or log to file
-
-???+ note "Debugging Options"
-
-    === ":material-math-log: Manual One Time"
-
-        Stop the services
-
-        ```cmd
-        net stop tacticalagent
-        net stop tacticalrpc
-        ```
-
-        Then run either Agent:
-
-        Run the tacticalagent service manually with debug logging:
-
-        ```cmd
-        "C:\Program Files\TacticalAgent\tacticalrmm.exe" -m winagentsvc -log debug -logto stdout
-        ```
-
-        Run the tacticalrpc service manually with debug logging:
-
-        ```cmd
-        "C:\Program Files\TacticalAgent\tacticalrmm.exe" -m rpc -log debug -logto stdout
-        ```
-
-    === ":material-math-log: Log debug to file"
-
-        TacticalAgent
-        
-        Stop the service
-
-        ```cmd
-        net stop tacticalagent
-        ```
-
-        Edit the service: `TacticalAgent`
-
-        ```cmd
-        cd "c:\Program Files\TacticalAgent"
-        nssm.exe edit tacticalagent
-        ```
-
-        Add options `-m winagentsvc -log debug`
-
-        TacticalAgent: Start the service
-        ```cmd
-        net start tacticalagent
-        ```
-
-        It will debug log to `"C:\Program Files\TacticalAgent\agent.log"`
-
-        **AND/OR**
-
-        Tacticalrpc
-        
-        Stop the service
-
-        ```cmd
-        net stop tacticalrpc
-        ```
-
-        Edit the service: `Tacticalrpc`
-
-        ```cmd
-        cd "c:\Program Files\Tacticalrpc"
-        nssm.exe edit tacticalrpc
-        ```
-
-        Add options `-m rpc -log debug`
-
-        Tacticalrpc: Start the service
-        ```cmd
-        net start tacticalrpc
-        ```
-
-        It will debug log to `"C:\Program Files\TacticalAgent\agent.log"`
-
-
 #### Mesh Agent Recovery
-
-Tactical Agent just runs `mesh_agent.exe -something` to get the mesh agent id and saves it to the django database.
-
-#### Tactical RPC Recovery
 
 #### Tactical Agent Recovery
 

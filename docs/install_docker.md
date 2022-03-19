@@ -61,8 +61,8 @@ You will need to add DNS entries so that the three subdomains resolve to the IP 
 Get the docker-compose and .env.example file on the host you which to install on
 
 ```bash
-wget https://raw.githubusercontent.com/wh1te909/tacticalrmm/master/docker/docker-compose.yml
-wget https://raw.githubusercontent.com/wh1te909/tacticalrmm/master/docker/.env.example
+wget https://raw.githubusercontent.com/amidaware/tacticalrmm/master/docker/docker-compose.yml
+wget https://raw.githubusercontent.com/amidaware/tacticalrmm/master/docker/.env.example
 mv .env.example .env
 ```
 
@@ -99,23 +99,13 @@ sudo docker-compose up -d
 
 Removing the -d will start the containers in the foreground and is useful for debugging.
 
-## 7. Get MeshCentral EXE download link
-
-Run the below command to get the download link for the mesh central exe. This needs to be uploaded on first successful signin.
-
-```bash
-sudo docker-compose exec tactical-backend python manage.py get_mesh_exe_url
-```
-
-Download the mesh agent:
-
-![meshagentdl](images/meshagentdl.png)
+## 7. Login
 
 Navigate to `https://rmm.example.com` and login with the username/password you created during install.
 
 Once logged in, you will be redirected to the initial setup page.
 
-Create your first client/site, choose the default timezone and then upload the mesh agent you just downloaded.
+Create your first client/site and choose the default timezone.
 
 ## Note about Backups
 
