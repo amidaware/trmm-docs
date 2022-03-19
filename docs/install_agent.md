@@ -162,9 +162,13 @@ To install:
 
 If you changed the expiry time you could upload the script to any accessible server and deploy to multiple devices.
 
-## Currently there are no deploy links for Linux Agents however you could use the following method if uploaded somewhere (website etc).
+## Linux Deployment Link
+
+Currently there are no deploy links for Linux Agents however you could use the following method if uploaded somewhere (website etc).
 
 An example deployment script would be:
 ```wget scripturl
+
 chmod +x rmm.sh
+
 ./rmm.sh```
