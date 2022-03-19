@@ -128,13 +128,17 @@ Nginx is the web server for the `rmm`, `api`, and `mesh` domains. All sites redi
 
     === ":material-docker: docker"
 
-        TBD - To Be Documented
+        From the docker host view container status - `docker ps --filter "name=trmm-nginx"`
+            - View logs: `docker-compose logs tactical-nginx`
+            - "tail" logs: `docker-compose logs tactical-nginx | tail`
+            - Shell access: `docker exec -it trmm-nginx /bin/bash`
+
 
 #### Tactical RMM (Django uWSGI) service
 
 Built on the Django framework, the Tactical RMM service is the heart of the system by serving the API for the frontend and agents.
 
-???+ note "systemd config"
+???+ note "uWSGI config"
 
     - [uWSGI docs](https://uwsgi-docs.readthedocs.io/en/latest/index.html)
 
@@ -159,14 +163,17 @@ Built on the Django framework, the Tactical RMM service is the heart of the syst
         - Version: 2.0.18
     
     === ":material-docker: docker"
-    
-        TBD - To Be Documented
+
+        From the docker host view container status - `docker ps --filter "name=trmm-backend"`
+            - View logs: `docker-compose logs tactical-backend`
+            - "tail" logs: `docker-compose logs tactical-backend | tail`
+            - Shell access: `docker exec -it trmm-backend /bin/bash`
 
 #### Daphne: Django channels daemon
 
 [Daphne](https://github.com/django/daphne) is the official ASGI HTTP/WebSocket server maintained by the [Channels project](https://channels.readthedocs.io/en/stable/index.html).
 
-???+ note "systemd config"
+???+ note "Daphne config"
 
     - Django [Channels configuration docs](https://channels.readthedocs.io/en/stable/topics/channel_layers.html)
 
@@ -190,13 +197,16 @@ Built on the Django framework, the Tactical RMM service is the heart of the syst
 
     === ":material-docker: docker"
 
-        TBD - To Be Documented
+        From the docker host view container status - `docker ps --filter "name=trmm-websockets"`
+            - View logs: `docker-compose logs tactical-websockets`
+            - "tail" logs: `docker-compose logs tactical-websockets | tail`
+            - Shell access: `docker exec -it trmm-websockets /bin/bash`
 
 #### NATS server service
 
 [NATS](https://nats.io/) is a messaging bus for "live" communication between the agent and server. NATS provides the framework for the server to push commands to the agent and receive information back.
 
-???+ note "systemd config"
+???+ note "NATS config"
 
     - [NATS server configuration docs](https://docs.nats.io/running-a-nats-service/configuration)
 
@@ -225,14 +235,15 @@ Built on the Django framework, the Tactical RMM service is the heart of the syst
     
     === ":material-docker: docker"
     
-        - Get into bash in your docker with: `sudo docker-compose exec tactical-nats /bin/bash`
+        - Get into bash in your docker with: `docker exec -it trmm-nats /bin/bash`
         - Log: `nats-api -log debug`
+        - Shell access: `docker exec -it trmm-nginx /bin/bash`
 
 #### NATS API service
 
 The NATS API service is a very light golang wrapper to replace traditional http requests sent to django. The agent sends the data to nats-api which is always listening for agent requests (on Port 4222). It then saves the data to postgres directly.
 
-???+ note "systemd config"
+???+ note "NATS API config"
 
     === ":material-console-line: status commands"
 
@@ -252,7 +263,8 @@ The NATS API service is a very light golang wrapper to replace traditional http 
     
     === ":material-docker: docker"
     
-        TBD - To Be Documented
+        - Get into bash in your docker with: `docker exec -it trmm-nats /bin/bash`
+        - Log: `nats-api -log debug`
 
 #### Celery service
 
@@ -285,7 +297,9 @@ Log located at `/var/log/celery`
     
     === ":material-docker: docker"
     
-        TBD - To Be Documented
+        From the docker host view container status - `docker ps --filter "name=trmm-celery"`
+            - View logs: `docker-compose logs tactical-celery`
+            - "tail" logs: `docker-compose logs tactical-celery | tail`
 
 #### Celery Beat service
 
@@ -315,7 +329,9 @@ Log located at `/var/log/celery`
     
     === ":material-docker: docker"
     
-        TBD - To Be Documented
+        From the docker host view container status - `docker ps --filter "name=trmm-celerybeat"`
+            - View logs: `docker-compose logs tactical-celerybeat`
+            - "tail" logs: `docker-compose logs tactical-celerybeat | tail`
 
 #### redis service
 
@@ -342,7 +358,10 @@ Log located at `/var/log/redis`
     
     === ":material-docker: docker"
     
-        TBD - To Be Documented
+        From the docker host view container status - `docker ps --filter "name=trmm-redis"`
+            - View logs: `docker-compose logs tactical-redis`
+            - "tail" logs: `docker-compose logs tactical-redis | tail`
+
         
 #### MeshCentral
 
