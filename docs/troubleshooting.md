@@ -207,17 +207,6 @@ This is a MeshCentral Connection problem
 6. Restart Mesh Agent on client PC. You should see something in trace like ![mesh trace](images/mesh_trace.png)
 7. If you don't, you have firewall/connectivity issues (open `mesh.domain.com` from agent and troubleshoot. You aren't using a proxy right?)
 
-## Mesh Agent x86 x64 integration with TRMM 
-
-If you need to upload your 32 bit or 64 bit mesh agents again
-
-1. Log into Mesh (you can right-click any agent, choose remote control or Remote Background)
-2. Goto your mesh interface (eg `https://mesh.EXAMPLE.COM`) 
-3. Find your TacticalRMM group
-4. Click the add link
-5. Download both agents
-6. In Tactical RMM, go **Settings > Global Settings > MeshCentral > Upload Mesh Agents** upload them both into the appropriate places.
-
 ## Need to recover your mesh token?
 
 Login to server with SSH and run:
