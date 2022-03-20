@@ -32,7 +32,7 @@ When you do a take control / terminal / file browser on an agent using the Tacti
 
 ## Running your own existing or separate MeshCentral Server?
 
-We do testing to make sure everything works with the version found [here](https://github.com/amidaware/tacticalrmm/blob/31830dc67daa100aa2cba77e1b29e27adc0eeb3b/api/tacticalrmm/tacticalrmm/settings.py#L27)
+We do testing to make sure everything works with the version found [here](https://github.com/amidaware/tacticalrmm/blob/master/api/tacticalrmm/tacticalrmm/settings.py) (look for MESH_VER)
 
 Installation instructions for using your own MeshCentral server:
 
