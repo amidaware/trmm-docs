@@ -96,7 +96,7 @@ Change the 3 A records `rmm`, `api` and `mesh` and point them to the public IP o
 
 3. Download the restore script.
 
-        wget https://raw.githubusercontent.com/amidaware/tacticalrmm/master/restore.sh
+        wget -N https://raw.githubusercontent.com/amidaware/tacticalrmm/master/restore.sh
         chmod +x restore.sh
 
 4. Call the restore script, passing it the backup file as the first argument:
