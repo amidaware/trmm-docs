@@ -306,7 +306,7 @@ Log located at `/var/log/celery`
 
 [celery beat](https://github.com/celery/django-celery-beat) is a scheduler; It kicks off tasks at regular intervals, that are then executed by available worker nodes in the cluster.
 
-???+ note "systemd config"
+???+ note "Celery Beat config"
 
     - [Celery beat docs](https://docs.celeryproject.org/en/stable/userguide/periodic-tasks.html)
 
