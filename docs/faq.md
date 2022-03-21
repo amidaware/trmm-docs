@@ -8,6 +8,16 @@ No
 
 It's one way we're trying to monetize and get dev's paid. We had github sponsors up for many months before code signing. Very few people donated, some $5 and $10. maybe $40 a month. Once we announced code signing, sponsors came in like crazy, and many people upgraded their $5 to a $50 so while I would like to believe people would gladly donate, that's just not the case. We already tried.
 
+## Linux Agent
+
+While linux support is in the post-alpha/beta mode:
+- Code signing makes linux installs easy and is a benefit offered to code signing sponsors
+- DIYer can read thru the code and....DIY
+
+This is primarily for 2 reasons: 
+1) As this has been a sponsorship goal it seems only fair that those who contributed to make this a reality get early access to easy linux agent installs
+2) We're looking for good bug reports from active users to get the linux agent into production ready code. 
+
 ## Who is Amidaware LLC?
 
 The Legal entity behind Tactical RMM
