@@ -126,3 +126,9 @@ Q. Why can’t I use a self signed certificate for web etc.
 A. NATS over TLS needs a real certificate signed with a trusted root certificate.
 
 If you aren't a dev in a non-production environment, don't run nats with self signed certs: <https://docs.nats.io/running-a-nats-service/configuration/securing_nats/tls#self-signed-certificates-for-testing>
+
+## License FAQ
+
+Question 1: Is okay if we as an MSP, use the RMM to monitor our customers, but charge them for this service?
+
+Answer 1: Yes please use it and charge your customers for it.
