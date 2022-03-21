@@ -4,12 +4,6 @@
 
 No
 
-## Why isn't the agent source available?
-
-<https://discord.com/channels/736478043522072608/744281907361218630/925449414498222103>
-
-It's one of those "this is why we can't have nice things". Unfortunately there are a ton of shady people out there only looking to steal and make a profit off of someone else's work and they tried very hard with tactical.
-
 ## Why isn't the Code Signing free?
 
 It's one way we're trying to monetize and get dev's paid. We had github sponsors up for many months before code signing. Very few people donated, some $5 and $10. maybe $40 a month. Once we announced code signing, sponsors came in like crazy, and many people upgraded their $5 to a $50 so while I would like to believe people would gladly donate, that's just not the case. We already tried.
@@ -132,3 +126,9 @@ Q. Why can’t I use a self signed certificate for web etc.
 A. NATS over TLS needs a real certificate signed with a trusted root certificate.
 
 If you aren't a dev in a non-production environment, don't run nats with self signed certs: <https://docs.nats.io/running-a-nats-service/configuration/securing_nats/tls#self-signed-certificates-for-testing>
+
+## License FAQ
+
+Question 1: Is okay if we as an MSP, use the RMM to monitor our customers, but charge them for this service?
+
+Answer 1: Yes please use it and charge your customers for it.
