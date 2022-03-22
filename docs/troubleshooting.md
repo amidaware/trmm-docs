@@ -220,3 +220,7 @@ node /meshcentral/node_modules/meshcentral --logintokenkey
 When agents don't show up in your mesh console (after logging into https://mesh.EXAMPLE.COM), and all data is blank. Your AV has most likely blocked the agent.
 
 ![Mesh Not Connecting](images/mesh_no_data.png)
+
+## Error 500
+
+These are always logged to `/rmm/api/tacticalrmm/tacticalrmm/private/log/django_debug.log` use [this](howitallworks.md#log-files) to check.
