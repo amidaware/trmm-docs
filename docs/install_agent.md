@@ -101,7 +101,7 @@ set "DeploymentURL="
 
 set "Name="
 for /f "usebackq tokens=* delims=" %%# in (
-    `wmic service where "name like 'tacticalagent'" get Name /Format:Value`
+    `wmic service where "name like 'tacticalrmm'" get Name /Format:Value`
 ) do (
     for /f "tokens=* delims=" %%g in ("%%#") do set "%%g"
 )

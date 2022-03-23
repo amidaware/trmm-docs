@@ -104,20 +104,13 @@ sudo systemctl restart nats.service
 Open CMD as admin on the problem computer and stop the agent services:
 
 ```cmd
-net stop tacticalagent
-net stop tacticalrpc
+net stop tacticalrmm
 ```
 
-Run the tacticalagent service manually with debug logging:
+Run the tacticalrmm service manually with debug logging:
 
 ```cmd
-"C:\Program Files\TacticalAgent\tacticalrmm.exe" -m winagentsvc -log debug -logto stdout
-```
-
-Run the tacticalrpc service manually with debug logging:
-
-```cmd
-"C:\Program Files\TacticalAgent\tacticalrmm.exe" -m rpc -log debug -logto stdout
+"C:\Program Files\TacticalAgent\tacticalrmm.exe" -m svc -log debug -logto stdout
 ```
 
 This will print out a ton of info. You should be able to see the error from the debug log output.
