@@ -17,8 +17,8 @@ While linux support is in the post-alpha/beta mode:
 
 This is primarily for 2 reasons: 
 
-1) As this has been a sponsorship goal it seems only fair that those who contributed to make this a reality get early access to easy linux agent installs
-2) We're looking for good bug reports from active users to get the linux agent into production ready code. 
+1. As this has been a sponsorship goal it seems only fair that those who contributed to make this a reality get early access to easy linux agent installs
+2. We're looking for good bug reports from active users to get the linux agent into production ready code. 
 
 ## Who is Amidaware LLC?
 
