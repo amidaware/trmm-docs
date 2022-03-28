@@ -7,6 +7,9 @@ Before applying these settings in production, use a pre-production environment s
 !!!warning
         **<span style="text-decoration:underline;">Use the contents included in this guide and apply the security settings detailed here at your own discretion.</span>**
 
+!!!info
+    Please check the following github [issue](https://github.com/amidaware/rmmagent/issues/2) for potential side effects of deploying these configs.
+
 ## Intro
 
 This section is structured in three main subsections:
