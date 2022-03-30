@@ -61,7 +61,7 @@ Since Tactical RMM is still in alpha and the developers makes breaking changes p
 
 If you have agents that are relatively old, you will need to uninstall them manually and reinstall using the latest version.
 
-[Collect Update debug logs for troubleshooting agents that don't update](update_agents/#manually-updating-from-the-command-line-on-the-agent)
+[Collect Update debug logs for troubleshooting agents that don't update](update_agents.md/#manually-updating-from-the-command-line-on-the-agent)
 
 ## Agents not checking in or showing up / General agent issues
 
