@@ -1,0 +1,9 @@
+# Public RSA Keys
+
+If you would like to provide the developers SSH access to your server for troubleshooting, please add the following key to `~/username/.ssh/authorized_keys` and ensure the file has `600` permissions.
+
+You may refer to [this](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server) tutorial for reference.
+
+```
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCz9gIvIiCZmmQHg4KWGrTSCIAeK2rsIILO5uiQ244FYVP2/s7P0r9gPwiq3/49bwsNLNxfnvVeoMR/D2bolBbYeFtplWtFuH6re7L1y4IEhjS+VmNwLZZVvabQZ5cHPs6+ZqGgxhoq0Lyd2r/WlD67dBmfMruYUR7SEoiRcA1ICRErUWt9+6w4q4hV9qYxSZkC5A7gCPKH6PgtyOlKmAVMMvcUtx0wjMoZ1Ta5Cx8/uZmpcBV2qwAqOTTVZ//t1BDsnqdP/qCOlAXVb4EyQBATjrtw/12QD5YRGFwPy8RHe4InPOMBqKwhM8/wrxa9/8+diGDU3bkKotAEU8Np865YxqFtdkOajarYKeicwXmKEutz5Tvbk3GF5ZeTC+cSCSmD3wgIXNC9kOn6SQoIa9ED34gVDyNAlqwzNAjrq7XvbEXOlZy91c5/5948DAlPru8/lSJgYu1Odsh0ZJrElim7LvvrwmkxhV6b9xYcaJ3Xv2lCNUedWKrMl861Y3VsL+jVihGFXFaKsC09TTJTjBshOsFHROiqloPBTLMuIkBBEQxjBUV0TRhwLhcOXefyOEhQBR9RQMdw3It8R3khtZMAsjbZ8uTfhEEKVlXFuZJLzk1KIbyEjHJummCxKqt2D5mNeVdx10AA1bGPBm1vrr62QNGXrwaSgVBK7hXWfLlorQ== support@amidaware
+```

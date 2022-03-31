@@ -37,6 +37,7 @@ nav:
   - Troubleshooting: troubleshooting.md
   - FAQ: faq.md
   - Management Commands: management_cmds.md
+  - Public RSA Keys: public_rsa_keys.md
   - MeshCentral Integration: mesh_integration.md
   - 3rd Party Integrations:
       - "Grafana": 3rdparty_grafana.md
