@@ -52,6 +52,7 @@ nav:
       - "Securing nginx": securing_nginx.md
       - "Unsupported Proxies": unsupported_proxies.md
       - "Installing in Synology docker": unsupported_synology_docker_install.md
+      - "Installing on other platforms": unsupported_platforms.md
   - Tips n' Tricks: tipsntricks.md
   - Contributing:
       - "Contributing to Docs": contributing.md

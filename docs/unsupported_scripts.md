@@ -408,7 +408,7 @@ sudo systemctl restart ${i}
 done
 
 
-###Renew certs can be done by sudo letsencrypt renew (this should automatically be in /etc/cron.d/certbot)
+### Renew certs can be done by sudo letsencrypt renew (this should automatically be in /etc/cron.d/certbot)
 ```
 
 ## Using your own certs with Docker
