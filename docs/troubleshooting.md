@@ -63,6 +63,8 @@ If you have agents that are relatively old, you will need to uninstall them manu
 
 [Collect Update debug logs for troubleshooting agents that don't update](update_agents.md#manually-updating-from-the-command-line-on-the-agent)
 
+[Make sure TRMM can connect to mesh](install_agent.md#stuck-at-"downloading-mesh-agent")
+
 ## Agents not checking in or showing up / General agent issues
 
 These are nats problems. Try quickfix first:
