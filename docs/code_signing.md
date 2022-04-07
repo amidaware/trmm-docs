@@ -4,7 +4,7 @@
 
 Tactical RMM agents are now [code signed](https://comodosslstore.com/resources/what-is-microsoft-authenticode-code-signing-certificate/)!
 
-To get access to code signed agents, you must be a [Github Sponsor](https://github.com/sponsors/wh1te909) with a minumum **monthly** donation of $50.00. 
+To get access to code signed agents, you must be a [Github Sponsor](https://github.com/sponsors/wh1te909) with a minimum **monthly** donation of $50.00. 
 
 One token is valid for 1 self hosted instance. If you have more than 1 instance you will need another token which you can get by increasing your sponsorship by $50 for each token. If you signup for the $50 and then downgrade, your auth token _**will be**_ invalidated and stop working.
 
