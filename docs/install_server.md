@@ -44,7 +44,7 @@ Download and run the prereqs and latest updates
 
 ```bash
 apt update
-apt install -y wget curl sudo
+apt install -y wget curl sudo ufw
 apt -y upgrade
 ```
 

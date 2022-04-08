@@ -147,6 +147,15 @@ Run this from Send Command
 
 Then use Agent Recovery | Mesh Agent and choose Recover
 
+## Stuck at "Downloading mesh agent..."?
+
+Make sure TRMM can connect to mesh, run:
+
+```bash
+/rmm/api/env/bin/python /rmm/api/tacticalrmm/manage.py check_mesh
+```
+
+If there's an error, make sure you have it [setup correctly](howitallworks.md#meshcentral)
 
 ## Install Linux Agent (beta)
 
