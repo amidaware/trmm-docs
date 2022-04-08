@@ -18,7 +18,7 @@ You'll be greeted with this panel.
 
 The buttons become available depending on what you enter for the path/URL. Antivirus allows folders and files. Online Threat Prevention allows URLS, files, folders, and *. Advanced Threat Defense allows only individual files.
 
-Bitdefender does not allow right click interactions in the entry field, so copy and paste using ctrl-c and ctrl-v in you want to do so.
+Bitdefender does not allow right click interactions in the entry field, so copy and paste using ctrl-c and ctrl-v if you want to do so.
 
 Enter
 
