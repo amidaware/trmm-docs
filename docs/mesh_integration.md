@@ -40,3 +40,6 @@ Installation instructions for using your own MeshCentral server:
 2. When asked for mesh URL specify your existing mesh server URL
 3. After installation, you will need to run thru manually uploading installers and connecting token with [this](troubleshooting.md#need-to-recover-your-mesh-token):
 4. Make sure DNS is pointing to your existing server
+
+!!!info
+    mesh usernames are **CaSe sEnSiTive**

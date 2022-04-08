@@ -369,6 +369,9 @@ Log located at `/var/log/redis`
 
 [MeshCentral](https://github.com/Ylianst/MeshCentral) is used for: "Take Control" (connecting to machine for remote access), and 2 screens of the "Remote Background" (Terminal, and File Browser).
 
+!!!info
+    mesh usernames are **CaSe sEnSiTive**
+
 ???+ note "meshcentral"
 
     - [MeshCentral docs](https://info.meshcentral.com/downloads/MeshCentral2/MeshCentral2UserGuide.pdf)
