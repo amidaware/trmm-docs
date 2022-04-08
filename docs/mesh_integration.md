@@ -43,3 +43,6 @@ Installation instructions for using your own MeshCentral server:
 
 !!!info
     mesh usernames are **CaSe sEnSiTive**
+
+## Customize Take Control Username
+
