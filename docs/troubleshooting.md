@@ -61,7 +61,7 @@ Since Tactical RMM is still in alpha and the developers makes breaking changes p
 
 If you have agents that are relatively old, you will need to uninstall them manually and reinstall using the latest version.
 
-The mesh installer is created at time of install. Make sure it's working, run on TRMM server
+The mesh installer is created at time of install. Make sure it's working, run on TRMM server. `Error 1005` usually means something doesn't match/the username has to be all lower case.
 
 ???+ note "Check TRMM connection to MeshCentral"
 
