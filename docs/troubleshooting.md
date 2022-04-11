@@ -61,7 +61,7 @@ Since Tactical RMM is still in alpha and the developers makes breaking changes p
 
 If you have agents that are relatively old, you will need to uninstall them manually and reinstall using the latest version.
 
-The mesh installer is created at time of install. Make sure it's working, run on TRMM server. `Error 1005` usually means something doesn't match/the username has to be all lower case.
+The mesh installer is created at time of install. Make sure it's working by running this on your TRMM server. 
 
 ???+ note "Check TRMM connection to MeshCentral"
 
@@ -76,6 +76,9 @@ The mesh installer is created at time of install. Make sure it's working, run on
         ```bash
         sudo docker-compose exec tactical-backend python manage.py check_mesh
         ```
+
+!!!warning
+    As of v0.12.0 `Error 1005` usually means something doesn't match and/or the mesh username has to be all lower case.
 
 [Collect Update debug logs for troubleshooting agents that don't update](update_agents.md#manually-updating-from-the-command-line-on-the-agent)
 
