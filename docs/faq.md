@@ -97,6 +97,8 @@ node node_modules/meshcentral --resetaccount <username> --pass <newpassword>
 sudo systemctl start meshcentral.service
 ```
 
+to reset Mesh password for user.
+
 ## Help! I've been hacked there are weird agents appearing in my Tactical RMM
 
 No, you haven't.
