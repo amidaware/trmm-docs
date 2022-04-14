@@ -241,8 +241,8 @@ When agents don't show up in your mesh console (after logging into https://mesh.
 
 These are always logged to `/rmm/api/tacticalrmm/tacticalrmm/private/log/django_debug.log` use [this](howitallworks.md#log-files) to check.
 
-## Can't login on server first setup
+## Can't login on server after first setup
 
-You're typing in everything right, give it 2FA code, and get login error/error 400
+You're sure you're typing in everything right, giving it 2FA code, and getting error 400 login error.
 
-TOTP is time sensitive, check your time/NTP and make sure it's right! :)
+[TOTP](https://en.wikipedia.org/wiki/Time-based_one-time_password) is time sensitive, check your time/NTP and make sure it's right! :)
