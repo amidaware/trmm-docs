@@ -240,3 +240,9 @@ When agents don't show up in your mesh console (after logging into https://mesh.
 ## Error 500
 
 These are always logged to `/rmm/api/tacticalrmm/tacticalrmm/private/log/django_debug.log` use [this](howitallworks.md#log-files) to check.
+
+## Can't login on server first setup
+
+You're typing in everything right, give it 2FA code, and get login error/error 400
+
+TOTP is time sensitive, check your time/NTP and make sure it's right! :)
