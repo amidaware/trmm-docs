@@ -175,7 +175,7 @@ If you changed the expiry time you could upload the script to any accessible ser
 
 Currently there are no deploy links for Linux Agents however you could use the following method if uploaded somewhere (website etc).
 
-An example deployment script would be:
+An example deployment script would be (note there's an install token in that script, so delete it when done if you're concerned):
 
 ```bash
 wget scripturl
