@@ -29,3 +29,13 @@ It uses an [agent](https://github.com/amidaware/rmmagent) written in Golang and 
 
 ## Linux agent versions supported
 - Any distro with systemd
+
+## Discuss
+
+Join us on [Discord](https://discord.gg/upGTkWp) for (help/tips/discussion/dev chat/social etc)
+
+Report bugs and enhancement/feature requests using [Github Issues](https://github.com/amidaware/tacticalrmm/issues)
+
+[View useful scripts](https://github.com/amidaware/community-scripts) to be used in Tactical RMM
+
+View [Awesome](https://github.com/amidaware/trmm-awesome) additions from the community
