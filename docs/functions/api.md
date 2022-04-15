@@ -8,6 +8,9 @@ When creating the key you'll need to choose a user, which will reflect what perm
 
 Navigate to Settings > Global Settings > API Keys to generate a key
 
+!!!warning
+    Pay attention to your trailing `/` they matter
+
 Headers:
 
 ```json
