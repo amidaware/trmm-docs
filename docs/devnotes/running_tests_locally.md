@@ -100,3 +100,14 @@ Here's how you run tests locally (make sure python is installed first)
         ```
 
         ![full](images/dev_win_repo_fullpython.png)
+
+## Mkdocs build
+
+```bash
+python -m venv env
+.\env\Scripts\activate
+pip install --upgrade pip
+pip install --upgrade setuptools wheel
+pip install -r ../tacticalrmm/api/tacticalrmm/requirements-dev.txt
+mkdocs serve
+```
