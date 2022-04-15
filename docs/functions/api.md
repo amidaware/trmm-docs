@@ -24,7 +24,7 @@ Example curl request:
 
 ```bash
 curl https://api.example.com/clients/ -H "X-API-KEY: Y57BXCFAA9WBCXH0XTEL6R5KAK69CNCZ"
-``
+```
 
 ## Querying the API
 
@@ -98,7 +98,6 @@ Here are some examples:
             "timeout" = 30
         }
 
-
         $commandResult = Invoke-RestMethod -Method 'Post' -Uri $url -Body ($body|ConvertTo-Json) -Headers $headers -ContentType "application/json"
 
         Write-Host $commandResult
@@ -124,7 +123,7 @@ Here are some examples:
 }
 ```
 
-## Enable Swagger (Currently broken, but good to see what can be queried)
+## Enable Swagger
 
 This will let you add a browser interface to see how you can use the api better.
 
