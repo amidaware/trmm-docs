@@ -46,7 +46,7 @@ We're using the [DNS-01 challenge method](https://letsencrypt.org/docs/challenge
 #### b. Request Let's Encrypt Wildcard cert
 
 ```bash
-sudo certbot certonly --manual -d *.example.com --agree-tos --no-bootstrap --manual-public-ip-logging-ok --preferred-challenges dns
+sudo certbot certonly --manual -d *.example.com --agree-tos --no-bootstrap --preferred-challenges dns
 ```
 
 !!!note

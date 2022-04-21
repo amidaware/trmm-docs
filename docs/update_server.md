@@ -64,7 +64,7 @@ The update script will also fix any permissions that might have gotten messed up
 To renew your Let's Encrypt wildcard cert, run the following command, replacing `example.com` with your domain and `admin@example.com` with your email:
 
 ```bash
-sudo certbot certonly --manual -d *.example.com --agree-tos --no-bootstrap --manual-public-ip-logging-ok --preferred-challenges dns -m admin@example.com --no-eff-email
+sudo certbot certonly --manual -d *.example.com --agree-tos --no-bootstrap --preferred-challenges dns -m admin@example.com --no-eff-email
 ```
 
 Same instructions as during install for [verifying the TXT record](install_server.md#deploy-the-txt-record-in-your-dns-manager) has propagated before hitting ++enter++.
