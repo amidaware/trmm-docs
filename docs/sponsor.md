@@ -11,5 +11,3 @@ If you have signed up to be a sponsor and have not been added to the Sponsors ro
 We are always looking for feedback and ways to improve Tactical RMM to better address your needs. Please feel free to open a [github issue](https://github.com/amidaware/tacticalrmm/issues) or drop us a message on [Discord](https://discord.gg/upGTkWp) with your feedback or requests.
 
 [Sponsor with Github](https://github.com/sponsors/wh1te909)
-
-[Sponsor with Ko-fi](https://ko-fi.com/tacticalrmm)
