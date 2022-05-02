@@ -157,6 +157,8 @@ Make sure TRMM can connect to mesh, run:
 
 If there's an error, make sure you have it [setup correctly](howitallworks.md#meshcentral)
 
+![if sharing](images/meshcheck_sharing.png)
+
 ## Install Linux Agent (beta)
 
 To install:<br/>
