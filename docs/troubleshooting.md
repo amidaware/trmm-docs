@@ -77,6 +77,8 @@ The mesh installer is created at time of install. Make sure it's working by runn
         sudo docker-compose exec tactical-backend python manage.py check_mesh
         ```
 
+![if sharing](images/meshcheck_sharing.png)
+
 !!!warning
     As of v0.12.0 `Error 1005` usually means something doesn't match and/or the mesh username has to be all lower case.
 

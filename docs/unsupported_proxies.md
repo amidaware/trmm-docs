@@ -393,7 +393,7 @@ In NPM, declare the hosts with the parameters:
 
 ```
 api.{domain}
-https | TRMM server IP | 433
+https | TRMM server IP | 443
 ON: Cache Assets | Block Common Exploits | Websockets Support
 
 mesh.{domain}
