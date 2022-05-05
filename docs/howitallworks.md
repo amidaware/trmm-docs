@@ -151,7 +151,7 @@ Built on the Django framework, the Tactical RMM service is the heart of the syst
         - journalctl:
             - "tail" the logs: `journalctl --identifier uwsgi --follow`
             - View the logs: `journalctl --identifier uwsgi --since "30 minutes ago" | less`
-            - Debug logs for 5xx errors will be located in `/rmm/api/tacticalrmm/tacticalrmm/private/logs`
+            - Debug logs for 5xx errors will be located in `/rmm/api/tacticalrmm/tacticalrmm/private/log`
 
     === ":material-ubuntu: standard"
     
