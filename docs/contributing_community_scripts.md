@@ -102,7 +102,7 @@ Example
 
 `shell`: can be `powershell`, `cmd`, `python`, `bash`
 
-`syntax`: See [scripting](../docs/functions/scripting.md#)
+`syntax`: See [scripting](functions/scripting.md#)
 
 `category`: Preferably use existing categories and format structure for library sorting, add new as needed
 

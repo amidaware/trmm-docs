@@ -57,3 +57,9 @@ Tactical RMM supports automatically collecting information and saving them direc
     To populate a multiple select custom field, return a string with the options separated by a comma `"This,will,be,an,array"`
 
 For more information See [Collector Tasks](automated_tasks.md#Collector Tasks)
+
+## Video Walkthru
+
+<div class="video-wrapper">
+  <iframe width="320" height="180" src="https://www.youtube.com/embed/dIywDcCucdI" frameborder="0" allowfullscreen></iframe>
+</div>
