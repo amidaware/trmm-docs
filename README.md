@@ -19,3 +19,5 @@ mkdocs serve
 ```
 
 Browse to http://your-server-ip:8005
+
+[Understanding python and running stuff](https://docs.tacticalrmm.com/devnotes/running_tests_locally/)
