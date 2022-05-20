@@ -36,11 +36,13 @@ Once they're accepted you can either:
 
 #### 4. Sync your fork
 
-<https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork>
-
 Bring changes from original repo to your fork so you're current with changes made in original Github repo
 
 ![Sync Fork](images/trmm_need_sync_local_fork.png)
+
+![fetch and merge](images/contribute_browser_fetchandmerge.png)
+
+[...or Official Github Docs](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork)
 
 #### 5. Lather, Rinse, Repeat
 
