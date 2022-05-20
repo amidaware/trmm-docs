@@ -18,9 +18,11 @@ nav:
       - "Alerting": functions/alerting.md
       - "API Access": functions/api.md
       - "Automated Tasks": functions/automated_tasks.md
+      - "Automation Policies": functions/automation_policies.md
       - "Custom Fields": functions/custom_fields.md
       - "Database Maintenance": functions/database_maintenance.md
       - "Django Admin": functions/django_admin.md
+      - "Email Alerts": functions/email_alert.md
       - "Global Keystore": functions/keystore.md
       - "Maintenance Mode": functions/maintenance_mode.md
       - "Permissions": functions/permissions.md
@@ -59,6 +61,7 @@ nav:
   - Contributing:
       - "Contributing to Docs": contributing.md
       - "Contributing to Community Scripts": contributing_community_scripts.md
+      - "Contributing using a browser": contributing_using_browser.md
       - "Contributing using VSCode": contributing_using_vscode.md
       - "Contributing using Docker": contributing_using_docker.md
       - "Contributing using a Remote Server": contributing_using_a_remote_server.md
