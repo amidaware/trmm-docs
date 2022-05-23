@@ -28,7 +28,7 @@ It uses an [agent](https://github.com/amidaware/rmmagent) written in Golang and 
 - Windows 7, 8.1, 10, 11, Server 2008R2, 2012R2, 2016, 2019, 2022
 
 ## Linux agent versions supported
-- Any distro with systemd
+- Any distro with systemd which includes but is not limited to: Debian (10, 11), Ubuntu x86_64 (18.04, 20.04, 22.04), Synology 7, centos, freepbx and more!
 
 ## Discuss
 
