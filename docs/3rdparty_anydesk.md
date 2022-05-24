@@ -5,6 +5,8 @@
 !!!info
      You can setup a full automation policy to collect the machine GUID but this example will collect from just one agent for testing purposes.
 
+### Create Custom Field
+
 From the UI go to **Settings > Global Settings > CUSTOM FIELDS > Agents**
 
 Add Custom Field</br>
@@ -13,6 +15,8 @@ Add Custom Field</br>
 **Field Type** = `Text`</br>
 
 ![Service Name](images/3rdparty_anydesk1.png)
+
+### Create URL Action
 
 While in Global Settings go to **URL ACTIONS**
 
@@ -25,6 +29,10 @@ Add a URL Action</br>
 anydesk:{{agent.AnyNetID}}
 ```
 
+### Create Anydesk Collector
+
+This populates the Custom field with the Anydesk ID
+
 Navigate to an agent with AnyDesk running (or apply using **Settings > Automation Manager**).</br>
 Go to Tasks.</br>
 Add Task</br>
@@ -36,7 +44,7 @@ Add Task</br>
 ![Service Name](images/3rdparty_anydesk2.png)
 
 Click **Next**</br>
-Check **Manual**</br>
+Check **One Time**, choose a time in the past so it'll run once on the agent.</br>
 Click **Add Task**
 
 Right click on the newly created task and click **Run Task Now**.
@@ -44,3 +52,6 @@ Right click on the newly created task and click **Run Task Now**.
 Give it a second to execute then right click the agent that you are working with and go to **Run URL Action > AnyDesk Control**
 
 It launch the session in AnyDesk.
+
+!!!note
+     You have to have Anydesk installed on the local computer
