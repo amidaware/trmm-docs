@@ -19,9 +19,10 @@ There's pluses and minuses to each install type. Be aware that:
 - You have a [backup](backup.md) and [restore](restore.md) script
 - Much easier to troubleshoot when things go wrong
 - Faster performance / easier to fine tune and customize to your needs
+- **Officially supported**
 
 ## Docker Install
-
 - Docker is more complicated in concept: has volumes and images
 - Backup/restore is via Docker methods only
 - Docker has container replication/mirroring options for redundancy/multiple servers
+- **NOT** officially supported and **NOT** recommended for production use at the moment unless you are very comfortable managing/troubleshooting docker

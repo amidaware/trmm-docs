@@ -1,5 +1,9 @@
 # Docker Setup
 
+!!!warning
+    Docker is not officially supported at the moment and not recommended for production use unless you are an advanced docker user and very comfortable managing and troubleshooting docker.<br/><br/>
+    Please read the [docker install considerations](install_considerations.md#docker-install) before continuing.
+
 ## 1. Install Docker
 
 Install docker
