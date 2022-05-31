@@ -550,3 +550,9 @@ Limit access to Tactical RMM's administration panel in nginx to specific locatio
             server_name rmm.example.com;
             return 404;
         } 
+
+### Automating SSL with Cloudflare
+
+Use Cloudflare API with certbot
+
+<https://www.bjornjohansen.com/wildcard-certificate-letsencrypt-cloudflare>
