@@ -29,7 +29,7 @@ Please read [this SO post](https://stackoverflow.com/questions/17163091/how-to-r
 
 Our test server is a Hetzner CPX11 (2 x AMD EPYC @ 2.4Ghz, 2gb ram, 40GB ssd)
 
-On your **trmm server**, install `uwsgitop`:
+On your **trmm server**, do the following:
 
 Edit `/rmm/api/tacticalrmm/app.ini` and add the following line to the bottom of the file:
 ```
