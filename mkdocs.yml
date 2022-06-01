@@ -38,6 +38,7 @@ nav:
   - Antivirus Exclusions: av.md
   - Troubleshooting: troubleshooting.md
   - FAQ: faq.md
+  - Tuning for Scale: tuning_for_scale.md
   - Management Commands: management_cmds.md
   - Public RSA Keys: public_rsa_keys.md
   - MeshCentral Integration: mesh_integration.md
