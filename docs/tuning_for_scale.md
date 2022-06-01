@@ -177,5 +177,5 @@ Feel free to increase the number of vegeta max-workers to stress it even further
 
 You should also load test endpoints that hit the database like `/agents/` or `clients/` to see how well your DB performs under load and try to get the most RPS.
 
-Please share your results with the developers on our discord server so we can help make better default configs. Include your total number of agents and clients and the hardware specs of your instance.
+Please share your results with the developers in this [ticket](https://github.com/amidaware/tacticalrmm/issues/1158) so we can help generate better default configs. Include your total number of agents and clients and the hardware specs of your instance (cpu make/model and speed and number of cores, RAM and HDD type/speed)
 
