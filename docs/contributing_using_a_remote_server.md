@@ -97,8 +97,9 @@ quasar dev
 You should now have a localhost and IP based URL to view that has a live reload feature.
 
 ## Configure GitHub with VSCode
-!!!info Make sure you are submitting Pull Requests to the develop branch.
-Follow this guide for a good introduction to GitHub: <https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github>
+!!!info 
+    Make sure you are submitting Pull Requests to the develop branch.
+    Follow this guide for a good introduction to GitHub: <https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github>
 
 Make sure u are on develop branch
 ```bash
