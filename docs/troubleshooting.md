@@ -248,3 +248,7 @@ These are always logged to `/rmm/api/tacticalrmm/tacticalrmm/private/log/django_
 You're sure you're typing in everything right, giving it 2FA code, and getting error 400 login error.
 
 [TOTP](https://en.wikipedia.org/wiki/Time-based_one-time_password) is time sensitive, check your time/NTP and make sure it's right! :)
+
+## Error 0:
+
+If you're trying to login [check dns](https://github.com/amidaware/tacticalrmm/issues/1136), [check server and client time](https://docs.tacticalrmm.com/troubleshooting/#cant-login-on-server-after-first-setup), and check your certs.
