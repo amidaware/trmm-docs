@@ -369,6 +369,14 @@ Log located at `/var/log/redis`
 
 [MeshCentral](https://github.com/Ylianst/MeshCentral) is used for: "Take Control" (connecting to machine for remote access), and 2 screens of the "Remote Background" (Terminal, and File Browser).
 
+Config file location:
+
+```bash
+/meshcentral/meshcentral-data/config.json
+```
+
+[Customize](https://ylianst.github.io/MeshCentral/meshcentral/config/) with care.
+
 !!!info
     mesh usernames are **CaSe sEnSiTive** Tactical will make sure it's all lower case to avoid sync problems
 
