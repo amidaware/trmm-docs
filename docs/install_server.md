@@ -1,5 +1,15 @@
 # Installation
 
+[General Information](#general-information)
+
+[Option 1: Easy Install on a VPS](#option-1-easy-install-on-a-vps)
+
+[Option 2: Install behind NAT Router](#option-2-install-behind-nat-router)
+
+[Option 3: Installs by Network Wizards](#option-3-installs-by-network-wizards)
+
+[Update Regularly](#update-regularly)
+
 ## General Information
 
 ### Minimum requirements
