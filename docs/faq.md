@@ -10,7 +10,14 @@ It's one way we're trying to monetize and get dev's paid. We had github sponsors
 
 ## Linux Agent
 
-While linux support is in the post-alpha/beta mode:
+Why do I see?
+
+```
+Missing code signing token
+400: Bad Request
+```
+
+You must have a [paid code signing certificate](https://docs.tacticalrmm.com/code_signing/) while linux support is in the post-alpha/beta mode:
 
 - Code signing makes linux installs easy and is a benefit offered to code signing sponsors. [So become a sponsor and enjoy the easy life](sponsor.md)
 - DIYer can read thru the code and....DIY
