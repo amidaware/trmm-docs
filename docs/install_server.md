@@ -78,6 +78,7 @@ Create a linux user named `tactical` to run the rmm and add it to the sudoers gr
         ```bash
         useradd -m -s /bin/bash tactical
         usermod -a -G sudo tactical
+        passwd tactical
         ```
 
 !!!tip
