@@ -64,22 +64,10 @@ If a new kernel is installed, then reboot the server with the `reboot` command
 
 Create a linux user named `tactical` to run the rmm and add it to the sudoers group.
 
-???+ note "Create User"
-
-    === ":material-ubuntu: Ubuntu"
-
-        ```bash
-        adduser tactical
-        usermod -a -G sudo tactical
-        ```
-
-    === ":material-debian: Debian"
-
-        ```bash
-        useradd -m -s /bin/bash tactical
-        usermod -a -G sudo tactical
-        passwd tactical
-        ```
+```bash
+useradd -m -G sudo -s /bin/bash tactical
+passwd tactical
+```
 
 !!!tip
     [Enable passwordless sudo to make your life easier in the future](https://linuxconfig.org/configure-sudo-without-password-on-ubuntu-20-04-focal-fossa-linux)
