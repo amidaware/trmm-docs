@@ -552,6 +552,18 @@ You can find 3 sets of detailed logs at `/rmm/api/tacticalrmm/tacticalrmm/privat
 
 * `error.log` nginx log for all errors on all TRMM URL's: rmm, api and mesh
 
+```bash
+tail -f /rmm/api/tacticalrmm/tacticalrmm/private/log/error.log
+```
+
 * `access.log` nginx log for access auditing on all URL's: rmm, api and mesh (_this is a large file, and should be cleaned periodically_)
 
+```bash
+tail -f /rmm/api/tacticalrmm/tacticalrmm/private/log/access.log
+```
+
 * `django_debug.log` created by django webapp
+
+```bash
+tail -f /rmm/api/tacticalrmm/tacticalrmm/private/log/django_debug.log
+```
