@@ -537,7 +537,7 @@ AUOptions (REG_DWORD):
 1: Keep my computer up to date is disabled in Automatic Updates.
 ```
 
-If you want to resume normal Windows patching, you should run [this](https://github.com/amidaware/community-scripts/blob/main/scripts/Win_Windows_Update_RevertToDefault.ps1).
+If you want to resume normal Windows patching and disable Tactical RMM updating functions, you should run [this](https://github.com/amidaware/community-scripts/blob/main/scripts/Win_Windows_Update_RevertToDefault.ps1).
 
 **Where does it get updates from?** TRMM gets the list of Windows updates using this Microsoft API: <https://docs.microsoft.com/en-us/windows/win32/api/_wua/>
 
