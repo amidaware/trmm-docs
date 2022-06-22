@@ -518,7 +518,18 @@ Files create `c:\Windows\temp\Tacticalxxxx\` folder for install (and log files)
 
 ### Windows Update Management
 
-Tactical RMM Agent sets:
+_The current Tactical RMM Windows Update process is relatively simple atm. As of right now, it is in the top 3 big items to be reworked._
+
+#### TLDR: Tactical RMM based patching recommendation
+
+* Use the `Automation Policy` > `Patch Policy` to apply it to machines. The `Other` category is poorly named by Microsoft, that is the regluar monthly ones and should be auto-approved.
+* Be patient, and things will be patched (based on the policy)
+* In any way trying to immediately approve patches to many machines OR Block specific patches is a slow and manual process.
+
+!!!note
+    If you want more control of Windows patching right now, look into a script-based implementation of [PSWindowsUpdate](http://woshub.com/pswindowsupdate-module/)
+
+**Be aware**: When you install the Tactical RMM Agent on a windows computer it sets this:
 
 ```reg
 HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU
@@ -526,9 +537,14 @@ AUOptions (REG_DWORD):
 1: Keep my computer up to date is disabled in Automatic Updates.
 ```
 
-Uses this Microsoft API to handle updates: [https://docs.microsoft.com/en-us/windows/win32/api/_wua/](https://docs.microsoft.com/en-us/windows/win32/api/_wua/)
+If you want to resume normal Windows patching, you should run [this](https://github.com/amidaware/community-scripts/blob/main/scripts/Win_Windows_Update_RevertToDefault.ps1).
 
-Server Queries Agent every 8hrs to check for update status.
+**Where does it get updates from?** TRMM gets the list of Windows updates using this Microsoft API: <https://docs.microsoft.com/en-us/windows/win32/api/_wua/>
+
+The Tactical RMM server updates an agents patch list every 8hrs based on the patch policy to check for what to update, and what's installed.
+
+!!!note
+    Currently if the agent is not online at the time the patch policy is set to install, there is no "install as soon as it comes online". 
 
 ### Log files
 
