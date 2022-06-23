@@ -324,6 +324,10 @@ backend Tactical-Mesh_ipvANY
 	server			tactical 192.168.10.123:443 id 101 ssl check inter 1000  verify none 
 ```
 
+### HAProxy Howto for pfsense
+
+<https://github.com/ninjamonkey198206/PFSense-basic-HAProxy-config>
+
 ## Apache Proxy
 howto -  proxy on apache
 ### TRMM SERVER

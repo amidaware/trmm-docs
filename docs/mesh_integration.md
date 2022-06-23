@@ -46,7 +46,7 @@ Installation instructions for using your own MeshCentral server:
 
 ## Customize Take Control Username
 
-Login to https://mesh.yourdomain.com goto Users on left > Click user > Edit `Real Name`
+If you've enabled the mesh "Ask Consent + Bar" display option that shows across the top when controlling a users machine and you'd like to change the name that users see in login to https://mesh.yourdomain.com goto Users on left > Click user > Edit `Real Name`
 
 ## MeshCentral Options
 

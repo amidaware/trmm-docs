@@ -67,3 +67,20 @@ Use the (i) at the end of the script name to:
 
 ![Script Parameter Syntax](images/tipsntricks_script_syntaxhelp.png)
 
+## 3rd party software patching
+
+Chocolatey is the default 3rd party software library that is used to populate the software tab. You can install anything that is available at chocolatey.org
+
+If you're interested in converting your software to chocolatey managed you will look at customizing this script <https://github.com/amidaware/community-scripts/blob/main/scripts_wip/Win_Choco_ConvertToChocoManaged.ps1>. If you have improvements please [contribute](https://docs.tacticalrmm.com/contributing_community_scripts/).
+
+Once you've made your script that will take existing software an convert it to Chocolatey managed (see what chocolatey manages on an agent with)
+
+```batch
+choco list --local-only
+```
+
+Next, you're going to schedule your updates. 
+
+Because of [community repo limits](https://docs.chocolatey.org/en-us/community-repository/community-packNeages-disclaimer#rate-limiting), you can [purchase chocolatey](https://chocolatey.org/pricing), [host your own chocolatey server](https://docs.chocolatey.org/en-us/features/host-packages), or use this script sparingly <https://github.com/amidaware/community-scripts/blob/main/scripts/Win_Chocolatey_Manage_Apps_Bulk.ps1> using `-Mode upgrade -Hosts x` where x is the max number of machines on an internet connection.
+
+![](images/chocolatey_upgrade_many.png)

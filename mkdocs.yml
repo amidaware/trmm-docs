@@ -13,6 +13,7 @@ nav:
   - Agents:
       - "Agent Installation": install_agent.md
       - "Updating Agents": update_agents.md
+  - Getting Started Guide: guide_gettingstarted.md
   - Functionality:
       - "How it all Works": howitallworks.md
       - "Alerting": functions/alerting.md
