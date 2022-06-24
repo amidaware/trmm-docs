@@ -10,7 +10,7 @@ Tactical RMM integrates with [MeshCentral](https://github.com/Ylianst/MeshCentra
 
 !!!note
 
-    MeshCentral Has issues with Firefox, use Chrome
+    MeshCentral Has issues with Firefox, use a Chromium-based browser
 
 At some point in the future, these functions will be directly built into the Tactical Agent, removing the need for MeshCentral.
 

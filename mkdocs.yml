@@ -109,6 +109,8 @@ extra:
       link: "https://github.com/amidaware/tacticalrmm"
 
 markdown_extensions:
+  - pymdownx.tasklist:
+      clickable_checkbox: true
   - pymdownx.keys
   - pymdownx.inlinehilite
   - admonition
