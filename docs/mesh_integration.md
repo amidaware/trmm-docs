@@ -63,3 +63,13 @@ There are [MANY](https://github.com/Ylianst/MeshCentral/blob/master/meshcentral-
 [`tlsOffload`](https://github.com/Ylianst/MeshCentral/blob/d06ca601ffde4602f97147038616ed2331f01624/meshcentral-config-schema.json#L170) (for proxy users)
 
 [`maxInvalid2fa`](https://github.com/Ylianst/MeshCentral/blob/d06ca601ffde4602f97147038616ed2331f01624/meshcentral-config-schema.json#L260)
+
+## Using Tactical RMM without any MeshCentral
+
+Install Tactical RMM normally. Then to disable the MeshCentral Server on the TRMM server by running
+
+```bash
+sudo systemctl disable --now meshcentral mongod
+```
+
+Then when installing an agent, make sure to pass the `-nomesh` flag to the [installer](install_agent/#optional-installer-args):
