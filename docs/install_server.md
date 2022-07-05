@@ -28,6 +28,9 @@ A fresh linux VM running either Ubuntu 20.04 LTS or Debian 10/11 with 2GB RAM on
     CPU: 1 core is fine for < 200 agents with limited checks/tasks.<br><br>
     Disk space and speed are dependent on your use case. Of course faster is better SSD/NVMe. Space is dependent on how long you're keeping historical data, and how many checks/script runs and their output size. 50GB should be fine for < 12months of history on < 200 agents with < 30 checks/tasks run at reasonable time intervals.
 
+!!!danger
+    The install script sets up Nginx for you as a reverse proxy and does TLS and handles routing all requests to the correct backends, so using another proxy in front of your instance is not necessary (and will break things).<br><br>If you must use another reverse proxy for whatever reason, such as HAProxy or Nginx Proxy Manager, then you will need to edit the install script and disable all the steps relating to installing and configuring nginx, and setup proxying manually.
+
 #### Network Requirements
 
 - A real (internet resolvable) domain is needed to generate a Let's Encrypt wildcard cert. _If you cannot afford to purchase a domain ($12 a year) then you can get one for free at [freenom.com](https://www.freenom.com/)_
