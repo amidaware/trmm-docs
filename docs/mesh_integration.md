@@ -72,4 +72,4 @@ Install Tactical RMM normally. Then to disable the MeshCentral Server on the TRM
 sudo systemctl disable --now meshcentral mongod
 ```
 
-Then when installing an agent, make sure to pass the `-nomesh` flag to the [installer](install_agent/#optional-installer-args):
+Then when installing an agent, make sure to pass the `-nomesh` flag to the [installer](install_agent.md#optional-installer-args):
