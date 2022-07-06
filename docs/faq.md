@@ -153,3 +153,9 @@ If you aren't a dev in a non-production environment, don't run nats with self si
 Question 1: Is okay if we as an MSP, use the RMM to monitor our customers, but charge them for this service?
 
 Answer 1: Yes please use it and charge your customers for it.
+
+## Can I password protect the uninstalling of the TRMM agent?
+
+From the client/agent side: Installing and uninstalling software is part of system administration. Administrators can install/uninstall. Users cannot. Configure your system appropriately.
+
+From the TRMM Admin panel: Use `Permissions Manager` to restrict your techs permissions

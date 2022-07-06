@@ -5,6 +5,9 @@
 
     Although these aren't officially supported configurations, we generally will help point you in the right direction. Please use the Discord [#unsupported channel](https://discord.com/channels/736478043522072608/888474319750066177) to discuss issues related to these complex installations
 
+!!!danger
+    The install script sets up Nginx for you as a reverse proxy and does TLS and handles routing all requests to the correct backends, so using another proxy in front of your instance is not necessary (and will break things).<br><br>If you must use another reverse proxy for whatever reason, such as HAProxy or Nginx Proxy Manager, then you will need to edit the install script and disable all the steps relating to installing and configuring nginx, and setup proxying manually.
+
 ## General Notes on Proxies and Tactical RMM
 
 ### Port 443

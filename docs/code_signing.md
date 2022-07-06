@@ -21,3 +21,16 @@ Everytime you generate an agent or an agent does a self-update, your self-hosted
 If the token is valid, the server sends you back a code signed agent. If not, it sends you back the un-signed agent.
 
 If you think your auth token has been compromised or stolen then please email support or contact wh1te909 on discord to get a new token / invalidate the old one.
+
+## Why should I pay for Code Signing?
+
+For two reasons: 
+
+1. To minimize AV's flagging and removing it. 
+2. Supports the project, and allows developers to continue working on and improving Tactical RMM
+
+## Tactical RMM is getting flagged as PUA or virus, will this fix it?
+
+Getting a code signed agent, helps but not guaranteed. Because AVs are not predictable, change all the time, constantly making new decisions and rules, tell you one thing do another, they all do different things etc.
+
+However, the best way to submit a whitelisting request to your AV for the TRMM agent...having a code signed exe is best.
