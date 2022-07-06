@@ -1,5 +1,53 @@
 # Tips and Tricks
 
+## Monitor your TRMM instance via the built in monitoring endpoint
+Generate a random string to be used as a token and append it to the bottom of `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py` like this:
+
+```python
+MON_TOKEN = "SuperSekretToken123456"
+```
+
+Then restart Django to activate the endpoint with `sudo systemctl restart rmm.service`
+
+Send a POST request with the following json payload to `https://api.yourdomain.com/core/status/`
+```json
+{"auth": "SuperSekretToken123456"}
+```
+
+Example using curl:
+```
+curl -X POST https://api.yourdomain.com/core/status/ -d '{"auth": "SuperSekretToken123456"}' -H 'Content-Type: application/json'
+
+```
+
+Response will look something like this:
+```json
+{
+  "version": "0.14.0",
+  "agent_count": 984,
+  "client_count": 23,
+  "site_count": 44,
+  "disk_usage_percent": 12,
+  "mem_usage_percent": 36,
+  "days_until_cert_expires": 47,
+  "cert_expired": false,
+  "services_running": {
+    "django": true,
+    "mesh": true,
+    "daphne": true,
+    "celery": true,
+    "celerybeat": true,
+    "redis": true,
+    "postgres": true,
+    "mongo": true,
+    "nats": true,
+    "nats-api": true,
+    "nginx": true
+  }
+}
+```
+
+
 ## Server Monitoring
 
 Monitor Network usage: <https://humdi.net/vnstat/>
