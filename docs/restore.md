@@ -48,13 +48,12 @@ usermod -a -G sudo tactical
 ### Setup the firewall (optional but highly recommended)
 
 !!!info
-    Skip this step if your VM is __not__ publicly exposed to the world e.g. running behind NAT. You should setup the firewall rules in your router instead (ports 22, 443 and 4222 TCP).
+    Skip this step if your VM is __not__ publicly exposed to the world e.g. running behind NAT. You should setup the firewall rules in your router instead (ports 22 and 443 TCP).
 
 ```bash
 ufw default deny incoming
 ufw default allow outgoing
 ufw allow https
-ufw allow proto tcp from any to any port 4222
 ```
 
 !!!info

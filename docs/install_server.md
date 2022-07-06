@@ -78,13 +78,12 @@ passwd tactical
 ### Setup the firewall (optional but highly recommended)
 
 !!!info
-    Skip this step if your VM is __not__ publicly exposed to the world e.g. running behind NAT. You should setup the firewall rules in your router instead (ports 22, 443 and 4222 TCP).
+    Skip this step if your VM is __not__ publicly exposed to the world e.g. running behind NAT. You should setup the firewall rules in your router instead (ports 22 and 443 TCP).
 
 ```bash
 ufw default deny incoming
 ufw default allow outgoing
 ufw allow https
-ufw allow proto tcp from any to any port 4222
 ```
 
 !!!info
@@ -198,7 +197,7 @@ If you have agents outside your local network: Make sure the public DNS servers 
 Login to your router/NAT device.
 
 1. Set your TRMM server as a static IP (Using a DHCP reservation is usually safer)
-2. Create 2 port forwarding rules. `TCP Port 443` and `TCP Port 4222` to your TRMM servers private IP address.
+2. Port forward `TCP 443` to your TRMM servers private IP address.
 
 !!!note
     <https://portforward.com/> can help with Port Forwarding setup

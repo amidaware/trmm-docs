@@ -195,19 +195,12 @@ If you're getting `Invalid group id` at the end of the install you're probably d
 
 ## Testing Network Connectivity between agent and server
 
-Use powershell, make sure you can connect to 443 and 4222 from agent to server:
-
-```powershell
-Test-NetConnection -ComputerName api.example.com -Port 4222
-```
+Use powershell, make sure you can connect to 443 from agent to server:
 
 ```powershell
 Test-NetConnection -ComputerName api.example.com -Port 443
 ```
 
-```powershell
-Test-NetConnection -ComputerName rmm.example.com -Port 443
-```
 
 Check your SSL certs to make sure they are what they should be (no proxy stuff): <https://www.digicert.com/help/>
 

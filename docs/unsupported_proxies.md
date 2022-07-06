@@ -18,10 +18,6 @@ All 3 URL's will need to be configured: `rmm`, `api`, `mesh`
 
 For `mesh` see the Section 10. TLS Offloading of the [MeshCentral 2 User Guide](https://info.meshcentral.com/downloads/MeshCentral2/MeshCentral2UserGuide.pdf)
 
-### Port 4222
-
-Is NATS (<https://nats.io>). You'll need a TCP forwarder as NATS only talks TCP not HTTP.
-
 ## Traefikv2
 
 Offsite Resource: <https://gitlab.com/NiceGuyIT/tactical-goodies/-/tree/main/traefik>

@@ -54,10 +54,6 @@ This lists the system services used by the server.
 
 Nginx is the web server for the `rmm`, `api`, and `mesh` domains. All sites redirect port 80 (HTTP) to port 443 (HTTPS).
 
-!!! warning
-
-    nginx does not serve the NATS service on port 4222.
-
 ???+ abstract "nginx configuration (a.k.a. sites available)"
 
     - [nginx configuration docs](https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/)
@@ -226,7 +222,7 @@ Built on the Django framework, the Tactical RMM service is the heart of the syst
     
         - Service: `nats.service`
         - Address: `0.0.0.0`
-        - Port: `4222`
+        - Port: `4222 (standard), 9235 (websocket)`
         - Exec: `/usr/local/bin/nats-server --config /rmm/api/tacticalrmm/nats-rmm.conf`
         - Config: `/rmm/api/tacticalrmm/nats-rmm.conf`
             - TLS: `/etc/letsencrypt/live/example.com/fullchain.pem`
@@ -240,8 +236,6 @@ Built on the Django framework, the Tactical RMM service is the heart of the syst
         - Shell access: `docker exec -it trmm-nats /bin/bash`
 
 #### NATS API service
-
-The NATS API service is a very light golang wrapper to replace traditional http requests sent to django. The agent sends the data to nats-api which is always listening for agent requests (on Port 4222). It then saves the data to postgres directly.
 
 ???+ note "NATS API config"
 
@@ -480,7 +474,7 @@ When scripts/checks execute, they are:
 
 If you have strict firewall rules these are the only outbound rules from the agent needed for all functionality:
 
-1. All agents have to be able to connect outbound to TRMM server on the 3 domain names on ports: 443 (agent and mesh) and 4222 (nats for checks/tasks/data)
+1. All agents have to be able to connect outbound to TRMM server on the 3 domain names on port 443
 
 2. The agent uses `https://icanhazip.tacticalrmm.io/` to get public IP info. If this site is down for whatever reason, the agent will fallback to `https://icanhazip.com` and then `https://ifconfig.co/ip`
 
