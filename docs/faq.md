@@ -74,10 +74,20 @@ SSH into your server and run:
 
 ## How do I reset password or 2 factor token?
 
+### From TRMM Admin GUI
+
 From the web UI, click **Settings > User Administration** and then right-click on a user:
 ![reset2fa](images/reset2fa.png)
 
-???+ note "Reset Password or 2FA token"
+### From SSH
+
+Login with SSH using your install ID (eg `tactical`)
+
+and [Reset Password](management_cmds.md/#reset-a-users-password)
+
+**OR**
+
+???+ note "Reset 2FA token for a TRMM user"
 
     === ":material-ubuntu: standard"
 
