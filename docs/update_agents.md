@@ -31,12 +31,12 @@ For example, agents older than version 1.3.0 must first be updated to 1.3.0 befo
 
 You should never need to do this but might be needed to troubleshoot agents that are not updating automatically.
 
-Download the `winagent-vX.X.X.exe` executable from the [github releases page](https://github.com/amidaware/rmmagent/releases) and place it somewhere on the filesystem.
+Download the `tacticalagent-vX.X.X.exe` executable from the [github releases page](https://github.com/amidaware/rmmagent/releases) and place it somewhere on the filesystem.
 
 Open CMD as admin and call the exe like so:
 
 ```cmd
-C:\Windows\Temp>winagent-vX.X.X.exe /VERYSILENT /LOG=agentupdate.txt
+C:\Windows\Temp>tacticalagent-vX.X.X.exe /VERYSILENT /LOG=agentupdate.txt
 ```
 
 This command will return immediately since it spawns a background process to run the update.

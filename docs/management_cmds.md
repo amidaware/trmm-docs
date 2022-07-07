@@ -58,6 +58,12 @@ python manage.py reset_2fa <username>
 python manage.py find_software "adobe"
 ```
 
+## Find all agents that have X windows service and show the service status
+
+```bash
+python manage.py find_services "quickbooks"
+```
+
 ## Set specific Windows update to not install
 
 ```bash

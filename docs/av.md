@@ -92,10 +92,6 @@ Create the following 3 hosts and add each to your FQDN host group.
 
 Go To Hosts and services >> Services and create the following services
 
-- Name: Tactical-Service-4222
-    - Protocol: TCP
-    - Source port: 1:65535
-    - Destination port: 4222
 - Name: Tactical-Service-443
     - Protocol: TCP
     - Source port: 1:65535
