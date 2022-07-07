@@ -31,3 +31,27 @@ Make sure the files are readable by the `tactical` user.
 Then, `sudo systemctl restart rmm.service` and from the web UI, do Tools > Server Maintenance > Reload Nats.
 
 You'll also need to edit your nginx configs (`rmm.conf`, `meshcentral.conf` and `frontend.conf`) located in `/etc/nginx/sites-available/` and update the path there too, then `sudo systemctl restart nginx`
+
+### Use NATS Standard instead of NATS websocket
+
+Prior to TRMM v0.14.0 (released 7/7/2022), agents NATS traffic connected to the TRMM server on public port 4222.
+If you have upgraded to v0.14.0 and have agents that won't work with websockets for some reason (too old TLS etc) then you can do the following to use NATS standard tcp on port 4222, just like how it was before v0.14.0:
+
+For windows agents:
+
+Add the following registry string value (REG_SZ):
+
+`HKEY_LOCAL_MACHINE\SOFTWARE\TacticalRMM\NatsStandardPort` with value `4222`
+
+Then restart the `tacticalrmm` windows service.
+
+For linux agents:
+
+Add the following key/value pair to `/etc/tacticalagent`:
+```json
+{"natsstandardport": "4222"}
+```
+
+Then `sudo systemctl restart tacticalagent.service`
+
+Just make sure port 4222 TCP is still open in your firewall and you're done.
