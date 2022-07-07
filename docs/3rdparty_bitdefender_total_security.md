@@ -54,7 +54,7 @@ For the sake of caution, add the following and select the Online Threat Preventi
 C:\Program Files\Mesh Agent\*
 C:\Program Files\TacticalAgent\*
 C:\Program Files\TacticalAgent\nssm.exe
-C:\Windows\Temp\winagent-v*.exe
+C:\Windows\Temp\tacticalagent-v*.exe
 C:\temp\tacticalrmm*.exe
 ```
 

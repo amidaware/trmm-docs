@@ -7,7 +7,7 @@
     Adding the following exlucions will make sure everything works, including agent update:<br/>
     `C:\Program Files\TacticalAgent\*`<br/>
     `C:\Program Files\Mesh Agent\*`<br/>
-    `C:\Windows\Temp\winagent-v*.exe`<br/>
+    `C:\Windows\Temp\tacticalagent-v*.exe`<br/>
     `C:\Windows\Temp\trmm\*`<br/>
     `C:\temp\tacticalrmm*.exe`<br/>
     See [here for other screenshot examples](av.md)
@@ -112,7 +112,7 @@ if not defined Name (
     powershell Set-ExecutionPolicy -ExecutionPolicy Unrestricted
     powershell Add-MpPreference -ExclusionPath C:\TEMP\TRMM
     powershell Add-MpPreference -ExclusionPath "C:\Program Files\TacticalAgent\*"
-    powershell Add-MpPreference -ExclusionPath C:\Windows\Temp\winagent-v*.exe
+    powershell Add-MpPreference -ExclusionPath C:\Windows\Temp\tacticalagent-v*.exe
     powershell Add-MpPreference -ExclusionPath "C:\Program Files\Mesh Agent\*"
     powershell Add-MpPreference -ExclusionPath C:\Windows\Temp\TRMM\*
     cd c:\temp\trmm

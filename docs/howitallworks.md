@@ -496,7 +496,7 @@ Signed agents will require: `https://agents.tacticalrmm.com` for downloading/upd
 
 ### Agent Update Process
 
-Downloads latest `winagent-vx.x.x-x86/64.exe` to `%programfiles%`
+Downloads latest `tacticalagent-vx.x.x.exe` to `%programfiles%`
 
 Executes the file (INNO setup exe)
 
