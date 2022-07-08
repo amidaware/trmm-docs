@@ -325,7 +325,7 @@ backend Tactical-Mesh_ipvANY
 
 ### HAProxy Howto for pfsense
 
-<https://github.com/ninjamonkey198206/PFSense-basic-HAProxy-config>
+<https://github.com/ninjamonkey198206/T-RMM-PFSense-HAProxy-config>
 
 ## Apache Proxy
 howto -  proxy on apache
