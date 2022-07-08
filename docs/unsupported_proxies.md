@@ -327,6 +327,10 @@ backend Tactical-Mesh_ipvANY
 
 <https://github.com/ninjamonkey198206/T-RMM-PFSense-HAProxy-config>
 
+### HAProxy Howto for Baremetal
+
+<https://github.com/ninjamonkey198206/T-RMM-Baremetal-HAProxy>
+
 ## Apache Proxy
 howto -  proxy on apache
 ### TRMM SERVER
