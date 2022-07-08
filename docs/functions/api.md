@@ -136,3 +136,27 @@ SWAGGER_ENABLED = True
 Restart django: `sudo systemctl restart rmm.service`
 
 Then visit `https://api.example.com/api/schema/swagger-ui/` to see it in action.
+
+## API Examples
+
+Listing all software on all agents
+
+```python
+import requests
+
+API = "https://api.example.com"
+HEADERS = {
+    "Content-Type": "application/json",
+    "X-API-KEY": "9SI43IFUMPEVRWOZR4NC8PGP4ZLA9PYX",
+}
+
+
+def get_software():
+    agents = requests.get(f"{API}/agents/?detail=false", headers=HEADERS)  # get a list of all agents
+    for agent in agents.json():  # loop thru all agents and print list of installed software
+        r = requests.get(f"{API}/software/{agent['agent_id']}/", headers=HEADERS)
+        print(r.json())
+
+if __name__ == "__main__":
+    get_software()
+```
