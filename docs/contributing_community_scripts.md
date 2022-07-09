@@ -129,33 +129,46 @@ c:\ProgramData\TacticalRMM\
 
 - Command Parameters are good. Optional command parameters for extra functions are better.
 
+```powershell
+param(
+    [string] $Username,
+    [switch] $log,
+    [int] $numberofdays,
+    [array] $packages #separated by commas
+)
+
+```
+
 - Add standardized Comment headers to scripts (include the first 2, more if appropriate):
 
 ```powershell
 <#
-.Synopsis
+.SYNOPSIS
    Short description
    eg Check IP address
+
 .DESCRIPTION
    Long description
    eg Checks IP address on all local network adapters, and returns results
-.EXAMPLE
-   Example of how to use this cmdlet
-.EXAMPLE
-   Another example of how to use this cmdlet
-.INPUTS
+
+.PARAMETER xx
    Inputs to this cmdlet (if any)
+
+.PARAMETER yy
+   Inputs to this cmdlet (if any)
+
 .OUTPUTS
    Output from this cmdlet (if any)
+
+.EXAMPLE
+   Example of how to use this cmdlet
+
+.EXAMPLE
+   Another example of how to use this cmdlet
+
 .NOTES
    General notes
    eg v1.0
-.COMPONENT
-   The component this cmdlet belongs to
-.ROLE
-   The role this cmdlet belongs to
-.FUNCTIONALITY
-   The functionality that best describes this cmdlet
 #>
 ```
 
