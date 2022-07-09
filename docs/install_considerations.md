@@ -30,4 +30,6 @@ There's pluses and minuses to each install type. Be aware that:
 
 Azure ranks their VM's in Series <https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/>
 
-Tactical RMM will run poorly in CPU limited VMs. So **DO NOT** use Series A or Series B VMs. You will need at least a series F or better. Also make sure there is no IO throttling / IOPS limits for the VM
+Tactical RMM will run poorly in CPU limited VMs. So **DO NOT** use Series A or Series B VMs. You will need at least a series F or better. Also make sure there is no IO throttling / IOPS limits for the VM.
+
+The same applies for other big cloud providers that throttle low end VMS.
