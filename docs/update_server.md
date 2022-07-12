@@ -64,7 +64,7 @@ The update script will also fix any permissions that might have gotten messed up
     
     The developers will test MeshCentral and make sure integration does not break before bumping the mesh version.
 
-## Keeping your Let's Encrypt certificate up to date
+## Keeping your Let's Encrypt SSL certificate up to date
 
 !!!info
     Currently, the update script does not automatically renew your Let's Encrypt wildcard certificate, which expires every 3 months, since this is non-trivial to automate using the DNS TXT record method.

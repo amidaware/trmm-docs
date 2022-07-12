@@ -234,4 +234,6 @@ We've said it before, we'll say it again.
 
     - Every 2-3 months.
 
-        - Do it when you update your SSL certs.
+        - Do it when you update your SSL certs. 
+
+Especially don't get behind 2 major rev's. Lots of agent connectivity changes occurring. If you don't keep up, you'll be needing to do manual updates by adjusting the `updates.sh` and specifying older branches...then doing update, wait for all agents to get updated...then do the next major branch, then wait for agent updates...until you're current.
