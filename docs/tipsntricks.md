@@ -47,7 +47,6 @@ Response will look something like this:
 }
 ```
 
-
 ## Server Monitoring
 
 Monitor Network usage: <https://humdi.net/vnstat/>
@@ -74,6 +73,8 @@ Tactical RMM is actually 2 products: An RMM service with agent, and a secondary 
 Want to download multiple files?
 
 > ZIP zip's the currently selected file(s) and saves it in the current directory. Then you can download the ZIP. It doesn't download and ZIP on the fly.
+
+If you want to enable automatic Clipboard transfers just click the option under [Settings button](https://ylianst.github.io/MeshCentral/meshcentral/devicetabs/#during-a-desktop-session)
 
 ### Adjust Settings
 
