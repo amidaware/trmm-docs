@@ -16,20 +16,20 @@
 
 #### Hardware / OS
 
-A fresh linux VM running either Ubuntu 20.04 LTS or Debian 10/11 with 2GB RAM on x64 architecture
+A fresh linux VM running either Ubuntu 20.04 LTS or Debian 10/11 with 2GB RAM on x64 architecture.
 
 !!!warning
     The provided install script assumes a fresh server with no software installed on it. Attempting to run it on an existing server with other services **will** break things and the install will fail.
 
+!!!danger
+    The install script sets up a production ready reverse proxy using Nginx which does TLS termination and handles routing all requests to the correct backends, so using another proxy in front of your instance is not necessary (and will probably break things).<br><br>If you want to use another reverse proxy for whatever reason, such as HAProxy, Traefik or Nginx Proxy Manager, then you will need to edit the install script and disable all the steps relating to installing and configuring nginx and configure proxying yourself. You may refer to the nginx configs in the install script for hints on how to proxy various services to the correct backends. Note that choosing to not use the built in proxy will make your instance officially "unsupported", because the developers do not have the bandwidth to support an infinite amount of setups and need to focus on the actual software. This is not meant to scare you away from doing your own proxy...just something to be aware of. Read more in the [unsupported](unsupported_guidelines.md) guidelines.
+
 !!!note
-    The install script has been tested on the following public cloud providers: DigitalOcean, Linode, Vultr, BuyVM (highly recommended), Hetzner, AWS, Google Cloud and Azure, as well as behind NAT on Hyper-V, Proxmox and ESXi.
+    The install script has been tested on the following public cloud providers: DigitalOcean, Linode, Vultr, BuyVM (highly recommended), Hetzner, AWS, Google Cloud and Azure, as well as behind NAT on Hyper-V, ESXi and Proxmox (CT's on Proxmox not officially supported, only VMs).
 
 !!!note
     CPU: 1 core is fine for < 200 agents with limited checks/tasks.<br><br>
     Disk space and speed are dependent on your use case. Of course faster is better SSD/NVMe. Space is dependent on how long you're keeping historical data, and how many checks/script runs and their output size. 50GB should be fine for < 12months of history on < 200 agents with < 30 checks/tasks run at reasonable time intervals.
-
-!!!danger
-    The install script sets up Nginx for you as a reverse proxy and does TLS and handles routing all requests to the correct backends, so using another proxy in front of your instance is not necessary (and will break things).<br><br>If you must use another reverse proxy for whatever reason, such as HAProxy or Nginx Proxy Manager, then you will need to edit the install script and disable all the steps relating to installing and configuring nginx, and setup proxying manually.
 
 #### Network Requirements
 
@@ -40,7 +40,7 @@ A fresh linux VM running either Ubuntu 20.04 LTS or Debian 10/11 with 2GB RAM on
 #### Update Recommendations
 
 !!!note
-    We highly recommend staying current with updates (at least every 3 months when you update your SSL certs is a good minimum) while Tactical RMM is still working towards its 1.0 release.<br/><br/>
+    We highly recommend staying current with updates (do not lag behind more than 1 major version) while Tactical RMM is still working towards its 1.0 release.<br/><br/>
     Until we reach production release, there may be architectural changes that may be made to Tactical RMM and only a regular patching schedule is supported by developers.
 
 ## Option 1: Easy Install on a VPS

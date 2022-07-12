@@ -4,19 +4,7 @@
 
 Docs are built with [MKDocs for Material](https://squidfunk.github.io/mkdocs-material/)
 
-To setup a local environment to add/edit to this documentation site:
-
-```bash
-mkdir ~/rmmdocs && cd ~/rmmdocs
-git clone https://github.com/amidaware/tacticalrmm.git .
-python3 -m venv env
-source env/bin/activate
-pip install --upgrade pip
-pip install --upgrade setuptools wheel
-pip install -r api/tacticalrmm/requirements-dev.txt
-cd docs
-mkdocs serve
-```
+Please refer to the docs [README](https://github.com/amidaware/trmm-docs) for instructions on how to build and serve the docs locally.
 
 Open your browser and navigate to `http://yourserverip:8005`
 
@@ -26,4 +14,4 @@ Edit `docs/mkdocs.yml` to edit structure and add new files.
 
 Full mkdocs documentation [here](https://squidfunk.github.io/mkdocs-material/getting-started/)
 
-Once finished, [create a pull request](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github) to the `develop` branch for review.
+Once finished, [create a pull request](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github) to the `main` branch for review.

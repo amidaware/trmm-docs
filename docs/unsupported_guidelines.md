@@ -21,11 +21,9 @@ Please be aware that those providing help and assistance in the Discord [#suppor
 
 Should you employ any one or several of these unsupported technologies:
 
-* Proxies
-* Firewalls
+* Proxies (TRMM ships with a production ready Nginx reverse proxy)
 * GeoIP filters
 * fail2ban filters
-* alternate methods of SSL cert management
 * IDSs
 * IPSs
 * SDNs
