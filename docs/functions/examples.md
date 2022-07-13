@@ -37,3 +37,22 @@ It gives an errors because the product model doesn't match the serial number. If
 ```
 https://support.hp.com/us-en/product/hp-pro-3500-microtower-pc/5270849/model/5270850?serialnumber={{agent.SerialNumber}}
 ```
+
+## Setup LAPS - Local Administrator Password Solution
+
+Create a custom field for storing the password
+
+![](images/laps_customfield.png)
+
+Create Task (can use Automation Policy)
+
+![](images/laps_task1.png)
+
+![](images/laps_task2.png)
+
+Run however often you'd like admin password reset
+
+![](images/laps_task3.png)
+
+![](images/laps_getpass.png)
+
