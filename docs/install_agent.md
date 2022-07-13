@@ -86,61 +86,7 @@ Specify the full path to the directory containing `MeshAgent.exe` if using custo
 
 Do not install meshcentral agent during tactical agent install. Note: take control, remote terminal and file browser will not work.
 
-Full commandline list (`--help`)
-
-```txt
-Usage of rmmagent.exe:
-  -agent-type string
-        server or workstation (default "server")
-  -api string
-        API URL
-  -auth string
-        Token
-  -cert string
-        Path to domain CA .pem
-  -client-id int
-        Client ID
-  -desc string
-        Agent's Description
-  -inno string
-        Inno setup file
-  -local-mesh string
-        Path to mesh executable
-  -log string
-        The log level (default "INFO")
-  -logto string
-        Where to log to (default "file")
-  -m string
-        The mode to run
-  -meshdir string
-        Path to custom meshcentral dir
-  -meshnodeid string
-        Mesh Node ID
-  -nomesh
-        Do not install mesh agent
-  -p int
-        Task PK
-  -ping
-        Enable ping
-  -power
-        Disable sleep/hibernate
-  -proxy string
-        Use a http proxy
-  -rdp
-        Enable RDP
-  -silent
-        Do not popup any message boxes during installation
-  -site-id int
-        Site ID
-  -timeout duration
-        Installer timeout (seconds) (default 900ns)
-  -updateurl string
-        Download link to updater
-  -updatever string
-        Update version
-  -version
-        Prints version
-```
+You can get full commandline options from (`--help`)
 
 ## Scripting Agent Installation
 
