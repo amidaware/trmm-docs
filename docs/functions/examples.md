@@ -40,6 +40,10 @@ https://support.hp.com/us-en/product/hp-pro-3500-microtower-pc/5270849/model/527
 
 ## Setup LAPS - Local Administrator Password Solution
 
+Optional: Create a Global Key to have a custom admin username
+
+![](images/laps_globalusername.png)
+
 Create a custom field for storing the password
 
 ![](images/laps_customfield.png)
