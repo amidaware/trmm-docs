@@ -58,5 +58,6 @@ Run however often you'd like admin password reset
 
 ![](images/laps_task3.png)
 
-![](images/laps_getpass.png)
+When you need the LAPS password, get from Agent Custom Fields
 
+![](images/laps_getpass.png)
