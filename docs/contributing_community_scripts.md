@@ -18,7 +18,7 @@ Platform for now are:
 ```text
 Win_
 nix_bash_
-nix_zsh_
+nix_zsh_macos_
 nix_sh_
 nix_sh_truenas_
 nix_bash_freepbx_
