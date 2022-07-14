@@ -16,11 +16,14 @@ Under `/scripts` the file name should generally follow this format:
 Platform for now are:
 
 ```text
-Win
-OSX
-Linux
-iOS
-Android
+Win_
+nix_bash_
+nix_zsh_
+nix_sh_
+nix_sh_truenas_
+nix_bash_freepbx_
+ios_
+android_
 ```
 
 Good filename examples include:
