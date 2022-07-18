@@ -30,7 +30,7 @@ version: "3.7"
 services:
   traefik:
     container_name: traefik24
-    image: traefik:v2.4 
+    image: traefik:v2.4
     restart: unless-stopped
     command:
       - --entryPoints.http.address=:80
@@ -58,7 +58,7 @@ services:
         mode: host
     volumes:
         ##The rules that we will load##
-      - $USERDIR/docker/traefik2/rules:/rules 
+      - $USERDIR/docker/traefik2/rules:/rules
         ##
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - $USERDIR/docker/traefik2/acme/acme.json:/acme.json
@@ -137,7 +137,7 @@ echo "CERT_PRIV_KEY=$(sudo base64 -w 0 $USERDIR/docker/rmm/certs/private/**yourd
 Next we can create 3 rules to tell traefik to correctly route the https and agent
 For that we will create 2 rules into traefik directory as per it configuration. folder/traefik/rules
 
-create 
+create
 ```bash
 nano app-mesh.toml
 ```
@@ -171,7 +171,7 @@ and inside it we add
       rule = """Host(`mesh.**yourdomain.com**`) &&
         PathPrefix( `/agent.ashx`, `/meshrelay.ashx`, ) &&
         Headers(`X-Forwarded-Proto`, `wss`) """
-    ##Don't add middle where, the agent wont work.    
+    ##Don't add middle where, the agent wont work.
 [http.services]
   [http.services.mesh-svc1]
     [http.services.mesh-svc.loadBalancer]
@@ -278,12 +278,12 @@ frontend HTTPS-merged
 	use_backend Tactical-Mesh_ipvANY  if  MESH aclcrt_MESH
 
 frontend http-to-https
-	bind			0.0.0.0:80   
+	bind			0.0.0.0:80
 	mode			http
 	log			global
 	option			http-keep-alive
 	timeout client		30000
-	http-request redirect scheme https 
+	http-request redirect scheme https
 
 
 backend Tactical_ipvANY
@@ -293,8 +293,8 @@ backend Tactical_ipvANY
 	timeout connect		30000
 	timeout server		30000
 	retries			3
-	option			httpchk GET / 
-	server			tactical 192.168.10.123:443 id 101 ssl check inter 1000  verify none 
+	option			httpchk GET /
+	server			tactical 192.168.10.123:443 id 101 ssl check inter 1000  verify none
 
 
 backend Tactical-Mesh-WebSocket_ipvANY
@@ -305,9 +305,9 @@ backend Tactical-Mesh-WebSocket_ipvANY
 	timeout server		3000
 	retries			3
 	timeout tunnel		3600000
-	http-request add-header X-Forwarded-Host %[req.hdr(Host)] 
-	http-request add-header X-Forwarded-Proto https 
-	server			tactical 192.168.10.123:443 id 101 ssl  verify none 
+	http-request add-header X-Forwarded-Host %[req.hdr(Host)]
+	http-request add-header X-Forwarded-Proto https
+	server			tactical 192.168.10.123:443 id 101 ssl  verify none
 
 backend Tactical-Mesh_ipvANY
 	mode			http
@@ -316,11 +316,11 @@ backend Tactical-Mesh_ipvANY
 	timeout connect		15000
 	timeout server		15000
 	retries			3
-	option			httpchk GET / 
+	option			httpchk GET /
 	timeout tunnel		15000
-	http-request add-header X-Forwarded-Host %[req.hdr(Host)] 
-	http-request add-header X-Forwarded-Proto https 
-	server			tactical 192.168.10.123:443 id 101 ssl check inter 1000  verify none 
+	http-request add-header X-Forwarded-Host %[req.hdr(Host)]
+	http-request add-header X-Forwarded-Proto https
+	server			tactical 192.168.10.123:443 id 101 ssl check inter 1000  verify none
 ```
 
 ### HAProxy Howto for pfsense
@@ -331,12 +331,120 @@ backend Tactical-Mesh_ipvANY
 
 <https://github.com/ninjamonkey198206/T-RMM-Baremetal-HAProxy>
 
+## HAProxy in TCP mode
+
+In this scenario, you install TRMM as per documentation.
+Meaning your certificates are generated and managed on your TRMM server, just use the `install.sh` and follow docs and on-screen instructions.
+
+HAProxy here will just pass the traffic to the NGINX on TRMM server. No certificate management.
+Only use this method if you have more than 1 server that need to use port 443 on the same public IP.
+
+### Assumptions
+
+These are some assumptions made to make this guide, short, easy to follow and to the point.
+Of course you can adapt it to your environment and/or current configuration.
+
+- You have a pfSense firewall
+- You have HAProxy installed
+- You don't have any `http` frontends on your HAProxy
+- You have firewall rule to allow traffic from your WAN to HAProxy 443 port.
+- Your subdomains are: `api`, `mesh`, `rmm`
+- You can resolve `(rmm|api|mesh).example.com` to your local TRMM server when in your local network
+- You can resolve `(rmm|api|mesh).example.com` to your public IP when you are outside of your local network
+
+#### Values you will have to replace with your own
+
+- 10.10.10.100 - Change with your TRMM local IP
+- example.com - Change with your domain
+
+### Backend
+
+Navigate to `Services` -> `HAProxy` -> `Backend`
+
+- Click ⤵️Add
+
+#### Backend server pool
+
+- Name: `trmm-backend`
+- On Server list, Click ⤵️
+- Name: `trmm-server`
+- Forwardto: `Address+Port`
+- Address: `10.10.10.100` (Reminder: change this)
+- Port: `443`
+
+![haproxy-tcp-serverlist](images/haproxy-tcp-serverlist.png)
+
+#### Timeout / retry settings
+
+- Connection timeout: `300000` (Note: it has more 0s than the default)
+- Server timeout: `300000` (Note: it has more 0s than the default)
+- Retries: `3`
+
+![haproxy-tcp-back-timeout](images/haproxy-tcp-back-timeout.png)
+
+#### Heath checking
+
+- Health check method: `SSL`
+
+![haproxy-tcp-healthcheck](images/haproxy-tcp-healthcheck.png)
+
+#### Advanced settings
+
+Please read the Warning there, and the note at the bottom.
+This optional and it's use is to show the real public IP of the agent.
+
+- Check `Use Client-IP to connect to backend servers.
+
+![haproxy-tcp-advanced](images/haproxy-tcp-advanced.png)
+
+It works well for me, there are cases that it might not work on all environments.
+
+### Frontend
+
+Navigate to `Services` -> `HAProxy` -> `Frontend`
+
+- Click ⤵️Add
+
+#### Edit HAProxy Frontend
+
+- Name: `FrontendTCP`
+- Status: `Active`
+- On External address, click ⤵️
+- Listen address: `WAN address (IPv4)`
+- Port: `443`
+- Type: `ssl/https (TCP mode)`
+
+![haproxy-tcp-front](images/haproxy-tcp-front.png)
+
+#### Default backend, access control lists and actions
+
+- On Access Control lists, Click ⤵️
+- Name: `tactical`
+- Expression `Server Name Indication TLS extension regex:`
+- value: `(rmm|api|mesh).example.com`
+- On Actions, Click ⤵️
+- Action: `Use Backend`
+- Condition acl names: `tactical`
+- backend: `trmm-backend`
+
+![haproxy-tcp-acls](images/haproxy-tcp-acls.png)
+
+#### Advanced settings
+
+- Client timeout: `300000` (Note: it has more 0s than the default)
+- Use "httpclose" option: `http-server-close`
+
+![happroxy-tcp-adv](images/haproxy-tcp-adv.png)
+
+Click 💾Save
+Click ✔️Apply Changes
+
 ## Apache Proxy
 howto -  proxy on apache
 ### TRMM SERVER
 edit file /etc/nginx/sites-available/rmm.conf
 add the lines from 'real_ip' module inside server tag:
-  
+
 
     set_real_ip_from    192.168.0.200; #IP Address of your apache proxy
     real_ip_header      X-Forwarded-For;
@@ -346,7 +454,7 @@ restart nginx
     systemctl restart nginx.service
 
 ### APACHE
-enable ssl proxy, rewriteEngine. 
+enable ssl proxy, rewriteEngine.
 set proxy to preserve host.
 set upgrade rule to websocket.
 set proxypass rules redirecting to rmm location
@@ -356,25 +464,25 @@ example:
 
     <VirtualHost *:443>
     	ServerName rmm.blablabla.com.br:443
-    	ServerAlias mesh.blablabla.com.br:443 api.blablabla.com.br:443 
+    	ServerAlias mesh.blablabla.com.br:443 api.blablabla.com.br:443
     	SSLEngine on
-    	
+
         SSLCertificateFile "C:/Apache24/conf/ssl-rmm.blablabla.com.br/_.blablabla.com.br-chain.pem"
     	SSLCertificateKeyFile "C:/Apache24/conf/ssl-rmm.blablabla.com.br/_.blablabla.com.br-key.pem"
-    
+
      	SSLProxyEngine on
-    	
+
     	RewriteEngine On
     	ProxyPreserveHost On
-    	
+
        	# When Upgrade:websocket header is present, redirect to ws
        	# Using NC flag (case-insensitive) as some browsers will pass Websocket
        	RewriteCond %{HTTP:Upgrade} =websocket [NC]
         RewriteRule ^/(.*)    wss://192.168.0.212/$1 [P,L]
-    	
+
     	ProxyPass "/"  "https://192.168.0..212/" retry=3
     	ProxyPassReverse "/"  "https://192.168.0.212/" retry=3
-     	
+
     	BrowserMatch "MSIE [2-5]" \
     			 nokeepalive ssl-unclean-shutdown \
     			 downgrade-1.0 force-response-1.0
@@ -390,7 +498,7 @@ or change certs location on nginx conf to whatever you want.
 
 ## nginx Proxy
 
-Having mesh connection issues? 
+Having mesh connection issues?
 
 See <https://info.meshcentral.com/downloads/MeshCentral2/MeshCentral2UserGuide.pdf> page 30.
 
