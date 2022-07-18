@@ -103,7 +103,7 @@ Example
 
 `supported_platforms`: ["windows", "linux", "darwin"] (case sensitive, if missing, assumes all platforms are supported). `darwin`=MacOS
 
-`shell`: can be `powershell`, `cmd`, `python`, `bash`
+`shell`: can be `powershell`, `cmd`, `python` or `shell`
 
 `syntax`: See [scripting](functions/scripting.md#)
 
