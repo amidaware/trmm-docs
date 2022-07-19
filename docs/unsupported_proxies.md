@@ -455,7 +455,7 @@ Navigate to `Services` -> `HAProxy` -> `Frontend`
 - On Access Control lists, Click ⤵️
 - Name: `tactical`
 - Expression `Server Name Indication TLS extension regex:`
-- value: `(rmm|api|mesh).example.com`
+- value: `(rmm|api|mesh)\.example\.com`
 - On Actions, Click ⤵️
 - Action: `Use Backend`
 - Condition acl names: `tactical`
@@ -482,7 +482,7 @@ frontend Frontend-SNI
   log     global
   timeout client    300000
   tcp-request inspect-delay 5s
-  acl     tactical  req.ssl_sni -m reg -i (rmm|mesh|api).yourdomain.com
+  acl     tactical  req.ssl_sni -m reg -i (rmm|mesh|api)\.yourdomain\.com
   tcp-request content accept if { req.ssl_hello_type 1 }
   use_backend tactical_ipv4  if  trmm-backend
 ```
