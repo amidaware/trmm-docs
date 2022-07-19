@@ -348,9 +348,28 @@ Of course you can adapt it to your environment and/or current configuration.
 - You have HAProxy installed
 - You don't have any `http` frontends on your HAProxy
 - You have firewall rule to allow traffic from your WAN to HAProxy 443 port.
+- You have set Max Connections on Settings to a value MORE than the agents you plan to connect
 - Your subdomains are: `api`, `mesh`, `rmm`
 - You can resolve `(rmm|api|mesh).example.com` to your local TRMM server when in your local network
 - You can resolve `(rmm|api|mesh).example.com` to your public IP when you are outside of your local network
+
+#### Global Settings
+
+Config file format, for reference
+
+```text
+global
+  maxconn     50000
+  stats socket /tmp/haproxy.socket level admin  expose-fd listeners
+  gid     80
+  nbproc      1
+  nbthread      1
+  hard-stop-after   15m
+  chroot        /tmp/haproxy_chroot
+  daemon
+  tune.ssl.default-dh-param 2048
+  server-state-file /tmp/haproxy_server_state
+```
 
 #### Values you will have to replace with your own
 
@@ -399,6 +418,21 @@ This optional and it's use is to show the real public IP of the agent.
 
 It works well for me, there are cases that it might not work on all environments.
 
+#### For those who like the config files
+
+```text
+backend trmm-backend_ipv4
+  mode    tcp
+  id      10100
+  log     global
+  timeout connect   300000
+  timeout server    300000
+  retries     3
+  source ipv4@ usesrc clientip
+  option      ssl-hello-chk
+  server      trmm-server 10.10.10.100:443 id 10101 check inter 1000
+```
+
 ### Frontend
 
 Navigate to `Services` -> `HAProxy` -> `Frontend`
@@ -421,7 +455,7 @@ Navigate to `Services` -> `HAProxy` -> `Frontend`
 - On Access Control lists, Click ⤵️
 - Name: `tactical`
 - Expression `Server Name Indication TLS extension regex:`
-- value: `(rmm|api|mesh).example.com`
+- value: `(rmm|api|mesh)\.example\.com`
 - On Actions, Click ⤵️
 - Action: `Use Backend`
 - Condition acl names: `tactical`
@@ -438,6 +472,20 @@ Navigate to `Services` -> `HAProxy` -> `Frontend`
 
 Click 💾Save
 Click ✔️Apply Changes
+
+#### For those who like the config files
+
+```text
+frontend Frontend-SNI
+  bind      YOURWANIP:443 name YOURWANIP:443
+  mode      tcp
+  log     global
+  timeout client    300000
+  tcp-request inspect-delay 5s
+  acl     tactical  req.ssl_sni -m reg -i (rmm|mesh|api)\.yourdomain\.com
+  tcp-request content accept if { req.ssl_hello_type 1 }
+  use_backend tactical_ipv4  if  trmm-backend
+```
 
 ## Apache Proxy
 howto -  proxy on apache
