@@ -127,7 +127,6 @@ c:\ProgramData\TacticalRMM\scripts
 c:\ProgramData\TacticalRMM\toolbox
 c:\ProgramData\TacticalRMM\logs
 c:\ProgramData\TacticalRMM\temp
-c:\ProgramData\TacticalRMM\
 ```
 
 - Command Parameters are good. Optional command parameters for extra functions are better.
