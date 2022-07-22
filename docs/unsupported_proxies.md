@@ -418,6 +418,9 @@ This optional and it's use is to show the real public IP of the agent.
 
 - Check `Use Client-IP to connect to backend servers.
 
+> Some remote agents would not let me do RDP without this option.
+> Play with it and see what works for you.
+
 ![haproxy-tcp-advanced](images/haproxy-tcp-advanced.png)
 
 It works well for me, there are cases that it might not work on all environments.
