@@ -390,7 +390,7 @@ Navigate to `Services` -> `HAProxy` -> `Backend`
 - Forwardto: `Address+Port`
 - Address: `10.10.10.100` (Reminder: change this)
 - Port: `443`
-- Max conn: `10000` (Or whatever fits your agents numbers)
+- Max conn: `10000` (Or `0` for unlimited)
 
 ![haproxy-tcp-serverlist](images/haproxy-tcp-serverlist.png)
 
@@ -453,7 +453,7 @@ Navigate to `Services` -> `HAProxy` -> `Frontend`
 - On External address, click ⤵️
 - Listen address: `WAN address (IPv4)`
 - Port: `443`
-- Max connections: `10000` (Or whatever fits your agents numbers)
+- Max connections: `10000` (Or `0` or unlimited`)
 - Type: `ssl/https (TCP mode)`
 
 ![haproxy-tcp-front](images/haproxy-tcp-front.png)
