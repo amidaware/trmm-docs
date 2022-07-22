@@ -390,6 +390,7 @@ Navigate to `Services` -> `HAProxy` -> `Backend`
 - Forwardto: `Address+Port`
 - Address: `10.10.10.100` (Reminder: change this)
 - Port: `443`
+- Max conn: `10000` (Or `0` for unlimited)
 
 ![haproxy-tcp-serverlist](images/haproxy-tcp-serverlist.png)
 
@@ -405,6 +406,9 @@ Navigate to `Services` -> `HAProxy` -> `Backend`
 
 - Health check method: `SSL`
 
+> Keep this to `none` while installing or updating certificates.
+> There might be problems if it's set to `SSL` or `basic` while doing so.
+
 ![haproxy-tcp-healthcheck](images/haproxy-tcp-healthcheck.png)
 
 #### Advanced settings
@@ -413,6 +417,9 @@ Please read the Warning there, and the note at the bottom.
 This optional and it's use is to show the real public IP of the agent.
 
 - Check `Use Client-IP to connect to backend servers.
+
+> Some remote agents would not let me do RDP without this option.
+> Play with it and see what works for you.
 
 ![haproxy-tcp-advanced](images/haproxy-tcp-advanced.png)
 
@@ -430,7 +437,7 @@ backend trmm-backend_ipv4
   retries     3
   source ipv4@ usesrc clientip
   option      ssl-hello-chk
-  server      trmm-server 10.10.10.100:443 id 10101 check inter 1000
+  server      trmm-server 10.10.10.100:443 id 10101 check inter 1000  maxconn 10000
 ```
 
 ### Frontend
@@ -446,6 +453,7 @@ Navigate to `Services` -> `HAProxy` -> `Frontend`
 - On External address, click ⤵️
 - Listen address: `WAN address (IPv4)`
 - Port: `443`
+- Max connections: `10000` (Or `0` or unlimited`)
 - Type: `ssl/https (TCP mode)`
 
 ![haproxy-tcp-front](images/haproxy-tcp-front.png)
@@ -480,6 +488,7 @@ frontend Frontend-SNI
   bind      YOURWANIP:443 name YOURWANIP:443
   mode      tcp
   log     global
+  maxconn     10000
   timeout client    300000
   tcp-request inspect-delay 5s
   acl     tactical  req.ssl_sni -m reg -i (rmm|mesh|api)\.yourdomain\.com
