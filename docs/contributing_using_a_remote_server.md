@@ -65,7 +65,7 @@ Add the following to the ALLOWED HOSTS
 rmm.EXAMPLE.COM
 ```
 
-### Install dev requirements and start python
+### 3. Install dev requirements and start python
 `cd /rmm/api/tacticalrmm/`
 
 ```bash
@@ -90,7 +90,7 @@ Start Django backend
 python manage.py runserver 0:8000
 ```
 
-### Get frontend working
+### 4. Get frontend working
 
 Open a new terminal and compile quasar frontend.
 
