@@ -44,12 +44,16 @@ APP_URL = "http://rmm.EXAMPLE.COM:8080"
 
 Open /rmm/api/tacticalrmm/tacticalrmm/local_settings.py
 
+change
 ```bash
-change DEBUG = True
+DEBUG = True
+ADMIN_ENABLED = True
 ```
-Remove
+Comment out
 ```bash
-CORS_ORIGIN_WHITELIST list
+#CORS_ORIGIN_WHITELIST = [
+#    "https://rmm.example.com"
+#]
 ```
 Add
 ```bash
@@ -60,7 +64,9 @@ Add the following to the ALLOWED HOSTS
 ```bash
 rmm.EXAMPLE.COM
 ```
-cd /rmm/api/tacticalrmm/
+
+### Install dev requirements and start python
+`cd /rmm/api/tacticalrmm/`
 
 ```bash
 source ../env/bin/activate
@@ -72,16 +78,40 @@ Install requirements
 pip install -r requirements-dev.txt -r requirements-test.txt
 ```
 
+Merge migrations
+
+```
+python manage.py migrate
+```
+
 Start Django backend
 
 ```bash
 python manage.py runserver 0:8000
 ```
 
-Open a new terminal and compile quasar frontend
+### Get frontend working
+
+Open a new terminal and compile quasar frontend.
+
+Change to any directory (your user home folder in linux is fine)
+```bash
+cd ~
+git clone https://github.com/amidaware/tacticalrmm-web.git
+cd tacticalrmm-web
+```
+create .env file and put in
+```
+PROD_URL = "https://api.example.com"
+DEV_URL = "http://api.example.com:8000"
+APP_URL = "http://rmm.example.com:8080"
+DEV_PORT = "8080"
+USE_HTTPS = false
+```
+Close and save.
+
 
 ```bash
-cd /rmm/web
 npm install
 npm install -g @quasar/cli
 quasar dev
