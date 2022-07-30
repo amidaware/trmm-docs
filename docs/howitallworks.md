@@ -217,6 +217,7 @@ Built on the Django framework, the Tactical RMM service is the heart of the syst
             - "tail" the logs: `journalctl --identifier nats-server --follow`
             - View the logs: `journalctl --identifier nats-server --since "30 minutes ago" | less`
         - Listening process: `ss -tulnp | grep nats-server`
+        - Checking for nats or websocket problems `sudo journalctl --no-pager -u nats` and `sudo journalctl --no-pager -u nats-api`
 
     === ":material-ubuntu: standard"
     
@@ -408,6 +409,10 @@ Get Mesh Agent Version info with this command. Should match server version.
 "C:\Program Files\Mesh Agent\MeshAgent.exe" -info"
 ```
 Compare the hash with the tags in the repo at <https://github.com/Ylianst/MeshAgent/tags>
+
+Checks/tasks/agent data use regular http to nginx
+
+Agent status uses nats websockets
 
 ### Other Dependencies
 
