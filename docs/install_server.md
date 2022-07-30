@@ -16,7 +16,7 @@
 
 #### Hardware / OS
 
-A fresh linux VM running either Ubuntu 20.04 LTS or Debian 11 with 2GB RAM on x64 architecture.
+A fresh linux VM running either Ubuntu 20.04 LTS or Debian 11 with 3+GB RAM on x64 architecture.
 
 !!!warning
     The provided install script assumes a fresh server with no software installed on it. Attempting to run it on an existing server with other services **will** break things and the install will fail.
