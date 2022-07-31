@@ -10,9 +10,6 @@ Under `/scripts` the file name should generally follow this format:
 (Platform)_(Category or Function)_(What It Does).xxx
 ```
 
-!!!info
-    Although Tactical RMM only has a Windows agent for now, we're planning for a future with more platform support
-
 Platform for now are:
 
 ```text
@@ -36,7 +33,7 @@ Win_Network_DNS_Set_to_1.1.1.2.ps1
 ```
 
 !!!info
-    This is so that at a glance you can see if there is already a script with that function, and you can avoid duplication of functionality. If you can improve a script or allow Script Arguments/Parameters update existing if possible
+    This is so that at a glance you can see if there is already a script with that function, and you can avoid duplication of functionality.
 
 ### Name field (in community_scripts.json)
 
@@ -208,6 +205,6 @@ Discuss/ask questions in the Discord group [here](https://discord.com/channels/7
 What you can add is:
 
 - Add standardized Comment headers per above
-- Parameterize scripts where appropriate
+- Consolidate and parameterize scripts where appropriate
 - Add $ExitCode and error conditions as appropriate
 - Contact @silversword in Discord if you need help doing Github additions/edits/adding to the community Library and have questions about [Script Library Naming Conventions](#script-library-naming-conventions)

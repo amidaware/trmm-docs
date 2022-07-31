@@ -1,6 +1,6 @@
 # Code Signing
 
-*Version added: Tactical RMM v0.6.0 / Agent v1.5.0*
+*Version added: Tactical RMM v0.6.0 / Agent v1.5.0* (April 2021)
 
 Tactical RMM agents are now [code signed](https://comodosslstore.com/resources/what-is-microsoft-authenticode-code-signing-certificate/)!
 
@@ -16,7 +16,7 @@ You will then be sent a code signing auth token, which you should enter into Tac
 
 ## How does it work?
 
-Everytime you generate an agent or an agent does a self-update, your self-hosted instance sends a request to Tactical's code signing servers with your auth token.
+Every time you generate an agent or an agent does a self-update, your self-hosted instance sends a request to Tactical's code signing servers with your auth token.
 
 If the token is valid, the server sends you back a code signed agent. If not, it sends you back the un-signed agent.
 
@@ -31,6 +31,12 @@ For two reasons:
 
 ## Tactical RMM is getting flagged as PUA or virus, will this fix it?
 
-Getting a code signed agent, helps but not guaranteed. Because AVs are not predictable, change all the time, constantly making new decisions and rules, tell you one thing do another, they all do different things etc.
+Getting a code signed agent, helps but is not guaranteed. Because AVs are not predictable, change all the time, constantly making new decisions and rules, tell you one thing do another, they all do different things etc.
 
 However, the best way to submit a whitelisting request to your AV for the TRMM agent...having a code signed exe is best.
+
+Right click `"C:\Program Files\TacticalAgent\tacticalrmm.exe"` > `Properties` > `Digital Signatures` tab. 
+
+Serial Number: `04a01435f1a73c8874adc89457eda7dc`
+
+Thumb Print: `278e23c068f71b85659e094a557f16cda609fdd6`
