@@ -8,3 +8,7 @@
 .md-search__icon[for=__search]{
     color: initial;
 }
+.md-typeset a {
+    color: rgb(130, 130, 255);
+    text-decoration: underline;
+}
