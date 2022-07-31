@@ -28,14 +28,31 @@ It uses an [agent](https://github.com/amidaware/rmmagent) written in Golang and 
 - Windows 7, 8.1, 10, 11, Server 2008R2, 2012R2, 2016, 2019, 2022
 
 ## Linux agent versions supported
+
 - Any distro with systemd which includes but is not limited to: Debian (10, 11), Ubuntu x86_64 (18.04, 20.04, 22.04), Synology 7, centos, freepbx and more!
 
-## Discuss
+## Discuss/Collaborate and Get Help/Support
 
-Join us on [Discord](https://discord.gg/upGTkWp) for (help/tips/discussion/dev chat/social etc)
+Join us on [Discord](https://discord.gg/upGTkWp) for (help/tips/discussion/dev chat/social etc). This is the primary method of discussing all things Tactical RMM. 
 
-Report bugs and enhancement/feature requests using [Github Issues](https://github.com/amidaware/tacticalrmm/issues)
+_[Github Discussions](https://github.com/amidaware/tacticalrmm/discussions): is a distant 2nd option, we will frequently request you join Discord if you're requesting help or troubleshooting issues with you installation._
 
-[View useful scripts](https://github.com/amidaware/community-scripts) to be used in Tactical RMM
+[Github Issues](https://github.com/amidaware/tacticalrmm/issues): Report bugs you discover with clear writeups on how to reproduce problems. Also submit enhancement/feature requests here.
 
-View [Awesome](https://github.com/amidaware/trmm-awesome) additions from the community
+[View useful scripts](https://github.com/amidaware/community-scripts) to be used in Tactical RMM. 
+
+Check out [Awesome](https://github.com/amidaware/trmm-awesome) additions from the community
+
+## Github Repos
+
+Main Code Repo: <https://github.com/amidaware/tacticalrmm>
+
+Main Web admin frontend: <https://github.com/amidaware/tacticalrmm-web>
+
+Tactical Agent Source: <https://github.com/amidaware/rmmagent>
+
+Community Scripts: <https://github.com/amidaware/community-scripts>
+
+<https://docs.tacticalrmm.com> source: <https://github.com/amidaware/trmm-docs>
+
+Awesome contributions from the community: <https://github.com/amidaware/trmm-awesome>
