@@ -35,7 +35,7 @@ It uses an [agent](https://github.com/amidaware/rmmagent) written in Golang and 
 
 Join us on [Discord](https://discord.gg/upGTkWp) for (help/tips/discussion/dev chat/social etc). This is the primary method of discussing all things Tactical RMM. 
 
-_[Github Discussions](https://github.com/amidaware/tacticalrmm/discussions): is a distant 2nd option, we will frequently request you join Discord if you're requesting help or troubleshooting issues with you installation._
+_[Github Discussions](https://github.com/amidaware/tacticalrmm/discussions): is a distant 2nd option, we will frequently request you join Discord if you're requesting help or troubleshooting issues with your installation._
 
 [Github Issues](https://github.com/amidaware/tacticalrmm/issues): Report bugs you discover with clear writeups on how to reproduce problems. Also submit enhancement/feature requests here.
 
