@@ -57,7 +57,7 @@ Refer to the [Agent Installation](install_agent.md) instructions for AV exceptio
 
 Agents will also not automatically update if they are too old.
 
-Since Tactical RMM is still in alpha and the developers makes breaking changes pretty frequently, there is no promise of backwards compatibility.
+Since Tactical RMM is still in beta and the developers makes breaking changes pretty frequently, there is no promise of backwards compatibility.
 
 If you have agents that are relatively old, you will need to uninstall them manually and reinstall using the latest version.
 
@@ -187,7 +187,7 @@ Read through the log files in the following folders and check for errors:
 
 - rmm.example.com can be proxied.
 
-- api.example.com can NOT be proxied.
+- api.example.com can be proxied when using (the default) agent configuration which utilizes websockets.
 
 - mesh.example.com can be proxied with the caveat that Mesh checks the cert presented to the agent is the same one on the server. I.e. no MITM. You'll need to copy Cloudflare's edge cert to your server if you want to proxy this domain.
 
@@ -200,7 +200,6 @@ Use powershell, make sure you can connect to 443 from agent to server:
 ```powershell
 Test-NetConnection -ComputerName api.example.com -Port 443
 ```
-
 
 Check your SSL certs to make sure they are what they should be (no proxy stuff): <https://www.digicert.com/help/>
 
