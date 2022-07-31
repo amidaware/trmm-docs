@@ -1,9 +1,9 @@
 
 # Getting Started Guide
 
-Congratulations, if you've finished installing Tactical RMM it's now time to check things out.
+Install the server, [choose the best path](install_considerations.md)
 
-## At Install
+## Post Install
 
 * [ ] Setup [Email Alerts](functions/email_alert.md)
 * [ ] Setup SMS Alerts
