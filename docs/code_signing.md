@@ -16,7 +16,7 @@ You will then be sent a code signing auth token, which you should enter into Tac
 
 ## How does it work?
 
-Everytime you generate an agent or an agent does a self-update, your self-hosted instance sends a request to Tactical's code signing servers with your auth token.
+Every time you generate an agent or an agent does a self-update, your self-hosted instance sends a request to Tactical's code signing servers with your auth token.
 
 If the token is valid, the server sends you back a code signed agent. If not, it sends you back the un-signed agent.
 
