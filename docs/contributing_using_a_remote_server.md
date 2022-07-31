@@ -11,6 +11,16 @@ The below instructions are for a non-production server that has Tactical RMM ins
 
 This guide assumes you have done a [Traditional Install](install_server.md).
 
+This is going to install your dev server at latest release version. If you want it to install latest dev, edit `install.sh` and remove this line after
+
+```bash
+git clone https://github.com/amidaware/tacticalrmm.git /rmm/
+cd /rmm
+git config user.email "admin@example.com"
+git config user.name "Bob"
+git checkout master  # <-------------Remove this line to be on latest code
+```
+
 ### 2. Install VSCode and Extensions
 Download VSCode [here](https://code.visualstudio.com/download)
 
@@ -65,7 +75,7 @@ Add the following to the ALLOWED HOSTS
 rmm.EXAMPLE.COM
 ```
 
-### Install dev requirements and start python
+### 3. Install dev requirements and start python
 `cd /rmm/api/tacticalrmm/`
 
 ```bash
@@ -90,7 +100,7 @@ Start Django backend
 python manage.py runserver 0:8000
 ```
 
-### Get frontend working
+### 4. Get frontend working
 
 Open a new terminal and compile quasar frontend.
 

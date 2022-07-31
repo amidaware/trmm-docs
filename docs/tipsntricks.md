@@ -133,3 +133,14 @@ Next, you're going to schedule your updates.
 Because of [community repo limits](https://docs.chocolatey.org/en-us/community-repository/community-packNeages-disclaimer#rate-limiting), you can [purchase chocolatey](https://chocolatey.org/pricing), [host your own chocolatey server](https://docs.chocolatey.org/en-us/features/host-packages), or use this script sparingly <https://github.com/amidaware/community-scripts/blob/main/scripts/Win_Chocolatey_Manage_Apps_Bulk.ps1> using `-Mode upgrade -Hosts x` where x is the max number of machines on an internet connection.
 
 ![](images/chocolatey_upgrade_many.png)
+
+## Run Intervals for Checks
+
+You can modify at several locations/levels:
+
+* **Settings Menu > Automation Manager > Checks tab >** Edit check
+* Agent Level: **Edit Agent > Run checks every**
+* Edit Check under agent > Run this check every (seconds)
+
+!!!note
+    The interval under check will override agent check if set
