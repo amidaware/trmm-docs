@@ -25,7 +25,7 @@ A fresh linux VM running either Ubuntu 20.04 LTS or Debian 11 with 3+GB RAM on x
     The install script sets up a production ready reverse proxy using Nginx which does TLS termination and handles routing all requests to the correct backends, so using another proxy in front of your instance is not necessary (and will probably break things).<br><br>If you want to use another reverse proxy for whatever reason, such as HAProxy, Traefik or Nginx Proxy Manager, then you will need to edit the install script and disable all the steps relating to installing and configuring nginx and configure proxying yourself. You may refer to the nginx configs in the install script for hints on how to proxy various services to the correct backends. Note that choosing to not use the built in proxy will make your instance officially "unsupported", because the developers do not have the bandwidth to support an infinite amount of setups and need to focus on the actual software. This is not meant to scare you away from doing your own proxy...just something to be aware of. Read more in the [unsupported](unsupported_guidelines.md) guidelines.
 
 !!!note
-    The install script has been tested on the following public cloud providers: DigitalOcean, Linode, Vultr, BuyVM (highly recommended), Hetzner, AWS, Google Cloud and Azure, as well as behind NAT on Hyper-V, ESXi and Proxmox (CT's on Proxmox not officially supported, only VMs).
+    The install script has been tested on the following public cloud providers: DigitalOcean, Linode, Vultr, BuyVM (highly recommended), Hetzner, AWS, Google Cloud and Azure, as well as behind NAT on Hyper-V, ESXi and Proxmox (CT's on Proxmox are [unsupported](unsupported_guidelines.md), only use VMs).
 
 !!!note
     CPU: 1 core is fine for < 200 agents with limited checks/tasks.<br><br>
@@ -236,4 +236,4 @@ We've said it before, we'll say it again.
 
         - Do it when you update your SSL certs. 
 
-Especially don't get behind 2 major rev's. Lots of agent connectivity changes occurring. If you don't keep up, you'll be needing to do manual updates by adjusting the `updates.sh` and specifying older branches...then doing update, wait for all agents to get updated...then do the next major branch, then wait for agent updates...until you're current.
+Especially don't get behind 2 major rev's. Lots of agent connectivity changes occurring. If you don't keep up, you'll be needing to do manual updates by adjusting the `updates.sh` and specifying older branches...then doing update, wait for all agents to get updated...then do the next major branch, then wait for agent updates...until you're current. Can we say #Painful
