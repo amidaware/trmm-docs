@@ -1,5 +1,6 @@
 # This is for running mkdocs locally on windows only. 
 # Make sure you change directory to your docs folder before starting this process
+# Use the "Run Selection" in VSCode to run the code blocks as-needed
 
 #Activate python
 python -m venv env
@@ -13,7 +14,7 @@ pip install mkdocs-material #only 1st time
 
 #Run mkdocs and look at changes as you make them
 mkdocs serve
-start http://localhost:8005 #Opens Browser
+Start-Process http://localhost:8005 #Opens Browser
 
 #Stop python
 deactivate
