@@ -509,11 +509,95 @@ Files create `c:\Windows\temp\Tacticalxxxx\` folder for install (and log files)
 
 ***
 
-### Agent Debugging
+### Tactical Agent Debugging
+
+Choose your method:
+
+=== ":material-console-line: Windows Automatically"
+
+    If the Tactical Agent is connecting to your server, you can use the Community scripts:
+
+    - `TacticalRMM - TRMM Agent enable Debug Mode`
+    - `TacticalRMM - TRMM Agent disable Debug Mode`
+    - and `TacticalRMM - Get Agent Logs`
+
+=== ":material-console-line: Windows Manually"
+
+    Open CMD as admin on the problem computer and stop the agent services:
+
+    ```cmd
+    net stop tacticalrmm
+    ```
+
+    Run the tacticalrmm service manually with debug logging:
+
+    ```cmd
+    "C:\Program Files\TacticalAgent\tacticalrmm.exe" -m svc -log debug -logto stdout
+    ```
+
+    !!!note
+        There's a Community script that will collect your agent log called `TacticalRMM - Get Agent Logs`
+
+=== ":material-debian: linux"
+
+    As root user, edit 
+
+    ```bash
+    vi /etc/systemd/system/tacticalagent.service
+    ```
+
+    Change
+
+    ```
+    ExecStart=/usr/local/bin/tacticalagent -m svc
+    ```
+
+    to 
+
+    ```
+    ExecStart=/usr/local/bin/tacticalagent -m svc -log debug
+    ```
+
+    then
+
+    ```
+    systemctl daemon-reload
+    systemctl restart tacticalagent.service
+    ```
 
 #### Mesh Agent Recovery
 
+Use Agents right click menu > `Agent recovery` > `Mesh Agent`
+
 #### Tactical Agent Recovery
+
+Use Agents right click menu > `Agent recovery` > `Tactical Agent`
+
+**...OR**
+
+=== ":material-console-line: MeshCentral is online"
+
+    Connect to `Terminal` (Admin Shell)
+    
+    Run
+
+    ```cmd
+    net stop tacticalrmm
+    net start tacticalrmm
+    ```
+
+    Check if Tactical RMM agent is online
+
+=== ":material-console-line: From Local Machine"
+
+    Start/Restart Tactical RMM service from either `services.msc` or from Admin Command prompt
+
+    ```cmd
+    net stop tacticalrmm
+    net start tacticalrmm
+    ```
+
+    Open `C:\Program Files\TacticalAgent\agent.log` to look for issues
 
 ### Windows Update Management
 
