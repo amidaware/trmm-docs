@@ -1,0 +1,63 @@
+.md-header {
+    background-color: black !important;
+    color: white !important;
+}
+.md-search__input {
+    background-color: white !important;
+}
+.md-search__icon[for=__search]{
+    color: initial;
+}
+.md-typeset a {
+    color: rgb(130, 130, 255);
+    text-decoration: underline;
+}
+.md-typeset h1 {
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: gray;
+    background-color: rgba(0, 0, 255, 0.16);
+    width: 100%;
+    border-style: solid;
+    padding: 5px;
+}
+.md-typeset h2 {
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: gray;
+    background-color: rgba(0, 0, 255, 0.13);
+    width: 90%;
+    border-style: solid;
+    padding: 5px;
+    text-indent: 5px;
+}
+.md-typeset h3 {
+    border-width: 1px;
+    border-radius: 15px;
+    border-color: gray;
+    background-color: rgba(0, 0, 255, 0.1);
+    width: 80%;
+    border-style: solid;
+    padding: 5px;
+    text-indent: 10px;
+}
+.md-typeset h4 {
+    border-width: 1px;
+    border-radius: 20px;
+    border-color: gray;
+    background-color: rgba(0, 0, 255, 0.07);
+    width: 70%;
+    border-style: solid;
+    padding: 5px;
+    text-indent: 15px;
+}
+.md-typeset h5 {
+    border-width: 1px;
+    border-radius: 25px;
+    border-color: gray;
+    background-color: rgba(0, 0, 255, 0.04);
+    width: 60%;
+    border-style: solid;
+    padding: 5px;
+    text-indent: 20px;
+}

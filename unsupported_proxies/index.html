@@ -1,0 +1,2546 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A remote monitoring and management tool">
+      
+      
+        <meta name="author" content="amidaware">
+      
+      
+        <link rel="canonical" href="https://docs.tacticalrmm.com/unsupported_proxies/">
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Unsupported Proxies - Tactical RMM Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unsupported-proxies" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tactical RMM Documentation" class="md-header__button md-logo" aria-label="Tactical RMM Documentation" data-md-component="logo">
+      
+  <img src="../images/onit.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tactical RMM Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unsupported Proxies
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="light" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/amidaware/tacticalrmm" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    amidaware/tacticalrmm
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tactical RMM Documentation" class="md-nav__button md-logo" aria-label="Tactical RMM Documentation" data-md-component="logo">
+      
+  <img src="../images/onit.ico" alt="logo">
+
+    </a>
+    Tactical RMM Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/amidaware/tacticalrmm" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    amidaware/tacticalrmm
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sponsor/" class="md-nav__link">
+        Sponsor
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code_signing/" class="md-nav__link">
+        Code Signing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide_gettingstarted/" class="md-nav__link">
+        Getting Started Guide
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          RMM Server Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="RMM Server Installation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          RMM Server Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_considerations/" class="md-nav__link">
+        Install Considerations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_server/" class="md-nav__link">
+        Traditional Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_docker/" class="md-nav__link">
+        Docker Install
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          RMM Server Updating
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="RMM Server Updating" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          RMM Server Updating
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_server/" class="md-nav__link">
+        Updating the RMM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_docker/" class="md-nav__link">
+        Updating the RMM (Docker)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Agents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Agents" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Agents
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_agent/" class="md-nav__link">
+        Agent Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_agents/" class="md-nav__link">
+        Updating Agents
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Functionality
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Functionality" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Functionality
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howitallworks/" class="md-nav__link">
+        How it all Works
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/alerting/" class="md-nav__link">
+        Alerting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/api/" class="md-nav__link">
+        API Access
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/automated_tasks/" class="md-nav__link">
+        Automated Tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/automation_policies/" class="md-nav__link">
+        Automation Policies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/custom_fields/" class="md-nav__link">
+        Custom Fields
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/database_maintenance/" class="md-nav__link">
+        Database Maintenance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/django_admin/" class="md-nav__link">
+        Django Admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/email_alert/" class="md-nav__link">
+        Email Alerts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/keystore/" class="md-nav__link">
+        Global Keystore
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/maintenance_mode/" class="md-nav__link">
+        Maintenance Mode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/permissions/" class="md-nav__link">
+        Permissions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/remote_bg/" class="md-nav__link">
+        Remote Background
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/settings_override/" class="md-nav__link">
+        Settings Override
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/scripting/" class="md-nav__link">
+        Scripting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/url_actions/" class="md-nav__link">
+        URL Actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/user_ui/" class="md-nav__link">
+        User Interface Preferences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../script_variables/" class="md-nav__link">
+        Reference: Script Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/examples/" class="md-nav__link">
+        Examples
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backup/" class="md-nav__link">
+        Backup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../restore/" class="md-nav__link">
+        Restore
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../av/" class="md-nav__link">
+        Antivirus Exclusions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../management_cmds/" class="md-nav__link">
+        Management Commands
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../public_rsa_keys/" class="md-nav__link">
+        Public RSA Keys
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesh_integration/" class="md-nav__link">
+        MeshCentral Integration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_17" type="checkbox" id="__nav_17" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_17">
+          3rd Party Integrations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="3rd Party Integrations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_17">
+          <span class="md-nav__icon md-icon"></span>
+          3rd Party Integrations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_grafana/" class="md-nav__link">
+        Grafana
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_anydesk/" class="md-nav__link">
+        AnyDesk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_bomgar/" class="md-nav__link">
+        Bomgar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_screenconnect/" class="md-nav__link">
+        Connectwise Control / Screenconnect
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_splashtop/" class="md-nav__link">
+        Splashtop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_teamviewer/" class="md-nav__link">
+        TeamViewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_bitdefender_gravityzone/" class="md-nav__link">
+        BitDefender GravityZone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_bitdefender_total_security/" class="md-nav__link">
+        BitDefender Total Security
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_18" type="checkbox" id="__nav_18" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_18">
+          Unsupported Extras
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Unsupported Extras" data-md-level="1">
+        <label class="md-nav__title" for="__nav_18">
+          <span class="md-nav__icon md-icon"></span>
+          Unsupported Extras
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_guidelines/" class="md-nav__link">
+        Unsupported Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_scripts/" class="md-nav__link">
+        Unsupported Configs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../securing_nginx/" class="md-nav__link">
+        Securing nginx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Unsupported Proxies
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Unsupported Proxies
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-notes-on-proxies-and-tactical-rmm" class="md-nav__link">
+    General Notes on Proxies and Tactical RMM
+  </a>
+  
+    <nav class="md-nav" aria-label="General Notes on Proxies and Tactical RMM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#port-443" class="md-nav__link">
+    Port 443
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traefikv2" class="md-nav__link">
+    Traefikv2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#haproxy" class="md-nav__link">
+    HAProxy
+  </a>
+  
+    <nav class="md-nav" aria-label="HAProxy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#meshcentral-adjustment" class="md-nav__link">
+    Meshcentral Adjustment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haproxy-config" class="md-nav__link">
+    HAProxy Config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haproxy-howto-for-pfsense" class="md-nav__link">
+    HAProxy Howto for pfsense
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haproxy-howto-for-baremetal" class="md-nav__link">
+    HAProxy Howto for Baremetal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#haproxy-in-tcp-mode" class="md-nav__link">
+    HAProxy in TCP mode
+  </a>
+  
+    <nav class="md-nav" aria-label="HAProxy in TCP mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assumptions" class="md-nav__link">
+    Assumptions
+  </a>
+  
+    <nav class="md-nav" aria-label="Assumptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-settings" class="md-nav__link">
+    Global Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#values-you-will-have-to-replace-with-your-own" class="md-nav__link">
+    Values you will have to replace with your own
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    Backend
+  </a>
+  
+    <nav class="md-nav" aria-label="Backend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backend-server-pool" class="md-nav__link">
+    Backend server pool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeout-retry-settings" class="md-nav__link">
+    Timeout / retry settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heath-checking" class="md-nav__link">
+    Heath checking
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-settings" class="md-nav__link">
+    Advanced settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-those-who-like-the-config-files" class="md-nav__link">
+    For those who like the config files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    Frontend
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edit-haproxy-frontend" class="md-nav__link">
+    Edit HAProxy Frontend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-backend-access-control-lists-and-actions" class="md-nav__link">
+    Default backend, access control lists and actions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-settings_1" class="md-nav__link">
+    Advanced settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-those-who-like-the-config-files_1" class="md-nav__link">
+    For those who like the config files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apache-proxy" class="md-nav__link">
+    Apache Proxy
+  </a>
+  
+    <nav class="md-nav" aria-label="Apache Proxy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trmm-server" class="md-nav__link">
+    TRMM SERVER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache" class="md-nav__link">
+    APACHE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating-certificate" class="md-nav__link">
+    Updating certificate:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nginx-proxy" class="md-nav__link">
+    nginx Proxy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nginx-proxy-manager" class="md-nav__link">
+    Nginx Proxy Manager
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synology-nas-reverse-proxy-portal" class="md-nav__link">
+    Synology NAS reverse proxy portal
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_synology_docker_install/" class="md-nav__link">
+        Installing in Synology docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_platforms/" class="md-nav__link">
+        Installing on other platforms
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tipsntricks/" class="md-nav__link">
+        Tips n' Tricks
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_20" type="checkbox" id="__nav_20" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_20">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contributing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_20">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        Contributing to Docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_community_scripts/" class="md-nav__link">
+        Contributing to Community Scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_browser/" class="md-nav__link">
+        Contributing using a browser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_vscode/" class="md-nav__link">
+        Contributing using VSCode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_docker/" class="md-nav__link">
+        Contributing using Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_a_remote_server/" class="md-nav__link">
+        Contributing using a Remote Server
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-notes-on-proxies-and-tactical-rmm" class="md-nav__link">
+    General Notes on Proxies and Tactical RMM
+  </a>
+  
+    <nav class="md-nav" aria-label="General Notes on Proxies and Tactical RMM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#port-443" class="md-nav__link">
+    Port 443
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traefikv2" class="md-nav__link">
+    Traefikv2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#haproxy" class="md-nav__link">
+    HAProxy
+  </a>
+  
+    <nav class="md-nav" aria-label="HAProxy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#meshcentral-adjustment" class="md-nav__link">
+    Meshcentral Adjustment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haproxy-config" class="md-nav__link">
+    HAProxy Config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haproxy-howto-for-pfsense" class="md-nav__link">
+    HAProxy Howto for pfsense
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haproxy-howto-for-baremetal" class="md-nav__link">
+    HAProxy Howto for Baremetal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#haproxy-in-tcp-mode" class="md-nav__link">
+    HAProxy in TCP mode
+  </a>
+  
+    <nav class="md-nav" aria-label="HAProxy in TCP mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assumptions" class="md-nav__link">
+    Assumptions
+  </a>
+  
+    <nav class="md-nav" aria-label="Assumptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-settings" class="md-nav__link">
+    Global Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#values-you-will-have-to-replace-with-your-own" class="md-nav__link">
+    Values you will have to replace with your own
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    Backend
+  </a>
+  
+    <nav class="md-nav" aria-label="Backend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backend-server-pool" class="md-nav__link">
+    Backend server pool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeout-retry-settings" class="md-nav__link">
+    Timeout / retry settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heath-checking" class="md-nav__link">
+    Heath checking
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-settings" class="md-nav__link">
+    Advanced settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-those-who-like-the-config-files" class="md-nav__link">
+    For those who like the config files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    Frontend
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edit-haproxy-frontend" class="md-nav__link">
+    Edit HAProxy Frontend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-backend-access-control-lists-and-actions" class="md-nav__link">
+    Default backend, access control lists and actions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-settings_1" class="md-nav__link">
+    Advanced settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-those-who-like-the-config-files_1" class="md-nav__link">
+    For those who like the config files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apache-proxy" class="md-nav__link">
+    Apache Proxy
+  </a>
+  
+    <nav class="md-nav" aria-label="Apache Proxy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trmm-server" class="md-nav__link">
+    TRMM SERVER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache" class="md-nav__link">
+    APACHE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating-certificate" class="md-nav__link">
+    Updating certificate:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nginx-proxy" class="md-nav__link">
+    nginx Proxy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nginx-proxy-manager" class="md-nav__link">
+    Nginx Proxy Manager
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synology-nas-reverse-proxy-portal" class="md-nav__link">
+    Synology NAS reverse proxy portal
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="unsupported-proxies">Unsupported Proxies<a class="headerlink" href="#unsupported-proxies" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using Proxies/reverse proxies with Tactical RMM is not a supported configuration, the information below is provided here for your reference.</p>
+<p>Although these aren't officially supported configurations, we generally will help point you in the right direction. Please use the Discord <a href="https://discord.com/channels/736478043522072608/888474319750066177">#unsupported channel</a> to discuss issues related to these complex installations</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>The install script sets up Nginx for you as a reverse proxy and does TLS and handles routing all requests to the correct backends, so using another proxy in front of your instance is not necessary (and will break things).<br><br>If you must use another reverse proxy for whatever reason, such as HAProxy or Nginx Proxy Manager, then you will need to edit the install script and disable all the steps relating to installing and configuring nginx, and setup proxying manually.</p>
+</div>
+<h2 id="general-notes-on-proxies-and-tactical-rmm">General Notes on Proxies and Tactical RMM<a class="headerlink" href="#general-notes-on-proxies-and-tactical-rmm" title="Permanent link">&para;</a></h2>
+<h3 id="port-443">Port 443<a class="headerlink" href="#port-443" title="Permanent link">&para;</a></h3>
+<p>Make sure websockets option is enabled.</p>
+<p>All 3 URL's will need to be configured: <code>rmm</code>, <code>api</code>, <code>mesh</code></p>
+<p>For <code>mesh</code> see the Section 10. TLS Offloading of the <a href="https://info.meshcentral.com/downloads/MeshCentral2/MeshCentral2UserGuide.pdf">MeshCentral 2 User Guide</a></p>
+<h2 id="traefikv2">Traefikv2<a class="headerlink" href="#traefikv2" title="Permanent link">&para;</a></h2>
+<p>Offsite Resource: <a href="https://gitlab.com/NiceGuyIT/tactical-goodies/-/tree/main/traefik">https://gitlab.com/NiceGuyIT/tactical-goodies/-/tree/main/traefik</a></p>
+<p>This section will assume that by default Traefik will reverse proxy everything on port 443.</p>
+<p>Here is a basic Traefik config with docker-composer note the file.directory and file.watch are important.
+<div class="highlight"><pre><span></span><code>version: <span class="s2">&quot;3.7&quot;</span>
+services:
+  traefik:
+    container_name: traefik24
+    image: traefik:v2.4
+    restart: unless-stopped
+    command:
+      - --entryPoints.http.address<span class="o">=</span>:80
+      - --entryPoints.https.address<span class="o">=</span>:443
+      - --providers.docker<span class="o">=</span><span class="nb">true</span>
+      - --providers.docker.endpoint<span class="o">=</span>unix:///var/run/docker.sock
+      - --providers.docker.defaultrule<span class="o">=</span>HostHeader<span class="o">(</span><span class="sb">`</span><span class="o">{{</span> index .Labels <span class="s2">&quot;com.docker.compose.service&quot;</span> <span class="o">}}</span>.<span class="nv">$DOMAINNAME</span><span class="sb">`</span><span class="o">)</span>
+      <span class="c1">## This is important, to load the config for RMM and Mesh</span>
+      - --providers.file.directory<span class="o">=</span>rules <span class="c1"># Load dynamic configuration from one or more .toml or .yml files in a directory.</span>
+      - --providers.file.watch<span class="o">=</span><span class="nb">true</span> <span class="c1"># Only works on top level files in the rules folder</span>
+      <span class="c1">####</span>
+      - --certificatesresolvers.dns-cloudflare.acme.dnschallenge<span class="o">=</span><span class="nb">true</span>
+      - --certificatesResolvers.dns-cloudflare.acme.email<span class="o">=</span><span class="nv">$CLOUDFLARE_EMAIL</span>
+      - --certificatesResolvers.dns-cloudflare.acme.storage<span class="o">=</span>/acme.json
+      - --certificatesResolvers.dns-cloudflare.acme.dnsChallenge.provider<span class="o">=</span>cloudflare
+      - --certificatesResolvers.dns-cloudflare.acme.dnsChallenge.resolvers<span class="o">=</span><span class="m">1</span>.1.1.1:53,1.0.0.1:53
+    ports:
+      - target: <span class="m">80</span>
+        published: <span class="m">80</span>
+        protocol: tcp
+        mode: host
+      - target: <span class="m">443</span>
+        published: <span class="m">443</span>
+        protocol: tcp
+        mode: host
+    volumes:
+        <span class="c1">##The rules that we will load##</span>
+      - <span class="nv">$USERDIR</span>/docker/traefik2/rules:/rules
+        <span class="c1">##</span>
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - <span class="nv">$USERDIR</span>/docker/traefik2/acme/acme.json:/acme.json
+      - <span class="nv">$USERDIR</span>/docker/traefik2/traefik.log:/traefik.log
+    environment:
+      - <span class="nv">CF_API_EMAIL</span><span class="o">=</span><span class="nv">$CLOUDFLARE_EMAIL</span>
+      - <span class="nv">CF_API_KEY</span><span class="o">=</span><span class="nv">$CLOUDFLARE_API_KEY</span>
+    labels:
+      - <span class="s2">&quot;traefik.enable=true&quot;</span>
+      <span class="c1"># HTTP-to-HTTPS Redirect</span>
+      - <span class="s2">&quot;traefik.http.routers.http-catchall.entrypoints=http&quot;</span>
+      - <span class="s2">&quot;traefik.http.routers.http-catchall.rule=HostRegexp(`{host:.+}`)&quot;</span>
+      - <span class="s2">&quot;traefik.http.routers.http-catchall.middlewares=redirect-to-https&quot;</span>
+      - <span class="s2">&quot;traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https&quot;</span>
+      <span class="c1"># HTTP Routers</span>
+      - <span class="s2">&quot;traefik.http.routers.traefik-rtr.entrypoints=https&quot;</span>
+      - <span class="s2">&quot;traefik.http.routers.traefik-rtr.rule=HostHeader(`traefik.</span><span class="nv">$DOMAINNAME</span><span class="s2">`)&quot;</span>
+      - <span class="s2">&quot;traefik.http.routers.traefik-rtr.tls=true&quot;</span>
+      - <span class="s2">&quot;traefik.http.routers.traefik-rtr.tls.domains[0].main=</span><span class="nv">$DOMAINNAME</span><span class="s2">&quot;</span>
+      - <span class="s2">&quot;traefik.http.routers.traefik-rtr.tls.domains[0].sans=*.</span><span class="nv">$DOMAINNAME</span><span class="s2">&quot;</span>
+</code></pre></div></p>
+<p>Before proceeding, we need to change the port 443 to 4430 and 80 to 800 because the port 443 and 80 are already used by Traefik.</p>
+<p>Here is a snippet of the only thing you should modify into docker-compose file of the installation.</p>
+<p><div class="highlight"><pre><span></span><code>  <span class="c1"># container for tactical reverse proxy</span>
+  tactical-nginx:
+    container_name: trmm-nginx
+    image: <span class="si">${</span><span class="nv">IMAGE_REPO</span><span class="si">}</span>tactical-nginx:<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span>
+    restart: always
+    environment:
+      APP_HOST: <span class="si">${</span><span class="nv">APP_HOST</span><span class="si">}</span>
+      API_HOST: <span class="si">${</span><span class="nv">API_HOST</span><span class="si">}</span>
+      MESH_HOST: <span class="si">${</span><span class="nv">MESH_HOST</span><span class="si">}</span>
+      CERT_PUB_KEY: <span class="si">${</span><span class="nv">CERT_PUB_KEY</span><span class="si">}</span>
+      CERT_PRIV_KEY: <span class="si">${</span><span class="nv">CERT_PRIV_KEY</span><span class="si">}</span>
+    networks:
+      proxy:
+        ipv4_address: <span class="m">172</span>.20.0.20
+    ports:
+      - <span class="s2">&quot;800:80&quot;</span> <span class="c1">## port 800 instead of 80</span>
+      - <span class="s2">&quot;4430:443&quot;</span> <span class="c1">## port 4430 instead of 443</span>
+</code></pre></div>
+Once save, make sure you run the docker-compose or installation script at least once, so all the directory structure are created.
+Once you have your certificate (acme.json) generated by traefikv2 we will be able to extract it for rmm.</p>
+<p>Copy the acme.json create by traefik into the root of your rmm directory (In my case its $USERDIR/docker/rmm) which you should have already define.
+After that we can run this docker to extract the certificates for us.
+<div class="highlight"><pre><span></span><code>version: <span class="s2">&quot;3.7&quot;</span>
+services:
+<span class="c1">##Copy the acme.json of Traefik2 at volumes: (userdir/docker/rmm in this case)</span>
+  traefik-certs-dumper:
+    image: ldez/traefik-certs-dumper:v2.7.4
+    entrypoint: sh -c <span class="s1">&#39;</span>
+<span class="s1">      apk add jq</span>
+<span class="s1">      ; while ! [ -e /data/acme.json ]</span>
+<span class="s1">      || ! [ `jq &quot;.[] | .Certificates | length&quot; /data/acme.json` != 0 ]; do</span>
+<span class="s1">      sleep 1</span>
+<span class="s1">      ; done</span>
+<span class="s1">      &amp;&amp; traefik-certs-dumper file --version v2 --watch</span>
+<span class="s1">      --source /data/acme.json --dest data/certs&#39;</span>
+    volumes:
+      - <span class="nv">$USERDIR</span>/docker/rmm:/data
+</code></pre></div>
+Once completed, you should have 1 new folder into you rmm directory $USERDIR/docker/rmm/<strong>certs</strong> in this example.
+As the installation instruction, we will pass those to the .env</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;CERT_PUB_KEY=</span><span class="k">$(</span>sudo base64 -w <span class="m">0</span> <span class="nv">$USERDIR</span>/docker/rmm/certs/certs/**yourdomaine.com.crt**<span class="k">)</span><span class="s2">&quot;</span> &gt;&gt; .env
+<span class="nb">echo</span> <span class="s2">&quot;CERT_PRIV_KEY=</span><span class="k">$(</span>sudo base64 -w <span class="m">0</span> <span class="nv">$USERDIR</span>/docker/rmm/certs/private/**yourdomaine.com.key**<span class="k">)</span><span class="s2">&quot;</span> &gt;&gt; .env
+</code></pre></div>
+<p>Next we can create 3 rules to tell traefik to correctly route the https and agent
+For that we will create 2 rules into traefik directory as per it configuration. folder/traefik/rules</p>
+<p>create
+<div class="highlight"><pre><span></span><code>nano app-mesh.toml
+</code></pre></div>
+and inside it we add
+<div class="highlight"><pre><span></span><code><span class="o">[</span>http.routers<span class="o">]</span>
+  <span class="o">[</span>http.routers.mesh-rtr<span class="o">]</span>
+      <span class="nv">entryPoints</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;https&quot;</span><span class="o">]</span>
+      <span class="nv">rule</span> <span class="o">=</span> <span class="s2">&quot;Host(`mesh.**yourdomain.com**`)&quot;</span>
+      <span class="nv">service</span> <span class="o">=</span> <span class="s2">&quot;mesh-svc&quot;</span>
+<span class="c1">##middleware with 2fa</span>
+<span class="o">[</span>http.services<span class="o">]</span>
+  <span class="o">[</span>http.services.mesh-svc<span class="o">]</span>
+    <span class="o">[</span>http.services.mesh-svc.loadBalancer<span class="o">]</span>
+      <span class="nv">passHostHeader</span> <span class="o">=</span> <span class="nb">true</span>
+      <span class="o">[[</span>http.services.mesh-svc.loadBalancer.servers<span class="o">]]</span>
+        <span class="nv">url</span> <span class="o">=</span> <span class="s2">&quot;https://**xxx.xxx.xxx.xxx**:4430&quot;</span> <span class="c1"># or whatever your external host&#39;s IP is</span>
+</code></pre></div></p>
+<p>create
+<div class="highlight"><pre><span></span><code>nano app-meshagent.toml
+</code></pre></div>
+and inside it we add</p>
+<p><div class="highlight"><pre><span></span><code><span class="o">[</span>http.routers<span class="o">]</span>
+  <span class="o">[</span>http.routers.mesh-rtr1<span class="o">]</span>
+      <span class="nv">entryPoints</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;https&quot;</span><span class="o">]</span>
+      <span class="nv">rule</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Host(`mesh.**yourdomain.com**`) &amp;&amp;</span>
+<span class="s2">        PathPrefix( `/agent.ashx`, `/meshrelay.ashx`, ) &amp;&amp;</span>
+<span class="s2">        Headers(`X-Forwarded-Proto`, `wss`) &quot;&quot;&quot;</span>
+    <span class="c1">##Don&#39;t add middle where, the agent wont work.</span>
+<span class="o">[</span>http.services<span class="o">]</span>
+  <span class="o">[</span>http.services.mesh-svc1<span class="o">]</span>
+    <span class="o">[</span>http.services.mesh-svc.loadBalancer<span class="o">]</span>
+      <span class="nv">passHostHeader</span> <span class="o">=</span> <span class="nb">true</span>
+      <span class="o">[[</span>http.services.mesh-svc1.loadBalancer.servers<span class="o">]]</span>
+        <span class="nv">url</span> <span class="o">=</span> <span class="s2">&quot;https://**xxx.xxx.xxx.xxx**:4430&quot;</span> <span class="c1"># or whatever your external host&#39;s IP is</span>
+</code></pre></div>
+create
+<div class="highlight"><pre><span></span><code>nano app-rmm.toml
+</code></pre></div>
+and inside it we add</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>http.routers<span class="o">]</span>
+  <span class="o">[</span>http.routers.rmm-rtr<span class="o">]</span>
+      <span class="nv">entryPoints</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;https&quot;</span><span class="o">]</span>
+      <span class="nv">rule</span> <span class="o">=</span> <span class="s2">&quot;Host(`rmm.**yourdomain.com**`)&quot;</span>
+      <span class="nv">service</span> <span class="o">=</span> <span class="s2">&quot;rmm-svc&quot;</span>
+
+      <span class="c1">##middleware with 2fa</span>
+
+<span class="o">[</span>http.services<span class="o">]</span>
+  <span class="o">[</span>http.services.rmm-svc<span class="o">]</span>
+    <span class="o">[</span>http.services.rmm-svc.loadBalancer<span class="o">]</span>
+      <span class="nv">passHostHeader</span> <span class="o">=</span> <span class="nb">true</span>
+      <span class="o">[[</span>http.services.rmm-svc.loadBalancer.servers<span class="o">]]</span>
+        <span class="nv">url</span> <span class="o">=</span> <span class="s2">&quot;https://xxx.xxx.xxx.xxx:4430&quot;</span> <span class="c1"># or whatever your external host&#39;s IP:port is</span>
+</code></pre></div>
+<p>That it, you can now restart Tactical rmm and mesh.yourdomain.com should work, same for the agent.
+Please note that if you have a middleware with 2FA you can still use it with the inside mesh.toml but do not add it with the agent.</p>
+<h2 id="haproxy">HAProxy<a class="headerlink" href="#haproxy" title="Permanent link">&para;</a></h2>
+<p>Check/Change the mesh central config.json, some of the values may be set already, CertUrl must be changed to point to the HAProxy server.</p>
+<h3 id="meshcentral-adjustment">Meshcentral Adjustment<a class="headerlink" href="#meshcentral-adjustment" title="Permanent link">&para;</a></h3>
+<p>Credit to <a href="https://github.com/bradhawkins85">@bradhawkins</a></p>
+<p>Edit Meshcentral config</p>
+<div class="highlight"><pre><span></span><code>nano /meshcentral/meshcentral-data/config.json
+</code></pre></div>
+<p>Insert this (modify <code>HAProxyIP</code> to your network)</p>
+<div class="highlight"><pre><span></span><code>{
+  &quot;settings&quot;: {
+    &quot;Port&quot;: 4430,
+    &quot;AliasPort&quot;: 443,
+    &quot;RedirPort&quot;: 800,
+    &quot;TlsOffload&quot;: &quot;127.0.0.1&quot;,
+  },
+  &quot;domains&quot;: {
+    &quot;&quot;: {
+      &quot;CertUrl&quot;: &quot;https://HAProxyIP:443/&quot;,
+    }
+  }
+}
+</code></pre></div>
+<p>Restart meshcentral</p>
+<div class="highlight"><pre><span></span><code>service meshcentral restart
+</code></pre></div>
+<h3 id="haproxy-config">HAProxy Config<a class="headerlink" href="#haproxy-config" title="Permanent link">&para;</a></h3>
+<p>The order of use_backend is important <code>Tactical-Mesh-WebSocket_ipvANY</code> must be before <code>Tactical-Mesh_ipvANY</code>
+The values of <code>timeout connect</code>, <code>timeout server</code>, <code>timeout tunnel</code> in <code>Tactical-Mesh-WebSocket</code> have been configured to maintain a stable agent connection, however you may need to adjust these values to suit your environment.</p>
+<div class="highlight"><pre><span></span><code>frontend HTTPS-merged
+    bind            0.0.0.0:443 name 0.0.0.0:443   ssl crt-list /var/etc/haproxy/HTTPS.crt_list  #ADJUST THIS TO YOUR OWN SSL CERTIFICATES
+    mode            http
+    log         global
+    option          socket-stats
+    option          dontlognull
+    option          http-server-close
+    option          forwardfor
+    acl https ssl_fc
+    http-request set-header     X-Forwarded-Proto http if !https
+    http-request set-header     X-Forwarded-Proto https if https
+    timeout client      30000
+    acl         RMM var(txn.txnhost) -m sub -i rmm.example.com
+    acl         aclcrt_RMM  var(txn.txnhost) -m reg -i ^([^\.]*)\.example\.com(:([0-9]){1,5})?$
+    acl         API var(txn.txnhost) -m sub -i api.example.com
+    acl         aclcrt_API  var(txn.txnhost) -m reg -i ^([^\.]*)\.example\.com(:([0-9]){1,5})?$
+    acl         is_websocket    hdr(Upgrade) -i WebSocket
+    acl         is_mesh var(txn.txnhost) -m beg -i mesh.example.com
+    acl         aclcrt_MESH-WebSocket   var(txn.txnhost) -m reg -i ^([^\.]*)\.example\.com(:([0-9]){1,5})?$
+    acl         MESH    var(txn.txnhost) -m sub -i mesh.example.com
+    acl         aclcrt_MESH var(txn.txnhost) -m reg -i ^([^\.]*)\.example\.com(:([0-9]){1,5})?$
+    #PUT OTHER USE_BACKEND IN HERE
+    use_backend Tactical_ipvANY  if  RMM aclcrt_RMM
+    use_backend Tactical_ipvANY  if  API aclcrt_API
+    use_backend Tactical-Mesh-WebSocket_ipvANY  if  is_websocket is_mesh aclcrt_MESH-WebSocket
+    use_backend Tactical-Mesh_ipvANY  if  MESH aclcrt_MESH
+
+frontend http-to-https
+    bind            0.0.0.0:80
+    mode            http
+    log         global
+    option          http-keep-alive
+    timeout client      30000
+    http-request redirect scheme https
+
+
+backend Tactical_ipvANY
+    mode            http
+    id          100
+    log         global
+    timeout connect     30000
+    timeout server      30000
+    retries         3
+    option          httpchk GET /
+    server          tactical 192.168.10.123:443 id 101 ssl check inter 1000  verify none
+
+
+backend Tactical-Mesh-WebSocket_ipvANY
+    mode            http
+    id          113
+    log         global
+    timeout connect     3000
+    timeout server      3000
+    retries         3
+    timeout tunnel      3600000
+    http-request add-header X-Forwarded-Host %[req.hdr(Host)]
+    http-request add-header X-Forwarded-Proto https
+    server          tactical 192.168.10.123:443 id 101 ssl  verify none
+
+backend Tactical-Mesh_ipvANY
+    mode            http
+    id          112
+    log         global
+    timeout connect     15000
+    timeout server      15000
+    retries         3
+    option          httpchk GET /
+    timeout tunnel      15000
+    http-request add-header X-Forwarded-Host %[req.hdr(Host)]
+    http-request add-header X-Forwarded-Proto https
+    server          tactical 192.168.10.123:443 id 101 ssl check inter 1000  verify none
+</code></pre></div>
+<h3 id="haproxy-howto-for-pfsense">HAProxy Howto for pfsense<a class="headerlink" href="#haproxy-howto-for-pfsense" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/ninjamonkey198206/T-RMM-PFSense-HAProxy-config">https://github.com/ninjamonkey198206/T-RMM-PFSense-HAProxy-config</a></p>
+<h3 id="haproxy-howto-for-baremetal">HAProxy Howto for Baremetal<a class="headerlink" href="#haproxy-howto-for-baremetal" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/ninjamonkey198206/T-RMM-Baremetal-HAProxy">https://github.com/ninjamonkey198206/T-RMM-Baremetal-HAProxy</a></p>
+<h2 id="haproxy-in-tcp-mode">HAProxy in TCP mode<a class="headerlink" href="#haproxy-in-tcp-mode" title="Permanent link">&para;</a></h2>
+<p>In this scenario, you install TRMM as per documentation.
+Meaning your certificates are generated and managed on your TRMM server, just use the <code>install.sh</code> and follow docs and on-screen instructions.</p>
+<p>HAProxy here will just pass the traffic to the NGINX on TRMM server. No certificate management.
+Only use this method if you have more than 1 server that need to use port 443 on the same public IP.</p>
+<h3 id="assumptions">Assumptions<a class="headerlink" href="#assumptions" title="Permanent link">&para;</a></h3>
+<p>These are some assumptions made to make this guide, short, easy to follow and to the point.
+Of course you can adapt it to your environment and/or current configuration.</p>
+<ul>
+<li>You have a pfSense firewall</li>
+<li>You have HAProxy installed</li>
+<li>You don't have any <code>http</code> frontends on your HAProxy</li>
+<li>You have firewall rule to allow traffic from your WAN to HAProxy 443 port.</li>
+<li>You have set Max Connections on Settings to a value MORE than the agents you plan to connect</li>
+<li>Your subdomains are: <code>api</code>, <code>mesh</code>, <code>rmm</code></li>
+<li>You can resolve <code>(rmm|api|mesh).example.com</code> to your local TRMM server when in your local network</li>
+<li>You can resolve <code>(rmm|api|mesh).example.com</code> to your public IP when you are outside of your local network</li>
+</ul>
+<h4 id="global-settings">Global Settings<a class="headerlink" href="#global-settings" title="Permanent link">&para;</a></h4>
+<p>Config file format, for reference</p>
+<div class="highlight"><pre><span></span><code>global
+  maxconn     50000
+  stats socket /tmp/haproxy.socket level admin  expose-fd listeners
+  gid     80
+  nbproc      1
+  nbthread      1
+  hard-stop-after   15m
+  chroot        /tmp/haproxy_chroot
+  daemon
+  tune.ssl.default-dh-param 2048
+  server-state-file /tmp/haproxy_server_state
+</code></pre></div>
+<h4 id="values-you-will-have-to-replace-with-your-own">Values you will have to replace with your own<a class="headerlink" href="#values-you-will-have-to-replace-with-your-own" title="Permanent link">&para;</a></h4>
+<ul>
+<li>10.10.10.100 - Change with your TRMM local IP</li>
+<li>example.com - Change with your domain</li>
+</ul>
+<h3 id="backend">Backend<a class="headerlink" href="#backend" title="Permanent link">&para;</a></h3>
+<p>Navigate to <code>Services</code> -&gt; <code>HAProxy</code> -&gt; <code>Backend</code></p>
+<ul>
+<li>Click ⤵️Add</li>
+</ul>
+<h4 id="backend-server-pool">Backend server pool<a class="headerlink" href="#backend-server-pool" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Name: <code>trmm-backend</code></li>
+<li>On Server list, Click ⤵️</li>
+<li>Name: <code>trmm-server</code></li>
+<li>Forwardto: <code>Address+Port</code></li>
+<li>Address: <code>10.10.10.100</code> (Reminder: change this)</li>
+<li>Port: <code>443</code></li>
+<li>Max conn: <code>10000</code> (Or <code>0</code> for unlimited)</li>
+</ul>
+<p><img alt="haproxy-tcp-serverlist" src="../images/haproxy-tcp-serverlist.png" /></p>
+<h4 id="timeout-retry-settings">Timeout / retry settings<a class="headerlink" href="#timeout-retry-settings" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Connection timeout: <code>300000</code> (Note: it has more 0s than the default)</li>
+<li>Server timeout: <code>300000</code> (Note: it has more 0s than the default)</li>
+<li>Retries: <code>3</code></li>
+</ul>
+<p><img alt="haproxy-tcp-back-timeout" src="../images/haproxy-tcp-back-timeout.png" /></p>
+<h4 id="heath-checking">Heath checking<a class="headerlink" href="#heath-checking" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Health check method: <code>SSL</code></li>
+</ul>
+<blockquote>
+<p>Keep this to <code>none</code> while installing or updating certificates.
+There might be problems if it's set to <code>SSL</code> or <code>basic</code> while doing so.</p>
+</blockquote>
+<p><img alt="haproxy-tcp-healthcheck" src="../images/haproxy-tcp-healthcheck.png" /></p>
+<h4 id="advanced-settings">Advanced settings<a class="headerlink" href="#advanced-settings" title="Permanent link">&para;</a></h4>
+<p>Please read the Warning there, and the note at the bottom.
+This optional and it's use is to show the real public IP of the agent.</p>
+<ul>
+<li>Check `Use Client-IP to connect to backend servers.</li>
+</ul>
+<blockquote>
+<p>Some remote agents would not let me do RDP without this option.
+Play with it and see what works for you.</p>
+</blockquote>
+<p><img alt="haproxy-tcp-advanced" src="../images/haproxy-tcp-advanced.png" /></p>
+<p>It works well for me, there are cases that it might not work on all environments.</p>
+<h4 id="for-those-who-like-the-config-files">For those who like the config files<a class="headerlink" href="#for-those-who-like-the-config-files" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>backend trmm-backend_ipv4
+  mode    tcp
+  id      10100
+  log     global
+  timeout connect   300000
+  timeout server    300000
+  retries     3
+  source ipv4@ usesrc clientip
+  option      ssl-hello-chk
+  server      trmm-server 10.10.10.100:443 id 10101 check inter 1000  maxconn 10000
+</code></pre></div>
+<h3 id="frontend">Frontend<a class="headerlink" href="#frontend" title="Permanent link">&para;</a></h3>
+<p>Navigate to <code>Services</code> -&gt; <code>HAProxy</code> -&gt; <code>Frontend</code></p>
+<ul>
+<li>Click ⤵️Add</li>
+</ul>
+<h4 id="edit-haproxy-frontend">Edit HAProxy Frontend<a class="headerlink" href="#edit-haproxy-frontend" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Name: <code>FrontendTCP</code></li>
+<li>Status: <code>Active</code></li>
+<li>On External address, click ⤵️</li>
+<li>Listen address: <code>WAN address (IPv4)</code></li>
+<li>Port: <code>443</code></li>
+<li>Max connections: <code>10000</code> (Or <code>0</code> or unlimited`)</li>
+<li>Type: <code>ssl/https (TCP mode)</code></li>
+</ul>
+<p><img alt="haproxy-tcp-front" src="../images/haproxy-tcp-front.png" /></p>
+<h4 id="default-backend-access-control-lists-and-actions">Default backend, access control lists and actions<a class="headerlink" href="#default-backend-access-control-lists-and-actions" title="Permanent link">&para;</a></h4>
+<ul>
+<li>On Access Control lists, Click ⤵️</li>
+<li>Name: <code>tactical</code></li>
+<li>Expression <code>Server Name Indication TLS extension regex:</code></li>
+<li>value: <code>(rmm|api|mesh)\.example\.com</code></li>
+<li>On Actions, Click ⤵️</li>
+<li>Action: <code>Use Backend</code></li>
+<li>Condition acl names: <code>tactical</code></li>
+<li>backend: <code>trmm-backend</code></li>
+</ul>
+<p><img alt="haproxy-tcp-acls" src="../images/haproxy-tcp-acls.png" /></p>
+<h4 id="advanced-settings_1">Advanced settings<a class="headerlink" href="#advanced-settings_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Client timeout: <code>300000</code> (Note: it has more 0s than the default)</li>
+<li>Use "httpclose" option: <code>http-server-close</code></li>
+</ul>
+<p><img alt="happroxy-tcp-adv" src="../images/haproxy-tcp-adv.png" /></p>
+<p>Click 💾Save
+Click ✔️Apply Changes</p>
+<h4 id="for-those-who-like-the-config-files_1">For those who like the config files<a class="headerlink" href="#for-those-who-like-the-config-files_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>frontend Frontend-SNI
+  bind      YOURWANIP:443 name YOURWANIP:443
+  mode      tcp
+  log     global
+  maxconn     10000
+  timeout client    300000
+  tcp-request inspect-delay 5s
+  acl     tactical  req.ssl_sni -m reg -i (rmm|mesh|api)\.yourdomain\.com
+  tcp-request content accept if { req.ssl_hello_type 1 }
+  use_backend tactical_ipv4  if  trmm-backend
+</code></pre></div>
+<h2 id="apache-proxy">Apache Proxy<a class="headerlink" href="#apache-proxy" title="Permanent link">&para;</a></h2>
+<p>howto -  proxy on apache</p>
+<h3 id="trmm-server">TRMM SERVER<a class="headerlink" href="#trmm-server" title="Permanent link">&para;</a></h3>
+<p>edit file /etc/nginx/sites-available/rmm.conf
+add the lines from 'real_ip' module inside server tag:</p>
+<div class="codehilite"><pre><span></span><code>set_real_ip_from    192.168.0.200; #IP Address of your apache proxy
+real_ip_header      X-Forwarded-For;
+</code></pre></div>
+
+<p>restart nginx</p>
+<div class="codehilite"><pre><span></span><code>systemctl restart nginx.service
+</code></pre></div>
+
+<h3 id="apache">APACHE<a class="headerlink" href="#apache" title="Permanent link">&para;</a></h3>
+<p>enable ssl proxy, rewriteEngine.
+set proxy to preserve host.
+set upgrade rule to websocket.
+set proxypass rules redirecting to rmm location</p>
+<p>on your apache ssl config
+example:</p>
+<div class="codehilite"><pre><span></span><code>&lt;VirtualHost *:443&gt;
+    ServerName rmm.blablabla.com.br:443
+    ServerAlias mesh.blablabla.com.br:443 api.blablabla.com.br:443
+    SSLEngine on
+
+    SSLCertificateFile &quot;C:/Apache24/conf/ssl-rmm.blablabla.com.br/_.blablabla.com.br-chain.pem&quot;
+    SSLCertificateKeyFile &quot;C:/Apache24/conf/ssl-rmm.blablabla.com.br/_.blablabla.com.br-key.pem&quot;
+
+    SSLProxyEngine on
+
+    RewriteEngine On
+    ProxyPreserveHost On
+
+    # When Upgrade:websocket header is present, redirect to ws
+    # Using NC flag (case-insensitive) as some browsers will pass Websocket
+    RewriteCond %{HTTP:Upgrade} =websocket [NC]
+    RewriteRule ^/(.*)    wss://192.168.0.212/$1 [P,L]
+
+    ProxyPass &quot;/&quot;  &quot;https://192.168.0..212/&quot; retry=3
+    ProxyPassReverse &quot;/&quot;  &quot;https://192.168.0.212/&quot; retry=3
+
+    BrowserMatch &quot;MSIE [2-5]&quot; \
+             nokeepalive ssl-unclean-shutdown \
+             downgrade-1.0 force-response-1.0
+</code></pre></div>
+
+<p></VirtualHost></p>
+<h3 id="updating-certificate">Updating certificate:<a class="headerlink" href="#updating-certificate" title="Permanent link">&para;</a></h3>
+<p>In my case, auto DNS Challenge from apache, so every time we get new cert files, it must be copied inside rmm too.
+just overwrite default location:
+/etc/letsencrypt/archive/blablablabla
+or change certs location on nginx conf to whatever you want.</p>
+<h2 id="nginx-proxy">nginx Proxy<a class="headerlink" href="#nginx-proxy" title="Permanent link">&para;</a></h2>
+<p>Having mesh connection issues?</p>
+<p>See <a href="https://info.meshcentral.com/downloads/MeshCentral2/MeshCentral2UserGuide.pdf">https://info.meshcentral.com/downloads/MeshCentral2/MeshCentral2UserGuide.pdf</a> page 30.</p>
+<h2 id="nginx-proxy-manager">Nginx Proxy Manager<a class="headerlink" href="#nginx-proxy-manager" title="Permanent link">&para;</a></h2>
+<p>In NPM, declare the hosts with the parameters:</p>
+<div class="highlight"><pre><span></span><code>api.{domain}
+https | TRMM server IP | 443
+ON: Cache Assets | Block Common Exploits | Websockets Support
+
+mesh.{domain}
+https | TRMM server IP | 443
+ON: Cache Assets | Block Common Exploits | Websockets Support
+
+rmm.{domain}
+https | TRMM server IP | 443
+ON: Cache Assets | Block Common Exploits | Websockets Support
+
+proxy.{domain}
+http | NPM server IP | 81 (NPM web UI port)
+</code></pre></div>
+<p>Then connect in SSH to your TRMM server to modify the nginx config of Mesh:</p>
+<div class="highlight"><pre><span></span><code>nano meshcentral/meshcentral-data/config.json
+</code></pre></div>
+<p>Then modify in this file the <code>TlsOffload</code> field to put the local IP address of your NPM and the port that goes with it, then also modify the "CertUrl" field to put the public domain name of your NPM.</p>
+<div class="highlight"><pre><span></span><code>{
+&quot;settings&quot;: {
+&quot;Cert&quot;: &quot;${meshdomain}&quot;,
+&quot;MongoDb&quot;: &quot;mongodb://127.0.0.1:27017&quot;,
+&quot;MongoDbName&quot;: &quot;meshcentral&quot;,
+&quot;WANonly&quot;: true,
+&quot;Minify&quot;: 1,
+&quot;Port&quot;: 4430,
+&quot;AliasPort&quot;: 443,
+&quot;RedirPort&quot;: 800,
+&quot;AllowLoginToken&quot;: true,
+&quot;AllowFraming&quot;: true,
+&quot;_AgentPing&quot;: 60,
+&quot;AgentPong&quot;: 300,
+&quot;AllowHighQualityDesktop&quot;: true,
+&quot;TlsOffload&quot;: &quot;{NPM LAN IP}:81&quot;,
+&quot;agentCoreDump&quot;: false,
+&quot;Compression&quot;: true,
+&quot;WsCompression&quot;: true,
+&quot;AgentWsCompression&quot;: true,
+&quot;MaxInvalidLogin&quot;: { &quot;time&quot;: 5, &quot;count&quot;: 5, &quot;coolofftime&quot;: 30 }
+},
+&quot;domains&quot;: {
+&quot;&quot;: {
+&quot;Title&quot;: &quot;Tactical RMM&quot;,
+&quot;Title2&quot;: &quot;Tactical RMM&quot;,
+&quot;NewAccounts&quot;: false,
+&quot;CertUrl&quot;: &quot;https://proxy.{domain}:443/&quot;,
+&quot;GeoLocation&quot;: true,
+&quot;CookieIpCheck&quot;: false,
+&quot;mstsc&quot;: true
+}
+}
+}
+</code></pre></div>
+<p>Then restart your mesh</p>
+<div class="highlight"><pre><span></span><code>systemctl restart meshcentral.service
+</code></pre></div>
+<p>At which point agents should be working. Use the "Recover Connection" button if necessary</p>
+<h2 id="synology-nas-reverse-proxy-portal">Synology NAS reverse proxy portal<a class="headerlink" href="#synology-nas-reverse-proxy-portal" title="Permanent link">&para;</a></h2>
+<p>Follow <a href="#haproxy">HAProxy</a></p>
+<p>And set the "CertUrl" to point to the IP address of my NAS that was running the reserve proxy and had the certificates installed.</p>
+<p>In Synology NAS reverse proxy portal and added websockets to the rmm domains, especially the mesh domain under custom headers, by just clicking the create button and choosing WebSocket:</p>
+<p><img alt="Image1" src="../images/synology_proxy.png" /></p>
+<p><img alt="Image2" src="../images/synology_proxy2.png" /></p>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../securing_nginx/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Securing nginx" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Securing nginx
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../unsupported_synology_docker_install/" class="md-footer__link md-footer__link--next" aria-label="Next: Installing in Synology docker" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Installing in Synology docker
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/amidaware/tacticalrmm" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>
