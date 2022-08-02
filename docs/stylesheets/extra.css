@@ -16,7 +16,6 @@
     border-width: 1px;
     border-radius: 5px;
     border-color: gray;
-    background-color: rgba(0, 0, 255, 0.16);
     width: 100%;
     border-style: solid;
     padding: 5px;
@@ -25,7 +24,6 @@
     border-width: 1px;
     border-radius: 10px;
     border-color: gray;
-    background-color: rgba(0, 0, 255, 0.13);
     width: 90%;
     border-style: solid;
     padding: 5px;
@@ -35,7 +33,6 @@
     border-width: 1px;
     border-radius: 15px;
     border-color: gray;
-    background-color: rgba(0, 0, 255, 0.1);
     width: 80%;
     border-style: solid;
     padding: 5px;
@@ -45,7 +42,6 @@
     border-width: 1px;
     border-radius: 20px;
     border-color: gray;
-    background-color: rgba(0, 0, 255, 0.07);
     width: 70%;
     border-style: solid;
     padding: 5px;
@@ -55,7 +51,6 @@
     border-width: 1px;
     border-radius: 25px;
     border-color: gray;
-    background-color: rgba(0, 0, 255, 0.04);
     width: 60%;
     border-style: solid;
     padding: 5px;
