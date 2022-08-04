@@ -137,6 +137,10 @@ Restart django: `sudo systemctl restart rmm.service`
 
 Then visit `https://api.example.com/api/schema/swagger-ui/` to see it in action.
 
+## API via CLI
+
+<https://gitlab.com/NiceGuyIT/trmm-cli>
+
 ## API Examples
 
 Listing all software on all agents
@@ -160,3 +164,7 @@ def get_software():
 if __name__ == "__main__":
     get_software()
 ```
+
+## More Examples
+
+[Lots of misc examples](api_examples.md)
