@@ -13,7 +13,7 @@ Install docker.
 We'll be using `example.com` as our domain for this example.
 
 !!!info
-    The RMM uses 3 different sites. The Vue frontend e.g. `rmm.example.com` which is where you'll be accessing your RMM from the browser, the REST backend e.g. `api.example.com` and Meshcentral e.g. `mesh.example.com`
+    The RMM uses 3 different sites. The Vue frontend e.g. `rmm.example.com` which is where you'll be accessing your RMM from the browser, the REST backend e.g. `api.example.com` and MeshCentral e.g. `mesh.example.com`
 
 1. Get the public IP of your server with `curl https://icanhazip.tacticalrmm.io`
 2. Open the DNS manager of wherever the domain you purchased is hosted.
@@ -80,7 +80,7 @@ Use the below command to add the the correct values to the .env.
 
 Running this command multiple times will add redundant entries, so those will need to be removed.
 
-Let's encrypt certs paths are below. Replace ${rootdomain} with your own.
+Let'sEncrypt certs paths are below. Replace ${rootdomain} with your own.
 
 public key
 `/etc/letsencrypt/live/${rootdomain}/fullchain.pem`
@@ -95,7 +95,7 @@ echo "CERT_PRIV_KEY=$(sudo base64 -w 0 /path/to/priv/key)" >> .env
 
 ## 6. Starting the environment
 
-Run the below command to start the environment.
+Run the below command to start the environment:
 
 ```bash
 sudo docker-compose up -d

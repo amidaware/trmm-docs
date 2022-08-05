@@ -21,7 +21,7 @@ Open the DNS manager of wherever your domain is hosted.
 Update the 3 A records `rmm`, `api` and `mesh` and point them to the public IP of your new server.
 ## Run the restore script
 
-Switch to the `tactical` user
+Switch to the `tactical` user:
 
 ```bash
 su - tactical
@@ -29,7 +29,7 @@ su - tactical
 
 Copy the backup tarball you created during [backup](backup.md) to the new server.
 
-Download the restore script.
+Download the restore script:
 
 ```bash
 wget -N https://raw.githubusercontent.com/amidaware/tacticalrmm/master/restore.sh

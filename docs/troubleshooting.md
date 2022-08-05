@@ -96,7 +96,7 @@ The mesh installer is created at time of install. Make sure it's working by runn
 
 ## Agents not checking in or showing up / General agent issues
 
-These are nats problems. Try quickfix first:
+These are NATS problems. Try quickfix first:
 
 ### from Admin Web Interface
 
@@ -114,20 +114,21 @@ Reload NATS:
 sudo systemctl restart nats.service
 ```
 
-Look at nats service errors (make sure it's running)
+Look at NATS service errors (make sure it's running):
 
 ```bash
 sudo systemctl status nats.service
 ```
 
-If nats isn't running see detailed reason why it isn't:
+If NATS isn't running see detailed reason why it isn't:
 
 ```bash
 sudo systemctl stop nats.service
 nats-server -DVV -c /rmm/api/tacticalrmm/nats-rmm.conf
 ```
 
-Fix the problem, then restart nats.
+Fix the problem, then restart NATS:
+
 ```
 sudo systemctl restart nats.service
 ```

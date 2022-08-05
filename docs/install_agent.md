@@ -66,7 +66,7 @@ Will print very verbose logging during agent install. Useful for troubleshooting
 -silent
 ```
 
-This will not popup any message boxes during install, either any error messages or the "Installation was successfull" message box that pops up at the end of a successfull install.
+This will not popup any message boxes during install, either any error messages or the "Installation was successful" message box that pops up at the end of a successful install.
 
 ```text
 -proxy "http://proxyserver:port"
@@ -84,7 +84,7 @@ Specify the full path to the directory containing `MeshAgent.exe` if using custo
 -nomesh
 ```
 
-Do not install meshcentral agent during tactical agent install. Note: take control, remote terminal and file browser will not work.
+Do not install MeshCentral agent during Tactical agent install. Note: take control, remote terminal and file browser will not work.
 
 You can get full command line options from (`--help`).
 
