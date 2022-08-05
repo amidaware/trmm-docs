@@ -3,9 +3,9 @@
 ## Updating to the latest RMM version
 
 !!!question
-    You have a [backup](https://docs.docker.com/desktop/backup-and-restore/) right?
+    You have a [backup](https://docs.docker.com/desktop/backup-and-restore/), right? RIGHT?!
 
-Tactical RMM updates the docker images on every release and should be available within a few minutes
+Tactical RMM updates the docker images on every release and should be available within a few minutes.
 
 SSH into your server as a root user and run the below commands:
 
@@ -36,6 +36,6 @@ echo "CERT_PRIV_KEY=$(sudo base64 -w 0 /etc/letsencrypt/live/${rootdomain}/privk
 !!!warning
     You must remove the old and any duplicate entries for CERT_PUB_KEY and CERT_PRIV_KEY in the .env file
 
-Now run `sudo docker-compose up -d restart` and the new certificate will be in effect
+Now run `sudo docker-compose up -d restart` and the new certificate will be in effect.
 
 Bonus: [Upgrade postgres13 to 14](https://github.com/amidaware/trmm-awesome#docker-upgrade-postgres-13-to-14)
