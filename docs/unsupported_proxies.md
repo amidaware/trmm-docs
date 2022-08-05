@@ -362,7 +362,7 @@ backend mesh.example.com_ipvANY
 
 <https://github.com/ninjamonkey198206/T-RMM-Baremetal-HAProxy>
 
-## HAProxy in TCP mode
+## HAProxy in TCP mode, PFSense
 
 In this scenario, you install TRMM as per documentation.
 Meaning your certificates are generated and managed on your TRMM server, just use the `install.sh` and follow docs and on-screen instructions.
@@ -375,18 +375,18 @@ Only use this method if you have more than 1 server that need to use port 443 on
 These are some assumptions made to make this guide, short, easy to follow and to the point.
 Of course you can adapt it to your environment and/or current configuration.
 
-- You have a pfSense firewall
-- You have HAProxy installed
-- You don't have any `http` frontends on your HAProxy
+- You have a PFSense firewall.
+- You have HAProxy installed.
+- You don't have any `http` frontends on your HAProxy.
 - You have firewall rule to allow traffic from your WAN to HAProxy 443 port.
-- You have set Max Connections on Settings to a value MORE than the agents you plan to connect
+- You have set Max Connections on Settings to a value MORE than the agents you plan to connect.
 - Your subdomains are: `api`, `mesh`, `rmm`
-- You can resolve `(rmm|api|mesh).example.com` to your local TRMM server when in your local network
-- You can resolve `(rmm|api|mesh).example.com` to your public IP when you are outside of your local network
+- You can resolve `(rmm|api|mesh).example.com` to your local TRMM server when in your local network.
+- You can resolve `(rmm|api|mesh).example.com` to your public IP when you are outside of your local network.
 
 #### Global Settings
 
-Config file format, for reference
+Config file format, for reference:
 
 ```text
 global
@@ -404,8 +404,8 @@ global
 
 #### Values you will have to replace with your own
 
-- 10.10.10.100 - Change with your TRMM local IP
-- example.com - Change with your domain
+- 10.10.10.100 - Change with your TRMM local IP.
+- example.com - Change with your domain.
 
 ### Backend
 
@@ -527,7 +527,7 @@ frontend Frontend-SNI
 ```
 
 ## Apache Proxy
-HowTo -  Proxy on Apache
+HowTo - Proxy on Apache
 ### TRMM SERVER
 Edit file /etc/nginx/sites-available/rmm.conf
 Add the lines from 'real_ip' module inside server tag:
@@ -553,6 +553,7 @@ Apache ssl config example:
 
 ```conf
 <VirtualHost *:443>
+
     ServerName rmm.blablabla.com.br:443
     ServerAlias mesh.blablabla.com.br:443 api.blablabla.com.br:443
     SSLEngine on
@@ -582,12 +583,14 @@ Apache ssl config example:
 
 ### Updating certificate:
 
-In my case, auto DNS Challenge from apache, so every time we get new cert files, it must be copied inside rmm too.
-just overwrite default location:
+In my case, auto DNS Challenge from Apache, so every time we get new cert files, it must be copied inside rmm too.
+Just overwrite default location:
+```text
 /etc/letsencrypt/archive/blablablabla
-or change certs location on nginx conf to whatever you want.
+```
+Or change certs location on Nginx conf to whatever you want.
 
-## nginx Proxy
+## Nginx Proxy
 
 Having mesh connection issues?
 
@@ -614,7 +617,7 @@ proxy.{domain}
 http | NPM server IP | 81 (NPM web UI port)
 ```
 
-Then connect in SSH to your TRMM server to modify the nginx config of Mesh:
+Then connect in SSH to your TRMM server to modify the Nginx config of Mesh:
 
 ```bash
 nano meshcentral/meshcentral-data/config.json
@@ -659,13 +662,13 @@ Then modify in this file the `TlsOffload` field to put the local IP address of y
 }
 ```
 
-Then restart your mesh
+Then restart your Mesh:
 
 ```bash
 systemctl restart meshcentral.service
 ```
 
-At which point agents should be working. Use the "Recover Connection" button if necessary
+At which point agents should be working. Use the "Recover Connection" button if necessary.
 
 ## Synology NAS reverse proxy portal
 
