@@ -68,16 +68,16 @@ You're operational!
 !!!note
     Self-signed certs are in your dev environment. Navigate to <https://api.example.com> and <https://rmm.example.com> and accept the self signed certs to get rid of errors.
 
-### View mkdocks live edits in browser
+### View MKDocks live edits in browser
 
 Change stuff in `/docs/docs/`
 
-mkdocs is Exposed on Port: 8005
+MKDocs is Exposed on Port: 8005
 
 Open: [http://rmm.example.com:8005/](http://rmm.example.com:8005/)
 
 !!!note
-    If you add new mkdocs extensions you might need to:<br>
+    If you add new MKDocs extensions you might need to:<br>
     - docker-compose down.<br>
     - Then delete the `/api/tacticalrmm/env/` folder.<br>
     - Then docker-compose up and it will download/rebuild new extensions

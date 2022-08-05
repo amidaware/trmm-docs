@@ -12,6 +12,6 @@ Add/edit markdown files in the `docs/docs` folder and you'll see live changes at
 
 Edit `docs/mkdocs.yml` to edit structure and add new files.
 
-Full mkdocs documentation [here](https://squidfunk.github.io/mkdocs-material/getting-started/)
+Full MKDocs documentation [here](https://squidfunk.github.io/mkdocs-material/getting-started/)
 
 Once finished, [create a pull request](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github) to the `main` branch for review.

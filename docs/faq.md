@@ -2,7 +2,7 @@
 
 ## Is Tactical RMM vulnerable to Log4j
 
-No
+No.
 
 ## Why isn't the Code Signing free?
 
@@ -20,16 +20,16 @@ Missing code signing token
 You must have a [paid code signing certificate](https://docs.tacticalrmm.com/code_signing/) while linux support is in the post-alpha/beta mode:
 
 - Code signing makes linux installs easy and is a benefit offered to code signing sponsors. [So become a sponsor and enjoy the easy life](sponsor.md)
-- DIYer can read thru the code and....DIY
+- DIYer can read thru the code and....DIY.
 
 This is primarily for 2 reasons: 
 
-1. As this has been a sponsorship goal it seems only fair that those who contributed to make this a reality get early access to easy linux agent installs
+1. As this has been a sponsorship goal it seems only fair that those who contributed to make this a reality get early access to easy linux agent installs.
 2. We're looking for good bug reports from active users to get the linux agent into production ready code. 
 
 ## Who is Amidaware LLC?
 
-The Legal entity behind Tactical RMM
+The Legal entity behind Tactical RMM.
 
 ## Is it possible to use XXX with Tactical RMM
 
@@ -41,7 +41,7 @@ If you wish to stray from the [easy install](../install_server/#option-1-easy-in
 
 The most common reasons you're running a proxy is:
 
-1. Because you only have a single public IP and you already have something on Port 443. **Workaround**: Get another public IP from your ISP
+1. Because you only have a single public IP and you already have something on Port 443. **Workaround**: Get another public IP from your ISP.
 2. Because you want to monitor traffic for security reasons: You're a [Networking Wizard](../unsupported_guidelines).
 
 There are some [implementations](../unsupported_scripts) that others have done, but be aware it is [Unsupported](../unsupported_guidelines) and if you're requesting help in Discord please let us know in advance.
@@ -60,7 +60,7 @@ Yes, you will just need to setup local DNS for the 3 subdomains, either by editi
 
 Similarly asked: Can I use onsite DNS servers (I don’t want my server accessible from the internet).
 
-Yes, you can use (only) internal DNS (if you want) for api, mesh and rmm domains. You don't have to put these records in your public DNS servers
+Yes, you can use (only) internal DNS (if you want) for api, mesh and rmm domains. You don't have to put these records in your public DNS servers.
 
 **Note:** You still **must** have an internet resolvable domain name and add the DNS `TXT` record to its public DNS server for the Let's Encrypt wildcard cert request process that is part of the install process. This **does not** require any inbound connection from the internet (port forwarding etc) to be enabled. This does not expose your RMM server to the internet in any way. The Let's Encrypt wildcard is done for [nats](#self-signed-certs)
 
@@ -168,4 +168,4 @@ Answer 1: Yes please use it and charge your customers for it.
 
 From the client/agent side: Installing and uninstalling software is part of system administration. Administrators can install/uninstall. Users cannot. Configure your system appropriately.
 
-From the TRMM Admin panel: Use `Permissions Manager` to restrict your techs permissions
+From the TRMM Admin panel: Use `Permissions Manager` to restrict your techs permissions.

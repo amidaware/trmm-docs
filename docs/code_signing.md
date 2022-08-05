@@ -6,7 +6,7 @@ Tactical RMM agents are now [code signed](https://comodosslstore.com/resources/w
 
 To get access to code signed agents, you must be a [Github Sponsor](https://github.com/sponsors/wh1te909) with a minimum **monthly** donation of $50.00. 
 
-One token is valid for 1 self hosted instance. If you have more than 1 instance you will need another token which you can get by increasing your sponsorship by $50 for each token. If you signup for the $50 and then downgrade, your auth token _**will be**_ invalidated and stop working.
+One token is valid for 1 self hosted instance. If you have more than 1 instance you will need another token which you can get by increasing your sponsorship by $50 for each token. If you sign up for the $50 and then downgrade, your auth token _**will be**_ invalidated and stop working.
 
 Once you have become a sponsor, please email **support@amidaware.com** with your Github username, the API subdomain you will be using for your instance (e.g. `api.example.com`), and Discord username if you're on our [Discord](https://discord.gg/upGTkWp).
 
@@ -27,7 +27,7 @@ If you think your auth token has been compromised or stolen then please email su
 For two reasons: 
 
 1. To minimize AV's flagging and removing it. 
-2. Supports the project, and allows developers to continue working on and improving Tactical RMM
+2. Supports the project, and allows developers to continue working on and improving Tactical RMM.
 
 ## Tactical RMM is getting flagged as PUA or virus, will this fix it?
 
