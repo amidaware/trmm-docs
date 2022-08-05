@@ -1,7 +1,7 @@
 # Installing a Windows agent
 
 !!!warning
-    If you don't want to deal with AV flagging/deleting your agents, check the instructions for getting [code signed agents](code_signing.md).<br/><br />
+    If you don't want to deal with AV flagging / deleting your agents, check the instructions for getting [code signed agents](code_signing.md).<br/><br />
     You must add antivirus exclusions for the tactical agent.<br/>
     Any decent AV will flag the agent as a virus, since it technically is one due to the nature of this software.<br/>
     Adding the following exclusions will make sure everything works, including agent update:<br/>
@@ -14,13 +14,13 @@
 
 ## Dynamically generated executable
 
-The generated exe is simply a wrapper around the Manual install method, using a single exe/command without the need to pass any command line flags to the installer.
+The generated exe is simply a wrapper around the Manual install method, using a single exe / command without the need to pass any command line flags to the installer.
 All it does is download the generic installer from the agent's github [release page](https://github.com/amidaware/rmmagent/releases) and call it using predefined command line args that you choose from the web UI.
 It "bakes" the command line args into the executable.
 
 From the UI, click **Agents > Install Agent**.
 
-You can also **right click on a site > Install Agent**. This will automatically fill in the client/site dropdown for you.
+You can also **right click on a site > Install Agent**. This will automatically fill in the client / site dropdown for you.
 
 ![siteagentinstall](images/siteagentinstall.png)
 
@@ -40,17 +40,17 @@ This is useful for scripting the installation using Group Policy or some other b
 ## Using a deployment link
 
 Creating a deployment link is the recommended way to deploy agents.
-The main benefit of this method is that the executable is generated only whenever the deployment download link is accessed, whereas with the other methods it's generated right away and the agent's version hardcoded into the exe.
+The main benefit of this method is that the executable is generated only whenever the deployment download link is accessed, whereas with the other methods it's generated right away and the agent's version is hardcoded into the exe.
 Using a deployment link will allow you to not worry about installing using an older version of an agent, which will fail to install if you have updated your RMM to a version that is not compatible with an older installer you might have lying around.
 
 To create a deployment, from the web UI click **Agents > Manage Deployments**.
 ![managedeployments](images/managedeployments.png)
 
 !!!tip
-    Create a client/site named "Default" and create a deployment for it with a very long expiry to have a generic installer that can be deployed anytime at any client/site.
-    You can then move the agent into the correct client/site from the web UI after it's been installed.
+    Create a client / site named "Default" and create a deployment for it with a very long expiry to have a generic installer that can be deployed anytime at any client / site.
+    You can then move the agent into the correct client / site from the web UI after it's been installed.
 
-Copy/paste the download link from the deployment into your browser. It will take a few seconds to dynamically generate the executable and then your browser will automatically download the exe.
+Copy / paste the download link from the deployment into your browser. It will take a few seconds to dynamically generate the executable and then your browser will automatically download the exe.
 
 ## Optional installer args
 
@@ -66,7 +66,7 @@ Will print very verbose logging during agent install. Useful for troubleshooting
 -silent
 ```
 
-This will not popup any message boxes during install, either any error messages or the "Installation was successful" message box that pops up at the end of a successful install.
+This will not popup any message boxes during install, including any error messages or the "Installation was successful" message box that pops up at the end of a successful install.
 
 ```text
 -proxy "http://proxyserver:port"
@@ -90,7 +90,7 @@ You can get full command line options from (`--help`).
 
 ## Scripting Agent Installation
 
-If you want to deploy the TRMM agent using AD, Intune, Mesh, TeamViewer, Group Policy GPO, etc this is a sample CMD script for deploying Tactical.
+If you want to deploy the TRMM agent using AD, Intune, Mesh, TeamViewer, Group Policy GPO, etc, this is a sample CMD script for deploying Tactical.
 
 !!!note
     You will need to replace `deployment url` with your custom deployment URL:
@@ -133,7 +133,7 @@ There is also a full powershell version [here](3rdparty_screenconnect.md#install
 
 ## Script for full agent uninstall
 
-You can always use this to silently uninstall agent on workstations:
+You can always use this to silently uninstall the agent on workstations:
 
 ```cmd
 "C:\Program Files\TacticalAgent\unins000.exe" /VERYSILENT
@@ -141,17 +141,17 @@ You can always use this to silently uninstall agent on workstations:
 
 ## Reinstalling mesh and reconnecting to TRMM
 
-Run this from Send Command:
+Run this from **Send Command**:
 
 ```cmd
 "C:\Program Files\TacticalAgent\meshagent.exe" -fullinstall
 ```
 
-Then use Agent Recovery | Mesh Agent, and choose Recover:
+Then use **Agent Recovery > Mesh Agent**, and choose **Recover**:
 
 ## Stuck at "Downloading mesh agent..."?
 
-Make sure TRMM can connect to mesh. Run:
+Make sure TRMM can connect to Mesh. Run:
 
 ```bash
 /rmm/api/env/bin/python /rmm/api/tacticalrmm/manage.py check_mesh
@@ -177,7 +177,7 @@ If you changed the expiry time you could upload the script to any accessible ser
 
 ## Linux Deployment Link
 
-Currently there are no deploy links for Linux Agents however you could use the following method if uploaded somewhere (website etc).
+Currently there are no deploy links for Linux agents however you could use the following method if uploaded somewhere (website etc).
 
 An example deployment script would be (note there's an install token in that script, so delete it when done if you're concerned):
 
