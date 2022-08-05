@@ -6,6 +6,14 @@ If you've asked for help in [#support](https://discord.com/channels/736478043522
 
 Blur your domains if you desire privacy.
 
+First, ensure that dig is installed via the dnsutils package:
+
+```bash
+sudo apt update && sudo apt install -y dnsutils
+```
+
+Next, download and run the troubleshooting script:
+
 ```bash
 wget -N https://raw.githubusercontent.com/amidaware/tacticalrmm/master/troubleshoot_server.sh
 chmod +x troubleshoot_server.sh
