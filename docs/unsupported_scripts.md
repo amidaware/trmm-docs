@@ -469,7 +469,7 @@ Limit access to Tactical RMM's administration panel in Nginx to specific locatio
 
 3. Give the right permission to this script `chmod +x /etc/nginx/domain-resolver.sh`
 
-4. Add a cron job which produces a valid nginx configuration and restarts nginx:
+4. Add a cron job which produces a valid Nginx configuration and restarts Nginx:
 
     `/etc/cron.hourly/domain-resolver`
 
@@ -479,11 +479,11 @@ Limit access to Tactical RMM's administration panel in Nginx to specific locatio
     service nginx reload > /dev/null 2>&1
     ```
 
-    This can be a hourly, daily or monthly job or you can have it run at a specific time. 
+    This can be a hourly, daily, or monthly job or you can have it run at a specific time. 
 
 5. Give the right permission to this script `chmod +x /etc/cron.hourly/domain-resolver`
 
-6. When run it will give something like this
+6. When run it will give something like this:
 
     Edit `/etc/nginx//allowed-ips-from-domains.conf`
 

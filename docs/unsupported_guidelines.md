@@ -13,7 +13,7 @@ You **CAN** **_not expose_** it to the internet, and start deploying agents.
 !!!info
         BIG PERIOD **.** <--- See, it's really really big 🙂
 
-## That said
+## That being said...
 
 There are those that wish to add layers to their security onion. For the benefit of others following in their footsteps, we have added here for your convenience additional information on a range of subjects and technologies that have been graciously donated to us by the community at large.
 
@@ -28,12 +28,12 @@ Should you employ any one or several of these unsupported technologies:
 * IPSs
 * SDNs
 * Did anything other than follow the installation instructions exactly
-* and any/all other magical ABC thru XYZ technologies
+* Any / all other magical ABC thru XYZ technologies
 
-Please let us know **BEFORE** we start troubleshooting and looking for software bugs that you are...in fact...a 🧙...and using something non-standard 😉 
+Please let us know **BEFORE** we start troubleshooting and looking for software bugs that you are... in fact... a 🧙... and using something non-standard. 😉 
 
 These are "unsupported" because then we are troubleshooting **your** environment, not Tactical RMM. You need to have knowledge about how things work if you're going to stray from the [easy path](../install_server/#option-1-easy-install) of the standard install. 
 
-Help us maximize keeping developer time and resources focused on new releases...not supporting goosechases.
+Help us maximize keeping developer time and resources focused on new releases... not supporting goosechases.
 
-Thank you and #KeepDeploying
+Thank you, and #KeepDeploying
