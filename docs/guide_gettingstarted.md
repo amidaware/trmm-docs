@@ -30,6 +30,6 @@ Install the server, [choose the best path](install_considerations.md)
 * [ ] Renew [LetsEncrypt Certs](update_server.md#keeping-your-lets-encrypt-certificate-up-to-date)
 * [ ] [Update TRMM](update_server.md#updating-to-the-latest-rmm-version)
 
-## Biannually
+## Bi-annually
 
 * [ ] Cleanup [old agents](management_cmds.md#bulk-delete-old-agents-by-last-checkin-date-or-agent-version)

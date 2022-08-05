@@ -4,7 +4,7 @@
 
 [Read source](https://discord.com/channels/736478043522072608/959541976372502598)
 
-Tactical RMM install on LXC: redis not starting
+Tactical RMM install on LXC: redis not starting.
 
 ### Symptoms
 
@@ -16,7 +16,7 @@ Tactical RMM install on LXC: redis not starting
    See "systemctl status redis-server.service" and "journalctl -xe" for details."
    ```
 
-Checking the systemctrl:
+Checking the systemctl:
 
 ```bash
 `systemctl status redis-server.service`
@@ -57,7 +57,7 @@ Remove the server that comes with Tactical RMM:
 apt-get --purge redis-server
 ```
 
-and delete the `/var/log/redis` directory then
+and delete the `/var/log/redis` directory, then:
 
 ```bash
 apt-get install redis-server
@@ -86,7 +86,7 @@ See "systemctl status redis-server.service" and "journalctl -xe" for details.
 Processing triggers for man-db (2.9.4-2) ..."
 ```
 
-Running the redis-server would shed more light on the issue
+Running the redis-server would shed more light on the issue:
 
 ```bash
 /usr/bin/redis-server /etc/redis/redis.conf
@@ -99,7 +99,7 @@ Reading the configuration file, at line 260
 Can't open the log file: No such file or directory'
 ```
 
-Apparently, `/ver/log/redis` has to be created manually
+Apparently, `/ver/log/redis` has to be created manually:
 
 ```bash
 'mkdir /var/log/redis
@@ -107,13 +107,13 @@ chown -R redis:redis /var/log/redis
 chmod -R u+rwX,g+rwX,u+rx /var/log/redis'
 ```
 
-then run redis-server
+then run redis-server:
 
 ```bash
 su -s /bin/bash -c '/usr/bin/redis-server /etc/redis/redis.conf' redis
 ```
 
-then confirm with
+then confirm with:
 
 ```bash
 ps ax|grep redis

@@ -46,7 +46,7 @@ Bring changes from original repo to your fork so you're current with changes mad
 
 #### 5. Lather, Rinse, Repeat
 
-Goto Step 2. and contribute some more
+Go to Step 2. and contribute some more
 
 ## Notes
 

@@ -67,9 +67,9 @@ Use the [Screenconnect AIO script](https://github.com/amidaware/community-script
 
 ![AIO](images/3rdparty_sc_aio.png)
 
-## Install Tactical RMM via Screeconnect commands window
+## Install Tactical RMM via Screenconnect commands window
 
-1. Create a Deplopment under **Agents > Manage Deployments**
+1. Create a Deployment under **Agents > Manage Deployments**
 2. Replace `<deployment URL>` below with your Deployment Download Link.
 
 **x64**

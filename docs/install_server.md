@@ -33,7 +33,7 @@ A fresh linux VM running either Ubuntu 20.04 LTS or Debian 11 with 3+GB RAM on x
 
 #### Network Requirements
 
-- A real (internet resolvable) domain is needed to generate a Let's Encrypt wildcard cert. _If you cannot afford to purchase a domain ($12 a year) then you can get one for free at [freenom.com](https://www.freenom.com/)_
+- A real (internet resolvable) domain is needed to generate a Let'sEncrypt wildcard cert. _If you cannot afford to purchase a domain ($12 a year) then you can get one for free at [freenom.com](https://www.freenom.com/)_
     - example.local is __NOT__ a real domain. No you [don't have to expose your server](faq.md#can-i-run-tactical-rmm-locally-behind-nat-without-exposing-anything-to-the-internet) to the internet
 - A TOTP based authenticator app. Some popular ones are Google Authenticator, Authy and Microsoft Authenticator.
 
@@ -53,7 +53,7 @@ Use something that meets [minimum specs](install_server.md#hardware-os)
 
 SSH into the server as **root**.
 
-Download and run the prereqs and latest updates
+Download and run the prereqs and latest updates:
 
 ```bash
 apt update
@@ -61,7 +61,7 @@ apt install -y wget curl sudo ufw
 apt -y upgrade
 ```
 
-If a new kernel is installed, then reboot the server with the `reboot` command
+If a new kernel is installed, then reboot the server with the `reboot` command.
 
 ### Create a linux user
 
@@ -108,7 +108,7 @@ ufw allow https
         ufw allow ssh
         ```
 
-Enable and activate the firewall
+Enable and activate the firewall:
 
 ```bash
 ufw enable && ufw reload
@@ -122,7 +122,7 @@ ufw enable && ufw reload
 We'll be using `example.com` as our domain for this example.
 
 !!!info
-    The RMM uses 3 different sites. The Vue frontend e.g. `rmm.example.com` which is where you'll be accessing your RMM from the browser, the REST backend e.g. `api.example.com` and Meshcentral e.g. `mesh.example.com`
+    The RMM uses 3 different sites. The Vue frontend e.g. `rmm.example.com` which is where you'll be accessing your RMM from the browser, the REST backend e.g. `api.example.com` and MeshCentral e.g. `mesh.example.com`
 
 1. Get the public IP of your server with `curl https://icanhazip.tacticalrmm.io`
 2. Open the DNS manager of wherever the domain you purchased is hosted.
@@ -132,13 +132,13 @@ We'll be using `example.com` as our domain for this example.
 
 ### Run the install script
 
-Switch to the `tactical` user
+Switch to the `tactical` user:
 
 ```bash
 su - tactical
 ```
 
-Download and run the install script
+Download and run the install script:
 
 ```bash
 wget https://raw.githubusercontent.com/amidaware/tacticalrmm/master/install.sh
@@ -196,7 +196,7 @@ If you have agents outside your local network: Make sure the public DNS servers 
 
 Login to your router/NAT device.
 
-1. Set your TRMM server as a static IP (Using a DHCP reservation is usually safer)
+1. Set your TRMM server as a static IP (Using a DHCP reservation is usually safer).
 2. Port forward `TCP 443` to your TRMM servers private IP address.
 
 !!!note
@@ -215,9 +215,9 @@ Use the scripts above.
 1. TLD domain name which is internet resolvable (this is for a LetsEncrypt DNS wildcard request during the install script [validated by DNS txt record](https://letsencrypt.org/docs/challenge-types/#dns-01-challenge)).
     - Test using: <https://viewdns.info/dnsrecord/> or <https://dnschecker.org/>. Enter: `_acme-challenge.example.com` as `TXT`
 2. Agents need to be able to connect to your server via DNS lookup (hosts file, local DNS, smoke signals etc.).
-    - Test from agent: `ping rmm.example.com`. Should result in the IP of your Tactical RMM server
-    - Test from agent: `ping api.example.com`. Should result in the IP of your Tactical RMM server
-    - Test from agent: `ping mesh.example.com`. Should result in the IP of your Tactical RMM server
+    - Test from agent: `ping rmm.example.com`. Should result in the IP of your Tactical RMM server.
+    - Test from agent: `ping api.example.com`. Should result in the IP of your Tactical RMM server.
+    - Test from agent: `ping mesh.example.com`. Should result in the IP of your Tactical RMM server.
 
 !!!note
     Did you notice #2 doesn't need to be something publicly available?
@@ -236,4 +236,4 @@ We've said it before, we'll say it again.
 
         - Do it when you update your SSL certs. 
 
-Especially don't get behind 2 major rev's. Lots of agent connectivity changes occurring. If you don't keep up, you'll be needing to do manual updates by adjusting the `updates.sh` and specifying older branches...then doing update, wait for all agents to get updated...then do the next major branch, then wait for agent updates...until you're current. Can we say #Painful
+Especially don't get behind 2 major rev's. Lots of agent connectivity changes occurring. If you don't keep up, you'll be needing to do manual updates by adjusting the `updates.sh` and specifying older branches...then doing update, wait for all agents to get updated...then do the next major branch, then wait for agent updates...until you're current. Can we say #Painful.

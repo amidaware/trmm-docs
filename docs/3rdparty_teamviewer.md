@@ -18,7 +18,7 @@ While in Global Settings go to **URL ACTIONS**
 
 Add a URL Action</br>
 **Name** = `TeamViewer Control`</br>
-**Description** = `Connect to a Team Viewer Session`</br>
+**Description** = `Connect to a TeamViewer Session`</br>
 **URL Pattern** =
 
 ```html
@@ -41,6 +41,6 @@ Click **Add Task**
 
 Right click on the newly created task and click **Run Task Now**.
 
-Give it a second to execute then right click the agent that you are working with and go to **Run URL Action > TeamViewer Control**
+Give it a second to execute, then right click the agent that you are working with and go to **Run URL Action > TeamViewer Control**
 
-It launch the session and possibly promt for password in TeamViewer.
+It will launch the session and possibly prompt for a password in TeamViewer.

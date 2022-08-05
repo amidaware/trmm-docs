@@ -34,6 +34,6 @@ Please let us know **BEFORE** we start troubleshooting and looking for software 
 
 These are "unsupported" because then we are troubleshooting **your** environment, not Tactical RMM. You need to have knowledge about how things work if you're going to stray from the [easy path](../install_server/#option-1-easy-install) of the standard install. 
 
-Help us maximize keeping developer time and resources focused on new releases...not support goosechases.
+Help us maximize keeping developer time and resources focused on new releases...not supporting goosechases.
 
 Thank you and #KeepDeploying

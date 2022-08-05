@@ -6,14 +6,14 @@
 
 ## 1. Install Docker
 
-Install docker
+Install docker.
 
 ### 2. Create the A records
 
 We'll be using `example.com` as our domain for this example.
 
 !!!info
-    The RMM uses 3 different sites. The Vue frontend e.g. `rmm.example.com` which is where you'll be accessing your RMM from the browser, the REST backend e.g. `api.example.com` and Meshcentral e.g. `mesh.example.com`
+    The RMM uses 3 different sites. The Vue frontend e.g. `rmm.example.com` which is where you'll be accessing your RMM from the browser, the REST backend e.g. `api.example.com` and MeshCentral e.g. `mesh.example.com`
 
 1. Get the public IP of your server with `curl https://icanhazip.tacticalrmm.io`
 2. Open the DNS manager of wherever the domain you purchased is hosted.
@@ -21,10 +21,10 @@ We'll be using `example.com` as our domain for this example.
 
 ![arecords](images/arecords.png)
 
-## 3. Acquire Let's Encrypt Wildcard certs with certbot
+## 3. Acquire Let'sEncrypt Wildcard certs with Certbot
 
 !!!warning
-  If the Let's Encrypt wildcard certificates are not provided, a self-signed certificate will be generated and most agent functions won't work. 
+  If the Let'sEncrypt wildcard certificates are not provided, a self-signed certificate will be generated and most agent functions won't work. 
 
 ### A. Install Certbot
 
@@ -32,7 +32,7 @@ We'll be using `example.com` as our domain for this example.
 sudo apt-get install certbot
 ```
 
-### B. Generate the wildcard Let's Encrypt certificates
+### B. Generate the wildcard Let'sEncrypt certificates
 
 We're using the [DNS-01 challenge method](https://letsencrypt.org/docs/challenge-types/#dns-01-challenge)
 #### a. Deploy the TXT record in your DNS manager
@@ -47,14 +47,14 @@ We're using the [DNS-01 challenge method](https://letsencrypt.org/docs/challenge
 
 ![dnstxt](images/dnstxt.png)
 
-#### b. Request Let's Encrypt Wildcard cert
+#### b. Request Let'sEncrypt Wildcard cert
 
 ```bash
 sudo certbot certonly --manual -d *.example.com --agree-tos --no-bootstrap --preferred-challenges dns
 ```
 
 !!!note
-    Replace `example.com` with your root domain
+    Replace `example.com` with your root domain.
 
 ## 4. Configure DNS and firewall
 
@@ -72,7 +72,7 @@ mv .env.example .env
 
 Change the values in .env to match your environment.
 
-When supplying certificates through Let's Encrypt, see the section below about base64 encoding the certificate files.
+When supplying certificates through Let'sEncrypt, see the section below about base64 encoding the certificate files.
 
 ### A. Base64 encoding certificates to pass as env variables
 
@@ -80,7 +80,7 @@ Use the below command to add the the correct values to the .env.
 
 Running this command multiple times will add redundant entries, so those will need to be removed.
 
-Let's encrypt certs paths are below. Replace ${rootdomain} with your own.
+Let'sEncrypt certs paths are below. Replace ${rootdomain} with your own.
 
 public key
 `/etc/letsencrypt/live/${rootdomain}/fullchain.pem`
@@ -95,7 +95,7 @@ echo "CERT_PRIV_KEY=$(sudo base64 -w 0 /path/to/priv/key)" >> .env
 
 ## 6. Starting the environment
 
-Run the below command to start the environment.
+Run the below command to start the environment:
 
 ```bash
 sudo docker-compose up -d
@@ -122,4 +122,4 @@ docker-compose stop
 btrfs subvolume snapshot -r /srv/tsd /srv/tsd/.snapshot-`date +%F-%H%M%S`
 ```
 
-or you can look at [this](https://github.com/larseberhardt/TRMM-Docker-Backup-Script)
+or you can look at [this](https://github.com/larseberhardt/TRMM-Docker-Backup-Script).

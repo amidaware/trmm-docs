@@ -97,13 +97,13 @@ The HTTP Status = 444 is a good choice for NGINX not “wasting” too many reso
 
 ### Blocking “bad bots” and “bad referrers”
 
-Nginx Bad Bot and User-Agent Blocker, Spam Referrer Blocker, Anti DDOS, Bad IP Blocker and Wordpress Theme Detector Blocker
+Nginx Bad Bot and User-Agent Blocker, Spam Referrer Blocker, Anti DDOS, Bad IP Blocker and Wordpress Theme Detector Blocker:
 
 Source:
 
 [https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker](https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker)
 
-Download “install-ngxblocker” to your /usr/local/sbin/directory and make the script executable.
+Download “install-ngxblocker” to your /usr/local/sbin/directory and make the script executable:
 
 ```bash
 sudo wget https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/install-ngxblocker -O /usr/local/sbin/install-ngxblocker
@@ -112,7 +112,7 @@ sudo chmod +x /usr/local/sbin/install-ngxblocker
 
 **<span style="text-decoration:underline;">(OPTIONAL)</span>**Now run the ”install-ngxblocker” script in **DRY-MODE** which will show you what changes it will make and what files it will download for you. This is only a DRY-RUN so no changes are being made yet.
 
-The install-ngxblocker downloads all required files including the setup and update scripts.
+The install-ngxblocker downloads all required files including the setup and update scripts:
 
 ```bash
 cd /usr/local/sbin
@@ -358,8 +358,8 @@ server {
 Tactical RMM custom rules:
 
 * Access to the admin UI (front-end): We apply the “deny by default, allow by exception” principle, whereby only a set of predefined public IPs should be allowed to access the UI
-* API and Meshcentral: RMM agents and RMM UI (as referrer while an admin session is active) make web calls that get blocked by the OWASP CRS, specifically PUT, POST and PATCH methods. These three methods can be “whitelisted” when the requested URI matches legitimate requests.
-* Connection to Meshcentral during Tactical agent install.
+* API and MeshCentral: RMM agents and RMM UI (as referrer while an admin session is active) make web calls that get blocked by the OWASP CRS, specifically PUT, POST and PATCH methods. These three methods can be “whitelisted” when the requested URI matches legitimate requests.
+* Connection to MeshCentral during Tactical agent install.
 
 Create a .conf file under “/etc/nginx/modsec/coreruleset/rules” named “RMM-RULES.conf”, for example, with the following content:
 
@@ -386,7 +386,7 @@ SecRule REQUEST_URI "@beginsWith /api/v3/winupdates" "chain,id:'1007',phase:1,t:
 SecRule REQUEST_METHOD "POST"
 
 ##REQUIRED FOR MANAGEMENT ACTIONS FROM ADMIN/FRONT-END UI. WHITELIST BY REFERRER's URL
-SecRule REQUEST_HEADERS:REFERER "https://rmm.EXAMPLE.COM/" "id:1008,phase:1,nolog,ctl:ruleRemoveById=920170,allow"
+SecRule REQUEST_HEADERS:REFERRER "https://rmm.EXAMPLE.COM/" "id:1008,phase:1,nolog,ctl:ruleRemoveById=920170,allow"
 
 #REQUIRED FOR NEW CLIENTS TO CONNECT TO MESH SERVICE WHILE INSTALLING THE AGENT
 SecRule REQUEST_URI "@beginsWith /api/v3/meshexe" "id:1009,phase:1,nolog,ctl:ruleRemoveById=920170,allow"

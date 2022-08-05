@@ -26,14 +26,14 @@ To run any of the management commands first login to your server as the user use
 
 ## Bulk Delete old agents by last checkin date or agent version
 
-Test to see what will happen
+Test to see what will happen:
 
 ```bash
 python manage.py bulk_delete_agents --days 60
 python manage.py bulk_delete_agents --agentver 1.5.0
 ```
 
-Do the delete
+Do the delete:
 
 ```bash
 python manage.py bulk_delete_agents --days 60 --delete
@@ -105,37 +105,37 @@ python manage.py get_mesh_exe_url
 
 ## Bulk update agent offline/overdue time
 
-Change offline time on all agents to 5 minutes
+Change offline time on all agents to 5 minutes:
 
 ```bash
 python manage.py bulk_change_checkin --offline --all 5
 ```
 
-Change offline time on all agents in site named *Example Site* to 2 minutes
+Change offline time on all agents in site named *Example Site* to 2 minutes:
 
 ```bash
 python manage.py bulk_change_checkin --offline --site "Example Site" 2
 ```
 
-Change offline time on all agents in client named *Example Client* to 12 minutes
+Change offline time on all agents in client named *Example Client* to 12 minutes:
 
 ```bash
 python manage.py bulk_change_checkin --offline --client "Example Client" 12
 ```
 
-Change overdue time on all agents to 10 minutes
+Change overdue time on all agents to 10 minutes:
 
 ```bash
 python manage.py bulk_change_checkin --overdue --all 10
 ```
 
-Change overdue time on all agents in site named *Example Site* to 4 minutes
+Change overdue time on all agents in site named *Example Site* to 4 minutes:
 
 ```bash
 python manage.py bulk_change_checkin --overdue --site "Example Site" 4
 ```
 
-Change overdue time on all agents in client named *Example Client* to 14 minutes
+Change overdue time on all agents in client named *Example Client* to 14 minutes:
 
 ```bash
 python manage.py bulk_change_checkin --overdue --client "Example Client" 14
