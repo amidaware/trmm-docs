@@ -35,10 +35,10 @@ SSH into your server as the linux user you created during install (eg `tactical`
     This will mess up permissions and break your installation.
 
 !!!question
-    You have a [backup](backup.md) right?
+    You have a [backup](backup.md), right?
 
 !!!question
-    This is beta software. You've reviewed all [release notes](https://github.com/amidaware/tacticalrmm/releases) between your current version, and latest version right?
+    This is beta software. You've reviewed all [release notes](https://github.com/amidaware/tacticalrmm/releases) between your current version and the latest version, right?
 
 Download the update script and run it:
 
@@ -70,9 +70,9 @@ The update script will also fix any permissions that might have gotten messed up
 ## Keeping your Let's Encrypt SSL certificate up to date
 
 !!!info
-    Currently, the update script does not automatically renew your Let's Encrypt wildcard certificate, which expires every 3 months, since this is non-trivial to automate using the DNS TXT record method.
+    Currently, the update script does not automatically renew your Let'sEncrypt wildcard certificate, which expires every 3 months, since this is non-trivial to automate using the DNS TXT record method.
 
-To renew your Let's Encrypt wildcard cert, run the following command, replacing `example.com` with your domain and `admin@example.com` with your email:
+To renew your Let'sEncrypt wildcard cert, run the following command, replacing `example.com` with your domain and `admin@example.com` with your email:
 
 ```bash
 sudo certbot certonly --manual -d *.example.com --agree-tos --no-bootstrap --preferred-challenges dns -m admin@example.com --no-eff-email

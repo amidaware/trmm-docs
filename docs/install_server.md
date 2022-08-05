@@ -22,7 +22,7 @@ A fresh linux VM running either Ubuntu 20.04 LTS or Debian 11 with 3+GB RAM on x
     The provided install script assumes a fresh server with no software installed on it. Attempting to run it on an existing server with other services **will** break things and the install will fail.
 
 !!!danger
-    The install script sets up a production ready reverse proxy using Nginx which does TLS termination and handles routing all requests to the correct backends, so using another proxy in front of your instance is not necessary (and will probably break things).<br><br>If you want to use another reverse proxy for whatever reason, such as HAProxy, Traefik or Nginx Proxy Manager, then you will need to edit the install script and disable all the steps relating to installing and configuring nginx and configure proxying yourself. You may refer to the nginx configs in the install script for hints on how to proxy various services to the correct backends. Note that choosing to not use the built in proxy will make your instance officially "unsupported", because the developers do not have the bandwidth to support an infinite amount of setups and need to focus on the actual software. This is not meant to scare you away from doing your own proxy...just something to be aware of. Read more in the [unsupported](unsupported_guidelines.md) guidelines.
+    The install script sets up a production ready reverse proxy using Nginx which does TLS termination and handles routing all requests to the correct backends, so using another proxy in front of your instance is not necessary (and may break things).<br><br>If you want to use another reverse proxy for whatever reason, such as HAProxy, Traefik or Nginx Proxy Manager, then you will likely need to edit the install script and disable all the steps relating to installing and configuring nginx and configure reverse proxying yourself. You may refer to the Nginx configs in the install script for hints on how to proxy various services to the correct backends. Note that choosing to not use the built in proxy will make your instance officially "unsupported", because the developers do not have the bandwidth to support an infinite amount of setups and need to focus on the actual software. This is not meant to scare you away from doing your own reverse proxy...just something to be aware of. Check [unsupported proxies](unsupported_proxies.md) to see if you need to edit your install script to suit your selected reverse proxy, or if a method that works without doing so has been posted **BEFORE** you install. Read more in the [unsupported](unsupported_guidelines.md) guidelines.
 
 !!!note
     The install script has been tested on the following public cloud providers: DigitalOcean, Linode, Vultr, BuyVM (highly recommended), Hetzner, AWS, Google Cloud and Azure, as well as behind NAT on Hyper-V, ESXi and Proxmox (CT's on Proxmox are [unsupported](unsupported_guidelines.md), only use VMs).
@@ -34,8 +34,8 @@ A fresh linux VM running either Ubuntu 20.04 LTS or Debian 11 with 3+GB RAM on x
 #### Network Requirements
 
 - A real (internet resolvable) domain is needed to generate a Let'sEncrypt wildcard cert. _If you cannot afford to purchase a domain ($12 a year) then you can get one for free at [freenom.com](https://www.freenom.com/)_
-    - example.local is __NOT__ a real domain. No you [don't have to expose your server](faq.md#can-i-run-tactical-rmm-locally-behind-nat-without-exposing-anything-to-the-internet) to the internet
-- A TOTP based authenticator app. Some popular ones are Google Authenticator, Authy and Microsoft Authenticator.
+    - example.local is __NOT__ a real domain. No, you [don't have to expose your server](faq.md#can-i-run-tactical-rmm-locally-behind-nat-without-exposing-anything-to-the-internet) to the internet
+- A TOTP based authenticator app. Some popular ones are Google Authenticator, Authy, and Microsoft Authenticator.
 
 #### Update Recommendations
 
@@ -45,7 +45,7 @@ A fresh linux VM running either Ubuntu 20.04 LTS or Debian 11 with 3+GB RAM on x
 
 ## Option 1: Easy Install on a VPS
 
-Install on a VPS: DigitalOcean, Linode, Vultr, BuyVM (highly recommended), Hetzner, AWS, Google Cloud and Azure to name a few
+Install on a VPS: DigitalOcean, Linode, Vultr, BuyVM (highly recommended), Hetzner, AWS, Google Cloud and Azure to name a few.
 
 Use something that meets [minimum specs](install_server.md#hardware-os)
 
@@ -53,7 +53,7 @@ Use something that meets [minimum specs](install_server.md#hardware-os)
 
 SSH into the server as **root**.
 
-Download and run the prereqs and latest updates:
+Install the pre-reqs and apply the latest updates:
 
 ```bash
 apt update
@@ -61,7 +61,7 @@ apt install -y wget curl sudo ufw
 apt -y upgrade
 ```
 
-If a new kernel is installed, then reboot the server with the `reboot` command.
+If a new kernel is installed, reboot the server with the `reboot` command.
 
 ### Create a linux user
 
@@ -236,4 +236,4 @@ We've said it before, we'll say it again.
 
         - Do it when you update your SSL certs. 
 
-Especially don't get behind 2 major rev's. Lots of agent connectivity changes occurring. If you don't keep up, you'll be needing to do manual updates by adjusting the `updates.sh` and specifying older branches...then doing update, wait for all agents to get updated...then do the next major branch, then wait for agent updates...until you're current. Can we say #Painful.
+Especially don't get behind 2 major rev's. Lots of agent connectivity changes occurring. If you don't keep up, you'll be needing to do manual updates by adjusting the `updates.sh` and specifying older branches...then doing update, wait for all agents to get updated...then do the next major branch, then wait for agent updates...until you're current. Can we say **#Painful**.
