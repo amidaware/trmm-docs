@@ -255,78 +255,103 @@ systemctl meshcentral restart
 
 ### HAProxy Config
 
-The order of use_backend is important `Tactical-Mesh-WebSocket_ipvANY` must be before `Tactical-Mesh_ipvANY`
+The order of use_backend is important `Tactical-Mesh-WebSocket_ipvANY` must be before `Tactical-Mesh_ipvANY`.
+This assumes a standard VM install or Docker instance, unaltered. If you've altered exposed ports on your VM or Docker instance, those will need to be adjusted in the configuration. 
 The values of `timeout connect`, `timeout server`, `timeout tunnel` in `Tactical-Mesh-WebSocket` have been configured to maintain a stable agent connection, however you may need to adjust these values to suit your environment:
 
 ```conf
-frontend HTTPS-merged
-	bind			0.0.0.0:443 name 0.0.0.0:443   ssl crt-list /var/etc/haproxy/HTTPS.crt_list  #ADJUST THIS TO YOUR OWN SSL CERTIFICATES
-	mode			http
-	log			global
-	option			socket-stats
-	option			dontlognull
-	option			http-server-close
-	option			forwardfor
+frontend http-to-https-shared
+	bind			        0.0.0.0:80
+	mode			        http
+	log			          global
+  option			      socket-stats
+	option			      http-server-close
+  option			      dontlognull
+  option            forwardfor
+  acl https ssl_fc
+  http-request set-header         X-Forwarded-Proto http if !https
+  http-request set-header         X-Forwarded-Proto https if https
+  http-request add-header         X-Real-IP %[src]
+	timeout client		30000
+  acl			          rmm	    var(txn.txnhost) -m str -i rmm.example.com
+	acl			          api	    var(txn.txnhost) -m str -i api.example.com
+	acl			          mesh    var(txn.txnhost) -m str -i mesh.example.com
+  http-request set-var(txn.txnhost) hdr(host)
+  http-request redirect scheme https  if  rmm
+	http-request redirect scheme https  if  api
+	http-request redirect scheme https  if  mesh
+
+
+frontend https-shared
+	bind			        0.0.0.0:443   ssl crt-list /var/etc/haproxy/HTTPS.crt_list  #ADJUST THIS TO YOUR OWN SSL CERTIFICATES
+	mode			        http
+	log			          global
+	option			      socket-stats
+	option			      dontlognull
+	option			      http-server-close
+	option			      forwardfor
 	acl https ssl_fc
 	http-request set-header		X-Forwarded-Proto http if !https
 	http-request set-header		X-Forwarded-Proto https if https
 	timeout client		30000
-	acl			RMM	var(txn.txnhost) -m sub -i rmm.example.com
-	acl			aclcrt_RMM	var(txn.txnhost) -m reg -i ^([^\.]*)\.example\.com(:([0-9]){1,5})?$
-	acl			API	var(txn.txnhost) -m sub -i api.example.com
-	acl			aclcrt_API	var(txn.txnhost) -m reg -i ^([^\.]*)\.example\.com(:([0-9]){1,5})?$
-	acl			is_websocket	hdr(Upgrade) -i WebSocket
-	acl			is_mesh	var(txn.txnhost) -m beg -i mesh.example.com
-	acl			aclcrt_MESH-WebSocket	var(txn.txnhost) -m reg -i ^([^\.]*)\.example\.com(:([0-9]){1,5})?$
-	acl			MESH	var(txn.txnhost) -m sub -i mesh.example.com
-	acl			aclcrt_MESH	var(txn.txnhost) -m reg -i ^([^\.]*)\.example\.com(:([0-9]){1,5})?$
-	#PUT OTHER USE_BACKEND IN HERE
-	use_backend Tactical_ipvANY  if  RMM aclcrt_RMM
-	use_backend Tactical_ipvANY  if  API aclcrt_API
-	use_backend Tactical-Mesh-WebSocket_ipvANY  if  is_websocket is_mesh aclcrt_MESH-WebSocket
-	use_backend Tactical-Mesh_ipvANY  if  MESH aclcrt_MESH
-
-frontend http-to-https
-	bind			0.0.0.0:80
-	mode			http
-	log			global
-	option			http-keep-alive
-	timeout client		30000
-	http-request redirect scheme https
+	acl               aclcrt_https_shared     var(txn.txnhost) -m reg -i ^([^\.]*)\.example\.com(:([0-9]){1,5})?$
+  acl			          rmm	    var(txn.txnhost) -m str -i rmm.example.com
+	acl			          nats-websocket	  var(txn.txnpath) -m sub -i /natsws
+	acl			          api	    var(txn.txnhost) -m str -i api.example.com
+	acl			          is_websocket	  hdr(Upgrade) -i WebSocket
+	acl			          mesh	  var(txn.txnhost) -m str -i mesh.example.com
+	acl			          api-ws	  var(txn.txnhost) -m sub -i api.example.com
+  http-request set-var(txn.txnhost) hdr(host)
+  http-request set-var(txn.txnpath) path
+  use_backend rmm.example.com_ipvANY  if  rmm
+	use_backend rmm.example.com-websocket_ipvANY  if  nats-websocket api-ws
+	use_backend rmm.example.com_ipvANY  if  api 
+	use_backend mesh.example.com-websocket_ipvANY  if  is_websocket mesh 
+	use_backend mesh.example.com_ipvANY  if  mesh
 
 
-backend Tactical_ipvANY
-	mode			http
-	log			global
+backend rmm.example.com_ipvANY
+	mode			        http
+	log			          global
 	timeout connect		30000
 	timeout server		30000
-	retries			3
-	option			httpchk GET /
-	server			tactical 192.168.10.123:443 ssl check inter 1000  verify none
+	retries			      3
+	http-request add-header X-Forwarded-Host %[req.hdr(Host)]
+	http-request add-header X-Forwarded-Proto https
+	server			      rmm x.x.x.x:443 ssl  verify none
 
+backend rmm.example.com-websocket_ipvANY
+	mode			        http
+	log			          global
+	timeout connect		30000
+	timeout server		30000
+	retries			      3
+	timeout tunnel    3600000
+	http-request add-header X-Forwarded-Host %[req.hdr(Host)]
+	http-request add-header X-Forwarded-Proto https
+	server			      rmm-websocket x.x.x.x:443 ssl  verify none
 
-backend Tactical-Mesh-WebSocket_ipvANY
-	mode			http
-	log			global
+backend mesh.example.com-websocket_ipvANY
+	mode			        http
+	log			          global
 	timeout connect		3000
 	timeout server		3000
-	retries			3
-	timeout tunnel		3600000
+	retries			      3
+	timeout tunnel    3600000
 	http-request add-header X-Forwarded-Host %[req.hdr(Host)]
 	http-request add-header X-Forwarded-Proto https
-	server			tactical 192.168.10.123:443 ssl  verify none
+	server			      mesh-websocket x.x.x.x:443 ssl  verify none 
 
-backend Tactical-Mesh_ipvANY
-	mode			http
-	log			global
+backend mesh.example.com_ipvANY
+	mode			        http
+	log			          global
 	timeout connect		15000
 	timeout server		15000
-	retries			3
-	option			httpchk GET /
-	timeout tunnel		15000
+	retries			      3
+	timeout tunnel    15000
 	http-request add-header X-Forwarded-Host %[req.hdr(Host)]
 	http-request add-header X-Forwarded-Proto https
-	server			tactical 192.168.10.123:443 ssl check inter 1000  verify none
+	server			      mesh x.x.x.x:443 ssl  verify none
 ```
 
 ### HAProxy Howto for PFSense
