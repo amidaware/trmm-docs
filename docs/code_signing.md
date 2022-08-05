@@ -26,14 +26,14 @@ If you think your auth token has been compromised or stolen then please email su
 
 For two reasons: 
 
-1. To minimize AV's flagging and removing it. 
+1. To minimize AVs flagging and removing it. 
 2. Supports the project, and allows developers to continue working on and improving Tactical RMM.
 
 ## Tactical RMM is getting flagged as PUA or virus, will this fix it?
 
-Getting a code signed agent, helps but is not guaranteed. Because AVs are not predictable, change all the time, constantly making new decisions and rules, tell you one thing do another, they all do different things etc.
+Getting a code signed agent helps, but it is not guaranteed to eliminate this entirely. This is because AVs are unpredictable, changing all the time, constantly making new decisions and rules, telling you one thing and doing another, all doing different things in slightly different ways, etc.
 
-However, the best way to submit a whitelisting request to your AV for the TRMM agent...having a code signed exe is best.
+However, the best way to submit a whitelisting request to your AV for the TRMM agent... is having a code signed exe to submit.
 
 Right click `"C:\Program Files\TacticalAgent\tacticalrmm.exe"` > `Properties` > `Digital Signatures` tab. 
 

@@ -26,10 +26,10 @@ Install the server, [choose the best path](install_considerations.md)
 ## Every 75 days
 
 * [ ] TRMM Server [OS updates](update_server.md/#video-walkthru)
-* [ ] reboot TRMM server
+* [ ] Reboot TRMM server
 * [ ] Renew [LetsEncrypt Certs](update_server.md#keeping-your-lets-encrypt-certificate-up-to-date)
 * [ ] [Update TRMM](update_server.md#updating-to-the-latest-rmm-version)
 
 ## Bi-annually
 
-* [ ] Cleanup [old agents](management_cmds.md#bulk-delete-old-agents-by-last-checkin-date-or-agent-version)
+* [ ] Clean up [old agents](management_cmds.md#bulk-delete-old-agents-by-last-checkin-date-or-agent-version)

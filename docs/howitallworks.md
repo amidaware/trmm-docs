@@ -28,9 +28,9 @@ Has a postgres database located here:
 !!!description
     A web interface for the postgres database
 
-All Tactical RMM dependencies are listed [here](https://github.com/amidaware/tacticalrmm/blob/develop/api/tacticalrmm/requirements.txt)
+All Tactical RMM dependencies are listed [here](https://github.com/amidaware/tacticalrmm/blob/develop/api/tacticalrmm/requirements.txt).
 
-A complete list of all packages used by Tactical RMM are listed [here](https://raw.githubusercontent.com/amidaware/tacticalrmm/develop/web/package-lock.json)
+A complete list of all packages used by Tactical RMM are listed [here](https://raw.githubusercontent.com/amidaware/tacticalrmm/develop/web/package-lock.json).
 
 ### Outbound Firewall Rules
 
@@ -373,9 +373,9 @@ Config file location:
 [Customize](https://ylianst.github.io/MeshCentral/meshcentral/config/) with care.
 
 !!!info
-    mesh usernames are **CaSe sEnSiTive** Tactical will make sure it's all lower case to avoid sync problems
+    Mesh usernames are **CaSe sEnSiTive**. Tactical will make sure it's all lower case to avoid sync problems.
 
-???+ note "meshcentral"
+???+ note "MeshCentral"
 
     - [MeshCentral docs](https://info.meshcentral.com/downloads/MeshCentral2/MeshCentral2UserGuide.pdf)
 
@@ -395,10 +395,10 @@ Config file location:
 
     === ":material-remote-desktop: Debugging"
 
-        - Open either "Take Control" or "Remote Background" to get mesh login token
-        - Open https://mesh.example.com to open native mesh admin interface
+        - Open either "Take Control" or "Remote Background" to get mesh login token.
+        - Open https://mesh.example.com to open native mesh admin interface.
         - Left-side "My Server" > Choose "Console" > type `agentstats`
-        - To view detailed logging goto "Trace" > click Tracing button and choose categories
+        - To view detailed logging goto "Trace" > click Tracing button and choose categories.
      
 
 #### MeshCentral Agent
@@ -408,15 +408,15 @@ Get Mesh Agent Version info with this command. Should match server version.
 ```cmd
 "C:\Program Files\Mesh Agent\MeshAgent.exe" -info"
 ```
-Compare the hash with the tags in the repo at <https://github.com/Ylianst/MeshAgent/tags>
+Compare the hash with the tags in the repo at <https://github.com/Ylianst/MeshAgent/tags>.
 
-Checks/tasks/agent data use regular http to nginx
+Checks/tasks/agent data use regular http to Nginx.
 
-Agent status uses nats websockets
+Agent status uses NATS websockets.
 
 ### Other Dependencies
 
-[Django](https://www.djangoproject.com/) - Framework to integrate the server to interact with browser.
+[Django](https://www.djangoproject.com/) - Framework to enable the server to interact with browser.
 
 <details>
   <summary>Django dependencies</summary>
@@ -469,17 +469,17 @@ Found in `%programfiles%\TacticalAgent`
 
 When scripts/checks execute, they are:
 
-1. transferred from the server via nats
-2. saved to a randomly created file in `c:\windows\temp\trmm\`
-3. executed
-4. Return info is captured and returned to the server via nats
-5. File in `c:\windows\temp\trmm\` are removed automatically after execution/timeout.
+1. Transferred from the server via NATS.
+2. Saved to a randomly created file in `c:\windows\temp\trmm\`.
+3. Executed.
+4. Return info is captured and returned to the server via NATS.
+5. File in `c:\windows\temp\trmm\` are removed automatically after execution / timeout.
 
 ### Outbound Firewall Rules
 
 If you have strict firewall rules these are the only outbound rules from the agent needed for all functionality:
 
-1. All agents have to be able to connect outbound to TRMM server on the 3 domain names on port 443
+1. All agents have to be able to connect outbound to TRMM server on the 3 domain names on port 443.
 
 2. The agent uses `https://icanhazip.tacticalrmm.io/` to get public IP info. If this site is down for whatever reason, the agent will fallback to `https://icanhazip.com` and then `https://ifconfig.co/ip`
 
@@ -493,9 +493,9 @@ Signed agents will require: `https://agents.tacticalrmm.com` for downloading/upd
 
 ### Agent Installation Process
 
-* Adds Defender AV exclusions
+* Adds Defender AV exclusions.
 * Copies temp files to `c:\windows\temp\tacticalxxx` folder.
-* INNO setup installs app into `%ProgramData%\TacticalAgent\` folder
+* INNO setup installs app into `%ProgramData%\TacticalAgent\` folder.
 
 ***
 
@@ -503,9 +503,9 @@ Signed agents will require: `https://agents.tacticalrmm.com` for downloading/upd
 
 Downloads latest `tacticalagent-vx.x.x.exe` to `%programfiles%`
 
-Executes the file (INNO setup exe)
+Executes the file (INNO setup exe).
 
-Files create `c:\Windows\temp\Tacticalxxxx\` folder for install (and log files)
+Files create `c:\Windows\temp\Tacticalxxxx\` folder for install (and log files).
 
 ***
 
@@ -536,11 +536,11 @@ Choose your method:
     ```
 
     !!!note
-        There's a Community script that will collect your agent log called `TacticalRMM - Get Agent Logs`
+        There's a Community script that will collect your agent log called `TacticalRMM - Get Agent Logs`.
 
 === ":material-debian: linux"
 
-    As root user, edit 
+    As root user, edit:
 
     ```bash
     vi /etc/systemd/system/tacticalagent.service
@@ -586,18 +586,18 @@ Use Agents right click menu > `Agent recovery` > `Tactical Agent`
     net start tacticalrmm
     ```
 
-    Check if Tactical RMM agent is online
+    Check if Tactical RMM agent is online.
 
 === ":material-console-line: From Local Machine"
 
-    Start/Restart Tactical RMM service from either `services.msc` or from Admin Command prompt
+    Start/Restart Tactical RMM service from either `services.msc` or from Admin Command prompt:
 
     ```cmd
     net stop tacticalrmm
     net start tacticalrmm
     ```
 
-    Open `C:\Program Files\TacticalAgent\agent.log` to look for issues
+    Open `C:\Program Files\TacticalAgent\agent.log` to look for issues.
 
 ### Windows Update Management
 
@@ -605,12 +605,12 @@ _The current Tactical RMM Windows Update process is relatively simple atm. As of
 
 #### TLDR: Tactical RMM based patching recommendation
 
-* Use the `Automation Policy` > `Patch Policy` to apply it to machines. The `Other` category is poorly named by Microsoft, that is the regluar monthly ones and should be auto-approved.
-* Be patient, and things will be patched (based on the policy)
+* Use the `Automation Policy` > `Patch Policy` to apply it to machines. The `Other` category is poorly named by Microsoft, those are the regular monthly updates and should be auto-approved.
+* Be patient, and things will be patched (based on the policy).
 * In any way trying to immediately approve patches to many machines OR Block specific patches is a slow and manual process.
 
 !!!note
-    If you want more control of Windows patching right now, look into a script-based implementation of [PSWindowsUpdate](http://woshub.com/pswindowsupdate-module/)
+    If you want more control of Windows patching right now, look into a script-based implementation of [PSWindowsUpdate](http://woshub.com/pswindowsupdate-module/).
 
 **Be aware**: When you install the Tactical RMM Agent on a windows computer it sets this:
 
@@ -624,14 +624,14 @@ If you want to resume normal Windows patching and disable Tactical RMM updating 
 
 **Where does it get updates from?** TRMM gets the list of Windows updates using this Microsoft API: <https://docs.microsoft.com/en-us/windows/win32/api/_wua/>
 
-The Tactical RMM server updates an agents patch list every 8hrs based on the patch policy to check for what to update, and what's installed.
+The Tactical RMM server updates an agents patch list every 8 hrs based on the patch policy to check for what to update, and what's installed.
 
 !!!note
     Currently if the agent is not online at the time the patch policy is set to install, there is no "install as soon as it comes online". 
 
 ### Log files
 
-You can find 3 sets of detailed logs at `/rmm/api/tacticalrmm/tacticalrmm/private/log`
+You can find 3 sets of detailed logs at `/rmm/api/tacticalrmm/tacticalrmm/private/log`.
 
 * `error.log` nginx log for all errors on all TRMM URL's: rmm, api and mesh
 

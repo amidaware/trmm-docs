@@ -7,7 +7,7 @@
 
 ## Updating from the Web UI
 
-Agents will automatically self update themselves if you have auto self update enabled in **Settings > Global Settings**
+Agents will automatically self update themselves if you have auto self update enabled in **Settings > Global Settings**.
 
 ![autoagentupdate](images/autoagentupdate.png)
 

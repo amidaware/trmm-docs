@@ -134,12 +134,12 @@ Once completed, you should have 1 new folder into you rmm directory $USERDIR/doc
 As the installation instruction, we will pass those to the .env:
 
 ```bash
-echo "CERT_PUB_KEY=$(sudo base64 -w 0 $USERDIR/docker/rmm/certs/certs/**yourdomaine.com.crt**)" >> .env
-echo "CERT_PRIV_KEY=$(sudo base64 -w 0 $USERDIR/docker/rmm/certs/private/**yourdomaine.com.key**)" >> .env
+echo "CERT_PUB_KEY=$(sudo base64 -w 0 $USERDIR/docker/rmm/certs/certs/**yourdomain.com.crt**)" >> .env
+echo "CERT_PRIV_KEY=$(sudo base64 -w 0 $USERDIR/docker/rmm/certs/private/**yourdomain.com.key**)" >> .env
 ```
 
-Next we can create 3 rules to tell traefik to correctly route the https and agent.
-For that we will create 2 rules into traefik directory as per its configuration. folder/traefik/rules
+Next we can create 3 rules to tell Traefik to correctly route the https and agent.
+For that we will create 2 rules into Traefik directory as per its configuration. folder/traefik/rules
 
 create:
 
@@ -250,7 +250,7 @@ Insert this (modify `HAProxyIP` to your network):
 Restart MeshCentral:
 
 ```bash
-service meshcentral restart
+systemctl meshcentral restart
 ```
 
 ### HAProxy Config
@@ -502,53 +502,58 @@ frontend Frontend-SNI
 ```
 
 ## Apache Proxy
-howto -  proxy on apache
+HowTo -  Proxy on Apache
 ### TRMM SERVER
-edit file /etc/nginx/sites-available/rmm.conf
-add the lines from 'real_ip' module inside server tag:
+Edit file /etc/nginx/sites-available/rmm.conf
+Add the lines from 'real_ip' module inside server tag:
 
-    set_real_ip_from    192.168.0.200; #IP Address of your apache proxy
-    real_ip_header      X-Forwarded-For;
+```conf
+set_real_ip_from    192.168.0.200; #IP Address of your apache proxy
+real_ip_header      X-Forwarded-For;
+```
 
-restart nginx
+Restart nginx:
 
-    systemctl restart nginx.service
+```bash
+systemctl restart nginx.service
+```
 
 ### APACHE
-enable ssl proxy, rewriteEngine.
-set proxy to preserve host.
-set upgrade rule to websocket.
-set proxypass rules redirecting to rmm location
+Enable ssl proxy and rewriteEngine.
+Set proxy to preserve host.
+Set upgrade rule to websocket.
+Set proxypass rules redirecting to rmm location.
 
-on your apache ssl config
-example:
+Apache ssl config example:
 
-    <VirtualHost *:443>
-    	ServerName rmm.blablabla.com.br:443
-    	ServerAlias mesh.blablabla.com.br:443 api.blablabla.com.br:443
-    	SSLEngine on
+```conf
+<VirtualHost *:443>
+    ServerName rmm.blablabla.com.br:443
+    ServerAlias mesh.blablabla.com.br:443 api.blablabla.com.br:443
+    SSLEngine on
 
-        SSLCertificateFile "C:/Apache24/conf/ssl-rmm.blablabla.com.br/_.blablabla.com.br-chain.pem"
-    	SSLCertificateKeyFile "C:/Apache24/conf/ssl-rmm.blablabla.com.br/_.blablabla.com.br-key.pem"
+    SSLCertificateFile "C:/Apache24/conf/ssl-rmm.blablabla.com.br/_.blablabla.com.br-chain.pem"
+    SSLCertificateKeyFile "C:/Apache24/conf/ssl-rmm.blablabla.com.br/_.blablabla.com.br-key.pem"
 
-     	SSLProxyEngine on
+    SSLProxyEngine on
 
-    	RewriteEngine On
-    	ProxyPreserveHost On
+    RewriteEngine On
+    ProxyPreserveHost On
 
-       	# When Upgrade:websocket header is present, redirect to ws
-       	# Using NC flag (case-insensitive) as some browsers will pass Websocket
-       	RewriteCond %{HTTP:Upgrade} =websocket [NC]
-        RewriteRule ^/(.*)    wss://192.168.0.212/$1 [P,L]
+    # When Upgrade:websocket header is present, redirect to ws
+    # Using NC flag (case-insensitive) as some browsers will pass Websocket
+    RewriteCond %{HTTP:Upgrade} =websocket [NC]
+    RewriteRule ^/(.*)    wss://192.168.0.212/$1 [P,L]
 
-    	ProxyPass "/"  "https://192.168.0..212/" retry=3
-    	ProxyPassReverse "/"  "https://192.168.0.212/" retry=3
+    ProxyPass "/"  "https://192.168.0..212/" retry=3
+    ProxyPassReverse "/"  "https://192.168.0.212/" retry=3
 
-    	BrowserMatch "MSIE [2-5]" \
-    			 nokeepalive ssl-unclean-shutdown \
-    			 downgrade-1.0 force-response-1.0
+    BrowserMatch "MSIE [2-5]" \
+    		nokeepalive ssl-unclean-shutdown \
+    		downgrade-1.0 force-response-1.0
 
 </VirtualHost>
+```
 
 ### Updating certificate:
 

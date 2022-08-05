@@ -34,7 +34,7 @@ sudo apt-get install certbot
 
 ### B. Generate the wildcard Let'sEncrypt certificates
 
-We're using the [DNS-01 challenge method](https://letsencrypt.org/docs/challenge-types/#dns-01-challenge)
+We're using the [DNS-01 challenge method](https://letsencrypt.org/docs/challenge-types/#dns-01-challenge).
 #### a. Deploy the TXT record in your DNS manager
 
 !!!warning
@@ -47,7 +47,7 @@ We're using the [DNS-01 challenge method](https://letsencrypt.org/docs/challenge
 
 ![dnstxt](images/dnstxt.png)
 
-#### b. Request Let'sEncrypt Wildcard cert
+#### b. Request Let'sEncrypt wildcard cert
 
 ```bash
 sudo certbot certonly --manual -d *.example.com --agree-tos --no-bootstrap --preferred-challenges dns
@@ -122,4 +122,4 @@ docker-compose stop
 btrfs subvolume snapshot -r /srv/tsd /srv/tsd/.snapshot-`date +%F-%H%M%S`
 ```
 
-or you can look at [this](https://github.com/larseberhardt/TRMM-Docker-Backup-Script).
+Or, you can look at [this](https://github.com/larseberhardt/TRMM-Docker-Backup-Script).
