@@ -2,9 +2,9 @@
 
 ## Understanding TRMM
 
-Anything you configure: scripts, tasks, patching etc is queued and scheduled on the server to do something. 
+Anything you configure: scripts, tasks, patching, etc is queued and scheduled on the server to do something. 
 Everything that is queued, happens immediately when agents are online.
-The agent gets a nats command, server tells it to do xyz and it does it.
+The agent gets a NATS command, server tells it to do xyz and it does it.
 
 When agents are not connected to the server nothing happens. The windows task scheduler says do x at some time, what it's asked to do is get x command from the server. If server is offline, nothing happens.
 If an agent comes online, every x interval (windows update, pending tasks etc) check and see is there something for me to do that I missed while I was offline. When that time occurs (eg agent sees if it needs to update itself at 35mins past every hr [Update Agents](update_agents.md) ) it'll get requested on the online agent.
@@ -13,7 +13,7 @@ That's the simplified general rule for everything TRMM.
 
 [![Network Design](images/TacticalRMM-Network.png)](images/TacticalRMM-Network.png)
 
-Still need graphics for
+Still need graphics for:
 
     1. Agent installer steps
 
@@ -36,21 +36,21 @@ A complete list of all packages used by Tactical RMM are listed [here](https://r
 
 If you have strict firewall rules these are the only outbound rules from the server needed for all functionality:
 
-1. Outbound traffic to all agent IP scopes for reflect traffic from agents
+1. Outbound traffic to all agent IP scopes for reflect traffic from agents.
 
 #### Server without Code Signing key
 
-No additional rules needed
+No additional rules needed.
 
 #### Server with Code Signing key
 
-No additional rules needed
+No additional rules needed.
 
 ### System Services
 
 This lists the system services used by the server.
 
-#### nginx web server
+#### Nginx web server
 
 Nginx is the web server for the `rmm`, `api`, and `mesh` domains. All sites redirect port 80 (HTTP) to port 443 (HTTPS).
 

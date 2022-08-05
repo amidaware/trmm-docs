@@ -156,7 +156,7 @@ Q. Why can’t I use a self signed certificate for web etc.
 
 A. NATS over TLS needs a real certificate signed with a trusted root certificate.
 
-If you aren't a dev in a non-production environment, don't run nats with self signed certs: <https://docs.nats.io/running-a-nats-service/configuration/securing_nats/tls#self-signed-certificates-for-testing>
+If you aren't a dev in a non-production environment, don't run NATS with self signed certs: <https://docs.nats.io/running-a-nats-service/configuration/securing_nats/tls#self-signed-certificates-for-testing>
 
 ## License FAQ
 

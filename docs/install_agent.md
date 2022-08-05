@@ -1,16 +1,16 @@
 # Installing a Windows agent
 
 !!!warning
-    If you don't want to deal with AV flagging/deleting your agents, check the instructions for getting [code signed agents](code_signing.md)<br/><br />
-    You must add antivirus exlusions for the tactical agent.<br/>
+    If you don't want to deal with AV flagging/deleting your agents, check the instructions for getting [code signed agents](code_signing.md).<br/><br />
+    You must add antivirus exclusions for the tactical agent.<br/>
     Any decent AV will flag the agent as a virus, since it technically is one due to the nature of this software.<br/>
-    Adding the following exlucions will make sure everything works, including agent update:<br/>
+    Adding the following exclusions will make sure everything works, including agent update:<br/>
     `C:\Program Files\TacticalAgent\*`<br/>
     `C:\Program Files\Mesh Agent\*`<br/>
     `C:\Windows\Temp\tacticalagent-v*.exe`<br/>
     `C:\Windows\Temp\trmm\*`<br/>
     `C:\temp\tacticalrmm*.exe`<br/>
-    See [here for other screenshot examples](av.md)
+    See [here for other screenshot examples](av.md).
 
 ## Dynamically generated executable
 
@@ -18,7 +18,7 @@ The generated exe is simply a wrapper around the Manual install method, using a 
 All it does is download the generic installer from the agent's github [release page](https://github.com/amidaware/rmmagent/releases) and call it using predefined command line args that you choose from the web UI.
 It "bakes" the command line args into the executable.
 
-From the UI, click **Agents > Install Agent**
+From the UI, click **Agents > Install Agent**.
 
 You can also **right click on a site > Install Agent**. This will automatically fill in the client/site dropdown for you.
 
@@ -40,7 +40,7 @@ This is useful for scripting the installation using Group Policy or some other b
 ## Using a deployment link
 
 Creating a deployment link is the recommended way to deploy agents.
-The main benefit of this method is that the exectuable is generated only whenever the deployment download link is accessed, whereas with the other methods it's generated right away and the agent's version hardcoded into the exe.
+The main benefit of this method is that the executable is generated only whenever the deployment download link is accessed, whereas with the other methods it's generated right away and the agent's version hardcoded into the exe.
 Using a deployment link will allow you to not worry about installing using an older version of an agent, which will fail to install if you have updated your RMM to a version that is not compatible with an older installer you might have lying around.
 
 To create a deployment, from the web UI click **Agents > Manage Deployments**.
@@ -72,7 +72,7 @@ This will not popup any message boxes during install, either any error messages 
 -proxy "http://proxyserver:port"
 ```
 
-Use a http proxy
+Use a http proxy.
 
 ```text
 -meshdir "C:\Program Files\Your Company Name\Mesh Agent"
@@ -86,14 +86,14 @@ Specify the full path to the directory containing `MeshAgent.exe` if using custo
 
 Do not install meshcentral agent during tactical agent install. Note: take control, remote terminal and file browser will not work.
 
-You can get full commandline options from (`--help`)
+You can get full command line options from (`--help`).
 
 ## Scripting Agent Installation
 
-If you want to deploy the TRMM agent using AD, intune, mesh, teamviewer, Group Policy GPO etc this is a sample CMD script for deploying Tactical.
+If you want to deploy the TRMM agent using AD, Intune, Mesh, TeamViewer, Group Policy GPO, etc this is a sample CMD script for deploying Tactical.
 
 !!!note
-    You will need to replace `deployment url` with your custom deployment URL
+    You will need to replace `deployment url` with your custom deployment URL:
 
 ```bat
 @echo off
@@ -129,11 +129,11 @@ if not defined Name (
 )
 ```
 
-There is also a full powershell version [here](3rdparty_screenconnect.md#install-tactical-rmm-via-screeconnect-commands-window)
+There is also a full powershell version [here](3rdparty_screenconnect.md#install-tactical-rmm-via-screeconnect-commands-window).
 
 ## Script for full agent uninstall
 
-You can always use this to silently uninstall agent on workstations
+You can always use this to silently uninstall agent on workstations:
 
 ```cmd
 "C:\Program Files\TacticalAgent\unins000.exe" /VERYSILENT
@@ -141,23 +141,23 @@ You can always use this to silently uninstall agent on workstations
 
 ## Reinstalling mesh and reconnecting to TRMM
 
-Run this from Send Command
+Run this from Send Command:
 
 ```cmd
 "C:\Program Files\TacticalAgent\meshagent.exe" -fullinstall
 ```
 
-Then use Agent Recovery | Mesh Agent and choose Recover
+Then use Agent Recovery | Mesh Agent, and choose Recover:
 
 ## Stuck at "Downloading mesh agent..."?
 
-Make sure TRMM can connect to mesh, run:
+Make sure TRMM can connect to mesh. Run:
 
 ```bash
 /rmm/api/env/bin/python /rmm/api/tacticalrmm/manage.py check_mesh
 ```
 
-If there's an error, make sure you have it [setup correctly](howitallworks.md#meshcentral)
+If there's an error, make sure you have it [setup correctly](howitallworks.md#meshcentral).
 
 ![if sharing](images/meshcheck_sharing.png)
 
@@ -165,11 +165,11 @@ If there's an error, make sure you have it [setup correctly](howitallworks.md#me
 
 To install:<br/>
 1. Go to rmm.yourdomain.com and login.<br/>
-2. Click on Agents > Install Agent<br/>
+2. Click on Agents > Install Agent.<br/>
 3. Choose the Client, Site, Server or Workstation and Architecture (change expiry if required) as well as Linux.<br/>
 4. Click Download.<br/>
-5. If downloaded on the Linux machine you want to add as an agent (otherwise copy to machine using WinSCP or similar) open terminal <br/>
-6. cd to the folder you have downloaded the script to<br/>
+5. If downloaded on the Linux machine you want to add as an agent (otherwise copy to machine using WinSCP or similar) open terminal. <br/>
+6. cd to the folder you have downloaded the script to.<br/>
 7. Run `chmod +x rmm-clientname-sitename-type.sh`<br/>
 8. Run `sudo ./rmm-clientname-sitename-type.sh` and wait for script to complete.<br/>
 

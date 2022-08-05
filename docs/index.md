@@ -5,13 +5,13 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
 
 Tactical RMM is a remote monitoring & management tool built with Django, Vue and Golang.
-It uses an [agent](https://github.com/amidaware/rmmagent) written in Golang and integrates with [MeshCentral](https://github.com/Ylianst/MeshCentral)
+It uses an [agent](https://github.com/amidaware/rmmagent) written in Golang and integrates with [MeshCentral](https://github.com/Ylianst/MeshCentral).
 
 ## [LIVE DEMO](https://demo.tacticalrmm.com/)
 
 ## Features
 
-- Teamviewer-like remote desktop control
+- TeamViewer-like remote desktop control
 - Real-time remote shell
 - Remote file browser (download and upload files)
 - Remote command and script execution (batch, powershell and python scripts)
@@ -37,11 +37,11 @@ Join us on [Discord](https://discord.gg/upGTkWp) for (help/tips/discussion/dev c
 
 _[Github Discussions](https://github.com/amidaware/tacticalrmm/discussions): is a distant 2nd option, we will frequently request you join Discord if you're requesting help or troubleshooting issues with your installation._
 
-[Github Issues](https://github.com/amidaware/tacticalrmm/issues): Report bugs you discover with clear writeups on how to reproduce problems. Also submit enhancement/feature requests here.
+[Github Issues](https://github.com/amidaware/tacticalrmm/issues): Report bugs you discover with clear write-ups on how to reproduce problems. Also submit enhancement/feature requests here.
 
 [View useful scripts](https://github.com/amidaware/community-scripts) to be used in Tactical RMM. 
 
-Check out [Awesome](https://github.com/amidaware/trmm-awesome) additions from the community
+Check out [Awesome](https://github.com/amidaware/trmm-awesome) additions from the community.
 
 ## Github Repos
 
