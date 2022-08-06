@@ -3,13 +3,13 @@
 ## AnyDesk Integration
 
 !!!info
-     You can setup a full automation policy to collect the machine GUID but this example will collect from just one agent for testing purposes.
+     You can set up a full automation policy to collect the machine GUID, but this example will collect from just one agent for testing purposes.
 
 ### Create Custom Field
 
-From the UI go to **Settings > Global Settings > CUSTOM FIELDS > Agents**
+From the UI go to **Settings > Global Settings > CUSTOM FIELDS > Agents**.
 
-Add Custom Field</br>
+Add Custom Field:</br>
 **Target** = `Agent`</br>
 **Name** = `AnyNetID`</br>
 **Field Type** = `Text`</br>
@@ -18,9 +18,9 @@ Add Custom Field</br>
 
 ### Create URL Action
 
-While in Global Settings go to **URL ACTIONS**
+While in Global Settings go to **URL ACTIONS**.
 
-Add a URL Action</br>
+Add a URL Action:</br>
 **Name** = `AnyDesk Control`</br>
 **Description** = `Connect to a AnyDesk Session`</br>
 **URL Pattern** =
@@ -31,11 +31,11 @@ anydesk:{{agent.AnyNetID}}
 
 ### Create Anydesk Collector
 
-This populates the Custom field with the Anydesk ID
+This populates the Custom field with the Anydesk ID.
 
 Navigate to an agent with AnyDesk running (or apply using **Settings > Automation Manager**).</br>
 Go to Tasks.</br>
-Add Task</br>
+Add Task:</br>
 **Select Script** = `AnyDesk - Get AnyNetID for client` (this is a builtin script from script library)</br>
 **Descriptive name of task** = `Collects the AnyNetID for AnyDesk.`</br>
 **Collector Task** = `CHECKED`</br>
@@ -49,9 +49,9 @@ Click **Add Task**
 
 Right click on the newly created task and click **Run Task Now**.
 
-Give it a second to execute then right click the agent that you are working with and go to **Run URL Action > AnyDesk Control**
+Give it a second to execute, then right click the agent that you are working with and go to **Run URL Action > AnyDesk Control**.
 
-It launch the session in AnyDesk.
+It should launch the session in AnyDesk.
 
 !!!note
-     You have to have Anydesk installed on the local computer
+     You have to have Anydesk installed on the local computer.

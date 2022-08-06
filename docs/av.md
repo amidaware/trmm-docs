@@ -3,24 +3,24 @@
 
 They are usually fraught with false-positives because we live in a world of complex greys, not black and white. 
 
-At the moment, Microsoft Windows Defender thinks a go executable with virtually nothing in it is the "Trojan:Win32/Wacatac.B!ml" virus <https://old.reddit.com/r/golang/comments/s1bh01/goexecutables_and_windows_defender/>
+At the moment, Microsoft Windows Defender thinks a go executable with virtually nothing in it is the "Trojan:Win32/Wacatac.B!ml" virus <https://old.reddit.com/r/golang/comments/s1bh01/goexecutables_and_windows_defender/>.
 
 At Tactical we recommend: 
 
-1. No 3rd party AV
-2. Use the `Defender Status Report` script (Task > Run Daily - Use Automation manager) to monitor machines: <https://github.com/amidaware/community-scripts/blob/main/scripts/Win_Defender_Status_Report.ps1>
+1. No 3rd party AV.
+2. Use the `Defender Status Report` script (Task > Run Daily - Use Automation manager) to monitor machines: <https://github.com/amidaware/community-scripts/blob/main/scripts/Win_Defender_Status_Report.ps1>.
 3. If you want to lock a system down, run the `Defender Enable` script (test in your environment, because it can stop Microsoft Office from opening docs) that will turn on Protected Folders: <https://github.com/amidaware/community-scripts/blob/main/scripts/Win_Defender_Enable.ps1> and you will be extremely safe. Annoyed, but safe. Use [this](https://github.com/amidaware/trmm-awesome/blob/main/scripts/Windows_Defender_Allowed_List.ps1) as an Exclusion List for Protected Folders items.
 
-Be aware there is also [a powershell script](https://github.com/amidaware/community-scripts/blob/main/scripts/Win_TRMM_AV_Update_Exclusion.ps1) to add TRMM exclusions specific to Windows Defender
+Be aware there is also [a powershell script](https://github.com/amidaware/community-scripts/blob/main/scripts/Win_TRMM_AV_Update_Exclusion.ps1) to add TRMM exclusions specific to Windows Defender.
 
 !!!note
-    If you need to use 3rd party AV, add the necessary exclusions (see below for examples) and submit the exe's as safe
+    If you need to use 3rd party AV, add the necessary exclusions (see below for examples) and submit the exes as safe.
 
 ## Bitdefender Gravityzone
 
 Admin URL: <https://cloud.gravityzone.bitdefender.com/>
 
-To exclude URLs: Policies > {policy name} > Network Protection > Content Control > Settings > Exclusions
+To exclude URLs: **Policies > {policy name} > Network Protection > Content Control > Settings > Exclusions**
 
 ![Web Exclusions](images/avbitdefender_gravityzone_exclusions0.png)
 
@@ -48,7 +48,7 @@ Admin URL:
 
 ### Sophos Central Admin
 
-Go To Global Settings >> General >> Global Exclusions >> Add Exclusion
+Go To **Global Settings > General > Global Exclusions > Add Exclusion**
 
 ![Agent Exclusions](images/sophoscascreen1.png)
 
@@ -68,17 +68,17 @@ Go To Global Settings >> General >> Global Exclusions >> Add Exclusion
 
 ![Agent Exclusions](images/sophoscascreen1.png)
 
-Log into Sophos Central Admin
+Log into Sophos Central Admin:
 
 Admin URL: <https://cloud.sophos.com/>
 
-Log into the Sophos XG Firewall
+Log into the Sophos XG Firewall.
 
-Go To System >> Hosts and services >> FQDN Host Group and create a new group
+Go To **System > Hosts and services > FQDN Host Group** and create a new group.
 
 ![FW Exclusions](images/sophosxgscreen1.png)
 
-Go To System >> Hosts and services >> FQDN Host
+Go To **System > Hosts and services > FQDN Host**.
 
 Create the following 3 hosts and add each to your FQDN host group.
 
@@ -90,7 +90,7 @@ Create the following 3 hosts and add each to your FQDN host group.
 
 ![FW Exclusions](images/sophosxgscreen3.png)
 
-Go To Hosts and services >> Services and create the following services
+Go To **Hosts and services > Services** and create the following services:
 
 - Name: Tactical-Service-443
     - Protocol: TCP
@@ -101,11 +101,11 @@ Go To Hosts and services >> Services and create the following services
 
 ![FW Exclusions](images/sophosxgscreen5.png)
 
-Go To Hosts and services >> Service group and create the following service group
+Go To **Hosts and services > Service group** and create the following service group:
 
 ![FW Exclusions](images/sophosxgscreen6.png)
 
-Go To Protect >> Rules and policies and add a firewall rule
+Go To **Protect > Rules and policies** and add a firewall rule:
 
 - Rule name: Tactical Rule
 - Rule position: Top
@@ -119,14 +119,14 @@ Go To Protect >> Rules and policies and add a firewall rule
 
 ![FW Exclusions](images/sophosxgscreen8.png)
 
-Optionally select Log Firewall Traffic checkbox for troubleshooting.
+Optionally select **Log Firewall Traffic** checkbox for troubleshooting.
 
 ## ESET ESMC Console
 
 There are two spots:
 
-1. In the Detection Engine -> Performance Exclusions
-2. Web Access Protection -> URL Address Management
+1. In the **Detection Engine > Performance Exclusions**.
+2. **Web Access Protection > URL Address Management**.
 
 
 ![Web Exclusions](images/esetesmc1.png)

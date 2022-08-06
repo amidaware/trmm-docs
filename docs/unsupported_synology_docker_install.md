@@ -17,7 +17,7 @@ Create 2 entries for each tactical DNS entries, one for the HTTP port & one for 
 
 ![syno reverse](images/synology_docker_reverse.jpg)
 
-For the entries related to the mesh, add some custom headers and adjust the proxy timeout connection:
+For the entries related to Mesh, add some custom headers and adjust the proxy timeout connection:
 
 ![syno reverse detail](images/synology_docker_reverse_details1.jpg)
 

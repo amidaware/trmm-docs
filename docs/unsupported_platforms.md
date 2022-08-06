@@ -8,9 +8,9 @@ Tactical RMM install on LXC: redis not starting.
 
 ### Symptoms
 
-1. Agent exe install shows 'Server error (503)' pop-up during the installation process
-2. Running the `troubleshoot_server.sh` reports `redis-server Service isnt running (Tactical wont work without this)`
-3. `service redis start` reports a problem 
+1. Agent exe install shows `Server error (503)` pop-up during the installation process.
+2. Running the `troubleshoot_server.sh` reports `redis-server service isn't running (Tactical wont work without this)`.
+3. `systemctl start redis` reports a problem:
    ```log
    "Job for redis-server.service failed because the control process exited with error code.
    See "systemctl status redis-server.service" and "journalctl -xe" for details."
@@ -57,7 +57,7 @@ Remove the server that comes with Tactical RMM:
 apt-get --purge redis-server
 ```
 
-and delete the `/var/log/redis` directory, then:
+Delete the `/var/log/redis` directory, then:
 
 ```bash
 apt-get install redis-server
@@ -107,13 +107,13 @@ chown -R redis:redis /var/log/redis
 chmod -R u+rwX,g+rwX,u+rx /var/log/redis'
 ```
 
-then run redis-server:
+Run redis-server:
 
 ```bash
 su -s /bin/bash -c '/usr/bin/redis-server /etc/redis/redis.conf' redis
 ```
 
-then confirm with:
+Confirm with:
 
 ```bash
 ps ax|grep redis

@@ -1,7 +1,7 @@
 ## Backing up the RMM
 
 !!!note
-        This is only applicable for the standard install, not Docker installs.
+    This is only applicable for the standard install, not Docker installs.
 
 A backup script is provided for quick and easy way to backup all settings into one file to move to another server.
 

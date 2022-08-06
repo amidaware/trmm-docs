@@ -2,9 +2,9 @@
 
 ## How to Deploy BitDefender GravityZone
 
-From the UI go to **Settings > Global Settings > CUSTOM FIELDS > Clients**
+From the UI go to **Settings > Global Settings > CUSTOM FIELDS > Clients**.
 
-Add a Custom Field</br>
+Add a Custom Field:</br>
 
 First: </br>
 **Target** = `CLIENTS`</br>
@@ -13,7 +13,7 @@ First: </br>
 
 ![Service Name](images/3rdparty_bdg_RmmCustField.png)
 
-Log into your GravityZone and on the left hand side, select "Packages" under "Network".
+Log into your GravityZone and on the left hand side, select **Network > Packages**.
 
 ![Service Name](images/3rdparty_bdg_Packages.png)
 
@@ -21,7 +21,7 @@ Select the client you are working with and click "Send Download Links" at the to
 
 ![Service Name](images/3rdparty_bdg_DownloadLink.png)
 
-Copy the appropriate download link
+Copy the appropriate download link.
 
 ![Service Name](images/3rdparty_bdg_LinkCopy.png)
 

@@ -3,14 +3,14 @@
 ## Connectwise Control Integration
 
 !!!info
-     To make this work you will need the name of a the Service from one of your agents running a Screen Connect Guest.
+     To make this work you will need the name of the service from one of your agents running a ScreenConnect Guest.
 
 !!!info
-     You can setup a full automation policy to collect the machine GUID but this example will collect from just one agent for testing purposes.
+     You can setup a full automation policy to collect the machine GUID, but this example will collect from just one agent for testing purposes.
 
-From the UI go to **Settings > Global Settings > CUSTOM FIELDS > Agents**
+From the UI go to **Settings > Global Settings > CUSTOM FIELDS > Agents**.
 
-Add Custom Field</br>
+Add Custom Field:</br>
 **Target** = `Client`</br>
 **Name** = `ScreenConnectService`</br>
 **Field Type** = `Text` </br>
@@ -18,7 +18,7 @@ Add Custom Field</br>
 
 ![Service Name](images/3rdparty_screenconnect1.png)
 
-Add Custom Field</br>
+Add Custom Field:</br>
 **Target** = `Agent`</br>
 **Name** = `ScreenConnectGUID`</br>
 **Field Type** = `Text`</br>
@@ -27,7 +27,7 @@ Add Custom Field</br>
 
 While in Global Settings go to **URL ACTIONS**
 
-Add a URL Action</br>
+Add a URL Action:</br>
 **Name** = `ScreenConnect`</br>
 **Description** = `Launch Screen Connect Session`</br>
 **URL Pattern** =
@@ -40,7 +40,7 @@ https://<your_screenconnect_fqdn_with_port>/Host#Access/All%20Machines//{{agent.
 
 Navigate to an agent with ConnectWise Service running (or apply using **Settings > Automation Manager**).</br>
 Go to Tasks.</br>
-Add Task</br>
+Add Task:</br>
 **Select Script** = `ScreenConnect - Get GUID for client` (this is a builtin script from script library)</br>
 **Script argument** = `-serviceName {{client.ScreenConnectService}}`</br>
 **Descriptive name of task** = `Collects the Machine GUID for ScreenConnect.`</br>
@@ -55,19 +55,19 @@ Click **Add Task**
 
 Right click on the newly created task and click **Run Task Now**.
 
-Give it a second to execute then right click the agent that you are working with and go to **Run URL Action > ScreenConnect**
+Give it a second to execute, then right click the agent that you are working with and go to **Run URL Action > ScreenConnect**.
 
-It should ask you to sign into your Connectwise Control server if you are not already logged in and launch the session.
+It should ask you to sign into your ConnectWise Control server if you are not already logged in and launch the session.
 
 *****
 
-## Install Screenconnect via Tactical
+## Install ScreenConnect via Tactical
 
-Use the [Screenconnect AIO script](https://github.com/amidaware/community-scripts/blob/main/scripts/Win_ScreenConnectAIO.ps1)
+Use the [ScreenConnect AIO script](https://github.com/amidaware/community-scripts/blob/main/scripts/Win_ScreenConnectAIO.ps1)
 
 ![AIO](images/3rdparty_sc_aio.png)
 
-## Install Tactical RMM via Screenconnect commands window
+## Install Tactical RMM via ScreenConnect commands window
 
 1. Create a Deployment under **Agents > Manage Deployments**
 2. Replace `<deployment URL>` below with your Deployment Download Link.

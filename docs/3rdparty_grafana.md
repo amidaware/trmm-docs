@@ -1,6 +1,6 @@
 # Adding Grafana to Tactical RMM
 
-Adding graphical Dashboards to Tactical.
+Adding graphical dashboards to Tactical.
 
 See <https://github.com/dinger1986/TRMM-Grafana>
 
