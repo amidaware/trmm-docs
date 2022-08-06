@@ -1,6 +1,6 @@
 # Unsupported Install Platforms
 
-## LXC installs
+## LXC Installs
 
 [Read source](https://discord.com/channels/736478043522072608/959541976372502598)
 

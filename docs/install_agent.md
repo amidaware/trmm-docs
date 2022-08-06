@@ -1,4 +1,4 @@
-# Installing a Windows agent
+# Installing a Windows Agent
 
 !!!warning
     If you don't want to deal with AV flagging / deleting your agents, check the instructions for getting [code signed agents](code_signing.md).<br/><br />
@@ -12,7 +12,7 @@
     `C:\temp\tacticalrmm*.exe`<br/>
     See [here for other screenshot examples](av.md).
 
-## Dynamically generated executable
+## Dynamically Generated Executable
 
 The generated exe is simply a wrapper around the Manual install method, using a single exe / command without the need to pass any command line flags to the installer.
 All it does is download the generic installer from the agent's github [release page](https://github.com/amidaware/rmmagent/releases) and call it using predefined command line args that you choose from the web UI.
@@ -37,7 +37,7 @@ This is useful for scripting the installation using Group Policy or some other b
     You can reuse the installer for any of the deployment methods, you don't need to constantly create a new installer for each new agent.<br/>
     The installer will be valid for however long you specify the token expiry time when generating an agent.
 
-## Using a deployment link
+## Using a Deployment Link
 
 Creating a deployment link is the recommended way to deploy agents.
 The main benefit of this method is that the executable is generated only whenever the deployment download link is accessed, whereas with the other methods it's generated right away and the agent's version is hardcoded into the exe.
@@ -52,7 +52,7 @@ To create a deployment, from the web UI click **Agents > Manage Deployments**.
 
 Copy / paste the download link from the deployment into your browser. It will take a few seconds to dynamically generate the executable and then your browser will automatically download the exe.
 
-## Optional installer args
+## Optional Installer Args
 
 The following optional arguments can be passed to any of the installation method executables:
 
@@ -84,7 +84,7 @@ Specify the full path to the directory containing `MeshAgent.exe` if using custo
 -nomesh
 ```
 
-Do not install MeshCentral agent during Tactical agent install. Note: take control, remote terminal and file browser will not work.
+Do not install MeshCentral agent during Tactical agent install. Note: Take Control, Remote Terminal and File Browser will not work.
 
 You can get full command line options from (`--help`).
 
@@ -131,7 +131,7 @@ if not defined Name (
 
 There is also a full powershell version [here](3rdparty_screenconnect.md#install-tactical-rmm-via-screeconnect-commands-window).
 
-## Script for full agent uninstall
+## Script for Full Agent Uninstall
 
 You can always use this to silently uninstall the agent on workstations:
 
@@ -139,7 +139,7 @@ You can always use this to silently uninstall the agent on workstations:
 "C:\Program Files\TacticalAgent\unins000.exe" /VERYSILENT
 ```
 
-## Reinstalling mesh and reconnecting to TRMM
+## Reinstalling Mesh and Reconnecting to TRMM
 
 Run this from **Send Command**:
 

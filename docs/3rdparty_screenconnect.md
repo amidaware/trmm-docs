@@ -1,6 +1,6 @@
-# Screenconnect / Connectwise Control
+# ScreenConnect / ConnectWise Control
 
-## Connectwise Control Integration
+## ConnectWise Control Integration
 
 !!!info
      To make this work you will need the name of the service from one of your agents running a ScreenConnect Guest.
@@ -67,7 +67,7 @@ Use the [ScreenConnect AIO script](https://github.com/amidaware/community-script
 
 ![AIO](images/3rdparty_sc_aio.png)
 
-## Install Tactical RMM via ScreenConnect commands window
+## Install Tactical RMM via ScreenConnect Commands Window
 
 1. Create a Deployment under **Agents > Manage Deployments**
 2. Replace `<deployment URL>` below with your Deployment Download Link.

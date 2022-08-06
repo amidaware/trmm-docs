@@ -10,16 +10,16 @@
 
     Make sure you update your old RMM to the latest version using the `update.sh` script and then run a fresh backup to use with this restore script.
 
-## Setup the new server
+### Setup the new server
 
 Follow the same instructions as a [fresh install](install_server.md) but stop once you reach the 'Run the install script' section (you'll be using the restore script instead of install).
 
-## Change DNS A records
+### Change DNS A records
 
 Open the DNS manager of wherever your domain is hosted.
 
 Update the 3 A records `rmm`, `api` and `mesh` and point them to the public IP of your new server.
-## Run the restore script
+### Run the restore script
 
 Switch to the `tactical` user:
 

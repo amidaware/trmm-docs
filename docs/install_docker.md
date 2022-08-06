@@ -4,11 +4,11 @@
     Docker is not officially supported at the moment and not recommended for production use unless you are an advanced docker user and very comfortable managing and troubleshooting docker.<br/><br/>
     Please read the [docker install considerations](install_considerations.md#docker-install) before continuing.
 
-## 1. Install Docker
+### Install Docker
 
 Install docker.
 
-### 2. Create the A records
+### Create the A records
 
 We'll be using `example.com` as our domain for this example.
 
@@ -21,21 +21,21 @@ We'll be using `example.com` as our domain for this example.
 
 ![arecords](images/arecords.png)
 
-## 3. Acquire Let'sEncrypt Wildcard certs with Certbot
+### Acquire Let'sEncrypt wildcard certs with Certbot
 
 !!!warning
   If the Let'sEncrypt wildcard certificates are not provided, a self-signed certificate will be generated and most agent functions won't work. 
 
-### A. Install Certbot
+**1 ) Install Certbot**
 
 ```bash
 sudo apt-get install certbot
 ```
 
-### B. Generate the wildcard Let'sEncrypt certificates
+**2 ) Generate the wildcard Let'sEncrypt certificates**
 
 We're using the [DNS-01 challenge method](https://letsencrypt.org/docs/challenge-types/#dns-01-challenge).
-#### a. Deploy the TXT record in your DNS manager
+**3 ) Deploy the TXT record in your DNS manager**
 
 !!!warning
     TXT records can take anywhere from 1 minute to a few hours to propagate depending on your DNS provider.<br/>
@@ -47,7 +47,7 @@ We're using the [DNS-01 challenge method](https://letsencrypt.org/docs/challenge
 
 ![dnstxt](images/dnstxt.png)
 
-#### b. Request Let'sEncrypt wildcard cert
+**4 ) Request Let'sEncrypt wildcard cert**
 
 ```bash
 sudo certbot certonly --manual -d *.example.com --agree-tos --no-bootstrap --preferred-challenges dns
@@ -56,11 +56,11 @@ sudo certbot certonly --manual -d *.example.com --agree-tos --no-bootstrap --pre
 !!!note
     Replace `example.com` with your root domain.
 
-## 4. Configure DNS and firewall
+### Configure DNS and firewall
 
 You will need to add DNS entries so that the three subdomains resolve to the IP of the docker host. There is a reverse proxy running that will route the hostnames to the correct container. On the host, you will need to ensure the firewall is open on tcp port 443.
 
-## 5. Setting up the environment
+### Setting up the environment
 
 Get the docker-compose and .env.example file on the host you which to install on
 
@@ -74,7 +74,7 @@ Change the values in .env to match your environment.
 
 When supplying certificates through Let'sEncrypt, see the section below about base64 encoding the certificate files.
 
-### A. Base64 encoding certificates to pass as env variables
+### Base64 encoding certificates to pass as env variables
 
 Use the below command to add the the correct values to the .env.
 
@@ -93,7 +93,7 @@ echo "CERT_PUB_KEY=$(sudo base64 -w 0 /path/to/pub/key)" >> .env
 echo "CERT_PRIV_KEY=$(sudo base64 -w 0 /path/to/priv/key)" >> .env
 ```
 
-## 6. Starting the environment
+### Starting the environment
 
 Run the below command to start the environment:
 
@@ -103,7 +103,7 @@ sudo docker-compose up -d
 
 Removing the -d will start the containers in the foreground and is useful for debugging.
 
-## 7. Login
+### Login
 
 Navigate to `https://rmm.example.com` and login with the username/password you created during install.
 
@@ -111,7 +111,7 @@ Once logged in, you will be redirected to the initial setup page.
 
 Create your first client/site and choose the default timezone.
 
-## Note about Backups
+## Note About Backups
 
 The backup script **does not** work with docker. To backup your install use [standard docker backup/restore](https://docs.docker.com/desktop/backup-and-restore/) processes.
 

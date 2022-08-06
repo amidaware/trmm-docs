@@ -1,6 +1,6 @@
 # Tips and Tricks
 
-## Monitor your TRMM instance via the built in monitoring endpoint.
+## Monitor your TRMM Instance via the Built-in Monitoring Endpoint.
 Generate a random string to be used as a token and append it to the bottom of `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py` like this:
 
 ```python
@@ -60,7 +60,7 @@ At the top right of your web administration interface, click your **Username > p
 
 *****
 
-## Use the filters in the agent list
+## Use the Filters in the Agent List
 
 ![User Preferences](images/tipsntricks_filters.png)
 
@@ -85,7 +85,7 @@ Right-click the connect button in **Take Control** for connection options.
 
 ![Terminal](images/tipsntricks_meshcontrol.png)
 
-### Enable Remote Control options
+### Enable Remote Control Options
 
 !!!note
     These settings are independent of Tactical RMM. Enable features (like auto remove inactive devices) with caution.
@@ -99,7 +99,7 @@ Right-click the connect button in **Take Control** for connection options.
 ![Features](images/mesh_features.png)
 6. Ok your way out
 
-### Agent online/offline logs
+### Agent Online / Offline logs
 
 In mesh from the agent | General Tab
 
@@ -115,7 +115,7 @@ Use the (i) at the end of the script name to:
 
 ![Script Parameter Syntax](images/tipsntricks_script_syntaxhelp.png)
 
-## 3rd party software patching
+## 3rd Party Software Patching
 
 Chocolatey is the default 3rd party software library that is used to populate the software tab. You can install anything that is available at chocolatey.org
 

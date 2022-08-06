@@ -44,11 +44,11 @@ Edit NGINX config file (“/etc/nginx/nginx.conf”) and add the following confi
 ```conf
 http {
 
-        ##
-        # Basic Settings
-        ##
-        # Load GeoIP Database
-        geoip_country /usr/share/GeoIP/GeoIP.dat;
+    ##
+    # Basic Settings
+    ##
+    # Load GeoIP Database
+    geoip_country /usr/share/GeoIP/GeoIP.dat;
 
 ```
 

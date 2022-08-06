@@ -17,7 +17,7 @@ Still need graphics for:
 
     1. Agent installer steps
 
-    2. Agent checks/tasks and how they work on the workstation/interact with server
+    2. Agent checks / tasks and how they work on the workstation/interact with server
 
 ## Server
 
@@ -38,11 +38,11 @@ If you have strict firewall rules these are the only outbound rules from the ser
 
 1. Outbound traffic to all agent IP scopes for reflect traffic from agents.
 
-#### Server without Code Signing key
+#### Server Without Code Signing Key
 
 No additional rules needed.
 
-#### Server with Code Signing key
+#### Server With Code Signing Key
 
 No additional rules needed.
 
@@ -50,7 +50,7 @@ No additional rules needed.
 
 This lists the system services used by the server.
 
-#### Nginx web server
+#### Nginx Web Server
 
 Nginx is the web server for the `rmm`, `api`, and `mesh` domains. All sites redirect port 80 (HTTP) to port 443 (HTTPS).
 
@@ -130,7 +130,7 @@ Nginx is the web server for the `rmm`, `api`, and `mesh` domains. All sites redi
         - Shell access: `docker exec -it trmm-nginx /bin/bash`
 
 
-#### Tactical RMM (Django uWSGI) service
+#### Tactical RMM (Django uWSGI) Service
 
 Built on the Django framework, the Tactical RMM service is the heart of the system by serving the API for the frontend and agents.
 
@@ -165,9 +165,9 @@ Built on the Django framework, the Tactical RMM service is the heart of the syst
         - "tail" logs: `docker-compose logs tactical-backend | tail`
         - Shell access: `docker exec -it trmm-backend /bin/bash`
 
-#### Daphne: Django channels daemon
+#### Daphne: Django Channels Daemon
 
-[Daphne](https://github.com/django/daphne) is the official ASGI HTTP/WebSocket server maintained by the [Channels project](https://channels.readthedocs.io/en/stable/index.html).
+[Daphne](https://github.com/django/daphne) is the official ASGI HTTP / WebSocket server maintained by the [Channels project](https://channels.readthedocs.io/en/stable/index.html).
 
 ???+ note "Daphne config"
 
@@ -198,7 +198,7 @@ Built on the Django framework, the Tactical RMM service is the heart of the syst
         - "tail" logs: `docker-compose logs tactical-websockets | tail`
         - Shell access: `docker exec -it trmm-websockets /bin/bash`
 
-#### NATS server service
+#### NATS Server Service
 
 [NATS](https://nats.io/) is a messaging bus for "live" communication between the agent and server. NATS provides the framework for the server to push commands to the agent and receive information back.
 
@@ -212,12 +212,12 @@ Built on the Django framework, the Tactical RMM service is the heart of the syst
         - Stop: `systemctl stop nats.service`
         - Start: `systemctl start nats.service`
         - Restart: `systemctl restart nats.service`
-        - Restart: `systemctl reload nats.service` reloads the config without restarting
+        - Reload: `systemctl reload nats.service` reloads the config without restarting
         - journalctl:
             - "tail" the logs: `journalctl --identifier nats-server --follow`
             - View the logs: `journalctl --identifier nats-server --since "30 minutes ago" | less`
         - Listening process: `ss -tulnp | grep nats-server`
-        - Checking for nats or websocket problems `sudo journalctl --no-pager -u nats` and `sudo journalctl --no-pager -u nats-api`
+        - Checking for NATS or websocket problems `sudo journalctl --no-pager -u nats` and `sudo journalctl --no-pager -u nats-api`
 
     === ":material-ubuntu: standard"
     
@@ -236,7 +236,7 @@ Built on the Django framework, the Tactical RMM service is the heart of the syst
         - Log: `nats-api -log debug`
         - Shell access: `docker exec -it trmm-nats /bin/bash`
 
-#### NATS API service
+#### NATS API Service
 
 ???+ note "NATS API config"
 
@@ -261,13 +261,13 @@ Built on the Django framework, the Tactical RMM service is the heart of the syst
         - Get into bash in your docker with: `docker exec -it trmm-nats /bin/bash`
         - Log: `nats-api -log debug`
 
-#### Celery service
+#### Celery Service
 
 [Celery](https://github.com/celery/celery) is a task queue focused on real-time processing and is responsible for scheduling tasks to be sent to agents.
 
 Log located at `/var/log/celery`
 
-???+ note "celery config"
+???+ note "Celery config"
 
     - [Celery docs](https://docs.celeryproject.org/en/stable/index.html)
     - [Celery configuration docs](https://docs.celeryproject.org/en/stable/userguide/configuration.html)
@@ -297,9 +297,9 @@ Log located at `/var/log/celery`
         - "tail" logs: `docker-compose logs tactical-celery | tail`
         - Shell access: `docker exec -it trmm-celery /bin/bash`
 
-#### Celery Beat service
+#### Celery Beat Service
 
-[celery beat](https://github.com/celery/django-celery-beat) is a scheduler; It kicks off tasks at regular intervals, that are then executed by available worker nodes in the cluster.
+[Celery Beat](https://github.com/celery/django-celery-beat) is a scheduler. It kicks off tasks at regular intervals, that are then executed by available worker nodes in the cluster.
 
 ???+ note "Celery Beat config"
 
@@ -330,13 +330,13 @@ Log located at `/var/log/celery`
         - "tail" logs: `docker-compose logs tactical-celerybeat | tail`
         - Shell access: `docker exec -it trmm-celerybeat /bin/bash`
 
-#### redis service
+#### Redis Service
 
-[redis](https://github.com/redis/redis) is an in-memory data structure store, used as a database, cache, and message broker for django/celery.
+[Redis](https://github.com/redis/redis) is an in-memory data structure store used as a database, cache, and message broker for Django / Celery.
 
 Log located at `/var/log/redis`
 
-???+ note "redis config"
+???+ note "Redis config"
 
     - [Redis docs](https://redis.io/)
 
@@ -362,7 +362,7 @@ Log located at `/var/log/redis`
         
 #### MeshCentral
 
-[MeshCentral](https://github.com/Ylianst/MeshCentral) is used for: "Take Control" (connecting to machine for remote access), and 2 screens of the "Remote Background" (Terminal, and File Browser).
+[MeshCentral](https://github.com/Ylianst/MeshCentral) is used for "Take Control" (connecting to machine for remote access), and 2 screens of the "Remote Background" (Terminal, and File Browser).
 
 Config file location:
 
@@ -410,7 +410,7 @@ Get Mesh Agent Version info with this command. Should match server version.
 ```
 Compare the hash with the tags in the repo at <https://github.com/Ylianst/MeshAgent/tags>.
 
-Checks/tasks/agent data use regular http to Nginx.
+Checks / tasks / agent data uses regular http to Nginx.
 
 Agent status uses NATS websockets.
 
@@ -447,7 +447,7 @@ sqlparse==0.4.1
 ```
 </details>
 
-[twilio](https://www.twilio.com/) - Python SMS notification integration.
+[Twilio](https://www.twilio.com/) - Python SMS notification integration.
 
 <details>
   <summary>twilio dependencies</summary>
@@ -467,7 +467,7 @@ zipp==3.4.1
 
 Found in `%programfiles%\TacticalAgent`
 
-When scripts/checks execute, they are:
+When scripts / checks execute, they are:
 
 1. Transferred from the server via NATS.
 2. Saved to a randomly created file in `c:\windows\temp\trmm\`.
@@ -489,7 +489,7 @@ Unsigned agents require access to: `https://github.com/amidaware/rmmagent/releas
 
 #### Signed Agents
 
-Signed agents will require: `https://agents.tacticalrmm.com` for downloading/updating agents
+Signed agents will require: `https://agents.tacticalrmm.com` for downloading / updating agents.
 
 ### Agent Installation Process
 
@@ -501,7 +501,7 @@ Signed agents will require: `https://agents.tacticalrmm.com` for downloading/upd
 
 ### Agent Update Process
 
-Downloads latest `tacticalagent-vx.x.x.exe` to `%programfiles%`
+Downloads latest `tacticalagent-vx.x.x.exe` to `%programfiles%`.
 
 Executes the file (INNO setup exe).
 
@@ -515,7 +515,7 @@ Choose your method:
 
 === ":material-console-line: Windows Automatically"
 
-    If the Tactical Agent is connecting to your server, you can use the Community scripts:
+    If the Tactical agent is connecting to your server, you can use the Community scripts:
 
     - `TacticalRMM - TRMM Agent enable Debug Mode`
     - `TacticalRMM - TRMM Agent disable Debug Mode`
@@ -538,7 +538,7 @@ Choose your method:
     !!!note
         There's a Community script that will collect your agent log called `TacticalRMM - Get Agent Logs`.
 
-=== ":material-debian: linux"
+=== ":material-debian: Linux"
 
     As root user, edit:
 
@@ -590,7 +590,7 @@ Use Agents right click menu > `Agent recovery` > `Tactical Agent`
 
 === ":material-console-line: From Local Machine"
 
-    Start/Restart Tactical RMM service from either `services.msc` or from Admin Command prompt:
+    Start / Restart Tactical RMM service from either `services.msc` or from Admin Command prompt:
 
     ```cmd
     net stop tacticalrmm
@@ -603,11 +603,11 @@ Use Agents right click menu > `Agent recovery` > `Tactical Agent`
 
 _The current Tactical RMM Windows Update process is relatively simple atm. As of right now, it is in the top 3 big items to be reworked._
 
-#### TLDR: Tactical RMM based patching recommendation
+#### TLDR: Tactical RMM Based Patching Recommendation
 
 * Use the `Automation Policy` > `Patch Policy` to apply it to machines. The `Other` category is poorly named by Microsoft, those are the regular monthly updates and should be auto-approved.
 * Be patient, and things will be patched (based on the policy).
-* In any way trying to immediately approve patches to many machines OR Block specific patches is a slow and manual process.
+* Trying to immediately approve patches to many machines **OR** block specific patches is a slow and manual process.
 
 !!!note
     If you want more control of Windows patching right now, look into a script-based implementation of [PSWindowsUpdate](http://woshub.com/pswindowsupdate-module/).
@@ -624,28 +624,28 @@ If you want to resume normal Windows patching and disable Tactical RMM updating 
 
 **Where does it get updates from?** TRMM gets the list of Windows updates using this Microsoft API: <https://docs.microsoft.com/en-us/windows/win32/api/_wua/>
 
-The Tactical RMM server updates an agents patch list every 8 hrs based on the patch policy to check for what to update, and what's installed.
+The Tactical RMM server updates an agents patch list every 8 hours based on the patch policy to check for what to update, and what's installed.
 
 !!!note
     Currently if the agent is not online at the time the patch policy is set to install, there is no "install as soon as it comes online". 
 
-### Log files
+### Log Files
 
 You can find 3 sets of detailed logs at `/rmm/api/tacticalrmm/tacticalrmm/private/log`.
 
-* `error.log` nginx log for all errors on all TRMM URL's: rmm, api and mesh
+* `error.log` Nginx log for all errors on all TRMM URL's: rmm, api and mesh
 
 ```bash
 tail -f /rmm/api/tacticalrmm/tacticalrmm/private/log/error.log
 ```
 
-* `access.log` nginx log for access auditing on all URL's: rmm, api and mesh (_this is a large file, and should be cleaned periodically_)
+* `access.log` Nginx log for auditing access on all URL's: rmm, api and mesh (_this is a large file, and should be cleaned periodically_)
 
 ```bash
 tail -f /rmm/api/tacticalrmm/tacticalrmm/private/log/access.log
 ```
 
-* `django_debug.log` created by django webapp
+* `django_debug.log` created by Django webapp
 
 ```bash
 tail -f /rmm/api/tacticalrmm/tacticalrmm/private/log/django_debug.log

@@ -29,7 +29,7 @@ Add a URL Action:</br>
 anydesk:{{agent.AnyNetID}}
 ```
 
-### Create Anydesk Collector
+### Create AnyDesk Collector
 
 This populates the Custom field with the Anydesk ID.
 
@@ -54,4 +54,4 @@ Give it a second to execute, then right click the agent that you are working wit
 It should launch the session in AnyDesk.
 
 !!!note
-     You have to have Anydesk installed on the local computer.
+     You have to have AnyDesk installed on the local computer.

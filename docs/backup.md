@@ -17,7 +17,7 @@ The backup tar file will be saved in `/rmmbackups` with the following format:
 
 `rmm-backup-CURRENTDATETIME.tar`
 
-## Schedule to run daily via cron
+## Schedule to run Daily via Cron
 
 Make a symlink in `/etc/cron.d` (daily cron jobs) with these contents `00 18 * * * tactical /rmm/backup.sh` to run at 6pm daily.
 

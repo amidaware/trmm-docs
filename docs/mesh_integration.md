@@ -30,7 +30,7 @@ The Tactical RMM agent keeps track of your Mesh agents, and periodically interac
 
 When you do a take control / terminal / file browser on an agent using the Tactical UI, behind the scenes, Tactical generates a login token for MeshCentral's website and then "wraps" MeshCentral's UI in an iframe for that specific agent only, using it's unique ID to know what agent to render in the iframe.
 
-## Running your own existing or separate MeshCentral Server?
+## Running your own existing or separate MeshCentral server?
 
 We do testing to make sure everything works with the version found [here](https://github.com/amidaware/tacticalrmm/blob/master/api/tacticalrmm/tacticalrmm/settings.py) (look for MESH_VER).
 
@@ -44,11 +44,11 @@ Installation instructions for using your own MeshCentral server:
 !!!info
     Mesh usernames are **CaSe sEnSiTive**
 
-## Customize Take Control username
+## Customize Take Control Username
 
 If you've enabled the Mesh "Ask Consent + Bar" display option that shows across the top when controlling a users machine and you'd like to change the name that users see, login to https://mesh.yourdomain.com, go to **Users**, select **User > Edit** `Real Name`
 
-## MeshCentral options
+## MeshCentral Options
 
 There are [MANY](https://github.com/Ylianst/MeshCentral/blob/master/meshcentral-config-schema.json) MeshCentral options that you can configure. Here are some you might want to investigate:
 
@@ -64,7 +64,7 @@ There are [MANY](https://github.com/Ylianst/MeshCentral/blob/master/meshcentral-
 
 [`maxInvalid2fa`](https://github.com/Ylianst/MeshCentral/blob/d06ca601ffde4602f97147038616ed2331f01624/meshcentral-config-schema.json#L260)
 
-## Using Tactical RMM without any MeshCentral
+## Using Tactical RMM Without MeshCentral
 
 Install Tactical RMM normally. Then, to disable the MeshCentral Server on the TRMM server run:
 

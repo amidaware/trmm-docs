@@ -2,14 +2,14 @@
 
 *Version added: v0.8.3*
 
-API Keys can be created to access any of TacticalRMM's api endpoints, which will bypass 2fa authentication
+API Keys can be created to access any of Tactical RMM's API endpoints, which will bypass 2fa authentication.
 
 When creating the key you'll need to choose a user, which will reflect what permissions the key has based on the user's role.
 
-Navigate to Settings > Global Settings > API Keys to generate a key
+Navigate to **Settings > Global Settings > API Keys** to generate a key.
 
 !!!warning
-    Pay attention to your trailing `/` they matter
+    Pay attention to your trailing `/` they matter.
 
 Headers:
 
@@ -103,9 +103,9 @@ Here are some examples:
         Write-Host $commandResult
         ```
 
-### Running a script on agent using the api
+### Running a Script on an Agent Using the API
 
-`POST` to the endpoint `/agents/<agentid>/runscript/` this
+`POST` to the endpoint `/agents/<agentid>/runscript/` this:
 
 ```
 {
@@ -125,7 +125,7 @@ Here are some examples:
 
 ## Enable Swagger
 
-This will let you add a browser interface to see how you can use the api better.
+This will let you add a browser interface to see how you can use the API better.
 
 Open `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py` and add 
 
@@ -133,7 +133,7 @@ Open `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py` and add
 SWAGGER_ENABLED = True
 ```
 
-Restart django: `sudo systemctl restart rmm.service`
+Restart Django: `sudo systemctl restart rmm.service`
 
 Then visit `https://api.example.com/api/schema/swagger-ui/` to see it in action.
 
@@ -143,7 +143,7 @@ Then visit `https://api.example.com/api/schema/swagger-ui/` to see it in action.
 
 ## API Examples
 
-Listing all software on all agents
+Listing all software on all agents:
 
 ```python
 import requests
