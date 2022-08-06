@@ -37,7 +37,7 @@
     padding: 5px;*/
     border-top-right-radius: 10px;
     border-top:5px solid rgb(217, 217, 217);
-    background-color: rgba(20, 156, 247, 0.57);
+    background-color: rgba(20, 156, 247, 0.50);
     margin-top: 15px;
 }
 [data-md-color-scheme="slate"] .md-typeset h2 {
@@ -66,7 +66,7 @@
     border-right: 10px;
     text-indent: 5px;
     border-top:5px solid rgb(217, 217, 217);
-    background-color: rgba(20, 156, 247, 0.58);
+    background-color: rgba(20, 156, 247, 0.45);
     width: 95%;
     margin-top: 15px;
 }
@@ -84,7 +84,7 @@
     border-right: 10px;
     text-indent: 5px;
     border-top:5px solid rgb(217, 217, 217);
-    background-color: rgba(20, 156, 247, 0.59);
+    background-color: rgba(20, 156, 247, 0.40);
     width: 90%;
     margin-top: 15px;
 }
@@ -102,7 +102,7 @@
     border-right: 10px;
     text-indent: 5px;
     border-top:5px solid rgb(217, 217, 217);
-    background-color: rgba(20, 156, 247, 0.59);
+    background-color: rgba(20, 156, 247, 0.35);
     width: 85%;
     margin-top: 15px;
 }
@@ -120,7 +120,7 @@
     border-right: 10px;
     text-indent: 5px;
     border-top:5px solid rgb(217, 217, 217);
-    background-color: rgba(20, 156, 247, 0.60);
+    background-color: rgba(20, 156, 247, 0.30);
     width: 80%;
     margin-top: 15px;
 }
