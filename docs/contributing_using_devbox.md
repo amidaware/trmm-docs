@@ -7,13 +7,13 @@ From https://raw.githubusercontent.com/silversword411/tacticalrmm-devdocs
 
 Needs an official install_devbox.sh script
 
-# Setup local devbox in hyper-v VM
+# Setup Local Dev Box in Hyper-V VM
 
 
 
 
 ## Install Ubuntu 20.04 LTS
-Don't forget to 
+Don't forget to:
 
 ```bash
 sudo apt-get updates && sudo apt-get upgrade
@@ -32,9 +32,9 @@ Add this:
 %sudo ALL=(ALL) NOPASSWD: ALL
 ```
 
-## Download customized install script and tweak
+## Download Customized Install Script and Tweak
 
-Create folder to dump into
+Create folder to dump into:
 
 ```bash
 sudo mkdir /rmm
@@ -42,39 +42,33 @@ sudo chown ${USER}:${USER} -R /rmm
 cd /rmm
 ```
 
-Get dev install script
+Get dev install script:
+
 ```bash
 wget https://raw.githubusercontent.com/silversword411/tacticalrmm-devdocs/blob/main/install_devbox.sh
 ```
 
-Edit, and search for `REPLACEMEWITHYOURFORKEDREPOURL`
+Edit, and search for `REPLACEMEWITHYOURFORKEDREPOURL` and replace with your forked repo URL (example commented out below).
 
-and replace with your forked repo URL (example commented out below)
-
-## Run it
+## Run It
 
 ```bash
 ./install_devbox.sh
 ```
-## Watch for
+## Watch For
 
 ![Image](images/installcomplete.png)
 
-!!!Note Unlike regular installs, don't worry about the QR code
+!!!Note Unlike regular installs, don't worry about the QR code.
 
 ## Celebrate
 
 ![Image](images/celebrate.gif)
 
 
+# Misc Commands
 
-
-
-
-
-# Misc commands
-
-### Start mkdocs on dev box
+### Start MKDocs on Dev Box
 
 ```bash
 cd /rmm/api
@@ -86,9 +80,9 @@ cd /rmm/docs
 mkdocs serve
 ```
 
-### Running tests locally
+### Running Tests Locally
 
-Prep and update
+Prep and update:
 
 ```bash
 source /rmm/api/env/bin/activate
@@ -96,7 +90,7 @@ cd /rmm/api/tacticalrmm
 pip install -r requirements.txt
 ```
 
-Then run tests
+Then run tests:
 
 ```bash
 python manage.py test
@@ -104,8 +98,7 @@ python manage.py test
 
 ## Misc Notes
 
-### Spinning up front end web interface in development
-
+### Spinning up Frontend Web Interface in Development
 
 ```bash
 cd /web

@@ -2,7 +2,7 @@
 
 ## Script Library Naming Conventions
 
-### File names
+### File Names
 
 Under `/scripts` the file name should generally follow this format:
 
@@ -10,7 +10,7 @@ Under `/scripts` the file name should generally follow this format:
 (Platform)_(Category or Function)_(What It Does).xxx
 ```
 
-Platform for now are:
+Platforms for now are:
 
 ```text
 Win_
@@ -35,34 +35,34 @@ Win_Network_DNS_Set_to_1.1.1.2.ps1
 !!!info
     This is so that at a glance you can see if there is already a script with that function, and you can avoid duplication of functionality.
 
-### Name field (in community_scripts.json)
+### Name Field (in community_scripts.json)
 
 Consider they are viewed in 3 different locations:
 
-Script Manager
+**Script Manager**
 
 - List View (sortable by any column)
 
 - Folder View (Grouped by Categories)
 
-Run or Add script
+**Run or Add Script**
 
-- Running scripts manually or adding tasks (or adding in Automation Manager)
+- Running scripts manually or adding tasks (or adding in Automation Manager).
 
 !!!info
-    A good max length is 50-60 chars or less for display in these 3 locations
+    A good max length is 50-60 chars or less for display in these 3 locations.
 
-Make sure your Name roughly follows the order of file naming as above
+Make sure your Name roughly follows the order of file naming as above.
 
 ```text
 Category or Function - What It Does
 ```
 
- Consider how the alphabetic sort will affect display
+ Consider how the alphabetic sort will affect display.
 
 ![json_name_examples](images/community_scripts_name_field_example1.png)
 
-### json field names
+### JSON Field Names
 
 Example
 
@@ -88,15 +88,15 @@ Example
 
 **Notes**
 
-`guid`: Must be unique in the file
+`guid`: Must be unique in the file.
 
-`filename`: File with that name must exist in `/scripts` folder
+`filename`: File with that name must exist in `/scripts` folder.
 
-`submittedBy`: Get credit for creator
+`submittedBy`: Get credit for creator.
 
-`args`: default args pre-filled in arg field
+`args`: default args pre-filled in arg field.
 
-`default_timeout`: Sets the default timeout for the script
+`default_timeout`: Sets the default timeout for the script.
 
 `supported_platforms`: ["windows", "linux", "darwin"] (case sensitive, if missing, assumes all platforms are supported). `darwin`=MacOS
 
@@ -104,7 +104,7 @@ Example
 
 `syntax`: See [scripting](functions/scripting.md#)
 
-`category`: Preferably use existing categories and format structure for library sorting, add new as needed
+`category`: Preferably use existing categories and format structure for library sorting, add new as needed.
 
 *****
 
@@ -114,7 +114,7 @@ Example
 
 - Try and make them fully self-contained.
 
-- If they pull data from elsewhere, create comment notes at the top with references for others to audit/validate
+- If they pull data from elsewhere, create comment notes at the top with references for others to audit/validate.
 
 - Good folder locations to use for standardized things:
 
@@ -173,9 +173,9 @@ param(
 
 ### Bad Habits
 
-- Assumes non-standard configurations
+- Assumes non-standard configurations.
 
-- Doesn't play well with other community scripts (reused names etc.)
+- Doesn't play well with other community scripts (reused names etc.).
 
 *****
 
@@ -200,11 +200,11 @@ Optional Command Parameters and testing for errors
 
 If you want to contribute back to the project there are a lot of scripts that need some TLC (Tender Loving Care) please peruse thru them in The Script WIP (Work In Progress): <https://github.com/amidaware/community-scripts/tree/main/scripts_wip>
 
-Discuss/ask questions in the Discord group [here](https://discord.com/channels/736478043522072608/744281869499105290)
+Discuss/ask questions in the Discord group [here](https://discord.com/channels/736478043522072608/744281869499105290).
 
 What you can add is:
 
-- Add standardized Comment headers per above
-- Consolidate and parameterize scripts where appropriate
-- Add $ExitCode and error conditions as appropriate
-- Contact @silversword in Discord if you need help doing Github additions/edits/adding to the community Library and have questions about [Script Library Naming Conventions](#script-library-naming-conventions)
+- Add standardized Comment headers per above.
+- Consolidate and parameterize scripts where appropriate.
+- Add $ExitCode and error conditions as appropriate.
+- Contact @silversword in Discord if you need help doing Github additions/edits/adding to the community Library and have questions about [Script Library Naming Conventions](#script-library-naming-conventions).

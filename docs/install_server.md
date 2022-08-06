@@ -12,7 +12,7 @@
 
 ## General Information
 
-### Minimum requirements
+### Minimum Requirements
 
 #### Hardware / OS
 
@@ -49,7 +49,7 @@ Install on a VPS: DigitalOcean, Linode, Vultr, BuyVM (highly recommended), Hetzn
 
 Use something that meets [minimum specs](install_server.md#hardware-os)
 
-### Run Updates on OS
+**1 ) Run Updates on OS**
 
 SSH into the server as **root**.
 
@@ -63,7 +63,7 @@ apt -y upgrade
 
 If a new kernel is installed, reboot the server with the `reboot` command.
 
-### Create a linux user
+**2 ) Create a Linux user**
 
 Create a linux user named `tactical` to run the rmm and add it to the sudoers group.
 
@@ -75,7 +75,7 @@ passwd tactical
 !!!tip
     [Enable passwordless sudo to make your life easier in the future](https://linuxconfig.org/configure-sudo-without-password-on-ubuntu-20-04-focal-fossa-linux)
 
-### Setup the firewall (optional but highly recommended)
+**3 ) Setup the firewall (optional but highly recommended)**
 
 !!!info
     Skip this step if your VM is __not__ publicly exposed to the world e.g. running behind NAT. You should setup the firewall rules in your router instead (ports 22 and 443 TCP).
@@ -117,7 +117,7 @@ ufw enable && ufw reload
 !!!note
     You will never login to the server again as `root` again unless something has gone horribly wrong, and you're working with the developers.
 
-### Create the A records
+**4 ) Create the A records**
 
 We'll be using `example.com` as our domain for this example.
 
@@ -130,7 +130,7 @@ We'll be using `example.com` as our domain for this example.
 
 ![arecords](images/arecords.png)
 
-### Run the install script
+**5 ) Run the install script**
 
 Switch to the `tactical` user:
 
@@ -150,7 +150,7 @@ Answer the initial questions when prompted. Replace `example.com` with your doma
 
 ![questions](images/install_questions.png)
 
-### Deploy the TXT record in your DNS manager for Lets Encrypt wildcard certs
+**6 ) Deploy the TXT record in your DNS manager for Let'sEncrypt wildcard certs**
 
 !!!warning
     TXT records can take anywhere from 1 minute to a few hours to propagate depending on your DNS provider.<br/>
@@ -168,7 +168,7 @@ Create a login for the RMM web UI:
 
 A bunch of URLS / usernames / passwords will be printed out at the end of the install script. **Save these somewhere safe.** [Recover them if you didn't](faq.md#how-do-i-recover-my-meshcentral-login-credentials)
 
-### Login
+**7 ) Login**
 
 Navigate to `https://rmm.example.com` and login with the username/password you created during install.
 
@@ -176,25 +176,25 @@ Once logged in, you will be redirected to the initial setup page.
 
 Create your first client/site and choose the default timezone.
 
-### You're Done
+You're Done
 
 [Update Regularly](install_server.md#update-regularly)
 
-## Option 2: Install behind NAT Router
+## Option 2: Install Behind NAT Router
 
 Install in your local network using: Dedicated hardware, Hyper-V, Proxmox or ESXi. All been tested and work fine.
 
 Do everything from [Option 1: Easy Install](install_server.md#run-updates-and-setup-the-linux-user)
 
-### If you only have agents on the private network/subnet
+#### If You Only Have Agents on the Private Network / Subnet
 
 Make sure your local DNS server (or agents hosts file) have your Tactical RMM server IP addresses for the 3 domain names: `rmm`, `api` and `mesh`
 
-### Agents exist outside the private network/subnet - Setup Port Forwarding
+#### Agents Exist Outside the Private Network / Subnet - Setup Port Forwarding
 
 If you have agents outside your local network: Make sure the public DNS servers have A records for the 3 Tactical RMM server domain names: `rmm`, `api` and `mesh`
 
-Login to your router/NAT device.
+Login to your router / NAT device.
 
 1. Set your TRMM server as a static IP (Using a DHCP reservation is usually safer).
 2. Port forward `TCP 443` to your TRMM servers private IP address.
@@ -202,7 +202,7 @@ Login to your router/NAT device.
 !!!note
     <https://portforward.com/> can help with Port Forwarding setup
 
-### You're Done
+**You're Done**
 
 [Update Regularly](install_server.md#update-regularly)
 

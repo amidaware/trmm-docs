@@ -2,11 +2,11 @@
 
 ## Getting Started
 
-### 1. Install vscode
+### Install VSCode
 
 <https://code.visualstudio.com/download>
 
-### 2. Fork Project in Github
+### Fork Project in Github
 
 This is making a duplicate of the code under your Github that you can edit.
 
@@ -14,21 +14,21 @@ This is making a duplicate of the code under your Github that you can edit.
 
 ![ForkIt](images/vscode-forkit.png)
 
-### 3. Add your (forked) repo to vscode
+### Add your (forked) repo to VSCode
 
-Clone repository
+1. Clone repository.
 
-Login to your Github
+2. Login to your Github.
 
-Choose local folder
+3. Choose local folder.
 
-#### 3a. Install extra vscode Extensions
+### Install extra VSCode Extensions
 
-GitLens
+- GitLens
 
-Remote - SSH
+- Remote - SSH
 
-### 4. Open Terminal
+### Open Terminal
 
 <https://code.visualstudio.com/docs/editor/integrated-terminal>
 
@@ -36,7 +36,7 @@ Remote - SSH
 Ctrl+`
 ```
 
-### 5. Configure a remote for your fork (in vscode)
+### Configure a remote for your fork (in VSCode)
 
 <https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork>
 
@@ -60,23 +60,23 @@ Confirm changes:
 git remote -v
 ```
 
-### 6. Contribute code
+## Contribute code
 
-Make changes to something.
+1. Make changes to something.
 
-`Commit` (update something) and notate what you did.
+2. `Commit` (update something) and notate what you did.
 
-`Push` (from your local vscode to your github fork).
+3. `Push` (from your local vscode to your github fork).
 
-Open browser and look at your repo (It should reflect your commit).
+4. Open your browser and look at your repo (It should reflect your commit).
 
-#### 6a. Request your changes to be pulled into the primary repo (Pull Request)
+### Request your changes to be pulled into the primary repo (Pull Request)
 
 ![Changes you've made need integration with master repo](images/trmm_contribute-notice.png)
 
-In browser create pull request.
+In your browser, create a pull request.
 
-### 7. Sync your local fork
+### Sync your local fork
 
 <https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork>
 
@@ -96,13 +96,13 @@ Tell git to pull from the GitHub upstream repo all new changes into your local d
 git pull --rebase upstream develop
 ```
 
-#### 7a. Push your local updated copy to your Github fork
+### Push your local updated copy to your Github fork
 
 Then you're `push`ing that updated local repo to your online Github fork:
 
 ![Sync push/pulls](images/trmm_vscode_git_pending.png)
 
-### 8. Verify and Repeat
+### Verify and Repeat
 
 Check your Github fork in browser, it should be up to date now with original. Repeat 6 or 7 as necessary.
 
@@ -112,7 +112,7 @@ Check your Github fork in browser, it should be up to date now with original. Re
 
 ### Customizing the Admin Web Interface
 
-Created using quasar, it's all your .vue files in `web/src/components/modals/agents/RunScript.vue`
+Created using Quasar, it's all your .vue files in `web/src/components/modals/agents/RunScript.vue`.
 
 Learn stuff here:
 

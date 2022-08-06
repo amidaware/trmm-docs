@@ -355,15 +355,15 @@ backend mesh.example.com_ipvANY
 	  server			      mesh x.x.x.x:443 ssl  verify none
 ```
 
-### HAProxy Howto for PFSense
+### HAProxy How-to for PFSense
 
 <https://github.com/ninjamonkey198206/T-RMM-PFSense-HAProxy-config>
 
-### HAProxy Howto for Baremetal
+### HAProxy How-to for Baremetal
 
 <https://github.com/ninjamonkey198206/T-RMM-Baremetal-HAProxy>
 
-## HAProxy in TCP mode, PFSense
+### HAProxy in TCP Mode, PFSense
 
 In this scenario, you install TRMM as per documentation.
 Meaning your certificates are generated and managed on your TRMM server, just use the `install.sh` and follow docs and on-screen instructions.
@@ -371,7 +371,7 @@ Meaning your certificates are generated and managed on your TRMM server, just us
 HAProxy here will just pass the traffic to the NGINX on TRMM server. No certificate management.
 Only use this method if you have more than 1 server that need to use port 443 on the same public IP.
 
-### Assumptions
+#### Assumptions
 
 These are some assumptions made to make this guide, short, easy to follow and to the point.
 Of course you can adapt it to your environment and/or current configuration.
@@ -408,13 +408,13 @@ global
 - 10.10.10.100 - Change with your TRMM local IP.
 - example.com - Change with your domain.
 
-### Backend
+#### Backend
 
 Navigate to `Services` -> `HAProxy` -> `Backend`
 
 - Click ⤵️Add
 
-#### Backend server pool
+##### Backend server pool
 
 - Name: `trmm-backend`
 - On Server list, Click ⤵️
@@ -426,7 +426,7 @@ Navigate to `Services` -> `HAProxy` -> `Backend`
 
 ![haproxy-tcp-serverlist](images/haproxy-tcp-serverlist.png)
 
-#### Timeout / retry settings
+##### Timeout / retry settings
 
 - Connection timeout: `300000` (Note: it has more 0s than the default)
 - Server timeout: `300000` (Note: it has more 0s than the default)
@@ -434,7 +434,7 @@ Navigate to `Services` -> `HAProxy` -> `Backend`
 
 ![haproxy-tcp-back-timeout](images/haproxy-tcp-back-timeout.png)
 
-#### Health checking
+##### Health checking
 
 - Health check method: `SSL`
 
@@ -443,7 +443,7 @@ Navigate to `Services` -> `HAProxy` -> `Backend`
 
 ![haproxy-tcp-healthcheck](images/haproxy-tcp-healthcheck.png)
 
-#### Advanced settings
+##### Advanced settings
 
 Please read the warning there, and the note at the bottom.
 This optional and it's use is to show the real public IP of the agent.
@@ -457,7 +457,7 @@ This optional and it's use is to show the real public IP of the agent.
 
 It works well for me, there are cases that it might not work on all environments.
 
-#### For those who like the config files
+##### For those who like the config files
 
 ```text
 backend trmm-backend_ipv4
@@ -471,13 +471,13 @@ backend trmm-backend_ipv4
   server      trmm-server 10.10.10.100:443 check inter 1000  maxconn 10000
 ```
 
-### Frontend
+#### Frontend
 
 Navigate to `Services` -> `HAProxy` -> `Frontend`
 
 - Click ⤵️Add
 
-#### Edit HAProxy Frontend
+##### Edit HAProxy Frontend
 
 - Name: `FrontendTCP`
 - Status: `Active`
@@ -489,7 +489,7 @@ Navigate to `Services` -> `HAProxy` -> `Frontend`
 
 ![haproxy-tcp-front](images/haproxy-tcp-front.png)
 
-#### Default backend, access control lists and actions
+##### Default backend, access control lists and actions
 
 - On Access Control lists, Click ⤵️
 - Name: `tactical`
@@ -502,7 +502,7 @@ Navigate to `Services` -> `HAProxy` -> `Frontend`
 
 ![haproxy-tcp-acls](images/haproxy-tcp-acls.png)
 
-#### Advanced settings
+##### Advanced settings
 
 - Client timeout: `300000` (Note: it has more 0s than the default)
 - Use "httpclose" option: `http-server-close`
@@ -512,7 +512,7 @@ Navigate to `Services` -> `HAProxy` -> `Frontend`
 Click 💾Save
 Click ✔️Apply Changes
 
-#### For those who like the config files
+##### For those who like the config files
 
 ```text
 frontend Frontend-SNI
@@ -582,7 +582,7 @@ Apache ssl config example:
 </VirtualHost>
 ```
 
-### Updating certificate:
+### Updating Certificate:
 
 In my case, auto DNS Challenge from Apache, so every time we get new cert files, it must be copied inside rmm too.
 Just overwrite default location:
@@ -671,7 +671,7 @@ systemctl restart meshcentral.service
 
 At which point agents should be working. Use the "Recover Connection" button if necessary.
 
-## Synology NAS reverse proxy portal
+## Synology NAS Reverse Proxy Portal
 
 Follow [HAProxy](#haproxy)
 

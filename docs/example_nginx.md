@@ -1,4 +1,4 @@
-example of `/etc/nginx/sites-available/rmm.conf`
+Example of `/etc/nginx/sites-available/rmm.conf`
 
 **DO NOT COPY PASTE INTO YOUR SERVER ONLY USE AS A REFERENCE**
 

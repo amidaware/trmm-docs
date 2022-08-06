@@ -49,13 +49,13 @@ The available options are:
 - **Resolved Action Args** - Optionally pass in arguments to the resolved script.
 - **Resolved Action Timeout** - Sets the timeout for the script.
 
-#### Run actions only on:
+#### Run Actions Only On:
 - **Agents** - If Enabled, will run script failure / resolved actions on agent overdue alerts, else no alert actions will be triggered for agent overdue alerts.
 - **Checks** - If Enabled, will run script failure / resolved actions on check alerts, else no alert actions will be triggered check alerts.
 - **Tasks** - If Enabled, will run script failure / resolved actions on automated task alerts, else no alert actions will be triggered automated task alerts.
 
 
-### Agent/Check/Task Failure Settings
+### Agent / Check / Task Failure Settings
 
 - **Email** - When **Enabled**, will send an email notification and override the Email Alert checkbox on the Agent / Check / Task. When **Not Configured**, the Email Alert checkbox on the Agent / Check / Task will take effect. If **Disabled**, no email notifications will be sent and will override any Email alert checkbox on the Agent / Check / Task.
 - **Text** - When **Enabled**, will send a text notification and override the SMS Alert checkbox on the Agent / Check / Task. When **Not Configured**, the SMS Alert checkbox on the Agent / Check / Task will take effect. If **Disabled**, no SMS notifications will be sent and will override any SMS Alert checkbox on the Agent / Check / Task.
@@ -66,7 +66,7 @@ The available options are:
     !!!info
         Alert on Severity needs to be configured for check and task notifications to be sent!
 
-### Agent/Check/Task Resolved Settings
+### Agent / Check / Task Resolved Settings
 
 - **Email** - If enabled, sends an email notification when an alert is resolved.
 - **Text** - If enabled, sends a text messaged when an alert is resolved.
@@ -88,7 +88,7 @@ You can exclude Clients, Sites, and Agents from alert templates. To do this you 
 
 You can also **Exclude Desktops** from the alert template. This is useful if you only care about servers.
 
-## Alert Template inheritance
+## Alert Template Inheritance
 
 Alerts are applied in the following order. The agent picks the closest matching alert template.
 

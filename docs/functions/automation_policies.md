@@ -7,15 +7,15 @@ Automation policies in Tactical RMM allow for mass deployment of Checks, Automat
 - Site
 - Agent
 
-You can also see a list of Relations that show what policy is applied to what Clients | Sites | Agents
+You can also see a list of Relations that show what policy is applied to what Clients / Sites / Agents.
 ## Creating Automation Policies
 
 In the dashboard, navigate to **Settings > Automation Manager**. Use the **Add** button to create a blank Automation Policy. The options available are:
 
-- **Name** - The name that will be used to identify the automation policy in the dashboard
-- **Description** - Optional description of the automation policy
-- **Enabled** - Specifies if the automation policy is active or not
-- **Enforced** - Specifies that the automation policy should overwrite any conflicting checks configured directly on the agent
+- **Name** - The name that will be used to identify the automation policy in the dashboard.
+- **Description** - Optional description of the automation policy.
+- **Enabled** - Specifies if the automation policy is active or not.
+- **Enforced** - Specifies that the automation policy should overwrite any conflicting checks configured directly on the agent.
 
 ## Policy Inheritance
 
@@ -25,8 +25,8 @@ They get applied in this order:
 2. Client
 3. Site
 4. Agent
-   
-and at each level you can Block policy inheritance from the level above using checkboxes in the appropriate screens.
+  
+At each level you can block policy inheritance from the level above using checkboxes in the appropriate screens.
 
 ## Adding Windows Patch Management Policy
 

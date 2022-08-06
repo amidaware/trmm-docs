@@ -24,7 +24,7 @@ To run any of the management commands first login to your server as the user use
         docker exec -it trmm-api-dev env/bin/python manage.py shell
         ```
 
-## Bulk delete old agents by last check-in date or agent version
+### Bulk Delete Old Agents by Last Check-in Date or Agent Version
 
 Test to see what will happen:
 
@@ -40,50 +40,50 @@ python manage.py bulk_delete_agents --days 60 --delete
 python manage.py bulk_delete_agents --agentver 1.5.0 --delete
 ```
 
-## Reset a user's password
+### Reset a User's Password
 
 ```bash
 python manage.py reset_password <username>
 ```
 
-## Reset a user's 2fa token
+### Reset a User's 2fa Token
 
 ```bash
 python manage.py reset_2fa <username>
 ```
 
-## Find all agents that have X software installed
+### Find All Agents That Have X Software Installed
 
 ```bash
 python manage.py find_software "adobe"
 ```
 
-## Find all agents that have X windows service and show the service status
+### Find All Agents That Have X Windows Service and Show the Service Status
 
 ```bash
 python manage.py find_services "quickbooks"
 ```
 
-## Set a specific Windows update to not install
+### Set a Specific Windows Update to not Install
 
 ```bash
 from winupdate.models import WinUpdate
 WinUpdate.objects.filter(kb="KB5007186").update(action="ignore", date_installed=None)
 ```
 
-## Show outdated online agents
+### Show Outdated Online Agents
 
 ```bash
 python manage.py show_outdated_agents
 ```
 
-## Log out all active web sessions
+### Log Out All Active Web Sessions
 
 ```bash
 python manage.py delete_tokens
 ```
 
-## Reset all Auth Tokens for Install agents and web sessions
+### Reset All Auth Tokens for Install Agents and Web Sessions
 
 ```bash
 python manage.py shell
@@ -91,19 +91,19 @@ from knox.models import AuthToken
 AuthToken.objects.all().delete()
 ```
 
-## Check for orphaned tasks on all agents and remove them
+### Check for Orphaned Tasks on All Agents and Remove Them
 
 ```bash
 python manage.py remove_orphaned_tasks
 ```
 
-## Create a MeshCentral agent invite link
+### Create a MeshCentral Agent Invite Link
 
 ```bash
 python manage.py get_mesh_exe_url
 ```
 
-## Bulk update agent offline / overdue time
+### Bulk Update Agent Offline / Overdue Time
 
 Change offline time on all agents to 5 minutes:
 

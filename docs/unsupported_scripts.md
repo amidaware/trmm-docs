@@ -3,17 +3,17 @@
 !!!note
     These are not supported scripts/configurations by Tactical RMM, but it's provided here for your reference.
 
-    Although these aren't officially supported configurations, we generally will help point you in the right direction. Please use the Discord [#unsupported channel](https://discord.com/channels/736478043522072608/888474319750066177) to discuss issues related to these complex installations
+    Although these aren't officially supported configurations, we generally will help point you in the right direction. Please use the Discord [#unsupported channel](https://discord.com/channels/736478043522072608/888474319750066177) to discuss issues related to these complex installations.
 
-## fail2ban
+## Fail2ban
 
-### Install fail2ban
+Install fail2ban
 
 ```bash
 sudo apt install -y fail2ban
 ```
 
-### Set Tactical fail2ban filter conf File
+Set Tactical fail2ban filter conf file
 
 ```bash
 tacticalfail2banfilter="$(cat << EOF
@@ -25,7 +25,7 @@ EOF
 sudo echo "${tacticalfail2banfilter}" > /etc/fail2ban/filter.d/tacticalrmm.conf
 ```
 
-### Set Tactical fail2ban jail conf File
+Set Tactical fail2ban jail conf file
 
 ```bash
 tacticalfail2banjail="$(cat << EOF
@@ -42,17 +42,17 @@ EOF
 )"
 sudo echo "${tacticalfail2banjail}" > /etc/fail2ban/jail.d/tacticalrmm.local
 ```
-### Restart fail2ban
+Restart fail2ban
 
 ```bash
 sudo systemctl restart fail2ban.service
 ```
 
-## Using purchased SSL certs instead of LetsEncrypt wildcards
+## Using purchased SSL certs instead of Let'sEncrypt wildcards
 
 Credit to [@dinger1986](https://github.com/dinger1986)
 
-How to change certs used by Tactical RMM to purchased ones (this can be a wildcard cert).
+**How to change certs used by Tactical RMM to purchased ones (this can be a wildcard cert).**
 
 You need to add the certificate private key and public keys to the following files:
 
@@ -64,45 +64,45 @@ You need to add the certificate private key and public keys to the following fil
 
 `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py`
 
-1. Create a new folder for certs and allow tactical user permissions (assumed to be tactical):
+Create a new folder for certs and allow tactical user permissions (assumed to be tactical):
 
 ```bash
 sudo mkdir /certs
 sudo chown -R tactical:tactical /certs
 ```
 
-2. Now move your certs into that folder.
+Now move your certs into that folder.
 
-3. Open the api file and add the api certificate or if it's a wildcard the directory should be `/certs/EXAMPLE.COM/`
+Open the api file and add the api certificate or if it's a wildcard the directory should be `/certs/EXAMPLE.COM/`
 
 ```bash
 sudo nano /etc/nginx/sites-available/rmm.conf
 ```
 
-replace  
+Replace  
 
 ```bash
 ssl_certificate /etc/letsencrypt/live/EXAMPLE.COM/fullchain.pem;
 ssl_certificate_key /etc/letsencrypt/live/EXAMPLE.COM/privkey.pem;
 ```
 
-with
+With
 
 ```bash
 ssl_certificate /certs/api.EXAMPLE.COM/fullchain.pem;
 ssl_certificate_key /certs/api.EXAMPLE.COM/privkey.pem;
 ```
 
-4. Repeat the process for:
+Repeat the process for:
 
 ```text
 /etc/nginx/sites-available/meshcentral.conf
 /etc/nginx/sites-available/frontend.conf
 ```
 
-but change api to mesh and rmm respectively.
+But change api to mesh and rmm respectively.
 
-5. Add the following to the last lines of `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py`
+Add the following to the last lines of `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py`
 
 ```bash
 nano /rmm/api/tacticalrmm/tacticalrmm/local_settings.py
@@ -115,7 +115,7 @@ CERT_FILE = "/certs/api.EXAMPLE.COM/fullchain.pem"
 KEY_FILE = "/certs/api.EXAMPLE.COM/privkey.pem"
 ```
 
-6. Regenerate NATS Conf
+Regenerate NATS Conf
 
 ```bash
 cd /rmm/api/tacticalrmm
@@ -123,7 +123,7 @@ source ../env/bin/activate
 python manage.py reload_nats
 ```
 
-7. Restart services
+Restart services
 
 ```bash
 sudo systemctl restart rmm.service celery.service celerybeat.service nginx.service nats.service nats-api.service
@@ -440,7 +440,7 @@ Limit access to Tactical RMM's administration panel in Nginx to specific locatio
 
 ### Using DNS
 
-1. Create a file allowed-domain.list which contains the DNS names you want to grant access to your rmm:
+Create a file allowed-domain.list which contains the DNS names you want to grant access to your rmm:
 
     Edit `/etc/nginx/allowed-domain.list` and add:
 
@@ -449,7 +449,7 @@ Limit access to Tactical RMM's administration panel in Nginx to specific locatio
     nom2.dyndns.tv
     ```
 
-2. Create a bash script domain-resolver.sh which does the DNS lookups for you:
+Create a bash script domain-resolver.sh which does the DNS lookups for you:
 
     Edit `/etc/nginx/domain-resolver.sh`
 
@@ -468,9 +468,9 @@ Limit access to Tactical RMM's administration panel in Nginx to specific locatio
     done < "$filename"
     ```
 
-3. Give the right permission to this script `chmod +x /etc/nginx/domain-resolver.sh`
+Give the right permission to this script `chmod +x /etc/nginx/domain-resolver.sh`
 
-4. Add a cron job which produces a valid Nginx configuration and restarts Nginx:
+Add a cron job which produces a valid Nginx configuration and restarts Nginx:
 
     `/etc/cron.hourly/domain-resolver`
 
@@ -482,9 +482,9 @@ Limit access to Tactical RMM's administration panel in Nginx to specific locatio
 
     This can be a hourly, daily, or monthly job or you can have it run at a specific time. 
 
-5. Give the right permission to this script `chmod +x /etc/cron.hourly/domain-resolver`
+Give the right permission to this script `chmod +x /etc/cron.hourly/domain-resolver`
 
-6. When run it will give something like this:
+When run it will give something like this:
 
     Edit `/etc/nginx//allowed-ips-from-domains.conf`
 
@@ -493,7 +493,7 @@ Limit access to Tactical RMM's administration panel in Nginx to specific locatio
     allow xxx.xxx.xxx.xxx;# from maison.nom2.dyndns.tv
     ```
 
-7. Update your Nginx configuration to take this output into account:
+Update your Nginx configuration to take this output into account:
 
     Edit `/etc/nginx/sites-enabled/frontend.conf`
 
@@ -531,7 +531,7 @@ Limit access to Tactical RMM's administration panel in Nginx to specific locatio
     ```
 ### Using a fixed IP
 
-1. Create a file containg the fixed IP address (where xxx.xxx.xxx.xxx must be replaced by your real IP address):
+Create a file containg the fixed IP address (where xxx.xxx.xxx.xxx must be replaced by your real IP address):
 
     Edit `/etc/nginx/allowed-ips.conf`
 
@@ -544,7 +544,7 @@ Limit access to Tactical RMM's administration panel in Nginx to specific locatio
     allow xxx.xxx.xxx.xxx
     ```
 
-2. Update your Nginx configuration to take this output into account:
+Update your Nginx configuration to take this output into account:
 
     Edit `/etc/nginx/sites-enabled/frontend.conf`
 
