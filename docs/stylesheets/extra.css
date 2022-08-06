@@ -13,46 +13,56 @@
     text-decoration: underline;
 }
 .md-typeset h1 {
-    border-width: 1px;
+    /*border-width: 1px;
     border-radius: 5px;
     border-color: gray;
     width: 100%;
     border-style: solid;
-    padding: 5px;
+    padding: 5px;*/
+    border-top-right-radius: 10px;
+    border-top:5px solid rgb(217, 217, 217);
+    background-color: rgba(227, 250, 223, 0.1);
+    margin-top: 15px;
 }
 .md-typeset h2 {
-    border-width: 1px;
+    /*border-width: 1px;
     border-radius: 10px;
     border-color: gray;
     width: 90%;
     border-style: solid;
-    padding: 5px;
+    padding: 5px;*/
+    border-top-right-radius: 10px;
+    border-right: 10px;
     text-indent: 5px;
+    border-top:5px solid rgb(217, 217, 217);
+    background-color: rgba(227, 250, 223, 0.13);
+    width: 95%;
+    margin-top: 15px;
 }
 .md-typeset h3 {
-    border-width: 1px;
-    border-radius: 15px;
-    border-color: gray;
-    width: 80%;
-    border-style: solid;
-    padding: 5px;
-    text-indent: 10px;
+    border-top-right-radius: 10px;
+    border-right: 10px;
+    text-indent: 5px;
+    border-top:5px solid rgb(217, 217, 217);
+    background-color: rgba(227, 250, 223, 0.16);
+    width: 90%;
+    margin-top: 15px;
 }
 .md-typeset h4 {
-    border-width: 1px;
-    border-radius: 20px;
-    border-color: gray;
-    width: 70%;
-    border-style: solid;
-    padding: 5px;
-    text-indent: 15px;
+    border-top-right-radius: 10px;
+    border-right: 10px;
+    text-indent: 5px;
+    border-top:5px solid rgb(217, 217, 217);
+    background-color: rgba(227, 250, 223, 0.19);
+    width: 85%;
+    margin-top: 15px;
 }
 .md-typeset h5 {
-    border-width: 1px;
-    border-radius: 25px;
-    border-color: gray;
-    width: 60%;
-    border-style: solid;
-    padding: 5px;
-    text-indent: 20px;
+    border-top-right-radius: 10px;
+    border-right: 10px;
+    text-indent: 5px;
+    border-top:5px solid rgb(217, 217, 217);
+    background-color: rgba(227, 250, 223, 0.22);
+    width: 80%;
+    margin-top: 15px;
 }
