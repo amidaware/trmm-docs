@@ -24,7 +24,7 @@ To run any of the management commands first login to your server as the user use
         docker exec -it trmm-api-dev env/bin/python manage.py shell
         ```
 
-## Bulk Delete old agents by last checkin date or agent version
+## Bulk delete old agents by last check-in date or agent version
 
 Test to see what will happen:
 
@@ -64,7 +64,7 @@ python manage.py find_software "adobe"
 python manage.py find_services "quickbooks"
 ```
 
-## Set specific Windows update to not install
+## Set a specific Windows update to not install
 
 ```bash
 from winupdate.models import WinUpdate
@@ -103,7 +103,7 @@ python manage.py remove_orphaned_tasks
 python manage.py get_mesh_exe_url
 ```
 
-## Bulk update agent offline/overdue time
+## Bulk update agent offline / overdue time
 
 Change offline time on all agents to 5 minutes:
 

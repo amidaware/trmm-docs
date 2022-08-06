@@ -1,6 +1,6 @@
 # Tips and Tricks
 
-## Monitor your TRMM instance via the built in monitoring endpoint
+## Monitor your TRMM instance via the built in monitoring endpoint.
 Generate a random string to be used as a token and append it to the bottom of `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py` like this:
 
 ```python
@@ -17,7 +17,6 @@ Send a POST request with the following json payload to `https://api.yourdomain.c
 Example using curl:
 ```
 curl -X POST https://api.yourdomain.com/core/status/ -d '{"auth": "SuperSekretToken123456"}' -H 'Content-Type: application/json'
-
 ```
 
 Response will look something like this:
@@ -55,7 +54,7 @@ Realtime Everything Usage: (_only run when needed because it uses a lot of resou
 
 ## Customize User Interface
 
-At the top right of your web administration interface, click your Username > preferences. Set default tab: Servers|Workstations|Mixed
+At the top right of your web administration interface, click your **Username > preferences**. Set default tab: Servers | Workstations | Mixed
 
 ![User Preferences](images/trmm_user_preferences.png)
 
@@ -74,29 +73,29 @@ Want to download multiple files?
 
 > ZIP zip's the currently selected file(s) and saves it in the current directory. Then you can download the ZIP. It doesn't download and ZIP on the fly.
 
-If you want to enable automatic Clipboard transfers just click the option under [Settings button](https://ylianst.github.io/MeshCentral/meshcentral/devicetabs/#during-a-desktop-session)
+If you want to enable automatic clipboard transfers just click the option under [Settings button](https://ylianst.github.io/MeshCentral/meshcentral/devicetabs/#during-a-desktop-session)
 
 ### Adjust Settings
 
-Right-click the connect button in *Remote Background | Terminal* for shell options
+Right-click the connect button in **Remote Background > Terminal** for shell options.
 
 ![Terminal](images/tipsntricks_meshterminal.png)
 
-Right-click the connect button in *Take Control* for connect options
+Right-click the connect button in **Take Control** for connection options.
 
 ![Terminal](images/tipsntricks_meshcontrol.png)
 
 ### Enable Remote Control options
 
 !!!note
-    These settings are independent of Tactical RMM. Enable features (like auto remove inactive devices) with caution
+    These settings are independent of Tactical RMM. Enable features (like auto remove inactive devices) with caution.
 
 1. Remote background a machine then go to mesh.EXAMPLE.COM
 2. Click on My Account
-3. Click on the device group you want to enable notifications or accept connection etc on (probably TacticalRMM)
+3. Click on the device group you want to enable notifications or accept connection etc on (probably TacticalRMM).
 4. Next to User Consent click edit (the wee pencil)<br>
 ![Features](images/mesh_userconsent.png)
-5. You can also change features by ticking whatever boxes you want in there (Features: Sync server device name to hostname, Automatically remove inactive devices, Notify/Prompt for Consent/Connection Toolbar settings)<br>
+5. You can also change features by ticking whatever boxes you want in there (Features: Sync server device name to hostname, Automatically remove inactive devices, Notify/Prompt for Consent/Connection Toolbar settings).<br>
 ![Features](images/mesh_features.png)
 6. Ok your way out
 
@@ -120,9 +119,9 @@ Use the (i) at the end of the script name to:
 
 Chocolatey is the default 3rd party software library that is used to populate the software tab. You can install anything that is available at chocolatey.org
 
-If you're interested in converting your software to chocolatey managed you will look at customizing this script <https://github.com/amidaware/community-scripts/blob/main/scripts_wip/Win_Choco_ConvertToChocoManaged.ps1>. If you have improvements please [contribute](https://docs.tacticalrmm.com/contributing_community_scripts/).
+If you're interested in converting your software to Chocolatey managed you will need to look at customizing this script <https://github.com/amidaware/community-scripts/blob/main/scripts_wip/Win_Choco_ConvertToChocoManaged.ps1>. If you have improvements please [contribute](https://docs.tacticalrmm.com/contributing_community_scripts/).
 
-Once you've made your script that will take existing software an convert it to Chocolatey managed (see what chocolatey manages on an agent with)
+Once you've made your script, that will take existing software and convert it to Chocolatey managed (see what Chocolatey manages on an agent with).
 
 ```batch
 choco list --local-only
@@ -136,11 +135,11 @@ Because of [community repo limits](https://docs.chocolatey.org/en-us/community-r
 
 ## Run Intervals for Checks
 
-You can modify at several locations/levels:
+You can modify at several locations / levels:
 
 * **Settings Menu > Automation Manager > Checks tab >** Edit check
 * Agent Level: **Edit Agent > Run checks every**
 * Edit Check under agent > Run this check every (seconds)
 
 !!!note
-    The interval under check will override agent check if set
+    The interval under check will override agent check if set.

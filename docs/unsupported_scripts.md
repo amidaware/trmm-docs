@@ -133,10 +133,10 @@ sudo systemctl restart rmm.service celery.service celerybeat.service nginx.servi
 
 The standard SSL cert process in Tactical uses a [DNS challenge](https://letsencrypt.org/docs/challenge-types/#dns-01-challenge) that requires dns txt files to be updated in your public DNS with every cert renewal.
 
-The below script uses [http challenge](https://letsencrypt.org/docs/challenge-types/#http-01-challenge) on the 3 separate ssl certs, one for each subdomain: rmm, api, mesh. They still have the same 3 month expiry. Restart the Tactical RMM server about every 2.5 months (80 days) for auto-renewed certs to become active.
+The below script uses [http challenge](https://letsencrypt.org/docs/challenge-types/#http-01-challenge) on the 3 separate ssl certs, one for each subdomain: rmm, api, mesh.
 
 !!!note
-    Your Tactical RMM server will need to have TCP Port: 80 exposed to the internet
+    Your Tactical RMM server will need to have TCP Port 80 exposed to the internet.
 
 ```bash
 #!/bin/bash
@@ -327,7 +327,6 @@ EOF
 echo "${nginxmesh}" | sudo tee /etc/nginx/sites-available/meshcentral.conf > /dev/null
 
 
-
 nginxfrontend="$(cat << EOF
 server {
     server_name ${frontenddomain};
@@ -366,7 +365,6 @@ sudo ln -s /etc/nginx/sites-available/frontend.conf /etc/nginx/sites-enabled/fro
 ### Restart nginx
 
 sudo systemctl restart nginx.service
-
 
 ### Get letsencrypt Certs
 
@@ -409,7 +407,6 @@ rm -r /etc/letsencrypt/live/${rootdomain}/
 rm -r /etc/letsencrypt/archive/${rootdomain}/
 rm /etc/letsencrypt/renewal/${rootdomain}.conf
 
-
 ### Regenerate Nats Conf
 cd /rmm/api/tacticalrmm
 source ../env/bin/activate
@@ -423,6 +420,10 @@ printf >&2 "${GREEN}Restarting ${i} service...${NC}\n"
 sudo systemctl restart ${i}
 done
 
+# Create renewal post hook to restart services after renewal
+echo '#!/usr/bin/env bash' | sudo tee /etc/letsencrypt/renewal-hooks/post/001-restart-services.sh
+sudo sed -i "/\#\!\/usr\/bin\/env bash/ a systemctl restart nginx meshcentral rmm celery celerybeat nats" /etc/letsencrypt/renewal-hooks/post/001-restart-services.sh
+sudo chmod +x /etc/letsencrypt/renewal-hooks/post/001-restart-services.sh
 
 ### Renew certs can be done by sudo letsencrypt renew (this should automatically be in /etc/cron.d/certbot)
 ```
@@ -448,7 +449,7 @@ Limit access to Tactical RMM's administration panel in Nginx to specific locatio
     nom2.dyndns.tv
     ```
 
-2. Create a bash script domain-resolver.sh which do the DNS lookups for you:
+2. Create a bash script domain-resolver.sh which does the DNS lookups for you:
 
     Edit `/etc/nginx/domain-resolver.sh`
 
@@ -469,7 +470,7 @@ Limit access to Tactical RMM's administration panel in Nginx to specific locatio
 
 3. Give the right permission to this script `chmod +x /etc/nginx/domain-resolver.sh`
 
-4. Add a cron job which produces a valid nginx configuration and restarts nginx:
+4. Add a cron job which produces a valid Nginx configuration and restarts Nginx:
 
     `/etc/cron.hourly/domain-resolver`
 
@@ -479,11 +480,11 @@ Limit access to Tactical RMM's administration panel in Nginx to specific locatio
     service nginx reload > /dev/null 2>&1
     ```
 
-    This can be a hourly, daily or monthly job or you can have it run at a specific time. 
+    This can be a hourly, daily, or monthly job or you can have it run at a specific time. 
 
 5. Give the right permission to this script `chmod +x /etc/cron.hourly/domain-resolver`
 
-6. When run it will give something like this
+6. When run it will give something like this:
 
     Edit `/etc/nginx//allowed-ips-from-domains.conf`
 
@@ -543,7 +544,7 @@ Limit access to Tactical RMM's administration panel in Nginx to specific locatio
     allow xxx.xxx.xxx.xxx
     ```
 
-2. Update your nginx configuration to take this output into account:
+2. Update your Nginx configuration to take this output into account:
 
     Edit `/etc/nginx/sites-enabled/frontend.conf`
 

@@ -24,7 +24,7 @@ chmod +x troubleshoot_server.sh
 
 ### From the agent
 
-Open command prompt
+Open command prompt:
 
 ```cmd
 ping rmm.example.com
@@ -32,7 +32,7 @@ ping api.example.com
 ping mesh.example.com
 ```
 
-The IP address for all 3 should reflect your Tactical RMM server
+The IP address for all 3 should reflect your Tactical RMM server.
 
 ## Problems after new server install
 
@@ -45,15 +45,15 @@ bash -x install.sh 2>&1 | tee install.log
 !!!note
     Logging of installs isn’t desirable as it logs extremely sensitive information which is why this isn’t done by default! **Do not** post the raw log publicly only provide it if requested and then by dm only. Authorized users in Discord are: @BurningTimes#1938 @sadnub#6992 @dinger1986#1734 @silversword#9652
 
-## "Bad credentials" error when trying to login to the Web UI
+## "Bad credentials" error when trying to login to the web UI
 
-If you are sure you are using the correct credentials and still getting a "bad credentials" error, open your browser's dev tools (++ctrl+shift+j++ on chrome) and check the Console tab to see the real error.
+If you are sure you are using the correct credentials and still getting a "bad credentials" error, open your browser's dev tools (++ctrl+shift+j++ on Chrome) and check the Console tab to see the real error.
 
 It will most probably be a CORS error which means you need to check your DNS settings and make sure whatever computer you're trying to access the UI from resolves your 3 subdomains to the correct IP of the server running the RMM (public IP if running in the cloud, or private IP if running behind NAT).
 
-If you see an error about SSL or certificate expired, then your Let's Encrypt cert has probably expired and you'll need to renew it.
+If you see an error about SSL or certificate expired, then your Let'sEncrypt cert has probably expired and you'll need to renew it.
 
-Refer to the Let's Encrypt cert renewal instructions [here](update_server.md#keeping-your-lets-encrypt-certificate-up-to-date)
+Refer to the Let'sEncrypt cert renewal instructions [here](update_server.md#keeping-your-lets-encrypt-certificate-up-to-date).
 
 ## Agents not installing or updating
 
@@ -88,7 +88,7 @@ The mesh installer is created at time of install. Make sure it's working by runn
 ![if sharing](images/meshcheck_sharing.png)
 
 !!!warning
-    As of v0.12.0 `Error 1005` usually means something doesn't match and/or the mesh username has to be all lower case.
+    As of v0.12.0 `Error 1005` usually means something doesn't match and / or the mesh username has to be all lower case.
 
 [Collect Update debug logs for troubleshooting agents that don't update](update_agents.md#manually-updating-from-the-command-line-on-the-agent)
 
@@ -98,10 +98,10 @@ The mesh installer is created at time of install. Make sure it's working by runn
 
 These are NATS problems. Try quickfix first:
 
-### from Admin Web Interface
+### From Admin Web Interface
 
-First, reload NATS from tactical's web UI:<br>
-*Tools > Server Maintenance > Reload Nats Configuration*
+First, reload NATS from Tactical's web UI:<br>
+**Tools > Server Maintenance > Reload Nats Configuration**
 
 If that doesn't work, check each part starting with the server:
 
@@ -149,7 +149,7 @@ Run the tacticalrmm service manually with debug logging:
 
 This will print out a ton of info. You should be able to see the error from the debug log output.
 
-Please then copy/paste the logs and post them either in our [Discord support chat](https://discord.gg/upGTkWp), or create a [github issue](https://github.com/amidaware/tacticalrmm/issues).
+Please then copy / paste the logs and post them either in our [Discord support chat](https://discord.gg/upGTkWp), or create a [github issue](https://github.com/amidaware/tacticalrmm/issues).
 
 If all else fails, simply uninstall the agent either from control panel or silently with `"C:\Program Files\TacticalAgent\unins000.exe" /VERYSILENT` and then reinstall the agent.
 
@@ -157,7 +157,7 @@ If all else fails, simply uninstall the agent either from control panel or silen
 
 First, run the [update script](update_server.md#updating-to-the-latest-rmm-version) with the `--force` flag.
 
-This will fix permissions and reinstall python/node packages that might have gotten corrupted.
+This will fix permissions and reinstall python / node packages that might have gotten corrupted.
 
 ```bash
 ./update.sh --force
@@ -165,9 +165,9 @@ This will fix permissions and reinstall python/node packages that might have got
 
 Check the debug log from the web UI: **File > Debug Log**
 
-Open your browser's dev tools (++ctrl+shift+j++ on chrome) and check the Console tab for any errors
+Open your browser's dev tools (++ctrl+shift+j++ on Chrome) and check the Console tab for any errors.
 
-Check all the systemd services that the rmm uses to function and check to make sure they're all active/running and enabled:
+Check all the systemd services that the rmm uses to function and check to make sure they're all active / running and enabled:
 
 ```bash
 sudo systemctl status rmm.service
@@ -183,7 +183,7 @@ sudo systemctl status postgresql.service
 sudo systemctl status redis-server.service
 ```
 
-or you can use `systemctl --failed` to see any failed services on your machine.
+Or you can use `systemctl --failed` to see any failed services on your machine.
 
 Read through the log files in the following folders and check for errors:
 
@@ -200,9 +200,9 @@ Read through the log files in the following folders and check for errors:
 
 - mesh.example.com can be proxied with the caveat that Mesh checks the cert presented to the agent is the same one on the server. I.e. no MITM. You'll need to copy Cloudflare's edge cert to your server if you want to proxy this domain.
 
-If you're getting `Invalid group id` at the end of the install you're probably doing something wrong/wrong IP for api.
+If you're getting `Invalid group id` at the end of the install you're probably doing something wrong / wrong IP for api.
 
-## Testing Network Connectivity between agent and server
+## Testing network connectivity between agent and server
 
 Use powershell, make sure you can connect to 443 from agent to server:
 
@@ -212,21 +212,21 @@ Test-NetConnection -ComputerName api.example.com -Port 443
 
 Check your SSL certs to make sure they are what they should be (no proxy stuff): <https://www.digicert.com/help/>
 
-Are you trying to use a proxy to share your single public IP with multiple services on 443? This is complicated and [unsupported by Tactical RMM](unsupported_scripts.md), test your setup.
+Are you trying to use a reverse proxy to share your single public IP with multiple services on 443? This is complicated and [unsupported by Tactical RMM](unsupported_scripts.md). Test your setup.
 
 ## Take Control or Remote Background missing button / can't connect
 
-This is a MeshCentral Connection problem
+This is a MeshCentral connection problem.
 
-1. Don't use Firefox (test in vanilla Chrome first)
-2. Open `mesh.domain.com` and see if you see the agent is there
-3. If you don't see your agent (or it's offline), restart TRMM server (or [service](howitallworks/#meshcentral))
+1. Don't use Firefox (test in vanilla Chrome first).
+2. Open `mesh.domain.com` and see if the agent is listed there.
+3. If you don't see your agent (or it's offline), restart TRMM server (or [service](howitallworks/#meshcentral)).
 4. Restart Mesh Agent on client PC. 
-5. Check again. Still not appearing in `mesh.domain.com` in mesh goto "My Server" > Trace tab > Click tracing button > Check MeshAgent traffic.
-6. Restart Mesh Agent on client PC. You should see something in trace like ![mesh trace](images/mesh_trace.png)
-7. If you don't, you have firewall/connectivity issues (open `mesh.domain.com` from agent and troubleshoot. You aren't using a proxy right?)
+5. Check again. Still not appearing in `mesh.domain.com` in Mesh go to **"My Server" > Trace tab > Click tracing button > Check MeshAgent traffic**.
+6. Restart Mesh Agent on client PC. You should see something in trace like ![mesh trace](images/mesh_trace.png).
+7. If you don't, you have firewall / connectivity issues (open `mesh.domain.com` from agent and troubleshoot. You aren't using a proxy right?).
 
-## Need to recover your mesh token?
+## Need to recover your Mesh token?
 
 Login to server with SSH and run:
 
@@ -234,9 +234,9 @@ Login to server with SSH and run:
 node /meshcentral/node_modules/meshcentral --logintokenkey
 ```
 
-## Mesh Agent Not Connecting to server
+## Mesh Agent not connecting to server
 
-When agents don't show up in your mesh console (after logging into https://mesh.EXAMPLE.COM), and all data is blank. Your AV has most likely blocked the agent.
+When agents don't show up in your Mesh console (after logging into https://mesh.EXAMPLE.COM), and all data is blank. Your AV has most likely blocked the agent.
 
 ![Mesh Not Connecting](images/mesh_no_data.png)
 
