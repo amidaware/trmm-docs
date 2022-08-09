@@ -63,9 +63,13 @@ and `{}` indicates a parameter with several preconfigured parameter
 
 and `()` indicates a default parameter if none is specified
 
-### Bulk Run on agents
+### Bulk Script on agents
 
-Under the tools menu -> Run Bulk Script you can execute scripts against Clients/Sites/Selected Agents/All based on All/Servers/Workstations
+Under the tools menu -> Bulk Script you can execute scripts against Clients/Sites/Selected Agents/All based on All/Servers/Workstations. The history is saved in the history tab of the agent. The history can also be retrieved from the API from the `/agents/history/` endpoint
+
+### Bulk Command on agents
+
+Under the tools menu -> Bulk Command you can execute a command against Clients/Sites/Selected Agents/All based on All/Servers/Workstations. The history is saved in the history tab of the agent. The history can also be retrieved from the API from the `/agents/history/` endpoint
 
 ### Automated Tasks
 
