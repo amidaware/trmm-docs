@@ -253,3 +253,39 @@ You're sure you're typing in everything right, giving it 2FA code, and getting e
 ## Error 0:
 
 If you're trying to login [check dns](https://github.com/amidaware/tacticalrmm/issues/1136), [check server and client time](https://docs.tacticalrmm.com/troubleshooting/#cant-login-on-server-after-first-setup), and check your certs.
+
+## executable file not found in %PATH%
+
+This error can show up for Powershell or choco.
+
+- `exec: "Powershell": executable file not found in %PATH%`
+- `exec: "choco.exe": executable file not found in %PATH%`
+
+Run the [Win_Powershell_TestPATH.bat](https://github.com/amidaware/community-scripts/blob/main/scripts/Win_Powershell_TestPATH.bat) script to gather information about your environment. This script will output either `ExpandString` or `String`. See [Microsoft's docs](https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry-value-types) for details.
+
+- **ExpandString** (REG_EXPAND_SZ) means `%SystemRoot%` will expand to `C:\Windows`. Reboot and choco will most likely work.
+- **String** (REG_SZ) means `%SystemRoot%` will not be expanded. Changing the registry value type will most likely work.
+
+!!!note
+    If your path does not have Path variables like `%SystemRoot%`, the registry type does not matter because the paths are already expanded.
+
+If the script outputs "String", changing the registry type and restarting the Tactical service will most likely work. This script will output the value type and the $PATH. Make note of the $PATH because `Set-ItemProperty` needs the value to change the type. Run this as administrator and uncomment `Set-ItemProperty` to change the registry type to ExpandString. Run the first two commands to get the type and $PATH to make sure everything is good. Restart the TacticalRMM service and try the command again.
+
+```PowerShell
+$kind = (Get-Item -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment').GetValueKind('PATH')
+Write-Output "Path kind before the change: ${kind}"
+
+$path = Get-ItemPropertyValue -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name Path
+Write-Output "Path before changing the type:", $path
+
+Write-Output "Changing the registry key type"
+# Needs to be run as administrator
+# Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH -Value $path -Type ExpandString
+Write-Output ""
+
+$kind = (Get-Item -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment').GetValueKind('PATH')
+Write-Output "Path kind after the change: ${kind}"
+
+$path = Get-ItemPropertyValue -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name Path
+Write-Output "Path after changing the type:", $path
+```
