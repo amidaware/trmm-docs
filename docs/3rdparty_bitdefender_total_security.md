@@ -41,7 +41,7 @@ C:\Program Files\TacticalAgent\unins000.exe
 Next, add an exception for:
 
 ```cmd
-C:\Windows\temp\trmm
+C:\ProgramData\TacticalRMM
 ```
 
 Select all available options.
@@ -53,13 +53,9 @@ For the sake of caution, add the following and select the Online Threat Preventi
 ```cmd
 C:\Program Files\Mesh Agent\*
 C:\Program Files\TacticalAgent\*
-C:\Program Files\TacticalAgent\nssm.exe
-C:\Windows\Temp\tacticalagent-v*.exe
-C:\temp\tacticalrmm*.exe
+C:\ProgramData\TacticalRMM\*
 ```
 
 Add exceptions for your T-RMM URLs as well.
-
-T-RMM seems to create other folders in `C:\Windows\Temp` as well, but so far no problems have come up from this. **Do not** exclude the entire Temp folder.
 
 That should be all that's needed, unless BitDefender complains about the T-RMM agent installation file, in which case you'll need to add an exception for it as well, selecting all available options, then re-download it and save it in the same location to be safe.

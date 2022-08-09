@@ -470,10 +470,10 @@ Found in `%programfiles%\TacticalAgent`
 When scripts / checks execute, they are:
 
 1. Transferred from the server via NATS.
-2. Saved to a randomly created file in `c:\windows\temp\trmm\`.
+2. Saved to a randomly created file in `C:\ProgramData\TacticalRMM`.
 3. Executed.
 4. Return info is captured and returned to the server via NATS.
-5. File in `c:\windows\temp\trmm\` are removed automatically after execution / timeout.
+5. File in `C:\ProgramData\TacticalRMM` is removed automatically after execution / timeout.
 
 ### Outbound Firewall Rules
 
@@ -494,18 +494,18 @@ Signed agents will require: `https://agents.tacticalrmm.com` for downloading / u
 ### Agent Installation Process
 
 * Adds Defender AV exclusions.
-* Copies temp files to `c:\windows\temp\tacticalxxx` folder.
-* INNO setup installs app into `%ProgramData%\TacticalAgent\` folder.
+* Copies temp files to `C:\ProgramData\TacticalRMM` folder.
+* INNO setup installs app into `%ProgramFiles%\TacticalAgent\` folder.
 
 ***
 
 ### Agent Update Process
 
-Downloads latest `tacticalagent-vx.x.x.exe` to `%programfiles%`.
+Downloads latest `tacticalagent-vx.x.x.exe` to `%PROGRAMDATA\TacticalRMM%`.
 
 Executes the file (INNO setup exe).
 
-Files create `c:\Windows\temp\Tacticalxxxx\` folder for install (and log files).
+Log file `C:\ProgramData\TacticalRMM\tacticalagent_update_vX.X.X.txt` is created.
 
 ***
 
