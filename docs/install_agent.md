@@ -108,18 +108,15 @@ for /f "usebackq tokens=* delims=" %%# in (
 
 if not defined Name (
     echo Tactical RMM not found, installing now.
-    if not exist C:\TEMP\TRMM md C:\TEMP\TRMM
+    if not exist c:\ProgramData\TacticalRMM\temp md c:\ProgramData\TacticalRMM\temp
     powershell Set-ExecutionPolicy -ExecutionPolicy Unrestricted
-    powershell Add-MpPreference -ExclusionPath C:\TEMP\TRMM
     powershell Add-MpPreference -ExclusionPath "C:\Program Files\TacticalAgent\*"
-    powershell Add-MpPreference -ExclusionPath C:\ProgramData\TacticalRMM\*
     powershell Add-MpPreference -ExclusionPath "C:\Program Files\Mesh Agent\*"
-    powershell Add-MpPreference -ExclusionPath C:\Windows\Temp\TRMM\*
-    cd c:\temp\trmm
+    powershell Add-MpPreference -ExclusionPath C:\ProgramData\TacticalRMM\*
+    cd c:\ProgramData\TacticalRMM\temp
     powershell Invoke-WebRequest "%DeploymentURL%" -Outfile tactical.exe
     REM"C:\Program Files\TacticalAgent\unins000.exe" /VERYSILENT
     tactical.exe
-    powershell Remove-MpPreference -ExclusionPath C:\TEMP\TRMM
     rem exit /b 1
 ) else (
        echo Tactical RMM already installed Exiting
