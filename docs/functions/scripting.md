@@ -10,20 +10,20 @@ Tactical RMM supports uploading existing scripts or adding new scripts right in 
 
 In the dashboard, browse to **Settings > Scripts Manager**. Click the **New** button and select either Upload Script or New Script. The available options for scripts are:
 
-- **Name** - This identifies the script in the dashboard
-- **Description** - Optional description for the script
-- **Category** - Optional way to group similar scripts together. 
+- **Name** - This identifies the script in the dashboard.
+- **Description** - Optional description for the script.
+- **Category** - Optional way to group similar scripts together.
 - **Type** - This sets the language of the script. Available options are:
     - Powershell
     - Windows Batch
     - Python
 - **Script Arguments** - Optional way to set default arguments for scripts. These will auto populate when running scripts and can be changed at runtime.
-- **Default Timeout** - Sets the default timeout of the script and will stop script execution if the duration surpasses the configured timeout. Can be changed at script runtime
+- **Default Timeout** - Sets the default timeout of the script and will stop script execution if the duration surpasses the configured timeout. Can be changed at script runtime.
 - **Favorite** - Favorites the script.
 
 ## Downloading Scripts
 
-To download a Tactical RMM Script, click on the script in the Script Manager to select it. Then click the **Download Script** button on the top. You can also right-click on the script and select download
+To download a Tactical RMM Script, click on the script in the Script Manager to select it. Then click the **Download Script** button on the top. You can also right-click on the script and select download.
 
 ## Community Scripts
 
@@ -41,7 +41,7 @@ In the **Agent Table**, you can right-click on an agent and select **Run Script*
 - **Wait for Output** - Runs the script and waits for the script to finish running and displays the output.
 - **Fire and Forget** - Starts the script and does not wait for output.
 - **Email Output** - Starts the script and will email the output. Allows for using the default email address in the global settings or adding a new email address.
-- **Save as Note** - Saves the output as a Note that can be views in the agent Notes tab
+- **Save as Note** - Saves the output as a Note that can be views in the agent Notes tab.
 - **Collector** - Saves to output to the specified custom field.
 
 There is also an option on the agent context menu called **Run Favorited Script**. This will pre-populate the script run dialog with the script of your choice.
@@ -61,21 +61,21 @@ Where `[]` indicates an optional parameter
 
 and `{}` indicates a parameter with several preconfigured parameter
 
-and `()` indicates a default parameter if none is specified
+and `()` indicates a default parameter if none is specified.
 
-### Bulk Script on agents
+### Run Script on many agents at once
 
-Under the tools menu -> Bulk Script you can execute scripts against Clients/Sites/Selected Agents/All based on All/Servers/Workstations. The history is saved in the history tab of the agent. The history can also be retrieved from the API from the `/agents/history/` endpoint
+Under the `Tools menu` -> `Bulk Script` you can execute scripts against Clients/Sites/Selected Agents/All based on All/Servers/Workstations. The history is saved in the history tab of the agent. The history can also be retrieved from the API from the `/agents/history/` endpoint.
 
-### Bulk Command on agents
+### Run Command on many agents at once
 
-Under the tools menu -> Bulk Command you can execute a command against Clients/Sites/Selected Agents/All based on All/Servers/Workstations. The history is saved in the history tab of the agent. The history can also be retrieved from the API from the `/agents/history/` endpoint
+Under the `Tools menu` -> `Bulk Command` you can execute a command against Clients/Sites/Selected Agents/All based on All/Servers/Workstations. The history is saved in the history tab of the agent. The history can also be retrieved from the API from the `/agents/history/` endpoint.
 
 ### Automated Tasks
 
 Tactical RMM allows scheduling tasks to run on agents. This leverages the Windows Task Scheduler and has the same scheduling options.
 
-See [Automated Tasks](automated_tasks.md) for configuring automated tasks
+See [Automated Tasks](automated_tasks.md) for configuring automated tasks.
 
 ### Script Checks
 
@@ -91,7 +91,7 @@ See below for populating dashboard data in scripts and the available options.
 
 ## Using dashboard data in scripts
 
-Tactical RMM allows passing in dashboard data to scripts as arguments. The below powershell arguments will get the client name of the agent and also the agent's public IP address
+Tactical RMM allows passing in dashboard data to scripts as arguments. The below powershell arguments will get the client name of the agent and also the agent's public IP address.
 
 ```
 -ClientName {{client.name}} -PublicIP {{agent.public_ip}}
@@ -106,11 +106,11 @@ See a full list of possible built-in variables [Here](../script_variables.md)
 
 Tactical RMM supports pulling data from custom fields using the {{model.custom_field_name}} syntax.
 
-See [Using Custom Fields in Scripts](custom_fields.md#Using Custom Fields in Scripts)
+See [Using Custom Fields in Scripts](custom_fields.md#Using Custom Fields in Scripts).
 
 ### Getting values from the Global Keystore
 
-Tactical RMM supports getting values from the global key store using the {{global.key_name}} syntax
+Tactical RMM supports getting values from the global key store using the {{global.key_name}} syntax.
 
 See [Global Keystore](keystore.md).
 

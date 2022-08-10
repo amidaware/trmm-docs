@@ -1,5 +1,16 @@
 {
     "cSpell.ignoreWords": [
         "Splashtop"
+    ],
+    "cSpell.words": [
+        "agentupdate",
+        "autoagentupdate",
+        "manualagentupdate",
+        "rdparty",
+        "RMM's",
+        "screenconnect",
+        "tacticalagent",
+        "trmminstall",
+        "VERYSILENT"
     ]
 }
