@@ -7,7 +7,7 @@
     Adding the following exclusions will make sure everything works, including agent update:<br/>
     `C:\Program Files\TacticalAgent\*`<br/>
     `C:\Program Files\Mesh Agent\*`<br/>
-    `C:\PrograData\TacticalRMM\*`<br/>
+    `C:\ProgramData\TacticalRMM\*`<br/>
     See [here for other screenshot examples](av.md).
 
 ## Dynamically Generated Executable
