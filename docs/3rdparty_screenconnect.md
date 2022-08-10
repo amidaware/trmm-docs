@@ -45,7 +45,7 @@ Add Task:</br>
 **Script argument** = `-serviceName {{client.ScreenConnectService}}`</br>
 **Descriptive name of task** = `Collects the Machine GUID for ScreenConnect.`</br>
 **Collector Task** = `CHECKED`</br>
-**Custom Field to update** = `ScreenConectGUID`</br>
+**Custom Field to update** = `ScreenConnectGUID`</br>
 
 ![Service Name](images/3rdparty_screenconnect4.png)
 
@@ -72,38 +72,19 @@ Use the [ScreenConnect AIO script](https://github.com/amidaware/community-script
 1. Create a Deployment under **Agents > Manage Deployments**
 2. Replace `<deployment URL>` below with your Deployment Download Link.
 
-**x64**
-
 ```cmd
 #!ps
 #maxlength=500000
 #timeout=600000
 
-Invoke-WebRequest "<deployment URL>" -OutFile ( New-Item -Path "C:\temp\trmminstallx64.exe" -Force )
-$proc = Start-Process c:\temp\trmminstallx64.exe -ArgumentList '-silent' -PassThru
+Invoke-WebRequest "<deployment URL>" -OutFile ( New-Item -Path "c:\ProgramData\TacticalRMM\temp\trmminstall.exe" -Force )
+$proc = Start-Process c:\ProgramData\TacticalRMM\temp\trmminstall.exe -ArgumentList '-silent' -PassThru
 Wait-Process -InputObject $proc
 
 if ($proc.ExitCode -ne 0) {
     Write-Warning "$_ exited with status code $($proc.ExitCode)"
 }
-Remove-Item -Path "c:\temp\trmminstallx64.exe" -Force 
-```
-
-**x86**
-
-```cmd
-#!ps
-#maxlength=500000
-#timeout=600000
-
-Invoke-WebRequest "<deployment URL>" -OutFile ( New-Item -Path "C:\temp\trmminstallx86.exe" -Force )
-$proc = Start-Process c:\temp\trmminstallx86.exe -ArgumentList '-silent' -PassThru
-Wait-Process -InputObject $proc
-
-if ($proc.ExitCode -ne 0) {
-    Write-Warning "$_ exited with status code $($proc.ExitCode)"
-}
-Remove-Item -Path "c:\temp\trmminstallx86.exe" -Force 
+Remove-Item -Path "c:\ProgramData\TacticalRMM\temp\trmminstall.exe" -Force
 ```
 
 *****

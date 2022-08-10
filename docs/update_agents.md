@@ -36,7 +36,7 @@ Download the `tacticalagent-vX.X.X.exe` executable from the [github releases pag
 Open CMD as admin and call the exe like so:
 
 ```cmd
-C:\Windows\Temp>tacticalagent-vX.X.X.exe /VERYSILENT /LOG=agentupdate.txt
+tacticalagent-vX.X.X.exe /VERYSILENT /LOG=agentupdate.txt
 ```
 
 This command will return immediately since it spawns a background process to run the update.
