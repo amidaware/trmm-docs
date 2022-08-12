@@ -8,7 +8,6 @@ python -m venv env
 
 #Install requirements first time only
 python -m pip install --upgrade pip #only 1st time
-pip install pytest #only 1st time
 pip install mkdocs #only 1st time
 pip install mkdocs-material #only 1st time
 
