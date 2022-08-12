@@ -1,5 +1,9 @@
 # Troubleshooting
 
+## I just updated and now it doesn't work.
+
+It's just blank white screen nothing will load when I refresh. [See](faq.md#i-just-updated-and-now-it-doesnt-work)
+
 ## Server Troubleshooting Script
 
 If you've asked for help in [#support](https://discord.com/channels/736478043522072608/744282073870630912) please run this, and send a screenshot at the top of the thread created for troubleshooting your issue.
