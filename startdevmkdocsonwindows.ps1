@@ -8,8 +8,7 @@ python -m venv env
 
 #Install requirements first time only
 python -m pip install --upgrade pip #only 1st time
-pip install mkdocs #only 1st time
-pip install mkdocs-material #only 1st time
+pip install --upgrade mkdocs mkdocs-material pymdown-extensions
 
 #Run mkdocs and look at changes as you make them
 Start-Process http://localhost:8005 #Opens Browser
