@@ -10,6 +10,8 @@ The easiest way to see what endpoint/payload you need to send is to open your br
 
 Please note that using an API key will bypass 2fa authentication.
 
+Please also note that since Tactical RMM follows [Semantic Versioning](https://semver.org/), until we reach a 1.0.0 release, the API is considered unstable and may change at anytime.
+
 When creating the key you'll need to choose a user, which will reflect what permissions the key has based on the user's role.
 
 Navigate to **Settings > Global Settings > API Keys** to generate a key.
