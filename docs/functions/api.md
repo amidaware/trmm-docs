@@ -1,8 +1,14 @@
 ## API Access
 
-*Version added: v0.8.3*
+Tactical RMM uses a Django Rest Framework backend which is designed to be consumed by a [VueJS frontend](https://github.com/amidaware/tacticalrmm-web).
 
-API Keys can be created to access any of Tactical RMM's API endpoints, which will bypass 2fa authentication.
+Therefore, anything you can do via the web interface, you can do via the API.
+
+However this makes it difficult to document the API as it has only been designed to be consumed by our vue frontend.
+
+The easiest way to see what endpoint/payload you need to send is to open your browser's developer tools > Network tab. Then, perform the action you wish to do via tha api in Tactical's web interface and watch the network tab to see the endpoint and the payload that is generated, and use that as an example of how to structure your api request.
+
+Please note that using an API key will bypass 2fa authentication.
 
 When creating the key you'll need to choose a user, which will reflect what permissions the key has based on the user's role.
 
