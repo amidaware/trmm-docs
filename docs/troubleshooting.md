@@ -19,7 +19,7 @@ sudo apt update && sudo apt install -y dnsutils
 Next, download and run the troubleshooting script:
 
 ```bash
-wget -N https://raw.githubusercontent.com/amidaware/tacticalrmm/master/troubleshoot_server.sh
+wget -N https://raw.githubusercontent.com/amidaware/tacticalrmm/develop/troubleshoot_server.sh
 chmod +x troubleshoot_server.sh
 ./troubleshoot_server.sh
 ```
