@@ -72,7 +72,7 @@ Use the [ScreenConnect AIO script](https://github.com/amidaware/community-script
 1. Create a Deployment under **Agents > Manage Deployments**
 2. Replace `<deployment URL>` below with your Deployment Download Link.
 
-```cmd
+```powershell
 #!ps
 #maxlength=500000
 #timeout=600000
