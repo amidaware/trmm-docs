@@ -78,7 +78,7 @@ To renew your Let'sEncrypt wildcard cert, run the following command, replacing `
 sudo certbot certonly --manual -d *.example.com --agree-tos --no-bootstrap --preferred-challenges dns -m admin@example.com --no-eff-email
 ```
 
-Same instructions as during install for [verifying the TXT record](install_server.md#deploy-the-txt-record-in-your-dns-manager) has propagated before hitting ++enter++.
+Same instructions as during install for [verifying the TXT record](install_server.md#step-6---deploy-the-txt-record-in-your-dns-manager-for-letsencrypt-wildcard-certs) has propagated before hitting ++enter++.
 
 After this you have renewed the cert, simply run the `update.sh` script, passing it the `--force` flag.
 

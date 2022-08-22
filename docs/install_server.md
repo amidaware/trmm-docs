@@ -49,7 +49,7 @@ Install on a VPS: DigitalOcean, Linode, Vultr, BuyVM (highly recommended), Hetzn
 
 Use something that meets [minimum specs](install_server.md#hardware-os)
 
-**1 ) Run Updates on OS**
+### Step 1 - Run Updates on OS
 
 SSH into the server as **root**.
 
@@ -63,7 +63,7 @@ apt -y upgrade
 
 If a new kernel is installed, reboot the server with the `reboot` command.
 
-**2 ) Create a Linux user**
+### Step 2 - Create a Linux user
 
 Create a linux user named `tactical` to run the rmm and add it to the sudoers group.
 
@@ -75,7 +75,7 @@ passwd tactical
 !!!tip
     [Enable passwordless sudo to make your life easier in the future](https://linuxconfig.org/configure-sudo-without-password-on-ubuntu-20-04-focal-fossa-linux)
 
-**3 ) Setup the firewall (optional but highly recommended)**
+### Step 3 - Setup the firewall (optional but highly recommended)
 
 !!!info
     Skip this step if your VM is __not__ publicly exposed to the world e.g. running behind NAT. You should setup the firewall rules in your router instead (ports 22 and 443 TCP).
@@ -117,7 +117,7 @@ ufw enable && ufw reload
 !!!note
     You will never login to the server again as `root` again unless something has gone horribly wrong, and you're working with the developers.
 
-**4 ) Create the A records**
+### Step 4 - Create the A records
 
 We'll be using `example.com` as our domain for this example.
 
@@ -130,7 +130,7 @@ We'll be using `example.com` as our domain for this example.
 
 ![arecords](images/arecords.png)
 
-**5 ) Run the install script**
+### Step 5 - Run the install script
 
 Switch to the `tactical` user:
 
@@ -150,7 +150,7 @@ Answer the initial questions when prompted. Replace `example.com` with your doma
 
 ![questions](images/install_questions.png)
 
-**6 ) Deploy the TXT record in your DNS manager for Let'sEncrypt wildcard certs**
+### Step 6 - Deploy the TXT record in your DNS manager for Let'sEncrypt wildcard certs
 
 !!!warning
     TXT records can take anywhere from 1 minute to a few hours to propagate depending on your DNS provider.<br/>
@@ -168,7 +168,7 @@ Create a login for the RMM web UI:
 
 A bunch of URLS / usernames / passwords will be printed out at the end of the install script. **Save these somewhere safe.** [Recover them if you didn't](faq.md#how-do-i-recover-my-meshcentral-login-credentials)
 
-**7 ) Login**
+### Step 7 - Login
 
 Navigate to `https://rmm.example.com` and login with the username/password you created during install.
 

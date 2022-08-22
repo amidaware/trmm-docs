@@ -90,41 +90,63 @@ You can get full command line options from (`--help`).
 
 If you want to deploy the TRMM agent using AD, Intune, Mesh, TeamViewer, Group Policy GPO, etc, this is a sample CMD script for deploying Tactical.
 
-!!!note
-    You will need to replace `deployment url` with your custom deployment URL:
+???+ note "Install Scripts"
 
-```bat
-@echo off
+    === ":material-console-line: batch file"
 
-REM Setup deployment URL
-set "DeploymentURL="
+        !!!note
+            You will need to replace `deployment url` with your custom deployment URL:
 
-set "Name="
-for /f "usebackq tokens=* delims=" %%# in (
-    `wmic service where "name like 'tacticalrmm'" get Name /Format:Value`
-) do (
-    for /f "tokens=* delims=" %%g in ("%%#") do set "%%g"
-)
+        ```bat
+        @echo off
 
-if not defined Name (
-    echo Tactical RMM not found, installing now.
-    if not exist c:\ProgramData\TacticalRMM\temp md c:\ProgramData\TacticalRMM\temp
-    powershell Set-ExecutionPolicy -ExecutionPolicy Unrestricted
-    powershell Add-MpPreference -ExclusionPath "C:\Program Files\TacticalAgent\*"
-    powershell Add-MpPreference -ExclusionPath "C:\Program Files\Mesh Agent\*"
-    powershell Add-MpPreference -ExclusionPath C:\ProgramData\TacticalRMM\*
-    cd c:\ProgramData\TacticalRMM\temp
-    powershell Invoke-WebRequest "%DeploymentURL%" -Outfile tactical.exe
-    REM"C:\Program Files\TacticalAgent\unins000.exe" /VERYSILENT
-    tactical.exe
-    rem exit /b 1
-) else (
-       echo Tactical RMM already installed Exiting
-  Exit 0
-)
-```
+        REM Setup deployment URL
+        set "DeploymentURL="
 
-There is also a full powershell version [here](3rdparty_screenconnect.md#install-tactical-rmm-via-screeconnect-commands-window).
+        set "Name="
+        for /f "usebackq tokens=* delims=" %%# in (
+            `wmic service where "name like 'tacticalrmm'" get Name /Format:Value`
+        ) do (
+            for /f "tokens=* delims=" %%g in ("%%#") do set "%%g"
+        )
+
+        if not defined Name (
+            echo Tactical RMM not found, installing now.
+            if not exist c:\ProgramData\TacticalRMM\temp md c:\ProgramData\TacticalRMM\temp
+            powershell Set-ExecutionPolicy -ExecutionPolicy Unrestricted
+            powershell Add-MpPreference -ExclusionPath "C:\Program Files\TacticalAgent\*"
+            powershell Add-MpPreference -ExclusionPath "C:\Program Files\Mesh Agent\*"
+            powershell Add-MpPreference -ExclusionPath C:\ProgramData\TacticalRMM\*
+            cd c:\ProgramData\TacticalRMM\temp
+            powershell Invoke-WebRequest "%DeploymentURL%" -Outfile tactical.exe
+            REM"C:\Program Files\TacticalAgent\unins000.exe" /VERYSILENT
+            tactical.exe
+            rem exit /b 1
+        ) else (
+            echo Tactical RMM already installed Exiting
+        Exit 0
+        )
+        ```
+
+    === ":material-powershell: powershell"
+
+        ```powershell
+        Invoke-WebRequest "<deployment URL>" -OutFile ( New-Item -Path "c:\ProgramData\TacticalRMM\temp\trmminstall.exe" -Force )
+        $proc = Start-Process c:\ProgramData\TacticalRMM\temp\trmminstall.exe -ArgumentList '-silent' -PassThru
+        Wait-Process -InputObject $proc
+
+        if ($proc.ExitCode -ne 0) {
+            Write-Warning "$_ exited with status code $($proc.ExitCode)"
+        }
+        Remove-Item -Path "c:\ProgramData\TacticalRMM\temp\trmminstall.exe" -Force
+        ```
+
+    === ":material-microsoft: msi"
+
+        * Use `Agents` menu > `Install Agent`
+        * Set your expiry to an appropriate date (couple months, you'll need to get a new one with new TRMM server versions anyway)
+        * [Create the msi](https://docs.microsoft.com/en-us/mem/configmgr/develop/apps/how-to-create-the-windows-installer-file-msi)
+        * Apply via GPO software deployment to the appropriate machines
 
 ## Script for Full Agent Uninstall
 
