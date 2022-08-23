@@ -474,6 +474,9 @@ When scripts / checks execute, they are:
 3. Executed.
 4. Return info is captured and returned to the server via NATS.
 5. File in `C:\ProgramData\TacticalRMM` is removed automatically after execution / timeout.
+6. Command Parameters for scripts stay in memory
+
+Also "Send Command" stay in memory as well.
 
 ### Outbound Firewall Rules
 
