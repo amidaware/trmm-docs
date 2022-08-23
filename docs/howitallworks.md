@@ -478,6 +478,8 @@ When scripts / checks execute, they are:
 
 Also "Send Command" stay in memory as well.
 
+Having said that...Windows logs all things powershell: `Event Viewer` > `Microsoft` > `Windows` > `PowerShell` > `Operational` Log
+
 ### Outbound Firewall Rules
 
 If you have strict firewall rules these are the only outbound rules from the agent needed for all functionality:
