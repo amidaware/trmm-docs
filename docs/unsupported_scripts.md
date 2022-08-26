@@ -586,3 +586,5 @@ Update your Nginx configuration to take this output into account:
 Use Cloudflare API with certbot
 
 <https://www.bjornjohansen.com/wildcard-certificate-letsencrypt-cloudflare>
+
+You need to restart mesh and nginx for changes to take effect
