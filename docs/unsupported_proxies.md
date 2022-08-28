@@ -255,9 +255,9 @@ systemctl meshcentral restart
 
 ### HAProxy Config
 
-The order of use_backend is important, and `Tactical-Mesh-WebSocket_ipvANY` must be before `Tactical-Mesh_ipvANY`.  
-This assumes a standard VM install or Docker instance, **unaltered**.  
-If you've altered exposed ports on your VM or Docker instance, those will need to be adjusted in the configuration.  
+The order of use_backend is important, and `Tactical-Mesh-WebSocket_ipvANY` must be before `Tactical-Mesh_ipvANY`.
+This assumes a standard VM install or Docker instance, **unaltered**.
+If you've altered exposed ports on your VM or Docker instance, those will need to be adjusted in the configuration.
 The values of `timeout connect`, `timeout server`, and `timeout tunnel` have been configured to maintain a stable agent connection, however you may need to adjust these values to suit your environment:
 
 ```conf
@@ -306,8 +306,8 @@ frontend https-shared
     http-request set-var(txn.txnpath) path
     use_backend rmm.example.com_ipvANY  if  rmm
   	use_backend rmm.example.com-websocket_ipvANY  if  nats-websocket api-ws
-  	use_backend rmm.example.com_ipvANY  if  api 
-  	use_backend mesh.example.com-websocket_ipvANY  if  is_websocket mesh 
+  	use_backend rmm.example.com_ipvANY  if  api
+  	use_backend mesh.example.com-websocket_ipvANY  if  is_websocket mesh
   	use_backend mesh.example.com_ipvANY  if  mesh
 
 
@@ -341,7 +341,7 @@ backend mesh.example.com-websocket_ipvANY
 	  timeout tunnel    3600000
 	  http-request add-header X-Forwarded-Host %[req.hdr(Host)]
 	  http-request add-header X-Forwarded-Proto https
-	  server			      mesh-websocket x.x.x.x:443 ssl  verify none 
+	  server			      mesh-websocket x.x.x.x:443 ssl  verify none
 
 backend mesh.example.com_ipvANY
 	  mode			        http
@@ -526,6 +526,190 @@ frontend Frontend-SNI
   tcp-request content accept if { req.ssl_hello_type 1 }
   use_backend tactical_ipv4  if  trmm-backend
 ```
+
+### HAProxy in TCP Mode, OPNSense
+
+In this scenario, you install TRMM as per documentation.
+Meaning your certificates are generated and managed on your TRMM server, just use the `install.sh` and follow docs and on-screen instructions.
+
+HAProxy here will just pass the traffic to the NGINX on TRMM server. No certificate management.
+Only use this method if you have more than 1 server that need to use port 443 on the same public IP.
+
+#### Assumptions
+
+These are some assumptions made to make this guide, short, easy to follow and to the point.
+Of course you can adapt it to your environment and/or current configuration.
+
+- You have a PFSense firewall.
+- You have HAProxy installed.
+- You don't have any `http` frontends on your HAProxy.
+- You have port forward to forward traffic from your WAN 443 port to OPNsense 443 port.
+- You have firewall rule to allow traffic from your WAN to HAProxy 443 port.
+- Your subdomains are: `api`, `mesh`, `rmm`
+- You can resolve `(rmm|api|mesh).example.com` to your local TRMM server when in your local network.
+- You can resolve `(rmm|api|mesh).example.com` to your public IP when you are outside of your local network.
+
+#### Settings
+
+Navigate to `Services` -> `HAProxy` -> `Settings`
+
+##### Service
+
+- Click 🔽 next to `Settings` tab.
+- Click `Service`
+- Check `Enable HAProxy`
+
+![opnsensetcp-haproxy-enable](images/opnsensetcp-haproxy-enable.png)
+
+- Click `Apply`
+- Check that HAProxy started (You should see a green ▶️ on the top right corner)
+
+##### Global Parameters
+
+- Click 🔽 next to `Settings` tab.
+- Click `Global Parameters`
+- Maximum connections: Set this to a number of at least 3 times your agents.
+
+![opnsensetcp-haproxy-global](images/opnsensetcp-haproxy-global.png)
+
+- Click `Apply`
+
+##### Default Parameters
+
+- Click 🔽 next to `Settings` tab.
+- Click `Default Parameters`
+- Maximum connections (Public Services): Set this to a number of at least 3 times your agents.
+- Maximum connections (Servers): Set this to a number of at least 3 times your agents.
+- Client Timeout: `30s`
+- Connection Timeout: `30s`
+- Retries: `3`
+
+![opnsensetcp-haproxy-default](images/opnsensetcp-haproxy-default.png)
+
+- Click `Apply`
+
+#### Real Servers
+
+Navigate to `Services` -> `HAProxy` -> `Settings`
+
+- Click 🔽 next to `Real Servers` tab.
+- Click `Real Servers`
+- Click ➕
+- Name: `Tactical`
+- Type: `static`
+- FQDN or IP: (Your Tactical RMM VM IP or FQDN)
+- Port: `443`
+- Mode: `active`
+- SSL: `Unchecked`
+- SSL SNI: (Empty)
+- Verify SSL Certificate: `Unchecked`
+- Click `Save`
+
+![opnsensetcp-haproxy-realserver](images/opnsensetcp-haproxy-realserver.png)
+
+- Click `Apply`
+
+#### Virtual Services - Backend Pools
+
+Navigate to `Services` -> `HAProxy` -> `Settings`
+
+- Click 🔽 next to `Virtual Services` tab.
+- Click `Backend Pools`
+- Click ➕
+- Name: `Tactical`
+- Description: `Tactical Server Pool`
+- Mode: `TCP (Layer 4)`
+- Health Checking: `Unchecked`
+- Retries: `3`
+- Click `Save`
+
+![opnsensetcp-haproxy-backendpool](images/opnsensetcp-haproxy-backendpool.png)
+
+- Click `Apply`
+
+#### Rules & Checks
+
+Navigate to `Services` -> `HAProxy` -> `Settings`
+
+##### Conditions
+
+- Click 🔽 next to `Rules & Checks` tab.
+- Click `Conditions`
+- Click ➕
+- Name: `Contains SSL Hello Message`
+- Condition type: `Custom condition (option pass-through)`
+- Option pass-through: `req.ssl_hello_type 1`
+- Click `Save`
+
+![opnsensetcp-haproxy-sslhello](images/opnsensetcp-haproxy-sslhello.png)
+
+- Click ➕
+- Name: `SNI Tactical`
+- Description: `SNI Match tactical subdomains`
+- Condition Type: `SNI TLS extension regex (TCP Request content inspection)`
+- SNI Regex: `(api|tactical|mesh)\.yourdomain\.com`
+- Click `Save`
+
+![opnsensetcp-haproxy-sniregex](images/opnsensetcp-haproxy-sniregex.png)
+
+- Click `Apply`
+
+##### Rules
+
+- Click 🔽 next to `Rules & Checks` tab.
+- Click `Rules`
+- Click ➕
+- Name: `Accept Content if Contains SSL Hello`
+- Select conditions: `Contains SSL Hello Message`
+- Execute function: `tcp-request content accept`
+- Click `Save`
+
+![opnsensetcp-haproxy-rule-sslhello](images/opnsensetcp-haproxy-rule-sslhello.png)
+
+- Click ➕
+- Name: `TCP Inspect Delay`
+- Select conditions: `Nothing Selected`
+- Execute function: `tcp-request inspect-delay`
+- TCP inspection delay: `5s`
+- Click `Save`
+
+![opnsensetcp-haproxy-rule-inspectiondelay](images/opnsensetcp-haproxy-rule-inspectiondelay.png)
+
+- Click ➕
+- Name: `Tactical RMM`
+- Select conditions: `SNI Tactical`
+- Execute function: `Use specified Backend Pool`
+- Use specified Backend Pool: `Tactical`
+- Click `Save`
+
+![opnsensetcp-haproxy-rule-backendpool](images/opnsensetcp-haproxy-rule-backendpool.png)
+
+- Click `Apply`
+
+#### Virtual Services - Public Services
+
+Navigate to `Services` -> `HAProxy` -> `Settings`
+
+- Click 🔽 next to `Virtual Services` tab.
+- Click `Public Services`
+- Click ➕
+- Name: `Frontend`
+- Listen Addresses: `127.0.0.1:443` (Remember, you have to have port forward + allow rule)
+- Type: `SSL / HTTPS (TCP Mode)`
+- Default Backend Pool: `none`
+- SSL Offloading: `Unchecked`
+- Maximum Connections: (Set this to a number of at least 3 times your agents.)
+- Select Rules:
+  - `Accept Content if Contains SSL Hello`
+  - `TCP Inspect Delay`
+  - `Tactical RMM`
+- Click `Save`
+
+> Note: Order on Rules matter!
+
+![opnsensetcp-haproxy-public](images/opnsensetcp-haproxy-public.png)
+
+- Click `Apply`
 
 ## Apache Proxy
 HowTo - Proxy on Apache
