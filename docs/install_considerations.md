@@ -36,3 +36,23 @@ Azure ranks their VM's in Series <https://azure.microsoft.com/en-us/pricing/deta
 Tactical RMM will run poorly in CPU limited VMs. So **DO NOT** use Series A or Series B VMs. You will need at least a Series F or better. Also, make sure there is no IO throttling / IOPS limits for the VM.
 
 The same applies for other big cloud providers that throttle low end VMs.
+
+## Larger Installs
+
+If you're having more than 200 agents, that's a larger install. You're probably also a business and making (and saving?) money with Tactical RMM, you're [supporting](code_signing.md) the project right?
+
+You should be aware of server defaults like `Default script run time: 120 seconds`
+
+Imagine you have 10 check, on 500 computers, running every 120 seconds. 
+
+For checks alone, that's 5000 writes every 120 seconds, or 3.6 million database entries created every 24hrs. Default retention on check history is 30 days, so your check history database is probably averaging 108,000,000 records before regular data purges. That's a lot of write-wear on your SSD-based storage layer. 
+
+Do you really need your Disk Space check running more than 1-2 times a day? Probably not. 
+
+Also consider staggering the times of all your checks, so that each check is naturally spreading the load on your server at more random intervals instead of focusing all checks at exactly the same time. 
+
+So in Summary:
+
+- Please support the project, we do need it!
+- Adjust script default run intervals
+- Don't have checks (and tasks) all run at the same time
