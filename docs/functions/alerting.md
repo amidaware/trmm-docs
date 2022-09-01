@@ -117,5 +117,5 @@ Else {
 }
 ```
 2. Setup a script check and fill in the corresponding Warning and Informational codes which can be anything other than 0, (any other code will be assumed to be an Error).
-3. SAve script check and you should now have the different Severities.
+3. Save script check and you should now have the different Severities.
 
