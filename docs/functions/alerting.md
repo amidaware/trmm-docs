@@ -103,8 +103,8 @@ Alerts are applied in the following order. The agent picks the closest matching 
 If scripting for alert serverities please see below, 
 1. Create a script with exit codes as below, (the exit codes can be anything)
 ```ps
-If (!(test-path "c:\temp")) {
-    New-Item -ItemType Directory -Force -Path "c:\temp"
+If (!(test-path "c:\ProgramData\TacticalRMM\temp")) {
+    New-Item -ItemType Directory -Force -Path "c:\ProgramData\TacticalRMM\temp"
     $exitcode = 2
     $host.SetShouldExit($exitcode)
     exit
