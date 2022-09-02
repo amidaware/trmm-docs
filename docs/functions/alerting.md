@@ -97,3 +97,25 @@ Alerts are applied in the following order. The agent picks the closest matching 
 3. Policy w/ Alert Template applied to Client
 4. Client
 5. Default Alert Template
+
+## Setting up Alert Severities with scripts
+
+If scripting for alert serverities please see below, 
+1. Create a script with exit codes as below, (the exit codes can be anything)
+```ps
+If (!(test-path "c:\ProgramData\TacticalRMM\temp")) {
+    New-Item -ItemType Directory -Force -Path "c:\ProgramData\TacticalRMM\temp"
+    $exitcode = 2
+    $host.SetShouldExit($exitcode)
+    exit
+}
+Else {
+    Write-Output "found folder"
+    $exitcode = 5
+    $host.SetShouldExit($exitcode)
+    exit
+}
+```
+2. Setup a script check and fill in the corresponding Warning and Informational codes which can be anything other than 0, (any other code will be assumed to be an Error).
+3. Save script check and you should now have the different Severities.
+
