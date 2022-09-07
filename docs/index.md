@@ -29,7 +29,7 @@ It uses an [agent](https://github.com/amidaware/rmmagent) written in Golang and 
 
 ## Linux agent versions supported
 
-- Any distro with systemd which includes but is not limited to: Debian (10, 11), Ubuntu x86_64 (18.04, 20.04, 22.04), Synology 7, centos, freepbx, Raspberry Pi with rasbian and more! 
+- Any distro with systemd which includes but is not limited to: Debian (10, 11), Ubuntu x86_64 (18.04, 20.04, 22.04), Synology 7, centos, freepbx, Raspberry Pi with raspbian and more! 
 - Check to see if you're running systemd with `ps --no-headers -o comm 1`
 
 ## Discuss/Collaborate and Get Help/Support
