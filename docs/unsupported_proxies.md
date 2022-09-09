@@ -549,6 +549,10 @@ Of course you can adapt it to your environment and/or current configuration.
 - You can resolve `(rmm|api|mesh).example.com` to your local TRMM server when in your local network.
 - You can resolve `(rmm|api|mesh).example.com` to your public IP when you are outside of your local network.
 
+> If you notice agents are continue to timeout after 60second (default ping time of MeshAgent).
+> Check `Settings` > `HAProxy` > `Config Export`. Some backend or frontend still has a lower than `60s` timeout.
+> Increase it for example to `120s`.
+
 #### Settings
 
 Navigate to `Services` -> `HAProxy` -> `Settings`
@@ -580,8 +584,8 @@ Navigate to `Services` -> `HAProxy` -> `Settings`
 - Click `Default Parameters`
 - Maximum connections (Public Services): Set this to a number of at least 3 times your agents.
 - Maximum connections (Servers): Set this to a number of at least 3 times your agents.
-- Client Timeout: `30s`
-- Connection Timeout: `30s`
+- Client Timeout: `120s`
+- Connection Timeout: `120s`
 - Retries: `3`
 
 ![opnsensetcp-haproxy-default](images/opnsensetcp-haproxy-default.png)
