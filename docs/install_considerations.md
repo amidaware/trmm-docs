@@ -63,12 +63,6 @@ TRMM's uWSGI config is located at `/rmm/api/tacticalrmm/app.ini`
 
 A lot of the values here can be kept as is but feel free to play around with them. Full list of options [here](https://uwsgi-docs.readthedocs.io/en/latest/Options.html)
 
-We will just focus on `processes` and `threads` for now.
-
-A good place to start (which is the default config that TRMM [generates during install](https://github.com/amidaware/tacticalrmm/blob/c540f802b0d1b2692a0254c868c0cf4f8cfff367/install.sh#L385)) is 1 times the number of CPU cores your instance has for both processes and threads. So if you're running a 2 core CPU VM, the default uWSGI config will be `processes = 2` and `threads = 2`. 
-
-Anytime a change is made to this file, the uwsgi service must be restarted for changes to take effect. This is done with the following command: `sudo systemctl restart rmm`
-
 Use your HTTP load testing tool of choice to hit the TRMM API.<br/>
 We will be using [vegeta](https://github.com/tsenart/vegeta) for the following example.
 
