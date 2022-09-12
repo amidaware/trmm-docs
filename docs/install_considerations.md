@@ -59,9 +59,7 @@ So in Summary:
 
 ## Load Testing TRMM
 
-TRMM's uWSGI config is located at `/rmm/api/tacticalrmm/app.ini`
-
-A lot of the values here can be kept as is but feel free to play around with them. Full list of options [here](https://uwsgi-docs.readthedocs.io/en/latest/Options.html)
+TRMM's uWSGI config is located at `/rmm/api/tacticalrmm/app.ini`. Full list of options [here](https://uwsgi-docs.readthedocs.io/en/latest/Options.html)
 
 Use your HTTP load testing tool of choice to hit the TRMM API.<br/>
 We will be using [vegeta](https://github.com/tsenart/vegeta) for the following example.
