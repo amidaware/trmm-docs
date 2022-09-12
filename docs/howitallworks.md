@@ -30,7 +30,7 @@ Has a postgres database located here:
 
 All Tactical RMM dependencies are listed [here](https://github.com/amidaware/tacticalrmm/blob/develop/api/tacticalrmm/requirements.txt).
 
-A complete list of all packages used by Tactical RMM are listed [here](https://raw.githubusercontent.com/amidaware/tacticalrmm/develop/web/package-lock.json).
+A complete list of all packages used by Tactical RMM are listed [here](https://github.com/amidaware/tacticalrmm-web/blob/develop/package-lock.json).
 
 ### Outbound Firewall Rules
 
@@ -478,7 +478,10 @@ When scripts / checks execute, they are:
 
 Also "Send Command" stay in memory as well.
 
-Having said that...Windows logs all things powershell: `Event Viewer` > `Microsoft` > `Windows` > `PowerShell` > `Operational` Log
+Having said that...Windows logs all things powershell: `Event Viewer` > `Microsoft` > `Windows` > `PowerShell` > `Operational` Log so be careful with fancy API calls and auth token using agents for execution.
+
+!!!warning
+    **Remember:** Auth tokens are Username/Password/2FA verification all rolled into a single chunk of text!
 
 ### Outbound Firewall Rules
 
