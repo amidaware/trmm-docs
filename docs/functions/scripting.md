@@ -157,3 +157,11 @@ When editing a script, you can add template tags to the script body that contain
     Everything between {{}} is CaSe sEnSiTive
 
 The template tags will only be visible when Editing the script. When downloading or viewing the script code the template tags will be replaced with the script snippet code.
+
+### Powershell 7
+
+<https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.2>
+
+Shell Type: Powershell
+
+Command: `Start-Process nohup 'pwsh -noprofile -c "1..120 | % { Write-Host . -NoNewline; sleep 1 }"'`
