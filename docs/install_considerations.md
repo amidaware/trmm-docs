@@ -181,8 +181,6 @@ Error Set:
 
 Up to 255 RPS due to faster CPU model and more cores.
 
-Note that increasing procs and threads will use more RAM so make sure not to overdo it.
-
 Feel free to increase the number of vegeta max-workers to stress it even further and other settings listed [here](https://github.com/tsenart/vegeta#usage-manual)
 
 You should also load test endpoints that hit the database like `/agents/` or `clients/` to see how well your DB performs under load and try to get the most RPS.
