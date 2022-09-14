@@ -156,7 +156,7 @@ vegeta attack -targets trmm.conf -duration=5s -rate 0 -max-workers 100 | tee res
 
 We got 128 RPS (requests per second) with a 100% success rate.
 
-If you had `uwsgitop` running in a another terminal you would also probably see an even distribution % between the processes with each worker sharing approx 50% of the total load, as shown in the gif above. We want to always make sure we keep an even distribution. So if we are using 4 processes then we should aim for around 25% per proc.
+Using `uwsgitop` running in a another terminal you should see an even distribution % between the processes with each worker sharing approx 50% of the total load, as shown in the gif above. If you have 4 processors then we should aim for around 25% per proc.
 
 Now let's try a different TRMM server (BuyVM.net with 4 x Ryzen 9 3900X @3.8Ghz):
 
