@@ -1,6 +1,6 @@
 # Sponsor Tactical RMM
 
-Tactical RMM is a source available project maintained by [@wh1te909](https://github.com/wh1te909), [@sadnub](https://github.com/sadnub) and a community of contributors. We work on behalf of the community to create new features, fix bugs, and maintain Tactical RMM.
+Tactical RMM is a source available project maintained by [AmidaWare Inc.](https://github.com/amidaware) and a community of contributors. We work on behalf of the community to create new features, fix bugs, and maintain Tactical RMM.
 
 Tactical RMM is currently the only source available RMM available on the market. Responses from a recent survey have rated Tactical RMM as having the fastest and most reliable remote command and script execution compared to all other commercial RMM's. Sponsorships help keep this project alive and motivate the developers to continue to put in more time and effort into the advancement of Tactical RMM. Thousands of hours have been put in to developing, maintaining, improving, and supporting Tactical RMM. Your sponsorship would be greatly appreciated and helpful to keep this project going.
 
@@ -10,4 +10,4 @@ If you have signed up to be a sponsor and have not been added to the Sponsors ro
 
 We are always looking for feedback and ways to improve Tactical RMM to better address your needs. Please feel free to open a [github issue](https://github.com/amidaware/tacticalrmm/issues) or drop us a message on [Discord](https://discord.gg/upGTkWp) with your feedback or requests.
 
-[Sponsor with Github](https://github.com/sponsors/wh1te909)
+[Sponsor with Github](https://github.com/sponsors/amidaware)
