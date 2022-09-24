@@ -32,6 +32,9 @@ It uses an [agent](https://github.com/amidaware/rmmagent) written in Golang and 
 - Any distro with systemd which includes but is not limited to: Debian (10, 11), Ubuntu x86_64 (18.04, 20.04, 22.04), Synology 7, centos, freepbx, Raspberry Pi with raspbian and more! 
 - Check to see if you're running systemd with `ps --no-headers -o comm 1`
 
+## Mac agent versions supported
+- 64 bit Intel and Apple Silicon (M1, M2)
+
 ## Discuss/Collaborate and Get Help/Support
 
 Join us on [Discord](https://discord.gg/upGTkWp) for (help/tips/discussion/dev chat/social etc). This is the primary method of discussing all things Tactical RMM. 

@@ -44,7 +44,7 @@ No.
 
 It's one way we're trying to monetize and get dev's paid. We had github sponsors up for many months before code signing. Very few people donated, some $5 and $10. maybe $40 a month. Once we announced code signing, sponsors came in like crazy, and many people upgraded their $5 to a $50 so while I would like to believe people would gladly donate, that's just not the case. We already tried.
 
-## Linux Agent
+## Linux/macOS Agents
 
 **Why do I see?**
 
@@ -53,15 +53,15 @@ Missing code signing token
 400: Bad Request
 ```
 
-You must have a [paid code signing certificate](https://docs.tacticalrmm.com/code_signing/) while Linux support is in the post-alpha/beta:
+You must have a [paid code signing certificate](https://docs.tacticalrmm.com/code_signing/) while Linux/macOS support is in the post-alpha/beta:
 
-- Code signing makes Linux installs easy and is a benefit offered to code signing sponsors. [So become a sponsor and enjoy the easy life](sponsor.md)
+- Code signing makes these installs easy and is a benefit offered to code signing sponsors. [So become a sponsor and enjoy the easy life](sponsor.md)
 - DIYer can read thru the code and... DIY.
 
 This is primarily for 2 reasons: 
 
-1. As this has been a sponsorship goal it seems only fair that those who contributed to make this a reality get early access to easy Linux agent installs.
-2. We're looking for good bug reports from active users to get the Linux agent into production ready code. 
+1. As this has been a sponsorship goal it seems only fair that those who contributed to make this a reality get early access to easy agent installs.
+2. We're looking for good bug reports from active users to get these agent into production ready code. 
 
 ## Who is Amidaware LLC?
 
@@ -85,10 +85,6 @@ There are some [implementations](../unsupported_scripts) that others have done, 
 ## How do I do X feature in the web UI?
 
 A lot of features in the web UI are hidden behind right-click menus. Almost everything has a right click menu so if you don't see something, try right clicking on it.
-
-## Where are the Mac agents?
-
-Mac agents are currently under development. [MeshCentral](../mesh_integration) is a 2nd piece of software that installs along with TRMM. It is Mac compatible but will only work when using your `https://mesh.EXAMPLE.COM` URL. It will *NOT* make agents appear in the TRMM admin interface. See the [MeshCentral User Guide](https://info.meshcentral.com/downloads/MeshCentral2/MeshCentral2UserGuide.pdf) on how to configure / use MeshCentral.
 
 ## Can I run Tactical RMM locally behind NAT **without** exposing my RMM server to the internet?
 
