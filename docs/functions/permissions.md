@@ -21,3 +21,6 @@ Once you've set that up a Super User role and assigned your primary user, you ca
 If you would like to allow your techs to change their TRMM login passwords or reset their 2FA codes make sure under permission manager that you give them permission to `Accounts` > `List User Accounts` (they do not need Manage User Accounts permission unless you want them being able to reset OTHER users passwords)
 
 Users will then be able to change only their passwords/2FA with the `Settings Menu` > `User Administration` > Right-click themselves > Reset xxx
+
+!!!warning
+    Currently MeshCentral and it's integration allows techs to bypass these permissions, and get full access to systems. Read more [here](../mesh_integration.md#security-implications)

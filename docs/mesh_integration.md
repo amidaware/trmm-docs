@@ -73,3 +73,19 @@ sudo systemctl disable --now meshcentral mongod
 ```
 
 Then when installing an agent, make sure to pass the `-nomesh` flag to the [installer](install_agent.md#optional-installer-args)
+
+## Security Implications
+
+Tactical RMM has a full permission module, but because of how Tactical RMM integrates with MeshCentral currently there is a permissions bypass atm. First, here's how Tactical RMM's integration works. 
+
+![Integration](images/meshintegrationhowitworks.png)
+
+With that understanding, when you trigger any function in Tactical RMM that uses a MeshCentral function the user gets a full admin login to MeshCentral. If they then goto https://mesh.example.com they will see all agents and have full permissions for everything. 
+
+If you have multiple techs, and need to restrict them from MeshCentral right now you will need to:
+
+1. Check the `Disable Auto Login for Remote Control and Remote background:` option.
+2. Manually login to MeshCentral, and manually create users and set their permissions/restrictions.
+3. All techs will then have to manually login to https://mesh.example.com
+
+It is planned at some point in the future for this to either be automated, or eliminated entirely. For now, you will need to handle this yourself.
