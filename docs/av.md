@@ -40,8 +40,6 @@ Admin URL:
 
 ![Web Exclusions](images/avwebroot2.png)
 
-![Web Exclusions](images/avwebroot1.png)
-
 ## Sophos
 
 ### Sophos Central Admin
