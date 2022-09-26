@@ -38,8 +38,6 @@ Admin URL:
 
 ![Web Exclusions](images/avwebroot4.png)
 
-![Web Exclusions](images/avwebroot3.png)
-
 ![Web Exclusions](images/avwebroot2.png)
 
 ![Web Exclusions](images/avwebroot1.png)
@@ -56,11 +54,7 @@ Go To **Global Settings > General > Global Exclusions > Add Exclusion**
 
 ![Agent Exclusions](images/sophoscascreen3.png)
 
-![Agent Exclusions](images/sophoscascreen4.png)
-
 ![Agent Exclusions](images/sophoscascreen5.png)
-
-![Agent Exclusions](images/sophoscascreen6.png)
 
 ![Agent Exclusions](images/sophoscascreen7.png)
 
