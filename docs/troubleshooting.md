@@ -293,3 +293,11 @@ Write-Output "Path kind after the change: ${kind}"
 $path = Get-ItemPropertyValue -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name Path
 Write-Output "Path after changing the type:", $path
 ```
+
+## Issues with agents offline after reboot or new install on AWS and other cloud platforms using cloudinit or similar
+
+1. Run `cat /etc/hosts`
+2. If the output shows that the hosts file is managed by another process follow the instructions to change the config.
+3. Add in your api, rmm and mesh urls on the line for 127.0.1.1 in the hosts file
+4. Save the hosts file
+5. Restart services or run `update.sh --force`
