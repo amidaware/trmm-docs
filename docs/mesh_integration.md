@@ -80,12 +80,12 @@ Tactical RMM has a full permission module, but because of how Tactical RMM integ
 
 ![Integration](images/meshintegrationhowitworks.png)
 
-With that understanding, when you trigger any function in Tactical RMM that uses a MeshCentral function the user gets a full admin login to MeshCentral. If they then goto https://mesh.example.com they will see all agents and have full permissions for everything. 
+With that understanding, when you trigger any function in Tactical RMM that uses a MeshCentral function (Remote Control, or Remote background) the user gets the full admin login Auth token for logging into MeshCentral. If they then goto https://mesh.example.com they will see all agents and have full administrative permissions for everything in MeshCentral.
 
-If you have multiple techs, and need to restrict them from MeshCentral right now you will need to:
+If you have multiple techs, and need to restrict their computer access permissions, right now you will need to disable auto login and manually manage your meshcentral users and computers. First you will need to:
 
 1. Check the `Disable Auto Login for Remote Control and Remote background:` option.
 2. Manually login to MeshCentral, and manually create users and set their permissions/restrictions.
-3. All techs will then have to manually login to https://mesh.example.com
+3. All techs will then have to manually login to https://mesh.example.com daily so they can use Remote Control and the MeshCentral Remote Background features.
 
 It is planned at some point in the future for this to either be automated, or eliminated entirely. For now, you will need to handle this yourself.
