@@ -1,10 +1,14 @@
 # Scripting
 
-Tactical RMM supports uploading existing scripts or adding new scripts right in the dashboard. Languages supported are:
+Tactical RMM supports uploading existing scripts or creating new scripts from within the web interface.
 
+Windows agent languages supported:
 - Powershell
 - Windows Batch
 - Python
+
+Linux/Mac languages supported:
+- Any language that is installed on the remote machine (use a shebang at the top of the script to set the interpreter)
 
 ## Adding Scripts
 
@@ -17,6 +21,8 @@ In the dashboard, browse to **Settings > Scripts Manager**. Click the **New** bu
     - Powershell
     - Windows Batch
     - Python
+    - Shell (use for linux/mac scripts)
+
 - **Script Arguments** - Optional way to set default arguments for scripts. These will auto populate when running scripts and can be changed at runtime.
 - **Default Timeout** - Sets the default timeout of the script and will stop script execution if the duration surpasses the configured timeout. Can be changed at script runtime.
 - **Favorite** - Favorites the script.
