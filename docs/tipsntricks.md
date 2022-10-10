@@ -100,9 +100,11 @@ Right-click the connect button in **Take Control** for connection options.
 6. Ok your way out
 
 **You will probably now notice a strange name shows when you take control**, to change this 
+
 1. Next to Real Name click edit (the wee pencil)
 2. Change or fill in Real Name
 3. Click Ok and the name will be changed. <br>
+
 ![Features](images/mesh_realname.png)
 
 ### Agent Online / Offline logs
