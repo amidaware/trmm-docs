@@ -25,7 +25,7 @@ Install the server, [choose the best path](install_considerations.md)
 
 ## Every 75 days
 
-* [ ] TRMM Server [OS updates](update_server.md/#video-walkthru){target=_blank}
+* [ ] TRMM Server [OS updates](update_server.md#video-walkthru){target=_blank}
 * [ ] Reboot TRMM server
 * [ ] Renew [LetsEncrypt Certs](update_server.md#keeping-your-lets-encrypt-certificate-up-to-date){target=_blank}
 * [ ] [Update TRMM](update_server.md#updating-to-the-latest-rmm-version){target=_blank}
