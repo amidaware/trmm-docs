@@ -1,4 +1,4 @@
-# Settings Override
+# Overriding / Customizing Default Settings
 
 ### Browser token expiration
 
@@ -55,3 +55,19 @@ Add the following key/value pair to `/etc/tacticalagent`:
 Then `sudo systemctl restart tacticalagent.service`
 
 Just make sure port 4222 TCP is still open in your firewall and you're done.
+
+### Monitor NATS via its HTTP API
+
+*Version added: Tactical RMM v0.15.1*
+
+
+
+To enable [NATS monitoring](https://docs.nats.io/running-a-nats-service/configuration/monitoring), add the folllowing to `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py` (replace with whatever port you want).
+```python
+NATS_HTTP_PORT = 8222
+```
+
+Then from the TRMM Web UI, do **Tools > Reload Nats**.
+
+And then from your TRMM server cli restart both the `rmm.service` and `nats.service` services.
+

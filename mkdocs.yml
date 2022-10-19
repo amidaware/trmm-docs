@@ -28,7 +28,7 @@ nav:
       - "Maintenance Mode": functions/maintenance_mode.md
       - "Permissions": functions/permissions.md
       - "Remote Background": functions/remote_bg.md
-      - "Settings Override": functions/settings_override.md
+      - "Overriding / Customizing Default Settings": functions/settings_override.md
       - "Scripting": functions/scripting.md
       - "URL Actions": functions/url_actions.md
       - "User Interface Preferences": functions/user_ui.md
