@@ -67,7 +67,7 @@ To enable [NATS monitoring](https://docs.nats.io/running-a-nats-service/configur
 NATS_HTTP_PORT = 8222
 ```
 
-Then from the TRMM Web UI, do **Tools > Reload Nats**.
+Then from the TRMM Web UI, do **Tools > Server Maintenance > Reload Nats Configuration**.
 
 And then from your TRMM server cli restart both the `rmm.service` and `nats.service` services.
 
