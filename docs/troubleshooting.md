@@ -264,6 +264,7 @@ This error can show up for Powershell or choco.
 
 - `exec: "Powershell": executable file not found in %PATH%`
 - `exec: "choco.exe": executable file not found in %PATH%`
+- `choco : The term 'choco' is not recognized as the name of a cmdlet`
 
 Run the [Win_Powershell_TestPATH.bat](https://github.com/amidaware/community-scripts/blob/main/scripts/Win_Powershell_TestPATH.bat) script to gather information about your environment. This script will output either `ExpandString` or `String`. See [Microsoft's docs](https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry-value-types) for details.
 
