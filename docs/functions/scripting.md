@@ -7,6 +7,8 @@ Windows agent languages supported:
 - Windows Batch
 - Python
 
+There is [RunAsUser](../howitallworks.md#runasuser-functionality) functionality for windows.
+
 Linux/Mac languages supported:
 - Any language that is installed on the remote machine (use a shebang at the top of the script to set the interpreter)
 
