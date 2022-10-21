@@ -467,6 +467,8 @@ zipp==3.4.1
 
 Found in `%programfiles%\TacticalAgent`
 
+The Tactical RMM agent runs under the `SYSTEM` security context.
+
 When scripts / checks execute, they are:
 
 1. Transferred from the server via NATS.
@@ -482,6 +484,20 @@ Having said that...Windows logs all things powershell: `Event Viewer` > `Microso
 
 !!!warning
     **Remember:** Auth tokens are Username/Password/2FA verification all rolled into a single chunk of text!
+
+### RunAsUser functionality
+
+Now that we know the agent runs under the `SYSTEM` security context and what that means, there is an option to "RunAsUser" (windows only).
+
+There are multiple things to understand and consider.
+
+1. TRMMs native "RunAsUser" is only supported on workstations and non-RDP/terminal services servers.
+2. The user has to be logged in, if the computer is still sitting at the Login screen there will be no active user to discover, and fail. If you're using fast user switching, it is the active user that will be discovered and used.
+
+There are two ways to do RunAsUser with tactical in relation to scripting.
+
+1. The Tactical RMM "RunAsUser" checkbox associated with the script, and all code will be run under the actively logged in user only with their security permissions. If they're not local admins, and you try to do something requiring admin permissions it will fail.
+2. Using the powershell "RunAsUser" [3rd party module](https://github.com/amidaware/community-scripts/blob/da4d615a781d218ed3bec66d56a1530bc7513e16/scripts/Win_RunAsUser_Example.ps1)
 
 ### Outbound Firewall Rules
 
