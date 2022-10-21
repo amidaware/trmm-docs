@@ -143,8 +143,8 @@ If you want to deploy the TRMM agent using AD, Intune, Mesh, TeamViewer, Group P
 
     === ":material-microsoft: msi"
 
-        * Use `Agents` menu > `Install Agent`
-        * Set your expiry to an appropriate date (couple months, you'll need to get a new one with new TRMM server versions anyway)
+        * Use `Agents` menu > `Manage Deployments`
+        * Generate a deployment link with an expiry date set to very far in the future, then access the link to download the executable.
         * [Create the msi](https://docs.microsoft.com/en-us/mem/configmgr/develop/apps/how-to-create-the-windows-installer-file-msi)
         * Apply via GPO software deployment to the appropriate machines
 
