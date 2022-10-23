@@ -38,6 +38,7 @@ sudo apt-get install certbot
 **2 ) Generate the wildcard Let'sEncrypt certificates**
 
 We're using the [DNS-01 challenge method](https://letsencrypt.org/docs/challenge-types/#dns-01-challenge).
+
 **3 ) Deploy the TXT record in your DNS manager**
 
 !!!warning
