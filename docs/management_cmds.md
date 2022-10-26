@@ -24,13 +24,15 @@ To run any of the management commands first login to your server as the user use
         docker exec -it trmm-api-dev env/bin/python manage.py shell
         ```
 
-### Bulk Delete Old Agents by Last Check-in Date or Agent Version
+### Bulk Delete Agents (Last Check-In, Agent Version, Site, or Client)
 
 Test to see what will happen:
 
 ```bash
 python manage.py bulk_delete_agents --days 60
 python manage.py bulk_delete_agents --agentver 1.5.0
+python manage.py bulk_delete_agents --site examplesite
+python manage.py bulk_delete_agents --client exampleclient
 ```
 
 Do the delete:
@@ -38,6 +40,8 @@ Do the delete:
 ```bash
 python manage.py bulk_delete_agents --days 60 --delete
 python manage.py bulk_delete_agents --agentver 1.5.0 --delete
+python manage.py bulk_delete_agents --site examplesite --delete
+python manage.py bulk_delete_agents --client exampleclient --delete
 ```
 
 ### Reset a User's Password
