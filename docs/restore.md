@@ -43,6 +43,9 @@ Call the restore script, passing it the backup tarball as the first argument:
 ```
 
 
-Once the restore has completed, log into your **OLD** instance and from the Web UI do **Tools > Recover All Agents**. 
+Once the restore has completed, log into your **OLD** instance and from the Web UI do **Tools > Recover All Agents**.
+
+!!!info
+    You will most probably have to add entries to your host file (on the machine you're trying to access the web UI from) for your subdomains to access the old instance, since you'll already have updated DNS to point to the new server.
 
 What this will do is restart both the tacticalagent and meshagent services on any stubborn agents that are still connected to the old instance, which should be enough to get them connected to the new instance.
