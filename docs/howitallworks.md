@@ -517,7 +517,6 @@ Signed agents will require: `https://agents.tacticalrmm.com` for downloading / u
 
 ### Agent Installation Process
 
-* Adds Defender AV exclusions.
 * Copies temp files to `C:\ProgramData\TacticalRMM` folder.
 * INNO setup installs app into `%ProgramFiles%\TacticalAgent\` folder.
 
