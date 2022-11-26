@@ -39,7 +39,7 @@ Installation instructions for using your own MeshCentral server:
 1. Run standard installation.
 2. When asked for Mesh URL specify your existing Mesh server URL.
 3. After installation, you will need to run thru manually uploading installers and connecting token with [this](troubleshooting.md#need-to-recover-your-mesh-token):
-4. Make sure DNS is pointing to your existing server.
+4. Make sure DNS is pointing to your existing server (you must also remove `mesh.yourdomain.com` from `/etc/hosts` on the trmm server).
 
 !!!info
     Mesh usernames are **CaSe sEnSiTive**
