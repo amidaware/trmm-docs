@@ -507,7 +507,7 @@ Navigate to `Services` -> `HAProxy` -> `Frontend`
 - Client timeout: `300000` (Note: it has more 0s than the default)
 - Use "httpclose" option: `http-server-close`
 
-![happroxy-tcp-adv](images/haproxy-tcp-adv.png)
+![haproxy-tcp-adv](images/haproxy-tcp-adv.png)
 
 Click 💾Save
 Click ✔️Apply Changes
@@ -775,7 +775,7 @@ Apache ssl config example:
 In my case, auto DNS Challenge from Apache, so every time we get new cert files, it must be copied inside rmm too.
 Just overwrite default location:
 ```text
-/etc/letsencrypt/archive/blablablabla
+/etc/letsencrypt/archive/blablabla
 ```
 Or change certs location on Nginx conf to whatever you want.
 
