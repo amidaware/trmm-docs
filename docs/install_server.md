@@ -14,9 +14,7 @@
 
 ### Minimum Requirements
 
-#### Hardware / OS
-
-A fresh linux VM running either Debian 11 or Ubuntu 20.04 LTS with 3+GB RAM on x64 architecture.
+A fresh linux VM running either Debian 11 or Ubuntu 20.04 LTS with **4GB RAM** on x64 architecture.
 
 !!!warning
     The provided install script assumes a fresh server with no software installed on it. Attempting to run it on an existing server with other services **will** break things and the install will fail.
