@@ -24,6 +24,9 @@ chmod +x troubleshoot_server.sh
 ./troubleshoot_server.sh
 ```
 
+!!!note
+    If you're working with a support person please provide the full script output. If you don't want to post publicly, feel free to DM the person working with you in Discord #support channel
+
 ## Make sure DNS (name resolution) was setup properly
 
 ### From the agent
