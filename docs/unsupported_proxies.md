@@ -795,24 +795,36 @@ https | TRMM server IP | 443
 ON: Cache Assets | Block Common Exploits | Websockets Support
 
 mesh.{domain}
-https | TRMM server IP | 443
-ON: Cache Assets | Block Common Exploits | Websockets Support
+http | TRMM server IP | 4430
+ON: Block Common Exploits | Websockets Support
+Advanced:
+proxy_set_header Host $host;
+proxy_set_header CF-Connecting-IP $proxy_add_x_forwarded_for;
+proxy_set_header X-Forwarded-Host $host:$server_port;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header X-Forwarded-Proto $scheme;
 
 rmm.{domain}
 https | TRMM server IP | 443
 ON: Cache Assets | Block Common Exploits | Websockets Support
 
+If your TRMM install is on the same subnet as the NPM then following is not needed.
+BEWARE: There are security implications in exposing your NPM portal to the public.
 proxy.{domain}
 http | NPM server IP | 81 (NPM web UI port)
 ```
 
+<ins>**Note:**</ins> Wildcard SSL certs are not supported with MeshCentral. You will need an independent certificate for mesh.{domain}
+
 Then connect in SSH to your TRMM server to modify the Nginx config of Mesh:
 
 ```bash
-nano meshcentral/meshcentral-data/config.json
+nano /meshcentral/meshcentral-data/config.json
 ```
 
-Then modify in this file the `TlsOffload` field to put the local IP address of your NPM and the port that goes with it, then also modify the "CertUrl" field to put the public domain name of your NPM.
+Then modify in this file the `TlsOffload` field to put the local IP address of your NPM, then also modify the `CertUrl` field to put the IP address of your NPM and the port that goes with it.
+
+<ins>**Note:**</ins> The optional `_trustedproxy` setting to CloudFlare is enabled to support their proxy service.
 
 ```
 {
@@ -830,7 +842,8 @@ Then modify in this file the `TlsOffload` field to put the local IP address of y
 "_AgentPing": 60,
 "AgentPong": 300,
 "AllowHighQualityDesktop": true,
-"TlsOffload": "{NPM LAN IP}:81",
+"TlsOffload": "{NPM LAN IP},127.0.0.1,::1",
+"_trustedproxy": "CloudFlare",
 "agentCoreDump": false,
 "Compression": true,
 "WsCompression": true,
@@ -842,7 +855,7 @@ Then modify in this file the `TlsOffload` field to put the local IP address of y
 "Title": "Tactical RMM",
 "Title2": "Tactical RMM",
 "NewAccounts": false,
-"CertUrl": "https://proxy.{domain}:443/",
+"CertUrl": "https://{NPM LAN IP}:443",
 "GeoLocation": true,
 "CookieIpCheck": false,
 "mstsc": true
@@ -855,6 +868,13 @@ Then restart your Mesh:
 
 ```bash
 systemctl restart meshcentral.service
+```
+
+Open tcp port 4430 if using UFW:
+
+```bash
+ufw allow 4430/tcp
+ufw reload
 ```
 
 At which point agents should be working. Use the "Recover Connection" button if necessary.
