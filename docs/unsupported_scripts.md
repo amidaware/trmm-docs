@@ -19,7 +19,7 @@ Set Tactical fail2ban filter conf file
 tacticalfail2banfilter="$(cat << EOF
 [Definition]
 failregex = ^<HOST>.*400.17.*$
-ignoreregex = ^<HOST>.*200.*$
+ignoreregex = ^<HOST>.*200.\d+.*$
 EOF
 )"
 sudo echo "${tacticalfail2banfilter}" > /etc/fail2ban/filter.d/tacticalrmm.conf
