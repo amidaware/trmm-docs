@@ -9,7 +9,7 @@ As of Tactical RMM v0.4.19, the Django admin is disabled by default.
 
 To enable it, edit `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py` and change `ADMIN_ENABLED` from `False` to `True` then `sudo systemctl restart rmm.service`.
 
-Login to the Django admin using the same credentials as your normal web ui login.
+Login to the Django admin using the same admin credential that was created during the `install.sh` script (ie the web ui login).
 
 If you did not save the Django admin url (which was printed out at the end of the install script), check the `local_settings.py` file referenced above for the `ADMIN_URL` variable. Then simply append the value of this variable to your api domain (`https://api.EXAMPLE.COM/`) to get the full url.
 
