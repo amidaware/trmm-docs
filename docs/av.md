@@ -20,11 +20,27 @@ Be aware there is also [a powershell script](https://github.com/amidaware/commun
 
 Admin URL: <https://cloud.gravityzone.bitdefender.com/>
 
+To exclude the Tactical and MeshCentral agents, go to **Policies > {policy name} > Antimalware > Settings > Custom Exclusions**.
+
+![Antimalware Settings](images/avbitdefender_gravityzone_exclusions1.png)
+
+Add the following exclusions. The ATS/IDS module does not support file exclusions, only folder exclusions.
+
+| File    | Excluded Items                                 | Modules                       | Notes                                                      |
+|---------|------------------------------------------------|-------------------------------|------------------------------------------------------------|
+| Folder  | `C:\ProgramData\TacticalRMM\`                  | On-demand, On-Access, ATC/IDS | All TRMM scripts are saved here to run                     |
+| Folder  | `%ProgramFiles%\Mesh Agent\`                   | On-demand, On-Access, ATC/IDS | Excludes Mesh Agent from ATC/IDS                           |
+| Folder  | `%ProgramFiles%\TacticalAgent\`                | On-demand, On-Access, ATC/IDS | Excludes TacticalAgent from ATC/IDS                        |
+| Process | `%ProgramFiles%\Mesh Agent\MeshAgent.exe`      | On-Access, ATC/IDS            | Excludes `Mesh Agent` service (process) from ATC/IDS       |
+| Process | `%ProgramFiles%\TacticalAgent\tacticalrmm.exe` | On-Access, ATC/IDS            | Excludes `tacticalrmm` service (process) from ATC/IDS      |
+| File    | `%ProgramFiles%\Mesh Agent\MeshAgent.exe`      | On-demand, On-Access          | This may not be needed since the entire folder is excluded |
+| File    | `%ProgramFiles%\TacticalAgent\tacticalrmm.exe` | On-demand, On-Access          | This may not be needed since the entire folder is excluded |
+
+![Antimalware Exclusions](images/avbitdefender_gravityzone_exclusions3.png)
+
 To exclude URLs: **Policies > {policy name} > Network Protection > Content Control > Settings > Exclusions**
 
 ![Web Exclusions](images/avbitdefender_gravityzone_exclusions0.png)
-
-![Web Exclusions](images/avbitdefender_gravityzone_exclusions1.png)
 
 ![Web Exclusions](images/avbitdefender_gravityzone_exclusions2.png)
 
