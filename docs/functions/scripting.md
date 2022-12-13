@@ -71,6 +71,15 @@ and `{}` indicates a parameter with several preconfigured parameter
 
 and `()` indicates a default parameter if none is specified.
 
+Starting with 0.15.4 you can use environment variables to pass them too!
+
+## Video Walkthru
+
+<div class="video-wrapper">
+  <iframe width="320" height="180" src="https://www.youtube.com/embed/pN80ljSwT7M" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
 ### Run Script on many agents at once
 
 Under the `Tools menu` -> `Bulk Script` you can execute scripts against Clients/Sites/Selected Agents/All based on All/Servers/Workstations. The history is saved in the history tab of the agent. The history can also be retrieved from the API from the `/agents/history/` endpoint.
