@@ -24,10 +24,12 @@ If you think your auth token has been compromised or stolen then please email su
 
 ## Why should I pay for Code Signing?
 
-For two reasons: 
+For four reasons: 
 
-1. To minimize AVs flagging and removing it. 
-2. Supports the project, and allows developers to continue working on and improving Tactical RMM.
+1. Code signing costs money.
+2. It helps the project move forward and it can supports devs spending time on it, they have lives, wives, jobs and kids which all demands attention.
+3. It should stop bad actors using it maliciously.
+4. It helps with AVs detecting it as anything malicious.
 
 ## Tactical RMM is getting flagged as PUA or virus, will this fix it?
 

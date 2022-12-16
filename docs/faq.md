@@ -52,7 +52,16 @@ If you've been sent a link to this, it's possible that we could support this but
 
 ## Why isn't the Code Signing free?
 
-It's one way we're trying to monetize and get dev's paid. We had github sponsors up for many months before code signing. Very few people donated, some $5 and $10. maybe $40 a month. Once we announced code signing, sponsors came in like crazy, and many people upgraded their $5 to a $50 so while I would like to believe people would gladly donate, that's just not the case. We already tried.
+It is recommended because it helps the project mature, Tactical is source available and free, community support is also free ontop of this we have spent alot of time developing the docs, please follow them! 
+With alot of source available (and similar) projects devs get bored of them because they dont make money out of it. So here is 
+your reasons to pay for code signing and also why it was discussed and implemented. 
+
+1. Code signing costs money.
+2. It helps the project move forward and it can support devs spending time on it, they have lives, wives, jobs and kids which all demands attention.
+3. It should stop bad actors using it maliciously.
+4. It helps with AVs detecting it as anything malicious.
+
+We had github sponsors up for many months before code signing. Very few people donated, some $5 and $10. maybe $40 a month. Once we announced code signing, sponsors came in like crazy, and many people upgraded their $5 to a $50 so whilst everyone believes people would gladly donate, that's just not the case. We already tried.
 
 ## Linux/macOS Agents
 
