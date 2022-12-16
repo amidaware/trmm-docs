@@ -3,6 +3,7 @@ nav:
   - Home: index.md
   - Sponsor: sponsor.md
   - Code Signing: code_signing.md
+  - Support: support.md
   - Getting Started Guide: guide_gettingstarted.md
   - RMM Server Installation:
       - "Install Considerations": install_considerations.md
@@ -40,7 +41,6 @@ nav:
   - Troubleshooting: troubleshooting.md
   - FAQ: faq.md
   - Management Commands: management_cmds.md
-  - Public RSA Keys: public_rsa_keys.md
   - MeshCentral Integration: mesh_integration.md
   - 3rd Party Integrations:
       - "Grafana": 3rdparty_grafana.md
