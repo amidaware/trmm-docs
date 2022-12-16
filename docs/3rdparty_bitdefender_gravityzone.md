@@ -38,6 +38,23 @@ timeout for 1800 seconds.
 
 **Install time will vary based on internet speed and other AV removal by BitDefender BEST deployment**
 
+## How to onboard a new company
+
+Use these procedures to onboard a new company in Bitdefender.
+
+1. Go to Companies > Add Company and fill out the details. The company type is "Customer".
+   ![Add Company](images/3rdparty_bdg_OnboardNewCompany_1.png)
+2. Fill out the next tab for the authentication.
+3. Fill out the last tab for the licensing. You probably want to use Monthly Subscription so that it's added to your
+   monthly MSP subscription.
+   ![Add Company Licensing Options](images/3rdparty_bdg_OnboardNewCompany_2.png)
+4. Next go to Network > Packages > Add to add a new package download for the company. Each company should have a
+   separate download.
+   ![Add Network Package](images/3rdparty_bdg_OnboardNewCompany_3.png)
+5. Select the company > Send download links. The Windows link is needed for the TRMM script to install Bitdefender. The
+   Linux and Mac installer links are also provided but the script is for Windows only.
+   ![Add Network Package](images/3rdparty_bdg_OnboardNewCompany_4.png)
+
 ## Alert types
 
 There are two general types of alerts: email and dashboard. While you may get both types of alerts for an incident, they
@@ -92,7 +109,7 @@ Atc4.Detection, indicates the exclusion needs to include the ATC/IDS module.
 When Bitdefender quarantines MeshAgent.exe, the service is corrupted. Here is what the service looks like before the
 quarantine.
 
-```PowerShell
+```text
 [PC-Desktop3]: PS C:\> Get-CimInstance Win32_Service -Filter 'Name = "Mesh Agent"' | Format-List *
 
 
@@ -131,7 +148,7 @@ CimSystemProperties     : Microsoft.Management.Infrastructure.CimSystemPropertie
 This is what the service looks like after `MeshAgent.exe` is quarantined. Notice
 the `PathName`, `ServiceType`, `StartMode` are "Unknown", and some properties are blank.
 
-```PowerShell
+```text
 [PC-Desktop3]: PS C:\> Get-CimInstance Win32_Service -Filter 'Name = "Mesh Agent"' | Format-List *
 
 
@@ -170,7 +187,7 @@ CimSystemProperties     : Microsoft.Management.Infrastructure.CimSystemPropertie
 Restoring `MeshAgent.exe` from quarantine will make it "look" normal but will not have any permissions. Renaming,
 deleting or moving the file results in a permission denied error. After a reboot, the `MeshAgent.exe` will be missing.
 
-```PowerShell
+```text
 [PC-Desktop3]: PS C:\Program Files\Mesh Agent> Rename-Item -Path .\MeshAgent.exe -NewName .\MeshAgent-Restored.exe
 Rename-Item : Access to the path is denied.
     + CategoryInfo          : PermissionDenied: (C:\Program File...t\MeshAgent.exe:String) [Rename-Item], Unauthorized
