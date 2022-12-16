@@ -52,7 +52,7 @@ If you've been sent a link to this, it's possible that we could support this but
 
 ## Why isn't the Code Signing free?
 
-It is recommended because it helps the project mature, Tactical is source available and free and the support is free, follow the docs. 
+It is recommended because it helps the project mature, Tactical is source available and free, community support is also free ontop of this we have spent alot of time developing the docs, please follow them! 
 With alot of source available (and similar) projects devs get bored of them because they dont make money out of it. So here is 
 your reasons to pay for code signing and also why it was discussed and implemented. 
 
