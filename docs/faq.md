@@ -40,6 +40,16 @@ http {
 
 No.
 
+## Can I __________?
+
+If you've been sent a link to this, we are not going to allow or support things like your request. The reason is because it would facilitate people avoiding to pay for/supporting Tactical RMM for these/similar premium paid features.
+
+So the answer is No.
+
+## I'd like to be able to __________?
+
+If you've been sent a link to this, it's possible that we could support this but it would most likely be a paid premium feature. Please contact [Amidaware Support](support.md#amidaware-support) to discuss further.
+
 ## Why isn't the Code Signing free?
 
 It's one way we're trying to monetize and get dev's paid. We had github sponsors up for many months before code signing. Very few people donated, some $5 and $10. maybe $40 a month. Once we announced code signing, sponsors came in like crazy, and many people upgraded their $5 to a $50 so while I would like to believe people would gladly donate, that's just not the case. We already tried.
