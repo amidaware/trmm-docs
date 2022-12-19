@@ -12,7 +12,7 @@ Paid Support: You can visit <https://support.amidaware.com> to open a ticket.
 
 If you are reading this because this link was shared with you it has been determined that your installation has fallen under the #Unsupported category. Probably because you are using something from [Unsupported](unsupported_guidelines.md)
 
-We will be happy to assist you with troubleshooting and (probably) fixing your problem after you [contact Amidaware Support](https://support.amidaware.com).
+We will be happy to assist you with troubleshooting and (probably) fixing your problem if you [contact Amidaware Support](https://support.amidaware.com).
 
 ## Public RSA Keys
 
