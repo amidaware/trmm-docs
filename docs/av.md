@@ -7,7 +7,7 @@ At the moment, Microsoft Windows Defender thinks a go executable with virtually 
 
 At Tactical we recommend: 
 
-- No 3rd party AV.
+- No 3rd party AV. Windows Defender ranks as one fo the top AVs and can be largely controlled via Tactical. Read more about Defender detection rates etc [here] (https://www.av-test.org/en/antivirus/business-windows-client/windows-10/october-2022/microsoft-defender-antivirus-4.18-222516/).
 - Use the `Defender Status Report` script (Task > Run Daily - Use Automation manager) to monitor machines: <https://github.com/amidaware/community-scripts/blob/main/scripts/Win_Defender_Status_Report.ps1>.
 - If you want to lock a system down, run the `Defender Enable` script (test in your environment, because it can stop Microsoft Office from opening docs) that will turn on Protected Folders: <https://github.com/amidaware/community-scripts/blob/main/scripts/Win_Defender_Enable.ps1> and you will be extremely safe. Annoyed, but safe. Use [this](https://github.com/amidaware/trmm-awesome/blob/main/scripts/Windows_Defender_Allowed_List.ps1) as an Exclusion List for Protected Folders items.
 
