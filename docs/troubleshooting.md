@@ -151,7 +151,7 @@ net stop tacticalrmm
 Run the tacticalrmm service manually with debug logging:
 
 ```cmd
-"C:\Program Files\TacticalAgent\tacticalrmm.exe" -m svc -log debug -logto stdout
+"C:\Program Files\TacticalAgent\tacticalrmm.exe" -m rpc -log debug -logto stdout
 ```
 
 This will print out a ton of info. You should be able to see the error from the debug log output.
