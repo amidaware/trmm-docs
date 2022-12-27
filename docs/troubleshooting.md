@@ -103,7 +103,9 @@ The mesh installer is created at time of install. Make sure it's working by runn
 
 ## Agents not checking in or showing up / General agent issues
 
-These are NATS problems. Try quickfix first:
+Eg. Agent Boot time: 53 years ago
+
+These are NATS problems. Try the quick fixes first:
 
 ### From Admin Web Interface
 
