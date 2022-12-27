@@ -24,9 +24,7 @@ If you think your auth token has been compromised or stolen then please email su
 
 ## Why should I pay for Code Signing?
 
-For four reasons: 
-
-1. Code signing costs money.
+1. Code signing costs a lot of money. OV code signing requires a legitimate legal business...Amidaware was setup for this purpose. Code signing + operating a business costs thousands of dollars a year.
 2. It helps the project move forward and it can supports devs spending time on it, they have lives, wives, jobs and kids which all demands attention.
 3. It should stop bad actors using it maliciously.
 4. It helps with AVs detecting it as anything malicious.

@@ -56,7 +56,7 @@ It is recommended because it helps the project mature, Tactical is source availa
 With alot of source available (and similar) projects devs get bored of them because they dont make money out of it. So here is 
 your reasons to pay for code signing and also why it was discussed and implemented. 
 
-1. Code signing costs money.
+1. Code signing costs a lot of money. OV code signing requires a legitimate legal business...Amidaware was setup for this purpose. Code signing + operating a business costs thousands of dollars a year.
 2. It helps the project move forward and it can support devs spending time on it, they have lives, wives, jobs and kids which all demands attention.
 3. It should stop bad actors using it maliciously.
 4. It helps with AVs detecting it as anything malicious.
