@@ -1,12 +1,20 @@
 # Support
 
-## Tactical RMM Support
+## Community Support
 
-How to get Free Support: Available thru Discord and Github tickets. It will generally help people get started with Tactical RMM using supported methods as documented here in the [public documentation](https://docs.tacticalrmm.com/). We may do additional troubleshooting if we believe your issue may be related to a recent update.
+Free Support: Available through Discord and Github tickets.
 
-## Amidaware Support
+We help people get started with Tactical RMM using supported methods as documented here in the [public documentation](https://docs.tacticalrmm.com/).
+
+We may give pointers, or provide additional troubleshooting steps if we believe your issue may be related to a recent update or bug.
+
+## Commercial Support
 
 Paid Support: You can visit <https://support.amidaware.com> to open a ticket.
+
+We can help with lots of problems including many #unsupported installations and configurations.
+
+You get Priority #1 fast responses and service.
 
 ### If you have received this link
 
