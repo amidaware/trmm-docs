@@ -8,6 +8,9 @@ Automation policies in Tactical RMM allow for mass deployment of Checks, Automat
 - Agent
 
 You can also see a list of Relations that show what policy is applied to what Clients / Sites / Agents.
+
+Before you ask, [multiple automation policies](https://github.com/amidaware/tacticalrmm/issues/665) per level is in the todo list.
+
 ## Creating Automation Policies
 
 In the dashboard, navigate to **Settings > Automation Manager**. Use the **Add** button to create a blank Automation Policy. The options available are:
