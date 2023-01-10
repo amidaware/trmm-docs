@@ -157,7 +157,7 @@ Answer the initial questions when prompted. Replace `example.com` with your doma
 
 ![questions](images/install_questions.png)
 
-### Step 6 - Deploy the TXT record in your DNS manager for Let'sEncrypt wildcard certs
+### Step 6 - Deploy the TXT record in your DNS manager for Let's Encrypt [wildcard certs](https://letsencrypt.org/docs/challenge-types/#dns-01-challenge)
 
 !!!warning
     TXT records can take anywhere from 1 minute to a few hours to propagate depending on your DNS provider.<br/>

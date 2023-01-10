@@ -229,7 +229,7 @@ This is a MeshCentral connection problem.
 
 1. Don't use Firefox (test in vanilla Chrome first).
 2. Open `mesh.domain.com` and see if the agent is listed there.
-3. If you don't see your agent (or it's offline), restart TRMM server (or [service](howitallworks/#meshcentral)).
+3. If you don't see your agent (or it's offline), restart TRMM server (or [service](howitallworks.md#meshcentral)).
 4. Restart Mesh Agent on client PC. 
 5. Check again. Still not appearing in `mesh.domain.com` in Mesh go to **"My Server" > Trace tab > Click tracing button > Check MeshAgent traffic**.
 6. Restart Mesh Agent on client PC. You should see something in trace like ![mesh trace](images/mesh_trace.png).
