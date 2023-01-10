@@ -44,7 +44,7 @@ python manage.py bulk_delete_agents --site examplesite --delete
 python manage.py bulk_delete_agents --client exampleclient --delete
 ```
 
-### Reset a User's Password
+### Reset a Users Password
 
 ```bash
 python manage.py reset_password <username>

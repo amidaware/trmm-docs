@@ -48,13 +48,12 @@ So the answer is No.
 
 ## I'd like to be able to __________?
 
-If you've been sent a link to this, it's possible that we could support this but it would most likely be a paid premium feature. Please contact [Amidaware Support](support.md#amidaware-support) to discuss further.
+If you've been sent a link to this, it's possible that we could support this but it would most likely be a paid premium feature. Please contact [Commercial Support](support.md#commercial-support) to discuss further.
 
 ## Why isn't the Code Signing free?
 
-It is recommended because it helps the project mature, Tactical is source available and free, community support is also free ontop of this we have spent alot of time developing the docs, please follow them! 
-With alot of source available (and similar) projects devs get bored of them because they dont make money out of it. So here is 
-your reasons to pay for code signing and also why it was discussed and implemented. 
+It is recommended because it helps the project mature, Tactical is source available and free. Community support is also free on top of this we have spent a lot of time developing the docs, please follow them! 
+With many source available (and similar) projects devs get bored of them because they don't make money out of it. So here is your reasons to pay for code signing and also why it was discussed and implemented. 
 
 1. Code signing costs a lot of money. OV code signing requires a legitimate legal business...Amidaware was setup for this purpose. Code signing + operating a business costs thousands of dollars a year.
 2. It helps the project move forward and it can support devs spending time on it, they have lives, wives, jobs and kids which all demands attention.
@@ -134,7 +133,7 @@ From the web UI, click **Settings > User Administration** and then right-click o
 
 Login with SSH using your install ID (eg `tactical`)
 
-and [Reset Password](management_cmds.md/#reset-a-users-password)
+and [Reset Password](management_cmds.md#reset-a-users-password)
 
 **OR**
 
