@@ -157,3 +157,9 @@ You can modify at several locations / levels:
 
 !!!note
     The interval under check will override agent check if set.
+
+## Understanding refreshing TRMM data
+
+How to get updated data and see agents last communication time.
+
+![understanding](images/Understanding_TRMM_Main_Screen.png)
