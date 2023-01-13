@@ -34,7 +34,7 @@ A fresh linux VM running either Debian 11 or Ubuntu 20.04 LTS with **4GB RAM** o
 
 #### Network Requirements
 
-- A real (internet resolvable) domain is needed to generate a Let'sEncrypt wildcard cert. _If you cannot afford to purchase a domain ($12 a year) then you can get one for free at [freenom.com](https://www.freenom.com/)_
+- A real (internet resolvable) domain is needed to generate a Let's Encrypt wildcard cert. _If you cannot afford to purchase a domain ($12 a year) then you can get one for free at [freenom.com](https://www.freenom.com/)_
     - example.local is __NOT__ a real domain. No, you [don't have to expose your server](faq.md#can-i-run-tactical-rmm-locally-behind-nat-without-exposing-anything-to-the-internet) to the internet
 - A TOTP based authenticator app. Some popular ones are Google Authenticator, Authy, and Microsoft Authenticator.
 
