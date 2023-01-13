@@ -72,7 +72,7 @@ The update script will also fix any permissions that might have gotten messed up
 !!!info
     Currently, the update script does not automatically renew your Let'sEncrypt wildcard certificate, which expires every 3 months, since this is non-trivial to automate using the DNS TXT record method.
 
-To renew your Let'sEncrypt wildcard cert, run the following command, replacing `example.com` with your domain and `admin@example.com` with your email:
+Update SSL: To renew and update your Let's Encrypt wildcard cert SSL certs, run the following command, replacing `example.com` with your domain and `admin@example.com` with your email:
 
 ```bash
 sudo certbot certonly --manual -d *.example.com --agree-tos --no-bootstrap --preferred-challenges dns -m admin@example.com --no-eff-email
