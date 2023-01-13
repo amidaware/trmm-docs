@@ -24,10 +24,10 @@ We'll be using `example.com` as our domain for this example.
 
 ![arecords](images/arecords.png)
 
-### Acquire Let'sEncrypt wildcard certs with Certbot
+### Acquire Let's Encrypt wildcard certs with Certbot
 
 !!!warning
-  If the Let'sEncrypt wildcard certificates are not provided, a self-signed certificate will be generated and most agent functions won't work. 
+  If the Let's Encrypt wildcard certificates are not provided, a self-signed certificate will be generated and most agent functions won't work. 
 
 **1 ) Install Certbot**
 
@@ -35,7 +35,7 @@ We'll be using `example.com` as our domain for this example.
 sudo apt-get install certbot
 ```
 
-**2 ) Generate the wildcard Let'sEncrypt certificates**
+**2 ) Generate the wildcard Let's Encrypt certificates**
 
 We're using the [DNS-01 challenge method](https://letsencrypt.org/docs/challenge-types/#dns-01-challenge).
 
@@ -51,7 +51,7 @@ We're using the [DNS-01 challenge method](https://letsencrypt.org/docs/challenge
 
 ![dnstxt](images/dnstxt.png)
 
-**4 ) Request Let'sEncrypt wildcard cert**
+**4 ) Request  ncrypt wildcard cert**
 
 ```bash
 sudo certbot certonly --manual -d *.example.com --agree-tos --no-bootstrap --preferred-challenges dns
@@ -76,7 +76,7 @@ mv .env.example .env
 
 Change the values in .env to match your environment.
 
-When supplying certificates through Let'sEncrypt, see the section below about base64 encoding the certificate files.
+When supplying certificates through Let's Encrypt, see the section below about base64 encoding the certificate files.
 
 ### Base64 encoding certificates to pass as env variables
 
@@ -84,7 +84,7 @@ Use the below command to add the the correct values to the .env.
 
 Running this command multiple times will add redundant entries, so those will need to be removed.
 
-Let'sEncrypt certs paths are below. Replace ${rootdomain} with your own.
+Let's Encrypt certs paths are below. Replace ${rootdomain} with your own.
 
 public key
 `/etc/letsencrypt/live/${rootdomain}/fullchain.pem`

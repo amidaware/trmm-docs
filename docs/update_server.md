@@ -70,7 +70,7 @@ The update script will also fix any permissions that might have gotten messed up
 ## Keeping your Let's Encrypt SSL certificate up to date
 
 !!!info
-    Currently, the update script does not automatically renew your Let'sEncrypt wildcard certificate, which expires every 3 months, since this is non-trivial to automate using the DNS TXT record method.
+    Currently, the update script does not automatically renew your Let's Encrypt wildcard certificate, which expires every 3 months, since this is non-trivial to automate using the DNS TXT record method.
 
 Update SSL: To renew and update your Let's Encrypt wildcard cert SSL certs, run the following command, replacing `example.com` with your domain and `admin@example.com` with your email:
 

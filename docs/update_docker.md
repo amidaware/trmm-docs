@@ -18,9 +18,9 @@ sudo docker-compose down
 sudo docker-compose up -d --remove-orphans
 ```
 
-## Keeping your Let'sEncrypt certificate up to date
+## Keeping your Let's Encrypt certificate up to date
 
-To renew your Let'sEncrypt wildcard cert, run the following command, replacing `example.com` with your domain and `admin@example.com` with your email:
+To renew your Let's Encrypt wildcard cert, run the following command, replacing `example.com` with your domain and `admin@example.com` with your email:
 
 ```bash
 sudo certbot certonly --manual -d *.example.com --agree-tos --no-bootstrap --manual-public-ip-logging-ok --preferred-challenges dns -m admin@example.com --no-eff-email

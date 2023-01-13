@@ -58,9 +58,9 @@ If you are sure you are using the correct credentials and still getting a "bad c
 
 It will most probably be a CORS error which means you need to check your DNS settings and make sure whatever computer you're trying to access the UI from resolves your 3 subdomains to the correct IP of the server running the RMM (public IP if running in the cloud, or private IP if running behind NAT).
 
-If you see an error about SSL or certificate expired, then your Let'sEncrypt cert has probably expired and you'll need to renew it.
+If you see an error about SSL or certificate expired, then your Let's Encrypt cert has probably expired and you'll need to renew it.
 
-Refer to the Let'sEncrypt cert renewal instructions [here](update_server.md#keeping-your-lets-encrypt-certificate-up-to-date).
+Refer to the Let's Encrypt cert renewal instructions [here](update_server.md#keeping-your-lets-encrypt-certificate-up-to-date).
 
 ## Agents not installing or updating
 

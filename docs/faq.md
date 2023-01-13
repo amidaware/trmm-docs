@@ -112,7 +112,7 @@ Similarly asked: Can I use onsite DNS servers (I don’t want my server accessib
 
 Yes, you can use (only) internal DNS (if you want) for api, mesh and rmm domains. You don't have to put these records in your public DNS servers.
 
-**Note:** You still **must** have an internet resolvable domain name and add the DNS `TXT` record to its public DNS server for the Let'sEncrypt wildcard cert request process that is part of the install process. This **does not** require any inbound connection from the internet (port forwarding etc) to be enabled. This does not expose your RMM server to the internet in any way. The Let'sEncrypt wildcard is done for [nats](#self-signed-certs)
+**Note:** You still **must** have an internet resolvable domain name and add the DNS `TXT` record to its public DNS server for the Let's Encrypt wildcard cert request process that is part of the install process. This **does not** require any inbound connection from the internet (port forwarding etc) to be enabled. This does not expose your RMM server to the internet in any way. The Let's Encrypt wildcard is done for [nats](#self-signed-certs)
 
 ## I am locked out of the web UI. How do I reset my password?
 

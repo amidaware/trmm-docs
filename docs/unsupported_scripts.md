@@ -48,7 +48,7 @@ Restart fail2ban
 sudo systemctl restart fail2ban.service
 ```
 
-## Using purchased SSL certs instead of Let'sEncrypt wildcards
+## Using purchased SSL certs instead of Let's Encrypt wildcards
 
 Credit to [@dinger1986](https://github.com/dinger1986)
 
@@ -430,7 +430,7 @@ sudo chmod +x /etc/letsencrypt/renewal-hooks/post/001-restart-services.sh
 
 ## Using your own certs with Docker
 
-Let'sEncrypt is the only officially supported method of obtaining wildcard certificates. Publicly signed certificates should work but have not been fully tested.
+Let's Encrypt is the only officially supported method of obtaining wildcard certificates. Publicly signed certificates should work but have not been fully tested.
 
 If you are providing your own publicly signed certificates, ensure you download the **full chain** (combined CA/Root + Intermediary) certificate in pem format. If certificates are not provided, a self-signed certificate will be generated and most agent functions won't work.
 
