@@ -163,3 +163,7 @@ You can modify at several locations / levels:
 How to get updated data and see agents last communication time.
 
 ![understanding](images/Understanding_TRMM_Main_Screen.png)
+
+## Why are usernames in italics?
+
+It's the last logged in user, when italicized it means nobody is currently logged in.
