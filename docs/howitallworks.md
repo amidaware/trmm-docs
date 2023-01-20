@@ -591,16 +591,6 @@ Choose your method:
     systemctl restart tacticalagent.service
     ```
 
-=== ":material-mdiApple: Mac"
-
-    In terminal window:
-
-    ```bash
-    sudo launchtl list | grep -e mesh -e tacticalagent
-    ```
-
-    
-
 #### Mesh Agent Recovery
 
 Use Agents right click menu > `Agent recovery` > `Mesh Agent`
