@@ -499,6 +499,9 @@ There are two ways to do RunAsUser with tactical in relation to scripting.
 1. The Tactical RMM "RunAsUser" checkbox associated with the script, and all code will be run under the actively logged in user only with their security permissions. If they're not local admins, and you try to do something requiring admin permissions it will fail.
 2. Using the powershell "RunAsUser" [3rd party module](https://github.com/amidaware/community-scripts/blob/da4d615a781d218ed3bec66d56a1530bc7513e16/scripts/Win_RunAsUser_Example.ps1)
 
+!!!note
+    If you're using the TRMM native RunAsUser if a user is not logged in it will return 66 so you can handle the condition in your scripts.
+
 ### Outbound Firewall Rules
 
 If you have strict firewall rules these are the only outbound rules from the agent needed for all functionality:
