@@ -24,3 +24,9 @@ Users will then be able to change only their passwords/2FA with the `Settings Me
 
 !!!warning
     Currently MeshCentral and it's integration allows techs to bypass these permissions, and get full access to systems. Read more [here](../mesh_integration.md#security-implications)
+
+## Video Walkthru
+
+<div class="video-wrapper">
+  <iframe width="320" height="180" src="https://www.youtube.com/embed/TTPLvgjMgp0" frameborder="0" allowfullscreen></iframe>
+</div>
