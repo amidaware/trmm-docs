@@ -80,7 +80,9 @@ sudo certbot certonly --manual -d *.example.com --agree-tos --no-bootstrap --pre
 
 Same instructions as during install for [verifying the TXT record](install_server.md#step-6---deploy-the-txt-record-in-your-dns-manager-for-letsencrypt-wildcard-certs) has propagated before hitting ++enter++.
 
-After this you have renewed the cert, simply run the `update.sh` script, passing it the `--force` flag.
+<font color="red" size="20"><p style="text-align:center">**You're not done yet keep reading!**</p></font>
+
+After this you have renewed the cert, but it's still not being used everywhere in Tactical. Now run the `update.sh` script, passing it the `--force` flag.
 
 ```bash
 ./update.sh --force
