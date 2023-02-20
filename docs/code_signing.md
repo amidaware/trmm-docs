@@ -20,7 +20,7 @@ If you sponsored via [Stripe or Paypal](sponsor.md#sponsor-with-paypal-or-stripe
 
 Enter the API subdomain you will be using for your instance (e.g. `api.example.com`).
 
-If you already have an existing token and want to switch your sponsorship from github to stripe/paypal, make sure to mention that in the ticket description and include your github username.
+If you already have an existing token and want to switch your sponsorship from github to stripe/paypal, make sure to mention that in the ticket description and include your github username. Don't forget to also cancel your github sponsorship after you have successfully setup Paypal/Stripe.
 
 If you have joined our [Discord](https://discord.gg/upGTkWp) and would like to be added to the sponsors role, include your Discord username as well.
 
