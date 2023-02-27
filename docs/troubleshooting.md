@@ -95,7 +95,9 @@ The mesh installer is created at time of install. Make sure it's working by runn
 ![if sharing](images/meshcheck_sharing.png)
 
 !!!warning
-    As of v0.12.0 `Error 1005` usually means something doesn't match and / or the mesh username has to be all lower case.
+    As of v0.12.0 `Error 1005` usually means something doesn't match and / or the mesh username has to be all lower case.<br>
+    If you customize the "Mesh Device Group Name" in Tactical's settings you **MUST** also manually match that Mesh Group in mesh itself [because you must understand](mesh_integration.md#security-implications).
+
 
 [Collect Update debug logs for troubleshooting agents that don't update](update_agents.md#manually-updating-from-the-command-line-on-the-agent)
 
