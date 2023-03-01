@@ -250,5 +250,6 @@ Especially don't get behind 2 major rev's. Lots of agent connectivity changes oc
 ## AWS Install Video Walkthrus
 
 <div class="video-wrapper">
+  <iframe width="320" height="180" src="https://www.youtube.com/embed/9diCo6fW-ww" frameborder="0" allowfullscreen></iframe>
   <iframe width="320" height="180" src="https://www.youtube.com/embed/nHke7pi01HI" frameborder="0" allowfullscreen></iframe>
 </div>
