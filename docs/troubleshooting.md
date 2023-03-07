@@ -209,7 +209,7 @@ Read through the log files in the following folders and check for errors:
 
 - api.example.com can be proxied when using (the default) agent configuration which utilizes websockets.
 
-- mesh.example.com can be proxied with the caveat that Mesh checks the cert presented to the agent is the same one on the server. I.e. no MITM. You'll need to copy Cloudflare's edge cert to your server if you want to proxy this domain.
+- mesh.example.com can be proxied with the caveat that Mesh checks the cert presented to the agent is the same one on the server. I.e. no MITM. You'll need to copy Cloudflare's edge cert (they call it Origin Server) to your server if you want to proxy this domain.
 
 If you're getting `Invalid group id` at the end of the install you're probably doing something wrong / wrong IP for api.
 
