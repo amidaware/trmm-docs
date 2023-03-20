@@ -4,13 +4,27 @@
 
 Tactical RMM agents are now [code signed](https://comodosslstore.com/resources/what-is-microsoft-authenticode-code-signing-certificate/)!
 
-To get access to code signed agents, you must be a [Github Sponsor](https://github.com/sponsors/amidaware) with a minimum **monthly** donation of $50.00. 
+To get access to code signed agents (which includes linux/mac agents), you must be a [Sponsor](sponsor.md) with a minimum **monthly** donation of $50.00.
 
 One token is valid for 1 self hosted instance. If you have more than 1 instance you will need another token which you can get by increasing your sponsorship by $50 for each token. If you sign up for the $50 and then downgrade, your auth token _**will be**_ invalidated and stop working.
 
-Once you have become a sponsor, please email **support@amidaware.com** with your Github username, the API subdomain you will be using for your instance (e.g. `api.example.com`), and Discord username if you're on our [Discord](https://discord.gg/upGTkWp).
+Once you have become a [Sponsor](sponsor.md), open a [support ticket](https://support.amidaware.com/) and choose the "Code Signing Request" layout.
 
-Please allow up to 24 hours for a response
+![ticketlayout](images/code_signing_ticket_layout.png)
+
+Select the payment method you paid with from the dropdown.
+
+If you sponsored via [Github Sponsors](sponsor.md#sponsor-with-github-sponsors) make sure to enter your Github **username** (not email).
+
+If you sponsored via [Stripe or Paypal](sponsor.md#sponsor-with-paypal-or-stripe) make sure to enter the same email address you used when paying. 
+
+Enter the API subdomain you will be using for your instance (e.g. `api.example.com`).
+
+If you already have an existing token and want to switch your sponsorship from github to stripe/paypal, make sure to mention that in the ticket description and include your github username. Don't forget to also cancel your github sponsorship after you have successfully setup Paypal/Stripe.
+
+If you have joined our [Discord](https://discord.gg/upGTkWp) and would like to be added to the sponsors role, include your Discord username as well.
+
+Please allow up to 24 hours for a response.
 
 You will then be sent a code signing auth token, which you should enter into Tactical's web UI from *Settings > Code Signing*
 
@@ -20,7 +34,7 @@ Every time you generate an agent or an agent does a self-update, your self-hoste
 
 If the token is valid, the server sends you back a code signed agent. If not, it sends you back the un-signed agent.
 
-If you think your auth token has been compromised or stolen then please email support or contact wh1te909 on discord to get a new token / invalidate the old one.
+If you think your auth token has been compromised or stolen then please [open a ticket](https://support.amidaware.com/) to get a new token / invalidate the old one.
 
 ## Why should I pay for Code Signing?
 

@@ -20,6 +20,10 @@ They do not even have to run on the same box, however when you install Tactical 
 
 It is highly recommended to use the MeshCentral instance that Tactical installs, since it allows the developers more control over it and to ensure things don't break.
 
+## OMG MeshCentral isn't maintained anymore!
+
+ The features of MeshCentral that TRMM uses are only the 3 items above, and these features have been in prod for years. Nothing really has changed, if it becomes necessary to fix something that breaks or packages need updating we are prepared to begin maintaining our own fork.
+
 ## How does it work?
 
 MeshCentral has an embedding feature that allows integration into existing products.

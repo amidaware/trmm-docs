@@ -79,7 +79,9 @@ passwd tactical
 ### Step 3 - Setup the firewall (optional but highly recommended)
 
 !!!info
-    Skip this step if your VM is __not__ publicly exposed to the world e.g. running behind NAT. You should setup the firewall rules in your router instead (ports 22 and 443 TCP).
+    Skip this step if your VM is __not__ publicly exposed to the world e.g. running behind NAT. You should setup the firewall rules in your router instead.<br>
+    Port 443 TCP: For agents and tech login to rmm and mesh.<br>
+    Port 22 TCP: For SSH, server administration only
 
 ```bash
 ufw default deny incoming
@@ -88,7 +90,7 @@ ufw allow https
 ```
 
 !!!info
-    SSH (port 22 tcp) is only required for you to remotely login and do basic linux server administration for your rmm. It is not needed for any agent communication.<br/>
+    SSH (port 22 TCP) is only required for you to remotely login and do basic linux server administration for your rmm. It is not needed for any agent communication.<br/>
 
 ???+ note "SSH Firewall Rule"
 
@@ -248,5 +250,6 @@ Especially don't get behind 2 major rev's. Lots of agent connectivity changes oc
 ## AWS Install Video Walkthrus
 
 <div class="video-wrapper">
+  <iframe width="320" height="180" src="https://www.youtube.com/embed/9diCo6fW-ww" frameborder="0" allowfullscreen></iframe>
   <iframe width="320" height="180" src="https://www.youtube.com/embed/nHke7pi01HI" frameborder="0" allowfullscreen></iframe>
 </div>

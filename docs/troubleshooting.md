@@ -95,7 +95,9 @@ The mesh installer is created at time of install. Make sure it's working by runn
 ![if sharing](images/meshcheck_sharing.png)
 
 !!!warning
-    As of v0.12.0 `Error 1005` usually means something doesn't match and / or the mesh username has to be all lower case.
+    As of v0.12.0 `Error 1005` usually means something doesn't match and / or the mesh username has to be all lower case.<br>
+    If you customize the "Mesh Device Group Name" in Tactical's settings you **MUST** also manually match that Mesh Group in mesh itself [because you must understand](mesh_integration.md#security-implications).
+
 
 [Collect Update debug logs for troubleshooting agents that don't update](update_agents.md#manually-updating-from-the-command-line-on-the-agent)
 
@@ -207,7 +209,7 @@ Read through the log files in the following folders and check for errors:
 
 - api.example.com can be proxied when using (the default) agent configuration which utilizes websockets.
 
-- mesh.example.com can be proxied with the caveat that Mesh checks the cert presented to the agent is the same one on the server. I.e. no MITM. You'll need to copy Cloudflare's edge cert to your server if you want to proxy this domain.
+- mesh.example.com can be proxied with the caveat that Mesh checks the cert presented to the agent is the same one on the server. I.e. no MITM. You'll need to copy Cloudflare's edge cert (they call it Origin Server) to your server if you want to proxy this domain.
 
 If you're getting `Invalid group id` at the end of the install you're probably doing something wrong / wrong IP for api.
 

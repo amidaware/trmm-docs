@@ -2,6 +2,8 @@
 
 ## Contributing to the Docs
 
+The source of the docs are <https://github.com/amidaware/trmm-docs>
+
 Docs are built with [MKDocs for Material](https://squidfunk.github.io/mkdocs-material/)
 
 Please refer to the docs [README](https://github.com/amidaware/trmm-docs) for instructions on how to build and serve the docs locally.

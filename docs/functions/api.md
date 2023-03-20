@@ -6,7 +6,7 @@ Therefore, anything you can do via the web interface, you can do via the API.
 
 However this makes it difficult to document the API as it has only been designed to be consumed by our vue frontend.
 
-The easiest way to see what endpoint/payload you need to send is to open your browser's developer tools > Network tab. Then, perform the action you wish to do via tha api in Tactical's web interface and watch the network tab to see the endpoint and the payload that is generated, and use that as an example of how to structure your api request.
+The easiest way to see what endpoint/payload you need to send is to open your browser's developer tools > Network tab. Then, perform the action you wish to do via the api in Tactical's web interface and watch the network tab to see the endpoint and the payload that is generated, and use that as an example of how to structure your api request.
 
 Please note that using an API key will bypass 2fa authentication.
 

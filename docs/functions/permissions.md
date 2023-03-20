@@ -16,11 +16,16 @@ Make sure you've setup at least 1 valid (Super User aka Administrator) role unde
 
 Once you've set that up a Super User role and assigned your primary user, you can create other Roles with more limited access.
 
-## Allow Users to change their passwords and 2FA codes
 
-If you would like to allow your techs to change their TRMM login passwords or reset their 2FA codes make sure under permission manager that you give them permission to `Accounts` > `List User Accounts` (they do not need Manage User Accounts permission unless you want them being able to reset OTHER users passwords)
+!!!tip
+    If you are only trying to give permissions to one or more sites within a client, but not all of the sites, then leave the "Allowed Clients" field blank and only add sites to "Allowed Sites". If a client is set in "Allowed Clients" that will override any site perms and give access to all sites within that client, regardless of what sites are set.
 
-Users will then be able to change only their passwords/2FA with the `Settings Menu` > `User Administration` > Right-click themselves > Reset xxx
 
 !!!warning
     Currently MeshCentral and it's integration allows techs to bypass these permissions, and get full access to systems. Read more [here](../mesh_integration.md#security-implications)
+
+## Video Walkthru
+
+<div class="video-wrapper">
+  <iframe width="320" height="180" src="https://www.youtube.com/embed/TTPLvgjMgp0" frameborder="0" allowfullscreen></iframe>
+</div>

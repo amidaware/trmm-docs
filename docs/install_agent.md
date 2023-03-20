@@ -192,6 +192,12 @@ To install:<br/>
 
 If you changed the expiry time you could upload the script to any accessible server and deploy to multiple devices.
 
+```text
+-- debug
+```
+
+Will print very verbose logging during agent install. Useful for troubleshooting agent install.
+
 ## Linux Deployment Link
 
 Currently there are no deploy links for Linux agents however you could use the following method if uploaded somewhere (website etc).
