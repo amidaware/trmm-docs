@@ -35,7 +35,7 @@ KEY_FILE = "/path/to/your/privkey.pem"
 
 Then run `/rmm/api/env/bin/python /rmm/api/tacticalrmm/manage.py reload_nats` and restart your server.
 
-If you want to do this after install please follow [this guide.](https://docs.tacticalrmm.com/unsupported_scripts/#using-purchased-ssl-certs-instead-of-lets-encrypt-wildcards)
+If you want to do this after install please follow [this guide](https://docs.tacticalrmm.com/unsupported_scripts/#using-purchased-ssl-certs-instead-of-lets-encrypt-wildcards).
 
 ### Use NATS Standard instead of NATS websocket
 
