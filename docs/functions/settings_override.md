@@ -35,6 +35,8 @@ KEY_FILE = "/path/to/your/privkey.pem"
 
 Then run `/rmm/api/env/bin/python /rmm/api/tacticalrmm/manage.py reload_nats` and restart your server.
 
+If you want to do this after install please follow [this guide](https://docs.tacticalrmm.com/unsupported_scripts/#using-purchased-ssl-certs-instead-of-lets-encrypt-wildcards)
+
 ### Use NATS Standard instead of NATS websocket
 
 Prior to TRMM v0.14.0 (released 7/7/2022), agents NATS traffic connected to the TRMM server on public port 4222.
