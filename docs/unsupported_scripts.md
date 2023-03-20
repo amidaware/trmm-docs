@@ -50,8 +50,6 @@ sudo systemctl restart fail2ban.service
 
 ## Using purchased SSL certs instead of Let's Encrypt wildcards
 
-Credit to [@dinger1986](https://github.com/dinger1986)
-
 **How to change certs used by Tactical RMM to purchased ones (this can be a wildcard cert).**
 
 You need to add the certificate private key and public keys to the following files:
