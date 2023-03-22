@@ -2,6 +2,9 @@
 # Make sure you change directory to your docs folder before starting this process
 # Use the "Run Selection" in VSCode to run the code blocks as-needed
 
+# In case you have ExecutionPolicy Problems
+Set-ExecutionPolicy -Scope CurrentUser Unrestricted
+
 #Activate python
 python -m venv env
 .\env\Scripts\activate 
