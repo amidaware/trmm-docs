@@ -91,6 +91,9 @@ ssl_certificate /certs/api.EXAMPLE.COM/fullchain.pem;
 ssl_certificate_key /certs/api.EXAMPLE.COM/privkey.pem;
 ```
 
+!!!note
+    Note the fullchain requirement for the certs, it won't work without it.
+
 Repeat the process for:
 
 ```text
