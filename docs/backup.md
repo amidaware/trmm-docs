@@ -19,18 +19,23 @@ The backup tar file will be saved in `/rmmbackups` with the following format:
 
 ## Schedule to run Daily via Cron
 
-Make a symlink in `/etc/cron.d` (daily cron jobs) with these contents `00 18 * * * tactical /rmm/backup.sh` to run at 6pm daily.
-
+To schedule automated daily backups run the script with the `--schedule` flag
 ```bash
-echo -e "\n" >> /rmm/backup.sh
-sudo ln -s /rmm/backup.sh /etc/cron.daily/
+./backup.sh --schedule
 ```
+This will do the following:
+* Create daily, weekly and monthly folders under /rmmbackup.
+* Schedule backups using cron to run at midnight every night.
+* As well as Daily backups, there are monthly backups on the 10th day of every month and weekly backups every Friday.
+* Automated pruning of backup files, daily kept for 2 weeks, weekly for 2 months and monthly for 1 year. 
 
 !!!warning
-    Currently the backup script doesn't have any pruning functions so the folder will grow forever without periodic cleanup. Or just become [awesome](https://github.com/fts-tmassey/tacticalrmm-cronbackup)
+    The backup script will just save to your server drive, you ideally want to automate moving this to another server. Please ensure you have space for the backups to be stored.
+
 
 ## Video Walkthru
 
 <div class="video-wrapper">
   <iframe width="320" height="180" src="https://www.youtube.com/embed/rC0NgYJUf_8" frameborder="0" allowfullscreen></iframe>
 </div>
+
