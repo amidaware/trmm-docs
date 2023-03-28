@@ -8,14 +8,13 @@ Funds donated are used to fund the legal business necessary for [OV code signing
 
 We are always looking for feedback and ways to improve Tactical RMM to better address your needs. Please feel free to open a [github issue](https://github.com/amidaware/tacticalrmm/issues) or drop us a message on [Discord](https://discord.gg/upGTkWp) with your feedback or requests.
 
-## Sponsor with Github Sponsors
-[Sponsor with Github](https://github.com/sponsors/amidaware)
+## Sponsor with Stripe or Paypal
 
-After sponsoring, follow [the instructions](code_signing.md#code-signing) to get your code signing token.
+Stripe is our preferred payment processor, please use Stripe instead of Paypal if you can.
 
-## Sponsor with Paypal or Stripe
+If you need automatic invoicing for your company, please use Stripe as it will automatically generate invoices for you with each payment.
 
-Use this option if you need a direct invoice from Amidaware Inc., which is not possible with Github Sponsors.
+If you cannot use Stripe and must use Paypal and still need automatic invoicing then please [contact us](https://support.amidaware.com/) first before subscribing so we can setup a custom invoice for you.
 
 After sponsoring, follow [the instructions](code_signing.md#code-signing) to get your code signing token.
 
