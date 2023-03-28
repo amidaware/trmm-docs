@@ -164,7 +164,7 @@ Answer the initial questions when prompted. Replace `example.com` with your doma
 !!!warning
     TXT records can take anywhere from 1 minute to a few hours to propagate depending on your DNS provider.<br/>
     You should verify the TXT record has been deployed first before pressing Enter.<br/>
-    A quick way to check is with the following command:<br/> `dig -t txt _acme-challenge.example.com`<br/>
+    A quick way to check is with the following command:<br/> `dig -t txt _acme-challenge.example.com` (not from the TRMM server)<br/>
     or test using: <https://viewdns.info/dnsrecord/> Enter: `_acme-challenge.example.com`
 
 ![txtrecord](images/txtrecord.png)
