@@ -24,9 +24,13 @@ To schedule automated daily backups run the script with the `--schedule` flag
 ./backup.sh --schedule
 ```
 This will do the following:
+
 * Create daily, weekly and monthly folders under /rmmbackup.
+
 * Schedule backups using cron to run at midnight every night.
+
 * As well as Daily backups, there are monthly backups on the 10th day of every month and weekly backups every Friday.
+
 * Automated pruning of backup files, daily kept for 2 weeks, weekly for 2 months and monthly for 1 year. 
 
 !!!warning
