@@ -72,8 +72,6 @@ Refer to the [Agent Installation](install_agent.md) instructions for AV exceptio
 
 Agents will also not automatically update if they are too old.
 
-Since Tactical RMM is still in beta and the developers makes breaking changes pretty frequently, there is no promise of backwards compatibility.
-
 If you have agents that are relatively old, you will need to uninstall them manually and reinstall using the latest version.
 
 The mesh installer is created at time of install. Make sure it's working by running this on your TRMM server. 

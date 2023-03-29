@@ -2,7 +2,7 @@
 
 ## I just updated and now it doesn't work. 
 
-Tactical is still in beta. One or more of these things probably just happened:
+One or more of these things probably just happened:
 
 1. You didn't read the [update instructions](update_server.md). They have been known to change. Frequently. And you're probably [not staying updated](install_server.md#update-regularly) with versions as they come out.
 2. You didn't review ALL the pertinent release notes between your version, and the [latest one](https://github.com/amidaware/tacticalrmm/releases).

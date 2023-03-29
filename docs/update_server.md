@@ -36,9 +36,9 @@ SSH into your server as the linux user you created during install (eg `tactical`
 
 !!!question
     You have a [backup](backup.md), right?
+    
+    You've reviewed all [release notes](https://github.com/amidaware/tacticalrmm/releases) between your current version and the latest version, right?
 
-!!!question
-    This is beta software. You've reviewed all [release notes](https://github.com/amidaware/tacticalrmm/releases) between your current version and the latest version, right?
 
 Download the update script and run it:
 
