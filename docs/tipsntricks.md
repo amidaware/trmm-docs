@@ -118,6 +118,12 @@ Right-click the connect button in **Take Control** for connection options.
 In mesh from the agent | General Tab
 
 ![online](images/mesh_agent_onlineoffline.png)
+
+### Syncing PC name to MeshCentral
+
+If you install TRMM agent, it will add the PC to meshcentral with the current computer name. If you later rename the computer, MeshCentral will not update that PC name by default unless you enable the sync name option in MeshCentral
+
+![Sync device name to hostname](images/mesh_sync_pc_name.png)
 ## Scripts
 
 ### When Running Scripts
