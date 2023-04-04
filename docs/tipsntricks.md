@@ -121,7 +121,7 @@ In mesh from the agent | General Tab
 
 ### Sending Custom Keystrokes to Agent
 
-Some of the native hotkeys will not send thru the MeshCentral remote control window (like ++alt+tab++). You can right-click the special key list in the bottom right of Remote Control 
+Some of the native hotkeys will not send thru the MeshCentral remote control window (like ++alt+tab++). You can right-click the special key list in the bottom left of the Remote Control window.
 
 ![send custom keys](images/mesh_send_custom_keys.png)
 
