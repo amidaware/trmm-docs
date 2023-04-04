@@ -118,6 +118,24 @@ Right-click the connect button in **Take Control** for connection options.
 In mesh from the agent | General Tab
 
 ![online](images/mesh_agent_onlineoffline.png)
+
+### Sending Custom Keystrokes to Agent
+
+Some of the native hotkeys will not send thru the MeshCentral remote control window (like ++alt+tab++). You can right-click the special key list in the bottom right of Remote Control 
+
+![send custom keys](images/mesh_send_custom_keys.png)
+
+and add new ones like
+
+* ++alt+shift+tab++: Task switching between windows
+* ++win+tab++: Bring up thumbnail based running program switcher
+
+### Syncing PC name to MeshCentral
+
+If you install TRMM agent, it will add the PC to meshcentral with the current computer name. If you later rename the computer, MeshCentral will not update that PC name by default unless you enable the sync name option in MeshCentral
+
+![Sync device name to hostname](images/mesh_sync_pc_name.png)
+
 ## Scripts
 
 ### When Running Scripts
