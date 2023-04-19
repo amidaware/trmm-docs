@@ -96,6 +96,8 @@ Right-click the connect button in **Take Control** for connection options.
 !!!note
     These settings are independent of Tactical RMM. Enable features (like auto remove inactive devices) with caution.
 
+If you need to comply with GDPR regulations and ensure employee rights legislation is complied with, you can make sure that users receive a popup to inform them so they are aware when your techs log in and connect to their machine. You can enable a banner that shows when a remote connection is established.
+
 1. Remote background a machine then go to mesh.EXAMPLE.COM
 2. Click on My Account
 3. Click on the device group you want to enable notifications or accept connection etc on (probably TacticalRMM).
