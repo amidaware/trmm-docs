@@ -71,7 +71,7 @@ Missing code signing token
 400: Bad Request
 ```
 
-You must have a [paid code signing certificate](https://docs.tacticalrmm.com/code_signing/) while Linux/macOS support is in the post-alpha/beta:
+You must have a [paid code signing certificate](code_signing.md) while Linux/macOS support is in the post-alpha/beta:
 
 - Code signing makes these installs easy and is a benefit offered to code signing sponsors. [So become a sponsor and enjoy the easy life](sponsor.md)
 - DIYer can read thru the code and... DIY.
@@ -91,7 +91,7 @@ While it _may be possible_ to use XXX, we have not configured it and therefore i
 
 ## Is it possible to use XXX proxy server with Tactical RMM
 
-If you wish to stray from the [easy install](../install_server/#option-1-easy-install) of a standard install in a VPS, you need to have the knowledge on how to troubleshoot your own custom environment.
+If you wish to stray from the [easy install](../install_server/#option-1-easy-install-on-a-vps) of a standard install in a VPS, you need to have the knowledge on how to troubleshoot your own custom environment.
 
 The most common reasons you're running a proxy are:
 

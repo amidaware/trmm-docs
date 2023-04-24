@@ -35,7 +35,7 @@ A fresh linux VM running either Debian 11 or Ubuntu 20.04 LTS with **4GB RAM** o
 #### Network Requirements
 
 - A real (internet resolvable) domain is needed to generate a Let's Encrypt wildcard cert. _If you cannot afford to purchase a domain ($12 a year) then you can get one for free at [freenom.com](https://www.freenom.com/)_
-    - example.local is __NOT__ a real domain. No, you [don't have to expose your server](faq.md#can-i-run-tactical-rmm-locally-behind-nat-without-exposing-anything-to-the-internet) to the internet
+    - example.local is __NOT__ a real domain. No, you [don't have to expose your server](faq.md#can-i-run-tactical-rmm-locally-behind-nat-without-exposing-my-rmm-server-to-the-internet) to the internet
 - A TOTP based authenticator app. Some popular ones are Google Authenticator, Authy, and Microsoft Authenticator.
 
 #### Update Recommendations
@@ -48,7 +48,7 @@ A fresh linux VM running either Debian 11 or Ubuntu 20.04 LTS with **4GB RAM** o
 
 Install on a VPS: DigitalOcean, Linode, Vultr, BuyVM (highly recommended), Hetzner, AWS, Google Cloud and Azure to name a few.
 
-Use something that meets [minimum specs](install_server.md#hardware-os)
+Use something that meets [minimum specs](install_server.md#minimum-requirements)
 
 ### Step 1 - Run Updates on OS
 
@@ -193,7 +193,7 @@ You're Done
 
 Install in your local network using: Dedicated hardware, Hyper-V, Proxmox or ESXi. All been tested and work fine.
 
-Do everything from [Option 1: Easy Install](install_server.md#run-updates-and-setup-the-linux-user)
+Do everything from [Option 1: Easy Install](install_server.md#option-1-easy-install-on-a-vps)
 
 #### If You Only Have Agents on the Private Network / Subnet
 

@@ -57,4 +57,4 @@ So in Summary:
 - Adjust script default run intervals
 - Don't have checks (and tasks) all run at the same time
 
-If you have questions please contact us at help[at]amidaware.com to discuss looking at your server and configuration, load testing, and giving recommendations.
+If you have questions please [open a ticket](https://support.amidaware.com) to discuss looking at your server and configuration, load testing, and giving recommendations.
