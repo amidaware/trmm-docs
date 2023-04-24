@@ -16,7 +16,7 @@ Select the payment method you paid with from the dropdown.
 
 If you sponsored via [Github Sponsors](sponsor.md#sponsor-with-github-sponsors) make sure to enter your Github **username** (not email).
 
-If you sponsored via [Stripe or Paypal](sponsor.md#sponsor-with-paypal-or-stripe) make sure to enter the same email address you used when paying. 
+If you sponsored via [Stripe or Paypal](sponsor.md#sponsor-with-stripe-or-paypal) make sure to enter the same email address you used when paying. 
 
 Enter the API subdomain you will be using for your instance (e.g. `api.example.com`).
 

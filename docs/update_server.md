@@ -4,7 +4,7 @@
 
 [Updating to the latest RMM version](#updating-to-the-latest-rmm-version)
 
-[Keeping your Let's Encrypt certificate up to date](#keeping-your-lets-encrypt-certificate-up-to-date)
+[Keeping your Let's Encrypt certificate up to date](#keeping-your-lets-encrypt-ssl-certificate-up-to-date)
 
 [Video Walkthru](#video-walkthru)
 
@@ -78,7 +78,7 @@ Update SSL: To renew and update your Let's Encrypt wildcard cert SSL certs, run 
 sudo certbot certonly --manual -d *.example.com --agree-tos --no-bootstrap --preferred-challenges dns -m admin@example.com --no-eff-email
 ```
 
-Same instructions as during install for [verifying the TXT record](install_server.md#step-6---deploy-the-txt-record-in-your-dns-manager-for-letsencrypt-wildcard-certs) has propagated before hitting ++enter++.
+Same instructions as during install for [verifying the TXT record](install_server.md#step-6-deploy-the-txt-record-in-your-dns-manager-for-lets-encrypt-wildcard-certs) has propagated before hitting ++enter++.
 
 <font color="red" size="20"><p style="text-align:center">**You're not done yet keep reading!**</p></font>
 

@@ -60,7 +60,7 @@ It will most probably be a CORS error which means you need to check your DNS set
 
 If you see an error about SSL or certificate expired, then your Let's Encrypt cert has probably expired and you'll need to renew it.
 
-Refer to the Let's Encrypt cert renewal instructions [here](update_server.md#keeping-your-lets-encrypt-certificate-up-to-date).
+Refer to the Let's Encrypt cert renewal instructions [here](update_server.md#keeping-your-lets-encrypt-ssl-certificate-up-to-date).
 
 ## Agents not installing or updating
 
