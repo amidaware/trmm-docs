@@ -51,6 +51,6 @@ However, the best way to submit a whitelisting request to your AV for the TRMM a
 
 Right click `"C:\Program Files\TacticalAgent\tacticalrmm.exe"` > `Properties` > `Digital Signatures` tab. 
 
-Serial Number: `04a01435f1a73c8874adc89457eda7dc`
+Serial Number: `0fef30ccce9d30183067160018796558`
 
-Thumb Print: `278e23c068f71b85659e094a557f16cda609fdd6`
+Thumb Print: `0e4844266294100d3f93e1cc7eecf61e9206bb14`
