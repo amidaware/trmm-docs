@@ -81,7 +81,7 @@ This is primarily for 2 reasons:
 1. As this has been a sponsorship goal it seems only fair that those who contributed to make this a reality get early access to easy agent installs.
 2. We're looking for good bug reports from active users to get these agent into production ready code. 
 
-## Who is Amidaware LLC?
+## Who is Amidaware Inc?
 
 The Legal entity behind Tactical RMM.
 
@@ -210,9 +210,7 @@ If you aren't a dev in a non-production environment, don't run NATS with self si
 
 ## License FAQ
 
-Question 1: Is okay if we, as an MSP, use the RMM to monitor our customers, but charge them for this service?
-
-Answer 1: Yes, please use it and charge your customers for it.
+If you're not certain if your business use case is allowed by the license please open a [ticket](https://support.amidaware.com) and let us know how you're planning on using it.
 
 ## Can I password protect the uninstalling of the TRMM agent?
 
