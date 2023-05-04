@@ -509,11 +509,11 @@ If you have strict firewall rules these are the only outbound rules from the age
 
 #### Unsigned Agents
 
-Unsigned agents require access to: `https://github.com/amidaware/rmmagent/releases/*`
+Unsigned agents require access to: `https://github.com/amidaware/rmmagent/releases/*` for downloading / updating agents.
 
 #### Signed Agents
 
-Signed agents will require: `https://agents.tacticalrmm.com` for downloading / updating agents.
+Signed agents require access to: `https://agents.tacticalrmm.com` for downloading / updating agents.
 
 ### Agent Installation Process
 
