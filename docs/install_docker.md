@@ -8,7 +8,7 @@
 
 Install docker.
 
-### Create the A records
+### Create the DNS A records
 
 !!!warning
     All 3 domain names have to be at the same subdomain level because you only get one LetsEncrypt wildcard cert, and it'll only apply to that level of DNS name.
@@ -27,7 +27,7 @@ We'll be using `example.com` as our domain for this example.
 ### Acquire Let's Encrypt wildcard certs with Certbot
 
 !!!warning
-  If the Let's Encrypt wildcard certificates are not provided, a self-signed certificate will be generated and most agent functions won't work. 
+  If the Let's Encrypt wildcard certificates are not provided, a self-signed certificate will be generated and most agent functions won't work.
 
 **1 ) Install Certbot**
 
@@ -102,7 +102,7 @@ echo "CERT_PRIV_KEY=$(sudo base64 -w 0 /path/to/priv/key)" >> .env
 Run the below command to start the environment:
 
 ```bash
-sudo docker-compose up -d
+sudo docker compose up -d
 ```
 
 Removing the -d will start the containers in the foreground and is useful for debugging.
@@ -119,11 +119,4 @@ Create your first client/site and choose the default timezone.
 
 The backup script **does not** work with docker. To backup your install use [standard docker backup/restore](https://docs.docker.com/desktop/backup-and-restore/) processes.
 
-If your file system is `btrfs` something like:
-
-```bash
-docker-compose stop
-btrfs subvolume snapshot -r /srv/tsd /srv/tsd/.snapshot-`date +%F-%H%M%S`
-```
-
-Or, you can look at [this](https://github.com/larseberhardt/TRMM-Docker-Backup-Script).
+Or, you can look at [larseberhardt/TRMM-Docker-Backup-Script](https://github.com/larseberhardt/TRMM-Docker-Backup-Script).

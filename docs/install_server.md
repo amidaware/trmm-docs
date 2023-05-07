@@ -14,7 +14,7 @@
 
 ### Minimum Requirements
 
-A fresh linux VM running either Debian 11 or Ubuntu 20.04 LTS with **4GB RAM** on x64 architecture.
+A fresh Linux VM running either Debian 11 or Ubuntu 20.04 LTS with **4GB RAM** on x64 architecture.
 
 !!!warning
     The provided install script assumes a fresh server with no software installed on it. Attempting to run it on an existing server with other services **will** break things and the install will fail.
@@ -27,10 +27,10 @@ A fresh linux VM running either Debian 11 or Ubuntu 20.04 LTS with **4GB RAM** o
 
 !!!note
     CPU: 1 core is fine for < 200 agents with limited checks/tasks.<br><br>
-    Disk space and speed are dependent on your use case. Of course faster is better SSD/NVMe. Space is dependent on how long you're keeping historical data, and how many checks/script runs and their output size. 50GB should be fine for < 12months of history on < 200 agents with < 30 checks/tasks run at reasonable time intervals.
+    Disk space and speed are dependent on your use case. Of course faster is better SSD/NVMe. Space is dependent on how long you're keeping historical data, how many checks/script runs and their output size. 50GB should be fine for < 12months of history on < 200 agents with < 30 checks/tasks run at reasonable time intervals.
 
 !!!tip
-    Enable logging in putty in case you need it later. A good windows SSH client is [MobaXTerm](https://mobaxterm.mobatek.net/download.html). It'll automatically log everything so if you need it later (like install logs because you have a [50x error](troubleshooting.md#problems-after-new-server-install) trying to login after) they'll be easy to grab and share with support. Has integrated SCP client too!
+    Enable logging of your terminal output. A good Windows SSH client is [MobaXTerm](https://mobaxterm.mobatek.net/download.html). It'll automatically log everything so if you need it later (like install logs because you have a [50x error](troubleshooting.md#problems-after-new-server-install) trying to login after) they'll be easy to grab and share with support. It has an integrated SCP client too!
 
 #### Network Requirements
 
@@ -64,9 +64,9 @@ apt -y upgrade
 
 If a new kernel is installed, reboot the server with the `reboot` command.
 
-### Step 2 - Create a Linux user
+### Step 2 - Create a User
 
-Create a linux user named `tactical` to run the rmm and add it to the sudoers group.
+Create a user named `tactical` to run the RMM and add it to the sudoers group.
 
 ```bash
 useradd -m -G sudo -s /bin/bash tactical
@@ -90,13 +90,13 @@ ufw allow https
 ```
 
 !!!info
-    SSH (port 22 TCP) is only required for you to remotely login and do basic linux server administration for your rmm. It is not needed for any agent communication.<br/>
+    SSH (port 22 TCP) is only required for you to remotely login and do basic server administration for your RMM. It is not needed for any agent communication.<br/>
 
 ???+ note "SSH Firewall Rule"
 
     === ":material-console-line: Restrict SSH"
 
-        Allow ssh from only allowed IP's (__highly__ recommended)
+        Allow SSH from only allowed IP's (__highly__ recommended)
 
         ```bash
         ufw allow proto tcp from X.X.X.X to any port 22
@@ -105,7 +105,7 @@ ufw allow https
 
     === ":material-console-line: Allow all SSH"
 
-        Allow ssh from everywhere (__not__ recommended)
+        Allow SSH from everywhere (__not__ recommended)
 
         ```bash
         ufw allow ssh
@@ -120,7 +120,7 @@ ufw enable && ufw reload
 !!!note
     You will never login to the server again as `root` again unless something has gone horribly wrong, and you're working with the developers.
 
-### Step 4 - Create the A records
+### Step 4 - Create DNS A records
 
 !!!warning
     All 3 domain names have to be at the same subdomain level because you only get one LetsEncrypt wildcard cert, and it'll only apply to that level of DNS name.
@@ -243,7 +243,7 @@ We've said it before, we'll say it again.
 
     - Every 2-3 months.
 
-        - Do it when you update your SSL certs. 
+        - Do it when you update your SSL certs.
 
 Especially don't get behind 2 major rev's. Lots of agent connectivity changes occurring. If you don't keep up, you'll be needing to do manual updates by adjusting the `updates.sh` and specifying older branches...then doing update, wait for all agents to get updated...then do the next major branch, then wait for agent updates...until you're current. Can we say **#Painful**.
 

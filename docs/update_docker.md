@@ -13,9 +13,9 @@ SSH into your server as a root user and run the below commands:
 cd [dir/with/compose/file]
 mv docker-compose.yml docker-compose.yml.old
 wget https://raw.githubusercontent.com/amidaware/tacticalrmm/master/docker/docker-compose.yml
-sudo docker-compose pull
-sudo docker-compose down
-sudo docker-compose up -d --remove-orphans
+sudo docker compose pull
+sudo docker compose down
+sudo docker compose up -d --remove-orphans
 ```
 
 ## Keeping your Let's Encrypt certificate up to date
@@ -36,6 +36,6 @@ echo "CERT_PRIV_KEY=$(sudo base64 -w 0 /etc/letsencrypt/live/${rootdomain}/privk
 !!!warning
     You must remove the old and any duplicate entries for CERT_PUB_KEY and CERT_PRIV_KEY in the .env file.
 
-Now run `sudo docker-compose up -d restart` and the new certificate will be in effect.
+Now run `sudo docker compose up -d restart` and the new certificate will be in effect.
 
 Bonus: [Upgrade postgres13 to 14](https://github.com/amidaware/trmm-awesome#docker-upgrade-postgres-13-to-14)

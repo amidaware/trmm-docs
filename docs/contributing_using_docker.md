@@ -79,9 +79,9 @@ Open: [http://rmm.example.com:8005/](http://rmm.example.com:8005/)
 
 !!!note
     If you add new MKDocs extensions you might need to:<br>
-    - docker-compose down.<br>
+    - `docker compose down`<br>
     - Then delete the `/api/tacticalrmm/env/` folder.<br>
-    - Then docker-compose up and it will download / rebuild new extensions.
+    - Then `docker compose up` and it will download / rebuild new extensions.
 
 ### View Django Administration
 

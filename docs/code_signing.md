@@ -4,7 +4,7 @@
 
 Tactical RMM agents are now [code signed](https://comodosslstore.com/resources/what-is-microsoft-authenticode-code-signing-certificate/)!
 
-To get access to code signed agents (which includes linux/mac agents), you must be a [Sponsor](sponsor.md) with a minimum **monthly** [Tier 1](sponsor.md#sponsor-with-stripe-or-paypal) sponsorship.
+To get access to code signed agents (which includes Linux/macOS agents), you must be a [Sponsor](sponsor.md) with a minimum **monthly** [Tier 1](sponsor.md#sponsor-with-stripe-or-paypal) sponsorship.
 
 One token is valid for 1 self hosted instance. If you have more than 1 instance please contact [support](https://support.amidaware.com/) for pricing options.
 
@@ -16,7 +16,7 @@ Select the payment method you paid with from the dropdown.
 
 If you sponsored via [Github Sponsors](sponsor.md#sponsor-with-github-sponsors) make sure to enter your Github **username** (not email).
 
-If you sponsored via [Stripe or Paypal](sponsor.md#sponsor-with-stripe-or-paypal) make sure to enter the same email address you used when paying. 
+If you sponsored via [Stripe or Paypal](sponsor.md#sponsor-with-stripe-or-paypal) make sure to enter the same email address you used when paying.
 
 Enter the API subdomain you will be using for your instance (e.g. `api.example.com`).
 
@@ -41,7 +41,7 @@ If you think your auth token has been compromised or stolen then please [open a 
 1. Code signing costs a lot of money. OV code signing requires a legitimate legal business...Amidaware was setup for this purpose. Code signing + operating a business costs thousands of dollars a year.
 2. It helps the project move forward and it can supports devs spending time on it, they have lives, wives, jobs and kids which all demands attention.
 3. It should stop bad actors using it maliciously.
-4. It helps with AVs detecting it as anything malicious.
+4. It helps with Antivirus products detecting it as being malicious.
 
 ## Tactical RMM is getting flagged as PUA or virus, will this fix it?
 
@@ -49,7 +49,7 @@ Getting a code signed agent helps, but it is not guaranteed to eliminate this en
 
 However, the best way to submit a whitelisting request to your AV for the TRMM agent... is having a code signed exe to submit.
 
-Right click `"C:\Program Files\TacticalAgent\tacticalrmm.exe"` > `Properties` > `Digital Signatures` tab. 
+Right click `"C:\Program Files\TacticalAgent\tacticalrmm.exe"` > `Properties` > `Digital Signatures` tab.
 
 Serial Number: `0fef30ccce9d30183067160018796558`
 

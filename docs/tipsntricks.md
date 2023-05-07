@@ -107,7 +107,7 @@ If you need to comply with GDPR regulations and ensure employee rights legislati
 ![Features](images/mesh_features.png)
 6. Ok your way out
 
-**You will probably now notice a strange name shows when you take control**, to change this 
+**You will probably now notice a strange name shows when you take control**, to change this
 
 1. Next to Real Name click edit (the wee pencil)
 2. Change or fill in Real Name
@@ -161,7 +161,7 @@ Once you've made your script, that will take existing software and convert it to
 choco list --local-only
 ```
 
-Next, you're going to schedule your updates. 
+Next, you're going to schedule your updates.
 
 Because of [community repo limits](https://docs.chocolatey.org/en-us/community-repository/community-packNeages-disclaimer#rate-limiting), you can [purchase chocolatey](https://chocolatey.org/pricing), [host your own chocolatey server](https://docs.chocolatey.org/en-us/features/host-packages), or use this script sparingly <https://github.com/amidaware/community-scripts/blob/main/scripts/Win_Chocolatey_Manage_Apps_Bulk.ps1> using `-Mode upgrade -Hosts x` where x is the max number of machines on an internet connection.
 

@@ -24,7 +24,7 @@ $AllWindowsFeatures = Get-WindowsFeature
 $TRMM_Role_AllCustomFields = @()
 
 foreach($WindowsFeature in $AllWindowsFeatures){
-    
+
     if($WindowsFeature.Depth -eq 1){
 
         $PrimaryRole = $WindowsFeature.DisplayName
@@ -45,13 +45,13 @@ foreach($WindowsFeature in $AllWindowsFeatures){
 $Unique_Roles = $TRMM_Role_AllCustomFields | Select -Unique Role
 #Loop through each WindowsFeature
 foreach($WindowsFeature in $Unique_Roles){
-    
+
     if($TRMM_Agent_ExistingCustomFields.Name -like "*$($WindowsFeature.Role)*"){
 
         # Need to check if it also contains the value
 
     } else {
-        
+
         # Check to see if the Role is an Array or an Object
         # Convert to Array otherwise
 
@@ -283,7 +283,7 @@ ConvertFrom-Json $Services
 
 ## Combining scripts
 
-This will iterate over all agents, filter out non-windows and offline agents, run the PowerShell above to the first 5 services that are running, and compile the information in a Servers array. 
+This will iterate over all agents, filter out non-Windows and offline agents, run the PowerShell above to the first 5 services that are running, and compile the information in a Servers array.
 
 ```powershell
 # Query the TRMM API with PowerShell

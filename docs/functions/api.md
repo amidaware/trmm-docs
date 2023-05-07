@@ -8,7 +8,7 @@ However this makes it difficult to document the API as it has only been designed
 
 The easiest way to see what endpoint/payload you need to send is to open your browser's developer tools > Network tab. Then, perform the action you wish to do via the api in Tactical's web interface and watch the network tab to see the endpoint and the payload that is generated, and use that as an example of how to structure your api request.
 
-Please note that using an API key will bypass 2fa authentication.
+Please note that using an API key will bypass 2FA authentication.
 
 Please also note that since Tactical RMM follows [Semantic Versioning](https://semver.org/), until we reach a 1.0.0 release, the API is considered unstable and may change at anytime.
 
@@ -23,7 +23,7 @@ Headers:
 
 ```json
 {
-    "Content-Type": "application/json", 
+    "Content-Type": "application/json",
     "X-API-KEY": "J57BXCFDA2WBCXH0XTELBR5KAI69CNCZ"
 }
 ```
@@ -65,7 +65,7 @@ Here are some examples:
             trigger_update_scan()
         ```
 
-    === ":material-powershell: Powershell"
+    === ":material-powershell: PowerShell 1"
 
         ```powershell
         # Example - Get all agents using API
@@ -80,15 +80,15 @@ Here are some examples:
 
         foreach ($agent in $agentsResult) {
             Write-Host $agent
-            
+
             #Write-Host $agent.hostname
         }
         ```
 
-    === ":material-powershell: Powershell"
+    === ":material-powershell: PowerShell 2"
 
         ```powershell
-        # Example - Send powershell command to agent.  Make sure to pass {{agent.agent_id}} as a parameter
+        # Example - Send PowerShell command to agent.  Make sure to pass {{agent.agent_id}} as a parameter
 
         param(
             $AgentId
@@ -102,7 +102,7 @@ Here are some examples:
 
         $body = @{
             "shell"   = "powershell"
-            "cmd"     = "dir c:\\users" 
+            "cmd"     = "dir c:\\users"
             "timeout" = 30
         }
 
@@ -135,7 +135,7 @@ Here are some examples:
 
 This will let you add a browser interface to see how you can use the API better.
 
-Open `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py` and add 
+Open `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py` and add
 
 ```conf
 SWAGGER_ENABLED = True
@@ -161,7 +161,6 @@ HEADERS = {
     "Content-Type": "application/json",
     "X-API-KEY": "9SI43IFUMPEVRWOZR4NC8PGP4ZLA9PYX",
 }
-
 
 def get_software():
     agents = requests.get(f"{API}/agents/?detail=false", headers=HEADERS)  # get a list of all agents

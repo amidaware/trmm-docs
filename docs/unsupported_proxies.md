@@ -155,7 +155,7 @@ and inside it we add:
       entryPoints = ["https"]
       rule = "Host(`mesh.**yourdomain.com**`)"
       service = "mesh-svc"
-##middleware with 2fa
+##middleware with 2FA
 [http.services]
   [http.services.mesh-svc]
     [http.services.mesh-svc.loadBalancer]
@@ -202,7 +202,7 @@ and inside it we add:
       rule = "Host(`rmm.**yourdomain.com**`)"
       service = "rmm-svc"
 
-      ##middleware with 2fa
+      ##middleware with 2FA
 
 [http.services]
   [http.services.rmm-svc]

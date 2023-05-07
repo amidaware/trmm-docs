@@ -98,7 +98,7 @@ Example
 
 `default_timeout`: Sets the default timeout for the script.
 
-`supported_platforms`: ["windows", "linux", "darwin"] (case sensitive, if missing, assumes all platforms are supported). `darwin`=MacOS
+`supported_platforms`: ["windows", "linux", "darwin"] (case sensitive, if missing, assumes all platforms are supported). `darwin`=macOS
 
 `shell`: can be `powershell`, `cmd`, `python` or `shell`
 
