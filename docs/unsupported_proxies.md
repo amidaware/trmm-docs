@@ -890,3 +890,61 @@ In Synology NAS reverse proxy portal and added websockets to the rmm domains, es
 ![Image1](images/synology_proxy.png)
 
 ![Image2](images/synology_proxy2.png)
+
+## CloudFlare Tunnel
+
+[Youtube Video Showing How](https://www.youtube.com/watch?v=70ME_EaoTxs)
+
+First, just complete a TRMM install like normal- you don't need to put the API, RMM, or Mesh domains into Cloudflare however.
+You must still follow the TXT record to prove that it's your domain.
+
+Once your TRMM install is completed, navigate to CloudFlare Tunnels and create a new Tunnel.
+Give it any name, Personally, I chose the name TRMM. Now, follow the instructions to install the connector on your distro of choice.
+
+### Adding the Entries to Cloudflare
+
+Now, we need to begin adding the domains.
+For API, for the subdomain enter the subdomain you chose earlier. In my case api.mydomain
+Leave "Path" empty.
+For Service, choose HTTPS then in the URL put your server's LOCAL ip and then port 443.
+
+Scroll down and extend Additional Application Settings. From here, extend TLS and set Origin Server Name to the subdomain + domain that you're using.
+
+Repeat this step for RMM.
+
+Mesh is slightly different.
+For the subdomain, enter the subdomain you chose earlier. In my case mesh.mydomain, still being sure to leave Path empty.
+For service, pick Type HTTP, and for URL put your server's LOCAL ip then:4430.
+
+Extend Additional Application Settings and then HTTP settings and set the HTTP Host Header to the subdomain + domain that you're using.
+
+```
+api.{domain}
+https | TRMM server IP | 443
+Advanced: Origin Server Name | api.{domain}
+
+mesh.{domain}
+http | TRMM server IP | 4430
+Advanced: HTTP Host Header | mesh.{domain}
+
+rmm.{domain}
+https | TRMM server IP | 443
+Advanced: Origin Server Name | rmm.{domain}
+
+```
+
+Now, Mesh will check the external cert when it boots up in order to verify the domain. This will fail as TRMM on setup adds a 127.0.1.1 entry to the /etc/hosts file.
+
+To fix this, SSH into your TRMM server and run the following command:
+
+```bash
+nano /etc/hosts
+```
+
+On the second line of your hosts file, you should see all the entries listed.
+```bash
+127.0.1.1   trmm.yourdomain trmm api.yourdomain rmm.yourdomain mesh.yourdomain
+```
+
+You need to <ins>**remove**</ins> the mesh.yourdomain entry at the end.
+Once you've done this, you're ready to go. All sites should be accessible and you should be able to add agents and connect/work with them.
