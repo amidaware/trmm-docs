@@ -355,7 +355,7 @@ backend mesh.example.com_ipvANY
 	  server			      mesh x.x.x.x:443 ssl  verify none
 ```
 
-### HAProxy How-to for PFSense
+### HAProxy How-to for pfSense
 
 <https://github.com/ninjamonkey198206/T-RMM-PFSense-HAProxy-config>
 
@@ -363,7 +363,7 @@ backend mesh.example.com_ipvANY
 
 <https://github.com/ninjamonkey198206/T-RMM-Baremetal-HAProxy>
 
-### HAProxy in TCP Mode, PFSense
+### HAProxy in TCP Mode, pfSense
 
 In this scenario, you install TRMM as per documentation.
 Meaning your certificates are generated and managed on your TRMM server, just use the `install.sh` and follow docs and on-screen instructions.
@@ -376,7 +376,7 @@ Only use this method if you have more than 1 server that need to use port 443 on
 These are some assumptions made to make this guide, short, easy to follow and to the point.
 Of course you can adapt it to your environment and/or current configuration.
 
-- You have a PFSense firewall.
+- You have a pfSense firewall.
 - You have HAProxy installed.
 - You don't have any `http` frontends on your HAProxy.
 - You have firewall rule to allow traffic from your WAN to HAProxy 443 port.
@@ -527,7 +527,7 @@ frontend Frontend-SNI
   use_backend tactical_ipv4  if  trmm-backend
 ```
 
-### HAProxy in TCP Mode, OPNSense
+### HAProxy in TCP Mode, OPNsense
 
 In this scenario, you install TRMM as per documentation.
 Meaning your certificates are generated and managed on your TRMM server, just use the `install.sh` and follow docs and on-screen instructions.
@@ -540,7 +540,7 @@ Only use this method if you have more than 1 server that need to use port 443 on
 These are some assumptions made to make this guide, short, easy to follow and to the point.
 Of course you can adapt it to your environment and/or current configuration.
 
-- You have a PFSense firewall.
+- You have a pfSense firewall.
 - You have HAProxy installed.
 - You don't have any `http` frontends on your HAProxy.
 - You have port forward to forward traffic from your WAN 443 port to OPNsense 443 port.
@@ -870,7 +870,7 @@ Then restart your Mesh:
 systemctl restart meshcentral.service
 ```
 
-Open tcp port 4430 if using UFW:
+Open TCP port 4430 if using UFW:
 
 ```bash
 ufw allow 4430/tcp

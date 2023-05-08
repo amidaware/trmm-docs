@@ -40,7 +40,7 @@ If you want to do this after install please follow [this guide](https://docs.tac
 ### Use NATS Standard instead of NATS websocket
 
 Prior to TRMM v0.14.0 (released 7/7/2022), agents NATS traffic connected to the TRMM server on public port 4222.
-If you have upgraded to v0.14.0 and have agents that won't work with websockets for some reason (too old TLS etc) then you can do the following to use NATS standard tcp on port 4222, just like how it was before v0.14.0:
+If you have upgraded to v0.14.0 and have agents that won't work with websockets for some reason (too old TLS etc) then you can do the following to use NATS standard TCP on port 4222, just like how it was before v0.14.0:
 
 For Windows agents:
 

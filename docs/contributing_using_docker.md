@@ -24,7 +24,7 @@ This is better:
 
 ![img](images/wls2_upgrade_and_set_default.png)
 
-## Install VSCode Extensions
+## Install VS Code Extensions
 
 [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 

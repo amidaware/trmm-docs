@@ -46,7 +46,7 @@ nav:
       - "Grafana": 3rdparty_grafana.md
       - "AnyDesk": 3rdparty_anydesk.md
       - "Bomgar": 3rdparty_bomgar.md
-      - "Connectwise Control / Screenconnect": 3rdparty_screenconnect.md
+      - "ConnectWise Control / ScreenConnect": 3rdparty_screenconnect.md
       - "Splashtop": 3rdparty_splashtop.md
       - "TeamViewer": 3rdparty_teamviewer.md
       - "BitDefender GravityZone": 3rdparty_bitdefender_gravityzone.md
@@ -56,14 +56,14 @@ nav:
       - "Unsupported Configs": unsupported_scripts.md
       - "Securing nginx": securing_nginx.md
       - "Unsupported Proxies": unsupported_proxies.md
-      - "Installing in Synology docker": unsupported_synology_docker_install.md
+      - "Installing in Synology Docker": unsupported_synology_docker_install.md
       - "Installing on other platforms": unsupported_platforms.md
   - Tips n' Tricks: tipsntricks.md
   - Contributing:
       - "Contributing to Docs": contributing.md
       - "Contributing to Community Scripts": contributing_community_scripts.md
       - "Contributing using a browser": contributing_using_browser.md
-      - "Contributing using VSCode": contributing_using_vscode.md
+      - "Contributing using VS Code": contributing_using_vscode.md
       - "Contributing using Docker": contributing_using_docker.md
       - "Contributing using a Remote Server": contributing_using_a_remote_server.md
   - Security: security.md

@@ -6,7 +6,7 @@ There are build/tests everywhere in TRMM, that make sure things haven't gone wro
 
 Here's how you run tests locally (make sure python is installed first)
 
-???+ abstract "Running tests from VSCode"
+???+ abstract "Running tests from VS Code"
 
     === ":material-linux: `linux`"
 

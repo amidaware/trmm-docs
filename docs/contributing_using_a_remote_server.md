@@ -21,8 +21,8 @@ git config user.name "Bob"
 git checkout master  # <-------------Remove this line to be on latest code
 ```
 
-### Install VSCode and Extensions
-Download VSCode [here](https://code.visualstudio.com/download)
+### Install VS Code and Extensions
+Download VS Code [here](https://code.visualstudio.com/download)
 
 Download the Remote SSH Development Pack [here](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
 
@@ -31,7 +31,7 @@ Download the Remote SSH Development Pack [here](https://marketplace.visualstudio
 
 The remote development server should already have Tactical RMM installed via the traditional install method.
 
-After the extension pack is installed in VSCode you will have a new button at the bottom-left of VSCode. You can select it and add your remote SSH host information.
+After the extension pack is installed in VS Code you will have a new button at the bottom-left of VS Code. You can select it and add your remote SSH host information.
 
 ![RemoteSSH](images/Remote_SSH_connection.png)
 
@@ -147,7 +147,7 @@ quasar dev
 
 You should now have a localhost and IP based URL to view that has a live reload feature.
 
-## Configure GitHub with VSCode
+## Configure GitHub with VS Code
 !!!info
     Make sure you are submitting Pull Requests to the develop branch.
     Follow this guide for a good introduction to GitHub: <https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github>

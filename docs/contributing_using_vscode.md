@@ -1,8 +1,8 @@
-# Contributing Using VSCode
+# Contributing Using VS Code
 
 ## Getting Started
 
-### Install VSCode
+### Install VS Code
 
 <https://code.visualstudio.com/download>
 
@@ -14,7 +14,7 @@ This is making a duplicate of the code under your Github that you can edit.
 
 ![ForkIt](images/vscode-forkit.png)
 
-### Add your (forked) repo to VSCode
+### Add your (forked) repo to VS Code
 
 1. Clone repository.
 
@@ -22,7 +22,7 @@ This is making a duplicate of the code under your Github that you can edit.
 
 3. Choose local folder.
 
-### Install extra VSCode Extensions
+### Install extra VS Code Extensions
 
 - GitLens
 
@@ -36,7 +36,7 @@ This is making a duplicate of the code under your Github that you can edit.
 Ctrl+`
 ```
 
-### Configure a remote for your fork (in VSCode)
+### Configure a remote for your fork (in VS Code)
 
 <https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork>
 
@@ -66,7 +66,7 @@ git remote -v
 
 2. `Commit` (update something) and notate what you did.
 
-3. `Push` (from your local vscode to your github fork).
+3. `Push` (from your local VS Code to your github fork).
 
 4. Open your browser and look at your repo (It should reflect your commit).
 
@@ -80,11 +80,11 @@ In your browser, create a pull request.
 
 <https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork>
 
-Bring changes from original repo to your local vscode copy so you're current with changes made in original Github repo:
+Bring changes from original repo to your local VS Code copy so you're current with changes made in original Github repo:
 
 ![Sync Fork](images/trmm_need_sync_local_fork.png)
 
-In VSCode open TERMINAL:
+In VS Code open TERMINAL:
 
 ```text
 Ctrl+`
