@@ -3,11 +3,11 @@
 Tactical RMM supports uploading existing scripts or creating new scripts from within the web interface.
 
 Windows agent languages supported:
-- Powershell
+- PowerShell
 - Windows Batch
 - Python
 
-There is [RunAsUser](../howitallworks.md#runasuser-functionality) functionality for windows.
+There is [RunAsUser](../howitallworks.md#runasuser-functionality) functionality for Windows.
 
 Linux/Mac languages supported:
 - Any language that is installed on the remote machine (use a shebang at the top of the script to set the interpreter)
@@ -20,10 +20,10 @@ In the dashboard, browse to **Settings > Scripts Manager**. Click the **New** bu
 - **Description** - Optional description for the script.
 - **Category** - Optional way to group similar scripts together.
 - **Type** - This sets the language of the script. Available options are:
-    - Powershell
+    - PowerShell
     - Windows Batch
     - Python
-    - Shell (use for linux/mac scripts)
+    - Shell (use for Linux/macOS scripts)
 
 - **Script Arguments** - Optional way to set default arguments for scripts. These will auto populate when running scripts and can be changed at runtime.
 - **Default Timeout** - Sets the default timeout of the script and will stop script execution if the duration surpasses the configured timeout. Can be changed at script runtime.
@@ -100,7 +100,7 @@ Scripts can also be run periodically on an agent and trigger an alert if it fail
 
 ### Alert Failure/Resolve Actions
 
-Scripts can be triggered when an alert is triggered and resolved. This script will run on any online agent and supports passing the alert information as arguments. 
+Scripts can be triggered when an alert is triggered and resolved. This script will run on any online agent and supports passing the alert information as arguments.
 
 For configuring **Alert Templates**, see [Alerting](./alerting.md)
 
@@ -108,7 +108,7 @@ See below for populating dashboard data in scripts and the available options.
 
 ## Using dashboard data in scripts
 
-Tactical RMM allows passing in dashboard data to scripts as arguments. The below powershell arguments will get the client name of the agent and also the agent's public IP address.
+Tactical RMM allows passing in dashboard data to scripts as arguments. The below PowerShell arguments will get the client name of the agent and also the agent's public IP address.
 
 ```
 -ClientName {{client.name}} -PublicIP {{agent.public_ip}}
@@ -131,7 +131,7 @@ Tactical RMM supports getting values from the global key store using the {{globa
 
 See [Global Keystore](keystore.md).
 
-### Example Powershell Script
+### Example PowerShell Script
 
 The below script takes five named values. The arguments will look like this: `-SiteName {{site.name}} -ClientName {{client.name}} -PublicIP {{agent.public_ip}} -CustomField {{client.AV_KEY}} -Global {{global.API_KEY}}`
 
@@ -153,7 +153,7 @@ Write-Output "Global: $Global"
 
 ## Script Snippets
 
-Script Snippets allow you to create common code blocks or comments and apply them to all of your scripts. This could be initialization code, common error checking, or even code comments. 
+Script Snippets allow you to create common code blocks or comments and apply them to all of your scripts. This could be initialization code, common error checking, or even code comments.
 
 ### Adding Script Snippets
 
@@ -162,7 +162,7 @@ In the dashboard, browse to **Settings > Scripts Manager**. Click the **Script S
 - **Name** - This identifies the script snippet in the dashboard
 - **Description** - Optional description for the script snippet
 - **Shell** - This sets the language of the script. Available options are:
-    - Powershell
+    - PowerShell
     - Windows Batch
     - Python
 
@@ -175,11 +175,11 @@ When editing a script, you can add template tags to the script body that contain
 
 The template tags will only be visible when Editing the script. When downloading or viewing the script code the template tags will be replaced with the script snippet code.
 
-### Powershell 7
+### PowerShell 7
 
 <https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.2>
 
-Shell Type: Powershell
+Shell Type: PowerShell
 
 Command: `Start-Process nohup 'pwsh -noprofile -c "1..120 | % { Write-Host . -NoNewline; sleep 1 }"'`
 
@@ -202,7 +202,7 @@ print("Hello World!")
 ```
 
 This is where [env][] comes into play. `env` will search the `$PATH` for the executable that matches the argument. In
-this case, the script will be run by the first "python3" found in $PATH. However, what if `python3` points 
+this case, the script will be run by the first "python3" found in $PATH. However, what if `python3` points
 to `python3.6`? You're in the same boat you were in before.
 
 ```bash
@@ -224,7 +224,7 @@ treated the same _except_ that Python scripts also work on Windows. On Linux and
 are treated the same.
 
 | Script Type | OS      | Supported |
-|-------------|---------|-----------|
+| ----------- | ------- | --------- |
 | Python      | Windows | Yes       |
 | Python      | Linux   | Yes       |
 | Python      | macOS   | Yes       |
@@ -249,7 +249,7 @@ are treated the same.
 - [macOS release history][]; includes supported/maintained/unsupported and last update date.
 
 | OS                                      | Python version               | Installed by TRMM |
-|-----------------------------------------|------------------------------|-------------------|
+| --------------------------------------- | ---------------------------- | ----------------- |
 | Windows                                 | 3.8                          | Yes               |
 | Linux, Debian 10 (Buster) (end of life) | 3.7                          | No                |
 | Linux, Debian 11 (Bullseye)             | 3.9                          | No                |

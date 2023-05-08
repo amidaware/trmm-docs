@@ -2,12 +2,12 @@
 
 !!!warning
     The agent's version is directly tied to the RMM's version.<br/><br/>
-    For example, currently RMM version 0.4.17 is compatible with agent version 1.4.6 and lower.<br/><br/>
+    For example, as of May 2023 RMM version 0.15.9 is compatible with agent version 2.4.6 and lower.<br/><br/>
     You should never attempt to manually update an agent to a newer version without first making sure your RMM is on the latest version.
 
 ## Updating from the Web UI
 
-Agents will automatically self update themselves if you have auto self update enabled in **Settings > Global Settings**.
+Agents will automatically self-update themselves if you have auto self-update enabled in **Settings > Global Settings**.
 
 ![autoagentupdate](images/autoagentupdate.png)
 

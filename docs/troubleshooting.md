@@ -74,7 +74,7 @@ Agents will also not automatically update if they are too old.
 
 If you have agents that are relatively old, you will need to uninstall them manually and reinstall using the latest version.
 
-The mesh installer is created at time of install. Make sure it's working by running this on your TRMM server. 
+The mesh installer is created at time of install. Make sure it's working by running this on your TRMM server.
 
 ???+ note "Check TRMM connection to MeshCentral"
 
@@ -87,7 +87,7 @@ The mesh installer is created at time of install. Make sure it's working by runn
     === ":material-docker: docker"
 
         ```bash
-        sudo docker-compose exec tactical-backend python manage.py check_mesh
+        sudo docker compose exec tactical-backend python manage.py check_mesh
         ```
 
 ![if sharing](images/meshcheck_sharing.png)
@@ -213,7 +213,7 @@ If you're getting `Invalid group id` at the end of the install you're probably d
 
 ## Testing network connectivity between agent and server
 
-Use powershell, make sure you can connect to 443 from agent to server:
+Using PowerShell, make sure you can connect to 443 from agent to server:
 
 ```powershell
 Test-NetConnection -ComputerName api.example.com -Port 443
@@ -230,7 +230,7 @@ This is a MeshCentral connection problem.
 1. Don't use Firefox (test in vanilla Chrome first).
 2. Open `mesh.domain.com` and see if the agent is listed there.
 3. If you don't see your agent (or it's offline), restart TRMM server (or [service](howitallworks.md#meshcentral)).
-4. Restart Mesh Agent on client PC. 
+4. Restart Mesh Agent on client PC.
 5. Check again. Still not appearing in `mesh.domain.com` in Mesh go to **"My Server" > Trace tab > Click tracing button > Check MeshAgent traffic**.
 6. Restart Mesh Agent on client PC. You should see something in trace like ![mesh trace](images/mesh_trace.png).
 7. If you don't, you have firewall / connectivity issues (open `mesh.domain.com` from agent and troubleshoot. You aren't using a proxy right?).
@@ -265,7 +265,7 @@ If you're trying to login [check dns](https://github.com/amidaware/tacticalrmm/i
 
 ## executable file not found in %PATH%
 
-This error can show up for Powershell or choco.
+This error can show up for PowerShell or choco.
 
 - `exec: "Powershell": executable file not found in %PATH%`
 - `exec: "choco.exe": executable file not found in %PATH%`

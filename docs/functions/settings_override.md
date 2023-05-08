@@ -18,7 +18,7 @@ REST_KNOX = {
 
 Change `(days=30)` to whatever you prefer. Then run `sudo systemctl restart rmm.service` for changes to take effect.
 
-### Using your own wildcard ssl cert
+### Using your own wildcard SSL cert
 
 Modify the install script and replace `CERT_PUB_KEY` and `CERT_PRIV_KEY` with the full paths to your wildcard cert.
 
@@ -42,15 +42,15 @@ If you want to do this after install please follow [this guide](https://docs.tac
 Prior to TRMM v0.14.0 (released 7/7/2022), agents NATS traffic connected to the TRMM server on public port 4222.
 If you have upgraded to v0.14.0 and have agents that won't work with websockets for some reason (too old TLS etc) then you can do the following to use NATS standard tcp on port 4222, just like how it was before v0.14.0:
 
-For windows agents:
+For Windows agents:
 
 Add the following registry string value (REG_SZ):
 
 `HKEY_LOCAL_MACHINE\SOFTWARE\TacticalRMM\NatsStandardPort` with value `4222`
 
-Then restart the `tacticalrmm` windows service.
+Then restart the `tacticalrmm` Windows service.
 
-For linux agents:
+For Linux agents:
 
 Add the following key/value pair to `/etc/tacticalagent`:
 ```json

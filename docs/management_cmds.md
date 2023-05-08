@@ -50,7 +50,7 @@ python manage.py bulk_delete_agents --client exampleclient --delete
 python manage.py reset_password <username>
 ```
 
-### Reset a User's 2fa Token
+### Reset a User's 2FA Token
 
 ```bash
 python manage.py reset_2fa <username>

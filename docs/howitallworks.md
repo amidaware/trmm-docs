@@ -2,12 +2,12 @@
 
 ## Understanding TRMM
 
-Anything you configure: scripts, tasks, patching, etc is queued and scheduled on the server to do something. 
+Anything you configure: scripts, tasks, patching, etc is queued and scheduled on the server to do something.
 Everything that is queued, happens immediately when agents are online.
-The agent gets a NATS command, server tells it to do xyz and it does it.
+The agent gets a NATS command, the server tells it to do xyz and it does it.
 
-When agents are not connected to the server nothing happens. The windows task scheduler says do x at some time, what it's asked to do is get x command from the server. If server is offline, nothing happens.
-If an agent comes online, every x interval (windows update, pending tasks etc) check and see is there something for me to do that I missed while I was offline. When that time occurs (eg agent sees if it needs to update itself at 35mins past every hr [Update Agents](update_agents.md) ) it'll get requested on the online agent.
+When agents are not connected to the server nothing happens. The Windows Task Scheduler says do x at some time, what it's asked to do is get x command from the server. If the server is offline, nothing happens.
+If an agent comes online, every x interval (Windows Update, pending tasks etc) check and see if there is something for me to do that I missed while I was offline. When that time occurs (eg agent sees if it needs to update itself at 35 minutes past every hour [Update Agents](update_agents.md) ) it'll get requested on the online agent.
 
 That's the simplified general rule for everything TRMM.
 
@@ -21,12 +21,12 @@ Still need graphics for:
 
 ## Server
 
-Has a postgres database located here:
+Has a Postgres database located here:
 
 [Django Admin](functions/django_admin.md)
 
 !!!description
-    A web interface for the postgres database
+    A web interface for the Postgres database
 
 All Tactical RMM dependencies are listed [here](https://github.com/amidaware/tacticalrmm/blob/develop/api/tacticalrmm/requirements.txt).
 
@@ -70,7 +70,7 @@ Nginx is the web server for the `rmm`, `api`, and `mesh` domains. All sites redi
 
     === ":material-web: `api.example.com`"
 
-        This serves the TRMM API for the frontend and agents. 
+        This serves the TRMM API for the frontend and agents.
 
         - Config: `/etc/nginx/sites-enabled/rmm.conf`
         - roots:
@@ -125,8 +125,8 @@ Nginx is the web server for the `rmm`, `api`, and `mesh` domains. All sites redi
     === ":material-docker: docker"
 
         - From the docker host view container status - `docker ps --filter "name=trmm-nginx"`
-        - View logs: `docker-compose logs tactical-nginx`
-        - "tail" logs: `docker-compose logs tactical-nginx | tail`
+        - View logs: `docker compose logs tactical-nginx`
+        - "tail" logs: `docker compose logs tactical-nginx | tail`
         - Shell access: `docker exec -it trmm-nginx /bin/bash`
 
 
@@ -150,19 +150,19 @@ Built on the Django framework, the Tactical RMM service is the heart of the syst
             - Debug logs for 5xx errors will be located in `/rmm/api/tacticalrmm/tacticalrmm/private/log`
 
     === ":material-ubuntu: standard"
-    
+
         - Service: `rmm.service`
         - Socket: `/rmm/api/tacticalrmm/tacticalrmm.sock`
         - uWSGI config: `/rmm/api/tacticalrmm/app.ini`
         - Log: None
         - Journal identifier: `uwsgi`
         - Version: 2.0.18
-    
+
     === ":material-docker: docker"
 
         - From the docker host view container status - `docker ps --filter "name=trmm-backend"`
-        - View logs: `docker-compose logs tactical-backend`
-        - "tail" logs: `docker-compose logs tactical-backend | tail`
+        - View logs: `docker compose logs tactical-backend`
+        - "tail" logs: `docker compose logs tactical-backend | tail`
         - Shell access: `docker exec -it trmm-backend /bin/bash`
 
 #### Daphne: Django Channels Daemon
@@ -194,8 +194,8 @@ Built on the Django framework, the Tactical RMM service is the heart of the syst
     === ":material-docker: docker"
 
         - From the docker host view container status - `docker ps --filter "name=trmm-websockets"`
-        - View logs: `docker-compose logs tactical-websockets`
-        - "tail" logs: `docker-compose logs tactical-websockets | tail`
+        - View logs: `docker compose logs tactical-websockets`
+        - "tail" logs: `docker compose logs tactical-websockets | tail`
         - Shell access: `docker exec -it trmm-websockets /bin/bash`
 
 #### NATS Server Service
@@ -220,7 +220,7 @@ Built on the Django framework, the Tactical RMM service is the heart of the syst
         - Checking for NATS or websocket problems `sudo journalctl --no-pager -u nats` and `sudo journalctl --no-pager -u nats-api`
 
     === ":material-ubuntu: standard"
-    
+
         - Service: `nats.service`
         - Address: `0.0.0.0`
         - Port: `4222 (standard), 9235 (websocket)`
@@ -229,9 +229,9 @@ Built on the Django framework, the Tactical RMM service is the heart of the syst
             - TLS: `/etc/letsencrypt/live/example.com/fullchain.pem`
         - Log: None
         - Version: v2.3.3
-    
+
     === ":material-docker: docker"
-    
+
         - Get into bash in your docker with: `docker exec -it trmm-nats /bin/bash`
         - Log: `nats-api -log debug`
         - Shell access: `docker exec -it trmm-nats /bin/bash`
@@ -249,15 +249,15 @@ Built on the Django framework, the Tactical RMM service is the heart of the syst
         - journalctl: This application does not appear to log anything.
 
     === ":material-ubuntu: standard"
-    
+
          - Service: `nats-api.service`
          - Exec: `/usr/local/bin/nats-api --config /rmm/api/tacticalrmm/nats-api.conf`
          - Config: `/rmm/api/tacticalrmm/nats-api.conf`
              - TLS: `/etc/letsencrypt/live/example.com/fullchain.pem`
          - Log: None
-    
+
     === ":material-docker: docker"
-    
+
         - Get into bash in your docker with: `docker exec -it trmm-nats /bin/bash`
         - Log: `nats-api -log debug`
 
@@ -284,17 +284,17 @@ Log located at `/var/log/celery`
         - Tail logs: `tail -F /var/log/celery/w*-*.log`
 
     === ":material-ubuntu: standard"
-    
+
         - Service: `celery.service`
         - Exec: `/bin/sh -c '${CELERY_BIN} -A $CELERY_APP multi start $CELERYD_NODES --pidfile=${CELERYD_PID_FILE} --logfile=${CELERYD_LOG_FILE} --loglevel="${CELERYD_LOG_LEVEL}" $CELERYD_OPTS'`
         - Config: `/etc/conf.d/celery.conf`
         - Log: `/var/log/celery/w*-*.log`
-    
+
     === ":material-docker: docker"
-    
+
         - From the docker host view container status - `docker ps --filter "name=trmm-celery"`
-        - View logs: `docker-compose logs tactical-celery`
-        - "tail" logs: `docker-compose logs tactical-celery | tail`
+        - View logs: `docker compose logs tactical-celery`
+        - "tail" logs: `docker compose logs tactical-celery | tail`
         - Shell access: `docker exec -it trmm-celery /bin/bash`
 
 #### Celery Beat Service
@@ -317,17 +317,17 @@ Log located at `/var/log/celery`
         - Tail logs: `tail -F /var/log/celery/beat.log`
 
     === ":material-ubuntu: standard"
-    
+
         - Service: `celerybeat.service`
         - Exec: `/bin/sh -c '${CELERY_BIN} -A ${CELERY_APP} beat --pidfile=${CELERYBEAT_PID_FILE} --logfile=${CELERYBEAT_LOG_FILE} --loglevel=${CELERYD_LOG_LEVEL}'`
         - Config: `/etc/redis/redis.conf`
         - Log: `/var/log/celery/beat.log`
-    
+
     === ":material-docker: docker"
-    
+
         - From the docker host view container status - `docker ps --filter "name=trmm-celerybeat"`
-        - View logs: `docker-compose logs tactical-celerybeat`
-        - "tail" logs: `docker-compose logs tactical-celerybeat | tail`
+        - View logs: `docker compose logs tactical-celerybeat`
+        - "tail" logs: `docker compose logs tactical-celerybeat | tail`
         - Shell access: `docker exec -it trmm-celerybeat /bin/bash`
 
 #### Redis Service
@@ -349,17 +349,17 @@ Log located at `/var/log/redis`
         - Tail logs: `tail -F /var/log/redis/redis-server.log`
 
     === ":material-ubuntu: standard"
-    
+
         - Service: `redis-server.service`
         - Log: `/var/log/redis/redis-server.log`
-    
+
     === ":material-docker: docker"
-    
+
         - From the docker host view container status - `docker ps --filter "name=trmm-redis"`
-        - View logs: `docker-compose logs tactical-redis`
-        - "tail" logs: `docker-compose logs tactical-redis | tail`
+        - View logs: `docker compose logs tactical-redis`
+        - "tail" logs: `docker compose logs tactical-redis | tail`
         - Shell access: `docker exec -it trmm-redis /bin/bash`
-        
+
 #### MeshCentral
 
 [MeshCentral](https://github.com/Ylianst/MeshCentral) is used for "Take Control" (connecting to machine for remote access), and 2 screens of the "Remote Background" (Terminal, and File Browser).
@@ -389,9 +389,9 @@ Config file location:
     === ":material-docker: docker"
 
         - From the docker host view container status - `docker ps --filter "name=trmm-meshcentral"`
-        - View logs: `docker-compose logs tactical-meshcentral`
-        - "tail" logs: `docker-compose logs tactical-meshcentral | tail`
-        - Shell access: `docker exec -it trmm-meshcentral /bin/bash`   
+        - View logs: `docker compose logs tactical-meshcentral`
+        - "tail" logs: `docker compose logs tactical-meshcentral | tail`
+        - Shell access: `docker exec -it trmm-meshcentral /bin/bash`
 
     === ":material-remote-desktop: Debugging"
 
@@ -399,7 +399,7 @@ Config file location:
         - Open https://mesh.example.com to open native mesh admin interface.
         - Left-side "My Server" > Choose "Console" > type `agentstats`
         - To view detailed logging goto "Trace" > click Tracing button and choose categories.
-     
+
 
 #### MeshCentral Agent
 
@@ -480,14 +480,14 @@ When scripts / checks execute, they are:
 
 Also "Send Command" stay in memory as well.
 
-Having said that...Windows logs all things powershell: `Event Viewer` > `Microsoft` > `Windows` > `PowerShell` > `Operational` Log so be careful with fancy API calls and auth token using agents for execution.
+Having said that...Windows logs all things PowerShell: `Event Viewer` > `Microsoft` > `Windows` > `PowerShell` > `Operational` Log so be careful with fancy API calls and auth token using agents for execution.
 
 !!!warning
     **Remember:** Auth tokens are Username/Password/2FA verification all rolled into a single chunk of text!
 
 ### RunAsUser functionality
 
-Now that we know the agent runs under the `SYSTEM` security context and what that means, there is an option to "RunAsUser" (windows only).
+Now that we know the agent runs under the `SYSTEM` security context and what that means, there is an option to "RunAsUser" (Windows only).
 
 There are multiple things to understand and consider.
 
@@ -497,7 +497,7 @@ There are multiple things to understand and consider.
 There are two ways to do RunAsUser with tactical in relation to scripting.
 
 1. The Tactical RMM "RunAsUser" checkbox associated with the script, and all code will be run under the actively logged in user only with their security permissions. If they're not local admins, and you try to do something requiring admin permissions it will fail.
-2. Using the powershell "RunAsUser" [3rd party module](https://github.com/amidaware/community-scripts/blob/da4d615a781d218ed3bec66d56a1530bc7513e16/scripts/Win_RunAsUser_Example.ps1)
+2. Using the PowerShell "RunAsUser" [3rd party module](https://github.com/amidaware/community-scripts/blob/da4d615a781d218ed3bec66d56a1530bc7513e16/scripts/Win_RunAsUser_Example.ps1)
 
 ### Outbound Firewall Rules
 
@@ -575,7 +575,7 @@ Choose your method:
     ExecStart=/usr/local/bin/tacticalagent -m svc
     ```
 
-    to 
+    to
 
     ```
     ExecStart=/usr/local/bin/tacticalagent -m svc -log debug
@@ -609,7 +609,7 @@ Use Agents right click menu > `Agent recovery` > `Tactical Agent`
 === ":material-console-line: MeshCentral is online"
 
     Connect to `Terminal` (Admin Shell)
-    
+
     Run
 
     ```cmd
@@ -643,7 +643,7 @@ _The current Tactical RMM Windows Update process is relatively simple atm. As of
 !!!note
     If you want more control of Windows patching right now, look into a script-based implementation of [PSWindowsUpdate](http://woshub.com/pswindowsupdate-module/).
 
-**Be aware**: When you install the Tactical RMM Agent on a windows computer it sets this:
+**Be aware**: When you install the Tactical RMM Agent on a Windows computer it sets this:
 
 ```reg
 HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU
@@ -655,10 +655,10 @@ If you want to resume normal Windows patching and disable Tactical RMM updating 
 
 **Where does it get updates from?** TRMM gets the list of Windows updates using this Microsoft API: <https://docs.microsoft.com/en-us/windows/win32/api/_wua/>
 
-The Tactical RMM server updates an agents patch list every 8 hours based on the patch policy to check for what to update, and what's installed.
+The Tactical RMM server updates an agent's patch list every 8 hours based on the patch policy to check for what to update, and what's installed.
 
 !!!note
-    Currently if the agent is not online at the time the patch policy is set to install, there is no "install as soon as it comes online". 
+    Currently if the agent is not online at the time the patch policy is set to install, there is no "install as soon as it comes online".
 
 ### Log Files
 

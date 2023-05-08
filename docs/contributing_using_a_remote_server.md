@@ -108,9 +108,9 @@ python manage.py runserver 0:8000
 
 ### Get frontend working
 
-Open a new terminal and compile quasar frontend.
+Open a new terminal and compile Quasar frontend.
 
-Change to any directory (your user home folder in linux is fine)
+Change to any directory (your user home folder in Linux is fine)
 
 ```bash
 cd ~
@@ -136,7 +136,7 @@ npm install -g @quasar/cli
 quasar dev
 ```
 
-!!!info 
+!!!info
     If you receive a CORS error when trying to log into your server via localhost or IP, try the following:
 
 ```bash
@@ -148,7 +148,7 @@ quasar dev
 You should now have a localhost and IP based URL to view that has a live reload feature.
 
 ## Configure GitHub with VSCode
-!!!info 
+!!!info
     Make sure you are submitting Pull Requests to the develop branch.
     Follow this guide for a good introduction to GitHub: <https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github>
 

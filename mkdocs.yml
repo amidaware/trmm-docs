@@ -83,6 +83,8 @@ theme:
   name: "material"
   logo: "images/onit.ico"
   favicon: "images/favicon.ico"
+  features:
+    - content.code.copy
   language: "en"
   palette:
   - media: "(prefers-color-scheme: dark)"
@@ -95,9 +97,9 @@ theme:
   - media: "(prefers-color-scheme: light)"
     scheme: light
     toggle:
-      icon: material/brightness-7 
+      icon: material/brightness-7
       name: Switch to dark mode
-      
+
 features:
 
 extra_css:

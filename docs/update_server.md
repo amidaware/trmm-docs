@@ -1,6 +1,6 @@
 # Updating the RMM
 
-[Keeping your linux server up to date](#keeping-your-linux-server-up-to-date)
+[Keeping your Linux server up to date](#keeping-your-linux-server-up-to-date)
 
 [Updating to the latest RMM version](#updating-to-the-latest-rmm-version)
 
@@ -8,7 +8,7 @@
 
 [Video Walkthru](#video-walkthru)
 
-## Keeping your linux server up to date
+## Keeping your Linux server up to date
 
 You should periodically run `sudo apt update` and `sudo apt -y upgrade` to keep your server up to date.
 
@@ -18,25 +18,25 @@ Other than this, you should avoid making any changes to your server and let the 
 
 !!!danger
     Do __not__ attempt to manually edit the update script or any configuration files unless specifically told to by one of the developers.
-    
+
     Since this software is completely self hosted and we have no access to your server, we have to assume you have not made any config changes to any of the files or services on your server, and the update script will assume this.
-    
+
     You should also **never** attempt to automate running the update script via cron.
-    
+
     The update script will update itself if needed to the latest version when you run it, and then prompt you to run it again.
-    
+
     Sometimes, manual intervention will be required during an update in the form of yes/no prompts, so attempting to automate this will ignore these prompts and cause your installation to break.
 
-SSH into your server as the linux user you created during install (eg `tactical`).
+SSH into your server as the user you created during install (eg `tactical`).
 
 !!!danger
     __Never__ run any update scripts or commands as the `root` user.
-    
+
     This will mess up permissions and break your installation.
 
 !!!question
     You have a [backup](backup.md), right?
-    
+
     You've reviewed all [release notes](https://github.com/amidaware/tacticalrmm/releases) between your current version and the latest version, right?
 
 
@@ -63,8 +63,8 @@ The update script will also fix any permissions that might have gotten messed up
 !!!warning
     Do __not__ attempt to manually update MeshCentral to a newer version.
 
-    You should let the `update.sh` script handle this for you. 
-    
+    You should let the `update.sh` script handle this for you.
+
     The developers will test MeshCentral and make sure integration does not break before bumping the mesh version.
 
 ## Keeping your Let's Encrypt SSL certificate up to date

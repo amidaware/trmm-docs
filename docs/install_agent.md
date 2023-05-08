@@ -22,9 +22,9 @@ You can also **right click on a site > Install Agent**. This will automatically 
 
 ![siteagentinstall](images/siteagentinstall.png)
 
-## Powershell
+## PowerShell
 
-The powershell method is very similar to the generated exe in that it simply downloads the installer from github and calls the exe for you.
+The PowerShell method is very similar to the generated exe in that it simply downloads the installer from GitHub and calls the exe for you.
 
 ## Manual
 
@@ -161,7 +161,7 @@ You can always use this to silently uninstall the agent on workstations:
 Run this from **Send Command**:
 
 ```cmd
-"C:\Program Files\TacticalAgent\meshagent.exe" -fullinstall
+"C:\Program Files\Mesh Agent\meshagent.exe" -fullinstall
 ```
 
 Then use **Agent Recovery > Mesh Agent**, and choose **Recover**:
