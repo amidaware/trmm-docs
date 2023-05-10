@@ -61,6 +61,26 @@ Then `sudo systemctl restart tacticalagent.service`
 
 Just make sure port 4222 TCP is still open in your firewall and you're done.
 
+### Configuring Custom Temp Dirs on Windows Agents
+
+*Version added: Tactical RMM v0.15.10*
+
+*Requires Agent v2.4.7*
+
+By default, the Windows agent utilizes the `C:\ProgramData\TacticalRMM` directory for executing scripts and managing agent updates. However, it is possible to override this default directory by setting two optional registry string values (`REG_SZ`), specifying full paths to the desired directories:
+
+`HKEY_LOCAL_MACHINE\SOFTWARE\TacticalRMM\WinTmpDir`: This registry value is used for running scripts and handling agent updates. Provide the full path to the custom directory.
+
+`HKEY_LOCAL_MACHINE\SOFTWARE\TacticalRMM\WinRunAsUserTmpDir`: This registry value is specifically for executing Run As User scripts. Provide the full path to the custom directory.
+
+Please note that these custom directories must already exist on the system, as the agent will not attempt to create them. Ensure that the desired directories are created and that the appropriate permissions are set before adding the registry values.
+
+To apply the changes, restart the `tacticalrmm` Windows service. The custom temporary directories will then be used for the respective tasks.
+
+Example:
+
+![reg](../images/wintmpdir.png)
+
 ### Monitor NATS via its HTTP API
 
 *Version added: Tactical RMM v0.15.1*
