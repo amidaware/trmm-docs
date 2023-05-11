@@ -75,6 +75,8 @@ By default, the Windows agent utilizes the `C:\ProgramData\TacticalRMM` director
 
 Please note that these custom directories must already exist on the system, as the agent will not attempt to create them. Ensure that the desired directories are created and that the appropriate permissions are set before adding the registry values.
 
+*Directory path cannot contain spaces, this is a known issue and will be fixed in a future release.*
+
 To apply the changes, restart the `tacticalrmm` Windows service. The custom temporary directories will then be used for the respective tasks.
 
 Example:
