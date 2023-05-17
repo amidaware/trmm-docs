@@ -127,20 +127,28 @@ Go To **Protect > Rules and policies** and add a firewall rule:
 
 Optionally select **Log Firewall Traffic** checkbox for troubleshooting.
 
-## ESET ESMC Console
+## ESET PROTECT Console
 
-There are two spots:
+There are three areas where you need to configure exclusions:
 
-1. In the **Detection Engine > Performance Exclusions**.
-2. **Web Access Protection > URL Address Management**.
-
+1. **Detection Engine > Performance Exclusions**.
 
 ![Web Exclusions](images/esetesmc1.png)
 
 ![Web Exclusions](images/esetesmc2.png)
+
+
+2. **Web Access Protection > URL Address Management > List of addresses excluded from content scan**
 
 ![Web Exclusions](images/esetesmc3.png)
 
 ![Web Exclusions](images/esetesmc4.png)
 
 ![Web Exclusions](images/esetesmc5.png)
+
+
+3. **Web Access Protection > URL Address Management > List of allowed addresses**
+
+![Web Exclusions](images/esetesmc6.png)
+
+![Web Exclusions](images/esetesmc7.png)
