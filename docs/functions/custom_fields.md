@@ -61,5 +61,5 @@ For more information See [Collector Tasks](automated_tasks.md#Collector Tasks).
 ## Video Walkthru
 
 <div class="video-wrapper">
-  <iframe width="320" height="180" src="https://www.youtube.com/embed/dIywDcCucdI" frameborder="0" allowfullscreen></iframe>
+  <iframe width="400" height="225" src="https://www.youtube.com/embed/dIywDcCucdI" frameborder="0" allowfullscreen></iframe>
 </div>
