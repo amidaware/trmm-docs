@@ -76,7 +76,7 @@ Starting with 0.15.4 you can use environment variables to pass them too!
 ## Video Walkthru
 
 <div class="video-wrapper">
-  <iframe width="320" height="180" src="https://www.youtube.com/embed/pN80ljSwT7M" frameborder="0" allowfullscreen></iframe>
+  <iframe width="400" height="225" src="https://www.youtube.com/embed/pN80ljSwT7M" frameborder="0" allowfullscreen></iframe>
 </div>
 
 

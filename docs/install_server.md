@@ -247,9 +247,9 @@ We've said it before, we'll say it again.
 
 Especially don't get behind 2 major rev's. Lots of agent connectivity changes occurring. If you don't keep up, you'll be needing to do manual updates by adjusting the `updates.sh` and specifying older branches...then doing update, wait for all agents to get updated...then do the next major branch, then wait for agent updates...until you're current. Can we say **#Painful**.
 
-## AWS Install Video Walkthrus
+## Install Video Walkthrus
 
 <div class="video-wrapper">
-  <iframe width="320" height="180" src="https://www.youtube.com/embed/9diCo6fW-ww" frameborder="0" allowfullscreen></iframe>
-  <iframe width="320" height="180" src="https://www.youtube.com/embed/nHke7pi01HI" frameborder="0" allowfullscreen></iframe>
+  <iframe width="400" height="225" src="https://www.youtube.com/embed/9diCo6fW-ww" frameborder="0" allowfullscreen></iframe>
+  <iframe width="400" height="225" src="https://www.youtube.com/embed/nHke7pi01HI" frameborder="0" allowfullscreen></iframe>
 </div>
