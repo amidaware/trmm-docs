@@ -98,3 +98,16 @@ Then from the TRMM Web UI, do **Tools > Server Maintenance > Reload Nats Configu
 
 And then from your TRMM server cli restart both the `rmm.service` and `nats.service` services.
 
+### Modify the Placeholder Text for the 'Send Command' Functionality
+
+*Version added: Tactical RMM v0.15.12*
+
+Users now have the flexibility to customize the placeholder text that is displayed in the 'Send Command' dialog. This customization can be achieved by defining any or all of the following three optional variables in `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py` file:
+
+```python
+CMD_PLACEHOLDER_TEXT = "<Your customized command prompt text>"
+POWERSHELL_PLACEHOLDER_TEXT = "<Your customized PowerShell prompt text>"
+SHELL_PLACEHOLDER_TEXT = "<Your customized shell prompt text>"
+```
+
+To activate, restart the api with `sudo systemctl restart rmm` and then refresh the web interface.
