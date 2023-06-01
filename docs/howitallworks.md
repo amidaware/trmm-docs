@@ -34,9 +34,20 @@ A complete list of all packages used by Tactical RMM are listed [here](https://g
 
 ### Outbound Firewall Rules
 
-If you have strict firewall rules these are the only outbound rules from the server needed for all functionality:
+If you have strict outbound firewall rules these are the outbound rules needed for all functionality:
 
-1. Outbound traffic to all agent IP scopes for reflect traffic from agents.
+#### Regular Use
+
+1. Outbound traffic to all agent IP scopes for reflect traffic from agents
+
+#### During installation/updating
+
+1. Access to Github for downloading and installing TRMM
+2. Access to nginx.org to [install](https://github.com/amidaware/tacticalrmm/blob/ae5d0b1d81ed7e7ee1f3ebaafaf8a8ad96c8a49a/install.sh#L180)
+3. Access to mongodb.org to [install](https://github.com/amidaware/tacticalrmm/blob/ae5d0b1d81ed7e7ee1f3ebaafaf8a8ad96c8a49a/install.sh#L241)
+4. Access to python.org to [install](https://github.com/amidaware/tacticalrmm/blob/ae5d0b1d81ed7e7ee1f3ebaafaf8a8ad96c8a49a/install.sh#L253)
+5. Access to postgresql.org to [install](https://github.com/amidaware/tacticalrmm/blob/ae5d0b1d81ed7e7ee1f3ebaafaf8a8ad96c8a49a/install.sh#L269)
+6. Whatever servers [Let's Encrypt](https://letsencrypt.org/docs/faq/#what-ip-addresses-does-let-s-encrypt-use-to-validate-my-web-server) uses for DNS-01 challenges
 
 #### Server Without Code Signing Key
 
