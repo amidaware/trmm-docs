@@ -31,7 +31,7 @@ This will do the following:
 
 * As well as Daily backups, there are monthly backups on the 10th day of every month and weekly backups every Friday.
 
-* Automated pruning of backup files, daily kept for 2 weeks, weekly for 2 months and monthly for 1 year. 
+* Automated pruning of backup files, daily kept for 2 weeks, weekly for 2 months and monthly for 1 year. To calculate estimated disk needs, take the size of a manual backup and * 37. eg 600MB backup * 37 = 22.2GB of space needed.
 
 !!!warning
     The backup script will just save to your server drive, you ideally want to automate moving this to another server. Please ensure you have space for the backups to be stored.
