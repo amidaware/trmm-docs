@@ -20,7 +20,7 @@ Change `(days=30)` to whatever you prefer. Then run `sudo systemctl restart rmm.
 
 ### Using your own wildcard SSL cert
 
-Modify the install script and replace `CERT_PUB_KEY` and `CERT_PRIV_KEY` with the full paths to your wildcard cert.
+Modify the install script and replace `CERT_PUB_KEY` and `CERT_PRIV_KEY` with the full paths to your wildcard cert. If you don't have a wildcard cert, you can instead use a cert for `api.example.com` with 2 SANs for `mesh.example.com` and `rmm.example.com`
 
 Make sure the files are readable by the `tactical` user.
 
