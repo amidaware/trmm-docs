@@ -75,12 +75,6 @@ Want to download multiple files?
 
 If you want to enable automatic clipboard transfers just click the option under [Settings button](https://ylianst.github.io/MeshCentral/meshcentral/devicetabs/#during-a-desktop-session)
 
-### Wake on LAN
-
-WoL is currently only accessible via mesh interface.
-
-![wol](images/mesh_wol.png)
-
 ### Adjust Settings
 
 Right-click the connect button in **Remote Background > Terminal** for shell options.
