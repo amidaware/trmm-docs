@@ -12,6 +12,8 @@
 
 ## General Information
 
+Paid Hosting Available: Auto-maintained/updated servers with Code Signing for you. [Get in touch](https://support.amidaware.com) to find out what we can do for you!
+
 ### Minimum Requirements
 
 A fresh Linux VM running either Debian 11 or Ubuntu 20.04 LTS with **4GB RAM** on x64 architecture.
@@ -36,6 +38,10 @@ A fresh Linux VM running either Debian 11 or Ubuntu 20.04 LTS with **4GB RAM** o
 
 - A real (internet resolvable) domain is needed to generate a Let's Encrypt wildcard cert - example.local is __NOT__ a real domain. No, you [don't have to expose your server](faq.md#can-i-run-tactical-rmm-locally-behind-nat-without-exposing-my-rmm-server-to-the-internet) to the internet
 - A TOTP based authenticator app. Some popular ones are Google Authenticator, Authy, and Microsoft Authenticator.
+
+!!!warning
+    1. Per [RFC 1304](https://datatracker.ietf.org/doc/html/rfc1034) special chars in domain names are not allowed (like _ ). Only a-z 0-9 and the hyphen (-)
+    2. Avoid sub-sub domains greater than 4. (Best: rmm.example.com Good: rmm.corp.example.com Bad: rmm.corp.xyz.example.com) Country TLDs like `co.uk` count as one layer.
 
 #### Update Recommendations
 

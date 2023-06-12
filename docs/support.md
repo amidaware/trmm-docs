@@ -12,7 +12,7 @@ We may give pointers, or provide additional troubleshooting steps if we believe 
 
 Paid Support: You can visit <https://support.amidaware.com> to open a ticket.
 
-We can help with lots of problems including many #unsupported installations and configurations.
+We can help with lots of problems including many #unsupported installations and configurations (fully managed [hosted servers](https://support.amidaware.com) are also available).
 
 You get Priority #1 fast responses and service.
 
