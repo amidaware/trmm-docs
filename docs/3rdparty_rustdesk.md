@@ -48,9 +48,9 @@ net start rustdesk
 ```
 
 ## RustDesk Get ID (batch) (Collector Script needs Custom Agent Field)
-```
-"c:\Program Files\RustDesk\RustDesk.exe" --get-id
- ```
+
+`"c:\Program Files\RustDesk\RustDesk.exe" --get-id`
+
 ## RustDesk Set and Get Password (Collector Script needs Custom Agent Field)
 ```
 $ErrorActionPreference= 'silentlycontinue'
