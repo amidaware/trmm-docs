@@ -69,7 +69,7 @@ Write-Output $rustdesk_pw
 net start rustdesk > null
 
 ```
-### RustDesk URL Action
+## RustDesk URL Action
 ```
 rustdesk://connection/new/{{agent.rustdeskid}}?password={{agent.rustdeskpwd}}
  ```
