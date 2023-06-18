@@ -55,7 +55,6 @@ net start rustdesk
 ```
 $ErrorActionPreference= 'silentlycontinue'
 
-# Stop RustDesk first
 net stop rustdesk > null
 $ProcessActive = Get-Process rustdesk -ErrorAction SilentlyContinue
 if($ProcessActive -ne $null)
