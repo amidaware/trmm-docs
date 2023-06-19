@@ -422,8 +422,13 @@ sudo systemctl restart ${i}
 done
 
 # Create renewal post hook to restart services after renewal
-echo '#!/usr/bin/env bash' | sudo tee /etc/letsencrypt/renewal-hooks/post/001-restart-services.sh
-sudo sed -i "/\#\!\/usr\/bin\/env bash/ a systemctl restart nginx meshcentral rmm celery celerybeat nats" /etc/letsencrypt/renewal-hooks/post/001-restart-services.sh
+lepost="$(cat << EOF
+#!/usr/bin/env bash
+chown -R tactical:tactical /etc/letsencrypt
+systemctl restart nginx meshcentral rmm celery celerybeat nats nats-api
+EOF
+)"
+echo "${lepost}" | sudo tee /etc/letsencrypt/renewal-hooks/post/001-restart-services.sh > /dev/null
 sudo chmod +x /etc/letsencrypt/renewal-hooks/post/001-restart-services.sh
 
 ### Renew certs can be done by sudo letsencrypt renew (this should automatically be in /etc/cron.d/certbot)
