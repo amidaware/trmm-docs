@@ -13,6 +13,7 @@ Under `/scripts` the file name should generally follow this format:
 Platforms for now are:
 
 ```text
+all_
 Win_
 nix_bash_
 nix_zsh_macos_
