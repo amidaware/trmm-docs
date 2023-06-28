@@ -123,7 +123,7 @@ ufw enable && ufw reload
 ```
 
 !!!note
-    You will never login to the server again as `root` again unless something has gone horribly wrong, and you're working with the developers.
+    You should/will never login to the server as `root` again unless something has gone horribly wrong, and you're working with the developers.
 
 ### Step 4 - Create DNS A records
 
