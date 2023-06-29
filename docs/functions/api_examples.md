@@ -1,5 +1,30 @@
 # API Examples
 
+## List Agents
+
+```powershell
+# Query the TRMM API with PowerShell
+. .\dotenv.ps1
+
+$Agents_Endpoint = GetURL("agents")
+$Agents = Invoke-RestMethod $Agents_Endpoint -Headers $Headers -ContentType "application/json" -Method "Get"
+# $Agents | ConvertTo-Json
+$Agents.foreach({ $_ }) | Select-Object Agent_ID, Hostname, Site_Name, Client_Name, Monitoring_Type | Format-Table
+```
+
+## List Tasks
+
+
+```powershell
+# Query the TRMM API with PowerShell
+. .\dotenv.ps1
+
+$Tasks_Endpoint = GetURL("tasks")
+$Response = Invoke-RestMethod $Tasks_Endpoint -Headers $Headers -ContentType "application/json" -Method "Get"
+# $Response | ConvertTo-Json
+$Response.foreach({ $_ }) | Select-Object ID, Policy, Name, Custom_Field | Format-Table
+```
+
 ## Get Custom Fields
 
 ```powershell
@@ -185,7 +210,7 @@ $Response = Invoke-RestMethod $Tasks_Endpoint -Headers $Headers -ContentType "ap
 $Response.foreach({ $_ }) | Select-Object ID, Policy, Name, Custom_Field | Format-Table
 ```
 
-## Task/collector results
+## Show Task/collector results
 
 ```powershell
 # Query the TRMM API with PowerShell
@@ -206,6 +231,44 @@ $Agents.foreach({
     # $Fields | ConvertTo-Json
     $Fields.foreach({ $_ }) | Select-Object ID, Check_Name, Name, Actions, Task_Result | Format-Table
 })
+```
+
+or to see results
+
+```powershell
+# Query the TRMM API with PowerShell
+. .\dotenv.ps1
+
+$Agents_Endpoint = GetURL("agents")
+$Agents = Invoke-RestMethod $Agents_Endpoint -Headers $Headers -ContentType "application/json" -Method "Get"
+# $Agents | ConvertTo-Json
+# $Agents.foreach({ $_ }) | Select-Object Agent_ID, Hostname, Site_Name, Client_Name, Monitoring_Type | Format-Table
+$Agent_ID = "AGENT ID FROM TABLE"
+
+$Agents.foreach({
+    if ($_.Agent_ID -ne $Agent_ID) {
+        return
+    }
+    $Fields_Endpoint = GetURL("agents/$($_.Agent_ID)/tasks")
+    $Fields = Invoke-RestMethod $Fields_Endpoint -Headers $Headers -ContentType "application/json" -Method "Get"
+    # $Fields | ConvertTo-Json
+    $Fields.foreach({
+        $_.Task_Result | Format-Table
+     })
+})
+```
+
+## List Custom Fields of Agent
+
+```powershell
+# Query the TRMM API with PowerShell
+. .\dotenv.ps1
+
+$Agent_ID = "ENTER AGENT ID HERE"
+$Agents_Endpoint = GetURL("agents/$($Agent_ID)")
+$Agents = Invoke-RestMethod $Agents_Endpoint -Headers $Headers -ContentType "application/json" -Method "Get"
+ConvertTo-Json $Agents.Custom_Fields
+$Agents.Custom_Fields
 ```
 
 ## Update Custom Fields
