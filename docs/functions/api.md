@@ -127,6 +127,7 @@ Here are some examples:
         "arg1",
         "arg2"
     ],
+    "env_vars": [],
     "timeout": 90 // seconds
 }
 ```
