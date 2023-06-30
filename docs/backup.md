@@ -3,7 +3,10 @@
 !!!note
     This is only applicable for the standard install, not Docker installs.
 
-A backup script is provided for quick and easy way to backup all settings into one file to move to another server.
+A backup script is provided for quick and easy way to backup all settings/data into one file to migrate to another server.
+
+!!!warning
+  The backup script does **not** self update itself. Always make sure you have latest version from the [master](https://github.com/amidaware/tacticalrmm/blob/master/backup.sh) branch by verifying the `SCRIPT_VERSION` at the top of the file matches.
 
 Download and run the backup script:
 
