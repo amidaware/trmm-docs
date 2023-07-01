@@ -146,4 +146,8 @@ There are three areas where you need to configure exclusions:
 
 ## UTM Filter Bypasses
 
+Use the below if your UTM blocks installation of Tactical RMM
+
 ```^https?://([A-Za-z0-9.-]*\.)?tacticalrmm\.com\.?/```
+
+
