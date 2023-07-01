@@ -7,7 +7,13 @@ The Django admin is basically a web interface for the postgres database.
 
 As of Tactical RMM v0.4.19, the Django admin is disabled by default.
 
-To enable it, edit `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py` and change `ADMIN_ENABLED` from `False` to `True` then `sudo systemctl restart rmm.service`.
+To enable it, edit `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py` and change `ADMIN_ENABLED` from `False` to `True` then run these 2 commands:
+
+```
+/rmm/api/env/bin/python /rmm/api/tacticalrmm/manage.py collectstatic --no-input
+
+sudo systemctl restart rmm.service
+```
 
 Login to the Django admin using the same admin credential that was created during the `install.sh` script (ie the web ui login).
 
