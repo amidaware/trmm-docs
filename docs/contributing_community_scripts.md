@@ -111,6 +111,8 @@ Example
 
 ## Making Script Files
 
+Use the [template](https://github.com/amidaware/community-scripts/blob/main/scripts_staging/Win_Template.ps1) to start with a good common structure.
+
 ### Good Habits
 
 - Try and make them fully self-contained.

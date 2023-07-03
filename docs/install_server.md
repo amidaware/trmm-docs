@@ -14,9 +14,9 @@
 
 Paid Hosting Available: Auto-maintained/updated servers with Code Signing for you. [Get in touch](https://support.amidaware.com) to find out what we can do for you!
 
-### Minimum Requirements
+### System Requirements
 
-A fresh Linux VM running either Debian 11 or Ubuntu 20.04 LTS with **4GB RAM** on x64 architecture.
+A fresh Linux VM running either Debian 11 or Ubuntu 20.04 LTS with at least **4GB RAM** on x64 architecture.
 
 !!!warning
     The provided install script assumes a fresh server with no software installed on it. Attempting to run it on an existing server with other services **will** break things and the install will fail.
