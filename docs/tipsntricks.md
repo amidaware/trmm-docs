@@ -75,6 +75,10 @@ Want to download multiple files?
 
 If you want to enable automatic clipboard transfers just click the option under [Settings button](https://ylianst.github.io/MeshCentral/meshcentral/devicetabs/#during-a-desktop-session)
 
+### Multi Monitor
+
+If you, and they have multiple monitors, open multiple Take Control windows...and set each windows as its own monitor.
+
 ### Adjust Settings
 
 Right-click the connect button in **Remote Background > Terminal** for shell options.
