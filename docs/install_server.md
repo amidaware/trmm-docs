@@ -16,7 +16,7 @@ Paid Hosting Available: Auto-maintained/updated servers with Code Signing for yo
 
 ### System Requirements
 
-A fresh Linux VM running either Debian 11 or Ubuntu 20.04 LTS with at least **4GB RAM** on x64 architecture.
+A fresh Linux VM running either Debian 11, Debian 12 or Ubuntu 22.04 LTS with at least **4GB RAM** on x64 or aarch64 (arm64) architecture.
 
 !!!warning
     The provided install script assumes a fresh server with no software installed on it. Attempting to run it on an existing server with other services **will** break things and the install will fail.
@@ -25,7 +25,7 @@ A fresh Linux VM running either Debian 11 or Ubuntu 20.04 LTS with at least **4G
     The install script sets up a production ready reverse proxy using Nginx which does TLS termination and handles routing all requests to the correct backends, so using another proxy in front of your instance is not necessary (and may break things).<br><br>If you want to use another reverse proxy for whatever reason, such as HAProxy, Traefik or Nginx Proxy Manager, then you will likely need to edit the install script and disable all the steps relating to installing and configuring nginx and configure reverse proxying yourself. You may refer to the Nginx configs in the install script for hints on how to proxy various services to the correct backends. Note that choosing to not use the built in proxy will make your instance officially "unsupported", because the developers do not have the bandwidth to support an infinite amount of setups and need to focus on the actual software. This is not meant to scare you away from doing your own reverse proxy...just something to be aware of. Check [unsupported proxies](unsupported_proxies.md) to see if you need to edit your install script to suit your selected reverse proxy, or if a method that works without doing so has been posted **BEFORE** you install. Read more in the [unsupported](unsupported_guidelines.md) guidelines.
 
 !!!note
-    The install script has been tested on the following public cloud providers: DigitalOcean, Linode, Vultr, BuyVM (highly recommended), Hetzner, AWS, Google Cloud and Azure, as well as behind NAT on Hyper-V, ESXi and Proxmox (CT's on Proxmox are [unsupported](unsupported_guidelines.md), only use VMs).
+    The install script has been tested on the following public cloud providers: Oracle Cloud Free Tier (arm64), DigitalOcean, Linode, Vultr, BuyVM (highly recommended), Hetzner, AWS, Google Cloud and Azure, as well as behind NAT on Hyper-V, ESXi and Proxmox (CT's on Proxmox are [unsupported](unsupported_guidelines.md), only use VMs).
 
 !!!note
     CPU: 1 core is fine for < 200 agents with limited checks/tasks.<br><br>
