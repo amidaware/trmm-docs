@@ -114,6 +114,19 @@ Yes, you can use (only) internal DNS (if you want) for api, mesh and rmm domains
 
 **Note:** You still **must** have an internet resolvable domain name and add the DNS `TXT` record to its public DNS server for the Let's Encrypt wildcard cert request process that is part of the install process. This **does not** require any inbound connection from the internet (port forwarding etc) to be enabled. This does not expose your RMM server to the internet in any way. The Let's Encrypt wildcard is done for [nats](#self-signed-certs)
 
+## I forgot my username to login to the web UI, how can I find it?
+
+Do the following as the `tactical` user which will list all user accounts:
+
+```bash
+tactical@trmm:~$ /rmm/api/env/bin/python /rmm/api/tacticalrmm/manage.py shell
+Python 3.11.3 (main, Apr  9 2023, 04:41:05) [GCC 10.2.1 20210110] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from accounts.models import User
+>>> User.objects.exclude(is_installer_user=True).filter(agent__isnull=True)
+```
+
 ## I am locked out of the web UI. How do I reset my password?
 
 SSH into your server and run:
