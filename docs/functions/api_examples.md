@@ -423,3 +423,35 @@ foreach($Agent in $Agents) {
 $Servers | Format-Table Agent_ID, Hostname, Status, Service_Name, Service_Status, Service_DisplayName
 # $Servers
 ```
+
+## Pulling Audit Logs
+
+```php
+<?php
+$ApiKey = "XXX";
+$BasicUrl = "https://api.trmm.xxx.xxx/";
+$Url = "/logs/audit/";
+$curl = curl_init();
+
+curl_setopt($curl, CURLOPT_URL, $BasicUrl.$Url);
+
+$payload = '{"pagination":{"sortBy":"entry_time","descending":true,"page":1,"rowsPerPage":1000,"rowsNumber":2},"agentFilter":["QFhdnzJcFnodMibCGJYmfIwRyjgIazjajjMSvVWX"],"actionFilter":["modify"]}';
+curl_setopt($curl, CURLOPT_POSTFIELDS, $payload);
+
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$headers = ['Content-Type: application/json', 'X-API-KEY: '.$ApiKey];
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'PATCH');
+
+$data = curl_exec($curl);
+
+curl_close($curl);
+
+$audit = json_decode($data, true);
+
+var_dump($audit);
+
+?>
+```
