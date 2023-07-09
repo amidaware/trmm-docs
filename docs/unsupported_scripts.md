@@ -12,13 +12,11 @@ Install fail2ban
 ```bash
 sudo apt install -y fail2ban python3-systemd
 ```
-There is a known issue on Debian 12 where fail2ban doesnt start, if its not running (check with `systemctl status fail2ban`) if its not please check `/etc/fail2ban/jail.local` exists, if not do the following:
+There is a known issue on Debian 12 where fail2ban doesnt start, if its not running (check with `systemctl status fail2ban`) if its not please check `/etc/fail2ban/jail.local` exists, if it doesn't, do the following:
 
 ```bash
 echo -e "[sshd]\nbackend=systemd\nenabled=true" | sudo tee /etc/fail2ban/jail.local
 ```
-
-
 Set Tactical fail2ban filter conf file
 
 ```bash
