@@ -5,11 +5,6 @@
 
     If the purpose of your restore is to migrate your instance from one machine to another e.g. to upgrade your install to a newer OS and/or different arch, then it is recommended to leave both the old and new instances up and running until all your agents have successfully migrated to the new instance. You can use the old instance to forcefully migrate stubborn agents that are still attached to it (see instructions below).
 
-!!!danger
-    The restore script will always restore to the latest available RMM version on github.
-
-    Make sure you update your old RMM to the latest version using the `update.sh` script and then run a fresh backup to use with this restore script.
-
 ### Setup the new server
 
 Follow the same instructions as a [fresh install](install_server.md) but stop once you reach the 'Run the install script' section (you'll be using the restore script instead of install).
@@ -42,6 +37,8 @@ Call the restore script, passing it the backup tarball as the first argument:
 ./restore.sh rmm-backup-XXXXXXXXX.tar
 ```
 
+
+Note: the section below is only applicable if you are migrating to a new instance while still keeping the old instance. If you used the same VM to restore then you are done.
 
 Once the restore has completed, log into your **OLD** instance and from the Web UI do **Tools > Recover All Agents**.
 
