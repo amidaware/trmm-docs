@@ -22,7 +22,7 @@ Switch to the `tactical` user:
 su - tactical
 ```
 
-Copy the backup tarball you created during [backup](backup.md) to the new server.
+Copy the backup tarball you created during [backup](backup.md) to the new server (in your `tactical` users home folder - restore script and backup must be in the same folder).
 
 Download the restore script:
 
