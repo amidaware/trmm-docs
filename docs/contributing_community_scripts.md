@@ -146,31 +146,31 @@ param(
 ```powershell
 <#
 .SYNOPSIS
-   Short description
-   eg Check IP address
+    Short description
+    eg Check IP address
 
 .DESCRIPTION
-   Long description
-   eg Checks IP address on all local network adapters, and returns results
+    Long description
+    eg Checks IP address on all local network adapters, and returns results
 
 .PARAMETER xx
-   Inputs to this cmdlet (if any)
+    Inputs to this cmdlet (if any)
 
 .PARAMETER yy
-   Inputs to this cmdlet (if any)
+    Inputs to this cmdlet (if any)
 
 .OUTPUTS
-   Output from this cmdlet (if any)
+    Output from this cmdlet (if any)
 
 .EXAMPLE
-   Example of how to use this cmdlet
+    Example of how to use this cmdlet
 
 .EXAMPLE
-   Another example of how to use this cmdlet
+    Another example of how to use this cmdlet
 
 .NOTES
-   General notes
-   eg v1.0
+    v1.0 1/1/2020 username notes
+    General notes
 #>
 ```
 
