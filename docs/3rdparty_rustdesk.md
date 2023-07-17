@@ -1,7 +1,7 @@
 ## To install Rustdesk and use it with Tactical RMM you need to the the following.
 
 1. Install your own RustDesk Server, following their [official docs](https://rustdesk.com/docs/en/self-host/install/) and open ports.
-2. Create the following scripts (all are powershell other than the batch script to get the ID).
+2. Create the following scripts (all are powershell).
 3. Create a [URL Action](https://docs.tacticalrmm.com/functions/url_actions/).
 4. Create [custom fields](https://docs.tacticalrmm.com/functions/custom_fields/) for the RustDesk ID and password.
 5. Create [collector tasks](https://docs.tacticalrmm.com/functions/automated_tasks/#collector-tasks).
@@ -17,7 +17,7 @@ If (!(Test-Path c:\Temp)) {
 
 cd c:\Temp
 
-powershell Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.0/rustdesk-1.2.0-x86_64.exe" -Outfile "rustdesk.exe"
+powershell Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.1/rustdesk-1.2.1-x86_64.exe" -Outfile "rustdesk.exe"
 Start-Process .\rustdesk.exe --silent-install -wait
 
 $ServiceName = 'Rustdesk'
@@ -47,9 +47,13 @@ Set-Content C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\con
 net start rustdesk
 ```
 
-## RustDesk Get ID (batch) (Collector Script needs Custom Agent Field)
+## RustDesk Get ID (Collector Script needs Custom Agent Field)
 
-`"c:\Program Files\RustDesk\RustDesk.exe" --get-id`
+```
+$ErrorActionPreference= 'silentlycontinue'
+
+"'C:\Program Files\RustDesk\rustdesk.exe' --get-id" | get-clipboard
+```
 
 ## RustDesk Set and Get Password (Collector Script needs Custom Agent Field)
 ```
