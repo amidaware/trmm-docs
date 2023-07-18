@@ -52,7 +52,8 @@ net start rustdesk
 ```
 $ErrorActionPreference= 'silentlycontinue'
 
-"'C:\Program Files\RustDesk\rustdesk.exe' --get-id" | get-clipboard
+$rustdesk_id = ("'C:\Program Files\RustDesk\rustdesk.exe' --get-id" | get-clipboard)
+Write-Output $rustdesk_id
 ```
 
 ## RustDesk Set and Get Password (Collector Script needs Custom Agent Field)
