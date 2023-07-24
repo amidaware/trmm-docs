@@ -128,6 +128,7 @@ Here are some examples:
         "arg2"
     ],
     "env_vars": [],
+    "run_as_user": false,
     "timeout": 90 // seconds
 }
 ```
