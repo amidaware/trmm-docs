@@ -55,31 +55,31 @@ Copy / paste the download link from the deployment into your browser. It will ta
 The following optional arguments can be passed to any of the installation method executables:
 
 ```text
--log debug
+--log debug
 ```
 
 Will print very verbose logging during agent install. Useful for troubleshooting agent install.
 
 ```text
--silent
+--silent
 ```
 
 This will not popup any message boxes during install, including any error messages or the "Installation was successful" message box that pops up at the end of a successful install.
 
 ```text
--proxy "http://proxyserver:port"
+--proxy "http://proxyserver:port"
 ```
 
 Use a http proxy.
 
 ```text
--meshdir "C:\Program Files\Your Company Name\Mesh Agent"
+--meshdir "C:\Program Files\Your Company Name\Mesh Agent"
 ```
 
 Specify the full path to the directory containing `MeshAgent.exe` if using custom agent branding for your MeshCentral instance.
 
 ```text
--nomesh
+--nomesh
 ```
 
 Do not install MeshCentral agent during Tactical agent install. Note: Take Control, Remote Terminal and File Browser will not work.
