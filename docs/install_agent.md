@@ -54,9 +54,17 @@ Copy / paste the download link from the deployment into your browser. It will ta
 
 The following optional arguments can be passed to any of the installation method executables:
 
-```text
--log debug
-```
+=== ":fontawesome-brands-windows: `Windows`"
+
+    ```text
+    -log debug
+    ```
+
+=== ":material-linux: `linux`"
+
+    ```text
+    --log debug
+    ```
 
 Will print very verbose logging during agent install. Useful for troubleshooting agent install.
 
@@ -78,9 +86,17 @@ Use a http proxy.
 
 Specify the full path to the directory containing `MeshAgent.exe` if using custom agent branding for your MeshCentral instance.
 
-```text
--nomesh
-```
+=== ":fontawesome-brands-windows: `Windows`"
+
+    ```text
+    -nomesh
+    ```
+
+=== ":material-linux: `linux`"
+
+    ```text
+    --nomesh
+    ```
 
 Do not install MeshCentral agent during Tactical agent install. Note: Take Control, Remote Terminal and File Browser will not work.
 
