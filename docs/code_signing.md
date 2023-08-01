@@ -14,9 +14,7 @@ Once you have become a [Sponsor](sponsor.md), open a [support ticket](https://su
 
 Select the payment method you paid with from the dropdown.
 
-If you sponsored via [Github Sponsors](sponsor.md#sponsor-with-github-sponsors) make sure to enter your Github **username** (not email).
-
-If you sponsored via [Stripe or Paypal](sponsor.md#sponsor-with-stripe-or-paypal) make sure to enter the same email address you used when paying.
+If you sponsored via [Stripe or Paypal](sponsor.md#sponsor-with-stripe-or-paypal) and your contact email is different from the email you used to pay, please let us know that in the ticket.
 
 Enter the API subdomain you will be using for your instance (e.g. `api.example.com`).
 
