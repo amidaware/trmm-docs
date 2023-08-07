@@ -87,18 +87,18 @@ The Legal entity behind Tactical RMM.
 
 ## Is it possible to use XXX with Tactical RMM
 
-While it _may be possible_ to use XXX, we have not configured it and therefore it is [Unsupported](../unsupported_guidelines). We cannot help you configure XXX as it pertains to **your environment**.
+While it _may be possible_ to use XXX, we have not configured it and therefore it is [Unsupported](unsupported_guidelines.md). We cannot help you configure XXX as it pertains to **your environment**.
 
 ## Is it possible to use XXX proxy server with Tactical RMM
 
-If you wish to stray from the [easy install](../install_server/#option-1-easy-install-on-a-vps) of a standard install in a VPS, you need to have the knowledge on how to troubleshoot your own custom environment.
+If you wish to stray from the [easy install](install_server.md#option-1-easy-install-on-a-vps) of a standard install in a VPS, you need to have the knowledge on how to troubleshoot your own custom environment.
 
 The most common reasons you're running a proxy are:
 
 1. Because you only have a single public IP and you already have something on Port 443. **Workaround**: Get another public IP from your ISP.
-2. Because you want to monitor traffic for security reasons: You're a [Networking Wizard](../unsupported_guidelines).
+2. Because you want to monitor traffic for security reasons: You're a [Networking Wizard](unsupported_guidelines.md).
 
-There are some [implementations](../unsupported_scripts) that others have done, but be aware it is [Unsupported](../unsupported_guidelines) and if you're requesting help in Discord please let us know in advance.
+There are some [implementations](unsupported_scripts.md) that others have done, but be aware it is [Unsupported](unsupported_guidelines.md) and if you're requesting help in Discord please let us know in advance.
 
 ## How do I do X feature in the web UI?
 
