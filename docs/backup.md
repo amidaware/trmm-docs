@@ -1,3 +1,15 @@
+<script>
+  function multiplyBy()
+  {
+    num1 = document.getElementById(
+      "firstNumber").value;
+    num2 = document.getElementById(
+      "secondNumber").value;
+    document.getElementById(
+      "result").innerHTML = num1 * num2;
+  }
+</script>
+
 ## Backing up the RMM
 
 !!!note
@@ -34,7 +46,9 @@ This will do the following:
 
 * As well as Daily backups, there are monthly backups on the 10th day of every month and weekly backups every Friday.
 
-* Automated pruning of backup files, daily kept for 2 weeks, weekly for 2 months and monthly for 1 year. To calculate estimated disk needs, take the size of a manual backup and * 37. eg 600MB backup * 37 = 22.2GB of space needed.
+* Automated pruning of backup files, daily kept for 2 weeks, weekly for 2 months and monthly for 1 year. To calculate estimated disk needs, take the size of a manual backup and * 37. eg 600MB backup * 37 = 22.2GB of space needed. <br>
+ <form>
+        Calculate Backup Size (in GB): <input type="text" id="firstNumber" style="width: 100px;" /> * <input type="text" id="secondNumber" style="width: 30px;" value = "37" />GB <input type="button" onClick="multiplyBy()" Value="Calculate" /> = Total Space needed <span id="result"></span>GB</form> 
 
 !!!warning
     The backup script will just save to your server drive, you ideally want to automate moving this to another server. Please ensure you have space for the backups to be stored.
