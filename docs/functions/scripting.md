@@ -54,7 +54,7 @@ In the **Agent Table**, you can right-click on an agent and select **Run Script*
 
 There is also an option on the agent context menu called **Run Favorited Script**. This will pre-populate the script run dialog with the script of your choice.
 
-[Script Execution Process](../../howitallworks/#windows-agent)
+[Script Execution Process](../howitallworks.md#windows-agent)
 
 ### Script Arguments
 
