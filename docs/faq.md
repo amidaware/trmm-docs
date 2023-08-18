@@ -127,6 +127,14 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> User.objects.exclude(is_installer_user=True).filter(agent__isnull=True)
 ```
 
+## How do I make another superuser for logging into `rmm.`
+
+```sh
+cd /rmm/api/tacticalrmm/
+source ../env/bin/activate
+python manage.py createsuperuser
+```
+
 ## I am locked out of the web UI. How do I reset my password?
 
 SSH into your server and run:
@@ -178,6 +186,9 @@ sudo systemctl start meshcentral.service
 ```
 
 to reset Mesh password for user.
+
+!!!warning
+    Resetting the default admin in mesh will break agent installs if you don't also update the mesh connection into in Settings > General > Meshcentral and make sure [it's working](troubleshooting.md#agents-not-installing-or-updating)
 
 ## Help! I've been hacked and there are weird agents appearing in my Tactical RMM!
 
