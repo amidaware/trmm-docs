@@ -307,3 +307,5 @@ Write-Output "Path after changing the type:", $path
 3. Add in your api, rmm and mesh urls on the line for 127.0.1.1 in the hosts file
 4. Save the hosts file
 5. Restart services or run `update.sh --force`
+
+54 year agents in the dashboard can be a sign of this NATS problem
