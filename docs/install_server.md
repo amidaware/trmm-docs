@@ -133,7 +133,8 @@ ufw enable && ufw reload
 We'll be using `example.com` as our domain for this example.
 
 !!!info
-    The RMM uses 3 different sites. The Vue frontend e.g. `rmm.example.com` which is where you'll be accessing your RMM from the browser, the REST backend e.g. `api.example.com` and MeshCentral e.g. `mesh.example.com`
+    The RMM uses 3 different sites. The Vue frontend e.g. `rmm.example.com` which is where you'll be accessing your RMM from the browser, the REST backend e.g. `api.example.com` and MeshCentral e.g. `mesh.example.com`<br>
+    `rmm.` `api.` and `mesh.` are what we recommend, but you can use whatever you want if they're already in use.
 
 1. Get the public IP of your server with `curl https://icanhazip.tacticalrmm.io`
 2. Open the DNS manager of wherever the domain you purchased is hosted.
