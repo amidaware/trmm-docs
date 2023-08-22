@@ -811,6 +811,8 @@ https | TRMM server DNS name | 443
 ON: Cache Assets | Block Common Exploits | Websockets Support
 ```
 
+![](images/2023-08-22-00-25-13.png)
+
 Last thing you have to do, is setup the same certs on NPM and TRMM.
 
 TRMM cert location: `/etc/letsencrypt/live/{yourdomain}/`
