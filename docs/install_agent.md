@@ -152,9 +152,17 @@ If you want to deploy the TRMM agent using AD, Intune, Mesh, TeamViewer, Group P
 
 You can always use this to silently uninstall the agent on workstations:
 
-```cmd
-"C:\Program Files\TacticalAgent\unins000.exe" /VERYSILENT
-```
+Choose your method:
+
+=== ":material-console-line: Windows Automatically"
+
+    ```cmd
+    "C:\Program Files\TacticalAgent\unins000.exe" /VERYSILENT
+    ```
+
+=== ":material-apple: Mac"
+
+    Run: <https://github.com/amidaware/tacticalrmm/blob/develop/api/tacticalrmm/core/mac_uninstall.sh>
 
 ## Reinstalling Mesh and Reconnecting to TRMM
 
