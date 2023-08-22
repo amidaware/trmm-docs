@@ -18,13 +18,26 @@ If you cannot use Stripe and must use Paypal and still need automatic invoicing 
 
 After sponsoring, follow [the instructions](code_signing.md#code-signing) to get your code signing token.
 
-| Package | Price | Description | Sign up |
-| --- | --- | --- | --- |
-| Tier 1 | $55/month | - minimum for code signing<br>- suggested sponsorship for less than 200 agents | [Paypal](https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-8GF46962LC4592048MPWTBJY) <br />[Stripe](https://buy.stripe.com/cN228t4lD6Qc1Ak7ss) |
-| Tier 2 | $80/month | - suggested sponsorship for less than 400 agents | [Paypal](https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-8N5333625F157823NMPWTDQI) <br />[Stripe](https://buy.stripe.com/4gwdRb6tL1vSceYeUW) |
-| Tier 3 | $105/month | - suggested sponsorship for less than 600 agents | [Paypal](https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-63E24030E6802431TMPWURDY) <br />[Stripe](https://buy.stripe.com/aEU28t19r0rOfraeUX) |
-| Tier 4 | $155/month | - suggested sponsorship for less than 1,000 agents | [Paypal](https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-3D6045112C172261AMPWURVI) <br />[Stripe](https://buy.stripe.com/fZe8wR8BT0rOgvedQU) |
-| Tier 5 | $310/month | - suggested sponsorship for less than 3,000 agents | [Paypal](https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-20P602963T9792143MPWU43I) <br />[Stripe](https://buy.stripe.com/fZecN719r6Qc1Ak3ch) |
-| Tier 6 | $515/month | - suggested sponsorship for less than 5,000 agents | [Paypal](https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-0YT33416MJ034200HMPWU5SY) <br />[Stripe](https://buy.stripe.com/fZe3cx05n7Ugen628e) |
-| Tier 7 | $850/month | - suggested sponsorship for less than 10,000 agents | [Paypal](https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-8XU123051W432983WMPWVELQ) <br />[Stripe](https://buy.stripe.com/4gw7sN8BT2zWceYfZ5) |
+=== "Monthly (recurring)"
 
+    | Package | Price | Description | Sign up |
+    | --- | --- | --- | --- |
+    | Tier 1 | $55/month | - minimum for code signing<br>- suggested sponsorship for less than 200 agents | [Paypal](https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-8GF46962LC4592048MPWTBJY) <br />[Stripe](https://buy.stripe.com/cN228t4lD6Qc1Ak7ss) |
+    | Tier 2 | $80/month | - suggested sponsorship for less than 400 agents | [Paypal](https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-8N5333625F157823NMPWTDQI) <br />[Stripe](https://buy.stripe.com/4gwdRb6tL1vSceYeUW) |
+    | Tier 3 | $105/month | - suggested sponsorship for less than 600 agents | [Paypal](https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-63E24030E6802431TMPWURDY) <br />[Stripe](https://buy.stripe.com/aEU28t19r0rOfraeUX) |
+    | Tier 4 | $155/month | - suggested sponsorship for less than 1,000 agents | [Paypal](https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-3D6045112C172261AMPWURVI) <br />[Stripe](https://buy.stripe.com/fZe8wR8BT0rOgvedQU) |
+    | Tier 5 | $310/month | - suggested sponsorship for less than 3,000 agents | [Paypal](https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-20P602963T9792143MPWU43I) <br />[Stripe](https://buy.stripe.com/fZecN719r6Qc1Ak3ch) |
+    | Tier 6 | $515/month | - suggested sponsorship for less than 5,000 agents | [Paypal](https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-0YT33416MJ034200HMPWU5SY) <br />[Stripe](https://buy.stripe.com/fZe3cx05n7Ugen628e) |
+    | Tier 7 | $850/month | - suggested sponsorship for less than 10,000 agents | [Paypal](https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-8XU123051W432983WMPWVELQ) <br />[Stripe](https://buy.stripe.com/4gw7sN8BT2zWceYfZ5) |
+
+=== "Annually (recurring)"
+
+    | Package | Price | Description | Sign up |
+    | --- | --- | --- | --- |
+    | Tier 1 | $600/year | - minimum for code signing<br>- suggested sponsorship for less than 200 agents | [Stripe](https://buy.stripe.com/3cs7sNdWd1vSen6fYZ) |
+    | Tier 2 | $900/year | - suggested sponsorship for less than 400 agents | [Stripe](https://buy.stripe.com/3cs4gB7xPeiE3Is4gt) |
+    | Tier 3 | $1,200/year | - suggested sponsorship for less than 600 agents | [Stripe](https://buy.stripe.com/dR6dRbf0h4I4gvebIQ) |
+    | Tier 4 | $1,800/year | - suggested sponsorship for less than 1,000 agents | [Stripe](https://buy.stripe.com/7sIfZjcS91vS0wg00e) |
+    | Tier 5 | $3,600/year | - suggested sponsorship for less than 3,000 agents | [Stripe](https://buy.stripe.com/3csfZj5pHdeA3IsbIX) |
+    | Tier 6 | $6,000/year | - suggested sponsorship for less than 5,000 agents | [Stripe](https://buy.stripe.com/14k14p8BT1vS7YI00g) |
+    | Tier 7 | $9,600/year | - suggested sponsorship for less than 10,000 agents | [Stripe](https://buy.stripe.com/5kAcN72dv3E0ceY14l) |
