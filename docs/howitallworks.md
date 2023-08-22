@@ -599,7 +599,7 @@ Choose your method:
     systemctl restart tacticalagent.service
     ```
 
-=== ":material-mdiApple: Mac"
+=== ":material-apple: Mac"
 
     In terminal window:
 

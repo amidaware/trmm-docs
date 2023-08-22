@@ -787,15 +787,17 @@ See <https://info.meshcentral.com/downloads/MeshCentral2/MeshCentral2UserGuide.p
 
 ## Nginx Proxy Manager
 
-In NPM, declare the hosts with the parameters:
+First, get your TRMM server installed with a standard config and working.
+
+Then in NPM, declare the hosts with the parameters:
 
 ```
 api.{domain}
-https | TRMM server IP | 443
+https | TRMM server DNS name | 443
 ON: Cache Assets | Block Common Exploits | Websockets Support
 
 mesh.{domain}
-http | TRMM server IP | 4430
+http | TRMM server DNS name | 4430
 ON: Block Common Exploits | Websockets Support
 Advanced:
 proxy_set_header Host $host;
@@ -805,79 +807,21 @@ proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 proxy_set_header X-Forwarded-Proto $scheme;
 
 rmm.{domain}
-https | TRMM server IP | 443
+https | TRMM server DNS name | 443
 ON: Cache Assets | Block Common Exploits | Websockets Support
-
-If your TRMM install is on the same subnet as the NPM then following is not needed.
-BEWARE: There are security implications in exposing your NPM portal to the public.
-proxy.{domain}
-http | NPM server IP | 81 (NPM web UI port)
 ```
 
-<ins>**Note:**</ins> Wildcard SSL certs are not supported with MeshCentral. You will need an independent certificate for mesh.{domain}
+![](images/2023-08-22-00-25-13.png)
 
-Then connect in SSH to your TRMM server to modify the Nginx config of Mesh:
+Last thing you have to do, is setup the same certs on NPM and TRMM.
 
-```bash
-nano /meshcentral/meshcentral-data/config.json
-```
+TRMM cert location: `/etc/letsencrypt/live/{yourdomain}/`
 
-Then modify in this file the `TlsOffload` field to put the local IP address of your NPM, then also modify the `CertUrl` field to put the IP address of your NPM and the port that goes with it.
+NPM cert location: SSL Certificates tab
 
-<ins>**Note:**</ins> The optional `_trustedproxy` setting to CloudFlare is enabled to support their proxy service.
+Either: Setup SSL certs on NPM (optionally using Cloudflare API). Download and copy certs to TRMM. Then run `./update.sh --force`
 
-```
-{
-"settings": {
-"Cert": "${meshdomain}",
-"MongoDb": "mongodb://127.0.0.1:27017",
-"MongoDbName": "meshcentral",
-"WANonly": true,
-"Minify": 1,
-"Port": 4430,
-"AliasPort": 443,
-"RedirPort": 800,
-"AllowLoginToken": true,
-"AllowFraming": true,
-"_AgentPing": 60,
-"AgentPong": 300,
-"AllowHighQualityDesktop": true,
-"TlsOffload": "{NPM LAN IP},127.0.0.1,::1",
-"_trustedproxy": "CloudFlare",
-"agentCoreDump": false,
-"Compression": true,
-"WsCompression": true,
-"AgentWsCompression": true,
-"MaxInvalidLogin": { "time": 5, "count": 5, "coolofftime": 30 }
-},
-"domains": {
-"": {
-"Title": "Tactical RMM",
-"Title2": "Tactical RMM",
-"NewAccounts": false,
-"CertUrl": "https://{NPM LAN IP}:443",
-"GeoLocation": true,
-"CookieIpCheck": false,
-"mstsc": true
-}
-}
-}
-```
-
-Then restart your Mesh:
-
-```bash
-systemctl restart meshcentral.service
-```
-
-Open TCP port 4430 if using UFW:
-
-```bash
-ufw allow 4430/tcp
-ufw reload
-```
-
-At which point agents should be working. Use the "Recover Connection" button if necessary.
+OR: Run standard TRMM cert renew process using certbot. Then copy the files and upload: Certificate Key (`privkey.pem`), Certificate (`cert.pem`), and Intermediate Certificate (`chain.pem`)
 
 ## Synology NAS Reverse Proxy Portal
 
