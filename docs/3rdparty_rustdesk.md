@@ -52,7 +52,8 @@ net start rustdesk
 ```
 $ErrorActionPreference= 'silentlycontinue'
 
-$rustdesk_id = ("'C:\Program Files\RustDesk\rustdesk.exe' --get-id" | get-clipboard)
+cd $env:ProgramFiles\RustDesk\
+$rustdesk_id = (.\RustDesk.exe --get-id | more)
 Write-Output $rustdesk_id
 ```
 
