@@ -60,7 +60,7 @@ With many source available (and similar) projects devs get bored of them because
 3. It should stop bad actors using it maliciously.
 4. It helps with AVs detecting it as anything malicious.
 
-We had github sponsors up for many months before code signing. Very few people donated, some $5 and $10. maybe $40 a month. Once we announced code signing, sponsors came in like crazy, and many people upgraded their $5 to a $50 so whilst everyone believes people would gladly donate, that's just not the case. We already tried.
+We had github sponsors up for many months before code signing. Very few people donated, some $5 and $10. maybe $40 a month. Once we announced code signing, sponsors came in like crazy, and many people upgraded their $5 to $55 so whilst everyone believes people would gladly donate, that's just not the case. We already tried.
 
 ## Linux/macOS Agents
 
@@ -241,3 +241,13 @@ If you're not certain if your business use case is allowed by the license please
 From the client / agent side: Installing and uninstalling software is part of system administration. Administrators can install / uninstall. Users cannot. Configure your system appropriately.
 
 From the TRMM Admin panel: Use `Permissions Manager` to restrict your techs permissions.
+
+## If you received this link
+
+You have asked for assistance in Discord, and you have not provided enough information.
+
+Please read the [#rules](https://discord.com/channels/736478043522072608/921501747648811038/936258143380443226) and provide the requested information.
+
+We can not help you until we understand your setup. Just posting an error log is not enough information.
+
+You can help yourself by running [this](troubleshooting.md#server-troubleshooting-script) and [this](troubleshooting.md#agents-not-installing-or-updating) that will test your server and and tell you common problems.
