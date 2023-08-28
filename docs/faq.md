@@ -244,10 +244,40 @@ From the TRMM Admin panel: Use `Permissions Manager` to restrict your techs perm
 
 ## If you received this link
 
-You have asked for assistance in Discord, and you have not provided enough information.
+You have asked for assistance in Discord or Github, and you have not provided enough [information](https://discord.com/channels/736478043522072608/921501747648811038/936258143380443226).
 
-Please read the [#rules](https://discord.com/channels/736478043522072608/921501747648811038/936258143380443226) and provide the requested information.
+Please provide the following information by submitting [this](https://docs.google.com/forms/d/e/1FAIpQLScfgZDGrdrCFgPTz5TIBEvrflkHPZe3S0QvTN4OC7_Hnf74tg/viewform), or copy/pasting this text and answering the questions:
+
+```
+Install type (Standard/Docker) and amount of RAM on server?
+Did you deviate IN ANY WAY from these Standard server install instructions https://docs.tacticalrmm.com/install_server/ ?
+Did you deviate IN ANY WAY from these Docker server install instructions https://docs.tacticalrmm.com/install_docker/ ?
+Where is the server (VPS/onprem)?
+New/old install? Rough age of TRMM server (days/weeks/months)?
+
+Server Install Specific questions:
+What OS/version is TRMM installed on.
+Using a real domain?
+Did letsencrypt finalize and work?
+Have you looked at the troubleshooting steps to see if something there is appropriate to you situation? Test DNS from an agent etc. https://docs.tacticalrmm.com/troubleshooting/
+Run the Server Troubleshooting Script and DM the person (from @Support) that is working with you https://docs.tacticalrmm.com/troubleshooting/#server-troubleshooting-script
+What kind of ssl certs? Let's Encrypt, or purchased (you're not trying to make self-signed work right?)
+Check Expiry date of your certificates in the browser (at https://rmm.example.com/ )
+
+Network Troubleshooting
+Are you using a proxy?
+Are you a wizard? See https://docs.tacticalrmm.com/unsupported_guidelines/
+If so, what's in the network between agent and server?
+
+Agent Troubleshooting
+Is there ANY 3rd party Antivirus installed on the computer?
+Is there any network based filtering/AV filtering?
+
+Asking yourself questions like: When did it go from working to broken? What changed during that time? This will help you. 
+```
 
 We can not help you until we understand your setup. Just posting an error log is not enough information.
 
 You can help yourself by running [this](troubleshooting.md#server-troubleshooting-script) and [this](troubleshooting.md#agents-not-installing-or-updating) that will test your server and and tell you common problems.
+
+If you would like us to do it for you please [contact support](support.md#commercial-support).
