@@ -13,9 +13,9 @@ SSH into your server as a root user and run the below commands:
 cd [dir/with/compose/file]
 mv docker-compose.yml docker-compose.yml.old
 wget https://raw.githubusercontent.com/amidaware/tacticalrmm/master/docker/docker-compose.yml
-sudo docker compose pull
-sudo docker compose down
-sudo docker compose up -d --remove-orphans
+sudo docker-compose pull
+sudo docker-compose down
+sudo docker-compose up -d --remove-orphans
 ```
 
 ## Keeping your Let's Encrypt certificate up to date
