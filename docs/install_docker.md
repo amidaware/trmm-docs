@@ -8,6 +8,8 @@
 
 Install docker.
 
+Please keep in mind that the docker package is usually called docker.io in debian based distros including ubuntu
+
 ### Create the DNS A records
 
 !!!warning
@@ -102,10 +104,16 @@ echo "CERT_PRIV_KEY=$(sudo base64 -w 0 /path/to/priv/key)" >> .env
 Run the below command to start the environment:
 
 ```bash
-sudo docker compose up -d
+docker compose up -d
 ```
 
 Removing the -d will start the containers in the foreground and is useful for debugging.
+
+If you get a error saying you don't have permission you can add yourself to the docker group with:
+```
+sudo usermod -aG docker [user]
+```
+You may need to log out and back in for it to take full effect.
 
 ### Login
 
