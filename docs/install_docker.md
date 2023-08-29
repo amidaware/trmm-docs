@@ -8,6 +8,8 @@
 
 Install docker.
 
+Please keep in mind that the docker package is usually called docker.io in debian based distros including ubuntu
+
 ### Create the DNS A records
 
 !!!warning
