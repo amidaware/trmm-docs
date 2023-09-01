@@ -45,6 +45,7 @@ nav:
   - 3rd Party Integrations:
       - "Grafana": 3rdparty_grafana.md
       - "AnyDesk": 3rdparty_anydesk.md
+      - "N-Able": 3rdparty_n-able-takecontrol.md
       - "Bomgar": 3rdparty_bomgar.md
       - "ConnectWise Control / ScreenConnect": 3rdparty_screenconnect.md
       - "RustDesk": 3rdparty_rustdesk.md
