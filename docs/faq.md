@@ -112,7 +112,7 @@ Similarly asked: Can I use onsite DNS servers (I don’t want my server accessib
 
 Yes, you can use (only) internal DNS (if you want) for api, mesh and rmm domains. You don't have to put these records in your public DNS servers.
 
-**Note:** You still **must** have an internet resolvable domain name and add the DNS `TXT` record to its public DNS server for the Let's Encrypt wildcard cert request process that is part of the install process. This **does not** require any inbound connection from the internet (port forwarding etc) to be enabled. This does not expose your RMM server to the internet in any way. The Let's Encrypt wildcard is done for [nats](#self-signed-certs)
+The Let's Encrypt DNS `TXT` wildcard cert request process **does not** require any inbound connection from the internet (port forwarding etc) to be enabled. This does not expose your RMM server to the internet in any way.
 
 ## I forgot my username to login to the web UI, how can I find it?
 
@@ -224,14 +224,6 @@ A. Make sure it’s correctly formatted, as most DNS providers add in the domain
 
 ![DNS Examples](images/trmmdnsexample.png)
 
-## Self-Signed Certs
-
-Q. Why can’t I use a self signed certificate?
-
-A. NATS over TLS needs a real certificate signed with a trusted root certificate.
-
-If you aren't a dev in a non-production environment, don't run NATS with self signed certs: <https://docs.nats.io/running-a-nats-service/configuration/securing_nats/tls#self-signed-certificates-for-testing>
-
 ## License FAQ
 
 If you're not certain if your business use case is allowed by the license please open a [ticket](https://support.amidaware.com) and let us know how you're planning on using it.
@@ -261,7 +253,7 @@ Using a real domain?
 Did letsencrypt finalize and work?
 Have you looked at the troubleshooting steps to see if something there is appropriate to you situation? Test DNS from an agent etc. https://docs.tacticalrmm.com/troubleshooting/
 Run the Server Troubleshooting Script and DM the person (from @Support) that is working with you https://docs.tacticalrmm.com/troubleshooting/#server-troubleshooting-script
-What kind of ssl certs? Let's Encrypt, or purchased (you're not trying to make self-signed work right?)
+What kind of ssl certs? Let's Encrypt, or purchased.
 Check Expiry date of your certificates in the browser (at https://rmm.example.com/ )
 
 Network Troubleshooting

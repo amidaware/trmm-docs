@@ -34,9 +34,8 @@ A fresh Linux VM running either Debian 11, Debian 12 or Ubuntu 22.04 LTS with at
 !!!tip
     Enable logging of your terminal output. A good Windows SSH client is [MobaXTerm](https://mobaxterm.mobatek.net/download.html). It'll automatically log everything so if you need it later (like install logs because you have a [50x error](troubleshooting.md#problems-after-new-server-install) trying to login after) they'll be easy to grab and share with support. It has an integrated SCP client too!
 
-#### Network Requirements
+#### Install Requirements
 
-- A real (internet resolvable) domain is needed to generate a Let's Encrypt wildcard cert - example.local is __NOT__ a real domain. No, you [don't have to expose your server](faq.md#can-i-run-tactical-rmm-locally-behind-nat-without-exposing-my-rmm-server-to-the-internet) to the internet
 - A TOTP based authenticator app. Some popular ones are Google Authenticator, Authy, and Microsoft Authenticator.
 
 !!!warning
@@ -77,9 +76,6 @@ Create a user named `tactical` to run the RMM and add it to the sudoers group.
 useradd -m -G sudo -s /bin/bash tactical
 passwd tactical
 ```
-
-!!!tip
-    [Enable passwordless sudo to make your life easier in the future](https://linuxconfig.org/configure-sudo-without-password-on-ubuntu-20-04-focal-fossa-linux)
 
 ### Step 3 - Setup the firewall (optional but highly recommended)
 
@@ -163,11 +159,21 @@ chmod +x install.sh
 ./install.sh
 ```
 
+!!!danger
+    To use a fake domain with self-signed certs, pass the `--insecure` flag to the install script. Do **NOT** use in production, this should only be used for local testing.
+
+    `./install.sh --insecure`
+
+    After install, make sure to open up all 3 subdomains in your web browser and accept the security warning for each site, otherwise you'll get errors when trying to login.
+
+
 Answer the initial questions when prompted. Replace `example.com` with your domain.
 
 ![questions](images/install_questions.png)
 
 ### Step 6 - Deploy the TXT record in your DNS manager for Let's Encrypt [wildcard certs](https://letsencrypt.org/docs/challenge-types/#dns-01-challenge)
+
+Skip this step if using your own certs or using self-signed certs.
 
 !!!warning
     TXT records can take anywhere from 1 minute to a few hours to propagate depending on your DNS provider.<br/>
