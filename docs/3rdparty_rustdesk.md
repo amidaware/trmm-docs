@@ -4,7 +4,7 @@
 2. Create the following scripts (all are powershell).
 3. Create a [URL Action](https://docs.tacticalrmm.com/functions/url_actions/).
 4. Create [custom fields](https://docs.tacticalrmm.com/functions/custom_fields/) for the RustDesk ID and password.
-5. Create [collector tasks](https://docs.tacticalrmm.com/functions/automated_tasks/#collector-tasks).
+5. Create [collector tasks](https://docs.tacticalrmm.com/functions/automated_tasks/#collector-tasks) and [Script Checks](https://docs.tacticalrmm.com/functions/scripting/#script-checks)
 6. Enjoy :)
 
 ## Install Script Replace IPADDRESS and KEY
@@ -56,11 +56,12 @@ cd $env:ProgramFiles\RustDesk\
 .\RustDesk.exe --get-id | out-host
 ```
 
-## RustDesk Set and Get Password (Collector Script needs Custom Agent Field)
+## Create Script to be used as a Check
+
 ```
 $ErrorActionPreference= 'silentlycontinue'
 
-$confirmation_file = "C:\program files\RustDesk\runonce.txt"
+$confirmation_file = "C:\program files\RustDesk\rdrunonce.txt"
 
 if ([System.IO.File]::Exists($confirmation_file)) {
     echo "Confirmation file exists"
@@ -68,7 +69,17 @@ if ([System.IO.File]::Exists($confirmation_file)) {
 }
 else
 {
+    echo "Confirmation file doesn't exists"
+	exit 1
+}
+
+```
+
+## RustDesk Set and Get Password (Collector Script needs Custom Agent Field) to run on Check Failure
+```
 $ErrorActionPreference= 'silentlycontinue'
+
+$confirmation_file = "C:\program files\RustDesk\rdrunonce.txt"
 
 net stop rustdesk > null
 $ProcessActive = Get-Process rustdesk -ErrorAction SilentlyContinue
@@ -84,8 +95,6 @@ Write-Output $rustdesk_pw
 net start rustdesk > null
         
 New-Item $confirmation_file > null
-
-}
 
 ```
 ## RustDesk URL Action
