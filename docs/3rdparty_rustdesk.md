@@ -1,6 +1,6 @@
 ## To install Rustdesk and use it with Tactical RMM you need to the the following.
 
-1. Install your own RustDesk Server, following their [official docs](https://rustdesk.com/docs/en/self-host/install/) and open ports.
+1. Install your own RustDesk Server, following their [official docs](https://rustdesk.com/docs/en/self-host/) and open ports.
 2. Create the following scripts (all are powershell).
 3. Create a [URL Action](https://docs.tacticalrmm.com/functions/url_actions/).
 4. Create [custom fields](https://docs.tacticalrmm.com/functions/custom_fields/) for the RustDesk ID and password.
