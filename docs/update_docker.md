@@ -13,9 +13,9 @@ SSH into your server as a user that is in the docker group and run the below com
 cd [dir/with/compose/file]
 mv docker-compose.yml docker-compose.yml.old
 wget https://raw.githubusercontent.com/amidaware/tacticalrmm/master/docker/docker-compose.yml
-docker-compose pull
-docker-compose down
-docker-compose up -d --remove-orphans
+docker compose pull
+docker compose down
+docker compose up -d --remove-orphans
 ```
 
 If your user isn't in the docker group you can add yourself to the group with:
