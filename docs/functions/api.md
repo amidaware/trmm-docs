@@ -51,7 +51,7 @@ Then visit `https://api.example.com/api/schema/swagger-ui/` to see it in action.
 ## Beta API
 *Version added: Tactical RMM v0.16.5*
 
-A beta API is now available at `/api/beta/v1` which supports filtering and pagination.
+A beta API is now available at `/beta/v1` which supports filtering and pagination.
 
 To activate it, first enable swagger (see above) and then add the following line to `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py`:
 ```conf
