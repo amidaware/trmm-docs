@@ -34,6 +34,32 @@ Example curl request:
 curl https://api.example.com/clients/ -H "X-API-KEY: Y57BXCFAA9WBCXH0XTEL6R5KAK69CNCZ"
 ```
 
+## Enable Swagger
+
+This will let you add a browser interface to see how you can use the API better.
+
+Open `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py` and add
+
+```conf
+SWAGGER_ENABLED = True
+```
+
+Restart Django: `sudo systemctl restart rmm.service`
+
+Then visit `https://api.example.com/api/schema/swagger-ui/` to see it in action.
+
+## Beta API
+*Version added: Tactical RMM v0.16.5*
+
+A beta API is now available at `/api/beta/v1` which supports filtering and pagination.
+
+To activate it, first enable swagger (see above) and then add the following line to `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py`:
+```conf
+BETA_API_ENABLED = True
+```
+
+Then restart Django with: `sudo systemctl restart rmm.service` and check Swagger for usage.
+
 ## Querying the API
 
 Here are some examples:
@@ -132,20 +158,6 @@ Here are some examples:
     "timeout": 90 // seconds
 }
 ```
-
-## Enable Swagger
-
-This will let you add a browser interface to see how you can use the API better.
-
-Open `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py` and add
-
-```conf
-SWAGGER_ENABLED = True
-```
-
-Restart Django: `sudo systemctl restart rmm.service`
-
-Then visit `https://api.example.com/api/schema/swagger-ui/` to see it in action.
 
 ## API via CLI
 
