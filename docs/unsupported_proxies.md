@@ -18,6 +18,160 @@ All 3 URL's will need to be configured: `rmm`, `api`, `mesh`
 
 For `mesh` see the Section 10. TLS Offloading of the [MeshCentral 2 User Guide](https://info.meshcentral.com/downloads/MeshCentral2/MeshCentral2UserGuide.pdf).
 
+## Caddy 2
+
+This section will cover using Caddy as a reverse proxy in front of TacticalRMM.  The below example uses AWS Route53, ports 4443/8080, and assumes you are using Docker.
+
+In your Caddyfile, create a wild card route with 3 handlers as shown below.  
+
+```bash
+# Caddyfile
+
+{
+    email fake@amidaware.com
+
+    acme_dns route53
+
+} # Global options
+
+*.amidaware.com {
+        tls {
+           dns route53 {
+             max_retries 10
+             access_key_id "AKIAxxxxxxx"
+             secret_access_key "4CXXXXXXXXXXXXXXXXX"
+             region "us-east-1"
+           }
+        } # tls
+
+        @rmm host rmm.amidaware.com
+        handle @rmm {
+                reverse_proxy rmm.amidaware.com:4443 {
+                        transport http {
+                                tls_insecure_skip_verify
+                        }
+                }
+
+        } # rmm
+
+        @api host api.amidaware.com
+        handle @api {
+                reverse_proxy api.amidaware.com:4443 {
+                        transport http {
+                                tls_insecure_skip_verify
+                        }
+                }
+
+        } # api
+
+        @mesh host mesh.amidaware.com
+        handle @mesh {
+                reverse_proxy https://mesh.amidaware.com:4443 {
+                     transport http {
+                        tls_insecure_skip_verify
+                     }
+                }
+        } # mesh
+
+} # *.amidaware.com
+``` 
+
+In your TacticalRMM .env file, change **TRMM_HTTP_PORT** and **TRMM_HTTPS_PORT** so that it matches the port you selected in your Caddyfile.  In this example it's 4443 and 8080.  Also change the **MESH_PERSISTENT_CONFIG** to 1 so t>
+
+```bash
+# .env
+
+IMAGE_REPO=tacticalrmm/
+VERSION=latest
+
+# tactical credentials (Used to login to dashboard)
+TRMM_USER=tactical
+TRMM_PASS=tactical
+
+# dns settings
+APP_HOST=rmm.amidaware.com
+API_HOST=api.amidaware.com
+MESH_HOST=mesh.amidaware.com
+
+# optional web port override settings 
+TRMM_HTTP_PORT=8080
+TRMM_HTTPS_PORT=4443
+
+# mesh settings
+MESH_USER=tactical
+MESH_PASS=tactical
+MONGODB_USER=mongouser
+MONGODB_PASSWORD=mongopass
+MESH_PERSISTENT_CONFIG=1
+
+# database settings
+POSTGRES_USER=postgres
+POSTGRES_PASS=postgrespass
+```
+
+Update your mesh config **certUrl** option with your domain Url as shown below.
+
+```
+....
+
+  "domains": {
+    "": {
+      "title": "Tactical RMM",
+      "title2": "TacticalRMM",
+      "newAccounts": false,
+      "mstsc": true,
+      "geoLocation": true,
+      "certUrl": "https://rmm.amidaware.com",
+      "agentConfig": [ "webSocketMaskOverride=0" ]
+    }
+  },
+
+....
+```
+
+Restart your Caddy containers
+
+```
+docker compose restart
+```
+
+Locate and make a note of your Caddy certificate files.  In this example it was created in:
+
+```
+/mydockercontainers/caddy_data/caddy/certificates/acme-v02.api.letsencrypt.org-directory/wildcard_.amidaware.com
+```
+
+We need to update TacticalRMM's .env file with the Caddy certificates.  Create a script named renew-cert.sh and change **CERT_CRT** and **CERT_KEY** to match the location in the previous step.
+
+```bash
+# renew-cert.sh
+
+#!/bin/bash
+
+CERT_CRT=/mydockercontainers/caddy/caddy_data/caddy/certificates/acme-v02.api.letsencrypt.org-directory/wildcard_.amidaware.com/wildcard_.amidaware.com.crt
+CERT_KEY=/mydockercontainers/caddy/caddy_data/caddy/certificates/acme-v02.api.letsencrypt.org-directory/wildcard_.amidaware.com/wildcard_.amidaware.com.key
+
+echo "CERT_PUB_KEY=$(sudo base64 -w 0 ${CERT_CRT})" >> .env
+echo "CERT_PRIV_KEY=$(sudo base64 -w 0 ${CERT_KEY})" >> .env
+
+echo "Restarting TacticalRMM containers please wait ..."
+
+docker compose down
+docker compose up -d --remove-orphans
+
+echo "Make sure to remove the old cert lines in .env file."
+
+```
+
+Run the script manually when needed or add to cron.  
+
+```
+chmod +x renew-cert.sh
+./renew-cert.sh
+```
+
+That's all folks.  Caddy should be reverse proxying all traffic to TacticalRMM correctly.
+
 ## Traefikv2
 
 Offsite Resource: <https://gitlab.com/NiceGuyIT/tactical-goodies/-/tree/main/traefik>
