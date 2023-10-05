@@ -10,18 +10,20 @@
     "python": "python3 -m pip install --progress-bar off --upgrade pip && python3 -m pip install --progress-bar off mkdocs mkdocs-material pymdown-extensions"
   },
   "postCreateCommand": "",
+  "postAttachCommand": "mkdocs serve",
   "customizations": {
     "codespaces": {
       // Open files for development
       "openFiles": [
-        "README.md",
-      ],
+        "README.md"
+      ]
     },
     "vscode": {
       "extensions": [
         "ms-python.python",
         "ms-python.vscode-pylance",
-        "ms-python.pylint"
+        "ms-python.pylint",
+        "streetsidesoftware.code-spell-checker"
       ]
     }
   },
