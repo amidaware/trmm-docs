@@ -1,0 +1,36 @@
+{
+  "name": "Documentation container",
+  "image": "mcr.microsoft.com/devcontainers/python:3.10",
+  "hostRequirements": {
+    "cpus": 2
+  },
+  "waitFor": "onCreateCommand",
+  "updateContentCommand": {
+    "install": "sudo apt-get update && sudo apt-get install --no-install-recommends -y vim",
+    "python": "python3 -m pip install --progress-bar off --upgrade pip && python3 -m pip install --progress-bar off mkdocs mkdocs-material pymdown-extensions"
+  },
+  "postCreateCommand": "",
+  "customizations": {
+    "codespaces": {
+      // Open files for development
+      "openFiles": [
+        "README.md",
+      ],
+    },
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.pylint"
+      ]
+    }
+  },
+  // connect to remote server
+  "forwardPorts": [8005],
+  "portsAttributes": {
+    "8005": {
+      "label": "mkdocs",
+      "onAutoForward": "openPreview"
+    }
+  }
+}
