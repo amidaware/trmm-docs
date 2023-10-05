@@ -41,4 +41,27 @@ Codespaces are created by clicking the `code` button and then the Codespaces tab
 
 ### Using the Codespace
 
-It takes about 15 seconds for the Codespace to start in the browser. If you want to use Code on the desktop, click in the lower left corner and selection the option to "open in VS Code desktop".
+It takes about 15 seconds for the Codespace to start in the browser. If you want to use Code on the desktop, click the `Codespaces` in the lower left corner (to open the command menu at top) and selection the option to "Open in VS Code Desktop". Once VS Code is open on the desktop, you can close the browser tab.
+
+![Codespace open in code desktop](codespace-open-in-code-desktop.png)
+
+### Committing your code
+
+As stated above, you don't need SSH keys to commit your changes. The Codespace is already authenticated with your GitHub account, and `git push` "just works(tm)". Of course you still need to `git add --update` or `git add .` followed by `git commit --message "Some descriptive message for your change"`.
+
+### Stopping the Codespace
+
+After committing your message, stop the Codespace by clicking the `Codespaces` in the lower left corner (to open the command menu at top) and selection the option to "Stop Current Codespace". See the screenshot above.
+
+### Deleting the Codespace
+
+Since you are billed for storage on a GB-month basis, it's best to delete the Codespace. _Codespaces are disposable!_ Go to <https://github.com/codespaces/> to view all your codespaces. Clicking on the Codespace will launch it! Instead, click the kebab menu on the right and select Delete.
+![Codespace deletion](codespace-deletion.png)
+
+### Help! Something's wrong
+
+Remember, _Codespaces are disposable!_ If something is wrong, go to your Codespace dashboard, <https://github.com/codespaces/>, and delete the Codespace. Uncommitted changes will be deleted. Create another Codespace and try again.
+
+### Wrapping up
+
+Codespaces help the developer workflow but it doesn't replace the pull request process. You still need to submit the pull request like you normally would. The main advantage of using Codespaces is not having to `git clone` the repository.
