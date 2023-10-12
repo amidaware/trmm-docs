@@ -62,4 +62,5 @@ For more information See [Collector Tasks](automated_tasks.md#Collector Tasks).
 
 <div class="video-wrapper">
   <iframe width="400" height="225" src="https://www.youtube.com/embed/dIywDcCucdI" frameborder="0" allowfullscreen></iframe>
+  <iframe width="400" height="225" src="https://www.youtube.com/embed/uWdzxbJjrm4" frameborder="0" allowfullscreen></iframe>
 </div>
