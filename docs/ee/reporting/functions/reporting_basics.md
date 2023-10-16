@@ -13,11 +13,11 @@ manually between markdown and HTML
 ### Markdown templates
 
 Do note that HTML is valid in markdown and should be used when the Markdown syntax doesn't do exactly what you need. An example
-would be for using the <table> tag.
+would be for using the `<table>` tag.
 
 Also note that the markdown is rendered to HTML anyway.
 
-See [this](https://daringfireball.net/projects/markdown/syntax) refence for Markdown syntax
+See [this](https://daringfireball.net/projects/markdown/syntax) reference for Markdown syntax
 
 ### Plain text templates
 
@@ -33,10 +33,10 @@ and inserting charts and tables. Hovering over the button will display its funct
 
 You can add in variables in the right editor pane. The variables pane can be toggled
 on/off using the *vars* button on the toolbar. The variables are adding in yaml format
-and can be referenced using {{variable_name}} in the template. The value of the variable
+and can be referenced using `{{variable_name}}` in the template. The value of the variable
 will be substituted when the template is rendered. If the value of the variables is nested within
-an object, you can use dot notation to render the value like {{ object.variable_name }}. If there is
-a space in the name you can use {{ object["variable name"] }}.
+an object, you can use dot notation to render the value like `{{ object.variable_name }}`. If there is
+a space in the name you can use `{{ object["variable name"] }}`.
 
 ### Variable analysis
 
@@ -102,11 +102,11 @@ report template editor. The CSS class can be referenced in the report template f
 styling. 
 
 If you are using markdown, you can add ids and classes to html elements by
-using {#id_name} and {.class_name} beside the template.
+using `{#id_name}` and `{.class_name}` beside the template.
 
-# This will render an h1 html tag with an id of 'id-name' {#id-name} 
+This will render an h1 html tag with an id of 'id-name' `{#id-name}`
 
-# This will render an h1 html tag with a class of 'class-name' {.class-name} 
+This will render an h1 html tag with a class of 'class-name' `{.class-name}`
 
 ## Report assets
 
@@ -142,8 +142,8 @@ the **Template Dependencies** dropdown on the report editor. Then default values
 Client, Site, and Agent. You can type additional values that are required for the report.
 
 In your variables and report template, you can use these dependencies by enclosing the
-same of the dependency like so: {{agent.hostname}} or {{client.name}}. For custom
-dependencies you can just type in {{ dependency_name }}. These are case sensitive.
+same of the dependency like so: `{{agent.hostname}}` or `{{client.name}}`. For custom
+dependencies you can just type in `{{ dependency_name }}`. These are case sensitive.
 
 ## Report preview
 
