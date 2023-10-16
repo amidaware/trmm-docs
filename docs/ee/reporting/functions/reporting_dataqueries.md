@@ -56,8 +56,10 @@ data_sources:
     sites:
         model: site
         filter:
-            client_id: {{ client.id }}
+            client_id: '{{ client.id }}''
 ```
+
+Do not that quotes are required around {{}} tags in the variables section
 
 ## Data Query Editor
 
