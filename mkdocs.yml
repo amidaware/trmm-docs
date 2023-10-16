@@ -35,6 +35,14 @@ nav:
       - "User Interface Preferences": functions/user_ui.md
       - "Reference: Script Variables": script_variables.md
       - "Examples": functions/examples.md
+  - Sponsor Addons:
+      - "Reporting": 
+          - "Overview": ee/reporting/reporting_overview.md
+          - "The Basics": ee/reporting/functions/reporting_basics.md
+          - "Base Templates": ee/reporting/functions/reporting_basetemplates.md
+          - "Variables": ee/reporting/functions/reporting_variables.md
+          - "Data Queries": ee/reporting/functions/reporting_dataqueries.md
+          - "Assets": ee/reporting/functions/reporting_assets.md
   - Backup: backup.md
   - Restore: restore.md
   - Antivirus Exclusions: av.md
