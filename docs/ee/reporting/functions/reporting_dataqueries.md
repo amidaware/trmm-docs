@@ -19,7 +19,7 @@ data_sources:
 ```
 
 Once this is specified in the variables, you can use this data in the template like this:
-{{data_sources.sites}}. This will just dump the data into the template, but it isn't very 
+`{{data_sources.sites}}`. This will just dump the data into the template, but it isn't very 
 useful. We can actually loop over this data query to format it using a Jinja
 for loop.
 
@@ -42,13 +42,13 @@ data_sources:
 ```
 
 The same rules apply for the second query. You can reference it in your templates using
-{{data_sources.clients}}. 
+`{{data_sources.clients}}`. 
 
 ## Template Dependencies
 
 Template dependencies allow you to pass information to a report at runtime. This could be
 a client, site, or agent. These are covered in detail in the documentation, but just know
-that you can use template dependencies in your data queries by using the {{ }} in place of the 
+that you can use template dependencies in your data queries by using the `{{ }}` in place of the 
 data you want to replace. See the example below for a client dependency:
 
 ```yaml
@@ -56,10 +56,11 @@ data_sources:
     sites:
         model: site
         filter:
-            client_id: '{{ client.id }}''
+            client_id: '{{ client.id }}'
 ```
 
-Do not that quotes are required around {{}} tags in the variables section
+!!!note
+    Note that quotes are required around `{{}}` tags in the variables section
 
 ## Data Query Editor
 
@@ -233,7 +234,7 @@ data_sources:
             plat: "windows"
 ```
 
-The above is just doing an *equals* comparsion to make sure the rows match. You can also
+The above is just doing an *equals* comparison to make sure the rows match. You can also
 use other operations like greater than, contains, etc. 
 
 ```yaml
@@ -416,7 +417,7 @@ data_sources:
 ```
 
 This will add a **site__name** and **site__client__name** column on the returned data. We use a
-double underscore everytime we want to go to another table. The site column exists directly on
+double underscore every time we want to go to another table. The site column exists directly on
 the agents table. So in order to get the name (which resides on the sites table) we need to use
 the double underscore. Same thing with the client name. We need to go through the sites table
 in order to get the client name so we use another double underscore. 
@@ -473,7 +474,7 @@ data_sources:
 
 Usage in template
 
-{{data_sources.agents}}
+`{{data_sources.agents}}`
 
 Output will look something like:
 
@@ -515,7 +516,7 @@ data,data,data,data,data,data
 
 ### json - boolean
 
-This will return a json string representation of the objecy. This is useful
+This will return a json string representation of the object. This is useful
 if you are passing the data source to be processed by javascript.
 
 Example

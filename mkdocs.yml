@@ -37,6 +37,7 @@ nav:
       - "Examples": functions/examples.md
   - Sponsor Addons:
       - "Reporting": 
+          - "FAQ": ee/reporting/faq.md
           - "Overview": ee/reporting/reporting_overview.md
           - "The Basics": ee/reporting/functions/reporting_basics.md
           - "Base Templates": ee/reporting/functions/reporting_basetemplates.md
