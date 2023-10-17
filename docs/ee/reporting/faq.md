@@ -2,7 +2,7 @@
 
 ## Pricing
 
-Existing sponsors as of Nov 2023: As a thank you for all your support and patience you will get our Founders Edition ™️ perpetual reporting license which will be included in your existing sponsorship. 
+Existing sponsors as of Nov 2023: As a thank you for all your support and patience you will get our Founders Edition perpetual reporting license which will be included in your existing sponsorship. 
 
 For all others, Reporting will be included for all Tier 2 and higher packages.
 
