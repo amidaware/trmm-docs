@@ -67,7 +67,7 @@ data_sources:
 There is a data query editor that supports auto-complete so that you can more easily
 determine which columns and relations are available. *It is recommended to always use
 this editor to avoid typos and errors when generating reports.* You can open the query 
-editor by going to **Report Manager > Data Queries > New** or in the template editor by 
+editor by going to **Reports Manager > Data Queries > New** or in the template editor by 
 clicking **Add Data Query** or **Edit Data Query** toolbar button in the template.
 
 Do note that the Query Editor uses JSON syntax to provide the auto-complete functionality.
@@ -397,59 +397,6 @@ data_sources:
         order_by: -hostname
 ```
 
-### Relations
-
-You can include columns from a related model by using the double underscore syntax. You may have
-a data query using the agents table, but want to include the Site name and the Client name.
-See the example below:
-
-```yaml
-data_sources:
-    agents:
-        model: agent
-        only:
-          - hostname
-          - operating_system
-          - plat
-          - needs_reboot
-          - site__name
-          - site__client__name
-```
-
-This will add a **site__name** and **site__client__name** column on the returned data. We use a
-double underscore every time we want to go to another table. The site column exists directly on
-the agents table. So in order to get the name (which resides on the sites table) we need to use
-the double underscore. Same thing with the client name. We need to go through the sites table
-in order to get the client name so we use another double underscore. 
-
-All available combinations are listed in the query editor
-
-To display these columns in the template you can do this:
-
-```
-{% for item in data_source.agents %}
-{{ item.site__name }}
-{{ item.site__client__name }}
-{% endfor %}
-```
-
-We can also filter based on relations. See below:
-
-```yaml
-data_sources:
-    agents:
-        model: agent
-        only:
-          - hostname
-          - operating_system
-          - plat
-          - needs_reboot
-          - site__name
-          - site__client__name
-        filter:
-            site__client__name: "Client Name"
-```
-
 ### csv - boolean | object
 
 This is a shorthand to return a string formatted as a csv. 
@@ -472,9 +419,15 @@ data_sources:
         csv: true
 ```
 
+This will add a **site__name** and **site__client__name** column on the returned data. We use a
+double underscore every time we want to go to another table. The site column exists directly on
+the agents table. So in order to get the name (which resides on the sites table) we need to use
+the double underscore. Same thing with the client name. We need to go through the sites table
+in order to get the client name so we use another double underscore. 
+
 Usage in template
 
-`{{data_sources.agents}}`
+{{data_sources.agents}}
 
 Output will look something like:
 
@@ -516,7 +469,7 @@ data,data,data,data,data,data
 
 ### json - boolean
 
-This will return a json string representation of the object. This is useful
+This will return a json string representation of the objecy. This is useful
 if you are passing the data source to be processed by javascript.
 
 Example
@@ -535,4 +488,71 @@ data_sources:
         filter:
             site__client__name: "Client Name"
         json: true
+```
+
+Usage in template
+
+`{{data_sources.agents}}`
+
+Output will look something like:
+
+```
+hostname,operating_system, plat,needs_reboot,site__name,site__client__name
+data,data,data,data,data,data
+```
+
+## Relations
+
+You can include columns from a related model by using the double underscore syntax. You may have
+a data query using the agents table, but want to include the Site name and the Client name.
+See the example below:
+
+```yaml
+data_sources:
+    agents:
+        model: agent
+        only:
+          - hostname
+          - operating_system
+          - plat
+          - needs_reboot
+          - site__name
+          - site__client__name
+```
+
+This will add a **site__name** and **site__client__name** column on the returned data. We use a
+double underscore everytime we want to go to another table. The site column exists directly on
+the agents table. So in order to get the name (which resides on the sites table) we need to use
+the double underscore. Same thing with the client name. We need to go through the sites table
+in order to get the client name so we use another double underscore. 
+
+All available combinations are listed in the query editor
+
+To display these columns in the template you can do this:
+
+This will return a json string representation of the object. This is useful if you are passing the 
+data source to be processed by javascript or you just want to create your own custom api endpoint.
+
+```
+{% for item in data_source.agents %}
+{{ item.site__name }}
+{{ item.site__client__name }}
+{% endfor %}
+```
+
+We can also filter based on relations. See below:
+
+```yaml
+data_sources:
+    agents:
+        model: agent
+        only:
+          - hostname
+          - operating_system
+          - plat
+          - needs_reboot
+          - site__name
+          - site__client__name
+        filter:
+            site__client__name: "Client Name"
 ```
