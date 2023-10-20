@@ -97,6 +97,7 @@ table to pull the data from. The available models are:
 * clientcustomfield
 * debuglog
 * globalkvstore
+* pendingaction
 * policy
 * site
 * taskresult
