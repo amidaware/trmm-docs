@@ -50,7 +50,7 @@ This will show up between the <body> tags in the base template/
 {% endblock %}
 ```
 
-# Multiple blocks
+## Multiple blocks
 
 We can also fill in multiple blocks if they are specified in the base template. Any blocks
 that aren't used will just be blank.
