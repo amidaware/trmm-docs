@@ -1,7 +1,7 @@
 # Restore
 
 !!!info
-    The restore script will only restore to a different physical or virtual server. It cannot be used to restore to a different domain/subdomain. If you would like to restore to a different domain/subdomain, [commercial support](https://support.amidaware.com/) offers a domain migration restore script.
+    The restore script will only restore to a different physical or virtual server. It cannot be used to restore to a different domain/subdomain. If you would like to restore to a different domain/subdomain, [commercial support](https://support.amidaware.com/) offers a paid domain name migration service.
 
     If the purpose of your restore is to migrate your instance from one machine to another e.g. to upgrade your install to a newer OS and/or different arch, then it is recommended to leave both the old and new instances up and running until all your agents have successfully migrated to the new instance. You can use the old instance to forcefully migrate stubborn agents that are still attached to it (see instructions below).
 
