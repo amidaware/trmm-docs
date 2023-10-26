@@ -10,4 +10,6 @@ For all others, Reporting will be included for all Tier 2 and higher packages.
 
 Make sure your server has an appropriate code signing token. Open the integrations menu. Tada! 
 
+If you just added a new Code Signing Token, rerun `./update.sh --force`
+
 If there's a problem, [open a ticket](https://support.amidaware.com) and send your code signing token.
