@@ -16,7 +16,7 @@ Open the DNS manager of wherever your domain is hosted.
 Update the 3 A records `rmm`, `api` and `mesh` and point them to the public IP of your new server.
 ### Run the restore script
 
-Switch to the `tactical` user:
+Switch to the `tactical` user (if you used a custom username, it must match the install you're coming from):
 
 ```bash
 su - tactical
