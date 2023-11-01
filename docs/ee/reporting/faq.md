@@ -32,3 +32,7 @@ For all others, Reporting will be included for all Tier 2 and higher packages.
 
 
 If there's a problem, [open a ticket](https://support.amidaware.com).
+
+## How do I generate pretty charts/graphs?
+
+A bug was discovered with the chart/graph implementation right before release and it had to be pulled. It wil be released in a future update.
