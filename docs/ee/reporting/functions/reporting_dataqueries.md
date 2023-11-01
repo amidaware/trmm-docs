@@ -104,7 +104,7 @@ table to pull the data from. The available models are:
 * winupdate
 * winupdatepolicy
 
-### only - array of strings
+### [only](https://docs.djangoproject.com/en/4.2/ref/models/querysets/#only) - array of strings
 
 **Only** is useful for only pulling certain columns. This is recommended if you are
 pulling data from the agents table since **services** and **wmi_detail** columns are
@@ -131,6 +131,10 @@ data_sources:
           - operating_system
           - plat
 ```
+
+### [defer](https://docs.djangoproject.com/en/4.2/ref/models/querysets/#defer)
+
+To not load some fields by default to limit data from being pulled, unless it is needed later for some reason.
 
 ### custom_fields - array of strings
 
@@ -197,7 +201,7 @@ You can access the custom field data for the clients data query like this:
 Note that you can't use dot notation for a property if it has spaces. See the above 
 example for the **Custom Field 2** property
 
-### filter - object
+### [filter](https://docs.djangoproject.com/en/4.2/ref/models/querysets/#filter) - object
 
 Using the filter property, you can filter the amount of rows that are returned. This
 is useful if you only want a agents for a particular client or site, or you only
@@ -255,7 +259,7 @@ To use the contains filter, we need to append two underscores (_) and type in th
 This just uses the django built in field lookups.A full list can be found 
 [Here](https://docs.djangoproject.com/en/4.2/ref/models/querysets/#field-lookups)
 
-### exclude - object
+### [exclude](https://docs.djangoproject.com/en/4.2/ref/models/querysets/#exclude) - object
 
 We can use this to exclude rows from our data. The same rules apply for filter apply here. (See above)
 
@@ -292,7 +296,7 @@ data_sources:
         limit: 400
 ```
 
-### get - boolean 
+### [get](https://docs.djangoproject.com/en/4.2/ref/models/querysets/#get) - boolean 
 
 Instead of returning a list, the data query will attempt to return a single object. This is 
 best used with a filter that guarantees a single row returned, i.e: filtering by id. This will
@@ -321,7 +325,7 @@ In the template, you can use the properties directly instead of looping
 {{data_sources.agent.operating_system}}
 ```
 
-### first - boolean
+### [first](https://docs.djangoproject.com/en/4.2/ref/models/querysets/#first) - boolean
 
 This will return the first row in a table. This is guaranteed to always return one result.
 You can apply other properties (like filter or exclude) also to limit the data.
@@ -347,7 +351,7 @@ In the template, you can use the properties directly instead of looping
 {{data_sources.agent.operating_system}}
 ```
 
-### count - boolean
+### [count](https://docs.djangoproject.com/en/4.2/ref/models/querysets/#id9) - boolean
 
 This allows you to return the number of rows found. Can be used with filter or exclude.
 
