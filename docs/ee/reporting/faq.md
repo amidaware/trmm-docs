@@ -2,14 +2,33 @@
 
 ## Pricing
 
-Existing sponsors as of Nov 2023: As a thank you for all your support and patience you will get our Founders Edition perpetual reporting license which will be included in your existing sponsorship. 
+Existing sponsors as of Oct 31, 2023: As a thank you for all your support and patience, you will get our Founders Edition perpetual reporting license which will be included in your existing sponsorship.
 
 For all others, Reporting will be included for all Tier 2 and higher packages.
 
-## How do I get reporting?
+## How do I enable reporting?
 
-Make sure your server has an appropriate code signing token. Open the integrations menu. Tada! 
+1. Make sure your server has an appropriate [code signing](../../code_signing.md) token saved ( Settings > Code Signing).
 
-If you just added a new Code Signing Token, rerun `./update.sh --force`
+2. Run the update script with the `--force` flag:
 
-If there's a problem, [open a ticket](https://support.amidaware.com) and send your code signing token.
+???+ note ""
+
+    === ":material-ubuntu: Standard install"
+
+        ```bash
+        cd ~
+        wget -N https://raw.githubusercontent.com/amidaware/tacticalrmm/master/update.sh
+        chmod +x update.sh
+        ./update.sh --force
+        ```
+
+    === ":material-docker: Docker install"
+
+        ```bash
+        docker compose down
+        docker compose up -d
+        ```
+
+
+If there's a problem, [open a ticket](https://support.amidaware.com).
