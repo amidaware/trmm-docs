@@ -131,9 +131,6 @@ markdown_extensions:
       guess_lang: false
   - toc:
       permalink: true
-  - pymdownx.emoji:
-      emoji_index: material.extensions.emoji.twemoji
-      emoji_generator: material.extensions.emoji.twemoji
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
