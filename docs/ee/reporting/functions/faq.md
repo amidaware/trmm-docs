@@ -8,7 +8,7 @@ For all others, Reporting will be included for all Tier 2 and higher packages.
 
 ## How do I enable reporting as a new sponsor?
 
-1. Make sure your server has an appropriate [code signing](../../code_signing.md) token saved ( Settings > Code Signing).
+1. Make sure your server has an appropriate [code signing](../../../code_signing.md) token saved ( Settings > Code Signing).
 
 2. Run the update script with the `--force` flag:
 
