@@ -12,7 +12,7 @@ We are always looking for feedback and ways to improve Tactical RMM to better ad
 
 Stripe is our preferred payment processor, please use Stripe instead of Paypal if you can.
 
-If you need automatic invoicing for your company, please use Stripe as it will automatically generate invoices for you with each payment.
+If you need an invoices, please use Stripe as it will automatically generate invoices for you with each payment.
 
 If you cannot use Stripe and must use Paypal and still need automatic invoicing then please [contact us](https://support.amidaware.com/) first before subscribing so we can setup a custom invoice for you.
 
