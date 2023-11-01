@@ -96,7 +96,7 @@ table to pull the data from. The available models are:
 * client
 * clientcustomfield
 * debuglog
-* globalkvstore
+* globalkeystore
 * pendingaction
 * policy
 * site
@@ -458,7 +458,7 @@ data_sources:
             site__client__name: "Client Name"
         csv: 
             hostname: Hostname
-            operating_system: Operatin System
+            operating_system: Operating System
             plat: Platform
             needs_reboot: Needs Reboot
             site__name: Site Name
@@ -474,7 +474,7 @@ data,data,data,data,data,data
 
 ### json - boolean
 
-This will return a json string representation of the objecy. This is useful
+This will return a json string representation of the object. This is useful
 if you are passing the data source to be processed by javascript.
 
 Example
@@ -526,7 +526,7 @@ data_sources:
 ```
 
 This will add a **site__name** and **site__client__name** column on the returned data. We use a
-double underscore everytime we want to go to another table. The site column exists directly on
+double underscore every time we want to go to another table. The site column exists directly on
 the agents table. So in order to get the name (which resides on the sites table) we need to use
 the double underscore. Same thing with the client name. We need to go through the sites table
 in order to get the client name so we use another double underscore. 
