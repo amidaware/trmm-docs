@@ -14,5 +14,5 @@ jobs:
           python-version: '3.10'
       - run: pip install --upgrade pip
       - run: pip install --upgrade setuptools wheel
-      - run: pip install mkdocs mkdocs-material==8.5.11 pymdown-extensions
+      - run: pip install -r requirements.txt
       - run: mkdocs gh-deploy --force
