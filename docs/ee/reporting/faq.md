@@ -6,7 +6,7 @@ Existing sponsors as of Oct 31, 2023: As a thank you for all your support and pa
 
 For all others, Reporting will be included for all Tier 2 and higher packages.
 
-## How do I enable reporting?
+## How do I enable reporting as a new sponsor?
 
 1. Make sure your server has an appropriate [code signing](../../code_signing.md) token saved ( Settings > Code Signing).
 
@@ -30,6 +30,7 @@ For all others, Reporting will be included for all Tier 2 and higher packages.
         docker compose up -d
         ```
 
+3. Reload the web page. Make sure you use your browser's reload button to hard reload the page.
 
 If there's a problem, [open a ticket](https://support.amidaware.com).
 
