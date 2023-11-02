@@ -129,14 +129,14 @@ dependencies before the variables analysis will run.
 Custom processors are provided to the yaml parser and allow shortcuts or provide functionality
 that isn't possible using the template and variables alone.
 
-### !!now
+### !now
 
 Provides a timestamp at the report runtime.
 
 Example
 
 ```yaml
-report_run_timestamp: !!now
+report_run_timestamp: !now
 ```
 
 You can also get a timestamp in the future or the past by passing a parameter. The supported time
@@ -152,21 +152,21 @@ intervals are:
 If you want a timestamp in the future 5 days you would do:
 
 ```yaml
-five_days_from_now: !!now days=5
+five_days_from_now: !now days=5
 ```
 
 If you want a timestamp 4 hours in the past you would do:
 
 ```yaml
-four_hours_ago: !!now hours=-4
+four_hours_ago: !now hours=-4
 ```
 
 You can also specify a value from a dependency.
 
-Note: The !!now must be outside of the quotes.
+Note: The !now must be outside of the quotes.
 
 ```yaml
-last_seen_time: !!now 'hours=-{{last_seen}}'
+last_seen_time: !now 'hours=-{{last_seen}}'
 ```
 
 If we ran the report and put in 5 it would output
