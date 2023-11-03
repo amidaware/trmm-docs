@@ -4,7 +4,9 @@
 
 Tactical RMM agents are now [code signed](https://comodosslstore.com/resources/what-is-microsoft-authenticode-code-signing-certificate/)!
 
-To get access to code signed agents (which includes Linux/macOS agents), you must be a [Sponsor](sponsor.md) with a minimum **monthly** [Tier 1](sponsor.md#sponsor-with-stripe-or-paypal) sponsorship.
+To get access to code signed agents (which also includes Linux/macOS agents), you must be a [Sponsor](sponsor.md) with a minimum **monthly** [Tier 1](sponsor.md#sponsor-with-stripe-or-paypal) sponsorship.
+
+*To get access to our [Reporting](./ee/reporting/reporting_overview.md) feature, you must be a sponsor with a minimum monthly **Tier 2** sponsorship. Exceptions will be made for [Founders](./ee/reporting/functions/faq.md#pricing) and Non-Profits which will only require Tier 1.*
 
 One token is valid for 1 self hosted instance. If you have more than 1 instance please contact [support](https://support.amidaware.com/) for pricing options.
 

@@ -1,5 +1,9 @@
 # FAQ
 
+## How do I get Reporting?
+
+Please see the [Reporting FAQ](./ee/reporting/functions/faq.md)
+
 ## I just updated and now it doesn't work. 
 
 One or more of these things probably just happened:
