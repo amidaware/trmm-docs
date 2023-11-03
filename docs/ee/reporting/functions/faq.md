@@ -4,7 +4,7 @@
 
 Existing sponsors as of Oct 31, 2023: As a thank you for all your support and patience, you will get our Founders Edition perpetual reporting license which will be included in your existing sponsorship. To enable reporting, simply update your instance as you normally do and reporting will automatically be enabled.
 
-For all others, Reporting will be included for all [Tier 2](../../../sponsor.md#sponsor-with-stripe-or-paypal) and higher packages.
+For all others, Reporting will be included for all [Tier 2](../../../sponsor.md#sponsor-with-stripe-or-paypal) and higher packages. Exceptions will be made for Non-Profits who will only require Tier 1.
 
 ## How do I enable reporting as a new sponsor?
 
