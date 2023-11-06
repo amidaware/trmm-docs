@@ -35,7 +35,7 @@ For all others, Reporting will be included for all [Tier 2](../../../sponsor.md#
 If there's a problem, [open a ticket](https://support.amidaware.com).
 
 <div class="video-wrapper">
-  <iframe width="400" height="225" src="https://www.youtube.com/embed/qAPA6bRL29g" frameborder="0" allowfullscreen></iframe>
+  <iframe width="400" height="225" src="https://www.youtube.com/embed/etXFk_bW1L8" frameborder="0" allowfullscreen></iframe>
 </div>
 
 ## How do I add charts/graphs to my report templates?
