@@ -175,7 +175,7 @@ Example usage in template
 
 ## Custom jinja filters
 
-In addition to the [builtin jinja filters](https://jinja.palletsprojects.com/en/3.1.x/templates/#builtin-filters), TRMM also ships with custom jijna filters. We can write custom filters based on your requests so please ask one of the developers in Discord if you would like a custom filter written to make parsing data in tempaltes easier for you.
+In addition to the [builtin jinja filters](https://jinja.palletsprojects.com/en/3.1.x/templates/#builtin-filters), TRMM also ships with custom jijna filters. We can write custom filters based on your requests so please ask one of the developers in Discord if you would like a custom filter written to make parsing data in templates easier for you.
 
 The list of custom jijna filters are listed [here](https://github.com/amidaware/tacticalrmm/blob/master/api/tacticalrmm/ee/reporting/custom_filters.py) and here are video examples of how to use them:
 
