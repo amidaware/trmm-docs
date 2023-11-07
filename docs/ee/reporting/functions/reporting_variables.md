@@ -124,6 +124,41 @@ the text in the clipboard to be pasted into the template.
 If you are using dependencies, you will need to click on the Preview tab and fill in the 
 dependencies before the variables analysis will run.
 
+## Python modules available in template
+
+### datetime
+
+See [https://docs.python.org/3/library/datetime.html](https://docs.python.org/3/library/datetime.html) for all properties and functions
+
+#### datetime.datetime
+
+Usage in template
+
+`{{ datetime.datetime.now() }}`
+
+#### datetime.date
+
+Usage in template
+
+`{{ datetime.date.today() }}`
+
+#### datetime.timedelta
+
+Usage in template
+
+`{{ datetime.datetime.now() - datetime.timedelta(days=30) }}`
+
+### re
+
+See [https://docs.python.org/3/library/re.html](https://docs.python.org/3/library/re.html) for all properties and functions
+
+Usage in template
+
+```
+{% set matches = re.search('this', 'inthisstring') %}
+{{matches}}
+```
+
 ## Custom processors
 
 Custom processors are provided to the yaml parser and allow shortcuts or provide functionality
