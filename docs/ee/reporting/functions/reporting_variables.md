@@ -132,19 +132,19 @@ See [https://docs.python.org/3/library/datetime.html](https://docs.python.org/3/
 
 #### datetime.datetime
 
-Usage in template
+Example usage in template
 
 `{{ datetime.datetime.now() }}`
 
 #### datetime.date
 
-Usage in template
+Example usage in template
 
 `{{ datetime.date.today() }}`
 
 #### datetime.timedelta
 
-Usage in template
+Example usage in template
 
 `{{ datetime.datetime.now() - datetime.timedelta(days=30) }}`
 
@@ -152,12 +152,45 @@ Usage in template
 
 See [https://docs.python.org/3/library/re.html](https://docs.python.org/3/library/re.html) for all properties and functions
 
-Usage in template
+Example usage in template
 
 ```
 {% set matches = re.search('this', 'inthisstring') %}
 {{matches}}
 ```
+
+### ZoneInfo
+
+See [https://docs.python.org/3/library/zoneinfo.html](https://docs.python.org/3/library/zoneinfo.html) for all properties and functions
+
+Example usage in template
+
+```
+{% for item in data_sources.agentsList %}
+    {% set pst_zone = ZoneInfo('America/Los_Angeles') %}
+    {% set last_seen_pst = item.last_seen.astimezone(pst_zone) %}
+    Last seen in PST: {{ last_seen_pst.strftime('%Y-%m-%d %H:%M:%S %Z') }}
+{% endfor %}
+```
+
+## Custom jinja filters
+
+In addition to the [builtin jinja filters](https://jinja.palletsprojects.com/en/3.1.x/templates/#builtin-filters), TRMM also ships with custom jijna filters. We can write custom filters based on your requests so please ask one of the developers in Discord if you would like a custom filter written to make parsing data in tempaltes easier for you.
+
+The list of custom jijna filters are listed [here](https://github.com/amidaware/tacticalrmm/blob/master/api/tacticalrmm/ee/reporting/custom_filters.py) and here are video examples of how to use them:
+
+as_tz:
+
+<div class="video-wrapper">
+  <iframe width="400" height="225" src="https://www.youtube.com/embed/knnfyLqZ0E4" frameborder="0" allowfullscreen></iframe>
+</div>
+
+local_ips:
+
+<div class="video-wrapper">
+  <iframe width="400" height="225" src="https://www.youtube.com/embed/5ScKQe_XDXw" frameborder="0" allowfullscreen></iframe>
+</div>
+
 
 ## Custom processors
 
