@@ -371,7 +371,7 @@ data_sources:
 
 ### order_by - string
 
-This allows you to reorder the returned data based on a specific column. Putting a '-'
+This allows you to sort/reorder the returned data based on a specific column. Putting a '-'
 before the column puts it in descending order and the default is ascending order
 
 Ascending Example 
