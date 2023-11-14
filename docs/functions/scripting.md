@@ -25,7 +25,8 @@ In the dashboard, browse to **Settings > Scripts Manager**. Click the **New** bu
     - Python
     - Shell (use for Linux/macOS scripts)
 
-- **Script Arguments** - Optional way to set default arguments for scripts. These will auto populate when running scripts and can be changed at runtime.
+- **Script Arguments** - Optional way to set default arguments for scripts. These will auto populate when running scripts and can be changed at runtime. Logged on Windows Event Viewer > Applications and Services Logs > Microsoft > Windows> PowerShell > Operational
+- **Environment vars** - Optional way to set default arguments for scripts using Environment Variables. These will auto populate when running scripts and can be changed at runtime. Not logged, better to use when passing data you don't want logged
 - **Default Timeout** - Sets the default timeout of the script and will stop script execution if the duration surpasses the configured timeout. Can be changed at script runtime.
 - **Favorite** - Favorites the script.
 
@@ -73,10 +74,9 @@ and `()` indicates a default parameter if none is specified.
 
 Starting with 0.15.4 you can use environment variables to pass them too!
 
-## Video Walkthru
-
 <div class="video-wrapper">
-  <iframe width="400" height="225" src="https://www.youtube.com/embed/pN80ljSwT7M" frameborder="0" allowfullscreen></iframe>
+  <iframe width="400" height="225" src="https://www.youtube.com/embed/YrnN11XPot8" frameborder="0" allowfullscreen></iframe>
+  <iframe width="400" height="225" src="https://www.youtube.com/embed/jLpfN2SOD1U" frameborder="0" allowfullscreen></iframe>
 </div>
 
 
