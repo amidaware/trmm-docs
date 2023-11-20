@@ -507,7 +507,7 @@ There are multiple things to understand and consider.
 
 There are two ways to do RunAsUser with tactical in relation to scripting.
 
-1. The Tactical RMM "RunAsUser" checkbox associated with the script, and all code will be run under the actively logged in user only with their security permissions. If they're not local admins, and you try to do something requiring admin permissions it will fail.
+1. The Tactical RMM "RunAsUser" checkbox associated with the script, and all code will be run under the actively logged in user only with their security permissions. The user access token that will be used is the [limited user access token](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/how-it-works). You will not be able to do any admin level stuff because TRMM's RunAsUser doesn't have a UAC elevation capability to call and request a 2nd access token with admin privileges.
 2. Using the PowerShell "RunAsUser" [3rd party module](https://github.com/amidaware/community-scripts/blob/da4d615a781d218ed3bec66d56a1530bc7513e16/scripts/Win_RunAsUser_Example.ps1)
 
 ### Outbound Firewall Rules
