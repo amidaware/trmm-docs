@@ -951,7 +951,7 @@ https | TRMM server DNS name | 443
 ON: Cache Assets | Block Common Exploits | Websockets Support
 
 mesh.{domain}
-http | TRMM server DNS name | 443
+https | TRMM server DNS name | 443
 ON: Block Common Exploits | Websockets Support
 Advanced:
 proxy_set_header Host $host;
