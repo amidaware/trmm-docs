@@ -140,6 +140,7 @@ We'll be using `example.com` as our domain for this example.
 
 !!!tip
     Already have your own SSL certificate? [Read this](functions/settings_override.md#using-your-own-wildcard-ssl-cert) before continuing.
+    
 ### Step 5 - Run the install script
 
 Switch to the `tactical` user:

@@ -8,7 +8,6 @@ There's pluses and minuses to each install type (Standard vs Docker *which is cu
 - There is no migration script. Once you've installed with one type there is no "conversion". You'll be installing a new server and migrating agents manually if you decide to go another way.
 
 !!!warning
-
     Tactical RMM does not support changing DNS names, so choose your names wisely. If you need to change your DNS name later a [paid migration](https://support.amidaware.com) is possible.
 
 ## Debian vs Ubuntu
