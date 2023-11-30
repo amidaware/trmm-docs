@@ -112,7 +112,6 @@ POSTGRES_PASS=postgrespass
 Update your mesh config **certUrl** option with your domain Url as shown below.
 
 ```
-....
 
   "domains": {
     "": {
@@ -126,7 +125,6 @@ Update your mesh config **certUrl** option with your domain Url as shown below.
     }
   },
 
-....
 ```
 
 Restart your Caddy containers
