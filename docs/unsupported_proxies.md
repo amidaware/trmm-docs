@@ -1103,7 +1103,7 @@ You should now see something like this in your list of SSL Certs:
 
 Go ahead and download this certificate by clicking the 3 dots to the right of the cert entry and click "Download".
 
-I suggest you follow [these](../unsupported_scripts/#using-purchased-ssl-certs-instead-of-lets-encrypt-wildcards) instructions for adding the new certs to your TRMM instance. You will still need to keep TRMM's certs updated as well.
+I suggest you follow [these](unsupported_scripts.md/#using-purchased-ssl-certs-instead-of-lets-encrypt-wildcards) instructions for adding the new certs to your TRMM instance. You will still need to keep TRMM's certs updated as well.
 
 #### MeshCentral Configuration
 
