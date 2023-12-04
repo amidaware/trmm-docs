@@ -5,7 +5,7 @@ All the settings covered in this document have been tested against Tactical RMM 
 Before applying these settings in production, use a pre-production environment so potential disruptions in your own environment and the service that you provide to your clients can be avoided.
 
 !!!warning
-        **<span style="text-decoration:underline;">Use the contents included in this guide and apply the security settings detailed here at your own discretion.</span>**
+    **Use the contents included in this guide and apply the security settings detailed here at your own discretion.**
 
 !!!info
     Please check the following github [issue](https://github.com/amidaware/rmmagent/issues/2) for potential side effects of deploying these configs.
@@ -39,7 +39,7 @@ total 10004
 -rw-r--r-- 1 root root 2099217 Jan 24  2020 GeoIP.dat
 ```
 
-Edit NGINX config file (“/etc/nginx/nginx.conf”) and add the following config under the “http {“ block:
+Edit NGINX config file (`/etc/nginx/nginx.conf`) and add the following config under the `http {` block:
 
 ```conf
 http {
@@ -49,6 +49,7 @@ http {
     ##
     # Load GeoIP Database
     geoip_country /usr/share/GeoIP/GeoIP.dat;
+}
 
 ```
 
@@ -72,7 +73,7 @@ http {
         # BLOCKED_COUNTRY_3
         COUNTRY_CODE_3 no;
         }
-
+}
 ```
 
 (The macro can be modified to achieve the “deny by default, allow by exception” approach).
@@ -184,6 +185,7 @@ server {
     listen 443 ssl;
     include /etc/nginx/bots.d/ddos.conf;
     include /etc/nginx/bots.d/blockbots.conf;
+}
 ```
 
 ## Enabling ModSec in NGINX
@@ -350,9 +352,7 @@ Enable ModSec in all NGINX enabled sites:
 server {
     modsecurity on;
     modsecurity_rules_file /etc/nginx/modsec/modsec-base-cfg.conf;
-
-…………………..
-…………………..
+}
 ```
 
 Tactical RMM custom rules:

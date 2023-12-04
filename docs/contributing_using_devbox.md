@@ -59,7 +59,8 @@ Edit, and search for `REPLACEMEWITHYOURFORKEDREPOURL` and replace with your fork
 
 ![Image](images/installcomplete.png)
 
-!!!Note Unlike regular installs, don't worry about the QR code.
+!!!note 
+        Unlike regular installs, don't worry about the QR code.
 
 ## Celebrate
 

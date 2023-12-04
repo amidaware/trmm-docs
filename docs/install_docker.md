@@ -29,7 +29,7 @@ We'll be using `example.com` as our domain for this example.
 ### Acquire Let's Encrypt wildcard certs with Certbot
 
 !!!warning
-  If the Let's Encrypt wildcard certificates are not provided, a self-signed certificate will be generated and most agent functions won't work.
+    If the Let's Encrypt wildcard certificates are not provided, a self-signed certificate will be generated and most agent functions won't work.
 
 **1 ) Install Certbot**
 
