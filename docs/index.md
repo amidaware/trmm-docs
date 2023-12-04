@@ -60,3 +60,38 @@ Community Scripts: <https://github.com/amidaware/community-scripts>
 <https://docs.tacticalrmm.com> source: <https://github.com/amidaware/trmm-docs>
 
 Awesome contributions from the community: <https://github.com/amidaware/trmm-awesome>
+
+## Roadmap
+
+::gantt::
+[
+    {
+        "title": "Estimated Release Dates",
+        "events": [
+            {
+                "title": "Windows Update Rework",
+                "time": "2024-06-01",
+                "icon": ":material-update:"
+            },
+            {
+                "title": "White labeling",
+                "time": "2024-03-01",
+                "icon": ":material-label-multiple:"
+            },
+            {
+                "title": "Webhooks on scripts",
+                "time": "2024-02-01",
+                "icon": ":octicons-webhook-16:"
+            }
+        ]
+    }
+]
+::/gantt::
+
+2
+
+::gantt::
+[gantt(roadmap.json)]
+::/gantt::
+
+3
