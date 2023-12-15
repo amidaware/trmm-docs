@@ -238,6 +238,25 @@ From the client / agent side: Installing and uninstalling software is part of sy
 
 From the TRMM Admin panel: Use `Permissions Manager` to restrict your techs permissions.
 
+## I want to move and/or migrate my server? How do I do it?
+
+### Changing a public IP or private LAN IP address? 
+
+TRMM doesn't care about that. TRMM uses DNS, and only the 3 configured DNS names used during install. Make them right, and you'll be fine (with a backup/restore script if necessary)
+
+### Are you keeping the same DNS names?
+
+Use the [backup](backup.md) and [restore](restore.md) process. 
+
+!!!note
+    It's best practice to make sure you're running the latest version before running the backup script, and make sure you have the latest backup script. It does change.
+
+### Are you wanting to change the DNS names on the server?
+
+We [warned you](install_considerations.md#install-considerations) you should choose the right DNS names during install. There is no supported way to do this because of the complexities involved. We do offer a paid migration service, please [open a ticket](https://support.amidaware.com) for pricing.
+
+If you want to try it yourself, your best bet is to use another service outside of TRMM to uninstall and reinstall your agents to a new TRMM server. Then you'll need to migrate all your automation policies, alert policies, patch policies, custom scripts, reports, users, user permissions, user settings, custom fields, api keys, key store items, email configuration, sms configuration etc from your old TRMM server to the new one manually.
+
 ## If you received this link
 
 You have asked for assistance in Discord or Github, and you have not provided enough [information](https://discord.com/channels/736478043522072608/921501747648811038/936258143380443226).
