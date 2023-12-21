@@ -98,6 +98,8 @@ See [Automated Tasks](automated_tasks.md) for configuring automated tasks.
 
 Scripts can also be run periodically on an agent and trigger an alert if it fails.
 
+Important: When utilizing PowerShell scripts and manually assigning an exit code, it's essential to define the exit code using the following syntax: `$host.SetShouldExit(EXITCODE)`. Here, EXITCODE represents the desired exit code number. For instance, to assign an exit code of 3, use `$host.SetShouldExit(3)`.
+
 ### Alert Failure/Resolve Actions
 
 Scripts can be triggered when an alert is triggered and resolved. This script will run on any online agent and supports passing the alert information as arguments.
