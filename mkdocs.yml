@@ -4,6 +4,7 @@ nav:
   - Sponsor: sponsor.md
   - Code Signing: code_signing.md
   - Support: support.md
+  - Roadmap: roadmap.md
   - Getting Started Guide: guide_gettingstarted.md
   - RMM Server Installation:
       - "Install Considerations": install_considerations.md
