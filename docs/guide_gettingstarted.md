@@ -29,6 +29,7 @@ Install the server, [choose the best path](install_considerations.md)
 * [ ] Reboot TRMM server
 * [ ] Renew [LetsEncrypt Certs](update_server.md#keeping-your-lets-encrypt-certificate-up-to-date){target=_blank}
 * [ ] [Update TRMM](update_server.md#updating-to-the-latest-rmm-version){target=_blank}
+* [ ] Check your backups. Especially scheduled ones and make sure you're running the latest `./backup.sh` (You're reading the [release notes](https://github.com/amidaware/tacticalrmm/releases) at every update, right?)
 
 ## Bi-annually
 
