@@ -14,7 +14,7 @@ It uses an [agent](https://github.com/amidaware/rmmagent) written in Golang and 
 - TeamViewer-like remote desktop control
 - Real-time remote shell
 - Remote file browser (download and upload files)
-- Remote command and script execution (batch, powershell and python scripts)
+- Remote command and script execution (bash, batch, powershell and python scripts)
 - Event log viewer
 - Services management
 - Windows patch management
@@ -22,6 +22,12 @@ It uses an [agent](https://github.com/amidaware/rmmagent) written in Golang and 
 - Automated task runner (run scripts on a schedule)
 - Remote software installation via chocolatey
 - Software and hardware inventory
+
+### Sponsorship Features
+
+- Mac and Linux Agents
+- Windows Code Signed Agents
+- Fully Customizable Reporting Module
 
 ## Windows agent versions supported
 
@@ -33,6 +39,7 @@ It uses an [agent](https://github.com/amidaware/rmmagent) written in Golang and 
 - Check to see if you're running systemd with `ps --no-headers -o comm 1`
 
 ## Mac agent versions supported
+
 - 64 bit Intel and Apple Silicon (M1, M2)
 
 ## Discuss/Collaborate and Get Help/Support
@@ -60,3 +67,45 @@ Community Scripts: <https://github.com/amidaware/community-scripts>
 <https://docs.tacticalrmm.com> source: <https://github.com/amidaware/trmm-docs>
 
 Awesome contributions from the community: <https://github.com/amidaware/trmm-awesome>
+
+## Roadmap
+
+::gantt::
+[
+    {
+        "title": "Estimated Release Dates",
+        "events": [
+            {
+                "title": "Windows Update Rework",
+                "time": "2024-08-01",
+                "icon": ":material-update:"
+            },
+            {
+                "title": "White labeling",
+                "time": "2024-03-01",
+                "icon": ":material-label-multiple:"
+            },
+            {
+                "title": "Linux/Mac Tasks",
+                "time": "2024-04-01",
+                "icon": ":octicons-tasklist-16:"
+            },
+            {
+                "title": "Webhooks on scripts",
+                "time": "2024-02-01",
+                "icon": ":octicons-webhook-16:"
+            },
+            {
+                "title": "Server side Scripts",
+                "time": "2024-02-15",
+                "icon": ":octicons-webhook-16:"
+            },
+            {
+                "title": "SSO integration",
+                "time": "2024-05-01",
+                "icon": ":material-security:"
+            }
+        ]
+    }
+]
+::/gantt::

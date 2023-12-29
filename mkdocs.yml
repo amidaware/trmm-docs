@@ -112,10 +112,9 @@ theme:
       icon: material/brightness-7
       name: Switch to dark mode
 
-features:
-
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/neoteroi-mkdocs.css
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -139,3 +138,4 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - attr_list
+  - neoteroi.projects
