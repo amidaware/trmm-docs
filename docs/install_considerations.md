@@ -42,7 +42,7 @@ The same applies for other big cloud providers that throttle low end VMs.
 
 ## Larger Installs
 
-If you're having more than 200 agents, that's a larger install. You're probably also a business and making (and saving?) money with Tactical RMM, you're [supporting](code_signing.md) the project right?
+If you're having more than 200 agents, that's a larger install. You're probably also a business and making (and saving?) money with Tactical RMM, you're [supporting](sponsor.md#sponsor-with-stripe-or-paypal) the project right?
 
 You should be aware of server defaults like `Default script run time: 120 seconds`
 
