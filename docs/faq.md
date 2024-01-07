@@ -66,6 +66,10 @@ With many source available (and similar) projects devs get bored of them because
 
 We had github sponsors up for many months before code signing. Very few people donated, some $5 and $10. maybe $40 a month. Once we announced code signing, sponsors came in like crazy, and many people upgraded their $5 to $55 so whilst everyone believes people would gladly donate, that's just not the case. We already tried.
 
+## Is Tactical RMM Compliant with Privacy Laws?
+
+Tactical, as a self-hosted solution, offers the potential for GDPR and HIPAA compliance as well as many other privacy laws, but its adherence largely depends on the hosting environment and how it's configured. Since you have full control over the hosting, you bear a significant responsibility for compliance. By default, the Tactical server collects essential information which is displayed in the dashboard on each agent. None of this data is transmitted outside of the Tactical server, enhancing data security. Encryption at rest is possible at the file system level, contingent on your hosting infrastructure. Additionally, all communications between the Tactical server and your clients are encrypted in transit, enhancing security. Furthermore, Tactical incorporates an audit log that records all actions, assisting in tracking and ensuring accountability. However, it's crucial to be cautious about collector scripts, as they could potentially alter data collection practices, potentially leading to non-compliance if not carefully managed and configured in accordance with GDPR and HIPAA regulations. Therefore, maintaining a vigilant approach to configuration and monitoring is essential when utilizing Tactical for compliance purposes.
+
 ## Linux/macOS Agents
 
 **Why do I see?**
