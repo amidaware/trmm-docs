@@ -1,5 +1,8 @@
 # Restore
 
+!!!warning
+    This script will only work **ONCE**. On a new empty server installation (no TRMM installed), plan accordingly.
+
 !!!info
     The restore script will only restore to a different physical or virtual server. It cannot be used to restore to a different domain/subdomain. If you would like to restore to a different domain/subdomain, [commercial support](https://support.amidaware.com/) offers a paid domain name migration service.
 
@@ -7,7 +10,10 @@
 
 ### Setup the new server
 
-Follow the same instructions as a [fresh install](install_server.md) but stop once you reach the 'Run the install script' section (you'll be using the restore script instead of install).
+Follow the same instructions as a [fresh install](install_server.md) but stop when you reach the 'Run the install script' section (you'll be using the restore script instead of install).
+
+!!!tip
+    Take a snapshot of your vm if possible so you can get back to this point if something doesn't work right and you have to try the restore again.
 
 ### Change DNS A records
 
