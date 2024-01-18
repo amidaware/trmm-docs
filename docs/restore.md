@@ -1,7 +1,7 @@
 # Restore
 
 !!!warning
-    This script will only work **ONCE**. On a new empty server installation (no TRMM installed), plan accordingly.
+    This script will only run on a freshly installed “empty” server with no TRMM installed or TRMM failed install. Plan accordingly (aka snapshot back to pre-`restore.sh` run or re-setup a new fresh VPS).
 
 !!!info
     The restore script will only restore to a different physical or virtual server. It cannot be used to restore to a different domain/subdomain. If you would like to restore to a different domain/subdomain, [commercial support](https://support.amidaware.com/) offers a paid domain name migration service.
