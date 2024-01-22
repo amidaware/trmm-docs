@@ -144,7 +144,7 @@ Here are some examples:
 ```
 {
     "output": "forget",
-    "email": [],
+    "emails": [],
     "emailMode": "default",
     "custom_field": null,
     "save_all_output": false,
