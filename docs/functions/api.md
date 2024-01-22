@@ -159,6 +159,36 @@ Here are some examples:
 }
 ```
 
+???+ abstract "Example: Run a script on an agent"
+
+    === ":material-powershell: PowerShell"
+
+        ```powershell
+        $apiUrl = 'https://api.example.com/agents/CHANGEME/runscript/'
+
+        $jsonPayload = @{
+            output = "wait"
+            emails = @()
+            emailMode = "default"
+            custom_field = $null
+            save_all_output = $false
+            script = 20
+            args = @()
+            env_vars = @()
+            run_as_user = $false
+            timeout = 90
+        } | ConvertTo-Json
+
+
+        $headers = @{
+            'Content-Type' = 'application/json'
+            'X-API-KEY' = 'changeme'
+        }
+
+        $response = Invoke-RestMethod -Uri $apiUrl -Method Post -Body $jsonPayload -Headers $headers
+        $response
+        ```
+
 ## API via CLI
 
 <https://gitlab.com/NiceGuyIT/trmm-cli>
