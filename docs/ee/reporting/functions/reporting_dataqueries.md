@@ -83,6 +83,8 @@ is the same data query unless specifically noted.
 The only required field for a data query is the **model**. This tells the system which database 
 table to pull the data from. The available models are:
 
+[Visualized version](dbtablelinks.svg)
+
 * agent
 * agentcustomfield
 * agenthistory
@@ -96,7 +98,7 @@ table to pull the data from. The available models are:
 * client
 * clientcustomfield
 * debuglog
-* globalkeystore
+* globalkvstore
 * pendingaction
 * policy
 * site
