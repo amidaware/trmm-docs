@@ -168,7 +168,7 @@ Choose your method:
 
     Download: <https://raw.githubusercontent.com/amidaware/tacticalrmm/develop/api/tacticalrmm/core/agent_linux.sh>
 
-    Run: `./agent_linux.sh -uninstall`
+    Run: `./agent_linux.sh uninstall`
 
 ## Reinstalling Mesh and Reconnecting to TRMM
 
