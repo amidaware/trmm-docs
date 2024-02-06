@@ -164,6 +164,12 @@ Choose your method:
 
     Run: <https://github.com/amidaware/tacticalrmm/blob/develop/api/tacticalrmm/core/mac_uninstall.sh>
 
+=== ":material-linux: linux"
+
+    Download: <https://raw.githubusercontent.com/amidaware/tacticalrmm/develop/api/tacticalrmm/core/agent_linux.sh>
+
+    Run: `./agent_linux.sh -uninstall`
+
 ## Reinstalling Mesh and Reconnecting to TRMM
 
 Run this from **Send Command**:
