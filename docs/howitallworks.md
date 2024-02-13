@@ -13,6 +13,8 @@ That's the simplified general rule for everything TRMM.
 
 [![Network Design](images/TacticalRMM-Network.png)](images/TacticalRMM-Network.png)
 
+[Image Source](images/TacticalRMM-Network.drawio)
+
 Still need graphics for:
 
     1. Agent installer steps
@@ -413,7 +415,7 @@ Config file location:
 
         If you run `sudo systemctl status --full --no-pager meshcentral` and you don't see `Active: active (running) since ...`
 
-        You can manually run meshcentral use this command to see the full output with errors.
+        You can manually run meshcentral using this command to see the full output with errors.
 
         ```bash
         sudo systemctl stop meshcentral
