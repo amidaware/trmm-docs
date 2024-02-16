@@ -9,6 +9,8 @@ Automation policies in Tactical RMM allow for mass deployment of Checks, Automat
 
 You can also see a list of Relations that show what policy is applied to what Clients / Sites / Agents.
 
+![Automation Results](images/automation_results.png)
+
 Before you ask, [multiple automation policies](https://github.com/amidaware/tacticalrmm/issues/665) per level is in the todo list.
 
 ## Creating Automation Policies
@@ -33,7 +35,7 @@ At each level you can block policy inheritance from the level above using checkb
 
 ## Adding Windows Patch Management Policy
 
-Under the Automation Manager you can create a Patch Policy and control what patches are applied, when, and if the computer is rebooted after.
+Under the Automation Manager you can create a Patch Policy and control [what patches](../howitallworks.md#windows-update-management) are applied, when, and if the computer is rebooted after.
 
 !!!note
     Most "regular" Windows patches are listed in the "Other" category.
