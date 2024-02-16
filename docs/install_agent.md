@@ -223,3 +223,21 @@ wget scripturl
 chmod +x rmm.sh
 ./rmm.sh
 ```
+
+## Mac Agent Permissions
+
+Because Mac has no automated access to permissions you must grant all permissions manually after agent install (you might need to attempt a mesh connection once after install to get mesh to appear in the security settings)
+
+![](images/2024-02-15-22-22-56.png)
+
+Take Control needs Screen Recording (to see anything more than the menu bar)
+
+![](images/2024-02-15-22-23-48.png)
+
+and Accessibility for keyboard/mouse input
+
+![](images/2024-02-15-22-22-33.png)
+
+tacticalagent needs full disk access for script running
+
+![](images/2024-02-15-22-17-49.png)
