@@ -161,12 +161,17 @@ chmod +x install.sh
 ```
 
 !!!danger
-    To use a fake domain with self-signed certs, pass the `--insecure` flag to the install script. Do **NOT** use in production, this should only be used for local testing.
-
+    You can install with the `--insecure` switch to use any DNS name you want. Self signed certs will be generated for all the DNS names, and all SSL certificate chain validation will be disabled in TRMM.
+    
     `./install.sh --insecure`
 
-    After install, make sure to open up all 3 subdomains in your web browser and accept the security warning for each site, otherwise you'll get errors when trying to login.
+    **Requirements**: You **MUST** open all 3 subdomains in your web browser and accept the security warning for each site **BEFORE LOGIN** or you will get "Backend is offline (network error)" errors.
 
+    ✅ Quick install for easy test driving<br>
+    ✅ No public DNS name needed. Use irulez.local or any DNS name you want.<br>
+    ✅ No cert renewals<br>
+    ❌ All agent communication is vulnerable to MITM compromise and can be hacked.<br>
+    ❌ You can't convert from an `--insecure` to trusted cert install without reinstalling all your agents
 
 Answer the initial questions when prompted. Replace `example.com` with your domain.
 
