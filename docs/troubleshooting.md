@@ -96,10 +96,19 @@ The mesh installer is created at time of install. Make sure it's working by runn
     As of v0.12.0 `Error 1005` usually means something doesn't match and / or the mesh username has to be all lower case.<br>
     If you customize the "Mesh Device Group Name" in Tactical's settings you **MUST** also manually match that Mesh Group in mesh itself [because you must understand](mesh_integration.md#security-implications).
 
-
 [Collect Update debug logs for troubleshooting agents that don't update](update_agents.md#manually-updating-from-the-command-line-on-the-agent)
 
 [Make sure TRMM can connect to mesh](install_agent.md#stuck-at-downloading-mesh-agent)
+
+### Did you customize MeshCentral options and now agents won't install?
+
+![images](images/mesh_settings.png)
+
+or MeshCentrals Group name
+
+![images](images/mesh_tacticalrmm.png)
+
+These two sets of settings must match for the install to download the mesh installer. Fix it till the [test above](#agents-not-installing-or-updating) works.
 
 ## Agents not checking in or showing up / General agent issues
 
