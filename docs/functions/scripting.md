@@ -18,33 +18,33 @@ Guidelines for Writing Non-Interactive Scripts for Tactical RMM
 Tactical RMM can play a crucial role in managing IT infrastructure efficiently. Scripts used should ideally be non-interactive to ensure they can run without manual intervention, streamlining operations and automating routine tasks. Here are some guidelines for writing effective non-interactive scripts for use with Tactical RMM:
 
 1. Design for Automation
-Non-Interactive Execution: Scripts should execute without requiring user input. Use default values and configuration files to control behaviour instead of interactive prompts.
-Idempotency: Ensure scripts can be run multiple times without causing issues, producing the same results without unintended side effects.
+- Non-Interactive Execution: Scripts should execute without requiring user input. Use default values and configuration files to control behaviour instead of interactive prompts.
+- Idempotency: Ensure scripts can be run multiple times without causing issues, producing the same results without unintended side effects.
 2. Error Handling and Logging
-Comprehensive Error Handling: Anticipate potential errors and handle them gracefully within the script. Avoid crashes or uncontrolled exits.
-Logging: Implement detailed logging mechanisms. Logs should capture key events, errors, and status messages to aid in troubleshooting and auditing.
+- Comprehensive Error Handling: Anticipate potential errors and handle them gracefully within the script. Avoid crashes or uncontrolled exits.
+- Logging: Implement detailed logging mechanisms. Logs should capture key events, errors, and status messages to aid in troubleshooting and auditing.
 3. Use Clear, Understandable Code
-Code Readability: Write code that is easy to understand and maintain. Use comments judiciously to explain the purpose of functions and complex logic.
-Modular Design: Break down scripts into functions or modules based on functionality. This enhances readability and reuse.
+- Code Readability: Write code that is easy to understand and maintain. Use comments judiciously to explain the purpose of functions and complex logic.
+- Modular Design: Break down scripts into functions or modules based on functionality. This enhances readability and reuse.
 4. Security Best Practices
-Secure Coding: Avoid common security pitfalls, such as hard-coding sensitive information. Use secure methods to handle credentials and other confidential data.
-Minimize Privileges: Run scripts with the least privilege necessary to accomplish the task. 
+- Secure Coding: Avoid common security pitfalls, such as hard-coding sensitive information. Use secure methods to handle credentials and other confidential data.
+- Minimize Privileges: Run scripts with the least privilege necessary to accomplish the task. 
 5. Testing and Validation
-Comprehensive Testing: Test scripts in a controlled environment before deploying them through the Tactical RMM. Consider edge cases and test under different conditions to ensure reliability. Generally test first locally on a test machine, then use Remote Background before adding to script manager.
-Validation: Validate outputs and effects of the script to ensure they align with expectations. Use checks within the script to confirm actions were successful.
+- Comprehensive Testing: Test scripts in a controlled environment before deploying them through the Tactical RMM. Consider edge cases and test under different conditions to ensure reliability. Generally test first locally on a test machine, then use Remote Background before adding to script manager.
+- Validation: Validate outputs and effects of the script to ensure they align with expectations. Use checks within the script to confirm actions were successful.
 6. Documentation
-Internal Documentation: Include header comments in each script detailing its purpose, author, date, and any prerequisites or dependencies.
+- Internal Documentation: Include header comments in each script detailing its purpose, author, date, and any prerequisites or dependencies.
 7. Environment Compatibility
-Cross-Platform Considerations: If scripts are expected to run in diverse environments, account for differences in operating systems, shell versions, and available utilities.
-Dependencies: Clearly document any external dependencies. Prefer built-in tools and commands to minimize dependency issues.
+- Cross-Platform Considerations: If scripts are expected to run in diverse environments, account for differences in operating systems, shell versions, and available utilities.
+- Dependencies: Clearly document any external dependencies. Prefer built-in tools and commands to minimize dependency issues.
 8. Feedback and Reporting
-Status Reporting: Ensure scripts report their completion status back to the Tactical RMM, allowing for automated monitoring and alerting on failures or critical events.
-Feedback Loops: Incorporate feedback from script execution into continuous improvement processes. Refine scripts based on operational experience and evolving requirements.
+- Status Reporting: Ensure scripts report their completion status back to the Tactical RMM, allowing for automated monitoring and alerting on failures or critical events.
+- Feedback Loops: Incorporate feedback from script execution into continuous improvement processes. Refine scripts based on operational experience and evolving requirements.
 9. Version Control
-Change Management: Use version control systems (e.g., Git) to manage script versions. Track changes and maintain a history of modifications for audit and rollback purposes.
+- Change Management: Use version control systems (e.g., Git) to manage script versions. Track changes and maintain a history of modifications for audit and rollback purposes.
 10. Compliance and Standards
-Follow Standards: Adhere to coding standards and best practices for the scripting languages being used.
-Compliance: Ensure scripts comply with organizational policies and regulatory requirements, especially those handling data privacy and security.
+- Follow Standards: Adhere to coding standards and best practices for the scripting languages being used.
+- Compliance: Ensure scripts comply with organizational policies and regulatory requirements, especially those handling data privacy and security.
 
 By following these guidelines, you can create robust, secure, and efficient non-interactive scripts that leverage the full capabilities of Tactical RMM to automate and streamline IT management tasks.
 
