@@ -202,7 +202,7 @@ Built on the Django framework, the Tactical RMM service is the heart of the syst
         - Socket: `/rmm/daphne.sock`
         - Exec: `/rmm/api/env/bin/daphne -u /rmm/daphne.sock tacticalrmm.asgi:application`
         - Config: `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py`
-        - Log: `/rmm/api/tacticalrmm/tacticalrmm/private/log/debug.log`
+        - Log: `/rmm/api/tacticalrmm/tacticalrmm/private/log/trmm_debug.log`
 
     === ":material-docker: docker"
 
