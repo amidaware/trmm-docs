@@ -185,3 +185,11 @@ How to get updated data and see agents last communication time.
 ## Why are usernames in italics?
 
 It's the last logged in user, when italicized it means nobody is currently logged in.
+
+## Getting false SMS and Email alerts from scripts?
+
+If you're getting `Error 98` from script timeouts between the time the server asked the agent to run it, and the timeout value of the script the server never received a response. You can minimize the false alerts but adding the script timeouts to informational instead of warnings. 
+
+You can also increase the consecutive failures to 2+
+
+![](images/2024-02-22-16-46-27.png)
