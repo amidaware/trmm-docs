@@ -3,6 +3,18 @@
 
 They are usually fraught with false-positives because we live in a world of complex greys, not black and white.
 
+We are facing significant challenges due to the stringent policies of antivirus companies. Antivirus software is a critical tool for safeguarding Windows systems against viruses, trojans, and other malicious threats. However, the aggressive approach of some antivirus companies towards virus and trojan protection often results in legitimate software, such as Tactical RMM, being misclassified as malware.
+
+For instance, Tactical RMM is designed to assist IT professionals and system administrators in managing and monitoring systems remotely. This, while essential for operational efficiency and security, can sometimes be flagged by antivirus solutions as potential threats. This classification occurs despite the primary use of Tactical RMM for legitimate, constructive purposes. The rationale behind such decisions is that if a tool could potentially be leveraged for malicious activities, it must be treated as a threat. This stance overlooks the reality that the majority of users employ these tools for valid and positive reasons. 
+
+Some antivirus companies adopt a slightly more nuanced approach by labeling these tools as "Security Threats" or "Riskware." While this is a less severe classification than labeling them as viruses or trojans, it still hinders users by quarantining or deleting the tools, effectively preventing their use. Moreover, the distinction between "Virus" and "Riskware" is lost on many users, leading to confusion and undue concern and why do they not class other RMMs the same?
+
+The issue of overzealous protection is not unique to Tactical RMM. Other developers, both small and large, encounter similar problems with antivirus software flagging their products without clear justification. Examples include utilities that do not even involve password recovery or system monitoring but still face unwarranted scrutiny and restriction. Infact we can see NirSoft 15 years ago wrote a [similar blog](https://blog.nirsoft.net/2009/05/17/antivirus-companies-cause-a-big-headache-to-small-developers/) about this.
+
+The challenge extends beyond individual developers to affect the broader ecosystem. Small developers, in particular, struggle with the ramifications of these false positives, lacking the resources and legal clout that larger companies possess to quickly address and resolve these issues.
+
+To mitigate these challenges, it is crucial for both users and developers to engage more proactively with antivirus companies. This involves reporting false positives, providing feedback on software classifications, and advocating for a more balanced approach that recognizes the legitimate use of Tactical RMM. Ultimately, greater awareness and communication can help ensure that essential tools are not unjustly penalized, supporting a more secure and efficient digital environment. Remember you are the antivirus companies customer, you by reporting these false positives can help!
+
 At the moment, Microsoft Windows Defender thinks a go executable with virtually nothing in it is the "Trojan:Win32/Wacatac.B!ml" virus <https://old.reddit.com/r/golang/comments/s1bh01/goexecutables_and_windows_defender/>.
 
 - Windows Defender ranks as one of the top AVs and can be largely controlled via Tactical. Read more about Defender detection rates etc [here](https://www.av-test.org/en/antivirus/business-windows-client/windows-10/october-2022/microsoft-defender-antivirus-4.18-222516/).
