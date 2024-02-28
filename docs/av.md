@@ -13,7 +13,7 @@ The issue of overzealous protection is not unique to Tactical RMM. Other develop
 
 The challenge extends beyond individual developers to affect the broader ecosystem. Small developers, in particular, struggle with the ramifications of these false positives, lacking the resources and legal clout that larger companies possess to quickly address and resolve these issues.
 
-To mitigate these challenges, it is crucial for both users and developers to engage more proactively with antivirus companies. This involves reporting false positives, providing feedback on software classifications, and advocating for a more balanced approach that recognizes the legitimate use of Tactical RMM. Ultimately, greater awareness and communication can help ensure that essential tools are not unjustly penalized, supporting a more secure and efficient digital environment. Remember you are the antivirus companies customer, you by reporting these false positives can help!
+To mitigate these challenges, it is crucial for both users and developers to engage more proactively with antivirus companies. This involves reporting false positives, providing feedback on software classifications, and advocating for a more balanced approach that recognizes the legitimate use of Tactical RMM. Ultimately, greater awareness and communication can help ensure that essential tools are not unjustly penalized, supporting a more secure and efficient digital environment. Remember YOU are the antivirus companies customer, YOU by reporting these false positives can help!
 
 At the moment, Microsoft Windows Defender thinks a go executable with virtually nothing in it is the "Trojan:Win32/Wacatac.B!ml" virus <https://old.reddit.com/r/golang/comments/s1bh01/goexecutables_and_windows_defender/>.
 
