@@ -51,6 +51,31 @@ Installation instructions for using your own MeshCentral server:
 
 If you've enabled the Mesh "Ask Consent + Bar" display option that shows across the top when controlling a users machine and you'd like to change the name that users see, login to https://mesh.yourdomain.com, go to **Users**, select **User > Edit** `Real Name`
 
+## Take Control Connect vs RDP Connect
+
+![](images/2024-02-29-00-20-58.png)
+
+When using `Take Control` from Tactical RMM you are using the Desktop function in MeshCentral
+
+`Connect` button: 
+
+Right-click the button for options.
+
+About the same a VNC, but it's not compatible with VNC. The original VNC protocol did not use JPEG, instead it uses RLE encoding or ZRLE. MeshCentral's remote desktop only uses JPEG (or WEBP in some cases) because browsers can decode JPEG easily.
+
+The MeshAgent will split the desktop into 32x32 pixel tiles and see if any of the tiles have changed. If a group of tiles change since the last frame, a JPEG is sent to update the area.
+
+`RDP Connect` button: 
+
+Is a browser based RDP client. It connects to the native RDP in versions of Windows that support inbound RDP connects. Pro, Workstation, Enterprise, Server, Terminal Server, RDS Server etc. 
+
+!!!note
+    It does not work for Windows Home because Home doesn't support incoming RDP connections.
+
+## Remote Terminal how it works
+
+For the remote terminal, we launch a shell on the remote system and pipe VT100 terminal emulation to/from the browser. On the browser, we use XTermJS to view the terminal session.
+
 ## MeshCentral Options
 
 There are [MANY](https://github.com/Ylianst/MeshCentral/blob/master/meshcentral-config-schema.json) MeshCentral options that you can configure. Here are some you might want to investigate:
@@ -77,18 +102,15 @@ sudo systemctl disable --now meshcentral mongod
 
 Then when installing an agent, make sure to pass the `-nomesh` flag to the [installer](install_agent.md#optional-installer-args)
 
-## Security Implications
+## Permission Integration
 
-Tactical RMM has a full permission module, but because of how Tactical RMM integrates with MeshCentral currently there is a permissions bypass atm. First, here's how Tactical RMM's integration works. 
+Tactical RMM has a full permission module which integrates with Meshcentral.
+
+If you check the "Sync MeshCentral Users/Permissions with TRMM" a unique user will be created in MeshCentral. That user will be only be given permissions to the agents they are allowed to access. It will also create 
 
 ![Integration](images/meshintegrationhowitworks.png)
 
-With that understanding, when you trigger any function in Tactical RMM that uses a MeshCentral function (Remote Control, or Remote background) the user gets the full admin login Auth token for logging into MeshCentral. If they then goto https://mesh.example.com they will see all agents and have full administrative permissions for everything in MeshCentral.
+With that understanding, when you trigger any function in Tactical RMM that uses a MeshCentral function (Remote Control, or Remote background) the user gets a token for their own user for logging into MeshCentral.
 
-If you have multiple techs, and need to restrict their computer access permissions, right now you will need to disable auto login and manually manage your meshcentral users and computers. First you will need to:
-
-1. Check the `Disable Auto Login for Remote Control and Remote background:` option.
-2. Manually login to MeshCentral, and manually create users and set their permissions/restrictions.
-3. All techs will then have to manually login to https://mesh.example.com daily so they can use Remote Control and the MeshCentral Remote Background features.
-
-It is planned at some point in the future for this to either be automated, or eliminated entirely. For now, you will need to handle this yourself.
+!!!note
+    When user sync is enabled do not attempt to change or manage any mesh user with ___ near the end of its name. Those will be auto-managed by Tactical
