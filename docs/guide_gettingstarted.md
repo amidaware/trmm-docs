@@ -34,3 +34,12 @@ Install the server, [choose the best path](install_considerations.md)
 ## Bi-annually
 
 * [ ] Clean up [old agents](management_cmds.md#bulk-delete-old-agents-by-last-checkin-date-or-agent-version){target=_blank}
+
+## Don't do these things
+
+Your Tactical NoNo List
+
+- Clone agents with TRMM agent installed. Make your master image with no TRMM agent installed, script the install for first time boot after imaging.
+- Do in place distro upgrades or move vms to new hardware, instead use Backup and Restore scripts to move the server to new vm's
+- Run `install.sh` or `restore.sh` more than once. They're one-shot scripts to be ran on clean VMs only.
+- Use TRMMs powers for Evil. Just don't, make better choices!

@@ -170,6 +170,97 @@ chmod +x renew-cert.sh
 
 That's all folks.  Caddy should be reverse proxying all traffic to TacticalRMM correctly.
 
+## Caddy Std Install
+
+This is for putting Caddy as a reverse proxy in front of a standard installation of Tactical RMM. It will leave the nginx reverse proxy in place and have double proxies as a result.
+
+Caddy Config
+
+```
+{
+  auto_https off
+  http_port 80
+  https_port 443
+}
+
+#snips
+(cert) {
+   tls /path/to/your/fullchain.cer /path/to/your/domain.key
+}
+#rmm
+rmm.example.com {
+import cert
+  encode gzip
+  reverse_proxy YOUR_RMM_IP:443 {
+     transport http {
+        tls_insecure_skip_verify  
+      }
+   }
+}
+
+#api
+api.example.com {
+import cert
+  encode gzip
+  reverse_proxy YOUR_RMM_IP:443 {
+     transport http {
+        tls_insecure_skip_verify  
+      }
+   }
+}
+
+#mesh
+mesh.example.com {
+import cert
+  encode gzip
+  reverse_proxy https://mesh.example.com:443 {
+     transport http {
+        tls_insecure_skip_verify  
+      }
+   }
+}
+```
+
+For the meshcentral config:
+
+```
+{
+  "settings": {
+    "cert": "mesh.example.com",
+    "mongoDb": "mongodb://127.0.0.1:27017",
+    "mongoDbName": "meshcentral",
+    "WANonly": true,
+    "minify": 1,
+    "port": 4430,
+    "aliasPort": 443,
+    "redirPort": 8080,
+    "allowLoginToken": true,
+    "allowFraming": true,
+    "_agentPing": 60,
+    "agentPong": 300,
+    "allowHighQualityDesktop": true,
+    "agentCoreDump": false,
+    "tlsOffload": "YOUR_CADDY_IP",
+    "compression": true,
+    "wsCompression": true,
+    "agentWsCompression": true,
+    "maxInvalidLogin": { "time": 5, "count": 5, "coolofftime": 30 }
+  },
+  "domains": {
+    "": {
+      "title": "Tactical RMM",
+      "title2": "Tactical RMM",
+      "newAccounts": false,
+      "certUrl": "https://YOUR_CADDY_IP:443",
+      "agentConfig": [ "webSocketMaskOverride=0" ],
+      "geoLocation": true,
+      "cookieIpCheck": false,
+      "mstsc": true
+    }
+  }
+}
+```
+
 ## Traefikv2
 
 Offsite Resource: <https://gitlab.com/NiceGuyIT/tactical-goodies/-/tree/main/traefik>

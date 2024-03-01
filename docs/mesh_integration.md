@@ -51,6 +51,31 @@ Installation instructions for using your own MeshCentral server:
 
 If you've enabled the Mesh "Ask Consent + Bar" display option that shows across the top when controlling a users machine and you'd like to change the name that users see, login to https://mesh.yourdomain.com, go to **Users**, select **User > Edit** `Real Name`
 
+## Take Control Connect vs RDP Connect
+
+![](images/2024-02-29-00-20-58.png)
+
+When using `Take Control` from Tactical RMM you are using the Desktop function in MeshCentral
+
+`Connect` button: 
+
+Right-click the button for options.
+
+About the same a VNC, but it's not compatible with VNC. The original VNC protocol did not use JPEG, instead it uses RLE encoding or ZRLE. MeshCentral's remote desktop only uses JPEG (or WEBP in some cases) because browsers can decode JPEG easily.
+
+The MeshAgent will split the desktop into 32x32 pixel tiles and see if any of the tiles have changed. If a group of tiles change since the last frame, a JPEG is sent to update the area.
+
+`RDP Connect` button: 
+
+Is a browser based RDP client. It connects to the native RDP in versions of Windows that support inbound RDP connects. Pro, Workstation, Enterprise, Server, Terminal Server, RDS Server etc. 
+
+!!!note
+    It does not work for Windows Home because Home doesn't support incoming RDP connections.
+
+## Remote Terminal how it works
+
+For the remote terminal, we launch a shell on the remote system and pipe VT100 terminal emulation to/from the browser. On the browser, we use XTermJS to view the terminal session.
+
 ## MeshCentral Options
 
 There are [MANY](https://github.com/Ylianst/MeshCentral/blob/master/meshcentral-config-schema.json) MeshCentral options that you can configure. Here are some you might want to investigate:

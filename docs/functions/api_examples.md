@@ -455,3 +455,45 @@ var_dump($audit);
 
 ?>
 ```
+
+## Update software using API
+
+```
+#!/rmm/api/env/bin/python
+
+import concurrent.futures
+import requests
+
+API = "https://api.CHANGEME.com"
+API_KEY = "CHANGEME"
+
+HEADERS = {
+    "Content-Type": "application/json",
+    "X-API-KEY": API_KEY,
+}
+
+MAX_WORKERS = 10
+
+
+def create_list_of_urls():
+    ret = []
+    agents = requests.get(f"{API}/agents/?detail=false", headers=HEADERS)
+    for agent in agents.json():
+        ret.append(f"{API}/software/{agent['agent_id']}/")  # refresh software endpoint
+
+    return ret
+
+
+def do_software_refresh(url):
+    r = requests.put(url, headers=HEADERS)
+    return r.json()
+
+
+with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+    futures = []
+    for url in create_list_of_urls():
+        futures.append(executor.submit(do_software_refresh, url))
+
+    for future in concurrent.futures.as_completed(futures):
+        print(future.result())
+```
