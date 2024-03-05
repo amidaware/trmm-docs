@@ -71,7 +71,7 @@ KEY_FILE = "/certs/api.EXAMPLE.COM/privkey.pem"
 Then restart your server or restart services
 
 ```bash
-sudo systemctl restart rmm.service celery.service celerybeat.service nginx.service nats.service nats-api.service
+sudo systemctl restart rmm.service celery.service celerybeat.service nginx.service
 ```
 
 ## Use Certbot to do acme challenge over http
@@ -172,7 +172,7 @@ KEY_FILE = "/etc/letsencrypt/live/api.EXAMPLE.COM/privkey.pem"
 Then restart your server or restart services
 
 ```bash
-sudo systemctl restart rmm.service celery.service celerybeat.service nginx.service nats.service nats-api.service
+sudo systemctl restart rmm.service celery.service celerybeat.service nginx.service
 ```
 
 Create renewal post hook to restart services after renewal
