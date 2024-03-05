@@ -85,10 +85,10 @@ The below uses [http challenge](https://letsencrypt.org/docs/challenge-types/#ht
 
 Make Letsencrypt directories
 
-sudo mkdir /var/www/letsencrypt
-sudo mkdir /var/www/letsencrypt/.mesh
-sudo mkdir /var/www/letsencrypt/.rmm
-sudo mkdir /var/www/letsencrypt/.api
+`sudo mkdir /var/www/letsencrypt`
+`sudo mkdir /var/www/letsencrypt/.mesh`
+`sudo mkdir /var/www/letsencrypt/.rmm`
+`sudo mkdir /var/www/letsencrypt/.api`
 
 Setup tactical nginx config files for letsencrypt
 
