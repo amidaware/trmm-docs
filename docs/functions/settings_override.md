@@ -39,7 +39,7 @@ Then restart your server or restart services
 sudo systemctl restart rmm.service celery.service celerybeat.service nginx.service nats.service nats-api.service
 ```
 
-If you want to do this after install please follow [this guide](https://docs.tacticalrmm.com/unsupported_scripts/#using-purchased-ssl-certs-instead-of-lets-encrypt-wildcards).
+If you want to do this after install please follow [this guide](https://docs.tacticalrmm.com/supported_extras/#using-purchased-ssl-certs-instead-of-lets-encrypt-wildcards).
 
 ### Use NATS Standard instead of NATS websocket
 
