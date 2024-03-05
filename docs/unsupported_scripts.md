@@ -120,15 +120,7 @@ CERT_FILE = "/certs/api.EXAMPLE.COM/fullchain.pem"
 KEY_FILE = "/certs/api.EXAMPLE.COM/privkey.pem"
 ```
 
-Regenerate NATS Conf
-
-```bash
-cd /rmm/api/tacticalrmm
-source ../env/bin/activate
-python manage.py reload_nats
-```
-
-Restart services
+Then restart your server or restart services
 
 ```bash
 sudo systemctl restart rmm.service celery.service celerybeat.service nginx.service nats.service nats-api.service
