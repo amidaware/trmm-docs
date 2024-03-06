@@ -64,7 +64,7 @@ Try-Catch Block: Handles potential errors during the status check of the 'Print 
 Service Status Check: Determines if the 'Print Spooler' service is active, exiting with code 0 for success or code 2 for warning.<br>
 Informational Exit: Acts as a fallback, indicating that the status has been reviewed without necessitating additional actions, hence exiting with code 5.<br><br>
 Usage:
-This script can be seamlessly integrated into Tactical RMM's Script Manager and included within automation policies. Depending on the service's state, it delivers the relevant exit code, aligning with the outlined specifications for efficient monitoring and alerting within Tactical RMM.
+This script can be seamlessly integrated into Tactical RMM's Script Manager and be included within automation policies. Depending on the service's state, it delivers the relevant exit code, aligning with the outlined specifications for efficient monitoring and alerting within Tactical RMM.
 
 !!!note
 It is crucial to test the script thoroughly. Any errors or adjustments required can be directly addressed with ChatGPT. Ensure the logical sequence within the script is accurately structured for optimal performance.
