@@ -32,9 +32,8 @@ Exit Codes:
   - 2: Warning (service is not running)
   - 5: Informational (service status checked, no action required)
 Additional Requirements: Use PowerShell for script implementation, utilizing `$host.SetShouldExit($exitcode)` for exit codes.
-This structured request format is designed to preemptively provide all necessary details, streamlining the script creation
-process. By aligning with Tactical RMM's requirements, it simplifies integration and deployment with RMM environment.
 ```
+This structured request format is designed to preemptively provide all necessary details, streamlining the script creation process. By aligning with Tactical RMM's requirements, it simplifies integration and deployment with RMM environment.
 
 PowerShell Script Example Utilizing $host.SetShouldExit($exitcode):
 ```powershell
