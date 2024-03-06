@@ -13,26 +13,51 @@ To assure clarity and efficiency in your requests for script generation, please 
 
 ```yaml
 Platform: [Specify the Operating System - Windows/Linux/macOS]
-Task Description: [Briefly describe the task or the problem the script needs to solve.]
+Task Description: [Provide a detailed description of the task or the problem the script is intended to solve.]
+Script Synopsis:[Offer a concise summary explaining what the script accomplishes.]
+Usage: [Offer brief usage instructions].
+Script Requirements:
+Language: [Specify the scripting language, e.g., PowerShell, Bash.]
+Operations: [Briefly list the core operations or checks the script will perform.]
 Exit Codes:
   - 0: Success (reserved, do not use for conditions)
   - 1: Error (to be used for general errors)
   - 2: Warning (specific condition that requires attention but is not a critical error)
   - 5: Informational (useful information that does not indicate an error)
-Additional Requirements: Include any other script requirements, such as specific commands or file handling.
+Additional Requirements: [Include any other specific requirements such as environment conditions, dependencies, or third-party tools. Powershell utilizing $host.SetShouldExit($exitcode) for exit codes]
+ChatGPT Instruction: Include Synopsis and description in header
+TacticalRMM Usage Instruction: After script generation, follow these steps for TacticalRMM integration:
+Create New Script: Manually copy the script content and create a new script entry in the TacticalRMM Script Manager.
+Test Against a Machine: Deploy the script to a test machine within TacticalRMM to ensure it operates correctly.
+Fix Any Issues: Address and correct any problems identified during testing.
+Add to Automation Policies: Once the script is verified to work without issues, include it in your automation policies for regular execution across the necessary devices.
 ```
 
 Example Request:
 ```yaml
 Platform: Windows
 Task Description: Check if a specific service (e.g., 'Print Spooler') is running and report status.
+Synopsis: This script checks the running status of the Print Spooler service and reports back with appropriate exit codes.
+Usage: Execute the script in a PowerShell terminal with administrator privileges. No parameters required.
+Example Usage: .\CheckPrintSpoolerStatus.ps1
+Script Requirements:
+Language: Powershell
+Operations: Check if print spooler is running.
 Exit Codes:
-  - 0: Success (service is running)
-  - 1: Error (cannot check the service status)
-  - 2: Warning (service is not running)
-  - 5: Informational (service status checked, no action required)
-Additional Requirements: Use PowerShell for script implementation, utilizing `$host.SetShouldExit($exitcode)` for exit codes.
+
+0: Success (service is running)
+1: Error (cannot check the service status)
+2: Warning (service is not running)
+5: Informational (service status checked, no action required)
+Additional Requirements: Use PowerShell for script implementation, utilizing $host.SetShouldExit($exitcode) for exit codes.
+ChatGPT Instruction: Include Synopsis and description in header
+TacticalRMM Usage Instruction: After script generation, follow these steps for TacticalRMM integration:
+Create New Script: Manually copy the script content and create a new script entry in the TacticalRMM Script Manager.
+Test Against a Machine: Deploy the script to a test machine within TacticalRMM to ensure it operates correctly.
+Fix Any Issues: Address and correct any problems identified during testing.
+Add to Automation Policies: Once the script is verified to work without issues, include it in your automation policies for regular execution across the necessary devices.
 ```
+
 This structured request format is designed to preemptively provide all necessary details, streamlining the script creation process. By aligning with Tactical RMM's requirements, it simplifies integration and deployment with RMM environment.
 
 PowerShell Script Example Output:
