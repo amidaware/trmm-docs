@@ -35,7 +35,7 @@ Additional Requirements: Use PowerShell for script implementation, utilizing `$h
 ```
 This structured request format is designed to preemptively provide all necessary details, streamlining the script creation process. By aligning with Tactical RMM's requirements, it simplifies integration and deployment with RMM environment.
 
-PowerShell Script Example Utilizing $host.SetShouldExit($exitcode):
+PowerShell Script Example Output:
 ```powershell
 # PowerShell Script to Check the 'Print Spooler' Service Status
 
