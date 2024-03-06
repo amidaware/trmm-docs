@@ -1,6 +1,6 @@
 # Using ChatGPT to write scripts for use with Tactical RMM
 
-To streamline the process of generating scripts for Tactical RMM through ChatGPT and ensure they adhere to specific exit codes for various statuses, the following snippet provides a standardized request format. This snippet is designed to be used by anyone needing to create scripts for Tactical RMM. 
+To streamline the process of generating scripts for Tactical RMM through ChatGPT and ensure they adhere to specific exit codes for various statuses, the following guide provides a standardized request format. This snippet is designed to be used by anyone needing to create scripts for Tactical RMM. 
 
 Suggest exit codes used are:
 
