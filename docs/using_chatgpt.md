@@ -32,7 +32,8 @@ Exit Codes:
   - 2: Warning (service is not running)
   - 5: Informational (service status checked, no action required)
 Additional Requirements: Use PowerShell for script implementation, utilizing `$host.SetShouldExit($exitcode)` for exit codes.
-This structured request format is designed to preemptively provide all necessary details, streamlining the script creation process. By aligning with Tactical RMM's requirements, it ensures seamless integration and deployment within the RMM environment.
+This structured request format is designed to preemptively provide all necessary details, streamlining the script creation process.
+By aligning with Tactical RMM's requirements, it ensures seamless integration and deployment within the RMM environment.
 ```
 
 PowerShell Script Example Utilizing $host.SetShouldExit($exitcode):
@@ -60,9 +61,9 @@ $host.SetShouldExit(5) # Informational
 ```
 
 How It Works:
-Try-Catch Block: Handles potential errors during the status check of the 'Print Spooler' service. Exiting with code 1 denotes an error.
-Service Status Check: Determines if the 'Print Spooler' service is active, exiting with code 0 for success or code 2 for warning.
-Informational Exit: Acts as a fallback, indicating that the status has been reviewed without necessitating additional actions, hence exiting with code 5.
+Try-Catch Block: Handles potential errors during the status check of the 'Print Spooler' service. Exiting with code 1 denotes an error.<br>
+Service Status Check: Determines if the 'Print Spooler' service is active, exiting with code 0 for success or code 2 for warning.<br>
+Informational Exit: Acts as a fallback, indicating that the status has been reviewed without necessitating additional actions, hence exiting with code 5.<br><br>
 Usage:
 This script can be seamlessly integrated into Tactical RMM's Script Manager and included within automation policies. Depending on the service's state, it delivers the relevant exit code, aligning with the outlined specifications for efficient monitoring and alerting within Tactical RMM.
 
