@@ -76,4 +76,4 @@ Service Status Check: It checks if the status of the 'Print Spooler' service is 
 Informational Exit: The last part of the script (which theoretically should never be reached due to the logic above) exits with code 5, indicating that the status was checked and no further action is required. This is more of a fallback scenario.<br>
 
 Usage:<br>
-This script can be executed in a PowerShell environment on any Windows machine. Depending on the service's status, it will provide the appropriate exit code as per your specifications, making it suitable for integration with Tactical RMM for monitoring and alert purposes.
+This script can be copied to Tactical RMM's Script manager and added to automation policys. Depending on the service's status, it will provide the appropriate exit code as per your specifications, making it suitable for integration with Tactical RMM for monitoring and alert purposes.
