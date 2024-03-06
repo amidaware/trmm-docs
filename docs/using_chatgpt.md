@@ -1,6 +1,15 @@
 # Using ChatGPT to write scripts for use with Tactical RMM
 
-To streamline the process of generating scripts for Tactical RMM through ChatGPT and ensure they adhere to specific exit codes for various statuses, the following snippet provides a standardized request format. This snippet is designed to be used by anyone needing to create scripts for Tactical RMM that return exit codes other than 0 (reserved for passing) and specifically use 2 for Warnings, 5 for Informational, and 1 for Errors. This can be applied to scripts for Windows, Linux, or macOS environments.
+To streamline the process of generating scripts for Tactical RMM through ChatGPT and ensure they adhere to specific exit codes for various statuses, the following snippet provides a standardized request format. This snippet is designed to be used by anyone needing to create scripts for Tactical RMM. 
+
+Suggest exit codes used are:
+
+ - 0 reserved for passing
+ - 2 for Warnings
+ - 5 for Informational
+ - 1 for Errors.
+
+This can be applied to scripts for Windows, Linux, or macOS environments.
 
 Standardized Request Snippet for Tactical RMM Script Generation
 When requesting ChatGPT to generate scripts for Tactical RMM, please use the following format to ensure clarity and efficiency:
@@ -62,8 +71,9 @@ exit 5
 ```
 
 How It Works:
-Try-Catch Block: This script uses a try-catch block to handle any errors that might occur when attempting to retrieve the status of the 'Print Spooler' service. If an error is caught, it exits with code 1, indicating an error.
-Service Status Check: It checks if the status of the 'Print Spooler' service is "Running". If it is, the script exits with code 0, indicating success. If the service is found but is not running, it exits with code 2, serving as a warning.
-Informational Exit: The last part of the script (which theoretically should never be reached due to the logic above) exits with code 5, indicating that the status was checked and no further action is required. This is more of a fallback scenario.
-Usage:
+Try-Catch Block: This script uses a try-catch block to handle any errors that might occur when attempting to retrieve the status of the 'Print Spooler' service. If an error is caught, it exits with code 1, indicating an error.<br>
+Service Status Check: It checks if the status of the 'Print Spooler' service is "Running". If it is, the script exits with code 0, indicating success. If the service is found but is not running, it exits with code 2, serving as a warning.<br>
+Informational Exit: The last part of the script (which theoretically should never be reached due to the logic above) exits with code 5, indicating that the status was checked and no further action is required. This is more of a fallback scenario.<br>
+
+Usage:<br>
 This script can be executed in a PowerShell environment on any Windows machine. Depending on the service's status, it will provide the appropriate exit code as per your specifications, making it suitable for integration with Tactical RMM for monitoring and alert purposes.
