@@ -19,7 +19,7 @@ Exit Codes:
   - 1: Error (to be used for general errors)
   - 2: Warning (specific condition that requires attention but is not a critical error)
   - 5: Informational (useful information that does not indicate an error)
-Additional Requirements: [Include any other script requirements, such as specific commands or file handling.]
+Additional Requirements: Include any other script requirements, such as specific commands or file handling.
 ```
 
 Example Request:
