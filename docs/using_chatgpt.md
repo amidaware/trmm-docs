@@ -77,3 +77,6 @@ Informational Exit: The last part of the script (which theoretically should neve
 
 Usage:<br>
 This script can be copied to Tactical RMM's Script manager and added to automation policys. Depending on the service's status, it will provide the appropriate exit code as per your specifications, making it suitable for integration with Tactical RMM for monitoring and alert purposes.
+
+!!!note
+Make sure and test the script, any errors can be fed directly back to ChatGPT also make sure any logic is in the right order.
