@@ -70,7 +70,7 @@ Write-Output "Print Spooler service status checked, no action required."
 exit 5
 ```
 
-How It Works:
+How It Works:<br>
 Try-Catch Block: This script uses a try-catch block to handle any errors that might occur when attempting to retrieve the status of the 'Print Spooler' service. If an error is caught, it exits with code 1, indicating an error.<br>
 Service Status Check: It checks if the status of the 'Print Spooler' service is "Running". If it is, the script exits with code 0, indicating success. If the service is found but is not running, it exits with code 2, serving as a warning.<br>
 Informational Exit: The last part of the script (which theoretically should never be reached due to the logic above) exits with code 5, indicating that the status was checked and no further action is required. This is more of a fallback scenario.<br>
