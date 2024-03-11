@@ -10,7 +10,7 @@ With your continuing [sponsorship](sponsor.md#sponsor-with-stripe-or-paypal) we'
         "title": "Estimated Release Dates",
         "activities": [
             {
-                "title": "[Webhooks](https://github.com/amidaware/tacticalrmm/issues/1222) on scripts",
+                "title": "[Alerts to Webhooks](https://github.com/amidaware/tacticalrmm/issues/1222)",
                 "start": "2024-01-01",
                 "lasts": "3 months"
             },
