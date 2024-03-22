@@ -1,8 +1,18 @@
 # Script Variables
 
-Tactical RMM allows passing dashboard data into script as arguments. This uses the syntax `{{client.name}}`.
+Tactical RMM allows passing dashboard data into script as arguments or environment variables. This uses the syntax `{{model.field}}`.
 
-See below for the available options.
+For a full list of available fields, refer to the variables in the `models.py` files:
+
+[Agent](https://github.com/amidaware/tacticalrmm/blob/89aceda65a1c54fea7b18250ca63614f091eac6e/api/tacticalrmm/agents/models.py#L60)
+
+[Client](https://github.com/amidaware/tacticalrmm/blob/89aceda65a1c54fea7b18250ca63614f091eac6e/api/tacticalrmm/clients/models.py#L18)
+
+[Site](https://github.com/amidaware/tacticalrmm/blob/89aceda65a1c54fea7b18250ca63614f091eac6e/api/tacticalrmm/clients/models.py#L93)
+
+[Alert](https://github.com/amidaware/tacticalrmm/blob/89aceda65a1c54fea7b18250ca63614f091eac6e/api/tacticalrmm/alerts/models.py#L29)
+
+Below are some examples of available fields:
 
 !!!info
     Everything between {{}} is CaSe sEnSiTive
