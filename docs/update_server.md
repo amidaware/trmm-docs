@@ -14,7 +14,8 @@ You should periodically run `sudo apt update` and `sudo apt -y upgrade` to keep 
 
 Other than this, you should avoid making any changes to your server and let the `update.sh` script handle everything else for you.
 
-Do **not** attempt in-place OS upgrades, such as trying to in-place upgrade from Debian 11 to 12. 
+!!!danger
+    Do **NOT** attempt in-place OS upgrades, such as trying to in-place upgrade from Debian 11 to 12. You will break your server!
 
 Instead, you must [backup](./backup.md) and [restore](./restore.md) to the new OS. 
 
