@@ -7,6 +7,7 @@ Install the server, [choose the best path](install_considerations.md)
 
 * [ ] Setup [Email Alerts](functions/email_alert.md){target=_blank}
 * [ ] Setup SMS Alerts
+* [ ] Create a Default Alert Template and assign (either Global, or using Automation Policies)
 * [ ] Set Server Preferences Under `Global Settings > General`
 * [ ] Review [User Settings](tipsntricks.md#customize-user-interface){target=_blank}
 * [ ] Set Retention Policies under Under `Global Settings > Retention`
