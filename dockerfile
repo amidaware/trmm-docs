@@ -1,8 +1,10 @@
-FROM python:3.9-alpine
+FROM python:3.10-alpine
+
+COPY requirements.txt /tmp/requirements.txt
 
 RUN pip install --upgrade pip && \ 
     pip install --upgrade setuptools wheel && \
-    pip install mkdocs mkdocs-material pymdown-extensions 
+    pip install -r /tmp/requirements.txt 
 
 EXPOSE 8005
 

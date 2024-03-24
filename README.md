@@ -14,7 +14,7 @@ python3 -m venv env
 source env/bin/activate
 pip install --upgrade pip
 pip install --upgrade setuptools wheel
-pip install mkdocs mkdocs-material pymdown-extensions
+pip install -r requirements.txt
 mkdocs serve
 ```
 

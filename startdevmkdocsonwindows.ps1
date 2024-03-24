@@ -11,7 +11,8 @@ python -m venv env
 
 # Install requirements first time only
 python -m pip install --upgrade pip #only 1st time
-pip install --upgrade mkdocs mkdocs-material pymdown-extensions
+pip install --upgrade setuptools wheel
+pip install -r requirements.txt
 
 # Run mkdocs and look at changes as you make them
 Start-Process http://localhost:8005 #Opens Browser
