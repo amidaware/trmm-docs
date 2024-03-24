@@ -16,7 +16,68 @@ Make sure websockets option is enabled.
 
 All 3 URL's will need to be configured: `rmm`, `api`, `mesh`
 
-For `mesh` see the Section 10. TLS Offloading of the [MeshCentral 2 User Guide](https://info.meshcentral.com/downloads/MeshCentral2/MeshCentral2UserGuide.pdf).
+For `mesh` review [TLS Offloading](https://ylianst.github.io/MeshCentral/meshcentral/#tls-offloading).
+
+## Cloudflare Proxy and Cloudflare Tunnel
+
+[Youtube Video Showing How](https://www.youtube.com/watch?v=70ME_EaoTxs)
+
+!!!note
+    Between August 2023 and March 2024, MeshCentral would not work properly through CloudFlare proxy/tunnels. Symptoms were Clicking on the "Connect" button under "Desktop" or "Terminal" results in "Disconnected" approximately 9/10 times.<br>Something changed on CloudFlare's end. You can still track the GitHub issue about it [here](https://github.com/Ylianst/MeshCentral/issues/5302).<br>As of 23/03/2024 CloudFlare made some kind of change that fixed it without any acknowledgement. While it has started working again, there are no guarantees that this will continue to work. Use at your own risk.
+
+First, just complete a TRMM install like normal- you don't need to put the API, RMM, or Mesh domains into Cloudflare however.
+You must still follow the TXT record to prove that it's your domain.
+
+Once your TRMM install is completed, navigate to CloudFlare Tunnels and create a new Tunnel.
+Give it any name, Personally, I chose the name TRMM. Now, follow the instructions to install the connector on your distro of choice.
+
+### Adding the Entries to Cloudflare
+
+Now, we need to begin adding the domains.
+For API, for the subdomain enter the subdomain you chose earlier. In my case api.mydomain
+Leave "Path" empty.
+For Service, choose HTTPS then in the URL put your server's LOCAL ip and then port 443.
+
+Scroll down and extend Additional Application Settings. From here, extend TLS and set Origin Server Name to the subdomain + domain that you're using.
+
+Repeat this step for RMM.
+
+Mesh is slightly different.
+For the subdomain, enter the subdomain you chose earlier. In my case mesh.mydomain, still being sure to leave Path empty.
+For service, pick Type HTTP, and for URL put your server's LOCAL ip then:4430.
+
+Extend Additional Application Settings and then HTTP settings and set the HTTP Host Header to the subdomain + domain that you're using.
+
+```
+api.{domain}
+https | TRMM server IP | 443
+Advanced: Origin Server Name | api.{domain}
+
+mesh.{domain}
+http | TRMM server IP | 4430
+Advanced: HTTP Host Header | mesh.{domain}
+
+rmm.{domain}
+https | TRMM server IP | 443
+Advanced: Origin Server Name | rmm.{domain}
+
+```
+
+Now, Mesh will check the external cert when it boots up in order to verify the domain. This will fail as TRMM on setup adds a 127.0.1.1 entry to the /etc/hosts file.
+
+To fix this, SSH into your TRMM server and run the following command:
+
+```bash
+nano /etc/hosts
+```
+
+On the second line of your hosts file, you should see all the entries listed.
+```bash
+127.0.1.1   trmm.yourdomain trmm api.yourdomain rmm.yourdomain mesh.yourdomain
+```
+
+You need to <ins>**remove**</ins> the mesh.yourdomain entry at the end.
+Once you've done this, you're ready to go. All sites should be accessible and you should be able to add agents and connect/work with them.
 
 ## Caddy 2
 
@@ -1026,7 +1087,7 @@ Or change certs location on Nginx conf to whatever you want.
 
 Having mesh connection issues?
 
-See <https://info.meshcentral.com/downloads/MeshCentral2/MeshCentral2UserGuide.pdf> page 30.
+See <https://ylianst.github.io/MeshCentral/meshcentral/#nginx-reverse-proxy-setup>.
 
 ## Nginx Proxy Manager (double proxy method)
 
@@ -1190,7 +1251,7 @@ Add each of the domains listed above to the "Domain Names" field. Make sure you 
 
 You should now see something like this in your list of SSL Certs:
 
-![Multidomain SSL Cert On Nginx Proxy Manager](https://i.imgur.com/Sv0SW0m.png)
+![Multi domain SSL Cert On Nginx Proxy Manager](https://i.imgur.com/Sv0SW0m.png)
 
 Go ahead and download this certificate by clicking the 3 dots to the right of the cert entry and click "Download".
 
@@ -1269,64 +1330,3 @@ In Synology NAS reverse proxy portal and added websockets to the rmm domains, es
 ![Image1](images/synology_proxy.png)
 
 ![Image2](images/synology_proxy2.png)
-
-## CloudFlare Tunnel
-
-[Youtube Video Showing How](https://www.youtube.com/watch?v=70ME_EaoTxs)
-
-!!!note
-    Between August 2023 and March 2024, MeshCentral would not work properly through CloudFlare proxy/tunnels. Symptoms were Clicking on the "Connect" button under "Desktop" or "Terminal" results in "Disconnected" approximately 9/10 times.<br>Something changed on CloudFlare's end. You can still track the GitHub issue about it [here](https://github.com/Ylianst/MeshCentral/issues/5302).<br>As of 23/03/2024 CloudFlare made some kind of change that fixed it without any acknowledgement. While it has started working again, there are no guarantees that this will continue to work. Use at your own risk.
-
-First, just complete a TRMM install like normal- you don't need to put the API, RMM, or Mesh domains into Cloudflare however.
-You must still follow the TXT record to prove that it's your domain.
-
-Once your TRMM install is completed, navigate to CloudFlare Tunnels and create a new Tunnel.
-Give it any name, Personally, I chose the name TRMM. Now, follow the instructions to install the connector on your distro of choice.
-
-### Adding the Entries to Cloudflare
-
-Now, we need to begin adding the domains.
-For API, for the subdomain enter the subdomain you chose earlier. In my case api.mydomain
-Leave "Path" empty.
-For Service, choose HTTPS then in the URL put your server's LOCAL ip and then port 443.
-
-Scroll down and extend Additional Application Settings. From here, extend TLS and set Origin Server Name to the subdomain + domain that you're using.
-
-Repeat this step for RMM.
-
-Mesh is slightly different.
-For the subdomain, enter the subdomain you chose earlier. In my case mesh.mydomain, still being sure to leave Path empty.
-For service, pick Type HTTP, and for URL put your server's LOCAL ip then:4430.
-
-Extend Additional Application Settings and then HTTP settings and set the HTTP Host Header to the subdomain + domain that you're using.
-
-```
-api.{domain}
-https | TRMM server IP | 443
-Advanced: Origin Server Name | api.{domain}
-
-mesh.{domain}
-http | TRMM server IP | 4430
-Advanced: HTTP Host Header | mesh.{domain}
-
-rmm.{domain}
-https | TRMM server IP | 443
-Advanced: Origin Server Name | rmm.{domain}
-
-```
-
-Now, Mesh will check the external cert when it boots up in order to verify the domain. This will fail as TRMM on setup adds a 127.0.1.1 entry to the /etc/hosts file.
-
-To fix this, SSH into your TRMM server and run the following command:
-
-```bash
-nano /etc/hosts
-```
-
-On the second line of your hosts file, you should see all the entries listed.
-```bash
-127.0.1.1   trmm.yourdomain trmm api.yourdomain rmm.yourdomain mesh.yourdomain
-```
-
-You need to <ins>**remove**</ins> the mesh.yourdomain entry at the end.
-Once you've done this, you're ready to go. All sites should be accessible and you should be able to add agents and connect/work with them.

@@ -4,46 +4,6 @@
 
 Please see the [Reporting FAQ](./ee/reporting/functions/faq.md)
 
-## I just updated and now it doesn't work. 
-
-One or more of these things probably just happened:
-
-1. You didn't read the [update instructions](update_server.md). They have been known to change. Frequently. And you're probably [not staying updated](install_server.md#update-regularly) with versions as they come out.
-2. You didn't review ALL the pertinent release notes between your version, and the [latest one](https://github.com/amidaware/tacticalrmm/releases).
-3. You said `Yes` to nginx.conf change, when you should have said [No](https://github.com/amidaware/tacticalrmm/releases/tag/v0.14.3).
-
-To fix number 3, edit `/etc/nginx/nginx.conf` and make it:
-
-```conf
-worker_rlimit_nofile 1000000;
-user www-data;
-worker_processes auto;
-pid /run/nginx.pid;
-include /etc/nginx/modules-enabled/*.conf;
-events {
-        worker_connections 4096;
-}
-http {
-        sendfile on;
-        tcp_nopush on;
-        types_hash_max_size 2048;
-        server_names_hash_bucket_size 64;
-        include /etc/nginx/mime.types;
-        default_type application/octet-stream;
-        ssl_protocols TLSv1.2 TLSv1.3;
-        ssl_prefer_server_ciphers on;
-        access_log /var/log/nginx/access.log;
-        error_log /var/log/nginx/error.log;
-        gzip on;
-        include /etc/nginx/conf.d/*.conf;
-        include /etc/nginx/sites-enabled/*;
-}
-```
-
-## Is Tactical RMM vulnerable to Log4j
-
-No.
-
 ## Can I __________?
 
 If you've been sent a link to this, we are not going to allow or support things like your request. The reason is because it would facilitate people avoiding to pay for/supporting Tactical RMM for these/similar premium paid features.
@@ -300,3 +260,7 @@ We can not help you until we understand your setup. Just posting an error log is
 You can help yourself by running [this](troubleshooting.md#server-troubleshooting-script) and [this](troubleshooting.md#agents-not-installing-or-updating) that will test your server and and tell you common problems.
 
 If you would like us to do it for you please [contact support](support.md#commercial-support).
+
+## Is Tactical RMM vulnerable to Log4j
+
+No.

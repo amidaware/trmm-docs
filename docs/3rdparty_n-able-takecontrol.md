@@ -1,6 +1,6 @@
 #  N-Able TAKE CONTROL
 
-## N-Able Take Control Integration (Solarwinds/Beanywhere)
+## N-Able Take Control Integration (Solarwinds / Beanywhere)
 
 !!!info
      You can setup a full automation policy to collect the machine GUID but this example will collect from just one agent for testing purposes.
@@ -22,7 +22,8 @@ Add a URL Action</br>
 ```html
 mspasp://{{agent.TakeControlID}}
 ```
-Add script with this name Take Control - Get TakeControlID for client:</br>
+Add script with this name Take Control - Get TakeControlID for client:
+
 ```
 $ConfigPath = $Env:ProgramData + "\GetSupportService\BASupSrvc.ini"
 $ResultsIdSearch = Select-String -Path $ConfigPath -Pattern ServerUniqueID
@@ -31,10 +32,10 @@ $id = $Result[1]
 $Text = "-s " + $id
 $ENCODED = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($Text))
 Write-Output $ENCODED
-
 ```
 
-Navigate to an agent with Take Control running (or apply using **Settings > Automation Manager**).</br>
+Navigate to an agent with Take Control running (or apply using **Settings > Automation Manager**).
+
 Go to Tasks.</br>
 Add Task</br>
 **Select Script** = `Take Control - Get TakeControlID for client`</br>
