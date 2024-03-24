@@ -1274,8 +1274,8 @@ In Synology NAS reverse proxy portal and added websockets to the rmm domains, es
 
 [Youtube Video Showing How](https://www.youtube.com/watch?v=70ME_EaoTxs)
 
-!!!warning
-    At the moment, MeshCentral does not work properly through CloudFlare tunnels. Something has changed on CloudFlare's end and they are yet to put out a statement. You can track the GitHub issue about it [here](https://github.com/Ylianst/MeshCentral/issues/5302).
+!!!note
+    CloudFlare just fixed the previous MeshCentral issues whereby you couldn't connect to a client. Whilst it works now, there's no promise from them that they won't change something again.
 
 First, just complete a TRMM install like normal- you don't need to put the API, RMM, or Mesh domains into Cloudflare however.
 You must still follow the TXT record to prove that it's your domain.
