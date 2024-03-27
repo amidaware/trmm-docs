@@ -11,19 +11,19 @@ Tactical RMM integrates with [MeshCentral](https://github.com/Ylianst/MeshCentra
 !!!note
     MeshCentral has issues with Firefox, use a Chromium-based browser.
 
-At some point in the future, these functions will be directly built into the Tactical agent, removing the need for MeshCentral.
-
 It should be noted that Tactical RMM and MeshCentral are 2 completely separate products and can run independently of each other.
 
 They do not even have to run on the same box, however when you install Tactical RMM it simply installs MeshCentral for you with some pre-configured settings to allow integration.
 
 It is highly recommended to use the MeshCentral instance that Tactical installs, since it allows the developers more control over it and to ensure things don't break.
 
-## OMG MeshCentral isn't maintained anymore!
-
-MeshCentral is still [actively being maintained](https://meshcentral2.blogspot.com/2023/10/meshcentral-windows-arm64-nodejs-v11.html), the lead devs had jobs in which they were paid by a corporation to develop MeshCentral, they now have got other jobs which means they are supporting and developing MeshCentral in their free time (like alot of other projects) this means development is slower but not that it isn't maintained anymore. If this changes or it becomes necessary to fix something that breaks or packages needing updated we are prepared to begin maintaining our own fork. The features of MeshCentral that TRMM uses are only the 3 items above and are extremely mature.
-
 ## How does it work?
+
+Please watch this video to fully understand how mesh integrations and permissions sync work.
+
+<div class="video-wrapper">
+  <iframe width="400" height="225" src="https://www.youtube.com/embed/HS03aIg5S5g" frameborder="0" allowfullscreen></iframe>
+</div>
 
 MeshCentral has an embedding feature that allows integration into existing products.
 
@@ -33,6 +33,15 @@ The Tactical RMM agent keeps track of your Mesh agents, and periodically interac
 
 When you do a take control / terminal / file browser on an agent using the Tactical UI, behind the scenes, Tactical generates a login token for MeshCentral's website and then "wraps" MeshCentral's UI in an iframe for that specific agent only, using it's unique ID to know what agent to render in the iframe.
 
+## Customize Take Control Username
+
+If you've enabled the Mesh "Ask Consent + Bar" display option that shows across the top when controlling a users machine and you'd like to change the name that users see, make sure the user has a First and/or Last name set TRMM (Settings > User Administration).
+
+## Get a url to login to mesh as the mesh superuser
+```bash
+/rmm/api/env/bin/python /rmm/api/tacticalrmm/manage.py get_mesh_login_url
+```
+
 ## Running your own existing or separate MeshCentral server?
 
 We do testing to make sure everything works with the version found [here](https://github.com/amidaware/tacticalrmm/blob/master/api/tacticalrmm/tacticalrmm/settings.py) (look for MESH_VER).
@@ -40,16 +49,13 @@ We do testing to make sure everything works with the version found [here](https:
 Installation instructions for using your own MeshCentral server:
 
 1. Run standard installation.
-2. When asked for Mesh URL specify your existing Mesh server URL.
-3. After installation, you will need to run thru manually uploading installers and connecting token with [this](troubleshooting.md#need-to-recover-your-mesh-token):
-4. Make sure DNS is pointing to your existing server (you must also remove `mesh.yourdomain.com` from `/etc/hosts` on the trmm server).
+2. After installation is complete, disable meshcentral `sudo systemctl disable --now meshcentral`.
+3. In TRMM Web UI go to Settings > Global Settings > MeshCentral and update values from your existing mesh (make sure to use a mesh superuser).
+4. Add `USE_EXTERNAL_MESH = True` to `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py`
+5. Restart TRMM server.
 
 !!!info
     Mesh usernames are **CaSe sEnSiTive**
-
-## Customize Take Control Username
-
-If you've enabled the Mesh "Ask Consent + Bar" display option that shows across the top when controlling a users machine and you'd like to change the name that users see, login to https://mesh.yourdomain.com, go to **Users**, select **User > Edit** `Real Name`
 
 ## Take Control Connect vs RDP Connect
 
@@ -102,18 +108,7 @@ sudo systemctl disable --now meshcentral mongod
 
 Then when installing an agent, make sure to pass the `-nomesh` flag to the [installer](install_agent.md#optional-installer-args)
 
-## Security Implications
+## OMG MeshCentral isn't maintained anymore!
 
-Tactical RMM has a full permission module, but because of how Tactical RMM integrates with MeshCentral currently there is a permissions bypass atm. First, here's how Tactical RMM's integration works. 
+MeshCentral is still [actively being maintained](https://meshcentral2.blogspot.com/2023/10/meshcentral-windows-arm64-nodejs-v11.html), the lead devs had jobs in which they were paid by a corporation to develop MeshCentral, they now have got other jobs which means they are supporting and developing MeshCentral in their free time (like alot of other projects) this means development is slower but not that it isn't maintained anymore. If this changes or it becomes necessary to fix something that breaks or packages needing updated we are prepared to begin maintaining our own fork. The features of MeshCentral that TRMM uses are only the 3 items above and are extremely mature.
 
-![Integration](images/meshintegrationhowitworks.png)
-
-With that understanding, when you trigger any function in Tactical RMM that uses a MeshCentral function (Remote Control, or Remote background) the user gets the full admin login Auth token for logging into MeshCentral. If they then goto https://mesh.example.com they will see all agents and have full administrative permissions for everything in MeshCentral.
-
-If you have multiple techs, and need to restrict their computer access permissions, right now you will need to disable auto login and manually manage your meshcentral users and computers. First you will need to:
-
-1. Check the `Disable Auto Login for Remote Control and Remote background:` option.
-2. Manually login to MeshCentral, and manually create users and set their permissions/restrictions.
-3. All techs will then have to manually login to https://mesh.example.com daily so they can use Remote Control and the MeshCentral Remote Background features.
-
-It is planned at some point in the future for this to either be automated, or eliminated entirely. For now, you will need to handle this yourself.

@@ -138,9 +138,7 @@ We'll be using `example.com` as our domain for this example.
 
 ![arecords](images/arecords.png)
 
-!!!tip
-    Already have your own SSL certificate? [Read this](functions/settings_override.md#using-your-own-wildcard-ssl-cert) before continuing.
-    
+
 ### Step 5 - Run the install script
 
 Switch to the `tactical` user:
@@ -159,6 +157,17 @@ wget https://raw.githubusercontent.com/amidaware/tacticalrmm/master/install.sh
 chmod +x install.sh
 ./install.sh
 ```
+
+!!!info
+    Already have your own SSL certificate? Call the install script with the `--use-own-cert` flag, like this:
+    ```bash
+    ./install.sh --use-own-cert
+    ```
+    Ensure your cert and private key exist on the server as the install script will prompt you for the locations of these 2 files.
+
+    Also ensure that it is a legitimate, trusted certificate and includes the full chain for proper validation. Do not use this option with self-signed certs.
+
+    
 
 !!!danger
     You can install with the `--insecure` switch to use any DNS name you want. Self signed certs will be generated for all the DNS names, and all SSL certificate chain validation will be disabled in TRMM.

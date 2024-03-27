@@ -101,6 +101,11 @@ AuthToken.objects.all().delete()
 python manage.py remove_orphaned_tasks
 ```
 
+### Get a url to login to mesh as the mesh superuser
+```bash
+python manage.py get_mesh_login_url
+```
+
 ### Create a MeshCentral Agent Invite Link
 
 ```bash
