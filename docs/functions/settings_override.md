@@ -18,7 +18,7 @@ REST_KNOX = {
 
 Change `(days=30)` to whatever you prefer. Then run `sudo systemctl restart rmm.service` for changes to take effect.
 
-### Using your own wildcard SSL cert
+### Using your own wildcard SSL certificate
 
 Modify the install script and replace `CERT_PUB_KEY` and `CERT_PRIV_KEY` with the full paths to your wildcard cert. If you don't have a wildcard cert, you can instead use a cert for `api.example.com` with 2 SANs for `mesh.example.com` and `rmm.example.com`
 
@@ -33,9 +33,13 @@ CERT_FILE = "/path/to/your/fullchain.pem"
 KEY_FILE = "/path/to/your/privkey.pem"
 ```
 
-Then run `/rmm/api/env/bin/python /rmm/api/tacticalrmm/manage.py reload_nats` and restart your server.
+Then restart your server or restart services
 
-If you want to do this after install please follow [this guide](https://docs.tacticalrmm.com/unsupported_scripts/#using-purchased-ssl-certs-instead-of-lets-encrypt-wildcards).
+```bash
+sudo systemctl restart rmm.service celery.service celerybeat.service nginx.service
+```
+
+If you want to do this after install please follow [this guide](https://docs.tacticalrmm.com/supported_extras/#using-purchased-ssl-certs-instead-of-lets-encrypt-wildcards).
 
 ### Use NATS Standard instead of NATS websocket
 
