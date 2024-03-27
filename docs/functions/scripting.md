@@ -313,15 +313,67 @@ There are some important points to keep in mind when writing Nu scripts. See the
 
 Nu has a [Discord](https://discord.gg/NtAbbGn) server if you have questions.
 
+To disable this feature, add the following to `local_settings.py`:
+
+```python
+INSTALL_NUSHELL = False
+```
+
+### Example Nushell Script
+
+The below script find processes sorted by greatest cpu utilization.
+
+```nu
+ps | sort-by cpu | reverse
+```
+
 ## Deno
 
 Deno is considered to be the next iteration of Node.js. Deno uses ECMAScript modules (a.k.a ES Modules or ESM) syntax, not CommonJS (CJS). I.e. use `import * from https://example.com/package/module.ts` instead of `require('./local/file.js')`.
 
-By default, Deno does not have any permissions. Set the `DENO_PERMISSIONS` environment variable to the permissions requested. See the [documentation on permissions](https://docs.deno.com/runtime/manual/basics/permissions) for details.
+Tactical RMM runs Deno scripts with the following permissions:
 
-For example, to read environmental variables, allow access to the system and make web requests, set this environment variable. The variable and all arguments need to be entered as one before you hit `<enter>`, and they need to be space separated.
+```
+DENO_PERMISSIONS=--allow-all
+```
 
-`DENO_PERMISSIONS=--allow-env --allow-sys --allow-net`
+See the [documentation on permissions](https://docs.deno.com/runtime/manual/basics/permissions) for details.
+
+To override this, either:
+
+1. Add the `DENO_DEFAULT_PERMISSIONS` [string variable](https://github.com/amidaware/tacticalrmm/blob/1a325a66b45be4c2b8fb2098abb20ef348848651/api/tacticalrmm/tacticalrmm/settings.py#L81) with the permissions requested to `local_settings.py`
+or
+2. Set the `DENO_PERMISSIONS` environment variable to the permissions requested in your script.
+
+To disable this feature, add the following to `local_settings.py`:
+
+```python
+INSTALL_DENO = False
+```
+
+### Example Deno Script
+
+The below script prints basic system information:
+
+```typescript
+async function gatherSystemInfo() {
+  const os = Deno.build.os;
+  const arch = Deno.build.arch;
+  const memory = Deno.systemMemoryInfo();
+  
+
+  const info = `
+OS: ${os}
+Architecture: ${arch}
+Total Memory: ${(await memory).total / 1024 / 1024} MB
+Free Memory: ${(await memory).free / 1024 / 1024} MB
+`;
+  
+  console.log(info);
+}
+
+gatherSystemInfo().catch(console.error);
+```
 
 ## Example Scripts
 
@@ -345,23 +397,11 @@ Write-Output "Custom Fields: $CustomField"
 Write-Output "Global: $Global"
 ```
 
-### Example Nushell Script
 
-The below script prints system information about Nu.
 
-```nu
-$nu
-```
 
-### Example Deno Script
 
-The below script prints the OS release of Deno.
 
-```typescript
-console.log("Deno OS release:", Deno.osRelease());
-console.log("Deno build:", Deno.build);
-console.log("Deno version:", Deno.version);
-```
 
 ### Example Shell Script
 
