@@ -16,7 +16,7 @@ Linux/Mac languages supported:
 
 - Any language that is installed on the remote machine (use a shebang at the top of the script to set the interpreter)
 - nu
-- deno (TypeScript)
+- deno (Javascript and TypeScript)
 
 ## Adding Scripts
 
@@ -396,12 +396,6 @@ Write-Output "Public IP: $PublicIp"
 Write-Output "Custom Fields: $CustomField"
 Write-Output "Global: $Global"
 ```
-
-
-
-
-
-
 
 ### Example Shell Script
 
