@@ -3,14 +3,20 @@
 Tactical RMM supports uploading existing scripts or creating new scripts from within the web interface.
 
 Windows agent languages supported:
+
 - PowerShell
 - Windows Batch
 - Python
+- [Nushell](https://www.nushell.sh/)
+- [Deno](https://deno.com/)
 
 There is [RunAsUser](../howitallworks.md#runasuser-functionality) functionality for Windows.
 
 Linux/Mac languages supported:
+
 - Any language that is installed on the remote machine (use a shebang at the top of the script to set the interpreter)
+- nu
+- deno (Javascript and TypeScript)
 
 ## Writing Your Own Scripts
 
@@ -60,6 +66,8 @@ In the dashboard, browse to **Settings > Scripts Manager**. Click the **New** bu
     - Windows Batch
     - Python
     - Shell (use for Linux/macOS scripts)
+    - Nushell
+    - Deno
 
 - **Script Arguments** - Optional way to set default arguments for scripts. These will auto populate when running scripts and can be changed at runtime. Logged on Windows Event Viewer > Applications and Services Logs > Microsoft > Windows> PowerShell > Operational
 - **Environment vars** - Optional way to set default arguments for scripts using Environment Variables. These will auto populate when running scripts and can be changed at runtime. Not logged, better to use when passing data you don't want logged
@@ -168,26 +176,6 @@ See [Using Custom Fields in Scripts](custom_fields.md#Using Custom Fields in Scr
 Tactical RMM supports getting values from the global key store using the {{global.key_name}} syntax.
 
 See [Global Keystore](keystore.md).
-
-### Example PowerShell Script
-
-The below script takes five named values. The arguments will look like this: `-SiteName {{site.name}} -ClientName {{client.name}} -PublicIP {{agent.public_ip}} -CustomField {{client.AV_KEY}} -Global {{global.API_KEY}}`
-
-```powershell
-param (
-   [string] $SiteName,
-   [string] $ClientName,
-   [string] $PublicIp,
-   [string] $CustomField,
-   [string] $Global
-)
-
-Write-Output "Site: $SiteName"
-Write-Output "Client: $ClientName"
-Write-Output "Public IP: $PublicIp"
-Write-Output "Custom Fields: $CustomField"
-Write-Output "Global: $Global"
-```
 
 ## Script Snippets
 
@@ -346,3 +334,112 @@ SyntaxError: invalid syntax
 ```
 
 [Python 3.10 introduced the "match" term]: https://docs.python.org/3/whatsnew/3.10.html#pep-634-structural-pattern-matching
+
+## Nushell
+
+Nu is a new type of shell. Like PowerShell, Nu passes objects from one command to the next. For example, this script will list processes that are more than 100MB.
+
+```nu
+ps | where mem >= 100MB
+```
+
+There are some important points to keep in mind when writing Nu scripts. See the [Thinking in Nu](https://www.nushell.sh/book/thinking_in_nu.html) for details. Some highlights:
+
+1. The `>` is the greater-than operator, not redirection. Use `| save some-file.txt`
+2. Variables are immutable, or constant. Use [`mut`](https://www.nushell.sh/commands/docs/mut.html#frontmatter-title-for-core) to make a variable mutable.
+3. Currently Nu does not support background tasks. `long-running-command &` will not work.
+
+Nu has a [Discord](https://discord.gg/NtAbbGn) server if you have questions.
+
+To disable this feature, add the following to `local_settings.py`:
+
+```python
+INSTALL_NUSHELL = False
+```
+
+### Example Nushell Script
+
+The below script find processes sorted by greatest cpu utilization.
+
+```nu
+ps | sort-by cpu | reverse
+```
+
+## Deno
+
+Deno is considered to be the next iteration of Node.js. Deno uses ECMAScript modules (a.k.a ES Modules or ESM) syntax, not CommonJS (CJS). I.e. use `import * from https://example.com/package/module.ts` instead of `require('./local/file.js')`.
+
+Tactical RMM runs Deno scripts with the following permissions:
+
+```
+DENO_PERMISSIONS=--allow-all
+```
+
+See the [documentation on permissions](https://docs.deno.com/runtime/manual/basics/permissions) for details.
+
+To override this, either:
+
+1. Add the `DENO_DEFAULT_PERMISSIONS` [string variable](https://github.com/amidaware/tacticalrmm/blob/1a325a66b45be4c2b8fb2098abb20ef348848651/api/tacticalrmm/tacticalrmm/settings.py#L81) with the permissions requested to `local_settings.py`
+or
+2. Set the `DENO_PERMISSIONS` environment variable to the permissions requested in your script.
+
+To disable this feature, add the following to `local_settings.py`:
+
+```python
+INSTALL_DENO = False
+```
+
+### Example Deno Script
+
+The below script prints basic system information:
+
+```typescript
+async function gatherSystemInfo() {
+  const os = Deno.build.os;
+  const arch = Deno.build.arch;
+  const memory = Deno.systemMemoryInfo();
+  
+
+  const info = `
+OS: ${os}
+Architecture: ${arch}
+Total Memory: ${(await memory).total / 1024 / 1024} MB
+Free Memory: ${(await memory).free / 1024 / 1024} MB
+`;
+  
+  console.log(info);
+}
+
+gatherSystemInfo().catch(console.error);
+```
+
+## Example Scripts
+
+### Example PowerShell Script
+
+The below script takes five named values. The arguments will look like this: `-SiteName {{site.name}}` `-ClientName {{client.name}}` `-PublicIP {{agent.public_ip}}` `-CustomField {{client.AV_KEY}}` `-Global {{global.API_KEY}}`
+
+```powershell
+param (
+   [string] $SiteName,
+   [string] $ClientName,
+   [string] $PublicIp,
+   [string] $CustomField,
+   [string] $Global
+)
+
+Write-Output "Site: $SiteName"
+Write-Output "Client: $ClientName"
+Write-Output "Public IP: $PublicIp"
+Write-Output "Custom Fields: $CustomField"
+Write-Output "Global: $Global"
+```
+
+### Example Shell Script
+
+The below script prints the user running the script.
+
+```typescript
+#!/usr/bin/env bash
+whoami
+```
