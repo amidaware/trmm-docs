@@ -12,12 +12,12 @@ With your continuing [sponsorship](sponsor.md#sponsor-with-stripe-or-paypal) we'
             {
                 "title": "[Alerts to Webhooks](https://github.com/amidaware/tacticalrmm/issues/1222)",
                 "start": "2024-01-01",
-                "lasts": "3 months"
+                "lasts": "5 months"
             },
             {
                 "title": "[Server side](https://github.com/amidaware/tacticalrmm/issues/1316) Scripts",
                 "start": "2024-01-1",
-                "lasts": "3 months"
+                "lasts": "5 months"
             },
             {
                 "title": "[SSO](https://github.com/amidaware/tacticalrmm/issues/508) integration",
@@ -27,11 +27,6 @@ With your continuing [sponsorship](sponsor.md#sponsor-with-stripe-or-paypal) we'
             {
                 "title": "[Linux/Mac](https://github.com/amidaware/tacticalrmm/discussions/1692) Tasks",
                 "start": "2024-04-01",
-                "lasts": "2 months"
-            },
-            {
-                "title": "[Mesh Integration](https://docs.tacticalrmm.com/mesh_integration/#security-implications) Rework",
-                "start": "2024-01-15",
                 "lasts": "2 months"
             },
             {
