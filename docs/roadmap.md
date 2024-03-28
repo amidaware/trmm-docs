@@ -30,11 +30,6 @@ With your continuing [sponsorship](sponsor.md#sponsor-with-stripe-or-paypal) we'
                 "lasts": "2 months"
             },
             {
-                "title": "[Mesh Integration](https://docs.tacticalrmm.com/mesh_integration/#security-implications) Rework",
-                "start": "2024-01-15",
-                "lasts": "2 months"
-            },
-            {
                 "title": "[Windows Update](https://github.com/amidaware/tacticalrmm/issues/1188) Rework",
                 "start": "2024-06-01",
                 "lasts": "3 months"
