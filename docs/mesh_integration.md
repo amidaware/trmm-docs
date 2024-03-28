@@ -73,7 +73,7 @@ The MeshAgent will split the desktop into 32x32 pixel tiles and see if any of th
 
 `RDP Connect` button: 
 
-Is a browser based RDP client. It connects to the native RDP in versions of Windows that support inbound RDP connects. Pro, Workstation, Enterprise, Server, Terminal Server, RDS Server etc. 
+Is a browser based RDP client. It connects to the native RDP in versions of Windows that support inbound RDP connects. Pro, Workstation, Enterprise, Server, Terminal Server, RDS Server etc. You must enable RDP in Windows to be able to connect to it, it's not enabled by default (or enable when installing agent if supported).
 
 !!!note
     It does not work for Windows Home because Home doesn't support incoming RDP connections.
