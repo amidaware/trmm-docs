@@ -41,6 +41,21 @@ If you've enabled the Mesh "Ask Consent + Bar" display option that shows across 
 ```bash
 /rmm/api/env/bin/python /rmm/api/tacticalrmm/manage.py get_mesh_login_url
 ```
+## Modifying the Internal Mesh Port Configuration
+
+By default, Tactical RMM configures the Mesh service to listen on the internal port 4430. Should there be a need to modify this default port within the Nginx or Mesh configuration, it is imperative to update Tactical RMM with the new port information. To accomplish this, the following entry must be added to the file `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py`:
+
+```python
+MESH_PORT = <new_port_number>
+```
+
+Replace `<new_port_number>` with the actual port number you have configured. For example, if the new port number is 1234, the entry should be as follows:
+
+```python
+MESH_PORT = 1234
+```
+
+Then, restart your entire server for changes to take effect.
 
 ## Running your own existing or separate MeshCentral server?
 
