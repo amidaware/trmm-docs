@@ -20,6 +20,11 @@ With your continuing [sponsorship](sponsor.md#sponsor-with-stripe-or-paypal) we'
                 "lasts": "5 months"
             },
             {
+                "title": "Amidaware One Advertising Network - [Apply Now](https://www.youtube.com/watch?v=dQw4w9WgXcQ)",
+                "start": "2024-01-1",
+                "lasts": "5 months"
+            },
+            {
                 "title": "[SSO](https://github.com/amidaware/tacticalrmm/issues/508) integration",
                 "start": "2024-04-01",
                 "lasts": "2 months"
