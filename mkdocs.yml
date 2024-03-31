@@ -45,7 +45,8 @@ nav:
       - "- Data Queries": ee/reporting/functions/reporting_dataqueries.md
       - "- Assets": ee/reporting/functions/reporting_assets.md
       - "- Tips n' Tricks": ee/reporting/functions/tipsntricks.md
-      
+
+  - Supported Extras: supported_extras.md    
   - Backup: backup.md
   - Restore: restore.md
   - Antivirus Exclusions: av.md
