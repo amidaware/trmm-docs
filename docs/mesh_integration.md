@@ -123,6 +123,22 @@ sudo systemctl disable --now meshcentral mongod
 
 Then when installing an agent, make sure to pass the `-nomesh` flag to the [installer](install_agent.md#optional-installer-args)
 
+## Fixing missing agents in TRMM or Mesh
+
+???+ note "Fixing Missing agent"
+
+    === ":material-console-line: Agent Missing in Mesh"
+
+        From the Script Library run: `TacticalRMM - Install Mesh Agent if it's not installed`
+
+        Then from trmm web ui right click agent > agent recovery > mesh agent
+
+    === ":material-console-line: Agent Missing in TRMM"
+
+        Use mesh to run the trmm agent installer with the `--nomesh` flag.
+        
+        Then from trmm web ui right click agent > agent recovery > mesh agent
+
 ## OMG MeshCentral isn't maintained anymore!
 
 MeshCentral is still [actively being maintained](https://meshcentral2.blogspot.com/2023/10/meshcentral-windows-arm64-nodejs-v11.html), the lead devs had jobs in which they were paid by a corporation to develop MeshCentral, they now have got other jobs which means they are supporting and developing MeshCentral in their free time (like alot of other projects) this means development is slower but not that it isn't maintained anymore. If this changes or it becomes necessary to fix something that breaks or packages needing updated we are prepared to begin maintaining our own fork. The features of MeshCentral that TRMM uses are only the 3 items above and are extremely mature.
