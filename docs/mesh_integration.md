@@ -37,10 +37,43 @@ When you do a take control / terminal / file browser on an agent using the Tacti
 
 If you've enabled the Mesh "Ask Consent + Bar" display option that shows across the top when controlling a users machine and you'd like to change the name that users see, make sure the user has a First and/or Last name set TRMM (Settings > User Administration).
 
+## Turn off the sync feature
+
+If you're having issues with the new MeshCentral sync feature added in TRMM v0.18.0 you can simply disable it to revert back to the previous behavior prior to this release, although you're probably just looking for way to get the [old mesh interface back](#get-a-url-to-login-to-mesh-as-the-mesh-superuser):
+
+From TRMM's web interface go to Settings > Global Settings > MeshCentral
+
+1. Un-check the "Sync Mesh Perms with TRMM" checkbox, and click Yes to the "are you sure" prompt.
+
+2. Click "Save"
+
+![Image](images/turn_off_mesh_sync.png)
+
+## Toggle a full permissions re-sync
+
+From TRMM's web interface go to Settings > Global Settings > MeshCentral
+
+1. Un-check the "Sync Mesh Perms with TRMM" checkbox, and click Yes to the "are you sure" prompt.
+
+2. Click "Save"
+
+3. Re-open the same settings window and check the same checkbox, click yes to the prompt, and Save.
+
+4. Wait a few minutes for the sync to fully complete in the background.
+
+!!! Video
+    ![Image](images/toggle_mesh_resync.gif)
+
 ## Get a url to login to mesh as the mesh superuser
+
+This will generate a url that will log you into meshcentral as the superuser, the same way it used to be prior to TRMM Release 0.18.0
+
+You should open this in a different browser than the one you're using for TRMM, or open in an incognito window.
+
 ```bash
 /rmm/api/env/bin/python /rmm/api/tacticalrmm/manage.py get_mesh_login_url
 ```
+
 ## Modifying the Internal Mesh Port Configuration
 
 By default, Tactical RMM configures the Mesh service to listen on the internal port 4430. Should there be a need to modify this default port within the Nginx or Mesh configuration, it is imperative to update Tactical RMM with the new port information. To accomplish this, the following entry must be added to the file `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py`:
