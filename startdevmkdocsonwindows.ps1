@@ -1,4 +1,4 @@
-# This is for running mkdocs locally on Windows only. 
+# This is for running mkdocs locally on Windows 
 # Make sure you change directory to your docs folder before starting this process
 # Use the "Run Selection" in VS Code to run the code blocks as-needed
 
