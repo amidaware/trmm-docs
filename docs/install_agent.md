@@ -245,7 +245,7 @@ Step 3: Grant Accessibility Permissions
 In the list on the left, scroll down and select Accessibility.
 If the padlock in the bottom-left corner is locked, click it and enter your password to make changes.
 Click the plus (+) button under the list on the right side.
-Navigate to and select Meshcentral in the /usr/local/mesh_services/meshagent/ folder.
+Navigate to and add tacticalagent from the /opt/tacticalagent/ folder and meshagent in the /opt/tacticalmesh/ folder.
 Ensure both are checked in the list to grant them Accessibility Permissions.
 
 ![](images/2024-02-15-22-22-33.png)
@@ -253,7 +253,7 @@ Ensure both are checked in the list to grant them Accessibility Permissions.
 Step 4: Grant Screen Recording Permissions
 In the list on the left, find and select Screen Recording.
 Unlock the padlock if necessary as described above.
-Click the plus (+) button and add Meshcentral from the /usr/local/mesh_services/meshagent/ folder, or check the boxes next to them if they're already listed.
+Click the plus (+) button and add meshagent from the /opt/tacticalmesh/ folder, or check the boxes next to them if they're already listed.
 A prompt may appear asking you to quit Meshcentral. Please do so to enable the permissions.
 
 ![](images/2024-02-15-22-23-48.png)
@@ -261,7 +261,7 @@ A prompt may appear asking you to quit Meshcentral. Please do so to enable the p
 Step 5: Grant Full Disk Access
 In the list on the left, scroll down and select Full Disk Access.
 Unlock the padlock if necessary as described above.
-Click the plus (+) button and add Tactical RMM from the /usr/local/bin/ folder and Meshcentral from the /usr/local/mesh_services/meshagent/ folder, or check the boxes next to them if they're already listed.
+Click the plus (+) button and add tacticalagent from the /opt/tacticalagent/ folder and meshagent from the /opt/tacticalmesh/ folder, or check the boxes next to them if they're already listed.
 
 ![](images/2024-02-15-22-17-49.png)
 
