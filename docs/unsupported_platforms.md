@@ -99,10 +99,10 @@ Reading the configuration file, at line 260
 Can't open the log file: No such file or directory'
 ```
 
-Apparently, `/ver/log/redis` has to be created manually:
+Apparently, `/var/log/redis` has to be created manually:
 
 ```bash
-'mkdir /var/log/redis
+mkdir /var/log/redis
 chown -R redis:redis /var/log/redis
 chmod -R u+rwX,g+rwX,u+rx /var/log/redis'
 ```
