@@ -102,6 +102,10 @@ The mesh installer is created at time of install. Make sure it's working by runn
 
 ### Did you customize MeshCentral options and now agents won't install?
 
+```
+fork/exec C:\Program Files\TacticalAgent\meshagent.exe: This version of %1 is not compatible with the version of Windows you're running. Check your computer's system information and then contact the software publisher
+```
+
 ![images](images/mesh_settings.png)
 
 or MeshCentrals Group name

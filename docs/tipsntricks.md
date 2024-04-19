@@ -96,7 +96,7 @@ Right-click the connect button in **Take Control** for connection options.
 
 If you need to comply with GDPR regulations and ensure employee rights legislation is complied with, you can make sure that users receive a popup to inform them so they are aware when your techs log in and connect to their machine. You can enable a banner that shows when a remote connection is established.
 
-1. Remote background a machine then go to mesh.EXAMPLE.COM
+1. Login to meshcentral as the [mesh superuser](./mesh_integration.md#get-a-url-to-login-to-mesh-as-the-mesh-superuser).
 2. Click on My Account
 3. Click on the device group you want to enable notifications or accept connection etc on (probably TacticalRMM).
 4. Next to User Consent click edit (the wee pencil)<br>
@@ -104,14 +104,6 @@ If you need to comply with GDPR regulations and ensure employee rights legislati
 5. You can also change features by ticking whatever boxes you want in there (Features: Sync server device name to hostname, Automatically remove inactive devices, Notify/Prompt for Consent/Connection Toolbar settings).<br>
 ![Features](images/mesh_features.png)
 6. Ok your way out
-
-**You will probably now notice a strange name shows when you take control**, to change this
-
-1. Next to Real Name click edit (the wee pencil)
-2. Change or fill in Real Name
-3. Click Ok and the name will be changed. <br>
-
-![Features](images/mesh_realname.png)
 
 ### Agent Online / Offline logs
 
