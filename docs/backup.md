@@ -35,7 +35,7 @@ The backup tar file will be saved in `/rmmbackups` with the following format:
 ## Schedule to run Daily via Cron
 
 !!!note
-    You MUST enable [passwordless sudo](https://timonweb.com/devops/how-to-enable-passwordless-sudo-for-a-specific-user-in-linux/) for your linux user or you won't get all files backed up, do a dry run first before setting up a schedule!
+    You MUST enable [passwordless sudo](https://timonweb.com/devops/how-to-enable-passwordless-sudo-for-a-specific-user-in-linux/) for your linux user or you won't get all files backed up, do a dry run first before setting up a schedule! You should verify this also by doing a test restore or verify the files have content.
 
 To schedule automated daily backups run the script with the `--schedule` flag
 
