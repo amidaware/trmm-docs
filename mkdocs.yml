@@ -75,6 +75,7 @@ nav:
   - Contributing:
       - "Contributing to Docs": contributing.md
       - "Contributing to Community Scripts": contributing_community_scripts.md
+      - "Contributing to Reporting Templates": contributing_reporting_templates.md      
       - "Contributing using a browser": contributing_using_browser.md
       - "Contributing using VS Code": contributing_using_vscode.md
       - "Contributing using Docker": contributing_using_docker.md
