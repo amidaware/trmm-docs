@@ -6,7 +6,7 @@ Webhooks in Tactical RMM can notify you of certain events in your RMM, like aler
 
 1. Adding Webhooks: Go to Settings -> Global Settings -> Webhooks
 2. Create a New Webhook: Enter the URL and choose the method (GET, POST, etc.). Configure the request headers and body as needed for your endpoint.
-3. Save and Test: Save your configuration and use the `Test` to test the webhook against an agent to ensure its working.
+3. Save and Test: Save your configuration and use the `Test` button to test the webhook against an agent to ensure its working correctly.
 4. Make sure your server endpoint is correctly configured to parse and use the data Tactical RMM sends. Depending on what you need, you might also want to implement security measures such as validating incoming requests to ensure they are from Tactical RMM.
 5. Specify Events: Select the events that should trigger the webhook via Alerts Manager (Settings -> Alerts Manager). Tactical RMM will send data to your endpoint based on these events.
 
