@@ -86,7 +86,7 @@ Please note that the Inno Setup installer (`tacticalagent-vX.X.X-windows-arch.ex
 
 As a reminder, the dynamic EXE installer is a generally one-time use **standalone program** that simply serves as a convenience wrapper around the Manual installation method. It automates the process by downloading the Inno Setup installer and executing it with the necessary command-line arguments—mirroring the functionality provided by the Powershell installer but delivered in an EXE format.
 
-#### Optional Root CA Installation for Dynamic EXE:
+#### Optional Root CA Installation for Dynamic EXE Installers:
 
 For those using the dynamic EXE installation method, installing Amidaware's Code Signing Root CA on your system before you attempt installation can help ensure a smoother installation process. This step is entirely optional and is not needed for existing agents of if you use any of the other installation methods. To install the Root CA, you can run the following PowerShell command (as admin):
 
