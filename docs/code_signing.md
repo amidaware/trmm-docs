@@ -51,6 +51,47 @@ However, the best way to submit a whitelisting request to your AV for the TRMM a
 
 Right click `"C:\Program Files\TacticalAgent\tacticalrmm.exe"` > `Properties` > `Digital Signatures` tab.
 
-Serial Number: `0fef30ccce9d30183067160018796558`
+## Code signing certificate info
 
-Thumb Print: `0e4844266294100d3f93e1cc7eecf61e9206bb14`
+Digicert OV code signing cert used by agents v2.7.0 and above:
+
+ - Serial Number: `0f558fcc46f23aa4e2688052f3a9459f`
+
+ - Thumb Print: `5f67afdbb3adc263965f5ed0c732e45575434449`
+
+Digicert OV code signing used by agents v2.6.2 and below:
+
+ - Serial Number: `0fef30ccce9d30183067160018796558`
+
+ - Thumb Print: `0e4844266294100d3f93e1cc7eecf61e9206bb14`
+
+Amidaware code signing used only by the dynamic EXE installer after May 3, 2024 at 4:59 PM PST:
+
+ - Serial Number: `0229c833c9bda1fe0a306f4b12b6ab3cf40f5790`
+
+ - Thumb Print: `17a930357440276bfaee23220e2f7e8f1a208556`
+
+Amidaware Code Signing [Root CA](https://amidaware.com/amidaware-root.crt):
+
+ - Serial Number: `2d4486df7eba0c6659d79106783caac1a83ffb41`
+
+ - Thumb Print: `45492337c44055dbb3910a90d4ed02758ebc0ebd`
+
+#### Code Signing Changes for Dynamic EXE Installers
+Starting May 3, 2024, at 4:59 PM PST, all new [dynamically generated](./install_agent.md#dynamically-generated-executable) EXE installers, including deployment link installers, will now be signed with Amidaware's own code signing certificate, issued by Amidaware's Code Signing Root CA. This change has been prompted by industry-wide modifications to code signing practices, which now necessitate the use of hardware tokens or HSMs (Hardware Security Modules). These requirements make it unfeasible for us to continue using our Digicert code signing certificate for signing these dynamically generated installers.
+
+While we have already transitioned to using Digicert's HSM to store our private key, this approach now incurs a cost for **each** executable signed. Given the volume of dynamic EXEs we currently generate and sign for all our customers, currently around 250,000 per month as of May 2024, this would result in costs around **$62,000.00 USD** per month—an unsustainable increase from the previously **nonexistent** cost.
+
+Please note that the Inno Setup installer (`tacticalagent-vX.X.X-windows-arch.exe`), utilized by both the [Powershell](./install_agent.md#powershell) and [Manual](./install_agent.md#manual) installation methods, as well as the agent update method, will continue to be signed with our Digicert OV code signing certificate. The `tacticalrmm.exe` agent binary will also continue being signed with our Digicert OV cert.
+
+As a reminder, the dynamic EXE installer is a generally one-time use **standalone program** that simply serves as a convenience wrapper around the Manual installation method. It automates the process by downloading the Inno Setup installer and executing it with the necessary command-line arguments—mirroring the functionality provided by the Powershell installer but delivered in an EXE format.
+
+#### Optional Root CA Installation for Dynamic EXE:
+
+For those using the dynamic EXE installation method, installing Amidaware's Code Signing Root CA on your system before you attempt installation can help ensure a smoother installation process. This step is entirely optional and is not needed for existing agents of if you use any of the other installation methods. To install the Root CA, you can run the following PowerShell command (as admin):
+
+```powershell
+Invoke-WebRequest -Uri "https://amidaware.com/amidaware-root.crt" -OutFile "amida-root.crt"; Import-Certificate -FilePath "amida-root.crt" -CertStoreLocation Cert:\LocalMachine\Root
+```
+
+

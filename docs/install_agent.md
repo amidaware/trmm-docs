@@ -15,26 +15,43 @@
     ```
     See [here for other screenshot examples](av.md).
 
-## Dynamically Generated Executable
+## UI
 
-The generated exe is simply a wrapper around the Manual install method, using a single exe / command without the need to pass any command line flags to the installer.
-All it does is download the generic installer from the agent's github [release page](https://github.com/amidaware/rmmagent/releases) and call it using predefined command line args that you choose from the web UI.
-It "bakes" the command line args into the executable.
+Click **Agents > Install Agent**.
 
-From the UI, click **Agents > Install Agent**.
+![agentinstall](./images/agent_installagent.png)
 
 You can also **right click on a site > Install Agent**. This will automatically fill in the client / site dropdown for you.
 
 ![siteagentinstall](images/siteagentinstall.png)
 
-## PowerShell
 
-The PowerShell method is very similar to the generated exe in that it simply downloads the installer from GitHub and calls the exe for you.
 
 ## Manual
 
-The manual installation method requires you to first download the generic installer and call it using command line args.
+![manualinstall](./images/manual_install.png)
+
+The 'Manual' installation method requires you to first download the Inno Setup installer and call it using command line args.
+
 This is useful for scripting the installation using Group Policy or some other batch deployment method.
+
+This or the Powershell method are also the preferred method of installing if you don't want [this](./faq.md#help-ive-been-hacked-and-there-are-weird-agents-appearing-in-my-tactical-rmm) to happen.
+
+## Dynamically Generated Executable
+
+The dynamically generated exe is a standalone binary which is simply a wrapper around the Manual install method, using a single exe / command without the need to pass any command line flags to the installer.
+All it does is download the Inno Setup installer and call it using predefined command line args that you choose from the web UI.
+It "bakes" the command line args into the executable. 
+Please note that using this method can result in [this](./faq.md#help-ive-been-hacked-and-there-are-weird-agents-appearing-in-my-tactical-rmm).
+
+![dynamicinstall](./images/dynamic_exe.png)
+
+## PowerShell
+
+The PowerShell method is also a wrapper around the Manual install method and functionally identical to the dynamically generated EXE installer but in powershell format instead of EXE format.
+
+![powershellinstall](./images/powershell_install.png)
+
 
 !!!tip
     You can reuse the installer for any of the deployment methods, you don't need to constantly create a new installer for each new agent.<br/>
@@ -42,9 +59,8 @@ This is useful for scripting the installation using Group Policy or some other b
 
 ## Using a Deployment Link
 
-Creating a deployment link is the recommended way to deploy agents.
 The main benefit of this method is that the executable is generated only whenever the deployment download link is accessed, whereas with the other methods it's generated right away and the agent's version is hardcoded into the exe.
-Using a deployment link will allow you to not worry about installing using an older version of an agent, which will fail to install if you have updated your RMM to a version that is not compatible with an older installer you might have lying around.
+Using a deployment link will allow you to not worry about installing using an older version of an agent, which will fail to install if you have updated your RMM to a version that is not compatible with an older installer you might have lying around. The deployment link method uses the dynamic EXE method behind the scenes.
 
 To create a deployment, from the web UI click **Agents > Manage Deployments**.
 ![managedeployments](images/managedeployments.png)
