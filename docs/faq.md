@@ -162,7 +162,7 @@ to reset Mesh password for user.
 
 No, you haven't.
 
-1. You used the [Dynamic EXE/Deployment EXE](./install_agent.md#dynamically-generated-executable) installation installation method, and the installer was scanned by an antivirus.
+1. You used the [Dynamic EXE/Deployment EXE](./install_agent.md#dynamically-generated-executable) installation method, and the installer was scanned by an antivirus.
 
 2. It didn't recognize the exe.
 
