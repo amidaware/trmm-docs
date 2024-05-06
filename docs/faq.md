@@ -162,7 +162,7 @@ to reset Mesh password for user.
 
 No, you haven't.
 
-1. Your installer was scanned by an antivirus.
+1. You used the [Dynamic EXE/Deployment EXE](./install_agent.md#dynamically-generated-executable) installation installation method, and the installer was scanned by an antivirus.
 
 2. It didn't recognize the exe.
 
@@ -172,9 +172,9 @@ No, you haven't.
 
 4. They ran it against their virtualization testing cluster.
 
-5. You allow anyone to connect to your rmm server (you should look into techniques to hide your server from the internet).
+**To prevent this from happening**: either turn off file uploads in your AV settings, or use the [Powershell](./install_agent.md#powershell) or [Manual](./install_agent.md#manual) install methods.
 
-6. Here are some examples of what that looks like.
+Here are some examples of what that looks like.
 
 ![AV Sandbox1](images/faq_av_sandbox1.png)
 
