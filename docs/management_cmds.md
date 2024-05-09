@@ -56,6 +56,13 @@ python manage.py reset_password <username>
 python manage.py reset_2fa <username>
 ```
 
+### Delete a User
+```python
+python manage.py shell
+from accounts.models import User
+User.objects.get(username="changeme").delete()
+```
+
 ### Find All Agents That Have X Software Installed
 
 ```bash
@@ -70,7 +77,8 @@ python manage.py find_services "quickbooks"
 
 ### Set a Specific Windows Update to not Install
 
-```bash
+```python
+python manage.py shell
 from winupdate.models import WinUpdate
 WinUpdate.objects.filter(kb="KB5007186").update(action="ignore", date_installed=None)
 ```
@@ -89,7 +97,7 @@ python manage.py delete_tokens
 
 ### Reset All Auth Tokens for Install Agents and Web Sessions
 
-```bash
+```python
 python manage.py shell
 from knox.models import AuthToken
 AuthToken.objects.all().delete()
