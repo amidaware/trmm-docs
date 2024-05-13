@@ -25,7 +25,7 @@ A fresh Linux VM running either Debian 11, Debian 12 or Ubuntu 22.04 LTS with at
     The installation script configures a production-grade reverse proxy using Nginx, which manages TLS termination and appropriately routes all requests to the correct backends. Consequently, there's no need for an additional proxy in front of your instance, as it will lead to complications. If you opt to use another reverse proxy (e.g., NPM, HAproxy) in conjunction with the existing Nginx reverse proxy (which is essential for TRMM to function correctly) you must address potential challenges arising from double proxying, and you should NOT expect your install to function properly out of the box. Be advised, configurations involving a secondary reverse proxy will be considered "unsupported." This designation is not to deter modifications but stems from the development team's capacity constraints. Their primary focus remains on enhancing the core software, and they cannot support an endless variety of setups. Check [unsupported proxies](unsupported_proxies.md) and [unsupported guidelines](unsupported_guidelines.md) for more info.
 
 !!!note
-    The install script has been tested on the following public cloud providers: Oracle Cloud Free Tier (arm64), DigitalOcean, Linode, Vultr, Hetzner (highly recommended), AWS, Google Cloud and Azure, as well as behind NAT on Hyper-V, ESXi and Proxmox (CT's on Proxmox are [unsupported](unsupported_guidelines.md), only use VMs).
+    The install script has been tested on the following public cloud providers: Oracle Cloud Free Tier (arm64), DigitalOcean, Linode, Vultr, [Hetzner](https://hetzner.cloud/?ref=wbGs8UQqHVdk) (highly recommended), AWS, Google Cloud and Azure, as well as behind NAT on Hyper-V, ESXi and Proxmox (CT's on Proxmox are [unsupported](unsupported_guidelines.md), only use VMs).
 
 !!!note
     CPU: 1 core is fine for < 200 agents with limited checks/tasks.<br><br>
@@ -50,7 +50,7 @@ A fresh Linux VM running either Debian 11, Debian 12 or Ubuntu 22.04 LTS with at
 
 ## Option 1: Easy Install on a VPS
 
-Install on a VPS: DigitalOcean, Linode, Vultr, Hetzner (highly recommended), AWS, Google Cloud and Azure to name a few.
+Install on a VPS: DigitalOcean, Linode, Vultr, [Hetzner](https://hetzner.cloud/?ref=wbGs8UQqHVdk) (highly recommended), AWS, Google Cloud and Azure to name a few.
 
 Use something that meets [minimum specs](install_server.md#minimum-requirements)
 
