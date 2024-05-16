@@ -61,6 +61,7 @@ nav:
       - "ConnectWise Control / ScreenConnect": 3rdparty_screenconnect.md
       - "RustDesk": 3rdparty_rustdesk.md
       - "Splashtop": 3rdparty_splashtop.md
+      - "Supremo": 3rdparty_supremo.md
       - "TeamViewer": 3rdparty_teamviewer.md
       - "BitDefender GravityZone": 3rdparty_bitdefender_gravityzone.md
       - "BitDefender Total Security": 3rdparty_bitdefender_total_security.md
