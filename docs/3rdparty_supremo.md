@@ -14,7 +14,7 @@ Add Custom Field:</br>
 **Name** = `SupremoID`</br>
 **Field Type** = `Text`</br>
 
-### Create URL Action
+### Create URL Action ([Ref](https://www.supremocontrol.com/tutorials/how-to-start-a-connection-with-supremo-using-a-link-or-url/))
 
 While in Global Settings go to **URL ACTIONS**.
 
@@ -29,7 +29,7 @@ Supremo:{{agent.SupremoID}}
 
 ### Create Supremo Collector
 
-This populates the Custom field with the Supremo ID.
+[This](https://www.supremocontrol.com/faq-items/how-can-i-obtain-the-id-of-supremo-via-api/) populates the Custom field with the Supremo ID.
 
 Navigate to an agent with Supremo running (or apply using **Settings > Automation Manager**).</br>
 Go to Tasks.</br>
