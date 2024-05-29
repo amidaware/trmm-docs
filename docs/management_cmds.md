@@ -158,6 +158,12 @@ Change overdue time on all agents in client named *Example Client* to 14 minutes
 python manage.py bulk_change_checkin --overdue --client "Example Client" 14
 ```
 
+!!!tip
+    You can cron it on the server to run every 30mins with something like<br>
+    ```bash
+    */30 * * * * /rmm/api/env/bin/python /rmm/api/tacticalrmm/manage.py bulk_change_checkin --overdue --all 10 > /dev/null 2>&1
+    ```
+
 ### Script based functions
 
 [Delete agents by client and site name by API](https://github.com/amidaware/community-scripts/blob/main/scripts_wip/TRMM_Mass_Delete_Agents.ps1)

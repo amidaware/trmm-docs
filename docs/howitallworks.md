@@ -682,6 +682,10 @@ The Tactical RMM server updates an agent's patch list every 8 hours based on the
 !!!note
     Currently if the agent is not online at the time the patch policy is set to install, there is no "install as soon as it comes online".
 
+!!!tip
+    Trying to get reboots to happen at specific times after Windows update? Set your `Reboot After Installation` to: Never<br>
+    Then create a task that reboots at your preferred date/time
+
 ### Log Files
 
 You can find 3 sets of detailed logs at `/rmm/api/tacticalrmm/tacticalrmm/private/log`.
