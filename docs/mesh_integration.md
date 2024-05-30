@@ -35,7 +35,7 @@ When you do a take control / terminal / file browser on an agent using the Tacti
 
 ## Customize Take Control Username
 
-If you've enabled the Mesh "Ask Consent + Bar" display option that shows across the top when controlling a users machine and you'd like to change the name that users see, make sure the user has a First and/or Last name set TRMM (Settings > User Administration).
+If you've enabled any of the [remote control options](./tipsntricks.md#enable-remote-control-options) such as "Notify user", "Prompt for consent" and "Show connection toolbar" and you'd like to change the name that users see, make sure the user has a First and/or Last name set TRMM (Settings > User Administration). If you would also like your company name to show, you can set your company name in TRMM > Settings > Global Settings > MeshCentral.
 
 ## Turn off the sync feature
 
