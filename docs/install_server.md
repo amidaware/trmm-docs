@@ -42,12 +42,6 @@ A fresh Linux VM running either Debian 11, Debian 12 or Ubuntu 22.04 LTS with at
     1. Per [RFC 1304](https://datatracker.ietf.org/doc/html/rfc1034) special chars in domain names are not allowed (like _ ). Only a-z 0-9 and the hyphen (-)
     2. Avoid sub-sub domains greater than 4. (Best: rmm.example.com Good: rmm.corp.example.com Bad: rmm.corp.xyz.example.com) Country TLDs like `co.uk` count as one layer.
 
-#### Update Recommendations
-
-!!!note
-    We highly recommend staying current with updates (do not lag behind more than 1 major version) while Tactical RMM is still working towards its 1.0 release.<br/><br/>
-    Until we reach production release, there may be architectural changes that may be made to Tactical RMM and only a regular patching schedule is supported by developers.
-
 ## Option 1: Easy Install on a VPS
 
 Install on a VPS: DigitalOcean, Linode, Vultr, [Hetzner](https://hetzner.cloud/?ref=wbGs8UQqHVdk) (highly recommended), AWS, Google Cloud and Azure to name a few.
@@ -274,7 +268,6 @@ We've said it before, we'll say it again.
 
         - Do it when you update your SSL certs.
 
-Especially don't get behind 2 major rev's. Lots of agent connectivity changes occurring. If you don't keep up, you'll be needing to do manual updates by adjusting the `updates.sh` and specifying older branches...then doing update, wait for all agents to get updated...then do the next major branch, then wait for agent updates...until you're current. Can we say **#Painful**.
 
 ## Install Video Walkthrus
 
