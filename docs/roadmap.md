@@ -10,34 +10,39 @@ With your continuing [sponsorship](sponsor.md#sponsor-with-stripe-or-paypal) we'
         "title": "Estimated Release Dates",
         "activities": [
             {
-                "title": "[Alerts to Webhooks](https://github.com/amidaware/tacticalrmm/issues/1222)",
+                "title": "[Mesh Integration Rework](https://github.com/amidaware/tacticalrmm/issues/182)",
                 "start": "2024-01-01",
+                "lasts": "3 months"
+            },
+            {
+                "title": "[Alerts to Webhooks](https://github.com/amidaware/tacticalrmm/issues/1222)",
+                "start": "2024-02-01",
                 "lasts": "5 months"
             },
             {
                 "title": "[Server side](https://github.com/amidaware/tacticalrmm/issues/1316) Scripts",
-                "start": "2024-01-1",
+                "start": "2024-02-1",
                 "lasts": "5 months"
             },
             {
                 "title": "[SSO](https://github.com/amidaware/tacticalrmm/issues/508) integration",
-                "start": "2024-04-01",
+                "start": "2024-06-01",
                 "lasts": "2 months"
             },
             {
                 "title": "[Linux/Mac](https://github.com/amidaware/tacticalrmm/discussions/1692) Tasks",
-                "start": "2024-04-01",
-                "lasts": "2 months"
+                "start": "2024-05-01",
+                "lasts": "3 months"
             },
             {
                 "title": "[Windows Update](https://github.com/amidaware/tacticalrmm/issues/1188) Rework",
-                "start": "2024-06-01",
+                "start": "2024-08-01",
                 "lasts": "3 months"
             },
             {
                 "title": "[White](https://github.com/amidaware/tacticalrmm/issues/463) labeling",
-                "start": "2024-06-01",
-                "lasts": "2 months"
+                "start": "2024-08-01",
+                "lasts": "3 months"
             }
         ]
     }
