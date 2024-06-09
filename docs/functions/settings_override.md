@@ -20,22 +20,9 @@ Change `(days=30)` to whatever you prefer. Then run `sudo systemctl restart rmm.
 
 ### Using your own wildcard SSL cert
 
-Modify the install script and replace `CERT_PUB_KEY` and `CERT_PRIV_KEY` with the full paths to your wildcard cert. If you don't have a wildcard cert, you can instead use a cert for `api.example.com` with 2 SANs for `mesh.example.com` and `rmm.example.com`
+This is only supported during initial install, not after you've already installed.
 
-Make sure the files are readable by the `tactical` user.
-
-Comment out all the stuff related to certbot in the install script.
-
-After installation is complete, add the following 2 lines to `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py` replacing them with the full path to your certs.
-
-```python
-CERT_FILE = "/path/to/your/fullchain.pem"
-KEY_FILE = "/path/to/your/privkey.pem"
-```
-
-Then run `/rmm/api/env/bin/python /rmm/api/tacticalrmm/manage.py reload_nats` and restart your server.
-
-If you want to do this after install please follow [this guide](https://docs.tacticalrmm.com/unsupported_scripts/#using-purchased-ssl-certs-instead-of-lets-encrypt-wildcards).
+Follow the instructions in the [install guide](../install_server.md#step-5-run-the-install-script) for the `--use-own-cert` install flag.
 
 ### Use NATS Standard instead of NATS websocket
 
