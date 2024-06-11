@@ -1,8 +1,8 @@
 # Roadmap
 
-Roadmap items are like ships sailing towards a distant horizon, with deadlines as their North Star. Sometimes, despite careful planning and navigation, unforeseen storms of complexity or resource constraints can steer them off course, teaching us that in the journey of progress, the only constant is change.
+These are **_estimated_** dates of big features in the works.
 
-With your continuing [sponsorship](sponsor.md#sponsor-with-stripe-or-paypal) we'll get there in the end.
+Thanks go to all you [sponsors](sponsor.md#sponsor-with-stripe-or-paypal) it's your support that lets us continue to improve TRMM.
 
 ::gantt::
 [
