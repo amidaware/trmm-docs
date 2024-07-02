@@ -10,7 +10,7 @@ Webhooks in Tactical RMM can notify you of certain events in your RMM, like aler
 4. Make sure your server endpoint is correctly configured to parse and use the data Tactical RMM sends. Depending on what you need, you might also want to implement security measures such as validating incoming requests to ensure they are from Tactical RMM.
 5. Specify Events: Select the events that should trigger the webhook via Alerts Manager (Settings -> Alerts Manager). Tactical RMM will send data to your endpoint based on these events.
 
-### Here’s a detailed setup to help you configure webhooks for use with Tactical RMM:
+### Below is how you can configure webhooks for use with Tactical RMM:
 
 1. URL Pattern
 For webhooks, you need a URL where the Tactical RMM can send HTTP requests when an event occurs. This URL should be a server endpoint configured to accept HTTP requests. Here's an example of what it might look like:
@@ -18,7 +18,7 @@ For webhooks, you need a URL where the Tactical RMM can send HTTP requests when 
 ```
 https://yourserver.com/webhook_endpoint
 ```
-Replace yourserver.com with your actual server domain and webhook_endpoint with the actual path where you will handle the webhooks.
+Replace yourserver.com with your actual server domain and API Endpoint with the actual path where you will handle the webhooks.
 
 2. HTTP Methods
 Tactical RMM can configure webhooks to send requests using different HTTP methods based on the event or the integration’s requirements. Here are the methods you mentioned:
@@ -31,7 +31,7 @@ PATCH: Partially updates a resource.
 3. Request Headers
 Request headers allow the server to learn more about the request context. Here are some common headers used in webhook configurations:
 
-Content-Type: Describes the nature of the data being sent. For JSON data, you use application/json.
+Content-Type: Is the type of data being sent. For JSON data, you use application/json.
 Authorization: If your endpoint requires authentication, you might use a token or other credentials in this header.
 User-Agent: Identifies the application making the request.
 Example:
@@ -43,7 +43,7 @@ Example:
 }
 ```
 4. Request Body
-The request body contains data sent by Tactical RMM to your webhook URL. This data usually includes details about the event that triggered the webhook. The structure of the body will depend on the specifics of what you want to track, but here’s a basic JSON example for a device alert:
+The request body contains data sent by Tactical RMM to your API URL. This data usually includes details about the event that triggered the webhook. The structure of the body will depend on the specifics of what you want to track, but here’s a basic JSON example for a device alert:
 
 ```json
 {
@@ -58,10 +58,10 @@ Reference Sites are: <br>
 [Teams](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook?tabs=newteams%2Cdotnet)<br>
 
 
-When setting up webhooks for popular messaging platforms like Slack, Microsoft Teams, or Discord, each platform has its own specific requirements and formats for how the webhook data should be structured. Below, I’ll give you a detailed guide on how to format webhooks for each of these platforms, ensuring you can effectively integrate and send notifications or data to these systems.
+When setting up webhooks for common messaging systems like Slack, Microsoft Teams, or Discord, each platform will have its own specific requirements and formats for how the webhook data should be structured. Below, is a detailed guide on how to format webhooks for each of these platforms, ensuring you can effectively integrate and send notifications or data to these systems.
 
 Slack Webhooks
-Slack uses Incoming Webhooks to receive custom messages from external sources. To send data to Slack, you typically format the webhook like this:
+Slack uses Incoming Webhooks to receive custom messages from external sources. To send data to Slack, you can typically format the webhook like this:
 
 URL: You will get a unique URL when you set up an incoming webhook in Slack.
 
@@ -166,5 +166,5 @@ General Tips for Setting Up Webhooks <br>
  - Testing: Before fully integrating a new webhook into your operational setup, thoroughly test it to ensure it behaves as expected. This includes testing how it handles different types of data and responding to errors.
  - Rate Limits: Be aware of any rate limits imposed by the platform (especially Discord and Slack) to avoid disruptions in service.
 
-By configuring each webhook according to the platform-specific guidelines and tips provided, you can enhance communication and automation in your workflows effectively.
+By configuring each webhook according guidelines and tips provided, you can enhance communication and automation effectively.
 
