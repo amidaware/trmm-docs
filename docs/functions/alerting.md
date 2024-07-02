@@ -9,25 +9,27 @@ Using Alert Templates also enables additional features like:
 - Sending notifications when an alert is resolved.
 - Executing scripts when an alert is triggered or resolved.
 
-[Setting up Email Alert Examples](email_alert.md)
+[Setting up Email Alert Examples](emailsms_alert.md)
+
 ## Supported Notifications
 
 - **Email Alerts** - Sends email to configured set of email addresses.
 - **SMS Alerts** - Sends text messages to configured set of numbers.
 - **Dashboard Alerts** - A notification popup will show up and be visible in the dashboard.
+- **Webhooks** - Web based data that can be processed further using another system
 
 ## Alert Severities
 
 !!!info
-    Agent overdue alerts are always of severity Error.
+    Agent overdue alerts are always of severity: `Error`
 
-Alert severities are configured directly on the Check or Automated Task. When the Check / Automated Task fails, it will create an alert of the specified severity. The severity types are:
+Alert severities are configured directly on the Check or Automated Task. When the Check or Automated Task fails, it will create an alert of the specified severity. The severity types are:
 
 - Informational
 - Warning
 - Error
 
-## Adding Alert Templates
+## Creating Alert Templates
 
 To create an alert template, go to **Settings > Alerts Manager**, then click **New**.
 
@@ -40,22 +42,54 @@ The available options are:
 - **From Email** - Sets the From email address of the notification. If this isn't set the From address from global settings is used.
 - **SMS Recipients** - Sets the list of text recipients. If this isn't set the sms list from global settings is used.
 
-### Action Settings
+### Alert Action Settings
 
-- **Failure Action** - Runs the selected script once on any agent. This is useful for running one-time tasks like sending an http request to an external system to create a ticket.
-- **Failure Action Args** - Optionally pass in arguments to the failure script.
-- **Failure Action Timeout** - Sets the timeout for the script.
-- **Resolved Action** - Runs the selected script once on any agent if the alert is resolved. This is useful for running one-time tasks like sending an http request to an external system to close the ticket that was created.
-- **Resolved Action Args** - Optionally pass in arguments to the resolved script.
-- **Resolved Action Timeout** - Sets the timeout for the script.
+For optionally triggering an additional task (Web Hook, Run Script on Agent, Run script on TRMM Server) when desired (can be left blank for no action).
 
-#### Run Actions Only On:
+#### Alert Failure Settings
+
+=== ":material-webhook: Send a Web Hook"
+
+    Webhooks in Tactical RMM can notify you of certain events in your RMM, like alerts or device status changes, by sending messages to a URL you specify. These messages can be made up with [variables](https://docs.tacticalrmm.com/script_variables/).
+
+    Create your [Web Hooks in Settings](global_settings.md#web-hooks)
+
+    Choose the Web Hook you wish to run
+
+=== ":material-script: Run script on Agent"
+
+    - **Failure Script** - Runs the selected script once. It attempts to run it on the agent in question, but if not online TRMM selects a random agent to run on.
+    - **Failure Script arguments** - Optionally pass in arguments to the failure script.
+    - **Failure Script environment vars** - Optionally pass in env vars to the failure script.
+    - **Failure Action Timeout** - Sets the timeout for the script.
+
+=== ":material-script: Run script on Server"
+
+    !!!warning
+        This is a [dangerous feature](../security.md#tactical-rmm-security-considerations) and you must ensure permissions are appropriate for your environment.
+
+    This runs the script on the server, it is up to you to make sure the script you're trying to run has a compatible interpreter on the server. By default that is: bash, and python.
+
+    - **Failure Script** - Runs the selected script once. It attempts to run it on the agent in question, but if not online TRMM selects a random agent to run on.
+    - **Failure Script arguments** - Optionally pass in arguments to the failure script.
+    - **Failure Script environment vars** - Optionally pass in env vars to the failure script.
+    - **Failure Action Timeout** - Sets the timeout for the script.
+
+#### Alert Resolved Settings
+
+TODO: Duplicate from previous section once polished
+
+#### Run actions only on
+
+Turn the switch on if you want the above Alert Failure/Alert Resolved script to run on:
+
 - **Agents** - If Enabled, will run script failure / resolved actions on agent overdue alerts, else no alert actions will be triggered for agent overdue alerts.
 - **Checks** - If Enabled, will run script failure / resolved actions on check alerts, else no alert actions will be triggered check alerts.
 - **Tasks** - If Enabled, will run script failure / resolved actions on automated task alerts, else no alert actions will be triggered automated task alerts.
 
+### Agent Overdue Setting
 
-### Agent / Check / Task Failure Settings
+![Agent Overdue](images/alerts_agentoverdue.png)
 
 - **Email** - When **Enabled**, will send an email notification and override the Email Alert checkbox on the Agent / Check / Task. When **Not Configured**, the Email Alert checkbox on the Agent / Check / Task will take effect. If **Disabled**, no email notifications will be sent and will override any Email alert checkbox on the Agent / Check / Task.
 - **Text** - When **Enabled**, will send a text notification and override the SMS Alert checkbox on the Agent / Check / Task. When **Not Configured**, the SMS Alert checkbox on the Agent / Check / Task will take effect. If **Disabled**, no SMS notifications will be sent and will override any SMS Alert checkbox on the Agent / Check / Task.
@@ -66,22 +100,31 @@ The available options are:
     !!!info
         Alert on Severity needs to be configured for check and task notifications to be sent!
 
-### Agent / Check / Task Resolved Settings
+### Check Settings / Automated Task Settings
+
+![alt text](images/alerts_checks.png)
+
+![alt text](images/alerts_tasks.png)
 
 - **Email** - If enabled, sends an email notification when an alert is resolved.
 - **Text** - If enabled, sends a text messaged when an alert is resolved.
 
 ## Applying Alert Templates
 
-Alert templates can be configured Globally, through an Automation Policy, or set directly on the Client or Site.
+Alert templates can be configured:
+
+- Globally at the [Server Level](global_settings.md#general)
+- By [Automation Policy](automation_policies.md)
+- Manually at the Client Level
+- Manually at the Site Level
 
 - To apply **Globally**, navigate to **Settings > Global Settings**. Set the **Alert Template** dropdown and save.
 - You can configure an alert template on an automation policy by navigating to **Settings > Automation Manager**, and clicking the **Assign Alert Template** click on the policy, or right-clicking the policy and selecting **Assign Alert Template**.
-- To configure on a Client or Site, right-click on one in the Client / Site tree view and select **Assign Alert Template**.
+- To configure on a Client or Site right-click on one in the Client / Site tree view and select **Assign Alert Template**.
 
 ## Alert Template Exclusions
 
-You can exclude Clients, Sites, and Agents from alert templates. To do this you can:
+You can exclude Clients, Sites, and Agents from Alert Templates. To do this you can:
 
 - Right-click on the **Alert Template** in **Alerts Manager** and select **Exclusions**.
 - Select the **Alert Exclusions** link in the Alert Template row.
@@ -121,4 +164,3 @@ If scripting for alert severities please see below,
 
 2. Setup a script check and fill in the corresponding Warning and Informational codes (don't forget to hit enter). 
 3. Save script check and you should now have the different Severities.
-
