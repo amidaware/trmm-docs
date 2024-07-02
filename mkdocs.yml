@@ -25,7 +25,7 @@ nav:
       - "Custom Fields": functions/custom_fields.md
       - "Database Maintenance": functions/database_maintenance.md
       - "Django Admin": functions/django_admin.md
-      - "Email Alerts": functions/email_alert.md
+      - "Email & SMS Alerts": functions/emailsms_alert.md
       - "Global Keystore": functions/keystore.md
       - "Maintenance Mode": functions/maintenance_mode.md
       - "Permissions": functions/permissions.md
