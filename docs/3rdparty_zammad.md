@@ -1,7 +1,6 @@
 ### Zammad Setup
 
-1. **Install Zammad:**
-   Follow the installation instructions provided in the [Zammad documentation](https://docs.zammad.org/en/latest/).
+1. Follow the installation instructions provided in the [Zammad documentation](https://docs.zammad.org/en/latest/).
 
 2. **Generate API Token:**
    - Click on your User Initials in Zammad.
@@ -23,7 +22,7 @@
 
 2. **Add Webhook:**
 
-   - **URL Pattern:** `https://your_zammad_domain/api/v1/tickets`
+   - **URL Pattern:** `https://zammad.yourdomain.com/api/v1/tickets`
    - **Method:** POST
 
 3. **Request Headers:**
