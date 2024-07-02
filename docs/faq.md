@@ -261,6 +261,25 @@ You can help yourself by running [this](troubleshooting.md#server-troubleshootin
 
 If you would like us to do it for you please [contact support](support.md#commercial-support).
 
+## Should I use a Check or a Task?
+
+Checks
+
+- Run every 2-1440 mins (1 day max)
+- Results are naturally graphed, and not logged to the agents "History" tab
+
+Tasks
+
+- Is run using the Windows Task Scheduler on the agent.
+- Although multiple times/day can be scheduled it's complicated and will clutter up your "History" tab.
+- Best for periodic script runs that run daily/weekly/monthly/onboarding/once
+
 ## Is Tactical RMM vulnerable to Log4j
 
 No.
+
+## Terminology
+
+Code Signing: A windows .exe cryptographic signing process that can't be forged. The only want to reliably whitelist your TRMM agent is to have a Code signed agent that you can give the signers public key to your security software to whitelist.
+
+Mac/Linux Pre-Compiled binaries: Are provided by Amidaware so you can install agents on Mac and Linux. This requires [sponsorship](sponsor.md). If you want to test Mac/Linux agents please contact [support](ttps://support.amidaware.com) and open a ticket to request a 7 day hosted trial.

@@ -148,7 +148,7 @@ If you're interested in converting your software to Chocolatey managed you will 
 Once you've made your script, that will take existing software and convert it to Chocolatey managed (see what Chocolatey manages on an agent with).
 
 ```batch
-choco list --local-only
+choco list
 ```
 
 Next, you're going to schedule your updates.

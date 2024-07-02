@@ -1,8 +1,10 @@
-# Email Setup
+# Email and SMS Setup
+
+## Email Setup
 
 Under **Settings > Global Settings > Email Alerts**
 
-## Setting up Tactical RMM Alerts using Open Relay
+### Setting up Tactical RMM Alerts using Open Relay
 
 MS 365 in this example
 
@@ -19,7 +21,7 @@ MS 365 in this example
 11. Go to Exchange Admin Centre
 12. Go to “Connectors” under “Mail Flow”
 13. Click to + button
-14. In From: select “Your organisations email server”
+14. In From: select “Your organizations email server”
 15. In To: select “Office 365”
 16. Click Next
 17. In the Name type in RMM
@@ -29,7 +31,7 @@ MS 365 in this example
 21. Click Next
 22. Click OK
 
-## Setting up Tactical RMM Alerts using username & password
+### Setting up Tactical RMM Alerts using username & password
 
 Gmail in this example
 
@@ -44,3 +46,13 @@ Gmail in this example
 9. Enter your password
 10. Change the port to 587
 11. Click Save
+
+## SMS Alerts
+
+Under **Settings > Global Settings > SMS Alerts**
+
+Currently Twilio is the only support SMS service
+
+Setup an Auth Token, and copy the data to the relevant fields
+
+![twilio](images/trmm_twilio_setup2.png)
