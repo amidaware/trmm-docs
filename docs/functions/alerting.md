@@ -68,7 +68,18 @@ For optionally triggering an additional task (Web Hook, Run Script on Agent, Run
     !!!warning
         This is a [dangerous feature](../security.md#tactical-rmm-security-considerations) and you must ensure permissions are appropriate for your environment.
 
-    This runs the script on the server, it is up to you to make sure the script you're trying to run has a compatible interpreter on the server. By default that is: bash, and python.
+    This runs the script on the server, it is up to you to make sure the script you're trying to run has a compatible interpreter on the server. You must also have the appropriate Shebang in all server scripts:
+
+    Python
+
+    ```
+    #!/rmm/api/env/bin/python
+    ```
+
+    Bash
+    ```
+    #!/bin/bash
+    ```
 
     - **Failure Script** - Runs the selected script once. It attempts to run it on the agent in question, but if not online TRMM selects a random agent to run on.
     - **Failure Script arguments** - Optionally pass in arguments to the failure script.
