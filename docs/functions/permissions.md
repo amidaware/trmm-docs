@@ -4,6 +4,9 @@
 
 ### Core
 
+!!!warning
+    **DO NOT** use the Web Terminal for updating Tactical versions or certs
+
 * Use TRMM Server Web Terminal
 * Run Scripts on TRMM Server
 
@@ -19,6 +22,8 @@ These can be disabled in the web UI, and can also be globally disabled by adding
 TRMM_DISABLE_SERVER_SCRIPTS
 TRMM_DISABLE_WEB_TERMINAL
 ```
+
+![alt text](images/trmm_permissions_scriptnterminal.png)
 
 ## Permission Manager
 
