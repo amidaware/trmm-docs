@@ -18,12 +18,12 @@ nav:
       - "Updating Agents": update_agents.md
   - Functionality:
       - "How it all Works": howitallworks.md
+      - "Global Settings": functions/global_settings.md
       - "Alerting": functions/alerting.md
       - "API Access": functions/api.md
       - "Automated Tasks": functions/automated_tasks.md
       - "Automation Policies": functions/automation_policies.md
       - "Custom Fields": functions/custom_fields.md
-      - "Database Maintenance": functions/database_maintenance.md
       - "Django Admin": functions/django_admin.md
       - "Email & SMS Alerts": functions/emailsms_alert.md
       - "Global Keystore": functions/keystore.md
