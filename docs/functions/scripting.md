@@ -18,42 +18,6 @@ Linux/Mac languages supported:
 - nu
 - deno (Javascript and TypeScript)
 
-## Writing Your Own Scripts
-
-Guidelines for Writing Non-Interactive Scripts for Tactical RMM
-Tactical RMM can play a crucial role in managing IT infrastructure efficiently. Scripts used should ideally be non-interactive to ensure they can run without manual intervention, streamlining operations and automating routine tasks. Here are some guidelines for writing effective non-interactive scripts for use with Tactical RMM:
-
-1. Design for Automation
-- Non-Interactive Execution: Scripts should execute without requiring user input. Use default values and configuration files to control behaviour instead of interactive prompts.
-- Idempotency: Ensure scripts can be run multiple times without causing issues, producing the same results without unintended side effects.
-2. Error Handling and Logging
-- Comprehensive Error Handling: Anticipate potential errors and handle them gracefully within the script. Avoid crashes or uncontrolled exits.
-- Logging: Implement detailed logging mechanisms. Logs should capture key events, errors, and status messages to aid in troubleshooting and auditing.
-3. Use Clear, Understandable Code
-- Code Readability: Write code that is easy to understand and maintain. Use comments judiciously to explain the purpose of functions and complex logic.
-- Modular Design: Break down scripts into functions or modules based on functionality. This enhances readability and reuse.
-4. Security Best Practices
-- Secure Coding: Avoid common security pitfalls, such as hard-coding sensitive information. Use secure methods to handle credentials and other confidential data.
-- Minimize Privileges: Run scripts with the least privilege necessary to accomplish the task. 
-5. Testing and Validation
-- Comprehensive Testing: Test scripts in a controlled environment before deploying them through the Tactical RMM. Consider edge cases and test under different conditions to ensure reliability. Generally test first locally on a test machine, then use Remote Background before adding to script manager.
-- Validation: Validate outputs and effects of the script to ensure they align with expectations. Use checks within the script to confirm actions were successful.
-6. Documentation
-- Internal Documentation: Include header comments in each script detailing its purpose, author, date, and any prerequisites or dependencies.
-7. Environment Compatibility
-- Cross-Platform Considerations: If scripts are expected to run in diverse environments, account for differences in operating systems, shell versions, and available utilities.
-- Dependencies: Clearly document any external dependencies. Prefer built-in tools and commands to minimize dependency issues.
-8. Feedback and Reporting
-- Status Reporting: Ensure scripts report their completion status back to the Tactical RMM, allowing for automated monitoring and alerting on failures or critical events.
-- Feedback Loops: Incorporate feedback from script execution into continuous improvement processes. Refine scripts based on operational experience and evolving requirements.
-9. Version Control
-- Change Management: Use version control systems (e.g., Git) to manage script versions. Track changes and maintain a history of modifications for audit and rollback purposes.
-10. Compliance and Standards
-- Follow Standards: Adhere to coding standards and best practices for the scripting languages being used.
-- Compliance: Ensure scripts comply with organizational policies and regulatory requirements, especially those handling data privacy and security.
-
-By following these guidelines, you can create robust, secure, and efficient non-interactive scripts that leverage the full capabilities of Tactical RMM to automate and streamline IT management tasks.
-
 ## Adding Scripts
 
 In the dashboard, browse to **Settings > Scripts Manager**. Click the **New** button and select either Upload Script or New Script. The available options for scripts are:
@@ -211,12 +175,43 @@ Command: `Start-Process nohup 'pwsh -noprofile -c "1..120 | % { Write-Host . -No
 
 ## Python
 
-Tactical installs Python 3.8 on Windows and uses the default Python on other OS's. It is suggested to write code
-[targeting][] Python 3.8 to prevent incompatibilities across platforms.
+### Python on windows
+Tactical ships with a portable python distribution on windows.
 
+| OS | Version |
+| --- | --- |
+| Windows >= 8.1 | 3.11.9 |
+| Windows < 8.1 | 3.8.7 |
+
+The following 3rd party packages are also bundled with this distribution:
+
+- [cryptography][]
+- [httpx][]
+- [msgpack][]
+- [psutil][]
+- [pysnmplib][]
+- [pywin32][]
+- [pywin32-ctypes][]
+- [requests][]
+- [websockets][]
+- [WMI][]
+- [validators][]
+
+[cryptography]: https://github.com/pyca/cryptography
+[httpx]: https://github.com/encode/httpx
+[msgpack]: https://github.com/msgpack/msgpack-python
+[psutil]: https://github.com/giampaolo/psutil
+[pysnmplib]: https://github.com/pysnmp/pysnmp
+[pywin32]: https://github.com/mhammond/pywin32
+[pywin32-ctypes]: https://github.com/enthought/pywin32-ctypes
+[requests]: https://github.com/psf/requests
+[websockets]: https://github.com/python-websockets/websockets
+[WMI]: https://timgolden.me.uk/python/wmi/index.html
+[validators]: https://github.com/python-validators/validators
+
+### Python on posix
 How do you target a specific version? The [shebang][] can specify the interpreter on macOS and Linux, but since Windows
-does not use the shebang, the interpreter needs to be specified by the calling program. This is probably why Python
-is installed by TRMM on Windows because it knows where the Python executable is.
+does not use the shebang, the interpreter needs to be specified by the calling program.
 
 Ok, so how do you use the shebang? Take this hello world script for example. The shebang `#!` in this script will
 use `/usr/bin/python3`. This is easy enough until you run across a system where the system Python is not the expected
@@ -276,7 +271,7 @@ are treated the same.
 
 | OS                                      | Python version               | Installed by TRMM |
 | --------------------------------------- | ---------------------------- | ----------------- |
-| Windows                                 | 3.8                          | Yes               |
+| Windows                                 | 3.11                         | Yes               |
 | Linux, Debian 10 (Buster) (end of life) | 3.7                          | No                |
 | Linux, Debian 11 (Bullseye)             | 3.9                          | No                |
 | Linux, Debian 12 (Bookworm)             | 3.12                         | No                |
