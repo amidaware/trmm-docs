@@ -16,7 +16,7 @@ Using Alert Templates also enables additional features like:
 - **Email Alerts** - Sends email to configured set of email addresses.
 - **SMS Alerts** - Sends text messages to configured set of numbers.
 - **Dashboard Alerts** - A notification popup will show up and be visible in the dashboard.
-- **Webhooks** - Web based data that can be processed further using another system
+- **Webhooks** - Send an API request.
 
 ## Alert Severities
 
@@ -44,51 +44,119 @@ The available options are:
 
 ### Alert Action Settings
 
-For optionally triggering an additional task (Web Hook, Run Script on Agent, Run script on TRMM Server) when desired (can be left blank for no action).
+For optionally triggering an additional task (Send a Web Hook, Run Script on Agent, Run script on TRMM Server) when desired (can be left blank for no action).
 
-#### Alert Failure Settings
+#### Alert Failure Settings / Alert Resolved Settings
 
-=== ":material-webhook: Send a Web Hook"
+#### Send a Web Hook
 
-    Webhooks in Tactical RMM can notify you of certain events in your RMM, like alerts or device status changes, by sending messages to a URL you specify. These messages can be made up with [variables](https://docs.tacticalrmm.com/script_variables/).
+Webhooks in Tactical RMM can notify you of certain events in your RMM, like alerts or device status changes, by sending API requests to a URL you specify. These messages can be made up with [variables](https://docs.tacticalrmm.com/script_variables/).
 
-    Create your [Web Hooks in Settings](global_settings.md#web-hooks)
+Create your [Web Hooks in Settings](global_settings.md#web-hooks)
 
-    Choose the Web Hook you wish to run
+Choose the Web Hook you wish to run
 
-=== ":material-script: Run script on Agent"
+#### Run script on Agent
 
-    - **Failure Script** - Runs the selected script once. It attempts to run it on the agent in question, but if not online TRMM selects a random agent to run on.
-    - **Failure Script arguments** - Optionally pass in arguments to the failure script.
-    - **Failure Script environment vars** - Optionally pass in env vars to the failure script.
-    - **Failure Action Timeout** - Sets the timeout for the script.
+- **Script** - Runs the selected script once. It attempts to run it on the agent in question, but if not online TRMM selects a random agent to run on.
+- **Script arguments** - Optionally pass in arguments to the failure script.
+- **Script environment vars** - Optionally pass in env vars to the failure script.
+- **Action Timeout** - Sets the timeout for the script.
 
-=== ":material-script: Run script on Server"
+#### Run script on Server
 
-    !!!warning
-        This is a [dangerous feature](../security.md#tactical-rmm-security-considerations) and you must ensure permissions are appropriate for your environment.
+!!!warning
+    This is a [dangerous feature](../functions/permissions.md#permissions-with-extra-security-implications) and you must ensure permissions are appropriate for your environment.
 
-    This runs the script on the server, it is up to you to make sure the script you're trying to run has a compatible interpreter on the server. You must also have the appropriate Shebang in all server scripts:
+This runs the script on your TRMM server. To ensure proper execution, you must specify the interpreter for your script using a shebang line at the top of each script. Also make sure that the specified interpreter is installed on your TRMM server.
 
-    Python
 
-    ```
+
+=== ":material-language-python: Python (included with TRMM)"
+
+    Shell type: `Shell`
+    
+    ```py
     #!/rmm/api/env/bin/python
+
+    import sys
+
+    print(sys.version)
     ```
 
-    Bash
+=== ":material-language-python: Python (system python)"
+
+    Shell type: `Shell`
+    
+    ```py
+    #!/usr/bin/python3
+    import sys
+
+    print(sys.version)
     ```
-    #!/bin/bash
+
+=== ":material-bash: Bash"
+
+    Shell type: `Shell`
+    
+    ```bash
+    #!/usr/bin/env bash
+
+    echo "hello world"
     ```
 
-    - **Failure Script** - Runs the selected script once. It attempts to run it on the agent in question, but if not online TRMM selects a random agent to run on.
-    - **Failure Script arguments** - Optionally pass in arguments to the failure script.
-    - **Failure Script environment vars** - Optionally pass in env vars to the failure script.
-    - **Failure Action Timeout** - Sets the timeout for the script.
+=== ":material-powershell: Powershell (7 PWSH)"
 
-#### Alert Resolved Settings
+    To install: <https://learn.microsoft.com/en-us/powershell/scripting/install/install-debian>
 
-TODO: Duplicate from previous section once polished
+    Shell type: `Powershell`
+    
+    ```powershell
+    #!/usr/bin/pwsh
+
+    Write-Output "Hello World"
+    ```
+
+=== ":material-nodejs: node (included with TRMM)"
+
+    Shell type: `Shell`
+
+    ```
+    #!/usr/bin/node
+
+    console.log("Hello World")
+    ```
+
+=== ":simple-deno: deno (must be installed)"
+
+    Shell type: `Deno`
+
+    ```
+    #!/usr/bin/env -S /usr/local/bin/deno run --allow-allow
+
+    async function gatherSystemInfo() {
+    const os = Deno.build.os;
+    const arch = Deno.build.arch;
+    const memory = Deno.systemMemoryInfo();
+
+
+    const info = `
+    OS: ${os}
+    Architecture: ${arch}
+    Total Memory: ${(await memory).total / 1024 / 1024} MB
+    Free Memory: ${(await memory).free / 1024 / 1024} MB
+    `;
+
+    console.log(info);
+    }
+
+    gatherSystemInfo().catch(console.error);
+    ```
+
+- **Script** - Runs the selected script once on the TRMM server.
+- **Script arguments** - Optionally pass in arguments to the failure script.
+- **Script environment vars** - Optionally pass in env vars to the failure script.
+- **Action Timeout** - Sets the timeout for the script.
 
 #### Run actions only on
 

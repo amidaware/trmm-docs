@@ -15,7 +15,7 @@ Thanks go to all you [sponsors](sponsor.md#sponsor-with-stripe-or-paypal) it's y
                 "lasts": "3 months"
             },
             {
-                "title": "[Alerts to Webhooks](https://github.com/amidaware/tacticalrmm/issues/1222)",
+                "title": "[Alerts to Webhooks TODO REMOVEME](https://github.com/amidaware/tacticalrmm/issues/1222)",
                 "start": "2024-02-01",
                 "lasts": "5 months"
             },

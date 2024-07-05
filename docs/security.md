@@ -5,9 +5,3 @@ If you think that you have found a security vulnerability in Tactical RMM, pleas
 Please do not make vulnerabilities public without notifying us and giving us at least 3 days to respond.
 
 If you are going to write about Tactical RMM's security, please get in touch, so we can make sure that all claims are correct.
-
-## Tactical RMM Security Considerations
-
-Tactical RMM has many powerful features that can be enabled. You must consider carefully your environment and the ramifications if they are enabled.
-
-TODO: Web Console, server side scripts

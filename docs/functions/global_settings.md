@@ -3,7 +3,7 @@
 ## General
 
 - Enable agent automatic self update (Recommended setting: Enabled)
-- Enable server scripts
+- Enable server side scripts
 - Enable web terminal
 - Default Agent timezone
 - Default Date Format
