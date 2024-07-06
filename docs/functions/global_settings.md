@@ -104,8 +104,8 @@ The request body contains data sent by Tactical RMM to your webhook URL. This da
 
     ```json
     {
-        "content": "Hello, world! This is an alert.",
-        "username": "WebhookBot",
+        "content": "Agent hasn't checked in for {{agent.overdue_time}} minutes.",
+        "username": "{{agent.hostname}}",
         "avatar_url": "https://someurl.com/image.jpg",
         "embeds": [
             {
@@ -172,12 +172,6 @@ The request body contains data sent by Tactical RMM to your webhook URL. This da
 
 Use the test button to make sure your webhook is working
 
-**General Tips for Setting Up Webhooks**
-
-- Authentication: Always ensure that your webhook URL, which might contain sensitive information, is kept secure. Do not expose it in public repositories or shared spaces.
-- Customization: Utilize the customization options provided by each platform to tailor the appearance and functionality of your messages to fit your needs.
-- Testing: Before fully integrating a new webhook into your operational setup, thoroughly test it to ensure it behaves as expected. This includes testing how it handles different types of data and responding to errors.
-- Rate Limits: Be aware of any rate limits imposed by the platform (especially Discord and Slack) to avoid disruptions in service.
 
 ## Retention (TRMM Database)
 
