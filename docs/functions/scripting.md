@@ -110,7 +110,7 @@ Important: When utilizing PowerShell scripts and manually assigning an exit code
 
 ### Alert Failure/Resolve Actions
 
-Scripts can be triggered when an alert is triggered and resolved. This script will run on any online agent and supports passing the alert information as arguments.
+Scripts can be triggered when an alert is triggered and resolved.
 
 For configuring **Alert Templates**, see [Alerting](./alerting.md)
 

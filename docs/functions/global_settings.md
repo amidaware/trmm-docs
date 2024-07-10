@@ -170,7 +170,16 @@ The request body contains data sent by Tactical RMM to your webhook URL. This da
     }
     ```
 
-Use the test button to make sure your webhook is working
+=== ":material-ticket: Ticketing System"
+
+    [Zammad](../3rdparty_zammad.md)
+
+    See above for how to open a ticket in Zammad with a webhook alert.
+
+
+
+
+Use the test button to make sure your webhook is working. Note: `{{alert.XXX}}` variables will NOT be available in testing mode.
 
 
 ## Retention (TRMM Database)
