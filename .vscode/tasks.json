@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Activate Python Environment",
+            "type": "shell",
+            "command": "python -m venv env; .\\env\\Scripts\\activate",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Install Requirements",
+            "type": "shell",
+            "command": "python -m pip install --upgrade pip; pip install --upgrade setuptools wheel; pip install -r requirements.txt",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Run MkDocs",
+            "type": "shell",
+            "command": "Start-Process http://localhost:8005; mkdocs serve",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": [
+                "Activate Python Environment",
+                "Install Requirements"
+            ]
+        }
+    ]
+}
