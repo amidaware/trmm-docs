@@ -32,6 +32,7 @@ nav:
       - "Remote Background": functions/remote_bg.md
       - "Overriding / Customizing Default Settings": functions/settings_override.md
       - "Scripting": functions/scripting.md
+      - "SNMP Checks": functions/snmp_checks.md
       - "URL Actions": functions/url_actions.md
       - "User Interface Preferences": functions/user_ui.md
       - "Web Hooks": functions/webhooks.md
