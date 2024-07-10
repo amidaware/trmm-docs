@@ -1,30 +1,5 @@
 # User Roles and Permissions
 
-## Permissions with extra Security implications
-
-### Core
-
-!!!warning
-    **DO NOT** use the Web Terminal for updating Tactical versions or certs
-
-* Use TRMM Server Web Terminal
-* Run Scripts on TRMM Server
-
-Both of these functions are running under your user that you installed TRMM with (usually `tactical` if you followed the docs).
-
-These give full access to your TRMM server and as a result can give them the ability to fully access your server and become Super Users if you are operating in an environment where techs shouldn't have full access.
-
-You can reduce the `Run Scripts on TRMM Server` risk a little, if you also uncheck `Scripts > Manage Scripts` for limited techs. If you don't do this a tech could create/modify scripts and ensure no powerful linux scripts exist on the server.
-
-These can be disabled in the web UI, and can also be globally disabled by adding to your `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py` these two options:
-
-```py
-TRMM_DISABLE_SERVER_SCRIPTS
-TRMM_DISABLE_WEB_TERMINAL
-```
-
-![alt text](images/trmm_permissions_scriptnterminal.png)
-
 ## Permission Manager
 
 Make sure you've setup at least 1 valid (Super User aka Administrator) role under _Settings > Permission Manager_
@@ -49,3 +24,30 @@ Once you've set that up a Super User role and assigned your primary user, you ca
 <div class="video-wrapper">
   <iframe width="400" height="225" src="https://www.youtube.com/embed/TTPLvgjMgp0" frameborder="0" allowfullscreen></iframe>
 </div>
+
+## Permissions with extra Security implications
+
+!!!warning
+    **DO NOT** use the Web Terminal for running the Tactical [update]() script as it will stop the service running the web terminal and bork your update.
+
+* Use TRMM Server Web Terminal
+* Run Scripts on TRMM Server
+
+Both of these functions are running under your user that you installed TRMM with (usually `tactical` if you followed the docs).
+
+These have full access to your TRMM server's filesystem and as a result can give them the ability to become root if you have passwordless sudo enabled.
+
+These features can be disabled from the web UI in Global Settings.
+
+![alt text](images/trmm_permissions_scriptnterminal.png)
+
+They can also be disabled at the filesystem level (which overrides the setting in Global Settings) by adding any of these variables to `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py`
+
+```py
+TRMM_DISABLE_WEB_TERMINAL = True
+TRMM_DISABLE_SERVER_SCRIPTS = True
+```
+
+After adding these make sure they take effect by running `sudo systemctl restart rmm daphne celery celerybeat`
+
+
