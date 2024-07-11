@@ -50,11 +50,13 @@ For optionally triggering an additional task (Send a Web Hook, Run Script on Age
 
 #### Send a Web Hook
 
-Webhooks in Tactical RMM can notify you of certain events in your RMM, like alerts or device status changes, by sending API requests to a URL you specify. These messages can be made up with [variables](https://docs.tacticalrmm.com/script_variables/).
+You can create your own webhooks to be sent out on alert failure/resolved events, like a script check or task failing or an agent going overdue.
 
-Create your [Web Hooks in Settings](global_settings.md#web-hooks)
+You have access to any of the [variables](https://docs.tacticalrmm.com/script_variables/) as well as [custom fields](custom_fields.md) / [global keystore](keystore.md) inside the json payload of the webhook as well as in the URL patter.
 
-Choose the Web Hook you wish to run
+1. Create your [Web Hooks](webhooks.md)
+
+2. Choose the Web Hook you wish to be ran as the alert failure and/or resolved action.
 
 #### Run script on Agent
 

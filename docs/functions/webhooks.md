@@ -30,27 +30,17 @@ User-Agent: Identifies the application making the request.
 
 ### Request Body
 
-The request body contains data sent by Tactical RMM to your webhook URL. This data usually includes details about the event that triggered the webhook. The structure of the body will depend on the specifics of what you want to track, but here’s a basic JSON example for a device alert:
-
-=== ":material-code-json: JSON"
-
-    Simple JSON
-
-    ```json
-    {
-        "text": "{{agent.hostname}}: {{alert.message}}"
-    }
-    ```
+The request body must contain valid JSON and can include anything you want. Here are some examples:
 
 === ":simple-discord: Discord"
 
-    Discord Message: Edit a channel > Integrations > Webhooks
+    Discord: Edit a channel > Integrations > Webhooks
 
     ```json
     {
         "content": "Agent hasn't checked in for {{agent.overdue_time}} minutes.",
         "username": "{{agent.hostname}}",
-        "avatar_url": "https://someurl.com/image.jpg",
+        "avatar_url": "https://cdn3.emoji.gg/emojis/PogChamp.png",
         "embeds": [
             {
                 "title": "Agent {{agent.hostname}} Client: {{agent.site.client.name}}",
@@ -70,6 +60,16 @@ The request body contains data sent by Tactical RMM to your webhook URL. This da
                 ]
             }
         ]
+    }
+    ```
+
+=== ":material-code-json: JSON"
+
+    Simple JSON
+
+    ```json
+    {
+        "text": "{{agent.hostname}}: {{alert.message}}"
     }
     ```
 
