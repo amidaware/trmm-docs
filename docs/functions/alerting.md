@@ -61,8 +61,8 @@ You have access to any of the [variables](https://docs.tacticalrmm.com/script_va
 #### Run script on Agent
 
 - **Script** - Runs the selected script once. It attempts to run it on the agent in question, but if not online TRMM selects a random agent to run on.
-- **Script arguments** - Optionally pass in arguments to the failure script.
-- **Script environment vars** - Optionally pass in env vars to the failure script.
+- **Script arguments** - Optionally pass in arguments to the script.
+- **Script environment vars** - Optionally pass in env vars to the script.
 - **Action Timeout** - Sets the timeout for the script.
 
 #### Run script on Server
@@ -76,7 +76,7 @@ You have access to any of the [variables](https://docs.tacticalrmm.com/script_va
 
 This runs the script on your TRMM server. To ensure proper execution, you must specify the interpreter for your script using a shebang line at the top of each script. Also make sure that the specified interpreter is installed on your TRMM server.
 
-
+Just like with webhooks, you also have access to the same [variables](https://docs.tacticalrmm.com/script_variables/) as well as [custom fields](custom_fields.md) / [global keystore](keystore.md) in the script's arguments or environment variables.
 
 === ":material-language-python: Python (included with TRMM)"
 
@@ -160,8 +160,8 @@ This runs the script on your TRMM server. To ensure proper execution, you must s
     ```
 
 - **Script** - Runs the selected script once on the TRMM server.
-- **Script arguments** - Optionally pass in arguments to the failure script.
-- **Script environment vars** - Optionally pass in env vars to the failure script.
+- **Script arguments** - Optionally pass in arguments to the script.
+- **Script environment vars** - Optionally pass in env vars to the script.
 - **Action Timeout** - Sets the timeout for the script.
 
 #### Run actions only on
