@@ -10,6 +10,7 @@
 - Default Server Policy
 - Default Workstation Policy
 - Default Alert Template
+- [Receive notifications on](https://www.youtube.com/watch?v=Qh9BfKo2wIg&t=2139s)
 - Agent Debug Level
 - Clear faults on agents that haven't checked in after (days)
 - Reset Patch Policy on Agents

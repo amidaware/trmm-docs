@@ -33,9 +33,11 @@ Once you've set that up a Super User role and assigned your primary user, you ca
 * Use TRMM Server Web Terminal
 * Run Scripts on TRMM Server
 
-Both of these functions are running under your user that you installed TRMM with (usually `tactical` if you followed the docs).
+Both of these functions are running under the linux user that you installed TRMM with (usually `tactical` if you followed the docs).
 
-These have full access to your TRMM server's filesystem and as a result can give them the ability to become root if you have passwordless sudo enabled.
+These have full access to your TRMM server's filesystem and as a result have the ability to become root if you have passwordless sudo enabled.
+
+These can be very dangerous features if not handled with care so think carefully before you enable/use them.
 
 These features can be disabled from the web UI in Global Settings.
 
