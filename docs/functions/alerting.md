@@ -71,7 +71,7 @@ You have access to any of the [variables](https://docs.tacticalrmm.com/script_va
     This is a [dangerous feature](../functions/permissions.md#permissions-with-extra-security-implications) and you must ensure permissions are appropriate for your environment.
 
 <div class="video-wrapper">
-  <iframe width="400" height="225" src="https://www.youtube.com/embed/Qh9BfKo2wIg&t=1031s" frameborder="0" allowfullscreen></iframe>
+  <iframe width="400" height="225" src="https://www.youtube.com/embed/Qh9BfKo2wIg" frameborder="0" allowfullscreen></iframe>
 </div>
 
 This runs the script on your TRMM server. To ensure proper execution, you must specify the interpreter for your script using a shebang line at the top of each script. Also make sure that the specified interpreter is installed on your TRMM server.
