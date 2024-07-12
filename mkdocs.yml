@@ -18,22 +18,25 @@ nav:
       - "Updating Agents": update_agents.md
   - Functionality:
       - "How it all Works": howitallworks.md
+      - "Global Settings": functions/global_settings.md
       - "Alerting": functions/alerting.md
       - "API Access": functions/api.md
       - "Automated Tasks": functions/automated_tasks.md
       - "Automation Policies": functions/automation_policies.md
       - "Custom Fields": functions/custom_fields.md
-      - "Database Maintenance": functions/database_maintenance.md
       - "Django Admin": functions/django_admin.md
-      - "Email Alerts": functions/email_alert.md
+      - "Email & SMS Alerts": functions/emailsms_alert.md
       - "Global Keystore": functions/keystore.md
       - "Maintenance Mode": functions/maintenance_mode.md
       - "Permissions": functions/permissions.md
       - "Remote Background": functions/remote_bg.md
       - "Overriding / Customizing Default Settings": functions/settings_override.md
       - "Scripting": functions/scripting.md
+      - "SNMP Checks": functions/snmp_checks.md
       - "URL Actions": functions/url_actions.md
       - "User Interface Preferences": functions/user_ui.md
+      - "Web Hooks": functions/webhooks.md
+      - "Web Terminal": functions/web_terminal.md
       - "Reference: Script Variables": script_variables.md
       - "Examples": functions/examples.md
   - Reporting:
@@ -65,6 +68,7 @@ nav:
       - "TeamViewer": 3rdparty_teamviewer.md
       - "BitDefender GravityZone": 3rdparty_bitdefender_gravityzone.md
       - "BitDefender Total Security": 3rdparty_bitdefender_total_security.md
+      - "Zammad": 3rdparty_zammad.md
   - Unsupported Extras:
       - "Unsupported Guidelines": unsupported_guidelines.md
       - "Unsupported Configs": unsupported_scripts.md

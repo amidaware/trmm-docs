@@ -60,6 +60,8 @@ If you are already on the latest version, the update script will notify you of t
 You can pass the optional `--force` flag to the update script to forcefully run through an update, which will bypass the check for latest version.
 
 ```bash
+wget -N https://raw.githubusercontent.com/amidaware/tacticalrmm/master/update.sh
+chmod +x update.sh
 ./update.sh --force
 ```
 

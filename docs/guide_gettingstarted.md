@@ -5,7 +5,7 @@ Install the server, [choose the best path](install_considerations.md)
 
 ## Post Install
 
-* [ ] Setup [Email Alerts](functions/email_alert.md){target=_blank}
+* [ ] Setup [Email Alerts](functions/emailsms_alert.md){target=_blank}
 * [ ] Setup SMS Alerts
 * [ ] Create a Default Alert Template and assign (either Global, or using Automation Policies)
 * [ ] Set Server Preferences Under `Global Settings > General`

@@ -1,8 +1,5 @@
 # Custom Fields
 
-!!!info 
-    v0.5.0 adds support for custom fields to be used in the dashboard and in scripts.
-
 !!!warning
     `\` is an escape character, if you want to use that in a custom field you will need to use `\\` instead.
 

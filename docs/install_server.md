@@ -118,7 +118,7 @@ ufw enable && ufw reload
 ### Step 4 - Create DNS A records
 
 !!!warning
-    All 3 domain names have to be at the same subdomain level because you only get one LetsEncrypt wildcard cert, and it'll only apply to that level of DNS name.
+    All 3 domain names MUST be at the same subdomain level because you only get one LetsEncrypt wildcard cert, and it'll only apply to that level of DNS name.
 
 We'll be using `example.com` as our domain for this example.
 
