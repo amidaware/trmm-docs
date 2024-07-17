@@ -73,7 +73,7 @@ The request body must contain valid JSON and can include anything you want. Here
     }
     ```
 
-=== ":material-microsoft-teams: Microsoft Teams"
+=== ":material-microsoft-teams: Microsoft Teams (Basic)"
 
     [Teams](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook?tabs=newteams%2Cdotnet)
 
@@ -101,6 +101,156 @@ The request body must contain valid JSON and can include anything you want. Here
         }]
     }
     ```
+
+=== ":material-microsoft-teams: Microsoft Teams (Advanced)"
+
+    [Teams](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook?tabs=newteams%2Cdotnet)
+
+    Microsoft Teams uses Office 365 Connectors for its incoming webhooks. The format for Teams is slightly more complex, allowing for potentially richer content.
+
+    ```json
+    {
+        "type": "message",
+        "attachments": [
+            {
+                "contentType": "application/vnd.microsoft.card.adaptive",
+                "contentUrl": null,
+                "content": {
+                    "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                    "type": "AdaptiveCard",
+                    "version": "1.2",
+                    "msteams": {
+                        "width": "Full"
+                    },
+                    "body": [
+                        {
+                            "type": "ColumnSet",
+                            "columns": [
+                                {
+                                    "type": "Column",
+                                    "items": [
+                                        {
+                                            "type": "Image",
+                                            "style": "person",
+                                            "url": "https://amidaware.com/images/amidaware.jpg",
+                                            "altText": "TacticalRMM",
+                                            "size": "small"
+                                        }
+                                    ],
+                                    "width": "auto"
+                                },
+                                {
+                                    "type": "Column",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "weight": "bolder",
+                                            "text": "TacticalRMM",
+                                            "wrap": true,
+                                            "size": "heading"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "spacing": "none",
+                                            "text": "Created date here",
+                                            "isSubtle": true,
+                                            "wrap": true
+                                        }
+                                    ],
+                                    "width": "stretch"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "ColumnSet",
+                            "isVisible": true,
+                            "columns": [
+                                {
+                                    "type": "Column",
+                                    "isVisible": true,
+                                    "items": [
+                                        {
+                                            "type": "RichTextBlock",
+                                            "inlines": [
+                                                {
+                                                    "type": "TextRun",
+                                                    "text": "first column more text",
+                                                    "wrap": true,
+                                                    "color": "default",
+                                                    "weight": "bolder"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Column",
+                                    "isVisible": true,
+                                    "items": [
+                                        {
+                                            "type": "RichTextBlock",
+                                            "inlines": [
+                                                {
+                                                    "type": "TextRun",
+                                                    "text": "Second column",
+                                                    "wrap": true
+                                                },
+                                                {
+                                                    "type": "TextRun",
+                                                    "text": "second column more text",
+                                                    "wrap": true,
+                                                    "color": "default",
+                                                    "weight": "bolder"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "ColumnSet",
+                            "columns": [
+                                {
+                                    "type": "Column",
+                                    "width": "stretch",
+                                    "style": "emphasis",
+                                    "minHeight": "40px",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "The minimal message!",
+                                            "wrap": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Column",
+                                    "width": "auto",
+                                    "verticalContentAlignment": "center",
+                                    "isVisible": false,
+                                    "items": [
+                                        {
+                                            "type": "ActionSet",
+                                            "isVisible": false,
+                                            "actions": []
+                                        },
+                                        {
+                                            "type": "ActionSet",
+                                            "isVisible": false,
+                                            "actions": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+    ```
+
 
 === ":material-slack: Slack"
 
