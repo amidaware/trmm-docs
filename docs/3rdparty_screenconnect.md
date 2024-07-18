@@ -41,21 +41,31 @@ https://<your_screenconnect_fqdn_with_port>/Host#Access/All%20Machines//{{agent.
 Navigate to an agent with ConnectWise Service running (or apply using **Settings > Automation Manager**).</br>
 Go to Tasks.</br>
 Add Task:</br>
-**Select Script** = `ScreenConnect - Get GUID for client` (this is a builtin script from script library)</br>
-**Script argument** = `-serviceName {{client.ScreenConnectService}}`</br>
-**Descriptive name of task** = `Collects the Machine GUID for ScreenConnect.`</br>
+**Descriptive name of task** = `get screen connect GUID`</br>
 **Collector Task** = `CHECKED`</br>
-**Custom Field to update** = `ScreenConnectGUID`</br>
+**Custom Field to update** = `ScreenConnectGUID` (Agent)</br>
 
 ![Service Name](images/3rdparty_screenconnect4.png)
 
 Click **Next**</br>
-Check **Manual**</br>
-Click **Add Task**
 
-Right click on the newly created task and click **Run Task Now**.
+**Select Script** = `ScreenConnect - Get GUID for client` (this is a builtin script from script library)</br>
+**Script argument** = `{{client.ScreenConnectService}}` (it should auto-fill)</br>
 
-Give it a second to execute, then right click the agent that you are working with and go to **Run URL Action > ScreenConnect**.
+**Click the plus sign**</br>
+
+![Service Name](images/screenconnect_plus_sign.png)
+
+![Service Name](images/screenconnect_script_added.png)
+
+
+Choose a schedule for the collector to run then add the task.
+
+Once the task has synced with the agent, right click on the newly created task and click **Run Task Now**.
+
+Give it a second to execute, refresh the tasks tab and then check the output of the task and make sure you see a GUID.
+
+Right click the agent that you are working with and go to **Run URL Action > ScreenConnect**.
 
 It should ask you to sign into your ConnectWise Control server if you are not already logged in and launch the session.
 
