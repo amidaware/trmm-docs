@@ -14,7 +14,7 @@ Add Custom Field:</br>
 **Target** = `Client`</br>
 **Name** = `ScreenConnectService`</br>
 **Field Type** = `Text` </br>
-**Default Value** = `The name of your SC Service eg. ScreenConnect Client (XXXXXXXXXXXXXXXXX)`</br>
+**Default Value** = `ScreenConnect Client (XXXXXXXX)` (make sure to copy paste the exact windows service name here)</br>
 
 ![Service Name](images/3rdparty_screenconnect1.png)
 
