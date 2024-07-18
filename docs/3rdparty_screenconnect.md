@@ -3,7 +3,7 @@
 ## ConnectWise Control Integration
 
 !!!info
-     To make this work you will need the name of the service from one of your agents running a ScreenConnect Guest.
+     To make this work you will need the exact name of the windows service from one of your agents running a ScreenConnect Guest.
 
 !!!info
      You can setup a full automation policy to collect the machine GUID, but this example will collect from just one agent for testing purposes.
