@@ -23,4 +23,12 @@ The above example uses a value defined in the **global keystore** named *API_KEY
 
 ## Running URL Actions
 
-In the agent table, right-click on the Agent and select **Run URL Action** and select the action to run
+In the agent table, right-click on the Agent and select **Run URL Action** and select the action to run.
+
+You can also create a shortcut for this by setting the default double-click action to open a URL action:
+
+Click on your username in the top right of the web UI > **Preferences**, then select **Run URL Action** and then select the URL action:
+
+![URL Action Shortcut](images/url_action_double_click.png)
+
+The URL action will now run when you double click on a row in the Agent table in the dashboard.
