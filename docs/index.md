@@ -18,7 +18,7 @@ It uses an [agent](https://github.com/amidaware/rmmagent) written in Golang and 
 - Event log viewer
 - Services management
 - Windows patch management
-- Automated checks with email/SMS alerting (cpu, disk, memory, services, scripts, event logs)
+- Automated checks with email/SMS/Webhooks alerting (cpu, disk, memory, services, scripts, event logs)
 - Automated task runner (run scripts on a schedule)
 - Remote software installation via chocolatey
 - Software and hardware inventory
