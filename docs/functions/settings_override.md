@@ -98,3 +98,13 @@ SHELL_PLACEHOLDER_TEXT = "<Your customized shell prompt text>"
 ```
 
 To activate, restart the api with `sudo systemctl restart rmm` and then refresh the web interface.
+
+### Define a root user to prevent changes from web UI
+
+To define a "root" user who cannot be modified via the web UI, add the following line to `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py`
+
+```python
+ROOT_USER = "username"
+```
+
+Replace "username" with the actual username. After making this change, run `sudo systemctl restart rmm.service` to apply the changes.
