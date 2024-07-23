@@ -101,8 +101,14 @@ Below are some examples of available fields:
 - **{{alert.assigned_check}}** - The check that triggered the alert. Can be used for nesting. See Check above for properties.
 - **{{alert.assigned_check.readable_desc}}** - This will return the name that is used in the UI for the check. 
 - **{{alert.assigned_task}}** - The automated task that triggered the alert. Can be used for nesting. See Automated Task above for properties.
-- - **{{alert.assigned_task.name}}** - This will return the name that is used in the UI for the automated task. 
+- **{{alert.assigned_task.name}}** - This will return the name that is used in the UI for the automated task. 
 - **{{alert.site}}** - The site associated with the agent that triggered the alert. Can be used for nesting. See Site above for properties.
 - **{{alert.client}}** - The client associated with the agent that triggered the alert. Can be used for nesting. See Client above for properties.
 
 - **{{alert.get_result}}** - Will return the results of the associated check or automated task. Can be used for nesting. See CheckResult or TaskResult above for properties. This will be blank for agent availability alerts.
+
+## Custom Fields
+
+You can use custom fields as variables by referencing the object that contains the custom field and using the exact name of the field as the property. For example, {{agent.Custom field Name}}. This reference is case sensitive, and spaces in the field name are supported.
+
+Currently, custom fields are supported only for the following objects: Client, Site, and Agent. If the custom field cannot be found, the text will be passed as-is to the script.
