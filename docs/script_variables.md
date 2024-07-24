@@ -33,13 +33,11 @@ Below are some examples of available fields:
 - **{{agent.version}}** - Tactical RMM agent version.
 - **{{agent.operating_system}}** - Agent operating system example: *Windows 10 Pro, 64 bit (build 19042.928)*.
 - **{{agent.plat}}** - Will show the platform example: *windows*.
-- **{{agent.plat_release}}** - Will show the platform release.
 - **{{agent.hostname}}** - The hostname of the agent.
 - **{{agent.local_ips}}** - Local IP address of agent.
 - **{{agent.public_ip}}** - Public IP address of agent.
 - **{{agent.agent_id}}** - agent ID in database.
 - **{{agent.last_seen}}** - Date and Time Agent last seen.
-- **{{agent.used_ram}}** - Used RAM on agent. Returns an integer - example: *16*.
 - **{{agent.total_ram}}** - Total RAM on agent. Returns an integer - example: *16*.
 - **{{agent.boot_time}}** - Uptime of agent. Returns unix timestamp. example: *1619439603.0*.
 - **{{agent.logged_in_username}}** - Username of logged in user.
@@ -56,11 +54,11 @@ Below are some examples of available fields:
 - **{{agent.needs_reboot}}** - Returns true if reboot is pending on agent.
 - **{{agent.choco_installed}}** - Returns true if Chocolatey is installed.
 - **{{agent.patches_last_installed}}** - The date that patches were last installed by Tactical RMM.
-- **{{agent.time_zone}}** - Returns timezone configured on agent.
+- **{{agent.timezone}}** - Returns timezone configured on agent.
 - **{{agent.maintenance_mode}}** - Returns true if agent is in maintenance mode.
 - **{{agent.block_policy_inheritance}}** - Returns true if agent has block policy inheritance.
 - **{{agent.alert_template}}** - Returns true if agent has block policy inheritance.
-- **{{agent.site}}** - The site that the agent belongs too. Can be used for nesting. See Aite above for properties
+- **{{agent.site}}** - The site that the agent belongs too. Can be used for nesting. See Site above for properties
 
 ## Client
 
