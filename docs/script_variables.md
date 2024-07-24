@@ -56,7 +56,6 @@ Below are some examples of available fields:
 - **{{agent.needs_reboot}}** - Returns true if reboot is pending on agent.
 - **{{agent.choco_installed}}** - Returns true if Chocolatey is installed.
 - **{{agent.patches_last_installed}}** - The date that patches were last installed by Tactical RMM.
-- **{{agent.needs_reboot}}** - Returns true if the agent needs a reboot.
 - **{{agent.time_zone}}** - Returns timezone configured on agent.
 - **{{agent.maintenance_mode}}** - Returns true if agent is in maintenance mode.
 - **{{agent.block_policy_inheritance}}** - Returns true if agent has block policy inheritance.
