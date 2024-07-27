@@ -52,5 +52,5 @@ TRMM_DISABLE_SERVER_SCRIPTS = True
 
 After adding these make sure they take effect by running `sudo systemctl restart rmm daphne celery celerybeat`
 
-!!!warning
+!!!info
     **Docker Installs** need only update the .env file for the variables to take effect.
