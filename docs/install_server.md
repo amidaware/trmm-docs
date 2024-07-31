@@ -174,7 +174,7 @@ chmod +x install.sh
     ✅ No public DNS name needed. Use irulez.local or any DNS name you want.<br>
     ✅ No cert renewals<br>
     ❌ All agent communication is vulnerable to MITM compromise and can be hacked.<br>
-    ❌ You can't convert from an `--insecure` to trusted cert install without reinstalling all your agents
+    ❌ You can't convert from an `--insecure` to trusted cert install without reinstalling all your agents<br>
     ❌ Can't use Agent install Deployment links. Manual installation method only
 
 Answer the initial questions when prompted. Replace `example.com` with your domain.
