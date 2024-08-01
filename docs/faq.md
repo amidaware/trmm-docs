@@ -68,6 +68,19 @@ The most common reasons you're running a proxy are:
 
 There are some [implementations](unsupported_scripts.md) that others have done, but be aware it is [Unsupported](unsupported_guidelines.md) and if you're requesting help in Discord please let us know in advance.
 
+## I want to use a different port other than 443
+
+I want to use a different port for Tactical RMM because my public IP on 443 is currently being used by something else. PAT (aka Port Address Translation)
+
+That is [not possible](https://github.com/amidaware/tacticalrmm/issues/999) at this time.
+
+Your options are: 
+
+- Run in a VPS
+- Get another Public IP from your ISP
+- Use another proxy server in an [unsupported](unsupported_proxies.md) configuration
+- Run TRMM in a SDWAN like Netmaker/Zerotier/Tailscale/Sunbird etc
+
 ## How do I do X feature in the web UI?
 
 A lot of features in the web UI are hidden behind right-click menus. Almost everything has a right click menu so if you don't see something, try right clicking on it.
