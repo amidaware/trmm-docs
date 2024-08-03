@@ -53,6 +53,10 @@ This is primarily for 2 reasons:
 
 The Legal entity behind Tactical RMM.
 
+## How do I move an agent to another client/site?
+
+Right click on the agent > Edit agent. Then select the new site from the dropdown.
+
 ## Is it possible to use XXX with Tactical RMM
 
 While it _may be possible_ to use XXX, we have not configured it and therefore it is [Unsupported](unsupported_guidelines.md). We cannot help you configure XXX as it pertains to **your environment**.
