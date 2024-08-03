@@ -219,6 +219,19 @@ From the client / agent side: Installing and uninstalling software is part of sy
 
 From the TRMM Admin panel: Use `Permissions Manager` to restrict your techs permissions.
 
+To hide Tactical RMM from the Control Panel's Program and Features, use the following PowerShell command:
+
+```powershell
+Set-ItemProperty -Path 'HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{0D34D278-5FAF-4159-A4A0-4E2D2C08139D}_is1' -Name 'SystemComponent' -Value 1 -Type DWord
+```
+
+To undo the changes and make Tactical RMM visible again in the Control Panel, use the following PowerShell command:
+
+```powershell
+Remove-ItemProperty -Path 'HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{0D34D278-5FAF-4159-A4A0-4E2D2C08139D}_is1' -Name 'SystemComponent'
+```
+
+
 ## I want to move and/or migrate my server? How do I do it?
 
 ### Changing a public IP or private LAN IP address? 
