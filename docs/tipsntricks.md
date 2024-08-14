@@ -132,7 +132,7 @@ If you install TRMM agent, it will add the PC to meshcentral with the current co
 
 ### When Running Scripts
 
-Use the (i) at the end of the script name to:
+When [running scripts](functions/scripting.md#script-arguments) use the (i) at the end of the script name to:
 
 - Hover: see script parameter syntax help
 - Left Click: Opens the script source in Github

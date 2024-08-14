@@ -44,7 +44,7 @@ To download a Tactical RMM Script, click on the script in the Script Manager to 
 
 ## Community Scripts
 
-These are script that are built into Tactical RMM. They are provided and maintained by the Tactical RMM community. These scripts are updated whenever Tactical RMM is updated and can't be modified or deleted in the dashboard.
+These are script that are built into Tactical RMM. They are provided and maintained by the [Tactical RMM community](https://github.com/amidaware/community-scripts). These scripts are updated whenever Tactical RMM is updated and can't be modified or deleted in the dashboard.
 
 ### Hiding Community Scripts
 You can choose to hide community script throughout the dashboard by opening **Script Manager** and clicking the **Show/Hide Community Scripts** toggle button.
@@ -67,7 +67,7 @@ There is also an option on the agent context menu called **Run Favorited Script*
 
 ### Script Arguments
 
-The `Script Arguments` field should be pre-filled with information for any script that can accept or requires parameters.
+The `Script Arguments` field should be pre-filled with information for any script that can accept or requires parameters. [Use the (i)](../tipsntricks.md#scripts)
 
 <p style="background-color:#1e1e1e;">
 &nbsp;<span style=color:#d4d4d4><</span><span style="color:#358cd6">Required Parameter Name</span><span style=color:#d4d4d4>></span> <span style=color:#d4d4d4><</span><span style="color:#358cd6">string</span><span style=color:#d4d4d4>></span><br>
@@ -81,6 +81,74 @@ and `{}` indicates a parameter with several preconfigured parameter
 and `()` indicates a default parameter if none is specified.
 
 Starting with 0.15.4 you can use environment variables to pass them too!
+
+#### Environment Variables
+
+Script Arguments
+
+```
+-hello world
+-foo bar
+-data {{agent.site.client.name}}
+-data {{agent.public_ip}}
+```
+
+Environment vars
+
+```
+ehello=eworld
+efoo=ebar
+edata={{agent.hostname}}
+```
+
+![Script Args](images/script_args.png)
+
+=== ":material-language-python: Batch"
+
+    Script
+
+    ```batch
+    @echo off
+    echo %hello%
+    echo %foo%
+    echo %data%
+    ```
+
+=== ":material-powershell: Powershell"
+
+    Script
+
+    ```ps
+    Write-Output $env:hello
+    Write-Output $env:foo
+    Write-Output $env:data
+    ```
+
+=== ":material-language-python: Python"
+
+    Script
+
+    ```python
+    #!/usr/bin/python3
+
+    import os
+
+    print(os.getenv("hello"))
+    print(os.getenv("foo"))
+    print(os.getenv("data"))
+    ```
+
+=== ":material-bash: Shell"
+
+    Script
+
+    ```bash
+    #!/usr/bin/env bash
+
+    echo %hello%
+    echo %foo%
+    echo %data%
+    ```
 
 <div class="video-wrapper">
   <iframe width="400" height="225" src="https://www.youtube.com/embed/YrnN11XPot8" frameborder="0" allowfullscreen></iframe>
@@ -104,7 +172,7 @@ See [Automated Tasks](automated_tasks.md) for configuring automated tasks.
 
 ### Script Checks
 
-Scripts can also be run periodically on an agent and trigger an alert if it fails.
+Scripts can also be run periodically on an agent and trigger an alert if it fails in case you want any kind of warning code to alert you.
 
 Important: When utilizing PowerShell scripts and manually assigning an exit code, it's essential to define the exit code using the following syntax: `$host.SetShouldExit(EXITCODE)`. Here, EXITCODE represents the desired exit code number. For instance, to assign an exit code of 3, use `$host.SetShouldExit(3)`.
 
