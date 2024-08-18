@@ -69,6 +69,7 @@ nav:
       - "BitDefender GravityZone": 3rdparty_bitdefender_gravityzone.md
       - "BitDefender Total Security": 3rdparty_bitdefender_total_security.md
       - "Zammad": 3rdparty_zammad.md
+      - "Dashy": 3rdparty_dashy.md
   - Unsupported Extras:
       - "Unsupported Guidelines": unsupported_guidelines.md
       - "Unsupported Configs": unsupported_scripts.md
