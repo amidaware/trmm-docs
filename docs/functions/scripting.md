@@ -82,14 +82,13 @@ and `()` indicates a default parameter if none is specified.
 
 Starting with 0.15.4 you can use environment variables to pass them too!
 
-#### Environment Variables
+#### Examples
 
 Script Arguments
 
 ```
 -hello world
 -foo bar
--data {{agent.site.client.name}}
 -data {{agent.public_ip}}
 ```
 
@@ -109,9 +108,25 @@ edata={{agent.hostname}}
 
     ```batch
     @echo off
-    echo %hello%
-    echo %foo%
-    echo %data%
+    setlocal
+
+    rem Parameters. Batch only accepts positional params not named ones
+    set hello=%1
+    set foo=%2
+    set data=%3
+
+    echo Script Args
+    echo hello: %hello%
+    echo foo: %foo%
+    echo data: %data%
+
+    echo.
+    echo Environment Vars
+    echo ehello: %ehello%
+    echo efoo: %efoo%
+    echo edata: %edata%
+
+    endlocal
     ```
 
 === ":material-powershell: Powershell"
@@ -119,9 +134,22 @@ edata={{agent.hostname}}
     Script
 
     ```ps
-    Write-Output $env:hello
-    Write-Output $env:foo
-    Write-Output $env:data
+    param(
+        [string]$hello,
+        [string]$foo,
+        [string]$data
+    )
+
+    Write-Output "Script Args"
+    Write-Output "hello: $hello"
+    Write-Output "foo: $foo"
+    Write-Output "data: $data"
+
+    Write-Output ""
+    Write-Output "Environment Vars"
+    Write-Output "ehello: $env:ehello"
+    Write-Output "efoo: $env:efoo"
+    Write-Output "edata: $env:edata"
     ```
 
 === ":material-language-python: Python"
@@ -132,10 +160,31 @@ edata={{agent.hostname}}
     #!/usr/bin/python3
 
     import os
+    import argparse
 
-    print(os.getenv("hello"))
-    print(os.getenv("foo"))
-    print(os.getenv("data"))
+    #Note: named args in python require -- and = between name and value eg 
+    # --hello=world 
+    # --foo=bar
+    # --data={{agent.public_ip}}
+    # Parse command-line arguments
+    parser = argparse.ArgumentParser(description="Process some strings.")
+    parser.add_argument("--hello", type=str, help="Value for hello")
+    parser.add_argument("--foo", type=str, help="Value for foo")
+    parser.add_argument("--data", type=str, help="Value for data")
+
+    args = parser.parse_args()
+
+    # Script Args
+    print("Script Args")
+    print(f"hello: {args.hello}")
+    print(f"foo: {args.foo}")
+    print(f"data: {args.data}")
+
+    # Environment Vars
+    print("\nEnvironment Vars")
+    print(f"ehello: {os.getenv('ehello')}")
+    print(f"efoo: {os.getenv('efoo')}")
+    print(f"edata: {os.getenv('edata')}")
     ```
 
 === ":material-bash: Shell"
@@ -143,11 +192,23 @@ edata={{agent.hostname}}
     Script
 
     ```bash
-    #!/usr/bin/env bash
+    #!/bin/bash
 
-    echo %hello%
-    echo %foo%
-    echo %data%
+    #Bash only accepts positional params not named ones
+    hello="$1"
+    foo="$2"
+    data="$3"
+
+    echo "Script Args"
+    echo "hello: $hello"
+    echo "foo: $foo"
+    echo "data: $data"
+
+    echo ""
+    echo "Environment Vars"
+    echo "ehello: $ehello"
+    echo "efoo: $efoo"
+    echo "edata: $edata"
     ```
 
 <div class="video-wrapper">
