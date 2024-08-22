@@ -98,7 +98,7 @@ Installation instructions for using your own MeshCentral server:
 
 1. Run standard installation.
 2. After installation is complete, disable meshcentral `sudo systemctl disable --now meshcentral`.
-3. In TRMM Web UI go to Settings > Global Settings > MeshCentral and update values from your existing mesh (make sure to use a mesh superuser).
+3. In TRMM Web UI go to Settings > Global Settings > MeshCentral and update values from your existing mesh (make sure to use a mesh superuser). Username MUST be all lowercase. Mesh Token find with [this](troubleshooting.md#need-to-recover-your-mesh-token)
 4. Add `USE_EXTERNAL_MESH = True` to `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py`
 5. Restart TRMM server.
 
