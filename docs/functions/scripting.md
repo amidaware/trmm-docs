@@ -82,14 +82,13 @@ and `()` indicates a default parameter if none is specified.
 
 Starting with 0.15.4 you can use environment variables to pass them too!
 
-#### Environment Variables
+#### Examples
 
 Script Arguments
 
 ```
 -hello world
 -foo bar
--data {{agent.site.client.name}}
 -data {{agent.public_ip}}
 ```
 
