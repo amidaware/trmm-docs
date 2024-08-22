@@ -230,7 +230,7 @@ To undo the changes and make Tactical RMM visible again in the Control Panel, us
 ```powershell
 Remove-ItemProperty -Path 'HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{0D34D278-5FAF-4159-A4A0-4E2D2C08139D}_is1' -Name 'SystemComponent'
 ```
-
+Alternative: Check out [some](https://github.com/amidaware/community-scripts/blob/main/scripts_wip/Win_TRMM_Agent_Locker.ps1) [scripts](https://github.com/amidaware/community-scripts/blob/main/scripts_wip/Win_TRMM_Agent_unLocker.ps1)
 
 ## I want to move and/or migrate my server? How do I do it?
 
