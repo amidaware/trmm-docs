@@ -12,7 +12,7 @@ For all others, Reporting will be included for all [Tier 2](../../../sponsor.md#
 
 2. Run the update script with the `--force` flag (see instructions below for standard vs docker installs):
 
-3. Reload the web page. Make sure you use your browser's reload button to hard reload the page.
+3. [Hard reload](https://help.codehs.com/en/articles/4951972-how-to-clear-your-browser-cache-and-hard-refresh) the web page. Make sure you use your browser's reload button to hard reload the page.
 
 ???+ note ""
 
