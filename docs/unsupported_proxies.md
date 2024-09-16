@@ -844,7 +844,7 @@ Only use this method if you have more than 1 server that need to use port 443 on
 These are some assumptions made to make this guide, short, easy to follow and to the point.
 Of course you can adapt it to your environment and/or current configuration.
 
-- You have a pfSense firewall.
+- You have a OPNsense firewall.
 - You have HAProxy installed.
 - You don't have any `http` frontends on your HAProxy.
 - You have port forward to forward traffic from your WAN 443 port to OPNsense 443 port.
