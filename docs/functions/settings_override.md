@@ -20,9 +20,28 @@ Change `(days=30)` to whatever you prefer. Then run `sudo systemctl restart rmm.
 
 ### Using your own wildcard SSL cert
 
-This is only supported during initial install, not after you've already installed.
+#### Before Install
 
 Follow the instructions in the [install guide](../install_server.md#step-5-run-the-install-script) for the `--use-own-cert` install flag.
+
+#### Existing Install
+
+1. Append the following two variables to `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py`, replacing the paths with the actual locations of your certificate and private key. The certificate must include the full chain:
+```python
+CERT_FILE = "/path/to/your/fullchain.pem"
+KEY_FILE = "/path/to/your/privkey.pem"
+```
+
+2. Ensure that both files are readable by the `tactical` Linux user:
+```bash
+sudo chown tactical:tactical /path/to/your/fullchain.pem /path/to/your/privkey.pem
+sudo chmod 440 /path/to/your/fullchain.pem /path/to/your/privkey.pem
+```
+
+3. Update all instances of `ssl_certificate` and `ssl_certificate_key` in the three Nginx configuration files located in `/etc/nginx/sites-available` to point to your certificate and private key paths.
+
+4. Restart the services: `sudo systemctl restart nginx meshcentral rmm daphne`
+
 
 ### Use NATS Standard instead of NATS websocket
 
