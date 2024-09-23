@@ -23,6 +23,8 @@ At the moment, Microsoft Windows Defender thinks a go executable with virtually 
 
 Be aware there is also [a PowerShell script](https://github.com/amidaware/community-scripts/blob/main/scripts/Win_TRMM_AV_Update_Exclusion.ps1) to add TRMM exclusions specific to Windows Defender.
 
+[Is Code Signing worth it?](code_signing.md#tactical-rmm-is-getting-flagged-as-pua-or-virus-will-this-fix-it)
+
 !!!note
     If you need to use 3rd party AV, add the necessary exclusions (see below for examples) and submit the exes as safe.
 
