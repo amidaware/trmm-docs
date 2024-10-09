@@ -183,7 +183,7 @@ data_sources:
           - hostname
           - operating_system
           - plat
-        custom_field:
+        custom_fields:
           - agent_custom_field
 ```
 
