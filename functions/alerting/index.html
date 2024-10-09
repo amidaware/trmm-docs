@@ -1,0 +1,2275 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A remote monitoring and management tool">
+      
+      
+        <meta name="author" content="amidaware">
+      
+      
+        <link rel="canonical" href="https://docs.tacticalrmm.com/functions/alerting/">
+      
+      <link rel="icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Alerting - Tactical RMM Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/neoteroi-mkdocs.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#alerting-overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Tactical RMM Documentation" class="md-header__button md-logo" aria-label="Tactical RMM Documentation" data-md-component="logo">
+      
+  <img src="../../images/onit.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tactical RMM Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Alerting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="light" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/amidaware/tacticalrmm" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    amidaware/tacticalrmm
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Tactical RMM Documentation" class="md-nav__button md-logo" aria-label="Tactical RMM Documentation" data-md-component="logo">
+      
+  <img src="../../images/onit.ico" alt="logo">
+
+    </a>
+    Tactical RMM Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/amidaware/tacticalrmm" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    amidaware/tacticalrmm
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sponsor/" class="md-nav__link">
+        Sponsor
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code_signing/" class="md-nav__link">
+        Code Signing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/" class="md-nav__link">
+        Support
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/" class="md-nav__link">
+        Roadmap
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide_gettingstarted/" class="md-nav__link">
+        Getting Started Guide
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          RMM Server Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="RMM Server Installation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          RMM Server Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install_considerations/" class="md-nav__link">
+        Install Considerations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install_server/" class="md-nav__link">
+        Traditional Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install_docker/" class="md-nav__link">
+        Docker Install
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          RMM Server Updating
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="RMM Server Updating" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          RMM Server Updating
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../update_server/" class="md-nav__link">
+        Updating the RMM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../update_docker/" class="md-nav__link">
+        Updating the RMM (Docker)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Agents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Agents" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Agents
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install_agent/" class="md-nav__link">
+        Agent Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../update_agents/" class="md-nav__link">
+        Updating Agents
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Functionality
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Functionality" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Functionality
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howitallworks/" class="md-nav__link">
+        How it all Works
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global_settings/" class="md-nav__link">
+        Global Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Alerting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Alerting
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-notifications" class="md-nav__link">
+    Supported Notifications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alert-severities" class="md-nav__link">
+    Alert Severities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-alert-templates" class="md-nav__link">
+    Creating Alert Templates
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating Alert Templates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-settings" class="md-nav__link">
+    General Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alert-action-settings" class="md-nav__link">
+    Alert Action Settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Alert Action Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alert-failure-settings-alert-resolved-settings" class="md-nav__link">
+    Alert Failure Settings / Alert Resolved Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-a-web-hook" class="md-nav__link">
+    Send a Web Hook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-script-on-agent" class="md-nav__link">
+    Run script on Agent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-script-on-server" class="md-nav__link">
+    Run script on Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-actions-only-on" class="md-nav__link">
+    Run actions only on
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-overdue-setting" class="md-nav__link">
+    Agent Overdue Setting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-settings-automated-task-settings" class="md-nav__link">
+    Check Settings / Automated Task Settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applying-alert-templates" class="md-nav__link">
+    Applying Alert Templates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alert-template-exclusions" class="md-nav__link">
+    Alert Template Exclusions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alert-template-inheritance" class="md-nav__link">
+    Alert Template Inheritance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-alert-severities-with-scripts" class="md-nav__link">
+    Setting up Alert Severities with scripts
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        API Access
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automated_tasks/" class="md-nav__link">
+        Automated Tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automation_policies/" class="md-nav__link">
+        Automation Policies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom_fields/" class="md-nav__link">
+        Custom Fields
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../django_admin/" class="md-nav__link">
+        Django Admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../emailsms_alert/" class="md-nav__link">
+        Email & SMS Alerts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../keystore/" class="md-nav__link">
+        Global Keystore
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintenance_mode/" class="md-nav__link">
+        Maintenance Mode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../permissions/" class="md-nav__link">
+        Permissions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remote_bg/" class="md-nav__link">
+        Remote Background
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings_override/" class="md-nav__link">
+        Overriding / Customizing Default Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripting/" class="md-nav__link">
+        Scripting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snmp_checks/" class="md-nav__link">
+        SNMP Checks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../url_actions/" class="md-nav__link">
+        URL Actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_ui/" class="md-nav__link">
+        User Interface Preferences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webhooks/" class="md-nav__link">
+        Web Hooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web_terminal/" class="md-nav__link">
+        Web Terminal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../script_variables/" class="md-nav__link">
+        Reference: Script Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        Examples
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          Reporting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reporting" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Reporting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/reporting_overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/faq/" class="md-nav__link">
+        - FAQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/reporting_basics/" class="md-nav__link">
+        - The Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/reporting_basetemplates/" class="md-nav__link">
+        - Base Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/reporting_variables/" class="md-nav__link">
+        - Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/reporting_dataqueries/" class="md-nav__link">
+        - Data Queries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/reporting_assets/" class="md-nav__link">
+        - Assets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/tipsntricks/" class="md-nav__link">
+        - Tips n' Tricks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backup/" class="md-nav__link">
+        Backup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../restore/" class="md-nav__link">
+        Restore
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../av/" class="md-nav__link">
+        Antivirus Exclusions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../management_cmds/" class="md-nav__link">
+        Management Commands
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mesh_integration/" class="md-nav__link">
+        MeshCentral Integration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_19" type="checkbox" id="__nav_19" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_19">
+          3rd Party Integrations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="3rd Party Integrations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_19">
+          <span class="md-nav__icon md-icon"></span>
+          3rd Party Integrations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_grafana/" class="md-nav__link">
+        Grafana
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_anydesk/" class="md-nav__link">
+        AnyDesk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_n-able-takecontrol/" class="md-nav__link">
+        N-Able
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_bomgar/" class="md-nav__link">
+        Bomgar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_screenconnect/" class="md-nav__link">
+        ConnectWise Control / ScreenConnect
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_rustdesk/" class="md-nav__link">
+        RustDesk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_splashtop/" class="md-nav__link">
+        Splashtop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_supremo/" class="md-nav__link">
+        Supremo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_teamviewer/" class="md-nav__link">
+        TeamViewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_bitdefender_gravityzone/" class="md-nav__link">
+        BitDefender GravityZone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_bitdefender_total_security/" class="md-nav__link">
+        BitDefender Total Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_zammad/" class="md-nav__link">
+        Zammad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_dashy/" class="md-nav__link">
+        Dashy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_20" type="checkbox" id="__nav_20" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_20">
+          Unsupported Extras
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Unsupported Extras" data-md-level="1">
+        <label class="md-nav__title" for="__nav_20">
+          <span class="md-nav__icon md-icon"></span>
+          Unsupported Extras
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unsupported_guidelines/" class="md-nav__link">
+        Unsupported Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unsupported_scripts/" class="md-nav__link">
+        Unsupported Configs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../securing_nginx/" class="md-nav__link">
+        Securing nginx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unsupported_proxies/" class="md-nav__link">
+        Unsupported Proxies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unsupported_synology_docker_install/" class="md-nav__link">
+        Installing in Synology Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unsupported_platforms/" class="md-nav__link">
+        Installing on other platforms
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tipsntricks/" class="md-nav__link">
+        Tips n' Tricks
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_22" type="checkbox" id="__nav_22" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_22">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contributing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_22">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/" class="md-nav__link">
+        Contributing to Docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing_community_scripts/" class="md-nav__link">
+        Contributing to Community Scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing_reporting_templates/" class="md-nav__link">
+        Contributing to Reporting Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing_using_browser/" class="md-nav__link">
+        Contributing using a browser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing_using_vscode/" class="md-nav__link">
+        Contributing using VS Code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing_using_docker/" class="md-nav__link">
+        Contributing using Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing_using_a_remote_server/" class="md-nav__link">
+        Contributing using a Remote Server
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-notifications" class="md-nav__link">
+    Supported Notifications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alert-severities" class="md-nav__link">
+    Alert Severities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-alert-templates" class="md-nav__link">
+    Creating Alert Templates
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating Alert Templates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-settings" class="md-nav__link">
+    General Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alert-action-settings" class="md-nav__link">
+    Alert Action Settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Alert Action Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alert-failure-settings-alert-resolved-settings" class="md-nav__link">
+    Alert Failure Settings / Alert Resolved Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-a-web-hook" class="md-nav__link">
+    Send a Web Hook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-script-on-agent" class="md-nav__link">
+    Run script on Agent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-script-on-server" class="md-nav__link">
+    Run script on Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-actions-only-on" class="md-nav__link">
+    Run actions only on
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-overdue-setting" class="md-nav__link">
+    Agent Overdue Setting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-settings-automated-task-settings" class="md-nav__link">
+    Check Settings / Automated Task Settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applying-alert-templates" class="md-nav__link">
+    Applying Alert Templates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alert-template-exclusions" class="md-nav__link">
+    Alert Template Exclusions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alert-template-inheritance" class="md-nav__link">
+    Alert Template Inheritance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-alert-severities-with-scripts" class="md-nav__link">
+    Setting up Alert Severities with scripts
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="alerting-overview">Alerting Overview<a class="headerlink" href="#alerting-overview" title="Permanent link">&para;</a></h1>
+<p>Alerting and notifications can be managed centrally using Alert Templates. All an alert template does is configure the Email, Text, and Dashboard alert check boxes on Agents, Checks, and Automated Tasks.</p>
+<p>Using Alert Templates also enables additional features like:</p>
+<ul>
+<li>Periodic notifications if an alert is left unresolved.</li>
+<li>Being able to notify on certain alert severities.</li>
+<li>Sending notifications when an alert is resolved.</li>
+<li>Executing scripts when an alert is triggered or resolved.</li>
+</ul>
+<p><a href="../emailsms_alert/">Setting up Email Alert Examples</a></p>
+<h2 id="supported-notifications">Supported Notifications<a class="headerlink" href="#supported-notifications" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Email Alerts</strong> - Sends email to configured set of email addresses.</li>
+<li><strong>SMS Alerts</strong> - Sends text messages to configured set of numbers.</li>
+<li><strong>Dashboard Alerts</strong> - A notification popup will show up and be visible in the dashboard.</li>
+<li><strong>Webhooks</strong> - Send an API request.</li>
+</ul>
+<h2 id="alert-severities">Alert Severities<a class="headerlink" href="#alert-severities" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Agent overdue alerts are always of severity: <code>Error</code></p>
+</div>
+<p>Alert severities are configured directly on the Check or Automated Task. When the Check or Automated Task fails, it will create an alert of the specified severity. The severity types are:</p>
+<ul>
+<li>Informational</li>
+<li>Warning</li>
+<li>Error</li>
+</ul>
+<h2 id="creating-alert-templates">Creating Alert Templates<a class="headerlink" href="#creating-alert-templates" title="Permanent link">&para;</a></h2>
+<p>To create an alert template, go to <strong>Settings &gt; Alerts Manager</strong>, then click <strong>New</strong>.</p>
+<p>The available options are:</p>
+<h3 id="general-settings">General Settings<a class="headerlink" href="#general-settings" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Name</strong> - The name that is used to identify the Alert Template in the dashboard.</li>
+<li><strong>Email Recipients</strong> - Sets the list of email recipients. If this isn't set the email recipients in global settings will be used.</li>
+<li><strong>From Email</strong> - Sets the From email address of the notification. If this isn't set the From address from global settings is used.</li>
+<li><strong>SMS Recipients</strong> - Sets the list of text recipients. If this isn't set the sms list from global settings is used.</li>
+</ul>
+<h3 id="alert-action-settings">Alert Action Settings<a class="headerlink" href="#alert-action-settings" title="Permanent link">&para;</a></h3>
+<p>For optionally triggering an additional task (Send a Web Hook, Run Script on Agent, Run script on TRMM Server) when desired (can be left blank for no action).</p>
+<h4 id="alert-failure-settings-alert-resolved-settings">Alert Failure Settings / Alert Resolved Settings<a class="headerlink" href="#alert-failure-settings-alert-resolved-settings" title="Permanent link">&para;</a></h4>
+<h4 id="send-a-web-hook">Send a Web Hook<a class="headerlink" href="#send-a-web-hook" title="Permanent link">&para;</a></h4>
+<p>You can create your own webhooks to be sent out on alert failure/resolved events, like a script check or task failing or an agent going overdue.</p>
+<p>You have access to any of the <a href="https://docs.tacticalrmm.com/script_variables/">variables</a> as well as <a href="../custom_fields/">custom fields</a> / <a href="../keystore/">global keystore</a> inside the json payload of the webhook as well as in the URL patter.</p>
+<ol>
+<li>
+<p>Create your <a href="../webhooks/">Web Hooks</a></p>
+</li>
+<li>
+<p>Choose the Web Hook you wish to be ran as the alert failure and/or resolved action.</p>
+</li>
+</ol>
+<h4 id="run-script-on-agent">Run script on Agent<a class="headerlink" href="#run-script-on-agent" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Script</strong> - Runs the selected script once. It attempts to run it on the agent in question, but if not online TRMM selects a random agent to run on.</li>
+<li><strong>Script arguments</strong> - Optionally pass in arguments to the script.</li>
+<li><strong>Script environment vars</strong> - Optionally pass in env vars to the script.</li>
+<li><strong>Action Timeout</strong> - Sets the timeout for the script.</li>
+</ul>
+<h4 id="run-script-on-server">Run script on Server<a class="headerlink" href="#run-script-on-server" title="Permanent link">&para;</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is a <a href="../permissions/#permissions-with-extra-security-implications">dangerous feature</a> and you must ensure permissions are appropriate for your environment.</p>
+</div>
+<div class="video-wrapper">
+  <iframe width="400" height="225" src="https://www.youtube.com/embed/Qh9BfKo2wIg" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<p>This runs the script on your TRMM server. To ensure proper execution, you must specify the interpreter for your script using a shebang line at the top of each script. Also make sure that the specified interpreter is installed on your TRMM server.</p>
+<p>Just like with webhooks, you also have access to the same <a href="https://docs.tacticalrmm.com/script_variables/">variables</a> as well as <a href="../custom_fields/">custom fields</a> / <a href="../keystore/">global keystore</a> in the script's arguments or environment variables.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5h1.18m-4.28 11.79c-.4 0-.72.3-.72.89 0 .59.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68H4.86M9.14 5.71c.4 0 .72-.3.72-.89 0-.59-.32-.71-.72-.71-.39 0-.71.12-.71.71s.32.89.71.89Z"/></svg></span> Python (included with TRMM)</label><label for="__tabbed_1_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5h1.18m-4.28 11.79c-.4 0-.72.3-.72.89 0 .59.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68H4.86M9.14 5.71c.4 0 .72-.3.72-.89 0-.59-.32-.71-.72-.71-.39 0-.71.12-.71.71s.32.89.71.89Z"/></svg></span> Python (system python)</label><label for="__tabbed_1_3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9h2.31l.32-3h2l-.32 3h2l.32-3h2l-.32 3H15v2h-1.9l-.2 2H15v2h-2.31l-.32 3h-2l.32-3h-2l-.32 3h-2l.32-3H5v-2h1.9l.2-2H5V9m4.1 2-.2 2h2l.2-2M19 6h-2v8h2m0 2h-2v2h2Z"/></svg></span> Bash</label><label for="__tabbed_1_4"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.83 4c.49 0 .8.4.67.89l-3.16 14.22c-.11.49-.59.89-1.08.89H2.17c-.49 0-.8-.4-.67-.89L4.66 4.89C4.77 4.4 5.25 4 5.74 4h16.09m-6 12h-4c-.46 0-.83.38-.83.84 0 .47.37.85.83.85h4c.47 0 .85-.38.85-.85 0-.46-.38-.84-.85-.84m-10.05.28a.87.87 0 0 0-.21 1.22c.28.42.84.5 1.24.23 7.35-5.17 7.4-5.23 7.45-5.26.18-.16.27-.38.28-.6.01-.2-.04-.37-.16-.56L9.46 6.03A.867.867 0 0 0 8.21 6c-.36.32-.38.88-.05 1.24l4.15 4.44-6.53 4.6Z"/></svg></span> Powershell (7 PWSH)</label><label for="__tabbed_1_5"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1.85c-.27 0-.55.07-.78.2l-7.44 4.3c-.48.28-.78.8-.78 1.36v8.58c0 .56.3 1.08.78 1.36l1.95 1.12c.95.46 1.27.47 1.71.47 1.4 0 2.21-.85 2.21-2.33V8.44c0-.12-.1-.22-.22-.22H8.5c-.13 0-.23.1-.23.22v8.47c0 .66-.68 1.31-1.77.76L4.45 16.5a.26.26 0 0 1-.11-.21V7.71c0-.09.04-.17.11-.21l7.44-4.29c.06-.04.16-.04.22 0l7.44 4.29c.07.04.11.12.11.21v8.58c0 .08-.04.16-.11.21l-7.44 4.29c-.06.04-.16.04-.23 0L10 19.65c-.08-.03-.16-.04-.21-.01-.53.3-.63.36-1.12.51-.12.04-.31.11.07.32l2.48 1.47c.24.14.5.21.78.21s.54-.07.78-.21l7.44-4.29c.48-.28.78-.8.78-1.36V7.71c0-.56-.3-1.08-.78-1.36l-7.44-4.3c-.23-.13-.5-.2-.78-.2M14 8c-2.12 0-3.39.89-3.39 2.39 0 1.61 1.26 2.08 3.3 2.28 2.43.24 2.62.6 2.62 1.08 0 .83-.67 1.18-2.23 1.18-1.98 0-2.4-.49-2.55-1.47a.226.226 0 0 0-.22-.18h-.96c-.12 0-.21.09-.21.22 0 1.24.68 2.74 3.94 2.74 2.35 0 3.7-.93 3.7-2.55 0-1.61-1.08-2.03-3.37-2.34-2.31-.3-2.54-.46-2.54-1 0-.45.2-1.05 1.91-1.05 1.5 0 2.09.33 2.32 1.36.02.1.11.17.21.17h.97c.05 0 .11-.02.15-.07.04-.04.07-.1.05-.16C17.56 8.82 16.38 8 14 8Z"/></svg></span> node (included with TRMM)</label><label for="__tabbed_1_6"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0Zm-.469 6.793c-3.49 0-6.204 2.196-6.204 4.928 0 2.58 2.498 4.228 6.37 4.145l.118-.003.425-.012-.109.279.013.029c.031.072.06.145.084.22l.01.028.015.045.021.065.014.045.014.047.015.049.021.075.022.079.015.054.023.084.022.088.023.091.023.095.015.065.024.1.023.103.032.143.017.074.024.114.024.117.025.12.035.174.029.142.037.195.02.1.028.155.03.158.039.217.04.225.04.231.041.24.042.246.042.254.042.26.032.201.055.344.022.14.055.36.045.295.034.227.046.308.023.156a10.758 10.758 0 0 0 6.529-3.412l.05-.055-.238-.891-.633-2.37-.395-1.47-.348-1.296-.213-.787-.136-.498-.081-.297-.073-.264-.032-.11-.018-.064-.01-.034-.008-.026a6.042 6.042 0 0 0-2.038-2.97c-1.134-.887-2.573-1.351-4.252-1.351ZM8.467 19.3a.586.586 0 0 0-.714.4l-.004.013-.527 1.953c.328.163.665.309 1.008.437l.08.03.57-2.114.004-.015a.586.586 0 0 0-.417-.704Zm3.264-1.43a.586.586 0 0 0-.715.4l-.004.014-.796 2.953-.004.014a.586.586 0 0 0 1.131.305l.004-.014.797-2.953.003-.014a.585.585 0 0 0 .013-.067l.002-.022-.019-.096-.027-.138-.018-.086a.584.584 0 0 0-.367-.295Zm-5.553-3.04a.59.59 0 0 0-.037.09l-.005.02-.797 2.953-.004.014a.586.586 0 0 0 1.131.306l.004-.014.723-2.678a5.295 5.295 0 0 1-1.015-.692Zm-1.9-3.397a.586.586 0 0 0-.715.4l-.004.013-.797 2.953-.003.015a.586.586 0 0 0 1.13.305l.005-.014.797-2.953.003-.015a.586.586 0 0 0-.416-.704Zm17.868-.67a.586.586 0 0 0-.715.399l-.004.014-.797 2.953-.003.014a.586.586 0 0 0 1.13.305l.005-.014.797-2.953.003-.014a.586.586 0 0 0-.416-.704ZM2.542 6.82a10.707 10.707 0 0 0-1.251 3.926.586.586 0 0 0 1.002-.22l.004-.014.797-2.953.003-.014a.586.586 0 0 0-.555-.725Zm17.585.02a.586.586 0 0 0-.714.4l-.004.014-.797 2.953-.004.014a.586.586 0 0 0 1.131.305l.004-.014.797-2.953.004-.014a.586.586 0 0 0-.417-.704Zm-7.846 1.926a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5Zm-6.27-4.733a.586.586 0 0 0-.715.398l-.004.015-.797 2.953-.004.014a.586.586 0 0 0 1.132.305l.003-.014.797-2.953.004-.014a.586.586 0 0 0-.417-.704Zm10.238.558a.586.586 0 0 0-.714.399l-.004.014-.536 1.984c.347.171.678.373.99.603l.051.038.626-2.32.004-.014a.586.586 0 0 0-.417-.704Zm-5.211-3.33a10.76 10.76 0 0 0-1.115.158l-.078.015-.742 2.753-.004.015a.586.586 0 0 0 1.131.305l.004-.014.797-2.953.004-.015a.583.583 0 0 0 .003-.264Zm7.332 2.04-.156.58-.004.015a.586.586 0 0 0 1.131.305l.004-.014.017-.063a10.838 10.838 0 0 0-.923-.772l-.069-.051Zm-4.636-1.944-.283 1.048-.003.014a.586.586 0 0 0 1.13.305l.005-.014.297-1.102c-.35-.097-.705-.176-1.063-.237l-.083-.014Z"/></svg></span> deno (must be installed)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Shell type: <code>Shell</code></p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/rmm/api/env/bin/python</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Shell type: <code>Shell</code></p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/python3</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Shell type: <code>Shell</code></p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello world&quot;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>To install: <a href="https://learn.microsoft.com/en-us/powershell/scripting/install/install-debian">https://learn.microsoft.com/en-us/powershell/scripting/install/install-debian</a></p>
+<p>Shell type: <code>Powershell</code></p>
+<div class="highlight"><pre><span></span><code><span class="c">#!/usr/bin/pwsh</span>
+
+<span class="nb">Write-Output</span> <span class="s2">&quot;Hello World&quot;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Shell type: <code>Shell</code></p>
+<div class="highlight"><pre><span></span><code>#!/usr/bin/node
+
+console.log(&quot;Hello World&quot;)
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Shell type: <code>Deno</code></p>
+<div class="highlight"><pre><span></span><code>#!/usr/bin/env -S /usr/local/bin/deno run --allow-allow
+
+async function gatherSystemInfo() {
+const os = Deno.build.os;
+const arch = Deno.build.arch;
+const memory = Deno.systemMemoryInfo();
+
+
+const info = `
+OS: ${os}
+Architecture: ${arch}
+Total Memory: ${(await memory).total / 1024 / 1024} MB
+Free Memory: ${(await memory).free / 1024 / 1024} MB
+`;
+
+console.log(info);
+}
+
+gatherSystemInfo().catch(console.error);
+</code></pre></div>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Script</strong> - Runs the selected script once on the TRMM server.</li>
+<li><strong>Script arguments</strong> - Optionally pass in arguments to the script.</li>
+<li><strong>Script environment vars</strong> - Optionally pass in env vars to the script.</li>
+<li><strong>Action Timeout</strong> - Sets the timeout for the script.</li>
+</ul>
+<h4 id="run-actions-only-on">Run actions only on<a class="headerlink" href="#run-actions-only-on" title="Permanent link">&para;</a></h4>
+<p>Turn the switch on if you want the above Alert Failure/Alert Resolved script to run on:</p>
+<ul>
+<li><strong>Agents</strong> - If Enabled, will run script failure / resolved actions on agent overdue alerts, else no alert actions will be triggered for agent overdue alerts.</li>
+<li><strong>Checks</strong> - If Enabled, will run script failure / resolved actions on check alerts, else no alert actions will be triggered check alerts.</li>
+<li><strong>Tasks</strong> - If Enabled, will run script failure / resolved actions on automated task alerts, else no alert actions will be triggered automated task alerts.</li>
+</ul>
+<h3 id="agent-overdue-setting">Agent Overdue Setting<a class="headerlink" href="#agent-overdue-setting" title="Permanent link">&para;</a></h3>
+<p><img alt="Agent Overdue" src="../images/alerts_agentoverdue.png" /></p>
+<ul>
+<li><strong>Email</strong> - When <strong>Enabled</strong>, will send an email notification and override the Email Alert checkbox on the Agent / Check / Task. When <strong>Not Configured</strong>, the Email Alert checkbox on the Agent / Check / Task will take effect. If <strong>Disabled</strong>, no email notifications will be sent and will override any Email alert checkbox on the Agent / Check / Task.</li>
+<li><strong>Text</strong> - When <strong>Enabled</strong>, will send a text notification and override the SMS Alert checkbox on the Agent / Check / Task. When <strong>Not Configured</strong>, the SMS Alert checkbox on the Agent / Check / Task will take effect. If <strong>Disabled</strong>, no SMS notifications will be sent and will override any SMS Alert checkbox on the Agent / Check / Task.</li>
+<li><strong>Dashboard</strong> - When <strong>Enabled</strong>, will send a dashboard notification and override the Dashboard Alert checkbox on the Agent / Check / Task. When <strong>Not Configured</strong>, the Dashboard Alert checkbox on the Agent / Check / Task will take effect. If <strong>Disabled</strong>, no SMS notifications will be sent and will override any Dashboard Alert checkbox on the Agent / Check / Task.</li>
+<li><strong>Alert again if not resolved after (days)</strong> - This sends another notification if the alert isn't resolved after the set amount of days. Set to 0 to disable this.</li>
+<li>
+<p><strong>Alert on severity</strong> - Only applicable to Check and Task alert notifications. This will only send alerts when they are of the configured severity.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Alert on Severity needs to be configured for check and task notifications to be sent!</p>
+</div>
+</li>
+</ul>
+<h3 id="check-settings-automated-task-settings">Check Settings / Automated Task Settings<a class="headerlink" href="#check-settings-automated-task-settings" title="Permanent link">&para;</a></h3>
+<p><img alt="alt text" src="../images/alerts_checks.png" /></p>
+<p><img alt="alt text" src="../images/alerts_tasks.png" /></p>
+<ul>
+<li><strong>Email</strong> - If enabled, sends an email notification when an alert is resolved.</li>
+<li><strong>Text</strong> - If enabled, sends a text messaged when an alert is resolved.</li>
+</ul>
+<h2 id="applying-alert-templates">Applying Alert Templates<a class="headerlink" href="#applying-alert-templates" title="Permanent link">&para;</a></h2>
+<p>Alert templates can be configured:</p>
+<ul>
+<li>Globally at the <a href="../global_settings/#general">Server Level</a></li>
+<li>By <a href="../automation_policies/">Automation Policy</a></li>
+<li>Manually at the Client Level</li>
+<li>
+<p>Manually at the Site Level</p>
+</li>
+<li>
+<p>To apply <strong>Globally</strong>, navigate to <strong>Settings &gt; Global Settings</strong>. Set the <strong>Alert Template</strong> dropdown and save.</p>
+</li>
+<li>You can configure an alert template on an automation policy by navigating to <strong>Settings &gt; Automation Manager</strong>, and clicking the <strong>Assign Alert Template</strong> click on the policy, or right-clicking the policy and selecting <strong>Assign Alert Template</strong>.</li>
+<li>To configure on a Client or Site right-click on one in the Client / Site tree view and select <strong>Assign Alert Template</strong>.</li>
+</ul>
+<h2 id="alert-template-exclusions">Alert Template Exclusions<a class="headerlink" href="#alert-template-exclusions" title="Permanent link">&para;</a></h2>
+<p>You can exclude Clients, Sites, and Agents from Alert Templates. To do this you can:</p>
+<ul>
+<li>Right-click on the <strong>Alert Template</strong> in <strong>Alerts Manager</strong> and select <strong>Exclusions</strong>.</li>
+<li>Select the <strong>Alert Exclusions</strong> link in the Alert Template row.</li>
+</ul>
+<p>You can also <strong>Exclude Desktops</strong> from the alert template. This is useful if you only care about servers.</p>
+<h2 id="alert-template-inheritance">Alert Template Inheritance<a class="headerlink" href="#alert-template-inheritance" title="Permanent link">&para;</a></h2>
+<p>Alerts are applied in the following order. The agent picks the closest matching alert template.</p>
+<ol>
+<li>Policy w/ Alert Template applied to Site</li>
+<li>Site</li>
+<li>Policy w/ Alert Template applied to Client</li>
+<li>Client</li>
+<li>Default Alert Template</li>
+</ol>
+<h2 id="setting-up-alert-severities-with-scripts">Setting up Alert Severities with scripts<a class="headerlink" href="#setting-up-alert-severities-with-scripts" title="Permanent link">&para;</a></h2>
+<p>If scripting for alert severities please see below, </p>
+<ol>
+<li>
+<p>Create a script with exit codes. The exit codes can be anything other than 0 (which is reserved for passing). Below we are using 2 as a Warning and 5 as Informational, any other code will be assumed to be an Error)</p>
+<div class="highlight"><pre><span></span><code>If (!(test-path c:\ProgramData\TacticalRMM\temp)) {
+    New-Item -ItemType Directory -Force -Path &quot;C:\ProgramData\TacticalRMM\temp&quot;
+    $exitcode = 2
+    $host.SetShouldExit($exitcode)
+    exit
+}
+Else {
+    Write-Output &quot;found folder&quot;
+    $exitcode = 5
+    $host.SetShouldExit($exitcode)
+    exit
+}
+</code></pre></div>
+</li>
+<li>
+<p>Setup a script check and fill in the corresponding Warning and Informational codes (don't forget to hit enter). </p>
+</li>
+<li>Save script check and you should now have the different Severities.</li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../global_settings/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Global Settings" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Global Settings
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../api/" class="md-footer__link md-footer__link--next" aria-label="Next: API Access" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              API Access
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/amidaware/tacticalrmm" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>

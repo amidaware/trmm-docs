@@ -1,0 +1,2461 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A remote monitoring and management tool">
+      
+      
+        <meta name="author" content="amidaware">
+      
+      
+        <link rel="canonical" href="https://docs.tacticalrmm.com/unsupported_scripts/">
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Unsupported Configs - Tactical RMM Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/neoteroi-mkdocs.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unsupported-reference-scripts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tactical RMM Documentation" class="md-header__button md-logo" aria-label="Tactical RMM Documentation" data-md-component="logo">
+      
+  <img src="../images/onit.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tactical RMM Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unsupported Configs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="light" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/amidaware/tacticalrmm" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    amidaware/tacticalrmm
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tactical RMM Documentation" class="md-nav__button md-logo" aria-label="Tactical RMM Documentation" data-md-component="logo">
+      
+  <img src="../images/onit.ico" alt="logo">
+
+    </a>
+    Tactical RMM Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/amidaware/tacticalrmm" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    amidaware/tacticalrmm
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sponsor/" class="md-nav__link">
+        Sponsor
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code_signing/" class="md-nav__link">
+        Code Signing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        Support
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
+        Roadmap
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide_gettingstarted/" class="md-nav__link">
+        Getting Started Guide
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          RMM Server Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="RMM Server Installation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          RMM Server Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_considerations/" class="md-nav__link">
+        Install Considerations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_server/" class="md-nav__link">
+        Traditional Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_docker/" class="md-nav__link">
+        Docker Install
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          RMM Server Updating
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="RMM Server Updating" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          RMM Server Updating
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_server/" class="md-nav__link">
+        Updating the RMM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_docker/" class="md-nav__link">
+        Updating the RMM (Docker)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Agents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Agents" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Agents
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_agent/" class="md-nav__link">
+        Agent Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_agents/" class="md-nav__link">
+        Updating Agents
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Functionality
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Functionality" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Functionality
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howitallworks/" class="md-nav__link">
+        How it all Works
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/global_settings/" class="md-nav__link">
+        Global Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/alerting/" class="md-nav__link">
+        Alerting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/api/" class="md-nav__link">
+        API Access
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/automated_tasks/" class="md-nav__link">
+        Automated Tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/automation_policies/" class="md-nav__link">
+        Automation Policies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/custom_fields/" class="md-nav__link">
+        Custom Fields
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/django_admin/" class="md-nav__link">
+        Django Admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/emailsms_alert/" class="md-nav__link">
+        Email & SMS Alerts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/keystore/" class="md-nav__link">
+        Global Keystore
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/maintenance_mode/" class="md-nav__link">
+        Maintenance Mode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/permissions/" class="md-nav__link">
+        Permissions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/remote_bg/" class="md-nav__link">
+        Remote Background
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/settings_override/" class="md-nav__link">
+        Overriding / Customizing Default Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/scripting/" class="md-nav__link">
+        Scripting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/snmp_checks/" class="md-nav__link">
+        SNMP Checks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/url_actions/" class="md-nav__link">
+        URL Actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/user_ui/" class="md-nav__link">
+        User Interface Preferences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/webhooks/" class="md-nav__link">
+        Web Hooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/web_terminal/" class="md-nav__link">
+        Web Terminal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../script_variables/" class="md-nav__link">
+        Reference: Script Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/examples/" class="md-nav__link">
+        Examples
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          Reporting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reporting" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Reporting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/reporting_overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/faq/" class="md-nav__link">
+        - FAQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_basics/" class="md-nav__link">
+        - The Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_basetemplates/" class="md-nav__link">
+        - Base Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_variables/" class="md-nav__link">
+        - Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_dataqueries/" class="md-nav__link">
+        - Data Queries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_assets/" class="md-nav__link">
+        - Assets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/tipsntricks/" class="md-nav__link">
+        - Tips n' Tricks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backup/" class="md-nav__link">
+        Backup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../restore/" class="md-nav__link">
+        Restore
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../av/" class="md-nav__link">
+        Antivirus Exclusions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../management_cmds/" class="md-nav__link">
+        Management Commands
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesh_integration/" class="md-nav__link">
+        MeshCentral Integration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_19" type="checkbox" id="__nav_19" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_19">
+          3rd Party Integrations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="3rd Party Integrations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_19">
+          <span class="md-nav__icon md-icon"></span>
+          3rd Party Integrations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_grafana/" class="md-nav__link">
+        Grafana
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_anydesk/" class="md-nav__link">
+        AnyDesk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_n-able-takecontrol/" class="md-nav__link">
+        N-Able
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_bomgar/" class="md-nav__link">
+        Bomgar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_screenconnect/" class="md-nav__link">
+        ConnectWise Control / ScreenConnect
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_rustdesk/" class="md-nav__link">
+        RustDesk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_splashtop/" class="md-nav__link">
+        Splashtop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_supremo/" class="md-nav__link">
+        Supremo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_teamviewer/" class="md-nav__link">
+        TeamViewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_bitdefender_gravityzone/" class="md-nav__link">
+        BitDefender GravityZone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_bitdefender_total_security/" class="md-nav__link">
+        BitDefender Total Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_zammad/" class="md-nav__link">
+        Zammad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_dashy/" class="md-nav__link">
+        Dashy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_20" type="checkbox" id="__nav_20" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_20">
+          Unsupported Extras
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Unsupported Extras" data-md-level="1">
+        <label class="md-nav__title" for="__nav_20">
+          <span class="md-nav__icon md-icon"></span>
+          Unsupported Extras
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_guidelines/" class="md-nav__link">
+        Unsupported Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Unsupported Configs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Unsupported Configs
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fail2ban" class="md-nav__link">
+    Fail2ban
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-purchased-ssl-certs-instead-of-lets-encrypt-wildcards" class="md-nav__link">
+    Using purchased SSL certs instead of Let's Encrypt wildcards
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-certbot-to-do-acme-challenge-over-http" class="md-nav__link">
+    Use Certbot to do acme challenge over http
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-your-own-certs-with-docker" class="md-nav__link">
+    Using your own certs with Docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restricting-access-to-rmmexamplecom" class="md-nav__link">
+    Restricting Access to rmm.EXAMPLE.COM
+  </a>
+  
+    <nav class="md-nav" aria-label="Restricting Access to rmm.EXAMPLE.COM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-dns" class="md-nav__link">
+    Using DNS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-fixed-ip" class="md-nav__link">
+    Using a fixed IP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automating-ssl-with-cloudflare" class="md-nav__link">
+    Automating SSL with Cloudflare
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../securing_nginx/" class="md-nav__link">
+        Securing nginx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_proxies/" class="md-nav__link">
+        Unsupported Proxies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_synology_docker_install/" class="md-nav__link">
+        Installing in Synology Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_platforms/" class="md-nav__link">
+        Installing on other platforms
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tipsntricks/" class="md-nav__link">
+        Tips n' Tricks
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_22" type="checkbox" id="__nav_22" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_22">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contributing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_22">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        Contributing to Docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_community_scripts/" class="md-nav__link">
+        Contributing to Community Scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_reporting_templates/" class="md-nav__link">
+        Contributing to Reporting Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_browser/" class="md-nav__link">
+        Contributing using a browser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_vscode/" class="md-nav__link">
+        Contributing using VS Code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_docker/" class="md-nav__link">
+        Contributing using Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_a_remote_server/" class="md-nav__link">
+        Contributing using a Remote Server
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fail2ban" class="md-nav__link">
+    Fail2ban
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-purchased-ssl-certs-instead-of-lets-encrypt-wildcards" class="md-nav__link">
+    Using purchased SSL certs instead of Let's Encrypt wildcards
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-certbot-to-do-acme-challenge-over-http" class="md-nav__link">
+    Use Certbot to do acme challenge over http
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-your-own-certs-with-docker" class="md-nav__link">
+    Using your own certs with Docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restricting-access-to-rmmexamplecom" class="md-nav__link">
+    Restricting Access to rmm.EXAMPLE.COM
+  </a>
+  
+    <nav class="md-nav" aria-label="Restricting Access to rmm.EXAMPLE.COM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-dns" class="md-nav__link">
+    Using DNS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-fixed-ip" class="md-nav__link">
+    Using a fixed IP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automating-ssl-with-cloudflare" class="md-nav__link">
+    Automating SSL with Cloudflare
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="unsupported-reference-scripts">Unsupported Reference Scripts<a class="headerlink" href="#unsupported-reference-scripts" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These are not supported scripts/configurations by Tactical RMM, but it's provided here for your reference.</p>
+<p>Although these aren't officially supported configurations, we generally will help point you in the right direction. Please use the Discord <a href="https://discord.com/channels/736478043522072608/888474319750066177">#unsupported channel</a> to discuss issues related to these complex installations.</p>
+</div>
+<h2 id="fail2ban">Fail2ban<a class="headerlink" href="#fail2ban" title="Permanent link">&para;</a></h2>
+<p>Install fail2ban</p>
+<p><div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>fail2ban<span class="w"> </span>python3-systemd
+</code></pre></div>
+There is a known issue on Debian 12 where fail2ban doesnt start, if its not running (check with <code>systemctl status fail2ban</code>) if its not please check <code>/etc/fail2ban/jail.local</code> exists, if it doesn't, do the following:</p>
+<p><div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;[sshd]\nbackend=systemd\nenabled=true&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/fail2ban/jail.local
+</code></pre></div>
+Set Tactical fail2ban filter conf file</p>
+<div class="highlight"><pre><span></span><code><span class="nv">tacticalfail2banfilter</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">[Definition]</span>
+<span class="s">failregex = ^&lt;HOST&gt;.*400.17.*$</span>
+<span class="s">ignoreregex = ^&lt;HOST&gt;.*200.\d+.*$</span>
+<span class="s">EOF</span>
+<span class="k">)</span><span class="s2">&quot;</span>
+sudo<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">tacticalfail2banfilter</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/etc/fail2ban/filter.d/tacticalrmm.conf
+</code></pre></div>
+<p>Set Tactical fail2ban jail conf file</p>
+<p><div class="highlight"><pre><span></span><code><span class="nv">tacticalfail2banjail</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">[tacticalrmm]</span>
+<span class="s">enabled = true</span>
+<span class="s">port = 80,443</span>
+<span class="s">filter = tacticalrmm</span>
+<span class="s">action = iptables-allports[name=tactical]</span>
+<span class="s">logpath = /rmm/api/tacticalrmm/tacticalrmm/private/log/access.log</span>
+<span class="s">maxretry = 3</span>
+<span class="s">bantime = 14400</span>
+<span class="s">findtime = 14400</span>
+<span class="s">EOF</span>
+<span class="k">)</span><span class="s2">&quot;</span>
+sudo<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">tacticalfail2banjail</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/etc/fail2ban/jail.d/tacticalrmm.local
+</code></pre></div>
+Restart fail2ban</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>fail2ban.service
+</code></pre></div>
+<h2 id="using-purchased-ssl-certs-instead-of-lets-encrypt-wildcards">Using purchased SSL certs instead of Let's Encrypt wildcards<a class="headerlink" href="#using-purchased-ssl-certs-instead-of-lets-encrypt-wildcards" title="Permanent link">&para;</a></h2>
+<p><strong>How to change certs used by Tactical RMM to purchased ones (this can be a wildcard cert).</strong></p>
+<p>You need to add the certificate private key and public keys to the following files:</p>
+<p><code>/etc/nginx/sites-available/rmm.conf</code></p>
+<p><code>/etc/nginx/sites-available/meshcentral.conf</code></p>
+<p><code>/etc/nginx/sites-available/frontend.conf</code></p>
+<p><code>/rmm/api/tacticalrmm/tacticalrmm/local_settings.py</code></p>
+<p>Create a new folder for certs and allow tactical user permissions (assumed to be tactical):</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mkdir<span class="w"> </span>/certs
+sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>tactical:tactical<span class="w"> </span>/certs
+</code></pre></div>
+<p>Now move your certs into that folder.</p>
+<p>Open the api file and add the api certificate or if it's a wildcard the directory should be <code>/certs/EXAMPLE.COM/</code></p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/nginx/sites-available/rmm.conf
+</code></pre></div>
+<p>Replace  </p>
+<div class="highlight"><pre><span></span><code>ssl_certificate<span class="w"> </span>/etc/letsencrypt/live/EXAMPLE.COM/fullchain.pem<span class="p">;</span>
+ssl_certificate_key<span class="w"> </span>/etc/letsencrypt/live/EXAMPLE.COM/privkey.pem<span class="p">;</span>
+</code></pre></div>
+<p>With</p>
+<div class="highlight"><pre><span></span><code>ssl_certificate<span class="w"> </span>/certs/api.EXAMPLE.COM/fullchain.pem<span class="p">;</span>
+ssl_certificate_key<span class="w"> </span>/certs/api.EXAMPLE.COM/privkey.pem<span class="p">;</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note the fullchain requirement for the certs, it won't work without it.</p>
+</div>
+<p>Repeat the process for:</p>
+<div class="highlight"><pre><span></span><code>/etc/nginx/sites-available/meshcentral.conf
+/etc/nginx/sites-available/frontend.conf
+</code></pre></div>
+<p>But change api to mesh and rmm respectively.</p>
+<p>Add the following to the last lines of <code>/rmm/api/tacticalrmm/tacticalrmm/local_settings.py</code></p>
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>/rmm/api/tacticalrmm/tacticalrmm/local_settings.py
+</code></pre></div>
+<p>add</p>
+<div class="highlight"><pre><span></span><code><span class="n">CERT_FILE</span> <span class="o">=</span> <span class="s2">&quot;/certs/api.EXAMPLE.COM/fullchain.pem&quot;</span>
+<span class="n">KEY_FILE</span> <span class="o">=</span> <span class="s2">&quot;/certs/api.EXAMPLE.COM/privkey.pem&quot;</span>
+</code></pre></div>
+<p>Regenerate NATS Conf</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/rmm/api/tacticalrmm
+<span class="nb">source</span><span class="w"> </span>../env/bin/activate
+python<span class="w"> </span>manage.py<span class="w"> </span>reload_nats
+</code></pre></div>
+<p>Restart services</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>rmm.service<span class="w"> </span>celery.service<span class="w"> </span>celerybeat.service<span class="w"> </span>nginx.service<span class="w"> </span>nats.service<span class="w"> </span>nats-api.service
+</code></pre></div>
+<h2 id="use-certbot-to-do-acme-challenge-over-http">Use Certbot to do acme challenge over http<a class="headerlink" href="#use-certbot-to-do-acme-challenge-over-http" title="Permanent link">&para;</a></h2>
+<p>The standard SSL cert process in Tactical uses a <a href="https://letsencrypt.org/docs/challenge-types/#dns-01-challenge">DNS challenge</a> that requires dns txt files to be updated in your public DNS with every cert renewal.</p>
+<p>The below script uses <a href="https://letsencrypt.org/docs/challenge-types/#http-01-challenge">http challenge</a> on the 3 separate ssl certs, one for each subdomain: rmm, api, mesh.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your Tactical RMM server will need to have TCP Port 80 exposed to the internet.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1">###Set colors same as Tactical RMM install and Update</span>
+<span class="nv">YELLOW</span><span class="o">=</span><span class="s1">&#39;\033[1;33m&#39;</span>
+<span class="nv">GREEN</span><span class="o">=</span><span class="s1">&#39;\033[0;32m&#39;</span>
+<span class="nv">RED</span><span class="o">=</span><span class="s1">&#39;\033[0;31m&#39;</span>
+<span class="nv">NC</span><span class="o">=</span><span class="s1">&#39;\033[0m&#39;</span>
+
+<span class="c1">### Ubuntu 20.04 Check</span>
+
+<span class="nv">UBU20</span><span class="o">=</span><span class="k">$(</span>grep<span class="w"> </span><span class="m">20</span>.04<span class="w"> </span><span class="s2">&quot;/etc/&quot;</span>*<span class="s2">&quot;release&quot;</span><span class="k">)</span>
+<span class="k">if</span><span class="w"> </span>!<span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$UBU20</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span>-ne<span class="w"> </span><span class="s2">&quot;\033[0;31mThis script will only work on Ubuntu 20.04\e[0m\n&quot;</span>
+<span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="k">fi</span>
+
+cls<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;\033c&quot;</span>
+<span class="o">}</span>
+
+print_green<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nb">printf</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">GREEN</span><span class="si">}</span><span class="s2">%0.s-</span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>..80<span class="o">}</span>
+<span class="w">  </span><span class="nb">printf</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="s2">&quot;\n&quot;</span>
+<span class="w">  </span><span class="nb">printf</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">GREEN</span><span class="si">}${</span><span class="nv">1</span><span class="si">}${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">\n&quot;</span>
+<span class="w">  </span><span class="nb">printf</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">GREEN</span><span class="si">}</span><span class="s2">%0.s-</span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>..80<span class="o">}</span>
+<span class="w">  </span><span class="nb">printf</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="s2">&quot;\n&quot;</span>
+<span class="o">}</span>
+
+cls
+
+<span class="c1">### Set variables for domains</span>
+
+<span class="k">while</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$rmmdomain</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span>*<span class="o">[</span>.<span class="o">]</span>*<span class="o">[</span>.<span class="o">]</span>*<span class="w"> </span><span class="o">]]</span>
+<span class="k">do</span>
+<span class="nb">echo</span><span class="w"> </span>-ne<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">YELLOW</span><span class="si">}</span><span class="s2">Enter the subdomain used for the backend (e.g. api.example.com)</span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">: &quot;</span>
+<span class="nb">read</span><span class="w"> </span>rmmdomain
+<span class="k">done</span>
+
+<span class="k">while</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$frontenddomain</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span>*<span class="o">[</span>.<span class="o">]</span>*<span class="o">[</span>.<span class="o">]</span>*<span class="w"> </span><span class="o">]]</span>
+<span class="k">do</span>
+<span class="nb">echo</span><span class="w"> </span>-ne<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">YELLOW</span><span class="si">}</span><span class="s2">Enter the subdomain used for the frontend (e.g. rmm.example.com)</span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">: &quot;</span>
+<span class="nb">read</span><span class="w"> </span>frontenddomain
+<span class="k">done</span>
+
+<span class="k">while</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$meshdomain</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span>*<span class="o">[</span>.<span class="o">]</span>*<span class="o">[</span>.<span class="o">]</span>*<span class="w"> </span><span class="o">]]</span>
+<span class="k">do</span>
+<span class="nb">echo</span><span class="w"> </span>-ne<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">YELLOW</span><span class="si">}</span><span class="s2">Enter the subdomain used for meshcentral (e.g. mesh.example.com)</span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">: &quot;</span>
+<span class="nb">read</span><span class="w"> </span>meshdomain
+<span class="k">done</span>
+
+<span class="nb">echo</span><span class="w"> </span>-ne<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">YELLOW</span><span class="si">}</span><span class="s2">Enter the current root domain (e.g. example.com or example.co.uk)</span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">: &quot;</span>
+<span class="nb">read</span><span class="w"> </span>rootdomain
+
+
+<span class="c1">### Setup Certificate Variables</span>
+<span class="nv">CERT_PRIV_KEY</span><span class="o">=</span>/etc/letsencrypt/live/<span class="si">${</span><span class="nv">rootdomain</span><span class="si">}</span>/privkey.pem
+<span class="nv">CERT_PUB_KEY</span><span class="o">=</span>/etc/letsencrypt/live/<span class="si">${</span><span class="nv">rootdomain</span><span class="si">}</span>/fullchain.pem
+
+<span class="c1">### Make Letsencrypt directories</span>
+
+sudo<span class="w"> </span>mkdir<span class="w"> </span>/var/www/letsencrypt
+sudo<span class="w"> </span>mkdir<span class="w"> </span>/var/www/letsencrypt/.mesh
+sudo<span class="w"> </span>mkdir<span class="w"> </span>/var/www/letsencrypt/.rmm
+sudo<span class="w"> </span>mkdir<span class="w"> </span>/var/www/letsencrypt/.api
+
+<span class="c1">### Remove config files for nginx</span>
+
+sudo<span class="w"> </span>rm<span class="w"> </span>/etc/nginx/sites-available/rmm.conf
+sudo<span class="w"> </span>rm<span class="w"> </span>/etc/nginx/sites-available/meshcentral.conf
+sudo<span class="w"> </span>rm<span class="w"> </span>/etc/nginx/sites-available/frontend.conf
+sudo<span class="w"> </span>rm<span class="w"> </span>/etc/nginx/sites-enabled/rmm.conf
+sudo<span class="w"> </span>rm<span class="w"> </span>/etc/nginx/sites-enabled/meshcentral.conf
+sudo<span class="w"> </span>rm<span class="w"> </span>/etc/nginx/sites-enabled/frontend.conf
+
+<span class="c1">### Setup tactical nginx config files for letsencrypt</span>
+
+<span class="nv">nginxrmm</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">server_tokens off;</span>
+<span class="s">upstream tacticalrmm {</span>
+<span class="s">    server unix:////rmm/api/tacticalrmm/tacticalrmm.sock;</span>
+<span class="s">}</span>
+<span class="s">map \$http_user_agent \$ignore_ua {</span>
+<span class="s">    &quot;~python-requests.*&quot; 0;</span>
+<span class="s">    &quot;~go-resty.*&quot; 0;</span>
+<span class="s">    default 1;</span>
+<span class="s">}</span>
+<span class="s">server {</span>
+<span class="s">    listen 80;</span>
+<span class="s">    server_name ${rmmdomain};</span>
+<span class="s">        location /.well-known/acme-challenge/ {</span>
+<span class="s">        root /var/www/letsencrypt/.api/;}</span>
+<span class="s">    location / {</span>
+<span class="s">    return 301 https://\$server_name\$request_uri;}</span>
+<span class="s">}</span>
+<span class="s">server {</span>
+<span class="s">    listen 443 ssl;</span>
+<span class="s">    server_name ${rmmdomain};</span>
+<span class="s">    client_max_body_size 300M;</span>
+<span class="s">    access_log /rmm/api/tacticalrmm/tacticalrmm/private/log/access.log;</span>
+<span class="s">    error_log /rmm/api/tacticalrmm/tacticalrmm/private/log/error.log;</span>
+<span class="s">    ssl_certificate ${CERT_PUB_KEY};</span>
+<span class="s">    ssl_certificate_key ${CERT_PRIV_KEY};</span>
+<span class="s">    ssl_ciphers &#39;ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384&#39;;</span>
+
+<span class="s">    location /static/ {</span>
+<span class="s">        root /rmm/api/tacticalrmm;</span>
+<span class="s">    }</span>
+<span class="s">    location /private/ {</span>
+<span class="s">        internal;</span>
+<span class="s">        add_header &quot;Access-Control-Allow-Origin&quot; &quot;https://${frontenddomain}&quot;;</span>
+<span class="s">        alias /rmm/api/tacticalrmm/tacticalrmm/private/;</span>
+<span class="s">    }</span>
+<span class="s">location ~ ^/ws/ {</span>
+<span class="s">        proxy_pass http://unix:/rmm/daphne.sock;</span>
+<span class="s">        proxy_http_version 1.1;</span>
+<span class="s">        proxy_set_header Upgrade $http_upgrade;</span>
+<span class="s">        proxy_set_header Connection &quot;upgrade&quot;;</span>
+<span class="s">        proxy_redirect     off;</span>
+<span class="s">        proxy_set_header   Host $host;</span>
+<span class="s">        proxy_set_header   X-Real-IP $remote_addr;</span>
+<span class="s">        proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;</span>
+<span class="s">        proxy_set_header   X-Forwarded-Host $server_name;</span>
+<span class="s">}</span>
+<span class="s">    location /saltscripts/ {</span>
+<span class="s">        internal;</span>
+<span class="s">        add_header &quot;Access-Control-Allow-Origin&quot; &quot;https://${frontenddomain}&quot;;</span>
+<span class="s">        alias /srv/salt/scripts/userdefined/;</span>
+<span class="s">    }</span>
+<span class="s">    location /builtin/ {</span>
+<span class="s">        internal;</span>
+<span class="s">        add_header &quot;Access-Control-Allow-Origin&quot; &quot;https://${frontenddomain}&quot;;</span>
+<span class="s">        alias /srv/salt/scripts/;</span>
+<span class="s">    }</span>
+<span class="s">    location ~ ^/(natsapi) {</span>
+<span class="s">        allow 127.0.0.1;</span>
+<span class="s">        deny all;</span>
+<span class="s">        uwsgi_pass tacticalrmm;</span>
+<span class="s">        include     /etc/nginx/uwsgi_params;</span>
+<span class="s">        uwsgi_read_timeout 500s;</span>
+<span class="s">        uwsgi_ignore_client_abort on;</span>
+<span class="s">    }</span>
+<span class="s">    location / {</span>
+<span class="s">        uwsgi_pass  tacticalrmm;</span>
+<span class="s">        include     /etc/nginx/uwsgi_params;</span>
+<span class="s">        uwsgi_read_timeout 9999s;</span>
+<span class="s">        uwsgi_ignore_client_abort on;</span>
+<span class="s">    }</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">nginxrmm</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/nginx/sites-available/rmm.conf<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+
+
+<span class="nv">nginxmesh</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">server {</span>
+<span class="s">  listen 80;</span>
+<span class="s">  server_name ${meshdomain};</span>
+<span class="s">      location /.well-known/acme-challenge/ {</span>
+<span class="s">        root /var/www/letsencrypt/.mesh/;}</span>
+<span class="s">    location / {</span>
+<span class="s">  return 301 https://\$server_name\$request_uri;}</span>
+<span class="s">}</span>
+<span class="s">server {</span>
+<span class="s">    listen 443 ssl;</span>
+<span class="s">    proxy_send_timeout 330s;</span>
+<span class="s">    proxy_read_timeout 330s;</span>
+<span class="s">    server_name ${meshdomain};</span>
+<span class="s">    ssl_certificate ${CERT_PUB_KEY};</span>
+<span class="s">    ssl_certificate_key ${CERT_PRIV_KEY};</span>
+<span class="s">    ssl_session_cache shared:WEBSSL:10m;</span>
+<span class="s">    ssl_ciphers HIGH:!aNULL:!MD5;</span>
+<span class="s">    ssl_prefer_server_ciphers on;</span>
+<span class="s">    location / {</span>
+<span class="s">        proxy_pass http://127.0.0.1:4430/;</span>
+<span class="s">        proxy_http_version 1.1;</span>
+<span class="s">        proxy_set_header Host \$host;</span>
+<span class="s">        proxy_set_header Upgrade \$http_upgrade;</span>
+<span class="s">        proxy_set_header Connection &quot;upgrade&quot;;</span>
+<span class="s">        proxy_set_header X-Forwarded-Host \$host:\$server_port;</span>
+<span class="s">        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;</span>
+<span class="s">        proxy_set_header X-Forwarded-Proto \$scheme;</span>
+<span class="s">    }</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">nginxmesh</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/nginx/sites-available/meshcentral.conf<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+
+
+<span class="nv">nginxfrontend</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">server {</span>
+<span class="s">    server_name ${frontenddomain};</span>
+<span class="s">    charset utf-8;</span>
+<span class="s">    location / {</span>
+<span class="s">        root /var/www/rmm/dist;</span>
+<span class="s">        try_files \$uri \$uri/ /index.html;</span>
+<span class="s">        add_header Cache-Control &quot;no-store, no-cache, must-revalidate&quot;;</span>
+<span class="s">        add_header Pragma &quot;no-cache&quot;;</span>
+<span class="s">    }</span>
+<span class="s">    error_log  /var/log/nginx/frontend-error.log;</span>
+<span class="s">    access_log /var/log/nginx/frontend-access.log;</span>
+<span class="s">    listen 443 ssl;</span>
+<span class="s">    ssl_certificate ${CERT_PUB_KEY};</span>
+<span class="s">    ssl_certificate_key ${CERT_PRIV_KEY};</span>
+<span class="s">    ssl_ciphers &#39;ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384&#39;;</span>
+<span class="s">}</span>
+<span class="s">server {</span>
+<span class="s">    listen 80;</span>
+<span class="s">    server_name ${frontenddomain};</span>
+<span class="s">    location /.well-known/acme-challenge/ {</span>
+<span class="s">        root /var/www/letsencrypt/.rmm/;}</span>
+<span class="s">    location / {</span>
+<span class="s">    return 301 https://\$host\$request_uri;}</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">nginxfrontend</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/nginx/sites-available/frontend.conf<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+
+<span class="c1">### Relink nginx config files</span>
+
+sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/etc/nginx/sites-available/rmm.conf<span class="w"> </span>/etc/nginx/sites-enabled/rmm.conf
+sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/etc/nginx/sites-available/meshcentral.conf<span class="w"> </span>/etc/nginx/sites-enabled/meshcentral.conf
+sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/etc/nginx/sites-available/frontend.conf<span class="w"> </span>/etc/nginx/sites-enabled/frontend.conf
+
+<span class="c1">### Restart nginx</span>
+
+sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>nginx.service
+
+<span class="c1">### Get letsencrypt Certs</span>
+
+sudo<span class="w"> </span>letsencrypt<span class="w"> </span>certonly<span class="w"> </span>--webroot<span class="w"> </span>-w<span class="w"> </span>/var/www/letsencrypt/.mesh/<span class="w"> </span>-d<span class="w"> </span><span class="si">${</span><span class="nv">meshdomain</span><span class="si">}</span>
+sudo<span class="w"> </span>letsencrypt<span class="w"> </span>certonly<span class="w"> </span>--webroot<span class="w"> </span>-w<span class="w"> </span>/var/www/letsencrypt/.rmm/<span class="w"> </span>-d<span class="w"> </span><span class="si">${</span><span class="nv">frontenddomain</span><span class="si">}</span>
+sudo<span class="w"> </span>letsencrypt<span class="w"> </span>certonly<span class="w"> </span>--webroot<span class="w"> </span>-w<span class="w"> </span>/var/www/letsencrypt/.api/<span class="w"> </span>-d<span class="w"> </span><span class="si">${</span><span class="nv">rmmdomain</span><span class="si">}</span>
+
+<span class="c1">### Ensure letsencrypt Permissions are correct</span>
+sudo<span class="w"> </span>chown<span class="w"> </span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span>:<span class="si">${</span><span class="nv">USER</span><span class="si">}</span><span class="w"> </span>-R<span class="w"> </span>/etc/letsencrypt
+sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">775</span><span class="w"> </span>-R<span class="w"> </span>/etc/letsencrypt
+
+<span class="c1">### Set variables for new certs</span>
+
+<span class="nv">CERT_PRIV_KEY_API</span><span class="o">=</span>/etc/letsencrypt/live/<span class="si">${</span><span class="nv">rmmdomain</span><span class="si">}</span>/privkey.pem
+<span class="nv">CERT_PUB_KEY_API</span><span class="o">=</span>/etc/letsencrypt/live/<span class="si">${</span><span class="nv">rmmdomain</span><span class="si">}</span>/fullchain.pem
+<span class="nv">CERT_PRIV_KEY_RMM</span><span class="o">=</span>/etc/letsencrypt/live/<span class="si">${</span><span class="nv">frontenddomain</span><span class="si">}</span>/privkey.pem
+<span class="nv">CERT_PUB_KEY_RMM</span><span class="o">=</span>/etc/letsencrypt/live/<span class="si">${</span><span class="nv">frontenddomain</span><span class="si">}</span>/fullchain.pem
+<span class="nv">CERT_PRIV_KEY_MESH</span><span class="o">=</span>/etc/letsencrypt/live/<span class="si">${</span><span class="nv">meshdomain</span><span class="si">}</span>/privkey.pem
+<span class="nv">CERT_PUB_KEY_MESH</span><span class="o">=</span>/etc/letsencrypt/live/<span class="si">${</span><span class="nv">meshdomain</span><span class="si">}</span>/fullchain.pem
+
+<span class="c1">### Replace certs in files</span>
+
+<span class="nv">rmmlocalsettings</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">CERT_FILE = &quot;${CERT_PUB_KEY_API}&quot;</span>
+<span class="s">KEY_FILE = &quot;${CERT_PRIV_KEY_API}&quot;</span>
+<span class="s">EOF</span>
+<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">rmmlocalsettings</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>--append<span class="w"> </span>/rmm/api/tacticalrmm/tacticalrmm/local_settings.py<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+
+sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;s|</span><span class="si">${</span><span class="nv">CERT_PRIV_KEY</span><span class="si">}</span><span class="s2">|</span><span class="si">${</span><span class="nv">CERT_PRIV_KEY_API</span><span class="si">}</span><span class="s2">|g&quot;</span><span class="w"> </span>/etc/nginx/sites-available/rmm.conf
+sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;s|</span><span class="si">${</span><span class="nv">CERT_PUB_KEY</span><span class="si">}</span><span class="s2">|</span><span class="si">${</span><span class="nv">CERT_PUB_KEY_API</span><span class="si">}</span><span class="s2">|g&quot;</span><span class="w"> </span>/etc/nginx/sites-available/rmm.conf
+sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;s|</span><span class="si">${</span><span class="nv">CERT_PRIV_KEY</span><span class="si">}</span><span class="s2">|</span><span class="si">${</span><span class="nv">CERT_PRIV_KEY_MESH</span><span class="si">}</span><span class="s2">|g&quot;</span><span class="w"> </span>/etc/nginx/sites-available/meshcentral.conf
+sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;s|</span><span class="si">${</span><span class="nv">CERT_PUB_KEY</span><span class="si">}</span><span class="s2">|</span><span class="si">${</span><span class="nv">CERT_PUB_KEY_MESH</span><span class="si">}</span><span class="s2">|g&quot;</span><span class="w"> </span>/etc/nginx/sites-available/meshcentral.conf
+sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;s|</span><span class="si">${</span><span class="nv">CERT_PRIV_KEY</span><span class="si">}</span><span class="s2">|</span><span class="si">${</span><span class="nv">CERT_PRIV_KEY_RMM</span><span class="si">}</span><span class="s2">|g&quot;</span><span class="w"> </span>/etc/nginx/sites-available/frontend.conf
+sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;s|</span><span class="si">${</span><span class="nv">CERT_PUB_KEY</span><span class="si">}</span><span class="s2">|</span><span class="si">${</span><span class="nv">CERT_PUB_KEY_RMM</span><span class="si">}</span><span class="s2">|g&quot;</span><span class="w"> </span>/etc/nginx/sites-available/frontend.conf
+
+<span class="c1">### Remove Wildcard Cert</span>
+
+rm<span class="w"> </span>-r<span class="w"> </span>/etc/letsencrypt/live/<span class="si">${</span><span class="nv">rootdomain</span><span class="si">}</span>/
+rm<span class="w"> </span>-r<span class="w"> </span>/etc/letsencrypt/archive/<span class="si">${</span><span class="nv">rootdomain</span><span class="si">}</span>/
+rm<span class="w"> </span>/etc/letsencrypt/renewal/<span class="si">${</span><span class="nv">rootdomain</span><span class="si">}</span>.conf
+
+<span class="c1">### Regenerate Nats Conf</span>
+<span class="nb">cd</span><span class="w"> </span>/rmm/api/tacticalrmm
+<span class="nb">source</span><span class="w"> </span>../env/bin/activate
+python<span class="w"> </span>manage.py<span class="w"> </span>reload_nats
+
+<span class="c1">### Restart services</span>
+
+<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span>rmm<span class="w"> </span>celery<span class="w"> </span>celerybeat<span class="w"> </span>nginx<span class="w"> </span>nats<span class="w"> </span>nats-api
+<span class="k">do</span>
+<span class="nb">printf</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">GREEN</span><span class="si">}</span><span class="s2">Restarting </span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2"> service...</span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">\n&quot;</span>
+sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>
+<span class="k">done</span>
+
+<span class="c1"># Create renewal post hook to restart services after renewal</span>
+<span class="nv">lepost</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">#!/usr/bin/env bash</span>
+<span class="s">chown -R tactical:tactical /etc/letsencrypt</span>
+<span class="s">systemctl restart nginx meshcentral rmm celery celerybeat nats nats-api</span>
+<span class="s">EOF</span>
+<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">lepost</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/letsencrypt/renewal-hooks/post/001-restart-services.sh<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+sudo<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/etc/letsencrypt/renewal-hooks/post/001-restart-services.sh
+
+<span class="c1">### Renew certs can be done by sudo letsencrypt renew (this should automatically be in /etc/cron.d/certbot)</span>
+</code></pre></div>
+<h2 id="using-your-own-certs-with-docker">Using your own certs with Docker<a class="headerlink" href="#using-your-own-certs-with-docker" title="Permanent link">&para;</a></h2>
+<p>Let's Encrypt is the only officially supported method of obtaining wildcard certificates. Publicly signed certificates should work but have not been fully tested.</p>
+<p>If you are providing your own publicly signed certificates, ensure you download the <strong>full chain</strong> (combined CA/Root + Intermediary) certificate in pem format. If certificates are not provided, a self-signed certificate will be generated and most agent functions won't work.</p>
+<h2 id="restricting-access-to-rmmexamplecom">Restricting Access to rmm.EXAMPLE.COM<a class="headerlink" href="#restricting-access-to-rmmexamplecom" title="Permanent link">&para;</a></h2>
+<p>Limit access to Tactical RMM's administration panel in Nginx to specific locations:</p>
+<h3 id="using-dns">Using DNS<a class="headerlink" href="#using-dns" title="Permanent link">&para;</a></h3>
+<p>Create a file allowed-domain.list which contains the DNS names you want to grant access to your rmm:</p>
+<div class="codehilite"><pre><span></span><code>Edit `/etc/nginx/allowed-domain.list` and add:
+
+```text
+nom1.dyndns.tv
+nom2.dyndns.tv
+```
+</code></pre></div>
+
+<p>Create a bash script domain-resolver.sh which does the DNS lookups for you:</p>
+<div class="codehilite"><pre><span></span><code>Edit `/etc/nginx/domain-resolver.sh`
+
+```bash
+#!/usr/bin/env bash
+filename=&quot;$1&quot;
+while read -r line
+do
+    ddns_record=&quot;$line&quot;
+    if [[ !  -z  $ddns_record ]]; then
+        resolved_ip=$( getent ahosts $line | awk &#39;{ print $1 ; exit }&#39; )
+        if [[ !  -z  $resolved_ip ]]; then
+            echo &quot;allow $resolved_ip;# from $ddns_record&quot;
+        fi
+    fi
+done &lt; &quot;$filename&quot;
+```
+</code></pre></div>
+
+<p>Give the right permission to this script <code>chmod +x /etc/nginx/domain-resolver.sh</code></p>
+<p>Add a cron job which produces a valid Nginx configuration and restarts Nginx:</p>
+<div class="codehilite"><pre><span></span><code>`/etc/cron.hourly/domain-resolver`
+
+```bash
+#!/usr/bin/env bash
+/etc/nginx/domain-resolver.sh /etc/nginx/allowed-domain.list &gt; /etc/nginx//allowed-ips-from-domains.conf
+service nginx reload &gt; /dev/null 2&gt;&amp;1
+```
+
+This can be a hourly, daily, or monthly job or you can have it run at a specific time.
+</code></pre></div>
+
+<p>Give the right permission to this script <code>chmod +x /etc/cron.hourly/domain-resolver</code></p>
+<p>When run it will give something like this:</p>
+<div class="codehilite"><pre><span></span><code>Edit `/etc/nginx//allowed-ips-from-domains.conf`
+
+```conf
+allow xxx.xxx.xxx.xxx;# from maison.nom1.dyndns.tv
+allow xxx.xxx.xxx.xxx;# from maison.nom2.dyndns.tv
+```
+</code></pre></div>
+
+<p>Update your Nginx configuration to take this output into account:</p>
+<div class="codehilite"><pre><span></span><code>Edit `/etc/nginx/sites-enabled/frontend.conf`
+
+```conf
+server {
+    server_name rmm.example.com;
+    charset utf-8;
+    location / {
+        root /var/www/rmm/dist;
+        try_files $uri $uri/ /index.html;
+        add_header Cache-Control &quot;no-store, no-cache, must-revalidate&quot;;
+        add_header Pragma &quot;no-cache&quot;;
+    }
+    error_log  /var/log/nginx/frontend-error.log;
+    access_log /var/log/nginx/frontend-access.log;
+    include /etc/nginx/allowed-ips-from-domains.conf;
+    deny all;
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
+    ssl_ciphers &#39;ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384&#39;;
+}
+
+server {
+    if ($host = rmm.example.com) {
+        return 301 https://$host$request_uri;
+    }
+
+    listen 80;
+    listen [::]:80;
+    server_name rmm.example.com;
+    return 404;
+}
+```
+</code></pre></div>
+
+<h3 id="using-a-fixed-ip">Using a fixed IP<a class="headerlink" href="#using-a-fixed-ip" title="Permanent link">&para;</a></h3>
+<p>Create a file containg the fixed IP address (where xxx.xxx.xxx.xxx must be replaced by your real IP address):</p>
+<div class="codehilite"><pre><span></span><code>Edit `/etc/nginx/allowed-ips.conf`
+
+```conf
+# Private IP address
+allow 192.168.0.0/16;
+allow 172.16.0.0/12;
+allow 10.0.0.0/8;
+# Public fixed IP address
+allow xxx.xxx.xxx.xxx
+```
+</code></pre></div>
+
+<p>Update your Nginx configuration to take this output into account:</p>
+<div class="codehilite"><pre><span></span><code>Edit `/etc/nginx/sites-enabled/frontend.conf`
+
+```conf
+server {
+    server_name rmm.example.com;
+    charset utf-8;
+    location / {
+        root /var/www/rmm/dist;
+        try_files $uri $uri/ /index.html;
+        add_header Cache-Control &quot;no-store, no-cache, must-revalidate&quot;;
+        add_header Pragma &quot;no-cache&quot;;
+    }
+    error_log  /var/log/nginx/frontend-error.log;
+    access_log /var/log/nginx/frontend-access.log;
+    include /etc/nginx/allowed-ips;
+    deny all;
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
+    ssl_ciphers &#39;ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384&#39;;
+}
+
+server {
+    if ($host = rmm.example.com) {
+        return 301 https://$host$request_uri;
+    }
+
+    listen 80;
+    listen [::]:80;
+    server_name rmm.example.com;
+    return 404;
+}
+```
+</code></pre></div>
+
+<h3 id="automating-ssl-with-cloudflare">Automating SSL with Cloudflare<a class="headerlink" href="#automating-ssl-with-cloudflare" title="Permanent link">&para;</a></h3>
+<p>Use Cloudflare API with certbot</p>
+<p><a href="https://www.bjornjohansen.com/wildcard-certificate-letsencrypt-cloudflare">https://www.bjornjohansen.com/wildcard-certificate-letsencrypt-cloudflare</a></p>
+<p>You need to restart mesh and nginx for changes to take effect</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../unsupported_guidelines/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Unsupported Guidelines" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Unsupported Guidelines
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../securing_nginx/" class="md-footer__link md-footer__link--next" aria-label="Next: Securing nginx" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Securing nginx
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/amidaware/tacticalrmm" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>
