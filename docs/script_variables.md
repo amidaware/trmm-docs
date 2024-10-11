@@ -102,7 +102,7 @@ Below are some examples of available fields:
 - **{{alert.site}}** - The site associated with the agent that triggered the alert. Can be used for nesting. See Site above for properties.
 - **{{alert.client}}** - The client associated with the agent that triggered the alert. Can be used for nesting. See Client above for properties.
 
-- **{{alert.get_result}}** - Will return the results of the associated check or automated task. Can be used for nesting. See CheckResult or TaskResult above for properties. This will be blank for agent availability alerts.
+- **{{alert.get_result}}** - Will return the results of the associated check or automated task. Can be used for nesting. See CheckResult or TaskResult above for properties. This will be blank for agent availability alerts. For example to get the standard output of the check that failed, do **``{{ alert.get_result.stdout }}``**
 
 ## Custom Fields
 
