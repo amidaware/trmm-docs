@@ -127,3 +127,26 @@ ROOT_USER = "username"
 ```
 
 Replace "username" with the actual username. After making this change, run `sudo systemctl restart rmm.service` to apply the changes.
+
+### Adjusting Agent Check-In Intervals
+
+The agent periodically communicates with the RMM server, sending various data about its status and environment at random intervals. These randomized intervals are designed to prevent the "thundering herd" problem, where too many agents would check in simultaneously, potentially overloading the server.
+
+You can modify these intervals by adding one or more of the following variables to `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py`. Each variable is a Python tuple containing two values: the minimum and maximum interval times, specified in seconds. The agent will select a random interval within this range for each check-in.
+
+The default check-in intervals are as follows:
+
+```python
+CHECKIN_HELLO = (30, 60)  # Agent heartbeat ("I'm alive")
+CHECKIN_AGENTINFO = (200, 400)  # System info (logged-in user, boot time, RAM, etc.)
+CHECKIN_WINSVC = (2400, 3000)  # Windows services and their status
+CHECKIN_PUBIP = (300, 500)  # Agent's public IP address
+CHECKIN_DISKS = (1000, 2000)  # Disk information and usage
+CHECKIN_SW = (2800, 3500)  # Installed Windows software list
+CHECKIN_WMI = (3000, 4000)  # Asset details (as seen in the "Assets" tab)
+CHECKIN_SYNCMESH = (800, 1200)  # Agent's Mesh node ID
+```
+
+By adjusting these intervals, you can control how frequently the agent checks in with the RMM server for different types of data. This flexibility allows for balancing between server load and the frequency of updates.
+
+After adding any of these settings, you must restart both the RMM service (`sudo systemctl restart rmm`) and the agent service. An easy way to restart the agent service is by using the "Tools > Recover All Agents" function in the TRMM web UI.
