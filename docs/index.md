@@ -40,7 +40,7 @@ It uses an [agent](https://github.com/amidaware/rmmagent) written in Golang and 
 
 ## Mac agent versions supported
 
-- 64 bit Intel and Apple Silicon (M1, M2)
+- 64 bit Intel and Apple Silicon (M-Series Processors)
 
 ## Discuss/Collaborate and Get Help/Support
 
