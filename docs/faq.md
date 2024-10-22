@@ -4,6 +4,32 @@
 
 Please see the [Reporting FAQ](./ee/reporting/functions/faq.md)
 
+## Help! I've been hacked and there are weird agents appearing in my Tactical RMM!
+
+No, you haven't.
+
+1. You used the [Dynamic EXE/Deployment EXE](./install_agent.md#dynamically-generated-executable) installation method, and the installer was scanned by an antivirus.
+
+2. It didn't recognize the exe.
+
+3. You have the option enabled to submit unknown applications for analysis.
+
+    ![AV Option1](images/faq_av_option1.png)
+
+4. They ran it against their virtualization testing cluster.
+
+**To prevent this from happening**: either turn off file uploads in your AV settings, or use the [Powershell](./install_agent.md#powershell) or [Manual](./install_agent.md#manual) install methods.
+
+Here are some examples of what that looks like.
+
+![AV Sandbox1](images/faq_av_sandbox1.png)
+
+![AV Sandbox1](images/faq_av_sandbox2.png)
+
+![AV Sandbox1](images/faq_av_sandbox3.png)
+
+![AV Sandbox1](images/faq_av_sandbox4.png)
+
 ## Can I __________?
 
 If you've been sent a link to this, we are not going to allow or support things like your request. The reason is because it would facilitate people avoiding to pay for/supporting Tactical RMM for these/similar premium paid features.
@@ -174,32 +200,6 @@ to reset Mesh password for user.
 
 !!!warning
     Resetting the default admin in mesh will break agent installs if you don't also update the mesh connection into in Settings > General > Meshcentral and make sure [it's working](troubleshooting.md#agents-not-installing-or-updating)
-
-## Help! I've been hacked and there are weird agents appearing in my Tactical RMM!
-
-No, you haven't.
-
-1. You used the [Dynamic EXE/Deployment EXE](./install_agent.md#dynamically-generated-executable) installation method, and the installer was scanned by an antivirus.
-
-2. It didn't recognize the exe.
-
-3. You have the option enabled to submit unknown applications for analysis.
-
-    ![AV Option1](images/faq_av_option1.png)
-
-4. They ran it against their virtualization testing cluster.
-
-**To prevent this from happening**: either turn off file uploads in your AV settings, or use the [Powershell](./install_agent.md#powershell) or [Manual](./install_agent.md#manual) install methods.
-
-Here are some examples of what that looks like.
-
-![AV Sandbox1](images/faq_av_sandbox1.png)
-
-![AV Sandbox1](images/faq_av_sandbox2.png)
-
-![AV Sandbox1](images/faq_av_sandbox3.png)
-
-![AV Sandbox1](images/faq_av_sandbox4.png)
 
 ## DNS can't find record
 
