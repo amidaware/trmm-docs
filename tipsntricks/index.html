@@ -1,0 +1,2187 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A remote monitoring and management tool">
+      
+      
+        <meta name="author" content="amidaware">
+      
+      
+        <link rel="canonical" href="https://docs.tacticalrmm.com/tipsntricks/">
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Tips n' Tricks - Tactical RMM Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/neoteroi-mkdocs.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tips-and-tricks" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tactical RMM Documentation" class="md-header__button md-logo" aria-label="Tactical RMM Documentation" data-md-component="logo">
+      
+  <img src="../images/onit.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tactical RMM Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tips n' Tricks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="light" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/amidaware/tacticalrmm" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    amidaware/tacticalrmm
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tactical RMM Documentation" class="md-nav__button md-logo" aria-label="Tactical RMM Documentation" data-md-component="logo">
+      
+  <img src="../images/onit.ico" alt="logo">
+
+    </a>
+    Tactical RMM Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/amidaware/tacticalrmm" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    amidaware/tacticalrmm
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sponsor/" class="md-nav__link">
+        Sponsor
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code_signing/" class="md-nav__link">
+        Code Signing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        Support
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
+        Roadmap
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide_gettingstarted/" class="md-nav__link">
+        Getting Started Guide
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          RMM Server Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="RMM Server Installation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          RMM Server Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_considerations/" class="md-nav__link">
+        Install Considerations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_server/" class="md-nav__link">
+        Traditional Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_docker/" class="md-nav__link">
+        Docker Install
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          RMM Server Updating
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="RMM Server Updating" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          RMM Server Updating
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_server/" class="md-nav__link">
+        Updating the RMM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_docker/" class="md-nav__link">
+        Updating the RMM (Docker)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Agents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Agents" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Agents
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_agent/" class="md-nav__link">
+        Agent Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_agents/" class="md-nav__link">
+        Updating Agents
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Functionality
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Functionality" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Functionality
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howitallworks/" class="md-nav__link">
+        How it all Works
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/global_settings/" class="md-nav__link">
+        Global Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/alerting/" class="md-nav__link">
+        Alerting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/api/" class="md-nav__link">
+        API Access
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/automated_tasks/" class="md-nav__link">
+        Automated Tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/automation_policies/" class="md-nav__link">
+        Automation Policies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/custom_fields/" class="md-nav__link">
+        Custom Fields
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/django_admin/" class="md-nav__link">
+        Django Admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/emailsms_alert/" class="md-nav__link">
+        Email & SMS Alerts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/keystore/" class="md-nav__link">
+        Global Keystore
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/maintenance_mode/" class="md-nav__link">
+        Maintenance Mode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/permissions/" class="md-nav__link">
+        Permissions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/remote_bg/" class="md-nav__link">
+        Remote Background
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/settings_override/" class="md-nav__link">
+        Overriding / Customizing Default Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/scripting/" class="md-nav__link">
+        Scripting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/snmp_checks/" class="md-nav__link">
+        SNMP Checks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/url_actions/" class="md-nav__link">
+        URL Actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/user_ui/" class="md-nav__link">
+        User Interface Preferences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/webhooks/" class="md-nav__link">
+        Web Hooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/web_terminal/" class="md-nav__link">
+        Web Terminal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../script_variables/" class="md-nav__link">
+        Reference: Script Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/examples/" class="md-nav__link">
+        Examples
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          Reporting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reporting" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Reporting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/reporting_overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/faq/" class="md-nav__link">
+        - FAQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_basics/" class="md-nav__link">
+        - The Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_basetemplates/" class="md-nav__link">
+        - Base Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_variables/" class="md-nav__link">
+        - Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_dataqueries/" class="md-nav__link">
+        - Data Queries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_assets/" class="md-nav__link">
+        - Assets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/tipsntricks/" class="md-nav__link">
+        - Tips n' Tricks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backup/" class="md-nav__link">
+        Backup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../restore/" class="md-nav__link">
+        Restore
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../av/" class="md-nav__link">
+        Antivirus Exclusions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../management_cmds/" class="md-nav__link">
+        Management Commands
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesh_integration/" class="md-nav__link">
+        MeshCentral Integration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_19" type="checkbox" id="__nav_19" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_19">
+          3rd Party Integrations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="3rd Party Integrations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_19">
+          <span class="md-nav__icon md-icon"></span>
+          3rd Party Integrations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_grafana/" class="md-nav__link">
+        Grafana
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_anydesk/" class="md-nav__link">
+        AnyDesk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_n-able-takecontrol/" class="md-nav__link">
+        N-Able
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_bomgar/" class="md-nav__link">
+        Bomgar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_screenconnect/" class="md-nav__link">
+        ConnectWise Control / ScreenConnect
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_rustdesk/" class="md-nav__link">
+        RustDesk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_splashtop/" class="md-nav__link">
+        Splashtop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_supremo/" class="md-nav__link">
+        Supremo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_teamviewer/" class="md-nav__link">
+        TeamViewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_bitdefender_gravityzone/" class="md-nav__link">
+        BitDefender GravityZone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_bitdefender_total_security/" class="md-nav__link">
+        BitDefender Total Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_zammad/" class="md-nav__link">
+        Zammad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_dashy/" class="md-nav__link">
+        Dashy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_20" type="checkbox" id="__nav_20" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_20">
+          Unsupported Extras
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Unsupported Extras" data-md-level="1">
+        <label class="md-nav__title" for="__nav_20">
+          <span class="md-nav__icon md-icon"></span>
+          Unsupported Extras
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_guidelines/" class="md-nav__link">
+        Unsupported Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_scripts/" class="md-nav__link">
+        Unsupported Configs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../securing_nginx/" class="md-nav__link">
+        Securing nginx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_proxies/" class="md-nav__link">
+        Unsupported Proxies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_synology_docker_install/" class="md-nav__link">
+        Installing in Synology Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_platforms/" class="md-nav__link">
+        Installing on other platforms
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Tips n' Tricks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Tips n' Tricks
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#monitor-your-trmm-instance-via-the-built-in-monitoring-endpoint" class="md-nav__link">
+    Monitor your TRMM Instance via the Built-in Monitoring Endpoint.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-monitoring" class="md-nav__link">
+    Server Monitoring
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customize-user-interface" class="md-nav__link">
+    Customize User Interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-the-filters-in-the-agent-list" class="md-nav__link">
+    Use the Filters in the Agent List
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meshcentral" class="md-nav__link">
+    MeshCentral
+  </a>
+  
+    <nav class="md-nav" aria-label="MeshCentral">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adjust-settings" class="md-nav__link">
+    Adjust Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-remote-control-options" class="md-nav__link">
+    Enable Remote Control Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-online-offline-logs" class="md-nav__link">
+    Agent Online / Offline logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sending-custom-keystrokes-to-agent" class="md-nav__link">
+    Sending Custom Keystrokes to Agent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syncing-pc-name-to-meshcentral" class="md-nav__link">
+    Syncing PC name to MeshCentral
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scripts" class="md-nav__link">
+    Scripts
+  </a>
+  
+    <nav class="md-nav" aria-label="Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-running-scripts" class="md-nav__link">
+    When Running Scripts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3rd-party-software-patching" class="md-nav__link">
+    3rd Party Software Patching
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-intervals-for-checks" class="md-nav__link">
+    Run Intervals for Checks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-refreshing-trmm-data" class="md-nav__link">
+    Understanding refreshing TRMM data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-are-usernames-in-italics" class="md-nav__link">
+    Why are usernames in italics?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-false-sms-and-email-alerts-from-scripts" class="md-nav__link">
+    Getting false SMS and Email alerts from scripts?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_22" type="checkbox" id="__nav_22" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_22">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contributing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_22">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        Contributing to Docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_community_scripts/" class="md-nav__link">
+        Contributing to Community Scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_reporting_templates/" class="md-nav__link">
+        Contributing to Reporting Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_browser/" class="md-nav__link">
+        Contributing using a browser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_vscode/" class="md-nav__link">
+        Contributing using VS Code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_docker/" class="md-nav__link">
+        Contributing using Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_a_remote_server/" class="md-nav__link">
+        Contributing using a Remote Server
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#monitor-your-trmm-instance-via-the-built-in-monitoring-endpoint" class="md-nav__link">
+    Monitor your TRMM Instance via the Built-in Monitoring Endpoint.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-monitoring" class="md-nav__link">
+    Server Monitoring
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customize-user-interface" class="md-nav__link">
+    Customize User Interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-the-filters-in-the-agent-list" class="md-nav__link">
+    Use the Filters in the Agent List
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meshcentral" class="md-nav__link">
+    MeshCentral
+  </a>
+  
+    <nav class="md-nav" aria-label="MeshCentral">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adjust-settings" class="md-nav__link">
+    Adjust Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-remote-control-options" class="md-nav__link">
+    Enable Remote Control Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-online-offline-logs" class="md-nav__link">
+    Agent Online / Offline logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sending-custom-keystrokes-to-agent" class="md-nav__link">
+    Sending Custom Keystrokes to Agent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syncing-pc-name-to-meshcentral" class="md-nav__link">
+    Syncing PC name to MeshCentral
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scripts" class="md-nav__link">
+    Scripts
+  </a>
+  
+    <nav class="md-nav" aria-label="Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-running-scripts" class="md-nav__link">
+    When Running Scripts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3rd-party-software-patching" class="md-nav__link">
+    3rd Party Software Patching
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-intervals-for-checks" class="md-nav__link">
+    Run Intervals for Checks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-refreshing-trmm-data" class="md-nav__link">
+    Understanding refreshing TRMM data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-are-usernames-in-italics" class="md-nav__link">
+    Why are usernames in italics?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-false-sms-and-email-alerts-from-scripts" class="md-nav__link">
+    Getting false SMS and Email alerts from scripts?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="tips-and-tricks">Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permanent link">&para;</a></h1>
+<h2 id="monitor-your-trmm-instance-via-the-built-in-monitoring-endpoint">Monitor your TRMM Instance via the Built-in Monitoring Endpoint.<a class="headerlink" href="#monitor-your-trmm-instance-via-the-built-in-monitoring-endpoint" title="Permanent link">&para;</a></h2>
+<p>Generate a random string to be used as a token and append it to the bottom of <code>/rmm/api/tacticalrmm/tacticalrmm/local_settings.py</code> like this:</p>
+<div class="highlight"><pre><span></span><code><span class="n">MON_TOKEN</span> <span class="o">=</span> <span class="s2">&quot;SuperSekretToken123456&quot;</span>
+</code></pre></div>
+<p>Then restart Django to activate the endpoint with <code>sudo systemctl restart rmm.service</code></p>
+<p>Send a POST request with the following json payload to <code>https://api.yourdomain.com/core/status/</code>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;auth&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SuperSekretToken123456&quot;</span><span class="p">}</span>
+</code></pre></div></p>
+<p>Example using curl:
+<div class="highlight"><pre><span></span><code>curl -X POST https://api.yourdomain.com/core/status/ -d &#39;{&quot;auth&quot;: &quot;SuperSekretToken123456&quot;}&#39; -H &#39;Content-Type: application/json&#39;
+</code></pre></div></p>
+<p>Response will look something like this:
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.14.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;agent_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">984</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;client_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;site_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;disk_usage_percent&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;mem_usage_percent&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;days_until_cert_expires&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;cert_expired&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;services_running&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;django&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;mesh&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;daphne&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;celery&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;celerybeat&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;redis&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;postgres&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;mongo&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;nats&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;nats-api&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;nginx&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="server-monitoring">Server Monitoring<a class="headerlink" href="#server-monitoring" title="Permanent link">&para;</a></h2>
+<p>Monitor Network usage: <a href="https://humdi.net/vnstat/">https://humdi.net/vnstat/</a></p>
+<p>Realtime Everything Usage: (<em>only run when needed because it uses a lot of resources</em>): <a href="https://learn.netdata.cloud/docs/agent/packaging/installer/methods/kickstart">https://learn.netdata.cloud/docs/agent/packaging/installer/methods/kickstart</a></p>
+<h2 id="customize-user-interface">Customize User Interface<a class="headerlink" href="#customize-user-interface" title="Permanent link">&para;</a></h2>
+<p>At the top right of your web administration interface, click your <strong>Username &gt; preferences</strong>. Set default tab: Servers | Workstations | Mixed</p>
+<p><img alt="User Preferences" src="../images/trmm_user_preferences.png" /></p>
+<hr />
+<h2 id="use-the-filters-in-the-agent-list">Use the Filters in the Agent List<a class="headerlink" href="#use-the-filters-in-the-agent-list" title="Permanent link">&para;</a></h2>
+<p><img alt="User Preferences" src="../images/tipsntricks_filters.png" /></p>
+<hr />
+<h2 id="meshcentral">MeshCentral<a class="headerlink" href="#meshcentral" title="Permanent link">&para;</a></h2>
+<p>Tactical RMM is actually 2 products: An RMM service with agent, and a secondary <a href="https://github.com/Ylianst/MeshCentral">MeshCentral</a> install that handles the <code>Take Control</code> and <code>Remote Background</code> stuff.</p>
+<p>Want to download multiple files?</p>
+<blockquote>
+<p>ZIP zip's the currently selected file(s) and saves it in the current directory. Then you can download the ZIP. It doesn't download and ZIP on the fly.</p>
+</blockquote>
+<p>If you want to enable automatic clipboard transfers just click the option under <a href="https://ylianst.github.io/MeshCentral/meshcentral/devicetabs/#during-a-desktop-session">Settings button</a></p>
+<h3 id="adjust-settings">Adjust Settings<a class="headerlink" href="#adjust-settings" title="Permanent link">&para;</a></h3>
+<p>Right-click the connect button in <strong>Remote Background &gt; Terminal</strong> for shell options.</p>
+<p><img alt="Terminal" src="../images/tipsntricks_meshterminal.png" /></p>
+<p>Right-click the connect button in <strong>Take Control</strong> for connection options.</p>
+<p><img alt="Terminal" src="../images/tipsntricks_meshcontrol.png" /></p>
+<h3 id="enable-remote-control-options">Enable Remote Control Options<a class="headerlink" href="#enable-remote-control-options" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These settings are independent of Tactical RMM. Enable features (like auto remove inactive devices) with caution.</p>
+</div>
+<p>If you need to comply with GDPR regulations and ensure employee rights legislation is complied with, you can make sure that users receive a popup to inform them so they are aware when your techs log in and connect to their machine. You can enable a banner that shows when a remote connection is established.</p>
+<ol>
+<li>Login to meshcentral as the <a href="../mesh_integration/#get-a-url-to-login-to-mesh-as-the-mesh-superuser">mesh superuser</a>.</li>
+<li>Click on My Account</li>
+<li>Click on the device group you want to enable notifications or accept connection etc on (probably TacticalRMM).</li>
+<li>Next to User Consent click edit (the wee pencil)<br>
+<img alt="Features" src="../images/mesh_userconsent.png" /></li>
+<li>You can also change features by ticking whatever boxes you want in there (Features: Sync server device name to hostname, Automatically remove inactive devices, Notify/Prompt for Consent/Connection Toolbar settings).<br>
+<img alt="Features" src="../images/mesh_features.png" /></li>
+<li>Ok your way out</li>
+</ol>
+<h3 id="agent-online-offline-logs">Agent Online / Offline logs<a class="headerlink" href="#agent-online-offline-logs" title="Permanent link">&para;</a></h3>
+<p>In mesh from the agent | General Tab</p>
+<p><img alt="online" src="../images/mesh_agent_onlineoffline.png" /></p>
+<h3 id="sending-custom-keystrokes-to-agent">Sending Custom Keystrokes to Agent<a class="headerlink" href="#sending-custom-keystrokes-to-agent" title="Permanent link">&para;</a></h3>
+<p>Some of the native hotkeys will not send thru the MeshCentral remote control window (like <span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-tab">Tab</kbd></span>). You can right-click the special key list in the bottom left of the Remote Control window.</p>
+<p><img alt="send custom keys" src="../images/mesh_send_custom_keys.png" /></p>
+<p>and add new ones like</p>
+<ul>
+<li><span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-tab">Tab</kbd></span>: Task switching between windows</li>
+<li><span class="keys"><kbd class="key-windows">Win</kbd><span>+</span><kbd class="key-tab">Tab</kbd></span>: Bring up thumbnail based running program switcher</li>
+</ul>
+<h3 id="syncing-pc-name-to-meshcentral">Syncing PC name to MeshCentral<a class="headerlink" href="#syncing-pc-name-to-meshcentral" title="Permanent link">&para;</a></h3>
+<p>If you install TRMM agent, it will add the PC to meshcentral with the current computer name. If you later rename the computer, MeshCentral will not update that PC name by default unless you enable the sync name option in MeshCentral</p>
+<p><img alt="Sync device name to hostname" src="../images/mesh_sync_pc_name.png" /></p>
+<h2 id="scripts">Scripts<a class="headerlink" href="#scripts" title="Permanent link">&para;</a></h2>
+<h3 id="when-running-scripts">When Running Scripts<a class="headerlink" href="#when-running-scripts" title="Permanent link">&para;</a></h3>
+<p>When <a href="../functions/scripting/#script-arguments">running scripts</a> use the (i) at the end of the script name to:</p>
+<ul>
+<li>Hover: see script parameter syntax help</li>
+<li>Left Click: Opens the script source in Github</li>
+</ul>
+<p><img alt="Script Parameter Syntax" src="../images/tipsntricks_script_syntaxhelp.png" /></p>
+<h2 id="3rd-party-software-patching">3rd Party Software Patching<a class="headerlink" href="#3rd-party-software-patching" title="Permanent link">&para;</a></h2>
+<p>Chocolatey is the default 3rd party software library that is used to populate the software tab. You can install anything that is available at chocolatey.org</p>
+<p>If you're interested in converting your software to Chocolatey managed you will need to look at customizing this script <a href="https://github.com/amidaware/community-scripts/blob/main/scripts_wip/Win_Choco_ConvertToChocoManaged.ps1">https://github.com/amidaware/community-scripts/blob/main/scripts_wip/Win_Choco_ConvertToChocoManaged.ps1</a>. If you have improvements please <a href="https://docs.tacticalrmm.com/contributing_community_scripts/">contribute</a>.</p>
+<p>Once you've made your script, that will take existing software and convert it to Chocolatey managed (see what Chocolatey manages on an agent with).</p>
+<div class="highlight"><pre><span></span><code>choco list
+</code></pre></div>
+<p>Next, you're going to schedule your updates.</p>
+<p>Because of <a href="https://docs.chocolatey.org/en-us/community-repository/community-packNeages-disclaimer#rate-limiting">community repo limits</a>, you can <a href="https://chocolatey.org/pricing">purchase chocolatey</a>, <a href="https://docs.chocolatey.org/en-us/features/host-packages">host your own chocolatey server</a>, or use this script sparingly <a href="https://github.com/amidaware/community-scripts/blob/main/scripts/Win_Chocolatey_Manage_Apps_Bulk.ps1">https://github.com/amidaware/community-scripts/blob/main/scripts/Win_Chocolatey_Manage_Apps_Bulk.ps1</a> using <code>-Mode upgrade -Hosts x</code> where x is the max number of machines on an internet connection.</p>
+<p><img alt="" src="../images/chocolatey_upgrade_many.png" /></p>
+<h2 id="run-intervals-for-checks">Run Intervals for Checks<a class="headerlink" href="#run-intervals-for-checks" title="Permanent link">&para;</a></h2>
+<p>You can modify at several locations / levels:</p>
+<ul>
+<li><strong>Settings Menu &gt; Automation Manager &gt; Checks tab &gt;</strong> Edit check</li>
+<li>Agent Level: <strong>Edit Agent &gt; Run checks every</strong></li>
+<li>Edit Check under agent &gt; Run this check every (seconds)</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The interval under check will override agent check if set.</p>
+</div>
+<h2 id="understanding-refreshing-trmm-data">Understanding refreshing TRMM data<a class="headerlink" href="#understanding-refreshing-trmm-data" title="Permanent link">&para;</a></h2>
+<p>How to get updated data and see agents last communication time.</p>
+<p><img alt="understanding" src="../images/Understanding_TRMM_Main_Screen.png" /></p>
+<h2 id="why-are-usernames-in-italics">Why are usernames in italics?<a class="headerlink" href="#why-are-usernames-in-italics" title="Permanent link">&para;</a></h2>
+<p>It's the last logged in user, when italicized it means nobody is currently logged in.</p>
+<h2 id="getting-false-sms-and-email-alerts-from-scripts">Getting false SMS and Email alerts from scripts?<a class="headerlink" href="#getting-false-sms-and-email-alerts-from-scripts" title="Permanent link">&para;</a></h2>
+<p>If you're getting <code>Error 98</code> from script timeouts between the time the server asked the agent to run it, and the timeout value of the script the server never received a response. You can minimize the false alerts but adding the script timeouts to informational instead of warnings. </p>
+<p>You can also increase the consecutive failures to 2+</p>
+<p><img alt="" src="../images/2024-02-22-16-46-27.png" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../unsupported_platforms/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installing on other platforms" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Installing on other platforms
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../contributing/" class="md-footer__link md-footer__link--next" aria-label="Next: Contributing to Docs" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Contributing to Docs
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/amidaware/tacticalrmm" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>

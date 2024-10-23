@@ -1,0 +1,2343 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A remote monitoring and management tool">
+      
+      
+        <meta name="author" content="amidaware">
+      
+      
+        <link rel="canonical" href="https://docs.tacticalrmm.com/install_server/">
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Traditional Install - Tactical RMM Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/neoteroi-mkdocs.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tactical RMM Documentation" class="md-header__button md-logo" aria-label="Tactical RMM Documentation" data-md-component="logo">
+      
+  <img src="../images/onit.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tactical RMM Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Traditional Install
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="light" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/amidaware/tacticalrmm" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    amidaware/tacticalrmm
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tactical RMM Documentation" class="md-nav__button md-logo" aria-label="Tactical RMM Documentation" data-md-component="logo">
+      
+  <img src="../images/onit.ico" alt="logo">
+
+    </a>
+    Tactical RMM Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/amidaware/tacticalrmm" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    amidaware/tacticalrmm
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sponsor/" class="md-nav__link">
+        Sponsor
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code_signing/" class="md-nav__link">
+        Code Signing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        Support
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
+        Roadmap
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide_gettingstarted/" class="md-nav__link">
+        Getting Started Guide
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          RMM Server Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="RMM Server Installation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          RMM Server Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_considerations/" class="md-nav__link">
+        Install Considerations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Traditional Install
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Traditional Install
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-information" class="md-nav__link">
+    General Information
+  </a>
+  
+    <nav class="md-nav" aria-label="General Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-requirements" class="md-nav__link">
+    System Requirements
+  </a>
+  
+    <nav class="md-nav" aria-label="System Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-requirements" class="md-nav__link">
+    Install Requirements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-1-easy-install-on-a-vps" class="md-nav__link">
+    Option 1: Easy Install on a VPS
+  </a>
+  
+    <nav class="md-nav" aria-label="Option 1: Easy Install on a VPS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-run-updates-on-os" class="md-nav__link">
+    Step 1 - Run Updates on OS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-a-user" class="md-nav__link">
+    Step 2 - Create a User
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-setup-the-firewall-optional-but-highly-recommended" class="md-nav__link">
+    Step 3 - Setup the firewall (optional but highly recommended)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-create-dns-a-records" class="md-nav__link">
+    Step 4 - Create DNS A records
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-run-the-install-script" class="md-nav__link">
+    Step 5 - Run the install script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-deploy-the-txt-record-in-your-dns-manager-for-lets-encrypt-wildcard-certs" class="md-nav__link">
+    Step 6 - Deploy the TXT record in your DNS manager for Let's Encrypt wildcard certs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-login" class="md-nav__link">
+    Step 7 - Login
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-2-install-behind-nat-router" class="md-nav__link">
+    Option 2: Install Behind NAT Router
+  </a>
+  
+    <nav class="md-nav" aria-label="Option 2: Install Behind NAT Router">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-you-only-have-agents-on-the-private-network-subnet" class="md-nav__link">
+    If You Only Have Agents on the Private Network / Subnet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agents-exist-outside-the-private-network-subnet-setup-port-forwarding" class="md-nav__link">
+    Agents Exist Outside the Private Network / Subnet - Setup Port Forwarding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-3-installs-by-network-wizards" class="md-nav__link">
+    Option 3: Installs by Network Wizards
+  </a>
+  
+    <nav class="md-nav" aria-label="Option 3: Installs by Network Wizards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-regularly" class="md-nav__link">
+    Update Regularly
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-video-walkthrus" class="md-nav__link">
+    Install Video Walkthrus
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_docker/" class="md-nav__link">
+        Docker Install
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          RMM Server Updating
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="RMM Server Updating" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          RMM Server Updating
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_server/" class="md-nav__link">
+        Updating the RMM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_docker/" class="md-nav__link">
+        Updating the RMM (Docker)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Agents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Agents" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Agents
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_agent/" class="md-nav__link">
+        Agent Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_agents/" class="md-nav__link">
+        Updating Agents
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Functionality
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Functionality" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Functionality
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howitallworks/" class="md-nav__link">
+        How it all Works
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/global_settings/" class="md-nav__link">
+        Global Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/alerting/" class="md-nav__link">
+        Alerting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/api/" class="md-nav__link">
+        API Access
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/automated_tasks/" class="md-nav__link">
+        Automated Tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/automation_policies/" class="md-nav__link">
+        Automation Policies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/custom_fields/" class="md-nav__link">
+        Custom Fields
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/django_admin/" class="md-nav__link">
+        Django Admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/emailsms_alert/" class="md-nav__link">
+        Email & SMS Alerts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/keystore/" class="md-nav__link">
+        Global Keystore
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/maintenance_mode/" class="md-nav__link">
+        Maintenance Mode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/permissions/" class="md-nav__link">
+        Permissions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/remote_bg/" class="md-nav__link">
+        Remote Background
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/settings_override/" class="md-nav__link">
+        Overriding / Customizing Default Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/scripting/" class="md-nav__link">
+        Scripting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/snmp_checks/" class="md-nav__link">
+        SNMP Checks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/url_actions/" class="md-nav__link">
+        URL Actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/user_ui/" class="md-nav__link">
+        User Interface Preferences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/webhooks/" class="md-nav__link">
+        Web Hooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/web_terminal/" class="md-nav__link">
+        Web Terminal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../script_variables/" class="md-nav__link">
+        Reference: Script Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/examples/" class="md-nav__link">
+        Examples
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          Reporting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reporting" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Reporting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/reporting_overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/faq/" class="md-nav__link">
+        - FAQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_basics/" class="md-nav__link">
+        - The Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_basetemplates/" class="md-nav__link">
+        - Base Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_variables/" class="md-nav__link">
+        - Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_dataqueries/" class="md-nav__link">
+        - Data Queries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_assets/" class="md-nav__link">
+        - Assets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/tipsntricks/" class="md-nav__link">
+        - Tips n' Tricks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backup/" class="md-nav__link">
+        Backup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../restore/" class="md-nav__link">
+        Restore
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../av/" class="md-nav__link">
+        Antivirus Exclusions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../management_cmds/" class="md-nav__link">
+        Management Commands
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesh_integration/" class="md-nav__link">
+        MeshCentral Integration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_19" type="checkbox" id="__nav_19" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_19">
+          3rd Party Integrations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="3rd Party Integrations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_19">
+          <span class="md-nav__icon md-icon"></span>
+          3rd Party Integrations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_grafana/" class="md-nav__link">
+        Grafana
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_anydesk/" class="md-nav__link">
+        AnyDesk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_n-able-takecontrol/" class="md-nav__link">
+        N-Able
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_bomgar/" class="md-nav__link">
+        Bomgar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_screenconnect/" class="md-nav__link">
+        ConnectWise Control / ScreenConnect
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_rustdesk/" class="md-nav__link">
+        RustDesk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_splashtop/" class="md-nav__link">
+        Splashtop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_supremo/" class="md-nav__link">
+        Supremo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_teamviewer/" class="md-nav__link">
+        TeamViewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_bitdefender_gravityzone/" class="md-nav__link">
+        BitDefender GravityZone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_bitdefender_total_security/" class="md-nav__link">
+        BitDefender Total Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_zammad/" class="md-nav__link">
+        Zammad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_dashy/" class="md-nav__link">
+        Dashy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_20" type="checkbox" id="__nav_20" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_20">
+          Unsupported Extras
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Unsupported Extras" data-md-level="1">
+        <label class="md-nav__title" for="__nav_20">
+          <span class="md-nav__icon md-icon"></span>
+          Unsupported Extras
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_guidelines/" class="md-nav__link">
+        Unsupported Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_scripts/" class="md-nav__link">
+        Unsupported Configs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../securing_nginx/" class="md-nav__link">
+        Securing nginx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_proxies/" class="md-nav__link">
+        Unsupported Proxies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_synology_docker_install/" class="md-nav__link">
+        Installing in Synology Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_platforms/" class="md-nav__link">
+        Installing on other platforms
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tipsntricks/" class="md-nav__link">
+        Tips n' Tricks
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_22" type="checkbox" id="__nav_22" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_22">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contributing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_22">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        Contributing to Docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_community_scripts/" class="md-nav__link">
+        Contributing to Community Scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_reporting_templates/" class="md-nav__link">
+        Contributing to Reporting Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_browser/" class="md-nav__link">
+        Contributing using a browser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_vscode/" class="md-nav__link">
+        Contributing using VS Code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_docker/" class="md-nav__link">
+        Contributing using Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_a_remote_server/" class="md-nav__link">
+        Contributing using a Remote Server
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-information" class="md-nav__link">
+    General Information
+  </a>
+  
+    <nav class="md-nav" aria-label="General Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-requirements" class="md-nav__link">
+    System Requirements
+  </a>
+  
+    <nav class="md-nav" aria-label="System Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-requirements" class="md-nav__link">
+    Install Requirements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-1-easy-install-on-a-vps" class="md-nav__link">
+    Option 1: Easy Install on a VPS
+  </a>
+  
+    <nav class="md-nav" aria-label="Option 1: Easy Install on a VPS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-run-updates-on-os" class="md-nav__link">
+    Step 1 - Run Updates on OS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-a-user" class="md-nav__link">
+    Step 2 - Create a User
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-setup-the-firewall-optional-but-highly-recommended" class="md-nav__link">
+    Step 3 - Setup the firewall (optional but highly recommended)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-create-dns-a-records" class="md-nav__link">
+    Step 4 - Create DNS A records
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-run-the-install-script" class="md-nav__link">
+    Step 5 - Run the install script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-deploy-the-txt-record-in-your-dns-manager-for-lets-encrypt-wildcard-certs" class="md-nav__link">
+    Step 6 - Deploy the TXT record in your DNS manager for Let's Encrypt wildcard certs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-login" class="md-nav__link">
+    Step 7 - Login
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-2-install-behind-nat-router" class="md-nav__link">
+    Option 2: Install Behind NAT Router
+  </a>
+  
+    <nav class="md-nav" aria-label="Option 2: Install Behind NAT Router">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-you-only-have-agents-on-the-private-network-subnet" class="md-nav__link">
+    If You Only Have Agents on the Private Network / Subnet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agents-exist-outside-the-private-network-subnet-setup-port-forwarding" class="md-nav__link">
+    Agents Exist Outside the Private Network / Subnet - Setup Port Forwarding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-3-installs-by-network-wizards" class="md-nav__link">
+    Option 3: Installs by Network Wizards
+  </a>
+  
+    <nav class="md-nav" aria-label="Option 3: Installs by Network Wizards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-regularly" class="md-nav__link">
+    Update Regularly
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-video-walkthrus" class="md-nav__link">
+    Install Video Walkthrus
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
+<p><a href="#general-information">General Information</a></p>
+<p><a href="#option-1-easy-install-on-a-vps">Option 1: Easy Install on a VPS</a></p>
+<p><a href="#option-2-install-behind-nat-router">Option 2: Install behind NAT Router</a></p>
+<p><a href="#option-3-installs-by-network-wizards">Option 3: Installs by Network Wizards</a></p>
+<p><a href="#update-regularly">Update Regularly</a></p>
+<h2 id="general-information">General Information<a class="headerlink" href="#general-information" title="Permanent link">&para;</a></h2>
+<p>Paid Hosting Available: Auto-maintained/updated servers with Code Signing for you. <a href="https://support.amidaware.com">Get in touch</a> to find out what we can do for you!</p>
+<h3 id="system-requirements">System Requirements<a class="headerlink" href="#system-requirements" title="Permanent link">&para;</a></h3>
+<p>A fresh Linux VM running either Debian 11, Debian 12 or Ubuntu 22.04 LTS with at least <strong>4GB RAM</strong> on x64 or aarch64 (arm64) architecture.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The provided install script assumes a fresh server with no software installed on it. Attempting to run it on an existing server with other services <strong>will</strong> break things and the install will fail.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>The installation script configures a production-grade reverse proxy using Nginx, which manages TLS termination and appropriately routes all requests to the correct backends. Consequently, there's no need for an additional proxy in front of your instance, as it will lead to complications. If you opt to use another reverse proxy (e.g., NPM, HAproxy) in conjunction with the existing Nginx reverse proxy (which is essential for TRMM to function correctly) you must address potential challenges arising from double proxying, and you should NOT expect your install to function properly out of the box. Be advised, configurations involving a secondary reverse proxy will be considered "unsupported." This designation is not to deter modifications but stems from the development team's capacity constraints. Their primary focus remains on enhancing the core software, and they cannot support an endless variety of setups. Check <a href="../unsupported_proxies/">unsupported proxies</a> and <a href="../unsupported_guidelines/">unsupported guidelines</a> for more info.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The install script has been tested on the following public cloud providers: Oracle Cloud Free Tier (arm64), DigitalOcean, Linode, Vultr, <a href="https://hetzner.cloud/?ref=wbGs8UQqHVdk">Hetzner</a> (highly recommended), AWS, Google Cloud and Azure, as well as behind NAT on Hyper-V, ESXi and Proxmox (CT's on Proxmox are <a href="../unsupported_guidelines/">unsupported</a>, only use VMs).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>CPU: 1 core is fine for &lt; 200 agents with limited checks/tasks.<br><br>
+Disk space and speed are dependent on your use case. Of course faster is better SSD/NVMe. Space is dependent on how long you're keeping historical data, how many checks/script runs and their output size. 50GB should be fine for &lt; 12months of history on &lt; 200 agents with &lt; 30 checks/tasks run at reasonable time intervals.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Enable logging of your terminal output. A good Windows SSH client is <a href="https://mobaxterm.mobatek.net/download.html">MobaXTerm</a>. It'll automatically log everything so if you need it later (like install logs because you have a <a href="../troubleshooting/#problems-after-new-server-install">50x error</a> trying to login after) they'll be easy to grab and share with support. It has an integrated SCP client too!</p>
+</div>
+<h4 id="install-requirements">Install Requirements<a class="headerlink" href="#install-requirements" title="Permanent link">&para;</a></h4>
+<ul>
+<li>A TOTP based authenticator app. Some popular ones are Google Authenticator, Authy, and Microsoft Authenticator.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ol>
+<li>Per <a href="https://datatracker.ietf.org/doc/html/rfc1034">RFC 1304</a> special chars in domain names are not allowed (like _ ). Only a-z 0-9 and the hyphen (-)</li>
+<li>Avoid sub-sub domains greater than 4. (Best: rmm.example.com Good: rmm.corp.example.com Bad: rmm.corp.xyz.example.com) Country TLDs like <code>co.uk</code> count as one layer.</li>
+</ol>
+</div>
+<h2 id="option-1-easy-install-on-a-vps">Option 1: Easy Install on a VPS<a class="headerlink" href="#option-1-easy-install-on-a-vps" title="Permanent link">&para;</a></h2>
+<p>Install on a VPS: DigitalOcean, Linode, Vultr, <a href="https://hetzner.cloud/?ref=wbGs8UQqHVdk">Hetzner</a> (highly recommended), AWS, Google Cloud and Azure to name a few.</p>
+<p>Use something that meets <a href="./#minimum-requirements">minimum specs</a></p>
+<h3 id="step-1-run-updates-on-os">Step 1 - Run Updates on OS<a class="headerlink" href="#step-1-run-updates-on-os" title="Permanent link">&para;</a></h3>
+<p>SSH into the server as <strong>root</strong>.</p>
+<p>Install the pre-reqs and apply the latest updates:</p>
+<div class="highlight"><pre><span></span><code>apt<span class="w"> </span>update
+apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>wget<span class="w"> </span>curl<span class="w"> </span>sudo<span class="w"> </span>ufw
+apt<span class="w"> </span>-y<span class="w"> </span>upgrade
+</code></pre></div>
+<p>If a new kernel is installed, reboot the server with the <code>reboot</code> command.</p>
+<h3 id="step-2-create-a-user">Step 2 - Create a User<a class="headerlink" href="#step-2-create-a-user" title="Permanent link">&para;</a></h3>
+<p>Create a user named <code>tactical</code> to run the RMM and add it to the sudoers group.</p>
+<div class="highlight"><pre><span></span><code>useradd<span class="w"> </span>-m<span class="w"> </span>-G<span class="w"> </span>sudo<span class="w"> </span>-s<span class="w"> </span>/bin/bash<span class="w"> </span>tactical
+passwd<span class="w"> </span>tactical
+</code></pre></div>
+<h3 id="step-3-setup-the-firewall-optional-but-highly-recommended">Step 3 - Setup the firewall (optional but highly recommended)<a class="headerlink" href="#step-3-setup-the-firewall-optional-but-highly-recommended" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Skip this step if your VM is <strong>not</strong> publicly exposed to the world e.g. running behind NAT. You should setup the firewall rules in your router instead.<br>
+Port 443 TCP: For agents and tech login to rmm and mesh.<br>
+Port 22 TCP: For SSH, server administration only</p>
+</div>
+<div class="highlight"><pre><span></span><code>ufw<span class="w"> </span>default<span class="w"> </span>deny<span class="w"> </span>incoming
+ufw<span class="w"> </span>default<span class="w"> </span>allow<span class="w"> </span>outgoing
+ufw<span class="w"> </span>allow<span class="w"> </span>https
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>SSH (port 22 TCP) is only required for you to remotely login and do basic server administration for your RMM. It is not needed for any agent communication.<br/></p>
+</div>
+<details class="note" open="open">
+<summary>SSH Firewall Rule</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 19v-3h8v3h-8m-4.5-6L2.47 7h4.24l4.96 4.95c.58.59.58 1.55 0 2.12L6.74 19H2.5l6-6Z"/></svg></span> Restrict SSH</label><label for="__tabbed_1_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 19v-3h8v3h-8m-4.5-6L2.47 7h4.24l4.96 4.95c.58.59.58 1.55 0 2.12L6.74 19H2.5l6-6Z"/></svg></span> Allow all SSH</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Allow SSH from only allowed IP's (<strong>highly</strong> recommended)</p>
+<div class="highlight"><pre><span></span><code>ufw<span class="w"> </span>allow<span class="w"> </span>proto<span class="w"> </span>tcp<span class="w"> </span>from<span class="w"> </span>X.X.X.X<span class="w"> </span>to<span class="w"> </span>any<span class="w"> </span>port<span class="w"> </span><span class="m">22</span>
+ufw<span class="w"> </span>allow<span class="w"> </span>proto<span class="w"> </span>tcp<span class="w"> </span>from<span class="w"> </span>X.X.X.X<span class="w"> </span>to<span class="w"> </span>any<span class="w"> </span>port<span class="w"> </span><span class="m">22</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Allow SSH from everywhere (<strong>not</strong> recommended)</p>
+<div class="highlight"><pre><span></span><code>ufw<span class="w"> </span>allow<span class="w"> </span>ssh
+</code></pre></div>
+</div>
+</div>
+</div>
+</details>
+<p>Enable and activate the firewall:</p>
+<div class="highlight"><pre><span></span><code>ufw<span class="w"> </span><span class="nb">enable</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>ufw<span class="w"> </span>reload
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You should/will never login to the server as <code>root</code> again unless something has gone horribly wrong, and you're working with the developers.</p>
+</div>
+<h3 id="step-4-create-dns-a-records">Step 4 - Create DNS A records<a class="headerlink" href="#step-4-create-dns-a-records" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>All 3 domain names MUST be at the same subdomain level because you only get one LetsEncrypt wildcard cert, and it'll only apply to that level of DNS name.</p>
+</div>
+<p>We'll be using <code>example.com</code> as our domain for this example.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The RMM uses 3 different sites. The Vue frontend e.g. <code>rmm.example.com</code> which is where you'll be accessing your RMM from the browser, the REST backend e.g. <code>api.example.com</code> and MeshCentral e.g. <code>mesh.example.com</code><br>
+<code>rmm.</code> <code>api.</code> and <code>mesh.</code> are what we recommend, but you can use whatever you want if they're already in use.</p>
+</div>
+<ol>
+<li>Get the public IP of your server with <code>curl https://icanhazip.tacticalrmm.io</code></li>
+<li>Open the DNS manager of wherever the domain you purchased is hosted.</li>
+<li>Create 3 A records: <code>rmm</code>, <code>api</code> and <code>mesh</code> and point them to the public IP of your server:</li>
+</ol>
+<p><img alt="arecords" src="../images/arecords.png" /></p>
+<h3 id="step-5-run-the-install-script">Step 5 - Run the install script<a class="headerlink" href="#step-5-run-the-install-script" title="Permanent link">&para;</a></h3>
+<p>Switch to the <code>tactical</code> user:</p>
+<div class="highlight"><pre><span></span><code>su<span class="w"> </span>-<span class="w"> </span>tactical
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you can snapshot do that now so you can quickly restore to this point again and re-run the install in case something goes wrong with the install script.</p>
+</div>
+<p>Download and run the install script:</p>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://raw.githubusercontent.com/amidaware/tacticalrmm/master/install.sh
+chmod<span class="w"> </span>+x<span class="w"> </span>install.sh
+./install.sh
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Already have your own SSL certificate? Call the install script with the <code>--use-own-cert</code> flag, like this:
+<div class="highlight"><pre><span></span><code>./install.sh<span class="w"> </span>--use-own-cert
+</code></pre></div>
+Ensure your cert and private key exist on the server as the install script will prompt you for the locations of these 2 files.</p>
+<p>Also ensure that it is a legitimate, trusted certificate and includes the full chain for proper validation. Do not use this option with self-signed certs.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>You can install with the <code>--insecure</code> switch to use any DNS name you want. Self signed certs will be generated for all the DNS names, and all SSL certificate chain validation will be disabled in TRMM.</p>
+<p><code>./install.sh --insecure</code></p>
+<p><strong>Requirements</strong>: You <strong>MUST</strong> open all 3 subdomains in your web browser and accept the security warning for each site <strong>BEFORE LOGIN</strong> or you will get "Backend is offline (network error)" errors.</p>
+<p>✅ Quick install for easy test driving<br>
+✅ No public DNS name needed. Use irulez.local or any DNS name you want.<br>
+✅ No cert renewals<br>
+❌ All agent communication is vulnerable to MITM compromise and can be hacked.<br>
+❌ You can't convert from an <code>--insecure</code> to trusted cert install without reinstalling all your agents<br>
+❌ Can't use Agent install Deployment links. Manual installation method only<br>
+❌ Restore does not work</p>
+</div>
+<p>Answer the initial questions when prompted. Replace <code>example.com</code> with your domain.</p>
+<p><img alt="questions" src="../images/install_questions.png" /></p>
+<h3 id="step-6-deploy-the-txt-record-in-your-dns-manager-for-lets-encrypt-wildcard-certs">Step 6 - Deploy the TXT record in your DNS manager for Let's Encrypt <a href="https://letsencrypt.org/docs/challenge-types/#dns-01-challenge">wildcard certs</a><a class="headerlink" href="#step-6-deploy-the-txt-record-in-your-dns-manager-for-lets-encrypt-wildcard-certs" title="Permanent link">&para;</a></h3>
+<p>Skip this step if using your own certs or using self-signed certs.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>TXT records can take anywhere from 1 minute to a few hours to propagate depending on your DNS provider.<br/>
+You should verify the TXT record has been deployed first before pressing Enter.<br/>
+A quick way to check is with the following command:<br/> <code>dig -t txt _acme-challenge.example.com</code> (not from the TRMM server)<br/>
+or test using: <a href="https://viewdns.info/dnsrecord/">https://viewdns.info/dnsrecord/</a> Enter: <code>_acme-challenge.example.com</code></p>
+</div>
+<p><img alt="txtrecord" src="../images/txtrecord.png" /></p>
+<p><img alt="dnstxt" src="../images/dnstxt.png" /></p>
+<p>Create a login for the RMM web UI:</p>
+<p><img alt="rmmlogin" src="../images/rmmlogin.png" /></p>
+<p>A bunch of URLS / usernames / passwords will be printed out at the end of the install script. <strong>Save these somewhere safe.</strong> <a href="../faq/#how-do-i-recover-my-meshcentral-login-credentials">Recover them if you didn't</a></p>
+<h3 id="step-7-login">Step 7 - Login<a class="headerlink" href="#step-7-login" title="Permanent link">&para;</a></h3>
+<p>Navigate to <code>https://rmm.example.com</code> and login with the username/password you created during install.</p>
+<p>Once logged in, you will be redirected to the initial setup page.</p>
+<p>Create your first client/site and choose the default timezone.</p>
+<p>You're Done</p>
+<p><a href="./#update-regularly">Update Regularly</a></p>
+<h2 id="option-2-install-behind-nat-router">Option 2: Install Behind NAT Router<a class="headerlink" href="#option-2-install-behind-nat-router" title="Permanent link">&para;</a></h2>
+<p>Install in your local network using: Dedicated hardware, Hyper-V, Proxmox or ESXi. All been tested and work fine.</p>
+<p>Do everything from <a href="./#option-1-easy-install-on-a-vps">Option 1: Easy Install</a></p>
+<h4 id="if-you-only-have-agents-on-the-private-network-subnet">If You Only Have Agents on the Private Network / Subnet<a class="headerlink" href="#if-you-only-have-agents-on-the-private-network-subnet" title="Permanent link">&para;</a></h4>
+<p>Make sure your local DNS server (or agents hosts file) have your Tactical RMM server IP addresses for the 3 domain names: <code>rmm</code>, <code>api</code> and <code>mesh</code></p>
+<h4 id="agents-exist-outside-the-private-network-subnet-setup-port-forwarding">Agents Exist Outside the Private Network / Subnet - Setup Port Forwarding<a class="headerlink" href="#agents-exist-outside-the-private-network-subnet-setup-port-forwarding" title="Permanent link">&para;</a></h4>
+<p>If you have agents outside your local network: Make sure the public DNS servers have A records for the 3 Tactical RMM server domain names: <code>rmm</code>, <code>api</code> and <code>mesh</code></p>
+<p>Login to your router / NAT device.</p>
+<ol>
+<li>Set your TRMM server as a static IP (Using a DHCP reservation is usually safer).</li>
+<li>Port forward <code>TCP 443</code> to your TRMM servers private IP address.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a href="https://portforward.com/">https://portforward.com/</a> can help with Port Forwarding setup</p>
+</div>
+<p><strong>You're Done</strong></p>
+<p><a href="./#update-regularly">Update Regularly</a></p>
+<h2 id="option-3-installs-by-network-wizards">Option 3: Installs by Network Wizards<a class="headerlink" href="#option-3-installs-by-network-wizards" title="Permanent link">&para;</a></h2>
+<p>Use the scripts above.</p>
+<h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
+<ol>
+<li>TLD domain name which is internet resolvable (this is for a LetsEncrypt DNS wildcard request during the install script <a href="https://letsencrypt.org/docs/challenge-types/#dns-01-challenge">validated by DNS txt record</a>).<ul>
+<li>Test using: <a href="https://viewdns.info/dnsrecord/">https://viewdns.info/dnsrecord/</a> or <a href="https://dnschecker.org/">https://dnschecker.org/</a>. Enter: <code>_acme-challenge.example.com</code> as <code>TXT</code></li>
+</ul>
+</li>
+<li>Agents need to be able to connect to your server via DNS lookup (hosts file, local DNS, smoke signals etc.).<ul>
+<li>Test from agent: <code>ping rmm.example.com</code>. Should result in the IP of your Tactical RMM server.</li>
+<li>Test from agent: <code>ping api.example.com</code>. Should result in the IP of your Tactical RMM server.</li>
+<li>Test from agent: <code>ping mesh.example.com</code>. Should result in the IP of your Tactical RMM server.</li>
+</ul>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Did you notice #2 doesn't need to be something publicly available?</p>
+</div>
+<p>That's it. You're a wizard, you know how to satisfy these 2 items.</p>
+<p>You'll probably enjoy browsing thru the <a href="../unsupported_guidelines/">Unsupported section</a> of the docs.</p>
+<h2 id="update-regularly">Update Regularly<a class="headerlink" href="#update-regularly" title="Permanent link">&para;</a></h2>
+<p>We've said it before, we'll say it again.</p>
+<ul>
+<li>
+<p>We recommend regular updates.</p>
+<ul>
+<li>
+<p>Every 2-3 months.</p>
+<ul>
+<li>Do it when you update your SSL certs.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="install-video-walkthrus">Install Video Walkthrus<a class="headerlink" href="#install-video-walkthrus" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper">
+  <iframe width="400" height="225" src="https://www.youtube.com/embed/9diCo6fW-ww" frameborder="0" allowfullscreen></iframe>
+  <iframe width="400" height="225" src="https://www.youtube.com/embed/nHke7pi01HI" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../install_considerations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Install Considerations" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Install Considerations
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../install_docker/" class="md-footer__link md-footer__link--next" aria-label="Next: Docker Install" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Docker Install
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/amidaware/tacticalrmm" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>

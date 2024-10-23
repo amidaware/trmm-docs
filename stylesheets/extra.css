@@ -1,0 +1,127 @@
+/* Maximum space for text block */
+.md-grid {
+    max-width: 95%; /* or 100%, if you want to stretch to full-width */
+  }
+
+.md-header {
+    background-color: black !important;
+    color: white !important;
+}
+.md-search__input {
+    background-color: white !important;
+    color: black;
+}
+.md-search__icon[for=__search]{
+    color: initial;
+}
+[data-md-color-scheme="slate"] .md-typeset a {
+    color: rgb(120, 120, 250);
+    text-decoration: underline;
+}
+.md-content__inner > p {
+    padding-left: 20px
+  }
+.md-typeset a {
+    color: rgb(65, 65, 170);
+    text-decoration: underline;
+}
+[data-md-color-scheme="slate"] .md-typeset h1 {
+    /*border-width: 1px;
+    border-radius: 5px;
+    border-color: gray;
+    width: 100%;
+    border-style: solid;
+    padding: 5px;*/
+    border-top-right-radius: 10px;
+    border-top:5px solid rgb(217, 217, 217);
+    background-color: rgba(227, 250, 223, 0.1);
+    margin-top: 15px;
+}
+.md-typeset h1 {
+    /*border-width: 1px;
+    border-radius: 5px;
+    border-color: gray;
+    width: 100%;
+    border-style: solid;
+    padding: 5px;*/
+    border-top:5px solid rgb(217, 217, 217);
+    margin-top: 15px;
+}
+[data-md-color-scheme="slate"] .md-typeset h2 {
+    /*border-width: 1px;
+    border-radius: 10px;
+    border-color: gray;
+    width: 90%;
+    border-style: solid;
+    padding: 5px;*/
+    border-top-right-radius: 10px;
+    border-right: 10px;
+    text-indent: 5px;
+    border-top:5px solid rgb(217, 217, 217);
+    background-color: rgba(227, 250, 223, 0.13);
+    width: 95%;
+    margin-top: 15px;
+}
+.md-typeset h2 {
+    /*border-width: 1px;
+    border-radius: 10px;
+    border-color: gray;
+    width: 90%;
+    border-style: solid;
+    padding: 5px;*/
+    border-right: 10px;
+    text-indent: 5px;
+    border-top:5px solid rgb(217, 217, 217);
+    width: 95%;
+    margin-top: 15px;
+}
+[data-md-color-scheme="slate"] .md-typeset h3 {
+    border-top-right-radius: 10px;
+    border-right: 10px;
+    text-indent: 5px;
+    border-top:5px solid rgb(217, 217, 217);
+    background-color: rgba(227, 250, 223, 0.16);
+    width: 90%;
+    margin-top: 15px;
+}
+.md-typeset h3 {
+    border-right: 10px;
+    text-indent: 5px;
+    border-top:5px solid rgb(217, 217, 217);
+    width: 90%;
+    margin-top: 15px;
+}
+[data-md-color-scheme="slate"] .md-typeset h4 {
+    border-top-right-radius: 10px;
+    border-right: 10px;
+    text-indent: 5px;
+    border-top:5px solid rgb(217, 217, 217);
+    background-color: rgba(227, 250, 223, 0.19);
+    width: 85%;
+    margin-top: 15px;
+}
+.md-typeset h4 {
+
+    border-right: 10px;
+    text-indent: 5px;
+    border-top:5px solid rgb(217, 217, 217);
+    width: 85%;
+    margin-top: 15px;
+}
+[data-md-color-scheme="slate"] .md-typeset h5 {
+    border-top-right-radius: 10px;
+    border-right: 10px;
+    text-indent: 5px;
+    border-top:5px solid rgb(217, 217, 217);
+    background-color: rgba(227, 250, 223, 0.22);
+    width: 80%;
+    margin-top: 15px;
+}
+.md-typeset h5 {
+
+    border-right: 10px;
+    text-indent: 5px;
+    border-top:5px solid rgb(217, 217, 217);
+    width: 80%;
+    margin-top: 15px;
+}

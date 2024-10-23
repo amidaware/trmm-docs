@@ -1,0 +1,2267 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A remote monitoring and management tool">
+      
+      
+        <meta name="author" content="amidaware">
+      
+      
+        <link rel="canonical" href="https://docs.tacticalrmm.com/securing_nginx/">
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Securing nginx - Tactical RMM Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/neoteroi-mkdocs.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#disclaimer" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tactical RMM Documentation" class="md-header__button md-logo" aria-label="Tactical RMM Documentation" data-md-component="logo">
+      
+  <img src="../images/onit.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tactical RMM Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Securing nginx
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="light" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/amidaware/tacticalrmm" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    amidaware/tacticalrmm
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tactical RMM Documentation" class="md-nav__button md-logo" aria-label="Tactical RMM Documentation" data-md-component="logo">
+      
+  <img src="../images/onit.ico" alt="logo">
+
+    </a>
+    Tactical RMM Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/amidaware/tacticalrmm" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    amidaware/tacticalrmm
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sponsor/" class="md-nav__link">
+        Sponsor
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code_signing/" class="md-nav__link">
+        Code Signing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        Support
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
+        Roadmap
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide_gettingstarted/" class="md-nav__link">
+        Getting Started Guide
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          RMM Server Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="RMM Server Installation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          RMM Server Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_considerations/" class="md-nav__link">
+        Install Considerations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_server/" class="md-nav__link">
+        Traditional Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_docker/" class="md-nav__link">
+        Docker Install
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          RMM Server Updating
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="RMM Server Updating" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          RMM Server Updating
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_server/" class="md-nav__link">
+        Updating the RMM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_docker/" class="md-nav__link">
+        Updating the RMM (Docker)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Agents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Agents" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Agents
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_agent/" class="md-nav__link">
+        Agent Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_agents/" class="md-nav__link">
+        Updating Agents
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Functionality
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Functionality" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Functionality
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howitallworks/" class="md-nav__link">
+        How it all Works
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/global_settings/" class="md-nav__link">
+        Global Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/alerting/" class="md-nav__link">
+        Alerting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/api/" class="md-nav__link">
+        API Access
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/automated_tasks/" class="md-nav__link">
+        Automated Tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/automation_policies/" class="md-nav__link">
+        Automation Policies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/custom_fields/" class="md-nav__link">
+        Custom Fields
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/django_admin/" class="md-nav__link">
+        Django Admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/emailsms_alert/" class="md-nav__link">
+        Email & SMS Alerts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/keystore/" class="md-nav__link">
+        Global Keystore
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/maintenance_mode/" class="md-nav__link">
+        Maintenance Mode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/permissions/" class="md-nav__link">
+        Permissions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/remote_bg/" class="md-nav__link">
+        Remote Background
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/settings_override/" class="md-nav__link">
+        Overriding / Customizing Default Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/scripting/" class="md-nav__link">
+        Scripting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/snmp_checks/" class="md-nav__link">
+        SNMP Checks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/url_actions/" class="md-nav__link">
+        URL Actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/user_ui/" class="md-nav__link">
+        User Interface Preferences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/webhooks/" class="md-nav__link">
+        Web Hooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/web_terminal/" class="md-nav__link">
+        Web Terminal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../script_variables/" class="md-nav__link">
+        Reference: Script Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/examples/" class="md-nav__link">
+        Examples
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          Reporting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reporting" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Reporting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/reporting_overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/faq/" class="md-nav__link">
+        - FAQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_basics/" class="md-nav__link">
+        - The Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_basetemplates/" class="md-nav__link">
+        - Base Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_variables/" class="md-nav__link">
+        - Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_dataqueries/" class="md-nav__link">
+        - Data Queries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_assets/" class="md-nav__link">
+        - Assets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/tipsntricks/" class="md-nav__link">
+        - Tips n' Tricks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backup/" class="md-nav__link">
+        Backup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../restore/" class="md-nav__link">
+        Restore
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../av/" class="md-nav__link">
+        Antivirus Exclusions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../management_cmds/" class="md-nav__link">
+        Management Commands
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesh_integration/" class="md-nav__link">
+        MeshCentral Integration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_19" type="checkbox" id="__nav_19" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_19">
+          3rd Party Integrations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="3rd Party Integrations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_19">
+          <span class="md-nav__icon md-icon"></span>
+          3rd Party Integrations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_grafana/" class="md-nav__link">
+        Grafana
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_anydesk/" class="md-nav__link">
+        AnyDesk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_n-able-takecontrol/" class="md-nav__link">
+        N-Able
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_bomgar/" class="md-nav__link">
+        Bomgar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_screenconnect/" class="md-nav__link">
+        ConnectWise Control / ScreenConnect
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_rustdesk/" class="md-nav__link">
+        RustDesk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_splashtop/" class="md-nav__link">
+        Splashtop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_supremo/" class="md-nav__link">
+        Supremo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_teamviewer/" class="md-nav__link">
+        TeamViewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_bitdefender_gravityzone/" class="md-nav__link">
+        BitDefender GravityZone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_bitdefender_total_security/" class="md-nav__link">
+        BitDefender Total Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_zammad/" class="md-nav__link">
+        Zammad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_dashy/" class="md-nav__link">
+        Dashy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_20" type="checkbox" id="__nav_20" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_20">
+          Unsupported Extras
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Unsupported Extras" data-md-level="1">
+        <label class="md-nav__title" for="__nav_20">
+          <span class="md-nav__icon md-icon"></span>
+          Unsupported Extras
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_guidelines/" class="md-nav__link">
+        Unsupported Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_scripts/" class="md-nav__link">
+        Unsupported Configs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Securing nginx
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Securing nginx
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardening-nginx-settings" class="md-nav__link">
+    Hardening NGINX settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardening NGINX settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geoip-integration-in-nginx-blocking-requests-by-country-code" class="md-nav__link">
+    GeoIP Integration in NGINX - Blocking Requests by Country Code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blocking-bad-bots-and-bad-referrers" class="md-nav__link">
+    Blocking “bad bots” and “bad referrers”
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-modsec-in-nginx" class="md-nav__link">
+    Enabling ModSec in NGINX
+  </a>
+  
+    <nav class="md-nav" aria-label="Enabling ModSec in NGINX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-prerequisite-packages" class="md-nav__link">
+    Install Prerequisite Packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-and-compile-the-modsecurity-30-source-code" class="md-nav__link">
+    Download and Compile the ModSecurity 3.0 Source Code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-the-nginx-connector-for-modsecurity-and-compile-it-as-a-dynamic-module" class="md-nav__link">
+    Download the NGINX Connector for ModSecurity and Compile It as a Dynamic Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-the-nginx-modsecurity-connector-dynamic-module" class="md-nav__link">
+    Load the NGINX ModSecurity Connector Dynamic Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-and-enable-modsecurity" class="md-nav__link">
+    Configure and Enable ModSecurity
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-owasp-core-rule-set" class="md-nav__link">
+    Enabling OWASP Core Rule Set
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_proxies/" class="md-nav__link">
+        Unsupported Proxies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_synology_docker_install/" class="md-nav__link">
+        Installing in Synology Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_platforms/" class="md-nav__link">
+        Installing on other platforms
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tipsntricks/" class="md-nav__link">
+        Tips n' Tricks
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_22" type="checkbox" id="__nav_22" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_22">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contributing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_22">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        Contributing to Docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_community_scripts/" class="md-nav__link">
+        Contributing to Community Scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_reporting_templates/" class="md-nav__link">
+        Contributing to Reporting Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_browser/" class="md-nav__link">
+        Contributing using a browser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_vscode/" class="md-nav__link">
+        Contributing using VS Code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_docker/" class="md-nav__link">
+        Contributing using Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_a_remote_server/" class="md-nav__link">
+        Contributing using a Remote Server
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardening-nginx-settings" class="md-nav__link">
+    Hardening NGINX settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardening NGINX settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geoip-integration-in-nginx-blocking-requests-by-country-code" class="md-nav__link">
+    GeoIP Integration in NGINX - Blocking Requests by Country Code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blocking-bad-bots-and-bad-referrers" class="md-nav__link">
+    Blocking “bad bots” and “bad referrers”
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-modsec-in-nginx" class="md-nav__link">
+    Enabling ModSec in NGINX
+  </a>
+  
+    <nav class="md-nav" aria-label="Enabling ModSec in NGINX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-prerequisite-packages" class="md-nav__link">
+    Install Prerequisite Packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-and-compile-the-modsecurity-30-source-code" class="md-nav__link">
+    Download and Compile the ModSecurity 3.0 Source Code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-the-nginx-connector-for-modsecurity-and-compile-it-as-a-dynamic-module" class="md-nav__link">
+    Download the NGINX Connector for ModSecurity and Compile It as a Dynamic Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-the-nginx-modsecurity-connector-dynamic-module" class="md-nav__link">
+    Load the NGINX ModSecurity Connector Dynamic Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-and-enable-modsecurity" class="md-nav__link">
+    Configure and Enable ModSecurity
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-owasp-core-rule-set" class="md-nav__link">
+    Enabling OWASP Core Rule Set
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="disclaimer">DISCLAIMER<a class="headerlink" href="#disclaimer" title="Permanent link">&para;</a></h1>
+<p>All the settings covered in this document have been tested against Tactical RMM v0.7.2 and v0.8.0.</p>
+<p>Before applying these settings in production, use a pre-production environment so potential disruptions in your own environment and the service that you provide to your clients can be avoided.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Use the contents included in this guide and apply the security settings detailed here at your own discretion.</strong></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Please check the following github <a href="https://github.com/amidaware/rmmagent/issues/2">issue</a> for potential side effects of deploying these configs.</p>
+</div>
+<h2 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">&para;</a></h2>
+<p>This section is structured in three main subsections:</p>
+<ul>
+<li>Enabling GeoIP in NGINX config with the purpose of filtering (blocking) web requests based on the country’s source IP.</li>
+<li>Enabling anti “bad” bots/referrers in HTTP requests to the NGINX server.</li>
+<li>Compiling and enabling ModSec + OWASP CRS in NGINX server.</li>
+</ul>
+<p>Each section can be enabled independently.</p>
+<h2 id="hardening-nginx-settings">Hardening NGINX settings<a class="headerlink" href="#hardening-nginx-settings" title="Permanent link">&para;</a></h2>
+<h3 id="geoip-integration-in-nginx-blocking-requests-by-country-code">GeoIP Integration in NGINX - Blocking Requests by Country Code<a class="headerlink" href="#geoip-integration-in-nginx-blocking-requests-by-country-code" title="Permanent link">&para;</a></h3>
+<p>Install required packages and NGINX module for GeoIP:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># apt-get install geoip-database libgeoip1 libnginx-mod-http-geoip</span>
+</code></pre></div>
+<p>Verify that the GeoIP database files have been placed in the right location:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># ls -lrt /usr/share/GeoIP/</span>
+total<span class="w"> </span><span class="m">10004</span>
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">8138841</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">24</span><span class="w">  </span><span class="m">2020</span><span class="w"> </span>GeoIPv6.dat
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">2099217</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">24</span><span class="w">  </span><span class="m">2020</span><span class="w"> </span>GeoIP.dat
+</code></pre></div>
+<p>Edit NGINX config file (<code>/etc/nginx/nginx.conf</code>) and add the following config under the <code>http {</code> block:</p>
+<div class="highlight"><pre><span></span><code>http {
+
+    ##
+    # Basic Settings
+    ##
+    # Load GeoIP Database
+    geoip_country /usr/share/GeoIP/GeoIP.dat;
+}
+</code></pre></div>
+<p>The next settings will depend on the desired GeoIP blocking strategy. For “allow by default, deny by exception”, the config would be:</p>
+<div class="highlight"><pre><span></span><code>http {
+
+        ##
+        # Basic Settings
+        ##
+        # Load GeoIP Database
+        geoip_country /usr/share/GeoIP/GeoIP.dat;
+        # map the list of denied countries
+        map $geoip_country_code $allowed_country {
+        default yes;
+        # BLOCKED_COUNTRY_1
+        COUNTRY_CODE_1 no;
+        # BLOCKED_COUNTRY_2
+        COUNTRY_CODE_2 no;
+        # BLOCKED_COUNTRY_3
+        COUNTRY_CODE_3 no;
+        }
+}
+</code></pre></div>
+<p>(The macro can be modified to achieve the “deny by default, allow by exception” approach).</p>
+<p>Finally, the following “if” statement needs to be placed in all the vhosts where the GeoIP blocking should take effect, under the “location” section:</p>
+<div class="highlight"><pre><span></span><code>   location / {
+        root /var/www/rmm/dist;
+        try_files $uri $uri/ /index.html;
+        add_header Cache-Control &quot;no-store, no-cache, must-revalidate&quot;;
+        add_header Pragma &quot;no-cache&quot;;
+        # block the country
+        if ($allowed_country = no) {
+         return 444;
+        }
+    }
+</code></pre></div>
+<p>The HTTP Status = 444 is a good choice for NGINX not “wasting” too many resources in sending back the 4xx code to the client being blocked by GeoIP.</p>
+<h3 id="blocking-bad-bots-and-bad-referrers">Blocking “bad bots” and “bad referrers”<a class="headerlink" href="#blocking-bad-bots-and-bad-referrers" title="Permanent link">&para;</a></h3>
+<p>Nginx Bad Bot and User-Agent Blocker, Spam Referrer Blocker, Anti DDOS, Bad IP Blocker and Wordpress Theme Detector Blocker:</p>
+<p>Source:</p>
+<p><a href="https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker">https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker</a></p>
+<p>Download “install-ngxblocker” to your /usr/local/sbin/directory and make the script executable:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>wget<span class="w"> </span>https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/install-ngxblocker<span class="w"> </span>-O<span class="w"> </span>/usr/local/sbin/install-ngxblocker
+sudo<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/usr/local/sbin/install-ngxblocker
+</code></pre></div>
+<p><strong><span style="text-decoration:underline;">(OPTIONAL)</span></strong>Now run the ”install-ngxblocker” script in <strong>DRY-MODE</strong> which will show you what changes it will make and what files it will download for you. This is only a DRY-RUN so no changes are being made yet.</p>
+<p>The install-ngxblocker downloads all required files including the setup and update scripts:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/usr/local/sbin
+sudo<span class="w"> </span>./install-ngxblocker
+</code></pre></div>
+<p>This will show you output as follows of the changes that will be made (NOTE: this is only a <strong>DRY-RUN</strong> no changes have been made)</p>
+<div class="highlight"><pre><span></span><code>Checking url: https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/include_filelist.txt
+** Dry Run ** | not updating files | run  as &#39;install-ngxblocker -x&#39; to install files.
+Creating directory: /etc/nginx/bots.d
+REPO = https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master
+Downloading [FROM]=&gt;  [REPO]/conf.d/globalblacklist.conf            [TO]=&gt;  /etc/nginx/conf.d/globalblacklist.conf
+Downloading [FROM]=&gt;  [REPO]/conf.d/botblocker-nginx-settings.conf  [TO]=&gt;  /etc/nginx/conf.d/botblocker-nginx-settings.conf
+REPO = https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master
+Downloading [FROM]=&gt;  [REPO]/bots.d/blockbots.conf              [TO]=&gt;  /etc/nginx/bots.d/blockbots.conf
+Downloading [FROM]=&gt;  [REPO]/bots.d/ddos.conf                   [TO]=&gt;  /etc/nginx/bots.d/ddos.conf
+Downloading [FROM]=&gt;  [REPO]/bots.d/whitelist-ips.conf          [TO]=&gt;  /etc/nginx/bots.d/whitelist-ips.conf
+Downloading [FROM]=&gt;  [REPO]/bots.d/whitelist-domains.conf      [TO]=&gt;  /etc/nginx/bots.d/whitelist-domains.conf
+Downloading [FROM]=&gt;  [REPO]/bots.d/blacklist-user-agents.conf  [TO]=&gt;  /etc/nginx/bots.d/blacklist-user-agents.conf
+Downloading [FROM]=&gt;  [REPO]/bots.d/blacklist-ips.conf          [TO]=&gt;  /etc/nginx/bots.d/blacklist-ips.conf
+Downloading [FROM]=&gt;  [REPO]/bots.d/bad-referrer-words.conf     [TO]=&gt;  /etc/nginx/bots.d/bad-referrer-words.conf
+Downloading [FROM]=&gt;  [REPO]/bots.d/custom-bad-referrers.conf   [TO]=&gt;  /etc/nginx/bots.d/custom-bad-referrers.conf
+REPO = https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master
+Downloading [FROM]=&gt;  [REPO]/setup-ngxblocker      [TO]=&gt;  /usr/local/sbin/setup-ngxblocker
+Downloading [FROM]=&gt;  [REPO]/update-ngxblocker     [TO]=&gt;  /usr/local/sbin/update-ngxblocker
+</code></pre></div>
+<p>Now run the install script with the -x parameter to download all the necessary files from the repository:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/usr/local/sbin/
+sudo<span class="w"> </span>./install-ngxblocker<span class="w"> </span>-x
+</code></pre></div>
+<p>This will give you the following output:</p>
+<div class="highlight"><pre><span></span><code>Checking url: https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/include_filelist.txt
+Creating directory: /etc/nginx/bots.d
+REPO = https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master
+Downloading [FROM]=&gt;  [REPO]/conf.d/globalblacklist.conf            [TO]=&gt;  /etc/nginx/conf.d/globalblacklist.conf...OK
+Downloading [FROM]=&gt;  [REPO]/conf.d/botblocker-nginx-settings.conf  [TO]=&gt;  /etc/nginx/conf.d/botblocker-nginx-settings.conf...OK
+REPO = https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master
+Downloading [FROM]=&gt;  [REPO]/bots.d/blockbots.conf              [TO]=&gt;  /etc/nginx/bots.d/blockbots.conf...OK
+Downloading [FROM]=&gt;  [REPO]/bots.d/ddos.conf                   [TO]=&gt;  /etc/nginx/bots.d/ddos.conf...OK
+Downloading [FROM]=&gt;  [REPO]/bots.d/whitelist-ips.conf          [TO]=&gt;  /etc/nginx/bots.d/whitelist-ips.conf...OK
+Downloading [FROM]=&gt;  [REPO]/bots.d/whitelist-domains.conf      [TO]=&gt;  /etc/nginx/bots.d/whitelist-domains.conf...OK
+Downloading [FROM]=&gt;  [REPO]/bots.d/blacklist-user-agents.conf  [TO]=&gt;  /etc/nginx/bots.d/blacklist-user-agents.conf...OK
+Downloading [FROM]=&gt;  [REPO]/bots.d/blacklist-ips.conf          [TO]=&gt;  /etc/nginx/bots.d/blacklist-ips.conf...OK
+Downloading [FROM]=&gt;  [REPO]/bots.d/bad-referrer-words.conf     [TO]=&gt;  /etc/nginx/bots.d/bad-referrer-words.conf...OK
+Downloading [FROM]=&gt;  [REPO]/bots.d/custom-bad-referrers.conf   [TO]=&gt;  /etc/nginx/bots.d/custom-bad-referrers.conf...OK
+REPO = https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master
+Downloading [FROM]=&gt;  [REPO]/setup-ngxblocker      [TO]=&gt;  /usr/local/sbin/setup-ngxblocker...OK
+Downloading [FROM]=&gt;  [REPO]/update-ngxblocker     [TO]=&gt;  /usr/local/sbin/update-ngxblocker...OK
+</code></pre></div>
+<p>All the required files have now been downloaded to the correct folders on Nginx for you direct from the repository.</p>
+<p><strong><span style="text-decoration:underline;">NOTE:</span></strong> The setup and update scripts can be used, however in this guide the config is done manually. For script execution, refer to the Github page linked above.</p>
+<p>Include any public IP addresses that should be whitelisted from bot and referrer analysis/blocking by editing the file “/etc/nginx/bots.d/whitelist-ips.conf”.</p>
+<p>Finally, edit every vhost file (“/etc/nginx/sites-enabled/frontend.conf”, “/etc/nginx/sites-enabled/rmm.conf” and “/etc/nginx/sites-enabled/meshcentral.conf”) and place the following include statements under the “server” block:</p>
+<div class="highlight"><pre><span></span><code>server {
+    listen 443 ssl;
+    include /etc/nginx/bots.d/ddos.conf;
+    include /etc/nginx/bots.d/blockbots.conf;
+}
+</code></pre></div>
+<h2 id="enabling-modsec-in-nginx">Enabling ModSec in NGINX<a class="headerlink" href="#enabling-modsec-in-nginx" title="Permanent link">&para;</a></h2>
+<p>All steps in this section taken from the NGINX blog post “Compiling and Installing ModSecurity for NGINX Open Source”:</p>
+<p><a href="https://www.nginx.com/blog/compiling-and-installing-modsecurity-for-open-source-nginx/">https://www.nginx.com/blog/compiling-and-installing-modsecurity-for-open-source-nginx/</a></p>
+<h3 id="install-prerequisite-packages">Install Prerequisite Packages<a class="headerlink" href="#install-prerequisite-packages" title="Permanent link">&para;</a></h3>
+<p>The first step is to install the packages required to complete the remaining steps in this tutorial. Run the following command, which is appropriate for a freshly installed Ubuntu/Debian system. The required packages might be different for RHEL/CentOS/Oracle Linux.</p>
+<div class="highlight"><pre><span></span><code>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>apt-utils<span class="w"> </span>autoconf<span class="w"> </span>automake<span class="w"> </span>build-essential<span class="w"> </span>git<span class="w"> </span>libcurl4-openssl-dev<span class="w"> </span>libgeoip-dev<span class="w"> </span>liblmdb-dev<span class="w"> </span>libpcre++-dev<span class="w"> </span>libtool<span class="w"> </span>libxml2-dev<span class="w"> </span>libyajl-dev<span class="w"> </span>pkgconf<span class="w"> </span>wget<span class="w"> </span>zlib1g-dev
+</code></pre></div>
+<h3 id="download-and-compile-the-modsecurity-30-source-code">Download and Compile the ModSecurity 3.0 Source Code<a class="headerlink" href="#download-and-compile-the-modsecurity-30-source-code" title="Permanent link">&para;</a></h3>
+<p>With the required prerequisite packages installed, the next step is to compile ModSecurity as an NGINX dynamic module. In ModSecurity 3.0’s new modular architecture, libmodsecurity is the core component which includes all rules and functionality. The second main component in the architecture is a connector that links libmodsecurity to the web server it is running with. There are separate connectors for NGINX, Apache HTTP Server, and IIS. We cover the NGINX connector in the next section.</p>
+<p>To compile libmodsecurity:</p>
+<p>Clone the GitHub repository:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span><span class="w"> </span>-b<span class="w"> </span>v3/master<span class="w"> </span>--single-branch<span class="w"> </span>https://github.com/SpiderLabs/ModSecurity
+</code></pre></div>
+<p>Change to the ModSecurity directory and compile the source code:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>ModSecurity
+git<span class="w"> </span>submodule<span class="w"> </span>init
+git<span class="w"> </span>submodule<span class="w"> </span>update
+./build.sh
+./configure
+make
+make<span class="w"> </span>install
+<span class="nb">cd</span><span class="w"> </span>..
+</code></pre></div>
+<p>The compilation takes about 15 minutes, depending on the processing power of your system.</p>
+<p>Note: It’s safe to ignore messages like the following during the build process. Even when they appear, the compilation completes and creates a working object.</p>
+<div class="highlight"><pre><span></span><code>fatal: No names found, cannot describe anything.
+</code></pre></div>
+<h3 id="download-the-nginx-connector-for-modsecurity-and-compile-it-as-a-dynamic-module">Download the NGINX Connector for ModSecurity and Compile It as a Dynamic Module<a class="headerlink" href="#download-the-nginx-connector-for-modsecurity-and-compile-it-as-a-dynamic-module" title="Permanent link">&para;</a></h3>
+<p>Compile the ModSecurity connector for NGINX as a dynamic module for NGINX.</p>
+<p>Clone the GitHub repository:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span><span class="w"> </span>https://github.com/SpiderLabs/ModSecurity-nginx.git
+</code></pre></div>
+<p>Determine which version of NGINX is running on the host where the ModSecurity module will be loaded:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>nginx<span class="w"> </span>-v
+nginx<span class="w"> </span>version:<span class="w"> </span>nginx/1.18.0<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)</span>
+</code></pre></div>
+<p>Download the source code corresponding to the installed version of NGINX (the complete sources are required even though only the dynamic module is being compiled):</p>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>http://nginx.org/download/nginx-1.18.0.tar.gz
+tar<span class="w"> </span>zxvf<span class="w"> </span>nginx-1.18.0.tar.gz
+</code></pre></div>
+<p>Compile the dynamic module and copy it to the standard directory for modules:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>nginx-1.18.0
+./configure<span class="w"> </span>--with-compat<span class="w"> </span>--add-dynamic-module<span class="o">=</span>../ModSecurity-nginx
+make<span class="w"> </span>modules
+cp<span class="w"> </span>objs/ngx_http_modsecurity_module.so<span class="w"> </span>/etc/nginx/modules
+cp<span class="w"> </span>objs/ngx_http_modsecurity_module.so<span class="w"> </span>/usr/share/nginx/modules/
+<span class="nb">cd</span><span class="w"> </span>..
+</code></pre></div>
+<h3 id="load-the-nginx-modsecurity-connector-dynamic-module">Load the NGINX ModSecurity Connector Dynamic Module<a class="headerlink" href="#load-the-nginx-modsecurity-connector-dynamic-module" title="Permanent link">&para;</a></h3>
+<p>Add the following load_module directive to the main (top‑level) context in /etc/nginx/nginx.conf. It instructs NGINX to load the ModSecurity dynamic module when it processes the configuration:</p>
+<div class="highlight"><pre><span></span><code>load_module modules/ngx_http_modsecurity_module.so;
+</code></pre></div>
+<h3 id="configure-and-enable-modsecurity">Configure and Enable ModSecurity<a class="headerlink" href="#configure-and-enable-modsecurity" title="Permanent link">&para;</a></h3>
+<p>The final step is to enable and test ModSecurity.</p>
+<p>Set up the appropriate ModSecurity configuration file. Here we’re using the recommended ModSecurity configuration provided by TrustWave Spiderlabs, the corporate sponsors of ModSecurity.</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>/etc/nginx/modsec
+wget<span class="w"> </span>-P<span class="w"> </span>/etc/nginx/modsec/<span class="w"> </span>https://raw.githubusercontent.com/SpiderLabs/ModSecurity/v3/master/modsecurity.conf-recommended
+mv<span class="w"> </span>/etc/nginx/modsec/modsecurity.conf-recommended<span class="w"> </span>/etc/nginx/modsec/modsecurity.conf
+</code></pre></div>
+<p>To guarantee that ModSecurity can find the unicode.mapping file (distributed in the top‑level ModSecurity directory of the GitHub repo), copy it to /etc/nginx/modsec.</p>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>ModSecurity/unicode.mapping<span class="w"> </span>/etc/nginx/modsec
+</code></pre></div>
+<p>Change the SecRuleEngine directive in the configuration to change from the default “detection only” mode to actively dropping malicious traffic.</p>
+<div class="highlight"><pre><span></span><code>#SecRuleEngine DetectionOnly
+SecRuleEngine On
+</code></pre></div>
+<h2 id="enabling-owasp-core-rule-set">Enabling OWASP Core Rule Set<a class="headerlink" href="#enabling-owasp-core-rule-set" title="Permanent link">&para;</a></h2>
+<p>Clone OWASP CRS:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/etc/nginx/modsec
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/coreruleset/coreruleset.git
+</code></pre></div>
+<p>Create CRS setup config file:</p>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>/etc/nginx/modsec/coreruleset/crs-setup.conf.example<span class="w"> </span>/etc/nginx/modsec/coreruleset/crs-setup.conf
+</code></pre></div>
+<p>Edit config file and enable a paranoia level of 2 (comment out section below and modify the paranoia level from 1 - default to 2):</p>
+<div class="highlight"><pre><span></span><code>SecAction \
+  &quot;id:900000,\
+   phase:1,\
+   nolog,\
+   pass,\
+   t:none,\
+   setvar:tx.paranoia_level=2&quot;
+</code></pre></div>
+<p>A Paranoia level of 2 is a good combination of security rules to load by the ModSec engine while keeping low the number of false positives.</p>
+<p>The OWASP CRS team carried out some tests using BURP against ModSec + OWASP CRS:</p>
+<p><img alt="alt_text" src="../images/owasp_burp.png" title="image_tooltip" /></p>
+<p>Create ModSecurity base config file (“/etc/nginx/modsec/modsec-base-cfg.conf”) and include the following lines (the order is important)<code>:</code></p>
+<div class="highlight"><pre><span></span><code>Include /etc/nginx/modsec/modsecurity.conf
+Include /etc/nginx/modsec/coreruleset/crs-setup.conf
+Include /etc/nginx/modsec/coreruleset/rules/*.conf
+</code></pre></div>
+<p>Enable ModSec in all NGINX enabled sites:</p>
+<p>“/etc/nginx/sites-enabled/frontend.conf”, “/etc/nginx/sites-enabled/rmm.conf” and “/etc/nginx/sites-enabled/meshcentral.conf”:</p>
+<div class="highlight"><pre><span></span><code>server {
+    modsecurity on;
+    modsecurity_rules_file /etc/nginx/modsec/modsec-base-cfg.conf;
+}
+</code></pre></div>
+<p>Tactical RMM custom rules:</p>
+<ul>
+<li>Access to the admin UI (front-end): We apply the “deny by default, allow by exception” principle, whereby only a set of predefined public IPs should be allowed to access the UI</li>
+<li>API and MeshCentral: RMM agents and RMM UI (as referrer while an admin session is active) make web calls that get blocked by the OWASP CRS, specifically PUT, POST and PATCH methods. These three methods can be “whitelisted” when the requested URI matches legitimate requests.</li>
+<li>Connection to MeshCentral during Tactical agent install.</li>
+</ul>
+<p>Create a .conf file under “/etc/nginx/modsec/coreruleset/rules” named “RMM-RULES.conf”, for example, with the following content:</p>
+<div class="highlight"><pre><span></span><code>#ADMIN UI/FRONTEND ACCESS - DENY BY DEFAULT, ALLOW BY EXCEPTION
+SecRule SERVER_NAME &quot;rmm.EXAMPLE.COM&quot; &quot;id:1001,phase:1,nolog,msg:&#39;Remote IP Not allowed&#39;,deny,chain&quot;
+###  ALLOWED PUBLIC IP 1 #########
+SecRule REMOTE_ADDR &quot;!@eq IP1&quot; chain
+###  ALLOWED PUBLIC IP 2 #########
+SecRule REMOTE_ADDR &quot;!@eq IP2&quot; &quot;t:none&quot;
+
+#API AND MESHCENTRAL - WHITELIST PUT, PATCH AND POST METHODS BY REQUESTED URI
+SecRule REQUEST_URI &quot;@beginsWith /api/v3/checkin&quot; &quot;id:1002,phase:1,t:none,nolog,allow,chain&quot;
+SecRule REQUEST_METHOD &quot;PUT|PATCH&quot; &quot;t:none&quot;
+SecRule REQUEST_URI &quot;@beginsWith /api/v3/checkrunner&quot; &quot;chain,id:&#39;1003&#39;,phase:1,t:none,nolog,allow&quot;
+SecRule REQUEST_METHOD &quot;PATCH&quot; &quot;t:none&quot;
+SecRule REQUEST_URI &quot;@beginsWith /alerts/alerts&quot; &quot;chain,id:&#39;1004&#39;,phase:1,t:none,nolog,allow&quot;
+SecRule REQUEST_METHOD &quot;PATCH&quot; &quot;t:none&quot;
+SecRule REQUEST_URI &quot;@beginsWith /agents/listagents&quot; &quot;chain,id:&#39;1005&#39;,phase:1,t:none,nolog,allow&quot;
+SecRule REQUEST_METHOD &quot;PATCH&quot; &quot;t:none&quot;
+SecRule REQUEST_URI &quot;@beginsWith /api/v3/sysinfo&quot; &quot;chain,id:&#39;1006&#39;,phase:1,t:none,nolog,allow&quot;
+SecRule REQUEST_METHOD &quot;PATCH&quot; &quot;t:none&quot;
+SecRule REQUEST_URI &quot;@beginsWith /api/v3/winupdates&quot; &quot;chain,id:&#39;1007&#39;,phase:1,t:none,nolog,allow&quot;
+SecRule REQUEST_METHOD &quot;POST&quot;
+
+##REQUIRED FOR MANAGEMENT ACTIONS FROM ADMIN/FRONT-END UI. WHITELIST BY REFERRER&#39;s URL
+SecRule REQUEST_HEADERS:REFERRER &quot;https://rmm.EXAMPLE.COM/&quot; &quot;id:1008,phase:1,nolog,ctl:ruleRemoveById=920170,allow&quot;
+
+#REQUIRED FOR NEW CLIENTS TO CONNECT TO MESH SERVICE WHILE INSTALLING THE AGENT
+SecRule REQUEST_URI &quot;@beginsWith /api/v3/meshexe&quot; &quot;id:1009,phase:1,nolog,ctl:ruleRemoveById=920170,allow&quot;
+
+###  NOTE ON RULE ID = 920170 (WHITELISTED IN CASES ABOVE FOR TACTICAL RMM) ###
+# Do not accept GET or HEAD requests with bodies
+# HTTP standard allows GET requests to have a body but this
+# feature is not used in real life. Attackers could try to force
+# a request body on an unsuspecting web applications.
+#
+# -=[ Rule Logic ]=-
+# This is a chained rule that first checks the Request Method.  If it is a
+# GET or HEAD method, then it checks for the existence of a Content-Length
+# header.  If the header exists and its payload is either not a 0 digit or not
+# empty, then it will match.
+#
+# -=[ References ]=-
+# http://www.w3.org/Protocols/rfc2616/rfc2616-sec4.html#sec4.3
+###
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../unsupported_scripts/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Unsupported Configs" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Unsupported Configs
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../unsupported_proxies/" class="md-footer__link md-footer__link--next" aria-label="Next: Unsupported Proxies" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Unsupported Proxies
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/amidaware/tacticalrmm" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>
