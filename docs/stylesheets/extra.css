@@ -125,3 +125,13 @@
     width: 80%;
     margin-top: 15px;
 }
+.copy-inline-button {
+    background-color: transparent;
+    color: #007bff;
+    border: none;
+    padding: 2px 5px;
+    font-size: 0.8em;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 3px;
+}
