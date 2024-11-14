@@ -18,7 +18,14 @@ No, you haven't.
 
 4. They ran it against their virtualization testing cluster.
 
-**To prevent this from happening**: either turn off file uploads in your AV settings, or use the [Powershell](./install_agent.md#powershell) or [Manual](./install_agent.md#manual) install methods.
+**Recommendation:** Use Deployment URLs instead. If your installer token gets grabbed, you can immediately disable any installer from installing more at some point in the future.
+
+**OR**
+
+You can prevent this from happening by:
+
+1. Turn off file uploads in your AV settings
+2. Use the [Powershell](./install_agent.md#powershell) or [Manual](./install_agent.md#manual) install methods and delete installers (not guaranteed)
 
 Here are some examples of what that looks like.
 
