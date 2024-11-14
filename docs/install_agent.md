@@ -135,9 +135,6 @@ If you want to deploy the TRMM agent using AD, Intune, Mesh, TeamViewer, Group P
             echo Tactical RMM not found, installing now.
             if not exist c:\ProgramData\TacticalRMM\temp md c:\ProgramData\TacticalRMM\temp
             powershell Set-ExecutionPolicy -ExecutionPolicy Unrestricted
-            powershell Add-MpPreference -ExclusionPath "C:\Program Files\TacticalAgent\*"
-            powershell Add-MpPreference -ExclusionPath "C:\Program Files\Mesh Agent\*"
-            powershell Add-MpPreference -ExclusionPath C:\ProgramData\TacticalRMM\*
             cd c:\ProgramData\TacticalRMM\temp
             powershell Invoke-WebRequest "%DeploymentURL%" -Outfile tactical.exe
             REM"C:\Program Files\TacticalAgent\unins000.exe" /VERYSILENT
@@ -152,12 +149,18 @@ If you want to deploy the TRMM agent using AD, Intune, Mesh, TeamViewer, Group P
     === ":material-powershell: powershell"
 
         ```powershell
-        Invoke-WebRequest "<deployment URL>" -OutFile ( New-Item -Path "c:\ProgramData\TacticalRMM\temp\trmminstall.exe" -Force )
-        $proc = Start-Process c:\ProgramData\TacticalRMM\temp\trmminstall.exe -ArgumentList '-silent' -PassThru
-        Wait-Process -InputObject $proc
+        # Update variables
+        $deploymenturl = "<deployment URL>"
+        $agentstoinstall = 1 # Replace with the number of agents to install if greater than 20
 
+        # Do not modify below here
+        $randomSleepTime = if ($agentstoinstall -gt 1) { Get-Random -Minimum 1 -Maximum (($agentstoinstall + 1) * 2) } else { 1 }
+        Start-Sleep -Seconds $randomSleepTime
+        Invoke-WebRequest $deploymenturl -OutFile (New-Item -Path "c:\ProgramData\TacticalRMM\temp\trmminstall.exe" -Force)
+        $proc = Start-Process "c:\ProgramData\TacticalRMM\temp\trmminstall.exe" -ArgumentList '-silent' -PassThru
+        Wait-Process -InputObject $proc
         if ($proc.ExitCode -ne 0) {
-            Write-Warning "$_ exited with status code $($proc.ExitCode)"
+            Write-Warning "$proc exited with status code $($proc.ExitCode)"
         }
         Remove-Item -Path "c:\ProgramData\TacticalRMM\temp\trmminstall.exe" -Force
         ```
