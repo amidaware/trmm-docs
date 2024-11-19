@@ -125,7 +125,7 @@
     width: 80%;
     margin-top: 15px;
 }
-.copy-inline-button {
+.copy-icon {
     background-color: transparent;
     color: #007bff;
     border: none;
@@ -134,4 +134,11 @@
     cursor: pointer;
     margin-left: 5px;
     border-radius: 3px;
+}
+
+.copy-icon svg {
+    fill: currentColor;
+    /* Optional: Adjust the icon size */
+    width: 16px;
+    height: 16px;
 }
