@@ -28,6 +28,7 @@ It uses an [agent](https://github.com/amidaware/rmmagent) written in Golang and 
 - Mac and Linux Agents
 - Windows Code Signed Agents
 - Fully Customizable Reporting Module
+- Single Sign-On (SSO)
 
 ## Windows agent versions supported
 

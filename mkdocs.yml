@@ -33,6 +33,7 @@ nav:
       - "Overriding / Customizing Default Settings": functions/settings_override.md
       - "Scripting": functions/scripting.md
       - "SNMP Checks": functions/snmp_checks.md
+      - "Single Sign-On (SSO)": ee/sso/sso.md
       - "URL Actions": functions/url_actions.md
       - "User Interface Preferences": functions/user_ui.md
       - "Web Hooks": functions/webhooks.md
@@ -123,6 +124,8 @@ theme:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/neoteroi-mkdocs.css
+extra_javascript:
+  - js/copy-to-clipboard.js
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -131,6 +134,8 @@ extra:
 markdown_extensions:
   - pymdownx.tasklist:
       clickable_checkbox: true
+  - pymdownx.critic:
+      mode: view
   - pymdownx.keys
   - pymdownx.inlinehilite
   - admonition

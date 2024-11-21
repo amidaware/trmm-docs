@@ -63,6 +63,14 @@ No additional rules needed.
 
 This lists the system services used by the server.
 
+Quick server health inspection
+
+```bash
+cd /rmm/api/tacticalrmm/
+source ../env/bin/activate
+for i in active reserved scheduled stats; do celery -A tacticalrmm inspect $i; done
+```
+
 #### Nginx Web Server
 
 Nginx is the web server for the `rmm`, `api`, and `mesh` domains. All sites redirect port 80 (HTTP) to port 443 (HTTPS).
