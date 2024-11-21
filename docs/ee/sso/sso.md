@@ -234,7 +234,7 @@ Create Authentik Application
 
 In TRMM
 
-* Issuer URL: `http://<authentik server dns/ip>:9000/application/o/tacticalrmm/.well-known/openid-configuration`
+* Issuer URL: `https://<your authentik IP or domain>/application/o/tacticalrmm/.well-known/openid-configuration`
 * Select your desired Default User Role from TRMM Permissions
 * Submit and test!
 
