@@ -7,6 +7,12 @@ Tactical RMM's Single Sign-On (SSO) feature supports all OIDC-compatible authent
 
 This approach enables you to configure any compatible provider by simply entering its URL, giving you the freedom to choose the identity provider that best suits your needs without specific provider dependencies.
 
+## Video Walkthru
+
+<div class="video-wrapper">
+  <iframe width="400" height="225" src="https://changeme" frameborder="0" allowfullscreen></iframe>
+</div>
+
 ## License
 
 The SSO feature is released under the [Tactical RMM Enterprise License](https://license.tacticalrmm.com/ee) and requires a [Tier 1](../../sponsor.md#sponsor-with-stripe-or-paypal) or higher sponsorship.
