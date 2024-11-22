@@ -12,10 +12,25 @@ To enable maintenance mode for a single agent, **Right Click** on the agent and 
 
 ## Putting server into maintenance mode
 
-```
-# put all in maintenance mode
-echo "from agents.models import Agent; Agent.objects.update(maintenance_mode=True)" | /rmm/api/env/bin/python /rmm/api/tacticalrmm/manage.py shell
+* Follow the instructions at the top of [Management Commands](../management_cmds.md) page to activate the python virtual env
 
-# revert back to normal
-echo "from agents.models import Agent; Agent.objects.update(maintenance_mode=False)" | /rmm/api/env/bin/python /rmm/api/tacticalrmm/manage.py shell
+* Download the management command:
+
 ```
+wget -O /rmm/api/tacticalrmm/core/management/commands/server_maint_mode.py 'https://raw.githubusercontent.com/amidaware/tacticalrmm/refs/heads/develop/api/tacticalrmm/core/management/commands/server_maint_mode.py'
+```
+
+* Run the management command using one of the options below:
+
+```
+python manage.py server_maint_mode [options]
+```
+
+| Options              | Description                                                                                                                                                   |
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `--enable`        | **Enable Maintenance Mode.** Sets all agents to maintenance mode and saves their current states.                                                            |
+| `--disable`       | **Disable Maintenance Mode.** Restores agents to their previous states before maintenance mode was enabled.                                                 |
+| `--force-enable`  | **Force Enable Maintenance Mode.** Unconditionally sets all agents to maintenance mode, ignoring any previously saved states.                              |
+| `--force-disable` | **Force Disable Maintenance Mode.** Unconditionally disables maintenance mode for all agents, removing any saved state information.                        |
+
+**Note**: Only one of the above options should be used at a time to avoid conflicts.
