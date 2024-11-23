@@ -12,7 +12,7 @@ Thanks go to all you [sponsors](sponsor.md#sponsor-with-stripe-or-paypal) it's y
             {
                 "title": "[Linux/Mac](https://github.com/amidaware/tacticalrmm/discussions/1692) Tasks",
                 "start": "2024-11-01",
-                "lasts": "3 months"
+                "lasts": "2 months"
             },
             {
                 "title": "[Windows Update](https://github.com/amidaware/tacticalrmm/issues/1188) Rework",
