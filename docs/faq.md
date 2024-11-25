@@ -312,4 +312,4 @@ No.
 
 Code Signing: A windows .exe cryptographic signing process that can't be forged. The only want to reliably whitelist your TRMM agent is to have a Code signed agent that you can give the signers public key to your security software to whitelist.
 
-Mac/Linux Pre-Compiled binaries: Are provided by Amidaware so you can install agents on Mac and Linux. This requires [sponsorship](sponsor.md). If you want to test Mac/Linux agents please contact [support](ttps://support.amidaware.com) and open a ticket to request a 7 day hosted trial.
+Mac/Linux Pre-Compiled binaries: Are provided by Amidaware so you can install agents on Mac and Linux. This requires [sponsorship](sponsor.md). If you want to test Mac/Linux agents please contact [support](https://support.amidaware.com) and open a ticket to request a 7 day hosted trial.
