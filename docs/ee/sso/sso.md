@@ -350,7 +350,6 @@ For those who have no interest in using this feature and want it completely disa
     === ":material-docker: Docker install"
 		Add `TRMM_DISABLE_SSO=True` to your `.env` file and run ```docker compose down && docker compose up -d ```
 
-
 ## How do I activate SSO as a new sponsor?
 
 *Ignore the following if you're an existing sponsor upgrading from a version below 0.20.0, as SSO will automatically be activated for you during the upgrade process.*
@@ -380,3 +379,14 @@ For those who have no interest in using this feature and want it completely disa
 		```
 
 For any issues with activating SSO, [open a ticket](https://support.amidaware.com).
+
+## Troubleshooting
+
+!!!note
+	SSO errors are usually logged on your providers side. Check there for error messages.
+
+"There was an error logging into your provider."
+
+![Error logging into your provider](images/entra_error_loggingin.png)
+
+The email address exists in the TRMM local users as well as your SSO. Update the local TRMM users email to user@fakesomethingelse.com and then you'll be able to login.
