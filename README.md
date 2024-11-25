@@ -7,6 +7,7 @@ cd trmm-docs
 ```
 
 # Building standard
+
 ```
 git clone https://github.com/amidaware/trmm-docs.git
 cd trmm-docs
@@ -21,3 +22,9 @@ mkdocs serve
 Browse to http://your-server-ip:8005
 
 [Understanding python and running stuff](https://docs.tacticalrmm.com/devnotes/running_tests_locally/)
+
+# Running from vscode
+
+Open repo
+
+Choose Run > Run Without Debugging
