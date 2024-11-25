@@ -121,7 +121,7 @@ Click **Submit**
 
 **1. Register an application**
 
-1. Go to <https://entra.microsoft.com> (Previously Azure Active Directory). When logging in, you **MUST** check "Consent on behalf of your organization". In the left sidebar select **Applications** > **App registrations**
+1. Go to <https://entra.microsoft.com> (Previously Azure Active Directory), in the left sidebar select **Applications** > **App registrations**
 
 2. Click "+ New registration"
 
@@ -146,7 +146,7 @@ Click **Submit**
 
 **3. API Permissions**
 
-1. Select "API permissions" from the left sidebar, click "Add a permission" > Delegated permissions and select "email", "offline_access" and "profile"
+1. Select "API permissions" from the left sidebar, click "Add a permission" > "Microsoft Graph" > "Delegated permissions" and select "email", "offline_access" and "profile"
 
 	!!! note ""
 		![entra_api_perms](./images/entra_api_perms.png)
@@ -198,6 +198,10 @@ Click **Submit**
 	!!! note ""
 		![entra_redirect](./images/entra_redirect_uri.png)
 
+3. **Note**: When logging in for the first time, you **MUST** check "Consent on behalf of your organization".
+
+	!!! note ""
+		![entra_redirect](./images/entra_consent_org.png)
 
 ### Authentik
 
@@ -383,10 +387,30 @@ For any issues with activating SSO, [open a ticket](https://support.amidaware.co
 ## Troubleshooting
 
 !!!note
-	SSO errors are usually logged on your providers side. Check there for error messages.
+	SSO errors are typically logged on your provider's side. Check your authentication provider's error logs for more detailed messages.
 
-"There was an error logging into your provider."
+### There was an error logging into your provider
 
-![Error logging into your provider](images/entra_error_loggingin.png)
+!!! note ""
+	![entra_error_login](./images/entra_error_loggingin.png)
 
-The email address exists in the TRMM local users as well as your SSO. Update the local TRMM users email to user@fakesomethingelse.com and then you'll be able to login.
+If you encounter the following error message:  
+**"There was an error logging into your provider."**  
+this typically indicates one of the following issues:
+
+1. Email Address Conflict
+
+	This error often occurs if there is an existing TRMM local account with the same email address as the SSO account you are trying to log in with. To resolve this:
+
+	- **Option 1**: Edit the TRMM local user and update its email address to a different value, such as `user@fakedomain.com`.  
+	> Note: The email address field for local users is not currently used for any functionality, so it can be set to any value.
+  
+	- **Option 2**: Delete the conflicting TRMM local user.
+
+2. Microsoft Entra Configuration Issue
+
+	If you are using Microsoft Entra, this error may occur if you did not select the **"Consent on behalf of your organization"** option when first signing in. Ensure this option is checked during the initial login process.
+
+	!!! note ""
+		![entra_redirect](./images/entra_consent_org.png)
+
