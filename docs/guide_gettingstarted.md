@@ -17,6 +17,7 @@ Install the server, [choose the best path](install_considerations.md)
 * [ ] Default Profile for workstations `Settings menu > Global Settings > General`
 * [ ] Default Profile for servers `Settings menu > Global Settings > General`
 * [ ] Decide on [Windows Updates policy](howitallworks.md#windows-update-management){target=_blank}
+* [ ] Create [Onboarding Tasks](functions/automated_tasks.md#onboarding) and apply according to how you want to manage them.
 
 ### Multiple Users
 
