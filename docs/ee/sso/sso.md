@@ -121,7 +121,7 @@ Click **Submit**
 
 **1. Register an application**
 
-1. Go to <https://entra.microsoft.com> (Previously Azure Active Directory), in the left sidebar select **Applications** > **App registrations**
+1. Go to <https://entra.microsoft.com> (Previously Azure Active Directory). When logging in, you **MUST** check "Consent on behalf of your organization". In the left sidebar select **Applications** > **App registrations**
 
 2. Click "+ New registration"
 
