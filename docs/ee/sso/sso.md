@@ -266,7 +266,7 @@ In KeyCloak
 In TRMM
 
 * Paste into TRMMs Secret field
-* Issuer URL: `https://<authentik server dns/ip>:8443/realms/master/.well-known/openid-configuration`
+* Issuer URL: `https://<KeyCloak server dns/ip>:8443/realms/master/.well-known/openid-configuration`
 * Set Default User Role and Submit
 
 In KeyCloak
