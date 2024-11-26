@@ -21,7 +21,7 @@ nav:
       - "Global Settings": functions/global_settings.md
       - "Alerting": functions/alerting.md
       - "API Access": functions/api.md
-      - "Automated Checks": functions/automated_checks.md
+      - "Checks": functions/automated_checks.md
       - "Automated Tasks": functions/automated_tasks.md
       - "Automation Policies": functions/automation_policies.md
       - "Custom Fields": functions/custom_fields.md

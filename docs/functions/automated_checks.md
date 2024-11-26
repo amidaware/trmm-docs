@@ -2,31 +2,27 @@
 
 ![Checks](images/automated_checks.png)
 
-The maximum time between check runs is 86400 seconds (aka 24 hrs).
-
-Checks are run based on scheduled (celery) timers triggered from the TRMM server. Agents [must be online](../howitallworks.md#understanding-trmm) to receive the script payload to trigger the event.
-
 ## Checks vs Tasks
 
-Reasons to use Checks for scripts:
+### When to Use Checks for Scripts
+- Define custom return codes for **Information** and **Warning** levels.
+- Configure alerts only after a specified number of consecutive failures.
 
-- You can define custom return codes for: Information and Warning return codes.
-- You can specify more than 1 consecutive failures before getting alerts
+### When to Use Tasks for Scripts
+- Execute multiple commands and/or scripts in sequence.
+- Leverage advanced scheduling options for flexibility.
 
-Reasons to use Tasks for scripts:
+## How Often Are Checks Run?
 
-- You can run multiple scripts in sequence
-- You can have something run just once instead of at an interval
+The frequency of checks is controlled at two levels:
 
-## How often is it run?
+1. **Per Check Configuration**  
+   Each check has a **Run Check Every (seconds)** setting. Setting this to 0 defaults to the agent's global value.
 
-It is controlled at 2 levels:
-
-- In a check, there's a Run Check every (seconds). `0` means the default value.
-- Default value is defined per Agent under Edit Agent > General pane: Run checks every. Default is 120 seconds.
+2. **Agent Default Configuration**  
+   The default check frequency for the agent is set under **Edit Agent > General** in the **Run Checks Every** field. The default value is 120 seconds.
 
 ## Best Practices
 
-Use [Automation Policies](automation_policies.md) to apply checks
-
-Customize the frequency of checks running per Check
+- Use [Automation Policies](automation_policies.md) to apply checks efficiently.
+- Customize the frequency of individual checks as needed.
