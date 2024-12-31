@@ -25,7 +25,7 @@ Upon completion of your purchase and receipt of your code signing token, your pa
 
     | Package | Price | Description | Sign up |
     | --- | --- | --- | --- |
-    | Tier 1 | $55/month | - Minimum tier required for [code signing](code_signing.md) and [single sign-on](./ee/sso/sso.md)<br>- suggested sponsorship for less than 200 agents | [Paypal](https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-8GF46962LC4592048MPWTBJY) <br />[Stripe](https://buy.stripe.com/cN228t4lD6Qc1Ak7ss) |
+    | Tier 1 | $55/month | - Minimum tier required for [code signed windows agents / Linux / macOS agents](code_signing.md) and [Single sign-on](./ee/sso/sso.md)<br>- suggested sponsorship for less than 200 agents | [Paypal](https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-8GF46962LC4592048MPWTBJY) <br />[Stripe](https://buy.stripe.com/cN228t4lD6Qc1Ak7ss) |
     | Tier 2 | $80/month | - Minimum tier required for [Reporting](./ee/reporting/functions/faq.md) (excluding [Founders](./ee/reporting/functions/faq.md#pricing) and Non-Profits)<br>- suggested sponsorship for less than 400 agents | [Paypal](https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-8N5333625F157823NMPWTDQI) <br />[Stripe](https://buy.stripe.com/4gwdRb6tL1vSceYeUW) |
     | Tier 3 | $105/month | - suggested sponsorship for less than 600 agents | [Paypal](https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-63E24030E6802431TMPWURDY) <br />[Stripe](https://buy.stripe.com/aEU28t19r0rOfraeUX) |
     | Tier 4 | $155/month | - suggested sponsorship for less than 1,000 agents | [Paypal](https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-3D6045112C172261AMPWURVI) <br />[Stripe](https://buy.stripe.com/fZe8wR8BT0rOgvedQU) |
@@ -37,7 +37,7 @@ Upon completion of your purchase and receipt of your code signing token, your pa
 
     | Package | Price | Description | Sign up |
     | --- | --- | --- | --- |
-    | Tier 1 | $600/year | - Minimum tier required for [code signing](code_signing.md) and [single sign-on](./ee/sso/sso.md)<br>- suggested sponsorship for less than 200 agents | [Stripe](https://buy.stripe.com/3cs7sNdWd1vSen6fYZ) |
+    | Tier 1 | $600/year | - Minimum tier required for [code signed windows agents / Linux / macOS agents](code_signing.md) and [Single sign-on](./ee/sso/sso.md)<br>- suggested sponsorship for less than 200 agents | [Stripe](https://buy.stripe.com/3cs7sNdWd1vSen6fYZ) |
     | Tier 2 | $900/year | - Minimum tier required for [Reporting](./ee/reporting/functions/faq.md) (excluding [Founders](./ee/reporting/functions/faq.md#pricing) and Non-Profits)<br>- suggested sponsorship for less than 400 agents | [Stripe](https://buy.stripe.com/3cs4gB7xPeiE3Is4gt) |
     | Tier 3 | $1,200/year | - suggested sponsorship for less than 600 agents | [Stripe](https://buy.stripe.com/dR6dRbf0h4I4gvebIQ) |
     | Tier 4 | $1,800/year | - suggested sponsorship for less than 1,000 agents | [Stripe](https://buy.stripe.com/7sIfZjcS91vS0wg00e) |
