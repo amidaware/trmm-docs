@@ -14,8 +14,6 @@ Stripe is our preferred payment processor, please use Stripe instead of Paypal i
 
 If you need an invoices, please use Stripe as it will automatically generate invoices for you with each payment.
 
-If you cannot use Stripe and must use Paypal and still need automatic invoicing then please [contact us](https://support.amidaware.com/) first before subscribing so we can setup a custom invoice for you.
-
 After sponsoring, follow [the instructions](code_signing.md#code-signing) to get your code signing token.
 
 Upon completion of your purchase and receipt of your code signing token, your payment becomes non-refundable as the digital service provided is considered fully delivered and consumed. To request a refund or cancel your sponsorship please [open a ticket](https://support.amidaware.com/).
