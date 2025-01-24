@@ -11,6 +11,7 @@ Install the server, [choose the best path](install_considerations.md)
 * [ ] Set Server Preferences Under `Global Settings > General`
 * [ ] Review [User Settings](tipsntricks.md#customize-user-interface){target=_blank}
 * [ ] Set Retention Policies under Under `Global Settings > Retention`
+* [ ] Read thru the [FAQ](faq.md)
 
 ### Setup Automation Policies
 
