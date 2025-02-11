@@ -151,8 +151,6 @@ Click **Submit**
 	!!! note ""
 		![entra_api_perms](./images/entra_api_perms.png)
 
-	!!! note ""
-		![entra_tenant_id](./images/mssso.png)
 
 **4. Certificates and secrets**
 
