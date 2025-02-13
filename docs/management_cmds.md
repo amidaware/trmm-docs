@@ -26,7 +26,7 @@ To run any of the management commands first login to your server as the user use
 
 ### Bulk Delete Agents (Last Check-In, Agent Version, Site, or Client)
 
-Test to see what will happen:
+If you want to remove old agents based on time, age, or location or for client offboarding - it’s a best practice to first test the removal.
 
 ```bash
 python manage.py bulk_delete_agents --days 60
@@ -35,7 +35,7 @@ python manage.py bulk_delete_agents --site examplesite
 python manage.py bulk_delete_agents --client exampleclient
 ```
 
-Do the delete:
+Then run the deletion:
 
 ```bash
 python manage.py bulk_delete_agents --days 60 --delete
