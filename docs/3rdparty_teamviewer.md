@@ -33,7 +33,9 @@ Add Task:</br>
 **Collector Task** = `CHECKED`</br>
 **Custom Field to update** = `TeamViewerClientID`</br>
 
-![Service Name](images/3rdparty_teamviewer2.png)
+![Task1](images/3rdparty_trmm_teamviewer_task1.png)
+![Task2](images/3rdparty_trmm_teamviewer_task2.png)
+![Task3](images/3rdparty_trmm_teamviewer_task3.png)
 
 Click **Next**</br>
 Check **Manual**</br>
