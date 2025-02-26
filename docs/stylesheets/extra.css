@@ -142,3 +142,13 @@
     width: 16px;
     height: 16px;
 }
+
+.md-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    font-size: 14px;
+}

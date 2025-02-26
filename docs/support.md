@@ -10,17 +10,9 @@ We may give pointers, or provide additional troubleshooting steps if we believe 
 
 ## Commercial Support
 
-Paid Support: You can visit <https://support.amidaware.com> to open a ticket.
+Paid Support: See [pricing table](./sponsor.md#sponsor-with-stripe-or-paypal) for support plans.
 
-We can help with lots of problems including many #unsupported installations and configurations (fully managed [hosted servers](https://support.amidaware.com) are also available).
-
-You get Priority #1 fast responses and service.
-
-### If you have received this link
-
-If you are reading this because this link was shared with you, it has been determined that your installation has fallen under the #Unsupported category. Probably because you are using something from [Unsupported](unsupported_guidelines.md)
-
-We will be happy to assist you with troubleshooting and (probably) fixing your problem if you [contact Commercial Support](https://support.amidaware.com).
+Fully managed [hosted servers](https://support.amidaware.com) are also available.
 
 ## Public RSA Keys
 
