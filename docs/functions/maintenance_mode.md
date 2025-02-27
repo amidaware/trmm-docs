@@ -14,12 +14,6 @@ To enable maintenance mode for a single agent, **Right Click** on the agent and 
 
 * Follow the instructions at the top of [Management Commands](../management_cmds.md) page to activate the python virtual env
 
-* Download the management command:
-
-```
-wget -O /rmm/api/tacticalrmm/core/management/commands/server_maint_mode.py 'https://raw.githubusercontent.com/amidaware/tacticalrmm/refs/heads/develop/api/tacticalrmm/core/management/commands/server_maint_mode.py'
-```
-
 * Run the management command using one of the options below:
 
 ```
