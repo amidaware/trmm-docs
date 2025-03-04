@@ -1,50 +1,93 @@
 # Tips and Tricks
 
 ## Monitor your TRMM Instance via the Built-in Monitoring Endpoint.
+
+!!!info
+    Please refer to the [migration](#monitoring-endpoint-v2-migration-guide) guide below for TRMM Release v1.0.0
+
+The health check endpoint provides key metrics and statuses about your RMM instance. It is designed for integration with monitoring tools like Uptime Kuma or other similar solutions.
+
 Generate a random string to be used as a token and append it to the bottom of `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py` like this:
 
-```python
-MON_TOKEN = "SuperSekretToken123456"
-```
+  ```python
+  MON_TOKEN = "SuperSekretToken123456"
+  ```
 
 Then restart Django to activate the endpoint with `sudo systemctl restart rmm.service`
 
-Send a POST request with the following json payload to `https://api.yourdomain.com/core/status/`
-```json
-{"auth": "SuperSekretToken123456"}
-```
+Send a GET request to `https://api.yourdomain.com/core/v2/status/` with the `X-Mon-Token` header.
 
-Example using curl:
-```
-curl -X POST https://api.yourdomain.com/core/status/ -d '{"auth": "SuperSekretToken123456"}' -H 'Content-Type: application/json'
-```
+**Example using curl**:
+  ```
+  curl -H "X-Mon-Token: SuperSekretToken123456" https://api.yourdomain.com/core/v2/status/
+  ```
 
-Response will look something like this:
-```json
-{
-  "version": "0.14.0",
-  "agent_count": 984,
-  "client_count": 23,
-  "site_count": 44,
-  "disk_usage_percent": 12,
-  "mem_usage_percent": 36,
-  "days_until_cert_expires": 47,
-  "cert_expired": false,
-  "services_running": {
-    "django": true,
-    "mesh": true,
-    "daphne": true,
-    "celery": true,
-    "celerybeat": true,
-    "redis": true,
-    "postgres": true,
-    "mongo": true,
-    "nats": true,
-    "nats-api": true,
-    "nginx": true
+The endpoint returns a JSON object with the following structure:
+
+  **Response Fields**
+
+  | **Field**                 | **Type**          | **Description**                                                                                     | **Example**       |
+  |---------------------------|-------------------|-----------------------------------------------------------------------------------------------------|-------------------|
+  | `version`                | `str`            | The current version of the RMM software.                                                           | `"1.0.0"`        |
+  | `latest_agent_version`   | `str`            | The latest available version of the agent.                                                         | `"2.9.0"`         |
+  | `agent_count`            | `int`            | The total number of agents connected to the RMM instance.                                          | `345`               |
+  | `client_count`           | `int`            | The total number of clients registered in the RMM.                                                 | `14`               |
+  | `site_count`             | `int`            | The total number of sites registered in the RMM.                                                   | `34`               |
+  | `disk_usage_percent`     | `int`            | The percentage of disk space used by the RMM instance.                                             | `43`              |
+  | `mem_usage_percent`      | `int`            | The percentage of memory usage by the RMM instance.                                                | `54`              |
+  | `days_until_cert_expires`| `int`            | The number of days until the SSL certificate expires.                                              | `43`              |
+  | `cert_expired`           | `bool`           | Indicates if the SSL certificate has already expired.                                              | `false`           |
+  | `redis_ping`             | `bool`           | Indicates if the Redis service is responding.                                                      | `true`            |
+  | `celery_queue_len`       | `int`            | The current number of tasks in the Celery queue.<br>**Note**: a high number here (> 100) usually means your queue is stuck.<br> See [here](./troubleshooting.md#celery-queue-stuck) for how to resolve.                                                  | `0`            |
+  | `celery_queue_health`    | `str`            | The health status of the Celery queue. Possible values are `"healthy"` or `"unhealthy"`.           | `"healthy"`       |
+  | `nats_std_ping`          | `bool`           | Indicates if the NATS standard service is responding.                                              | `true`            |
+  | `nats_ws_ping`           | `bool`           | Indicates if the NATS WebSocket service is responding.                                             | `true`            |
+  | `db_ping`                | `bool`           | Indicates if the Posgresql database is responding.                                                 | `true`            |
+  | `mesh_ping`              | `bool`           | Indicates if the MeshCentral service is responding.                                                | `true`            |
+  | `services_running`       | `dict[str, bool]`| A dictionary of service names with their respective running statuses.                              | See Below        |
+
+
+**Example Response**
+
+  ```json
+  {
+      "version": "1.0.0",
+      "latest_agent_version": "2.8.0",
+      "agent_count": 345,
+      "client_count": 14,
+      "site_count":34,
+      "disk_usage_percent": 43,
+      "mem_usage_percent": 54,
+      "days_until_cert_expires": 43,
+      "cert_expired": false,
+      "redis_ping": true,
+      "celery_queue_len": 0,
+      "celery_queue_health": "healthy",
+      "nats_std_ping": true,
+      "nats_ws_ping": true,
+      "db_ping": true,
+      "mesh_ping": true,
+      "services_running": {
+          "mesh": true,
+          "daphne": true,
+          "celery": true,
+          "celerybeat": true,
+          "redis": true,
+          "nats": true,
+          "nats-api": true
+      }
   }
-}
-```
+  ```
+
+### Monitoring Endpoint v2 Migration Guide
+
+Starting with Tactical RMM release v1.0.0, the monitoring endpoint has been upgraded from `/core/status/` to `/core/v2/status/` (v2) with improved response structure and authentication method. The changes include:
+
+- New Endpoint: The URL has changed from `/core/status/` to `/core/v2/status/`.
+- Authentication Method: Instead of sending the token in the request body, it must now be included in the `X-Mon-Token` request header.
+- HTTP Method Change: The request type has changed from `POST` to `GET`.
+- Enhanced Response Data: The new response includes additional fields such as `celery_queue_len`, `celery_queue_health`, `nats_std_ping`, `nats_ws_ping`, `db_ping`, and `mesh_ping`.
+- Removed fields: The `services_running` response no longer includes `django`, `nginx`, and `postgres` because if any of these services were not running, the monitoring endpoint itself would be inaccessible, making their inclusion redundant. The `mongo` service has also been removed as you should already be using posgresql now.
 
 ## Server Monitoring
 

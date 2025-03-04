@@ -150,3 +150,14 @@ CHECKIN_SYNCMESH = (800, 1200)  # Agent's Mesh node ID
 By adjusting these intervals, you can control how frequently the agent checks in with the RMM server for different types of data. This flexibility allows for balancing between server load and the frequency of updates.
 
 After adding any of these settings, you must restart both the RMM service (`sudo systemctl restart rmm`) and the agent service. An easy way to restart the agent service is by using the "Tools > Recover All Agents" function in the TRMM web UI.
+
+### Configuring Agent Check Jitter
+
+*Version added: v1.0.0*
+
+To prevent the thundering herd problem, where multiple agents send their check results simultaneously and overwhelm the server, a random jitter has been introduced. By default, this jitter is a random delay between 1 and 60 seconds.
+
+To customize this behavior, add the following variable to `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py` and adjust the values as needed, then restart the RMM service (`sudo systemctl restart rmm`):
+```python
+CHECK_INTERVAL_JITTER = (1, 60)
+```
