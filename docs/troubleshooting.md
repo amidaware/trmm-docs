@@ -27,6 +27,40 @@ chmod +x troubleshoot_server.sh
 !!!note
     If you're working with a support person please provide the full script output. If you don't want to post publicly, feel free to DM the person working with you in Discord #support channel
 
+## Celery queue stuck
+
+If you notice issues such as bulk scripts or commands not executing, client/site colors not clearing, or alerts not resetting, it's possible that the Celery queue is stuck. Follow these steps to check and resolve the issue:
+
+Navigate to the following directory and activate the virtual environment:
+
+```bash
+cd /rmm/api/tacticalrmm
+source ../env/bin/activate
+```
+
+Check the number of items in the Celery queue:
+
+```bash
+python manage.py get_celery_queue_length
+```
+
+If the number of items in the queue is very high (greater than 100), the queue is likely stuck.
+
+Purge the Celery queue:
+
+```bash
+celery -A tacticalrmm purge -f
+```
+
+Restart Celery and Celery Beat:
+
+```bash
+sudo systemctl restart celery celerybeat
+```
+
+After completing these steps, the queue should be cleared, and Celery should resume normal operation.
+
+
 ## Make sure DNS (name resolution) was setup properly
 
 ### From the agent

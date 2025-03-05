@@ -51,7 +51,13 @@ Right click `"C:\Program Files\TacticalAgent\tacticalrmm.exe"` > `Properties` > 
 
 ## Code signing certificate info
 
-Digicert OV code signing cert used by agents v2.7.0 and above:
+Digicert OV code signing cert used by agents v2.9.0 and higher:
+
+ - Serial Number: `0108a89f4540182a1dfc246db61a0e89`
+
+ - Thumb Print: `9b38bdd4327297c8b87505119dbc8305379335bc`
+
+Digicert OV code signing cert used by agents v2.7.0 and v2.8.0:
 
  - Serial Number: `0f558fcc46f23aa4e2688052f3a9459f`
 

@@ -88,6 +88,7 @@ table to pull the data from. The available models are:
 * agent
 * agentcustomfield
 * agenthistory
+* note
 * alert
 * auditlog
 * automatedtask
