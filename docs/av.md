@@ -80,9 +80,9 @@ Choose the **Path** option in the New Exclusion window
 ![Agent Exclusions](images/s1path.png)
 
 Add the Following Paths
- - C:\ProgramData\TacticalRMM\
- - %ProgramFiles%\Mesh Agent\
- - %ProgramFiles%\TacticalAgent\
+- C:\ProgramData\TacticalRMM\
+- %ProgramFiles%\Mesh Agent\
+- %ProgramFiles%\TacticalAgent\
 
 Choose **Suppress Alerts** in **Exclusions mode**
 ![Agent Exclusions](images/s1suppress.png)
