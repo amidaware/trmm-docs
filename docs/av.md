@@ -68,6 +68,23 @@ Admin URL:
 
 ![Web Exclusions](images/avwebroot2.png)
 
+## Sentinel One
+
+First log into your SentinelOne account
+
+Go To **Sentinels (from the sidebar) > Exclusions > New Exclusion > Create Exclusion**
+
+Choose the **Path** option in the New Exclusion window
+
+Add the Following Paths
+ - C:\ProgramData\TacticalRMM\
+ - %ProgramFiles%\Mesh Agent\
+ - %ProgramFiles%\TacticalAgent\
+
+Choose **Suppress Alerts** in **Exclusions mode**
+
+**Save** and Apply Policy to Devices
+
 ## Sophos
 
 ### Sophos Central Admin
