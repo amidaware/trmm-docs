@@ -79,12 +79,12 @@ Go To **Sentinels (from the sidebar) > Exclusions > New Exclusion > Create Exclu
 Choose the **Path** option in the New Exclusion window
 ![Agent Exclusions](images/s1path.png)
 
-Add the Following Paths
-- C:\ProgramData\TacticalRMM\
-- %ProgramFiles%\Mesh Agent\
-- %ProgramFiles%\TacticalAgent\
+Add the Following Paths:</br>
+- C:\ProgramData\TacticalRMM\</br>
+- %ProgramFiles%\Mesh Agent\</br>
+- %ProgramFiles%\TacticalAgent\</br>
 
-Choose **Suppress Alerts** in **Exclusions mode**
+Choose **Suppress Alerts** in **Exclusions mode** </br>
 ![Agent Exclusions](images/s1suppress.png)
 
 **Save** and Apply Policy to Devices
