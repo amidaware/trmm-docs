@@ -73,8 +73,11 @@ Admin URL:
 First log into your SentinelOne account
 
 Go To **Sentinels (from the sidebar) > Exclusions > New Exclusion > Create Exclusion**
+![Agent Exclusions](images/s1sentinels.png)
+![Agent Exclusions](images/s1exclusions.png)
 
 Choose the **Path** option in the New Exclusion window
+![Agent Exclusions](images/s1path.png)
 
 Add the Following Paths
  - C:\ProgramData\TacticalRMM\
@@ -82,6 +85,7 @@ Add the Following Paths
  - %ProgramFiles%\TacticalAgent\
 
 Choose **Suppress Alerts** in **Exclusions mode**
+![Agent Exclusions](images/s1suppress.png)
 
 **Save** and Apply Policy to Devices
 
