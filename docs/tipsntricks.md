@@ -42,7 +42,6 @@ The endpoint returns a JSON object with the following structure:
   | `celery_queue_health`    | `str`            | The health status of the Celery queue. Possible values are `"healthy"` or `"unhealthy"`.           | `"healthy"`       |
   | `nats_std_ping`          | `bool`           | Indicates if the NATS standard service is responding.                                              | `true`            |
   | `nats_ws_ping`           | `bool`           | Indicates if the NATS WebSocket service is responding.                                             | `true`            |
-  | `db_ping`                | `bool`           | Indicates if the Posgresql database is responding.                                                 | `true`            |
   | `mesh_ping`              | `bool`           | Indicates if the MeshCentral service is responding.                                                | `true`            |
   | `services_running`       | `dict[str, bool]`| A dictionary of service names with their respective running statuses.                              | See Below        |
 
@@ -65,7 +64,6 @@ The endpoint returns a JSON object with the following structure:
       "celery_queue_health": "healthy",
       "nats_std_ping": true,
       "nats_ws_ping": true,
-      "db_ping": true,
       "mesh_ping": true,
       "services_running": {
           "mesh": true,
@@ -86,7 +84,7 @@ Starting with Tactical RMM release v1.0.0, the monitoring endpoint has been upgr
 - New Endpoint: The URL has changed from `/core/status/` to `/core/v2/status/`.
 - Authentication Method: Instead of sending the token in the request body, it must now be included in the `X-Mon-Token` request header.
 - HTTP Method Change: The request type has changed from `POST` to `GET`.
-- Enhanced Response Data: The new response includes additional fields such as `celery_queue_len`, `celery_queue_health`, `nats_std_ping`, `nats_ws_ping`, `db_ping`, and `mesh_ping`.
+- Enhanced Response Data: The new response includes additional fields such as `celery_queue_len`, `celery_queue_health`, `nats_std_ping`, `nats_ws_ping`, and `mesh_ping`.
 - Removed fields: The `services_running` response no longer includes `django`, `nginx`, and `postgres` because if any of these services were not running, the monitoring endpoint itself would be inaccessible, making their inclusion redundant. The `mongo` service has also been removed as you should already be using posgresql now.
 
 ## Server Monitoring
