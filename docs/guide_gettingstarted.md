@@ -24,7 +24,6 @@ Install the server, [choose the best path](install_considerations.md)
 
 * [ ] Setup Permission Manager `Settings menu > Permission Manager`
 * [ ] Add users to Permission Groups `Settings menu > User Administration`
-* [ ] Decide on "Disable Auto Login for Remote Control and Remote background" `Settings menu > Global Settings > Meshcentral`
 
 ## Every 75 days
 
