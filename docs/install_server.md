@@ -46,8 +46,6 @@ A fresh Linux VM running either Debian 11, Debian 12 or Ubuntu 22.04 LTS with at
 
 Install on a VPS: DigitalOcean, Linode, Vultr, [Hetzner](https://hetzner.cloud/?ref=wbGs8UQqHVdk) (highly recommended), AWS, Google Cloud and Azure to name a few.
 
-Use something that meets [minimum specs](install_server.md#minimum-requirements)
-
 ### Step 1 - Run Updates on OS
 
 SSH into the server as **root**.
