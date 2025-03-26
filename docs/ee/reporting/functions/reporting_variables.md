@@ -128,7 +128,13 @@ dependencies before the variables analysis will run.
 
 ### datetime
 
-See [https://docs.python.org/3/library/datetime.html](https://docs.python.org/3/library/datetime.html) for all properties and functions
+See [https://docs.python.org/3/library/datetime.html](https://docs.python.org/3/library/datetime.html) for all properties and functions.
+
+[Formatted dates](https://strftime.org/) use `strftime` 
+
+```py
+{{ datetime.datetime.fromtimestamp(item.boot_time, ZoneInfo('America/New_York')).strftime('%Y-%m-%d %H:%M:%S') }}
+```
 
 #### datetime.datetime
 
