@@ -76,27 +76,41 @@ The update script will also fix any permissions that might have gotten messed up
 
     The developers will test MeshCentral and make sure integration does not break before bumping the mesh version.
 
-## Keeping your Let's Encrypt SSL certificate up to date
+## Keeping your SSL certificates up to date
 
-!!!info
-    Currently, the update script does not automatically renew your Let's Encrypt wildcard certificate, which expires every 3 months, since this is non-trivial to automate using the DNS TXT record method.
+=== "Let's Encrypt Certs"
 
-Update SSL: To renew and update your Let's Encrypt wildcard cert SSL certs, run the following command, replacing `example.com` with your domain and `admin@example.com` with your email:
+    !!! info
+        Currently, the update script does not automatically renew your Let's Encrypt wildcard certificate, which expires every 3 months, since this is non-trivial to automate using the DNS TXT record method.
 
-```bash
-sudo certbot certonly --manual -d *.example.com --agree-tos --no-bootstrap --preferred-challenges dns -m admin@example.com --no-eff-email
-```
+    **Update SSL:** To renew and update your Let's Encrypt wildcard SSL certificate, run the following command, replacing `example.com` with your domain and `admin@example.com` with your email:
 
-Same instructions as during install for [verifying the TXT record](install_server.md#step-6-deploy-the-txt-record-in-your-dns-manager-for-lets-encrypt-wildcard-certs) has propagated before hitting ++enter++.
+    ```bash
+    sudo certbot certonly --manual -d *.example.com --agree-tos --no-bootstrap --preferred-challenges dns -m admin@example.com --no-eff-email
+    ```
 
-<font color="red" size="20"><p style="text-align:center">**You're not done yet keep reading!**</p></font>
+    Same instructions as during install for [verifying the TXT record](install_server.md#step-6-deploy-the-txt-record-in-your-dns-manager-for-lets-encrypt-wildcard-certs) has propagated before hitting ++enter++.
 
-After this you have renewed the cert, but it's still not being used everywhere in Tactical. Now run the `update.sh` script, passing it the `--force` flag.
+    <font color="red" size="20"><p style="text-align:center">**You're not done yet, keep reading!**</p></font>
 
-```bash
-./update.sh --force
-```
+    After renewing the certificate, it still needs to be applied to Tactical RMM. Now run the `update.sh` script, passing it the `--force` flag:
 
+    ```bash
+    ./update.sh --force
+    ```
+
+=== "BYO (Bring Your Own) Wildcard Certs"
+
+    1. Replace the certificate and private key at the paths chosen during installation.
+    
+    2. Ensure they are readable by the Tactical Linux user.
+    
+    3. Restart the necessary services to apply the changes:
+
+    ```bash
+    sudo systemctl restart nginx meshcentral rmm daphne
+    ```
+    
 ## Video Walkthru
 
 <div class="video-wrapper">
