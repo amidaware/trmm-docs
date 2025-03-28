@@ -13,6 +13,7 @@
     Add-MpPreference -ExclusionPath "C:\Windows\Temp\is-*.tmp\tacticalagent*"
     Add-MpPreference -ExclusionProcess "C:\Program Files\TacticalAgent\tacticalrmm.exe"
     Add-MpPreference -ExclusionProcess "C:\ProgramData\TacticalRMM\tacticalagent*"
+    Add-MpPreference -ExclusionProcess "C:\Windows\Temp\is-*.tmp\tacticalagent*"
     ```
     See [here for other screenshot examples](av.md).
 

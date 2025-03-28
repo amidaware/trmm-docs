@@ -180,6 +180,8 @@ When [running scripts](functions/scripting.md#script-arguments) use the (i) at t
 
 Chocolatey is the default 3rd party software library that is used to populate the software tab. You can install anything that is available at chocolatey.org
 
+It is installed by default during the TRMM agent installation into the default choco install folder (`C:\ProgramData\chocolatey`). If there is an existing choco install or other problem you can delete that folder and fully reinstall by it running the standard choco install script which can be found here: <https://chocolatey.org/install.ps1>
+
 If you're interested in converting your software to Chocolatey managed you will need to look at customizing this script <https://github.com/amidaware/community-scripts/blob/main/scripts_wip/Win_Choco_ConvertToChocoManaged.ps1>. If you have improvements please [contribute](https://docs.tacticalrmm.com/contributing_community_scripts/).
 
 Once you've made your script, that will take existing software and convert it to Chocolatey managed (see what Chocolatey manages on an agent with).

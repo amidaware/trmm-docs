@@ -12,6 +12,7 @@ Install the server, [choose the best path](install_considerations.md)
 * [ ] Review [User Settings](tipsntricks.md#customize-user-interface){target=_blank}
 * [ ] Set Retention Policies under Under `Global Settings > Retention`
 * [ ] Read thru the [FAQ](faq.md)
+* [ ] [Setup AV](av.md) exclusions in the appropriate Anti-virus products for your managed base
 
 ### Setup Automation Policies
 

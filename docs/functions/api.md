@@ -139,6 +139,10 @@ Here are some examples:
 
 ### Running a Script on an Agent Using the API
 
+First get the script ID from the Script library by hovering your mouse over it in the script list and looking at the tooltip.
+
+![script id](images/get_script_id.png)
+
 `POST` to the endpoint `/agents/<agentid>/runscript/` this:
 
 ```
@@ -148,7 +152,7 @@ Here are some examples:
     "emailMode": "default",
     "custom_field": null,
     "save_all_output": false,
-    "script": 102, // primary key of script in postgres
+    "script": 89, // primary key of script in postgres
     "args": [
         "arg1",
         "arg2"
@@ -172,7 +176,7 @@ Here are some examples:
             emailMode = "default"
             custom_field = $null
             save_all_output = $false
-            script = 20
+            script = 89
             args = @()
             env_vars = @()
             run_as_user = $false

@@ -7,14 +7,13 @@ An **Automated Task** allows you to run scripts and/or commands on an agent, wit
 ## Task Triggers
 
 ### Time-Based
-- **Daily, Weekly, or Monthly**: Schedule tasks to run at regular intervals, as expected.
+- **Daily, Weekly, or Monthly**: Schedule tasks to run at regular intervals, as expected. Note: On Linux and macOS, tasks will execute based on the "Start Time" field, ignoring the date portion. For example, a daily task set to start at 12:55 PM will run at that time every day starting from when the task is created.
 - **Run Once**:  
     - For future dates, tasks run as scheduled.  
     - For past dates, tasks are created to run 5 minutes after being registered with the Windows Task Scheduler. This ensures the task runs at least once, as the scheduler will not execute tasks with past "Run Once" dates.
 
 ### On Check Failure
-Automatically trigger a script to address issues when a Check fails.  
-
+Automatically trigger a script to address issues when a Check fails.
 
 ### Onboarding
 Use this type of task to execute "Run Once" scripts during agent onboarding. These tasks run immediately after the task is created on the agent, which happens a few minutes after the install of a new agent.
@@ -57,3 +56,4 @@ Collector tasks allow you to save script output directly to a custom field.
     Currently, you can only save data to agent-level custom fields.
 
 For more details, see [Custom Fields](custom_fields.md) and [Scripting](scripting.md).
+
