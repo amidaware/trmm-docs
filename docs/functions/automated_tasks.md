@@ -7,7 +7,7 @@ An **Automated Task** allows you to run scripts and/or commands on an agent, wit
 ## Task Triggers
 
 ### Time-Based
-- **Daily, Weekly, or Monthly**: Schedule tasks to run at regular intervals, as expected. Tasks will execute based on the "Start Time" field, ignoring the date portion. For example, a daily task set to start at 12:55 PM will run at that time every day starting from when the task is created.
+- **Daily, Weekly, or Monthly**: Schedule tasks to run at regular intervals, as expected. Note: On Linux and macOS, tasks will execute based on the "Start Time" field, ignoring the date portion. For example, a daily task set to start at 12:55 PM will run at that time every day starting from when the task is created.
 - **Run Once**:  
     - For future dates, tasks run as scheduled.  
     - For past dates, tasks are created to run 5 minutes after being registered with the Windows Task Scheduler. This ensures the task runs at least once, as the scheduler will not execute tasks with past "Run Once" dates.
