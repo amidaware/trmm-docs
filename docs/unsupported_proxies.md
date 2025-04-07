@@ -5,8 +5,6 @@
 
     Although these aren't officially supported configurations, we generally will help point you in the right direction. Please use the Discord [#unsupported channel](https://discord.com/channels/736478043522072608/888474319750066177) to discuss issues related to these complex installations.
 
-!!!danger
-    The install script sets up Nginx for you as a reverse proxy and does TLS and handles routing all requests to the correct backends, so using another proxy in front of your instance is probably not necessary (and may break things).<br><br>If you must use another reverse proxy for whatever reason, such as HAProxy or Nginx Proxy Manager, then you may need to edit the install script and disable all the steps relating to installing and configuring Nginx, and setup proxying manually.
 
 ## General Notes on Proxies and Tactical RMM
 
@@ -140,34 +138,8 @@ In your Caddyfile, create a wild card route with 3 handlers as shown below.
 In your TacticalRMM .env file, change **TRMM_HTTP_PORT** and **TRMM_HTTPS_PORT** so that it matches the port you selected in your Caddyfile.  In this example it's 4443 and 8080.  Also change the **MESH_PERSISTENT_CONFIG** to 1 so t>
 
 ```bash
-# .env
-
-IMAGE_REPO=tacticalrmm/
-VERSION=latest
-
-# tactical credentials (Used to login to dashboard)
-TRMM_USER=tactical
-TRMM_PASS=tactical
-
-# dns settings
-APP_HOST=rmm.amidaware.com
-API_HOST=api.amidaware.com
-MESH_HOST=mesh.amidaware.com
-
-# optional web port override settings 
 TRMM_HTTP_PORT=8080
 TRMM_HTTPS_PORT=4443
-
-# mesh settings
-MESH_USER=tactical
-MESH_PASS=tactical
-MONGODB_USER=mongouser
-MONGODB_PASSWORD=mongopass
-MESH_PERSISTENT_CONFIG=1
-
-# database settings
-POSTGRES_USER=postgres
-POSTGRES_PASS=postgrespass
 ```
 
 Update your mesh config **certUrl** option with your domain Url as shown below.
@@ -176,11 +148,7 @@ Update your mesh config **certUrl** option with your domain Url as shown below.
 
   "domains": {
     "": {
-      "title": "Tactical RMM",
-      "title2": "TacticalRMM",
-      "newAccounts": false,
-      "mstsc": true,
-      "geoLocation": true,
+      ....
       "certUrl": "https://rmm.amidaware.com",
       "agentConfig": [ "webSocketMaskOverride=0" ]
     }
@@ -287,36 +255,16 @@ For the meshcentral config:
 ```
 {
   "settings": {
-    "cert": "mesh.example.com",
-    "mongoDb": "mongodb://127.0.0.1:27017",
-    "mongoDbName": "meshcentral",
-    "WANonly": true,
-    "minify": 1,
-    "port": 4430,
-    "aliasPort": 443,
-    "redirPort": 8080,
-    "allowLoginToken": true,
-    "allowFraming": true,
-    "_agentPing": 60,
-    "agentPong": 300,
-    "allowHighQualityDesktop": true,
-    "agentCoreDump": false,
+    ....
     "tlsOffload": "YOUR_CADDY_IP",
-    "compression": true,
-    "wsCompression": true,
-    "agentWsCompression": true,
-    "maxInvalidLogin": { "time": 5, "count": 5, "coolofftime": 30 }
+    ....
   },
   "domains": {
     "": {
-      "title": "Tactical RMM",
-      "title2": "Tactical RMM",
-      "newAccounts": false,
+      ....
       "certUrl": "https://YOUR_CADDY_IP:443",
       "agentConfig": [ "webSocketMaskOverride=0" ],
-      "geoLocation": true,
-      "cookieIpCheck": false,
-      "mstsc": true
+      ....
     }
   }
 }
@@ -1074,21 +1022,6 @@ Apache ssl config example:
 </VirtualHost>
 ```
 
-### Updating Certificate:
-
-In my case, auto DNS Challenge from Apache, so every time we get new cert files, it must be copied inside rmm too.
-Just overwrite default location:
-```text
-/etc/letsencrypt/archive/blablabla
-```
-Or change certs location on Nginx conf to whatever you want.
-
-## Nginx Proxy
-
-Having mesh connection issues?
-
-See <https://ylianst.github.io/MeshCentral/meshcentral/#nginx-reverse-proxy-setup>.
-
 ## Nginx Proxy Manager (double proxy method)
 
 First, get your TRMM server installed with a standard config and working.
@@ -1271,43 +1204,16 @@ Make sure your config file looks like the one shown below.
 {
   "settings": {
     "cert": "mesh.YOURDOMAIN.com",
-    "WANonly": true,
-    "minify": 1,
-    "port": 4430,
-    "aliasPort": 443,
-    "redirPort": 800,
-    "allowLoginToken": true,
-    "allowFraming": true,
-    "agentPing": 35,
-    "agentPong": 300,
-    "allowHighQualityDesktop": true,
+    ....
     "tlsOffload": "Nginx Proxy Manager Local IP",
     "trustedProxy": "Nginx Proxy Manager Local IP",
-    "agentCoreDump": false,
-    "compression": true,
-    "wsCompression": true,
-    "agentWsCompression": true,
-    "postgres": {
-      "user": "REDACTED",
-      "password": "REDACTED",
-      "port": "5432",
-      "host": "localhost"
-    },
-    "MaxInvalidLogin": {
-      "time": 5,
-      "count": 5,
-      "coolofftime": 30
-    }
+    ....
   },
   "domains": {
     "": {
-      "title": "Tactical RMM",
-      "title2": "Tactical RMM",
-      "newAccounts": false,
+      ....
       "certUrl": "https://mesh.YOURDOMAIN.com:443/",
-      "geoLocation": true,
-      "cookieIpCheck": false,
-      "mstsc": true
+      ....
     }
   }
 }
