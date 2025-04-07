@@ -33,6 +33,7 @@ python manage.py bulk_delete_agents --days 60
 python manage.py bulk_delete_agents --agentver 1.5.0
 python manage.py bulk_delete_agents --site examplesite
 python manage.py bulk_delete_agents --client exampleclient
+python manage.py bulk_delete_agents --hostname examplehostname
 ```
 
 Then run the deletion:
@@ -42,6 +43,22 @@ python manage.py bulk_delete_agents --days 60 --delete
 python manage.py bulk_delete_agents --agentver 1.5.0 --delete
 python manage.py bulk_delete_agents --site examplesite --delete
 python manage.py bulk_delete_agents --client exampleclient --delete
+python manage.py bulk_delete_agents --hostname examplehostname --delete
+```
+
+!!!note
+    You must specify at least one of --days, --agentver, --site, --client, or --hostname.
+
+    You can combine multiple parameters (e.g., --site examplesite --days 90) to narrow down agents further.
+
+    Without the --delete flag, the command will only list agents that match.
+
+    With the --delete flag, the agents will be uninstalled and deleted.
+
+Example bash script to delete multiple hostnames, hosts.txt file should contain one per line
+
+```bash
+for i in $(cat hosts.txt); do python manage.py bulk_delete_agents --hostname $i; done
 ```
 
 ### Reset a Users Password
