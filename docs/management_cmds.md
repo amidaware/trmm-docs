@@ -55,10 +55,10 @@ python manage.py bulk_delete_agents --hostname examplehostname --delete
 
     With the --delete flag, the agents will be uninstalled and deleted.
 
-Example bash script to delete multiple hostnames, hosts.txt file should contain one per line
+Example Bash one-liner to delete multiple agents at once by hostname, `hosts.txt` file should contain one hostname per line.
 
 ```bash
-for i in $(cat hosts.txt); do python manage.py bulk_delete_agents --hostname $i; done
+for i in $(cat hosts.txt); do python manage.py bulk_delete_agents --hostname $i --delete; done
 ```
 
 ### Reset a Users Password
