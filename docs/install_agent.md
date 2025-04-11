@@ -255,40 +255,60 @@ chmod +x rmm.sh
 
 ## Mac Agent Permissions
 
-Step 1: Open System Preferences
-Click on the Apple logo in the top-left corner of your screen.
-Select System Preferences from the dropdown menu.
+=== ":fontawesome-brands-apple: macOS 15+ Sequoia"
 
-Step 2: Navigate to Security & Privacy
-In the System Preferences window, click on Security & Privacy.
-At the top of the Security & Privacy window, click the Privacy tab.
+    Enable Screen Sharing under settings.
 
-![](images/2024-02-15-22-22-56.png)
+    ![vnc1](images/mac_vnc1.png)
 
-Step 3: Grant Accessibility Permissions
-In the list on the left, scroll down and select Accessibility.
-If the padlock in the bottom-left corner is locked, click it and enter your password to make changes.
-Click the plus (+) button under the list on the right side.
-Navigate to and add tacticalagent from the /opt/tacticalagent/ folder and meshagent in the /opt/tacticalmesh/ folder.
-Ensure both are checked in the list to grant them Accessibility Permissions.
+    Top switch is the only item needed for TRMM access. 
 
-![](images/2024-02-15-22-22-33.png)
+    Do not enable anything else.
 
-Step 4: Grant Screen Recording Permissions
-In the list on the left, find and select Screen Recording.
-Unlock the padlock if necessary as described above.
-Click the plus (+) button and add meshagent from the /opt/tacticalmesh/ folder, or check the boxes next to them if they're already listed.
-A prompt may appear asking you to quit Meshcentral. Please do so to enable the permissions.
+    !!!warning
+        Enabling `Anyone may request permission to control screen` and `VNC viewers may control screen with password` will enable Mac-proprietary VNC options that will make TRMM's VNC implementation fail.
 
-![](images/2024-02-15-22-23-48.png)
+    ![vnc2](images/mac_vnc2.png)
 
-Step 5: Grant Full Disk Access
-In the list on the left, scroll down and select Full Disk Access.
-Unlock the padlock if necessary as described above.
-Click the plus (+) button and add tacticalagent from the /opt/tacticalagent/ folder and meshagent from the /opt/tacticalmesh/ folder, or check the boxes next to them if they're already listed.
+    !!!note
+        This enabled the native VNC client on MacOS. If you don't limit in the `Allow access for` to `Only theses users` make certain you don't have other users or users without passwords.
 
-![](images/2024-02-15-22-17-49.png)
+=== ":fontawesome-brands-apple: macOS 14 Sonoma and earlier"
+        
+    Step 1: Open System Preferences
+    Click on the Apple logo in the top-left corner of your screen.
+    Select System Preferences from the dropdown menu.
 
-Finalizing the Setup
-Restart Your Applications: Quit and restart Tactical RMM and Meshcentral for the changes to take effect.
-Restart Your Mac: If the applications do not recognize the new permissions, a system restart may be necessary.
+    Step 2: Navigate to Security & Privacy
+    In the System Preferences window, click on Security & Privacy.
+    At the top of the Security & Privacy window, click the Privacy tab.
+
+    ![](images/2024-02-15-22-22-56.png)
+
+    Step 3: Grant Accessibility Permissions
+    In the list on the left, scroll down and select Accessibility.
+    If the padlock in the bottom-left corner is locked, click it and enter your password to make changes.
+    Click the plus (+) button under the list on the right side.
+    Navigate to and add tacticalagent from the /opt/tacticalagent/ folder and meshagent in the /opt/tacticalmesh/ folder.
+    Ensure both are checked in the list to grant them Accessibility Permissions.
+
+    ![](images/2024-02-15-22-22-33.png)
+
+    Step 4: Grant Screen Recording Permissions
+    In the list on the left, find and select Screen Recording.
+    Unlock the padlock if necessary as described above.
+    Click the plus (+) button and add meshagent from the /opt/tacticalmesh/ folder, or check the boxes next to them if they're already listed.
+    A prompt may appear asking you to quit Meshcentral. Please do so to enable the permissions.
+
+    ![](images/2024-02-15-22-23-48.png)
+
+    Step 5: Grant Full Disk Access
+    In the list on the left, scroll down and select Full Disk Access.
+    Unlock the padlock if necessary as described above.
+    Click the plus (+) button and add tacticalagent from the /opt/tacticalagent/ folder and meshagent from the /opt/tacticalmesh/ folder, or check the boxes next to them if they're already listed.
+
+    ![](images/2024-02-15-22-17-49.png)
+
+    Finalizing the Setup
+    Restart Your Applications: Quit and restart Tactical RMM and Meshcentral for the changes to take effect.
+    Restart Your Mac: If the applications do not recognize the new permissions, a system restart may be necessary.
