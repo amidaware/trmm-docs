@@ -219,8 +219,10 @@ It's the last logged in user, when italicized it means nobody is currently logge
 
 ## Getting false SMS and Email alerts from scripts?
 
-If you're getting `Error 98` from script timeouts between the time the server asked the agent to run it, and the timeout value of the script the server never received a response. You can minimize the false alerts but adding the script timeouts to informational instead of warnings. 
+Return code `98` is reserved and used by Tactical RMM when a script execution times out. In most cases, a timeout can be interpreted as a transient or non-critical issue, rather than a true failure.
+
+If you commonly experience script timeouts and want to prevent false-positive alerts, consider adding `98` to the list of success return codes.
 
 You can also increase the consecutive failures to 2+
 
-![](images/2024-02-22-16-46-27.png)
+![](images/error_98_success_code.png)
