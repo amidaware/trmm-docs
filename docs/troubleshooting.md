@@ -38,6 +38,12 @@ cd /rmm/api/tacticalrmm
 source ../env/bin/activate
 ```
 
+Download the management command:
+
+```bash
+wget -O /rmm/api/tacticalrmm/core/management/commands/get_celery_queue_length.py 'https://raw.githubusercontent.com/amidaware/tacticalrmm/refs/heads/develop/api/tacticalrmm/core/management/commands/get_celery_queue_length.py'
+```
+
 Check the number of items in the Celery queue:
 
 ```bash
