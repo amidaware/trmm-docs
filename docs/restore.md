@@ -52,3 +52,13 @@ Once the restore has completed, log into your **OLD** instance and from the Web 
     You will most probably have to add entries to your host file (on the machine you're trying to access the web UI from) for your subdomains to access the old instance, since you'll already have updated DNS to point to the new server.
 
 What this will do is restart both the tacticalagent and meshagent services on any stubborn agents that are still connected to the old instance, which should be enough to get them connected to the new instance.
+
+## Restore Testing
+
+If you want to validate your backups the best way to do that is to:
+
+1. Run the standard Restore to a new temp VM as [above](#setup-the-new-server).
+2. Run `sudo systemctl celery celerybeat` to stop the restored test VM from sending agent offline false alerts.
+3. Change the hosts file on your computer so that only your computer overrides regular DNS and allows you to login and test your test restore. Add the server ip and names in one line like this `192.168.55.5 rmm.example.com api.example.com mesh.example.com`.
+4. Login and test things, see agents, policies, agent history etc.
+5. Undo hosts file entry and delete test VM
