@@ -142,39 +142,59 @@ su - tactical
 !!!tip
     If you can snapshot do that now so you can quickly restore to this point again and re-run the install in case something goes wrong with the install script.
 
-Download and run the install script:
+???+ "Choose Install type"
 
-```bash
-wget https://raw.githubusercontent.com/amidaware/tacticalrmm/master/install.sh
-chmod +x install.sh
-./install.sh
-```
+    === "Standard Install"
 
-!!!info
-    Already have your own SSL certificate? Call the install script with the `--use-own-cert` flag, like this:
-    ```bash
-    ./install.sh --use-own-cert
-    ```
-    Ensure your cert and private key exist on the server as the install script will prompt you for the locations of these 2 files.
+        Download and run the install script:
 
-    Also ensure that it is a legitimate, trusted certificate and includes the full chain for proper validation. Do not use this option with self-signed certs.
+        ```bash
+        wget https://raw.githubusercontent.com/amidaware/tacticalrmm/master/install.sh
+        chmod +x install.sh
+        bash -x install.sh 2>&1 | tee "install_$(date +'%Y-%m-%d-%H-%M-%S').log"
+        ```
 
-    
+    === "Install with Own SSL Certs"
 
-!!!danger
-    You can install with the `--insecure` switch to use any DNS name you want. Self signed certs will be generated for all the DNS names, and all SSL certificate chain validation will be disabled in TRMM.
-    
-    `./install.sh --insecure`
+        Call the install script with the `--use-own-cert` flag:
 
-    **Requirements**: You **MUST** open all 3 subdomains in your web browser and accept the security warning for each site **BEFORE LOGIN** or you will get "Backend is offline (network error)" errors.
+        ```bash
+        bash -x install.sh --use-own-cert 2>&1 | tee "install_$(date +'%Y-%m-%d-%H-%M-%S').log"
+        ```
 
-    ✅ Quick install for easy test driving<br>
-    ✅ No public DNS name needed. Use irulez.local or any DNS name you want.<br>
-    ✅ No cert renewals<br>
-    ❌ All agent communication is vulnerable to MITM compromise and can be hacked.<br>
-    ❌ You can't convert from an `--insecure` to trusted cert install without reinstalling all your agents<br>
-    ❌ Can't use Agent install Deployment links. Manual installation method only<br>
-    ❌ Restore does not work
+        !!! info
+            Ensure your cert and private key exist on the server as the install script will prompt you for the locations of these 2 files.
+
+            Also ensure that it is a legitimate, trusted certificate and includes the full chain for proper validation. Do not use this option with self-signed certs.
+
+    === "Insecure Install"
+
+        Using this is great for:
+        
+        - lab testing
+        - scenarios where you want the TRMM server and agent to bypass all SSL traffic validation.
+        
+        Using the `--insecure` switch you can use any DNS name you want. Self-signed SSL certs will be generated for all the DNS names.
+        
+        !!! warning
+            All SSL certificate chain validation will be disabled in TRMM.
+            
+            This means anything that can intercept agent traffic. Anything can MITM the SSL session, generate it's own Self-signed certs and send any command it wants to your agents.
+
+        !!! warning
+            **Requirements**: You **MUST** open all 3 subdomains in your web browser and accept the security warning for each site **BEFORE LOGIN** or you will get "Backend is offline (network error)" errors.
+
+        ✅ Quick install for easy test driving
+        ✅ No public DNS name needed. Use `irulez.local` or any DNS name you want
+        ✅ No cert renewals
+        ❌ All agent communication is vulnerable to MITM compromise and can be hacked
+        ❌ You can not convert from an `--insecure` to trusted cert install without reinstalling all your agents
+        ❌ Can't use Agent install Deployment links. Manual installation method only
+        ❌ Restore does not work
+
+        ```bash
+        bash -x install.sh --insecure 2>&1 | tee "install_$(date +'%Y-%m-%d-%H-%M-%S').log"
+        ```
 
 Answer the initial questions when prompted. Replace `example.com` with your domain.
 
