@@ -715,3 +715,33 @@ tail -f /rmm/api/tacticalrmm/tacticalrmm/private/log/access.log
 ```bash
 tail -f /rmm/api/tacticalrmm/tacticalrmm/private/log/django_debug.log
 ```
+
+### Failed / Successful Admin logins
+
+These are logged in `/rmm/api/tacticalrmm/tacticalrmm/private/log/access.log`
+
+Successful Login
+
+```log
+10.0.0.18 - - [21/May/2025:00:01:43 -0400] "POST /v2/checkcreds/ HTTP/1.1" 200 13 "https://rmm.example.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+```
+
+Failed Login
+
+```log
+10.0.8.62 - - [21/May/2025:00:01:13 -0400] "POST /v2/checkcreds/ HTTP/1.1" 400 17 "https://rmm.example.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+```
+
+| Field                                      | Description                                                                 |
+|-------------------------------------------|-----------------------------------------------------------------------------|
+| `10.0.0.18`                               | Client IP address                                                           |
+| `-`                                       | Unused (RFC 1413 identity)                                                  |
+| `-`                                       | Unused (authenticated user ID)                                             |
+| `[21/May/2025:00:01:43 -0400]`            | Timestamp (local time with timezone offset)                                |
+| `"POST /v2/checkcreds/ HTTP/1.1"`         | HTTP request method, path, and version                                     |
+| `200`                                     | HTTP status code (200 = OK/success) (400 = Failed)                          |
+| `13`                                      | Response size in bytes (body only)                                         |
+| `"https://rmm.example.com/"`         | Referer URL (origin of the request)                                        |
+| `"Mozilla/5.0 (Windows NT 10.0;...)`      | User-Agent string (browser and OS info)                                    |
+
+[Fail2Ban](unsupported_scripts.md#fail2ban) uses this to limit password guessing
