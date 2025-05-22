@@ -64,3 +64,6 @@ This will do the following:
   <iframe width="400" height="225" src="https://www.youtube.com/embed/rC0NgYJUf_8" frameborder="0" allowfullscreen></iframe>
 </div>
 
+## Backup Testing
+
+See [Restore Testing](restore.md#restore-testing)
