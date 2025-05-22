@@ -58,7 +58,7 @@ What this will do is restart both the tacticalagent and meshagent services on an
 If you want to validate your backups the best way to do that is to:
 
 1. Run the standard Restore to a new temp VM as [above](#setup-the-new-server).
-2. Run `sudo systemctl celery celerybeat` to stop the restored test VM from sending agent offline false alerts.
+2. Run `sudo systemctl stop celery celerybeat` to stop the restored test VM from sending agent offline false alerts.
 3. Change the hosts file on your computer so that only your computer overrides regular DNS and allows you to login and test your test restore. Add the server ip and names in one line like this `192.168.55.5 rmm.example.com api.example.com mesh.example.com`.
 4. Login and test things, see agents, policies, agent history etc.
 5. Undo hosts file entry and delete test VM
