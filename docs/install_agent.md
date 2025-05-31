@@ -1,9 +1,8 @@
 # Installing a Windows Agent
 
 !!!warning
-    If you don't want to deal with AV flagging / deleting your agents, check the instructions for getting [code signed agents](code_signing.md).<br/><br />
     You must add antivirus exclusions for the tactical agent.<br/>
-    Any decent AV will flag the agent as a virus, since it technically is one due to the nature of this software.<br/>
+    AV will usually flag the agent as a virus, since it technically is one due to the nature of this software.<br/>
     Adding the [following exclusions](https://github.com/amidaware/community-scripts/blob/main/scripts/Win_TRMM_AV_Update_Exclusion.ps1) will make sure everything works, including agent update:<br/>
     ```ps
     #Windows Defender Exclusions for Tactical
