@@ -1,8 +1,8 @@
 # Overriding / Customizing Default Settings
 
-### Browser token expiration
+### Admin User Browser Token Expiration and Idle Timeout Settings
 
-The default browser token expiration is set to 5 hours. See this [ticket](https://github.com/amidaware/tacticalrmm/issues/503) for reference.
+The browser token expiration for admin users determines how long a session remains active before requiring re-authentication. By default, the token expires after 5 hours of inactivity. You can customize this idle timeout to automatically log out admin users after a shorter or longer period, depending on your security policy. See this [ticket](https://github.com/amidaware/tacticalrmm/issues/503) for reference.
 
 To change it, add the following code block to the end of `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py`
 
