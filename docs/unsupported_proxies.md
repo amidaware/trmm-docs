@@ -471,24 +471,6 @@ Please note that if you have a middleware with 2FA you can still use it with the
 
 Check / change the MeshCentral config.json, some of the values may be set already. CertUrl must be changed to point to the HAProxy server if not using the same certs for both HAProxy and TRMM.
 
-### NGINX ADJUSTMENTS
-
-You will need to edit the nginx.conf file in the http section on the trmm server to recognize the X-Forwarded-For Header that will be sent from haproxy.
-
-Edit file /etc/nginx/nginx.conf
-Add the lines from 'real_ip' module inside http tag:
-
-```conf
-set_real_ip_from    192.168.0.200; #IP Address of your haproxy server
-real_ip_header      X-Forwarded-For;
-```
-
-Restart nginx:
-
-```bash
-systemctl restart nginx.service
-```
-
 ### MeshCentral Adjustment
 
 Credit to [@bradhawkins](https://github.com/bradhawkins85)
@@ -522,6 +504,25 @@ Restart MeshCentral:
 ```bash
 systemctl meshcentral restart
 ```
+
+### NGINX ADJUSTMENTS
+
+You will need to edit the nginx.conf file in the http section on the trmm server to recognize the X-Forwarded-For Header that will be sent from haproxy.
+
+Edit file /etc/nginx/nginx.conf
+Add the lines from 'real_ip' module inside http tag:
+
+```conf
+set_real_ip_from    192.168.0.200; #IP Address of your haproxy server
+real_ip_header      X-Forwarded-For;
+```
+
+Restart nginx:
+
+```bash
+systemctl restart nginx.service
+```
+
 
 ### HAProxy Config
 
