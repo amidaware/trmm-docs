@@ -505,6 +505,25 @@ Restart MeshCentral:
 systemctl meshcentral restart
 ```
 
+### NGINX ADJUSTMENTS
+
+You will need to edit the nginx.conf file in the http section on the trmm server to recognize the X-Forwarded-For Header that will be sent from haproxy.
+
+Edit file /etc/nginx/nginx.conf
+Add the lines from 'real_ip' module inside http tag:
+
+```conf
+set_real_ip_from    192.168.0.200; #IP Address of your haproxy server
+real_ip_header      X-Forwarded-For;
+```
+
+Restart nginx:
+
+```bash
+systemctl restart nginx.service
+```
+
+
 ### HAProxy Config
 
 The order of use_backend is important, and `Tactical-Mesh-WebSocket_ipvANY` must be before `Tactical-Mesh_ipvANY`.
