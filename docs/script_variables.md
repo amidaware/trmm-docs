@@ -7,6 +7,9 @@ Tactical RMM allows passing dashboard data into script as arguments or environme
 
 For a full list of available fields, refer to the variables in the `models.py` files:
 
+!!!info
+    @property functions under the model will work as well
+
 [Agent](https://github.com/amidaware/tacticalrmm/blob/89aceda65a1c54fea7b18250ca63614f091eac6e/api/tacticalrmm/agents/models.py#L60)
 
 [Client](https://github.com/amidaware/tacticalrmm/blob/89aceda65a1c54fea7b18250ca63614f091eac6e/api/tacticalrmm/clients/models.py#L18)
