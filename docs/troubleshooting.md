@@ -362,3 +362,21 @@ Write-Output "Path after changing the type:", $path
 5. Restart services or run `update.sh --force`
 
 54 year agents in the dashboard can be a sign of this NATS problem
+
+## Server 2016/2019 agent not updating
+
+If you're seeing things like
+
+```log
+time="2025-03-17T01:02:11-07:00" level=error msg="error creating NewUpdateSession: ole.CoInitializeEx(0, ole.COINIT_MULTITHREADED): Cannot change thread mode after it is set."
+time="2025-04-30T09:28:47-07:00" level=error msg="SyncMeshNodeID() getMeshNodeID() exit status 0xc0000142: "
+time="2025-04-30T09:28:55-07:00" level=error msg="Checkrunner RunChecks exit status 0xc0000142: "
+time="2025-04-30T09:29:07-07:00" level=error msg="SyncMeshNodeID() getMeshNodeID() exit status 0xc0000142: "
+time="2025-04-30T09:29:54-07:00" level=error msg="Checkrunner RunChecks exit status 0xc0000142: "
+time="2025-04-30T09:30:46-07:00" level=error msg="Checkrunner RunChecks exit status 0xc0000142: "
+time="2025-04-30T09:35:07-07:00" level=info msg="Agent updating from 2.9.0 to 2.9.1"
+```
+
+This is a problem with the non-interactive heap stack filling up. The default value is 768KB, and needs to be updated to 4MB.
+
+[Microsoft KB](https://learn.microsoft.com/en-us/troubleshoot/windows-server/performance/desktop-heap-limitation-out-of-memory)
