@@ -247,7 +247,7 @@ See below for populating dashboard data in scripts and the available options.
 
 ## Using dashboard data in scripts
 
-Tactical RMM allows passing in dashboard data to scripts as arguments. The below PowerShell arguments will get the client name of the agent and also the agent's public IP address.
+Tactical RMM allows passing in dashboard data to scripts as arguments or environment variables. The below PowerShell arguments will get the client name of the agent and also the agent's public IP address.
 
 ```
 -ClientName {{client.name}} -PublicIP {{agent.public_ip}}

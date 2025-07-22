@@ -151,7 +151,7 @@ Edit `/etc/nginx/sites-enabled/frontend.conf`
 ```
 server {
     ....
-    include /etc/nginx/allowed-ips;
+    include /etc/nginx/allowed-ips.conf;
     deny all;
     ....
 }
