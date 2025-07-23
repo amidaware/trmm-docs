@@ -6,7 +6,7 @@
 2. Check at least one overdue item in agent settings<br>![uptime](../images/example_uptime_setting.png)
 3. Run report and enjoy!
 
-[![html report screenshot](../images/example_uptimereport.png)](../images/example_uptimereport.png)
+![html report screenshot](../images/example_uptimereport.png)
 
 ## Windows 11 Upgrade Compatible list
 
@@ -17,17 +17,19 @@ To get a Windows 10 upgrade to Windows 11 compatibility list you'll want to:
 3. Import one of the `Windows 11 Compatible` Reports ![Reports](../images/example_win11_reports.png)
 4. Enjoy!
 
-[![Win11 HTML report screenshot](../images/example_win11_compatible_reporthtml.png)](../images/example_win11_compatible_reporthtml.png)
+![Win11 HTML report screenshot](../images/example_win11_compatible_reporthtml.png)
 
 
-[![pdf report screenshot](../images/example_win11_compatible_reportpdf.png)](../images/example_win11_compatible_reportpdf.png)
+![pdf report screenshot](../images/example_win11_compatible_reportpdf.png)
 
 
 ## NOC Dashboard
 
-Got a TV? Load it up for the team! 
+Got a TV? Load it up for the team!
 
 Want quick searchable agent status with more data? Load it locally!
+
+The `Restrict Summary` button is for only showing agents that are offline and have an overdue alert set (eg critical machines). If it's on a hands off device make sure you set the refresh every so it's reloading data regularly.
 
 <div class="video-wrapper">
   <iframe width="400" height="225" src="https://www.youtube.com/embed/OtV2M5uYj_k" frameborder="0" allowfullscreen></iframe>
@@ -39,9 +41,9 @@ Want quick searchable agent status with more data? Load it locally!
 
 Search for software, sort by different columns
 
-[![Software Inventory](../images/example_softwarereport.gif)](../images/example_softwarereport.gif)
+![Software Inventory](../images/example_softwarereport.gif)
 
 
 `Software Report - Advanced DataTables`
 
-[![Software Advanced](../images/example_software_Advanced_DataTables.png)](../images/example_software_Advanced_DataTables.png)
+![Software Advanced](../images/example_software_Advanced_DataTables.png)
