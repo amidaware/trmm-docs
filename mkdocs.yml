@@ -126,8 +126,9 @@ theme:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/neoteroi-mkdocs.css
-# extra_javascript:
-#   - js/copy-to-clipboard.js
+extra_javascript:
+  - js/image-zoom.js
+  - js/copy-to-clipboard.js
 extra:
   social:
     - icon: fontawesome/brands/github
