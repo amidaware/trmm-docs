@@ -50,6 +50,7 @@ nav:
       - "- Data Queries": ee/reporting/functions/reporting_dataqueries.md
       - "- Assets": ee/reporting/functions/reporting_assets.md
       - "- Tips n' Tricks": ee/reporting/functions/tipsntricks.md
+      - "- Examples": ee/reporting/functions/examples.md
       
   - Backup: backup.md
   - Restore: restore.md
@@ -98,7 +99,7 @@ dev_addr: "0.0.0.0:8005"
 
 # Repository
 repo_name: "amidaware/tacticalrmm"
-repo_url: "https://github.com/amidaware/tacticalrmm"
+repo_url: "https://github.com/amidaware/tacticalrmm/"
 edit_uri: ""
 
 theme:
