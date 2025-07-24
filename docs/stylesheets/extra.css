@@ -230,6 +230,26 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .md-grid {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 0 !important;
+    }
+    
+    .md-content__inner > p {
+        padding-left: 10px;
+    }
+    
+    .md-typeset h1,
+    .md-typeset h2,
+    .md-typeset h3,
+    .md-typeset h4,
+    .md-typeset h5 {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding-left: 5px !important;
+    }
+    
     .image-modal-content {
         width: 95%;
         max-height: 85%;
