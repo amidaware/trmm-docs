@@ -22,6 +22,19 @@ To get a Windows 10 upgrade to Windows 11 compatibility list you'll want to:
 
 ![pdf report screenshot](../images/example_win11_compatible_reportpdf.png)
 
+## Antivirus Report
+
+To get a report of the active Antivirus on an agent you'll want to:
+
+1. Create an agent custom field<br>![Win11](../images/example_av_customfield.png)
+2. Clone `Antivirus - Verify Status` Community script and add the `-customField` Script arg<br>![av script](../images/example_av_script.png)
+3. Create an automation policy that applies to all your workstations ![Task1](../images/example_av_task1.png)<br>![Task2](../images/example_av_task2.png)<br>![Task3](../images/example_av_task3.png)
+4. Import one of the `Antivirus` Reports ![Reports](../images/example_av_reportimport.png)
+5. Enjoy!
+
+![Antivirus HTML report screenshot](../images/example_av_reporthtml.png)
+
+![Antivirus pdf report screenshot](../images/example_av_reportpdf.png)
 
 ## NOC Dashboard
 
