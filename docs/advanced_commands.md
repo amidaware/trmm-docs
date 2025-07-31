@@ -41,3 +41,17 @@ TRMM Agent unique ID and MeshCentral nodeID
 ```bash
 /rmm/api/env/bin/python /rmm/api/tacticalrmm/manage.py shell -c 'from agents.models import Agent; [print((i.agent_id, f"node//{i.hex_mesh_node_id}")) for i in Agent.objects.only("mesh_node_id") if i.mesh_node_id and i.hex_mesh_node_id != "error"]'
 ```
+### Maintenance mode toggle for all agents
+
+Set all agents in Maintenance Mode
+
+```bash
+echo "from agents.models import Agent; Agent.objects.update(maintenance_mode=True)" | /rmm/api/env/bin/python /rmm/api/tacticalrmm/manage.py shell
+```
+
+Undo all agents from Maintenance Mode
+
+```bash
+echo "from agents.models import Agent; Agent.objects.update(maintenance_mode=False)" | /rmm/api/env/bin/python /rmm/api/tacticalrmm/manage.py shell
+```
+
