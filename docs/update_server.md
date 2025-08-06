@@ -116,3 +116,12 @@ The update script will also fix any permissions that might have gotten messed up
 <div class="video-wrapper">
   <iframe width="400" height="225" src="https://www.youtube.com/embed/ElUfQgesYs0" frameborder="0" allowfullscreen></iframe>
 </div>
+
+# Update FAQ
+
+Based on years of feedback, if your server was working, you updated...and now it's not working you probably did one of these things:
+
+1. Not running certbot with the correct linux username (the one you installed TRMM with)
+2. Didn't put the `*.` in front of your domain name in the certbot command (or other certbot command typo).
+3. You [didn't](guide_gettingstarted.md#dont-do-these-things) `do-release-upgrade` did you?
+4. Running an #unsupported proxy and assumed your reverse proxy was the only cert you needed to update?
