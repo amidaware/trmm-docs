@@ -133,7 +133,7 @@ Right-click the connect button in **Take Control** for connection options.
 
 If you need to comply with GDPR regulations and ensure employee rights legislation is complied with, you can make sure that users receive a popup to inform them so they are aware when your techs log in and connect to their machine. You can enable a banner that shows when a remote connection is established.
 
-1. Login to meshcentral as the [mesh superuser](./mesh_integration.md#get-a-url-to-login-to-mesh-as-the-mesh-superuser).
+1. Login to meshcentral as the [mesh superuser](./mesh_integration.md#get-a-url-to-login-to-mesh-as-the-mesh-superuser). (Incognito window > Type mesh URL > Login as the superuser creds you got at end of server install or [this](mesh_integration/#get-a-url-to-login-to-mesh-as-the-mesh-superuser)). It should have 5 icons on the left<br>![alt text](images/mesh_superuser.png)
 2. Click on My Account
 3. Click on the device group you want to enable notifications or accept connection etc on (probably TacticalRMM).
 4. Next to User Consent click edit (the wee pencil)<br>
