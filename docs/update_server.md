@@ -89,7 +89,7 @@ The update script will also fix any permissions that might have gotten messed up
     sudo certbot certonly --manual -d *.example.com --agree-tos --no-bootstrap --preferred-challenges dns -m admin@example.com --no-eff-email
     ```
 
-    Same instructions as during install for [verifying the TXT record](install_server.md#step-6-deploy-the-txt-record-in-your-dns-manager-for-lets-encrypt-wildcard-certs) has propagated before hitting ++enter++.
+    Same instructions as during install for [verifying the TXT record](install_server.md#step-6-deploy-the-txt-record-in-your-dns-manager-for-lets-encrypt-wildcard-certs){target="_blank"} has propagated before hitting ++enter++.
 
     <font color="red" size="20"><p style="text-align:center">**You're not done yet, keep reading!**</p></font>
 
