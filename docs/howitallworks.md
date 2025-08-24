@@ -44,12 +44,13 @@ If you have strict outbound firewall rules these are the outbound rules needed f
 
 #### During installation/updating
 
-1. Access to Github for downloading and installing TRMM
+1. Access to Github for downloading and installing TRMM, and checking if new TRMM version is available.
 2. Access to nginx.org to [install](https://github.com/amidaware/tacticalrmm/blob/ae5d0b1d81ed7e7ee1f3ebaafaf8a8ad96c8a49a/install.sh#L180)
 3. Access to mongodb.org to [install](https://github.com/amidaware/tacticalrmm/blob/ae5d0b1d81ed7e7ee1f3ebaafaf8a8ad96c8a49a/install.sh#L241)
 4. Access to python.org to [install](https://github.com/amidaware/tacticalrmm/blob/ae5d0b1d81ed7e7ee1f3ebaafaf8a8ad96c8a49a/install.sh#L253)
 5. Access to postgresql.org to [install](https://github.com/amidaware/tacticalrmm/blob/ae5d0b1d81ed7e7ee1f3ebaafaf8a8ad96c8a49a/install.sh#L269)
 6. Whatever servers [Let's Encrypt](https://letsencrypt.org/docs/faq/#what-ip-addresses-does-let-s-encrypt-use-to-validate-my-web-server) uses for DNS-01 challenges
+7. Cloudflare is for the licensing servers.
 
 #### Server Without Code Signing Key
 
