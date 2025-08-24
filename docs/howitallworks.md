@@ -40,11 +40,7 @@ If you have strict outbound firewall rules these are the outbound rules needed f
 
 #### Regular Use
 
-1. Outbound traffic to all agent IP scopes for reflect traffic from agents
-
-#### During installation/updating
-
-1. Access to Github for downloading and installing TRMM, and checking if new TRMM version is available.
+1. Access to Github for downloading and installing TRMM, and checking if new TRMM version is available to show in the admin web panel.
 2. Access to nginx.org to [install](https://github.com/amidaware/tacticalrmm/blob/ae5d0b1d81ed7e7ee1f3ebaafaf8a8ad96c8a49a/install.sh#L180)
 3. Access to mongodb.org to [install](https://github.com/amidaware/tacticalrmm/blob/ae5d0b1d81ed7e7ee1f3ebaafaf8a8ad96c8a49a/install.sh#L241)
 4. Access to python.org to [install](https://github.com/amidaware/tacticalrmm/blob/ae5d0b1d81ed7e7ee1f3ebaafaf8a8ad96c8a49a/install.sh#L253)
