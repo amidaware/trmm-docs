@@ -32,7 +32,8 @@ It uses an [agent](https://github.com/amidaware/rmmagent) written in Golang and 
 
 ## Windows agent versions supported
 
-- Windows 7, 8.1, 10, 11, Server 2008 R2, 2012 R2, 2016, 2019, 2022
+- Windows 7, 8.1, 10, 11
+- Server 2008 R2, 2012 R2, 2016, 2019, 2022, 2025
 
 ## Linux agent versions supported
 
