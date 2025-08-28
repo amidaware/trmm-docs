@@ -2,20 +2,31 @@
 
 Thanks go to all you [sponsors](sponsor.md#sponsor-with-stripe-or-paypal) it's your support that lets us continue to improve TRMM.
 
-## Next Release
+<div class="roadmap-grid">
+  <div class="roadmap-section">
+    <h2>Next Release</h2>
+    <ul>
+      <li><a href="https://github.com/amidaware/tacticalrmm/issues/2269">Policy Agent Exclusions Not Honored When Policy Applied to Site</a></li>
+      <li><a href="https://github.com/amidaware/tacticalrmm/issues/846">Add Scheduled Reporting</a></li>
+      <li><a href="https://github.com/amidaware/tacticalrmm/issues/2231">Mesh File Download delay or Failure</a></li>
+      <li><a href="https://github.com/amidaware/tacticalrmm/issues/2265">usernames with spaces bug</a></li>
+    </ul>
+  </div>
 
-- [Policy Agent Exclusions Not Honored When Policy Applied to Site](https://github.com/amidaware/tacticalrmm/issues/2269)
-- [Add Scheduled Reporting](https://github.com/amidaware/tacticalrmm/issues/846)
-- [Mesh File Download delay or Failure](https://github.com/amidaware/tacticalrmm/issues/2231)
-- [usernames with spaces bug](https://github.com/amidaware/tacticalrmm/issues/2265)
+  <div class="roadmap-section">
+    <h2>Following Release</h2>
+    <ul>
+      <li><a href="https://github.com/amidaware/tacticalrmm/issues/1188">Windows Update Rework</a> - Complete overhaul of the Windows Update management system for better reliability and performance.</li>
+    </ul>
+  </div>
 
-## Following Release
-
-- [Windows Update Rework](https://github.com/amidaware/tacticalrmm/issues/1188) - Complete overhaul of the Windows Update management system for better reliability and performance.
-
-## Future Releases
-
-- [White Labeling](https://github.com/amidaware/tacticalrmm/issues/463) - Comprehensive white labeling solution allowing full customization of branding and UI elements.
+  <div class="roadmap-section">
+    <h2>Future Releases</h2>
+    <ul>
+      <li><a href="https://github.com/amidaware/tacticalrmm/issues/463">White Labeling</a> - Comprehensive white labeling solution allowing full customization of branding and UI elements.</li>
+    </ul>
+  </div>
+</div>
 
 <script>
 // Auto-populate GitHub issue data
@@ -139,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             issueBox.innerHTML = `
               <div class="issue-header">
-                <h4><a href="${issue.html_url}" target="_blank">${issue.title}</a></h4>
+                <div class="issue-title"><a href="${issue.html_url}" target="_blank">${issue.title}</a></div>
                 <span class="issue-number">#${issueNumber}</span>
               </div>
               <div class="issue-description">${description}</div>
@@ -170,17 +181,61 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <style>
+/* Create a grid layout for release sections */
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.25rem; /* Reduced from 0.5rem */
+  margin-top: 0.5rem; /* Reduced from 1rem */
+}
+
+.roadmap-section {
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  padding: 0.5rem; /* Reduced from 1rem */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.roadmap-section h2 {
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem !important; /* Reduced from 0.75rem */
+  text-align: center;
+  border: none !important;
+  background: linear-gradient(135deg, #5865f2, #7289da) !important;
+  color: white !important;
+  padding: 0.5rem !important; /* Reduced from 0.75rem */
+  border-radius: 6px !important;
+  width: 100% !important;
+  text-indent: 0 !important;
+}
+
+.roadmap-section ul {
+  margin: 0 !important; /* Remove default ul margins */
+  padding: 0 !important; /* Remove default ul padding */
+}
+
+[data-md-color-scheme="slate"] .roadmap-section h2 {
+  background: linear-gradient(135deg, #5865f2) !important;
+  color: white !important;
+}
+
 /* Hide default list styling for issue items */
 ul li:has(.issue-box) {
   list-style: none;
   margin-left: 0;
+  margin-bottom: 0.125rem; /* Reduced spacing between items */
+}
+
+ul li:has(.issue-box):last-child {
+  margin-bottom: 0; /* Remove margin from last item */
 }
 
 .issue-box {
   background: var(--md-default-bg-color);
   border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 8px;
-  margin: 0.25rem 0;
+  border-radius: 6px;
+  margin: 0; /* Removed vertical margins */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.2s ease;
   overflow: hidden;
@@ -196,45 +251,28 @@ ul li:has(.issue-box) {
   align-items: flex-start;
   background: #5865f2;
   color: white;
-  padding: 0.25rem 1rem;
+  padding: 0.4rem 0.6rem; /* Reduced from 0.5rem 0.75rem */
   margin: 0;
 }
 
-.issue-header h4 {
+.issue-title {
   margin: 0 !important;
   flex: 1;
-  padding-right: 1rem;
-  border: none !important;
-  border-top: none !important;
-  background: none !important;
+  padding-right: 0.5rem; /* Reduced from 0.75rem */
   color: white !important;
-  font-size: 1rem;
-  line-height: 1.3;
-  font-weight: 600;
-  width: auto !important;
-  text-indent: 0 !important;
-  margin-top: 0 !important;
+  font-size: 0.85rem; /* Reduced from 0.9rem */
+  line-height: 1.2;
+  font-weight: 400;
 }
 
-.issue-header h4 a {
+.issue-title a {
   color: white !important;
   text-decoration: none !important;
   font-weight: 600;
   display: inline;
 }
 
-.issue-header h4 a:hover {
-  text-decoration: underline !important;
-  color: white !important;
-}
-
-/* Override dark mode link styling specifically for issue boxes */
-[data-md-color-scheme="slate"] .issue-box a {
-  color: white !important;
-  text-decoration: none !important;
-}
-
-[data-md-color-scheme="slate"] .issue-box a:hover {
+.issue-title a:hover {
   text-decoration: underline !important;
   color: white !important;
 }
@@ -242,10 +280,10 @@ ul li:has(.issue-box) {
 .issue-number {
   background: rgba(255, 255, 255, 0.25);
   color: white !important;
-  padding: 0.4rem 0.6rem;
-  border-radius: 6px;
+  padding: 0.25rem 0.4rem; /* Reduced from 0.3rem 0.5rem */
+  border-radius: 4px;
   font-family: var(--md-code-font, monospace);
-  font-size: 0.85rem;
+  font-size: 0.7rem; /* Reduced from 0.75rem */
   font-weight: 600;
   white-space: nowrap;
   flex-shrink: 0;
@@ -254,22 +292,22 @@ ul li:has(.issue-box) {
 
 .issue-description {
   color: var(--md-default-fg-color--light);
-  font-size: 0.9rem;
-  line-height: 1.5;
-  margin-bottom: 0.25rem;
-  padding: 0.55rem;
+  font-size: 0.8rem; /* Reduced from 0.85rem */
+  line-height: 1.3; /* Reduced from 1.4 */
+  margin-bottom: 0; /* Removed bottom margin */
+  padding: 0.3rem; /* Reduced from 0.4rem */
 }
 
 .issue-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 0.25rem 0.25rem 0.25rem;
+  padding: 0 0.3rem 0.3rem 0.3rem; /* Reduced from 0.25rem */
 }
 
 .issue-stats-left {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.4rem; /* Reduced from 0.5rem */
   align-items: center;
 }
 
@@ -281,16 +319,16 @@ ul li:has(.issue-box) {
 .thumbs-up {
   background: var(--md-accent-bg-color);
   color: var(--md-accent-fg-color);
-  padding: 0.25rem 0.5rem;
-  border-radius: 12px;
-  font-size: 0.8rem;
+  padding: 0.15rem 0.3rem; /* Reduced from 0.2rem 0.4rem */
+  border-radius: 8px; /* Reduced from 10px */
+  font-size: 0.7rem; /* Reduced from 0.75rem */
   font-weight: 500;
 }
 
 .issue-state {
-  padding: 0.25rem 0.5rem;
-  border-radius: 12px;
-  font-size: 0.75rem;
+  padding: 0.15rem 0.3rem; /* Reduced from 0.2rem 0.4rem */
+  border-radius: 8px; /* Reduced from 10px */
+  font-size: 0.65rem; /* Reduced from 0.7rem */
   font-weight: 500;
   text-transform: uppercase;
 }
@@ -308,27 +346,43 @@ ul li:has(.issue-box) {
 .comments {
   background: var(--md-default-fg-color--lightest);
   color: var(--md-default-fg-color);
-  padding: 0.25rem 0.5rem;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 500;
+  padding: 0.15rem 0.3rem; /* Reduced from 0.2rem 0.4rem */
+  border-radius: 8px; /* Reduced from 10px */
+  font-size: 0.7rem; /* Reduced from 0.75rem */
+  font-weight: 200;
 }
 
 /* Responsive adjustments */
+@media (max-width: 1200px) {
+  .roadmap-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem; /* Reduced from 1rem */
+  }
+}
+
 @media (max-width: 768px) {
+  .roadmap-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem; /* Reduced from 0.75rem */
+  }
+  
+  .roadmap-section {
+    padding: 0.5rem; /* Reduced from 0.75rem */
+  }
+  
   .issue-header {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.2rem; /* Reduced from 0.25rem */
     align-items: flex-start;
   }
   
-  .issue-header h4 {
+  .issue-title {
     padding-right: 0;
   }
   
   .issue-footer {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.2rem; /* Reduced from 0.25rem */
     align-items: flex-start;
   }
   
