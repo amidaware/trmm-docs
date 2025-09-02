@@ -48,3 +48,7 @@ Upon completion of your purchase and receipt of your code signing token, your pa
 Support is available during business hours, Monday through Friday, regardless of location. 
 
 If any of the above plans don’t fit your needs, [contact us](https://support.amidaware.com) to discuss a custom support solution.
+
+### Discord Sponsors tag
+
+If you're a sponsor and would like a yellow name and access to the #sponsors channel and able to ask questions in #sponsors-reporting_requests please send a [ticket](https://support.amidaware.com/) with billing email address and Github username (and multiple staff usernames if desired).
