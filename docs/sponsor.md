@@ -51,4 +51,4 @@ If any of the above plans don’t fit your needs, [contact us](https://support.a
 
 ### Discord Sponsors tag
 
-If you're a sponsor and would like a yellow name and access to the #sponsors channel and able to ask questions in #sponsors-reporting_requests please send a [ticket](https://support.amidaware.com/) with billing email address and Discord username (and multiple staff usernames if desired).
+If you're a sponsor and would like a yellow name and access to the #sponsors channel and able to ask questions in #sponsors-reporting_requests please open a [ticket](https://support.amidaware.com/) with billing email address and Discord username (and multiple staff usernames if desired).
