@@ -1,22 +1,17 @@
 # Roadmap
 
-Thanks go to all you [sponsors](sponsor.md#sponsor-with-stripe-or-paypal) it's your support that lets us continue to improve TRMM.
+This roadmap provides a directional view of upcoming work. It is not exhaustive, and scope, sequencing, and timing may change. We also ship fixes and enhancements continuously in parallel with the items listed below.
 
 <div class="roadmap-grid">
   <div class="roadmap-section">
     <h2>Next Release</h2>
     <ul>
-      <li><a href="https://github.com/amidaware/tacticalrmm/issues/2269">Policy Agent Exclusions Not Honored When Policy Applied to Site</a></li>
+      
       <li><a href="https://github.com/amidaware/tacticalrmm/issues/846">Add Scheduled Reporting</a></li>
+      <li><a href="https://github.com/amidaware/tacticalrmm/issues/1973">Uninstall Software</a></li>
+      <li><a href="https://github.com/amidaware/tacticalrmm/issues/2269">Policy Agent Exclusions Not Honored When Policy Applied to Site</a></li>
       <li><a href="https://github.com/amidaware/tacticalrmm/issues/2231">Mesh File Download delay or Failure</a></li>
       <li><a href="https://github.com/amidaware/tacticalrmm/issues/2265">usernames with spaces bug</a></li>
-    </ul>
-  </div>
-
-  <div class="roadmap-section">
-    <h2>Following Release</h2>
-    <ul>
-      <li><a href="https://github.com/amidaware/tacticalrmm/issues/1188">Windows Update Rework</a> - Complete overhaul of the Windows Update management system for better reliability and performance.</li>
     </ul>
   </div>
 
@@ -24,6 +19,9 @@ Thanks go to all you [sponsors](sponsor.md#sponsor-with-stripe-or-paypal) it's y
     <h2>Future Releases</h2>
     <ul>
       <li><a href="https://github.com/amidaware/tacticalrmm/issues/463">White Labeling</a> - Comprehensive white labeling solution allowing full customization of branding and UI elements.</li>
+      <li><a href="https://github.com/amidaware/tacticalrmm/issues/1188">Windows Update Rework</a> - Complete overhaul of the Windows Update management system for better reliability and performance.</li>
+      <li><a href="https://github.com/amidaware/tacticalrmm/issues/653">Tagging/Groups </a></li>
+      <li><a href="https://github.com/amidaware/tacticalrmm/issues/1452">Background Registry Editor</a></li>
     </ul>
   </div>
 </div>
@@ -78,22 +76,18 @@ document.addEventListener('DOMContentLoaded', function() {
             if (dashIndex > -1) {
               // Use custom description provided after the dash
               description = listItemText.substring(dashIndex + 3).trim();
-              console.log('Using custom description:', description);
             } else if (issue.body && issue.body.trim()) {
               // Auto-extract from GitHub issue
               const body = issue.body.trim();
               
-              console.log('Issue body:', body); // Debug log
               
               // Look for "Describe the bug" section with more flexible regex
               const bugDescMatch = body.match(/Describe the bug\s*\r?\n([^]*?)(?:\r?\n\r?\n|$)/i);
               
-              console.log('Bug desc match:', bugDescMatch); // Debug log
-              
+
               if (bugDescMatch && bugDescMatch[1]) {
                 description = bugDescMatch[1].trim();
-                console.log('Raw description:', description); // Debug log
-                
+
                 // Take first sentence or up to 200 chars
                 const firstSentence = description.split(/[.!?]+/)[0];
                 if (firstSentence && firstSentence.length > 20) {
@@ -141,7 +135,6 @@ document.addEventListener('DOMContentLoaded', function() {
               
               // Remove markdown formatting for display
               description = description.replace(/[#*`\[\]]/g, '').replace(/\s+/g, ' ').trim();
-              console.log('Final description:', description); // Debug log
             }
             
             // Get reactions and comments
@@ -170,10 +163,8 @@ document.addEventListener('DOMContentLoaded', function() {
             li.appendChild(issueBox);
           }
         } else {
-          console.log('Failed to fetch issue:', response.status, response.statusText);
         }
       } catch (error) {
-        console.log('Error fetching issue data for:', url, error);
       }
     }
   });
@@ -184,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
 /* Create a grid layout for release sections */
 .roadmap-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 0.25rem; /* Reduced from 0.5rem */
   margin-top: 0.5rem; /* Reduced from 1rem */
 }

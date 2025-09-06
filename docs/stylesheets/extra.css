@@ -1,7 +1,7 @@
 /* Maximum space for text block */
 .md-grid {
-    max-width: 100% !important; /* Changed from 75% to 100% for full width */
-    margin: 0 !important; /* Remove default margins */
+    max-width: 80% !important; /* Changed from 75% to 100% for full width */
+    /* margin: 0 !important; /* Remove default margins */
   }
 
 .md-header {
