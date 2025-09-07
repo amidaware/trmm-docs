@@ -22,6 +22,8 @@ This roadmap provides a directional view of upcoming work. It is not exhaustive,
       <li><a href="https://github.com/amidaware/tacticalrmm/issues/1188">Windows Update Rework</a> - Complete overhaul of the Windows Update management system for better reliability and performance.</li>
       <li><a href="https://github.com/amidaware/tacticalrmm/issues/653">Tagging/Groups </a></li>
       <li><a href="https://github.com/amidaware/tacticalrmm/issues/1452">Background Registry Editor</a></li>
+      <li><a href="https://github.com/amidaware/tacticalrmm/issues/1149">Bulk Edit Agents</a></li>
+      <li><a href="https://github.com/amidaware/tacticalrmm/issues/308">customizable columns in the agent list</a></li>
     </ul>
   </div>
 </div>
