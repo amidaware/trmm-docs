@@ -8,7 +8,7 @@ This roadmap provides a directional view of upcoming work. It is not exhaustive,
     <ul>
       
       <li><a href="https://github.com/amidaware/tacticalrmm/issues/846">Add Scheduled Reporting</a></li>
-      <li><a href="https://github.com/amidaware/tacticalrmm/issues/1973">Uninstall Software</a></li>
+      <li><a href="https://github.com/amidaware/tacticalrmm/issues/1973">Uninstall Software</a> - Be able to remove software from the software tab under an agent.</li>
       <li><a href="https://github.com/amidaware/tacticalrmm/issues/2269">Policy Agent Exclusions Not Honored When Policy Applied to Site</a></li>
       <li><a href="https://github.com/amidaware/tacticalrmm/issues/2231">Mesh File Download delay or Failure</a></li>
       <li><a href="https://github.com/amidaware/tacticalrmm/issues/2265">usernames with spaces bug</a></li>

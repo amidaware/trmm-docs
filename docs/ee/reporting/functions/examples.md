@@ -45,7 +45,7 @@ Want quick searchable agent status with more data? Load it locally!
 The `Restrict Summary` button is for only showing agents that are offline and have an overdue alert set (eg critical machines). If it's on a hands off device make sure you set the refresh every so it's reloading data regularly.
 
 <div class="video-wrapper">
-  <iframe width="400" height="225" src="https://www.youtube.com/embed/OtV2M5uYj_k" frameborder="0" allowfullscreen></iframe>
+  <iframe width="400" height="225" src="https://www.youtube.com/embed/gBiDNSGh-2U" frameborder="0" allowfullscreen></iframe>
 </div>
 
 ## Software Inventory
