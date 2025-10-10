@@ -209,54 +209,65 @@ example for the **Custom Field 2** property
 This will allow injecting model @property fields into the data. The current supported
 fields are:
 
-Agent 
-  * client
-  * timezone
-  * is_posix
-  * arch
-  * status
-  * checks
-  * pending_actions_count
-  * cpu_model
-  * graphics
-  * local_ips
-  * make_model
-  * physical_disks
-  * serial_number
+**Agent**
 
-AgentCustomField
-  * value
+* client
+* timezone
+* is_posix
+* arch
+* status
+* checks
+* pending_actions_count
+* cpu_model
+* graphics
+* local_ips
+* make_model
+* physical_disks
+* serial_number
 
-Alert
-  * assigned_agent
-  * site
-  * client
-  * get_result
+**AgentCustomField**
 
-Policy
-  * is_default_server_policy
-  * is_default_workstation_policy
+* value
+
+**Alert**
+
+* assigned_agent
+* site
+* client
+* get_result
+
+**Policy**
+
+* is_default_server_policy
+* is_default_workstation_policy
 
 Automated Task
-  * schedule
 
-Check
-  * readable_desc
+* schedule
 
-Check Result
-  * history_info
+**Check**
 
-CLIENT_PROPERTIES
-  * live_agent_count
+* readable_desc
 
-Site
-  * live_agent_count
+**CheckResult**
 
-Client Custom Field
-  * value
+* history_info
 
-Site Custom Field
-  * value
+**Client**
+
+* live_agent_count
+
+**Site**
+
+* live_agent_count
+
+**Client Custom Field**
+
+* value
+
+**Site Custom Field**
+
+* value
 
 We can pull this data in a data query like this:
 
@@ -272,6 +283,7 @@ data_sources:
           - status
           - is_posix
           - make_model
+          - cpu_model
     checks:
       model: check
       properties:
