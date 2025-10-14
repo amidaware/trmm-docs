@@ -204,6 +204,101 @@ You can access the custom field data for the clients data query like this:
 Note that you can't use dot notation for a property if it has spaces. See the above 
 example for the **Custom Field 2** property
 
+### properties - array of strings
+
+This will allow injecting model @property fields into the data. The current supported
+fields are:
+
+**Agent**
+
+* client
+* timezone
+* is_posix
+* arch
+* status
+* checks
+* pending_actions_count
+* cpu_model
+* graphics
+* local_ips
+* make_model
+* physical_disks
+* serial_number
+
+**AgentCustomField**
+
+* value
+
+**Alert**
+
+* assigned_agent
+* site
+* client
+* get_result
+
+**Policy**
+
+* is_default_server_policy
+* is_default_workstation_policy
+
+Automated Task
+
+* schedule
+
+**Check**
+
+* readable_desc
+
+**CheckResult**
+
+* history_info
+
+**Client**
+
+* live_agent_count
+
+**Site**
+
+* live_agent_count
+
+**Client Custom Field**
+
+* value
+
+**Site Custom Field**
+
+* value
+
+We can pull this data in a data query like this:
+
+```yaml
+data_sources:
+    agents:
+        model: agent
+        only:
+          - hostname
+          - operating_system
+          - plat
+        properties:
+          - status
+          - is_posix
+          - make_model
+          - cpu_model
+    checks:
+      model: check
+      properties:
+        - readable_desc
+```
+
+You can access the property data directly on the agent in the template like this:
+
+```
+{% for item in data_source.agents %}
+{{ item.status }}
+{{ item.make_model }}
+{% endfor %}
+```
+
 ### [filter](https://docs.djangoproject.com/en/4.2/ref/models/querysets/#filter) - object
 
 Using the filter property, you can filter the amount of rows that are returned. This
