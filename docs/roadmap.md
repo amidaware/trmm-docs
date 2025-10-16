@@ -6,22 +6,16 @@ This roadmap provides a directional view of upcoming work. It is not exhaustive,
   <div class="roadmap-section">
     <h2>Next Release</h2>
     <ul>
-      
-      <li><a href="https://github.com/amidaware/tacticalrmm/issues/846">Add Scheduled Reporting</a></li>
-      <li><a href="https://github.com/amidaware/tacticalrmm/issues/1973">Uninstall Software</a> - Be able to remove software from the software tab under an agent.</li>
-      <li><a href="https://github.com/amidaware/tacticalrmm/issues/2269">Policy Agent Exclusions Not Honored When Policy Applied to Site</a></li>
-      <li><a href="https://github.com/amidaware/tacticalrmm/issues/2231">Mesh File Download delay or Failure</a></li>
-      <li><a href="https://github.com/amidaware/tacticalrmm/issues/2265">usernames with spaces bug</a></li>
+      <li><a href="https://github.com/amidaware/tacticalrmm/issues/463">White Labeling</a> - Comprehensive white labeling solution allowing full customization of branding and UI elements.</li>
+      <li><a href="https://github.com/amidaware/tacticalrmm/issues/1452">Background Registry Editor</a></li>
     </ul>
   </div>
 
   <div class="roadmap-section">
     <h2>Future Releases</h2>
     <ul>
-      <li><a href="https://github.com/amidaware/tacticalrmm/issues/463">White Labeling</a> - Comprehensive white labeling solution allowing full customization of branding and UI elements.</li>
       <li><a href="https://github.com/amidaware/tacticalrmm/issues/1188">Windows Update Rework</a> - Complete overhaul of the Windows Update management system for better reliability and performance.</li>
       <li><a href="https://github.com/amidaware/tacticalrmm/issues/653">Tagging/Groups </a></li>
-      <li><a href="https://github.com/amidaware/tacticalrmm/issues/1452">Background Registry Editor</a></li>
       <li><a href="https://github.com/amidaware/tacticalrmm/issues/1149">Bulk Edit Agents</a></li>
       <li><a href="https://github.com/amidaware/tacticalrmm/issues/308">customizable columns in the agent list</a></li>
     </ul>
