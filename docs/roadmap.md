@@ -18,6 +18,7 @@ This roadmap provides a directional view of upcoming work. It is not exhaustive,
       <li><a href="https://github.com/amidaware/tacticalrmm/issues/653">Tagging/Groups </a></li>
       <li><a href="https://github.com/amidaware/tacticalrmm/issues/1149">Bulk Edit Agents</a></li>
       <li><a href="https://github.com/amidaware/tacticalrmm/issues/308">customizable columns in the agent list</a></li>
+      <li><a href="https://github.com/amidaware/tacticalrmm/issues/39">Internationalization support</a></li>
     </ul>
   </div>
 </div>
