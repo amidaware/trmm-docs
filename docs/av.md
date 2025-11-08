@@ -9,7 +9,7 @@ For instance, Tactical RMM is designed to assist IT professionals and system adm
 
 Some antivirus companies adopt a slightly more nuanced approach by labeling these tools as "Security Threats" or "Riskware." While this is a less severe classification than labeling them as viruses or trojans, it still hinders users by quarantining or deleting the tools, effectively preventing their use. Moreover, the distinction between "Virus" and "Riskware" is lost on many users, leading to confusion and undue concern and why do they not class other RMMs the same?
 
-The issue of overzealous protection is not unique to Tactical RMM. Other developers, both small and large, encounter similar problems with antivirus software flagging their products without clear justification. Examples include utilities that do not even involve password recovery or system monitoring but still face unwarranted scrutiny and restriction. Infact we can see NirSoft 15 years ago wrote a [similar blog](https://blog.nirsoft.net/2009/05/17/antivirus-companies-cause-a-big-headache-to-small-developers/) about this.
+The issue of overzealous protection is not unique to Tactical RMM. Other developers, both small and large, encounter similar problems with antivirus software flagging their products without clear justification. Examples include utilities that do not even involve password recovery or system monitoring but still face unwarranted scrutiny and restriction. In fact we can see NirSoft 15 years ago wrote a [similar blog](https://blog.nirsoft.net/2009/05/17/antivirus-companies-cause-a-big-headache-to-small-developers/) about this.
 
 The challenge extends beyond individual developers to affect the broader ecosystem. Small developers, in particular, struggle with the ramifications of these false positives, lacking the resources and legal clout that larger companies possess to quickly address and resolve these issues.
 
@@ -27,6 +27,11 @@ Be aware there is also [a PowerShell script](https://github.com/amidaware/commun
 
 !!!note
     If you need to use 3rd party AV, add the necessary exclusions (see below for examples) and submit the exes as safe.
+
+## Your TODO List
+
+1. You need to manage your AV exclusions.
+2. If AV incorrectly flags TRMM agent or mesh agent, submit a report to the relevant AV vendor.
 
 ## Bitdefender Gravityzone
 
