@@ -35,6 +35,7 @@ nav:
       - "Scripting": functions/scripting.md
       - "SNMP Checks": functions/snmp_checks.md
       - "Single Sign-On (SSO)": ee/sso/sso.md
+      - "Software Tab": functions/software.md
       - "URL Actions": functions/url_actions.md
       - "User Interface Preferences": functions/user_ui.md
       - "Web Hooks": functions/webhooks.md
