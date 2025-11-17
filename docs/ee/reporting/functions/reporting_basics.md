@@ -38,6 +38,8 @@ will be substituted when the template is rendered. If the value of the variables
 an object, you can use dot notation to render the value like `{{ object.variable_name }}`. If there is
 a space in the name you can use `{{ object["variable name"] }}`.
 
+![data queries linked to variables](../images/report_variables.png)
+
 ### Variable analysis
 
 With data sources and other dynamic sources, it can be difficult to view what the data
