@@ -1,9 +1,5 @@
 # Troubleshooting
 
-## I just updated and now it doesn't work.
-
-It's just a blank white screen, nothing will load when I refresh. [See](faq.md#i-just-updated-and-now-it-doesnt-work).
-
 ## Server Troubleshooting Script
 
 If you've asked for help in [#support](https://discord.com/channels/736478043522072608/744282073870630912) please run this, and send a screenshot at the top of the thread created for troubleshooting your issue.
@@ -100,7 +96,7 @@ It will most probably be a CORS error which means you need to check your DNS set
 
 If you see an error about SSL or certificate expired, then your Let's Encrypt cert has probably expired and you'll need to renew it.
 
-Refer to the Let's Encrypt cert renewal instructions [here](update_server.md#keeping-your-lets-encrypt-ssl-certificate-up-to-date).
+Refer to the Let's Encrypt cert renewal instructions [here](update_server.md#keeping-your-ssl-certificates-up-to-date).
 
 ## Agents not installing or updating
 
@@ -134,7 +130,7 @@ The mesh installer is created at time of install. Make sure it's working by runn
 
 !!!warning
     As of v0.12.0 `Error 1005` usually means something doesn't match and / or the mesh username has to be all lower case.<br>
-    If you customize the "Mesh Device Group Name" in Tactical's settings you **MUST** also manually match that Mesh Group in mesh itself [because you must understand](mesh_integration.md#security-implications).
+    If you customize the "Mesh Device Group Name" in Tactical's settings you **MUST** also manually match that Mesh Group in mesh itself.
 
 [Collect Update debug logs for troubleshooting agents that don't update](update_agents.md#manually-updating-from-the-command-line-on-the-agent)
 

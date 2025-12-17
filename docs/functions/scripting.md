@@ -262,7 +262,7 @@ See a full list of possible built-in variables [Here](../script_variables.md)
 
 Tactical RMM supports pulling data from custom fields using the {{model.custom_field_name}} syntax.
 
-See [Using Custom Fields in Scripts](custom_fields.md#Using Custom Fields in Scripts).
+See [Using Custom Fields in Scripts](custom_fields.md#using-custom-fields-in-scripts).
 
 ### Getting values from the Global Keystore
 
