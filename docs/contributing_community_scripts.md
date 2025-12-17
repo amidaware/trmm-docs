@@ -184,7 +184,11 @@ param(
 
 ## Script Parameters
 
+Easy for agent to see information passed this way. Shows up in logs. Has difficulty with parsing quotes `"` and spaces.
 
+## Script Env vars (Environment Variables)
+
+Good for things you want kept secret (API keys), and things that have quotes `"` and spaces in them (eg paths).
 
 ## Useful Reference Script Examples
 
