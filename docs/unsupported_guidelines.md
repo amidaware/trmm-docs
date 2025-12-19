@@ -32,7 +32,7 @@ Should you employ any one or several of these unsupported technologies:
 
 Please let us know **BEFORE** we start troubleshooting and looking for software bugs that you are... in fact... a 🧙... and using something non-standard. 😉 
 
-These are "unsupported" because then we are troubleshooting **your** environment, not Tactical RMM. You need to have knowledge about how things work if you're going to stray from the [easy path](install_server.md#option-1-easy-install) of the standard install. 
+These are "unsupported" because then we are troubleshooting **your** environment, not Tactical RMM. You need to have knowledge about how things work if you're going to stray from the [easy path](install_server.md#option-1-easy-install-on-a-vps) of the standard install. 
 
 Help us maximize keeping developer time and resources focused on new releases... not supporting goosechases.
 

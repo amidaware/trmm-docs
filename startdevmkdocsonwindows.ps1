@@ -1,6 +1,7 @@
 # This is for running mkdocs locally on Windows.
 # Make sure you change directory to your docs folder before starting this process
 # Use the "Run Selection" in VS Code to run the code blocks as-needed
+# On major version changes of Python, you may need to re-create the virtual environment. Just delete the .\env folder and re-run.
 
 # In case you have ExecutionPolicy problems
 Set-ExecutionPolicy -Scope CurrentUser Unrestricted
@@ -16,7 +17,7 @@ pip install -r requirements.txt
 
 # Run mkdocs and look at changes as you make them
 Start-Process http://localhost:8005 #Opens Browser
-mkdocs serve
+mkdocs serve --livereload
 
 # Deactivate Python environment
 deactivate

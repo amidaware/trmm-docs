@@ -1,13 +1,5 @@
 # Updating the RMM
 
-[Keeping your Linux server up to date](#keeping-your-linux-server-up-to-date)
-
-[Updating to the latest RMM version](#updating-to-the-latest-rmm-version)
-
-[Keeping your Let's Encrypt certificate up to date](#keeping-your-lets-encrypt-ssl-certificate-up-to-date)
-
-[Video Walkthru](#video-walkthru)
-
 ## Keeping your Linux server up to date
 
 You should periodically run `sudo apt update` and `sudo apt -y upgrade` to keep your server up to date.
