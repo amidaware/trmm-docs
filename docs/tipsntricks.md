@@ -105,7 +105,21 @@ At the top right of your web administration interface, click your **Username > p
 
 ![User Preferences](images/tipsntricks_filters.png)
 
-*****
+## URL Search Filter
+
+You can append `/?search=XXX` to the web URL to create a saved filter. This allows you to:
+
+- Quickly search for specific agents, computers, or clients
+- Create bookmarks for frequently accessed filtered views
+- Share filtered views with team members via URL
+
+**Example**: 
+```
+https://rmm.yourdomain.com/?search=server01
+```
+
+This will automatically populate the search filter with "server01" when the page loads.
+
 ## MeshCentral
 
 Tactical RMM is actually 2 products: An RMM service with agent, and a secondary [MeshCentral](https://github.com/Ylianst/MeshCentral) install that handles the `Take Control` and `Remote Background` stuff.
