@@ -14,6 +14,7 @@ It uses an [agent](https://github.com/amidaware/rmmagent) written in Golang and 
 - TeamViewer-like remote desktop control
 - Real-time remote shell
 - Remote file browser (download and upload files)
+- Windows Registry Editor
 - Remote command and script execution (bash, batch, powershell, python, nushell and deno scripts)
 - Event log viewer
 - Services management
