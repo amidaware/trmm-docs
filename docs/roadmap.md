@@ -7,7 +7,6 @@ This roadmap provides a directional view of upcoming work. It is not exhaustive,
     <h2>Next Release</h2>
     <ul>
       <li><a href="https://github.com/amidaware/tacticalrmm/issues/463">White Labeling</a> - Comprehensive white labeling solution allowing full customization of branding and UI elements.</li>
-      <li><a href="https://github.com/amidaware/tacticalrmm/issues/1452">Background Registry Editor</a></li>
     </ul>
   </div>
 
