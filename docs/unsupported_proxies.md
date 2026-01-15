@@ -989,7 +989,7 @@ Navigate to `Services` -> `HAProxy` -> `Settings`
 ## Apache Proxy
 HowTo - Proxy on Apache
 ### TRMM SERVER
-Edit file /etc/nginx/sites-available/rmm.conf
+Edit file /etc/nginx/sites-enabled/rmm.conf
 Add the lines from 'real_ip' module inside server tag:
 
 ```conf
