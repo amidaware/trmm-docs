@@ -38,7 +38,7 @@ sudo chown tactical:tactical /path/to/your/fullchain.pem /path/to/your/privkey.p
 sudo chmod 440 /path/to/your/fullchain.pem /path/to/your/privkey.pem
 ```
 
-3. Update all instances of `ssl_certificate` and `ssl_certificate_key` in the three Nginx configuration files located in `/etc/nginx/sites-available` to point to your certificate and private key paths.
+3. Update all instances of `ssl_certificate` and `ssl_certificate_key` in the three Nginx configuration files located in `/etc/nginx/sites-enabled` to point to your certificate and private key paths.
 
 4. Restart the services: `sudo systemctl restart nginx meshcentral rmm daphne`
 
