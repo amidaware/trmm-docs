@@ -26,8 +26,6 @@ You can also **right click on a site > Install Agent**. This will automatically 
 
 ![siteagentinstall](images/siteagentinstall.png)
 
-
-
 ## Manual
 
 ![manualinstall](./images/manual_install.png)
@@ -42,7 +40,7 @@ This or the Powershell method are also the preferred method of installing if you
 
 The dynamically generated exe is a standalone binary which is simply a wrapper around the Manual install method, using a single exe / command without the need to pass any command line flags to the installer.
 All it does is download the Inno Setup installer and call it using predefined command line args that you choose from the web UI.
-It "bakes" the command line args into the executable. 
+It "bakes" the command line args into the executable.
 Please note that using this method can result in [this](./faq.md#help-ive-been-hacked-and-there-are-weird-agents-appearing-in-my-tactical-rmm).
 
 ![dynamicinstall](./images/dynamic_exe.png)
@@ -52,7 +50,6 @@ Please note that using this method can result in [this](./faq.md#help-ive-been-h
 The PowerShell method is also a wrapper around the Manual install method and functionally identical to the dynamically generated EXE installer but in powershell format instead of EXE format.
 
 ![powershellinstall](./images/powershell_install.png)
-
 
 !!!tip
     You can reuse the installer for any of the deployment methods, you don't need to constantly create a new installer for each new agent.<br/>
@@ -123,30 +120,26 @@ If you want to deploy the TRMM agent using AD, Intune, Mesh, TeamViewer, Group P
         @echo off
 
         REM Setup deployment URL
-        set "DeploymentURL="
+        set "DeploymentURL=!!!REPLACEME!!!"
 
-        set "Name="
-        for /f "usebackq tokens=* delims=" %%# in (
-            `wmic service where "name like 'tacticalrmm'" get Name /Format:Value`
-        ) do (
-            for /f "tokens=* delims=" %%g in ("%%#") do set "%%g"
+        for /f "delims=" %%g in ('powershell -NoProfile -Command "(Get-Service -Name tacticalrmm -ErrorAction SilentlyContinue).Name"') do (
+        set "Name=%%g"
         )
 
         if not defined Name (
-            echo Tactical RMM not found, installing now.
-            if not exist c:\ProgramData\TacticalRMM\temp md c:\ProgramData\TacticalRMM\temp
-            powershell Set-ExecutionPolicy -ExecutionPolicy Unrestricted
-            powershell Add-MpPreference -ExclusionPath "C:\Program Files\TacticalAgent\*"
-            powershell Add-MpPreference -ExclusionPath "C:\Program Files\Mesh Agent\*"
-            powershell Add-MpPreference -ExclusionPath C:\ProgramData\TacticalRMM\*
-            cd c:\ProgramData\TacticalRMM\temp
-            powershell Invoke-WebRequest "%DeploymentURL%" -Outfile tactical.exe
-            REM"C:\Program Files\TacticalAgent\unins000.exe" /VERYSILENT
-            tactical.exe
-            rem exit /b 1
+        echo Tactical RMM not found, installing now.
+        if not exist "C:\ProgramData\TacticalRMM\temp" md "C:\ProgramData\TacticalRMM\temp"
+        powershell Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
+        powershell Add-MpPreference -ExclusionPath "C:\Program Files\TacticalAgent\*"
+        powershell Add-MpPreference -ExclusionPath "C:\Program Files\Mesh Agent\*"
+        powershell Add-MpPreference -ExclusionPath "C:\ProgramData\TacticalRMM\*"
+        powershell Add-MpPreference -ExclusionProcess "C:\Windows\Temp\is-*.tmp\tacticalagent*"
+        cd /d "C:\ProgramData\TacticalRMM\temp"
+        powershell Invoke-WebRequest "%DeploymentURL%" -Outfile tactical.exe
+        tactical.exe
         ) else (
-            echo Tactical RMM already installed Exiting
-        Exit 0
+        echo Tactical RMM already installed Exiting
+        exit 0
         )
         ```
 
@@ -158,6 +151,10 @@ If you want to deploy the TRMM agent using AD, Intune, Mesh, TeamViewer, Group P
         $agentstoinstall = 1 # Replace with the number of agents to install if greater than 20
 
         # Do not modify below here
+        Add-MpPreference -ExclusionPath "C:\Program Files\Mesh Agent\*"
+        Add-MpPreference -ExclusionPath "C:\Program Files\TacticalAgent\*"
+        Add-MpPreference -ExclusionPath "C:\ProgramData\TacticalRMM\*"
+        Add-MpPreference -ExclusionProcess "C:\Windows\Temp\is-*.tmp\tacticalagent*"
         $randomSleepTime = if ($agentstoinstall -gt 1) { Get-Random -Minimum 1 -Maximum (($agentstoinstall + 1) * 2) } else { 1 }
         Start-Sleep -Seconds $randomSleepTime
         Invoke-WebRequest $deploymenturl -OutFile (New-Item -Path "c:\ProgramData\TacticalRMM\temp\trmminstall.exe" -Force)
@@ -175,6 +172,37 @@ If you want to deploy the TRMM agent using AD, Intune, Mesh, TeamViewer, Group P
         * Generate a deployment link with an expiry date set to very far in the future, then access the link to download the executable.
         * [Create the msi](https://docs.microsoft.com/en-us/mem/configmgr/develop/apps/how-to-create-the-windows-installer-file-msi)
         * Apply via GPO software deployment to the appropriate machines
+
+    === ":material-powershell: AD GPO"
+
+        For Active Directory Group Policy Deployment you can deploy via Batch File. It'll check to see if installed and only install when missing.
+
+        ```bat
+        @echo off
+
+        REM Setup deployment URL
+        set "DeploymentURL=snip"
+
+        SC query "TacticalRMM" >nul 2>&1
+            
+        IF %ERRORLEVEL% EQU 1060 (
+            echo Tactical RMM not found, installing now.
+            if not exist c:\ProgramData\TacticalRMM\temp md c:\ProgramData\TacticalRMM\temp
+            powershell Set-ExecutionPolicy -ExecutionPolicy Unrestricted
+            powershell Add-MpPreference -ExclusionPath "C:\Program Files\TacticalAgent\*"
+            powershell Add-MpPreference -ExclusionPath "C:\Program Files\Mesh Agent\*"
+            powershell Add-MpPreference -ExclusionPath C:\ProgramData\TacticalRMM\*
+            powershell Add-MpPreference -ExclusionProcess "C:\Windows\Temp\is-*.tmp\tacticalagent*"
+            cd c:\ProgramData\TacticalRMM\temp
+            powershell Invoke-WebRequest "%DeploymentURL%" -Outfile tactical.exe
+            tactical.exe
+            exit /b 0
+        ) ELSE (
+            REM Service exists (it might be running or stopped, but it is installed)
+            EXIT /B 0
+        )
+        ```
+
 
 ## Script for Full Agent Uninstall
 
@@ -260,7 +288,7 @@ chmod +x rmm.sh
 
     ![vnc1](images/mac_vnc1.png)
 
-    Top switch is the only item needed for TRMM access. 
+    Top switch is the only item needed for TRMM access.
 
     Do not enable anything else.
 
@@ -273,7 +301,7 @@ chmod +x rmm.sh
         This enabled the native VNC client on MacOS. If you don't limit in the `Allow access for` to `Only theses users` make certain you don't have other users or users without passwords.
 
 === ":fontawesome-brands-apple: macOS 14 Sonoma and earlier"
-        
+
     Step 1: Open System Preferences
     Click on the Apple logo in the top-left corner of your screen.
     Select System Preferences from the dropdown menu.

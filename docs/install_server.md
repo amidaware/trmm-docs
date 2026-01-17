@@ -115,21 +115,26 @@ ufw enable && ufw reload
 
 ### Step 4 - Create DNS A records
 
-!!!warning
-    All 3 domain names MUST be at the same subdomain level because you only get one LetsEncrypt wildcard cert, and it'll only apply to that level of DNS name.
+Tactical RMM requires 3 separate subdomains: **Frontend** (`rmm`), **Backend API** (`api`), and **MeshCentral** (`mesh`). You can use different names if these are already in use.
+
+!!!warning "Important: All subdomains must be at the same level"
+    LetsEncrypt wildcard certificates cover only one subdomain level. All three domains must match that depth, and avoid nesting beyond 3 levels.
+
+    | Status | Example Domains | Notes |
+    |--------|-----------------|-------|
+    | ✅ **Best** | `rmm.example.com`<br>`api.example.com`<br>`mesh.example.com`<br>`_acme-challenge.example.com` | 2 levels (recommended) |
+    | ✅ **Good** | `rmm.corp.example.com`<br>`api.corp.example.com`<br>`mesh.corp.example.com`<br>`_acme-challenge.corp.example.com` | 3 levels, all at same depth |
+    | ✅ **Good** | `rmm.example.co.uk`<br>`api.example.co.uk`<br>`mesh.example.co.uk`<br>`_acme-challenge.example.co.uk` | Country TLD (`.co.uk` = 1 layer) |
+    | ❌ **Bad** | `rmm.example.com`<br>`api.rmm.example.com`<br>`mesh.rmm.example.com`<br>`_acme-challenge.example.com` | Inconsistent levels |
+    | ❌ **Bad** | `rmm.corp.us.example.com`<br>`api.corp.us.example.com`<br>`mesh.corp.us.example.com` | Too deep (4 levels) |
 
 We'll be using `example.com` as our domain for this example.
 
-!!!info
-    The RMM uses 3 different sites. The Vue frontend e.g. `rmm.example.com` which is where you'll be accessing your RMM from the browser, the REST backend e.g. `api.example.com` and MeshCentral e.g. `mesh.example.com`<br>
-    `rmm.` `api.` and `mesh.` are what we recommend, but you can use whatever you want if they're already in use.
-
-1. Get the public IP of your server with `curl https://icanhazip.tacticalrmm.io`
+1. Get the public IP of your server with `curl https://icanhazip.tacticalrmm.io`.
 2. Open the DNS manager of wherever the domain you purchased is hosted.
 3. Create 3 A records: `rmm`, `api` and `mesh` and point them to the public IP of your server:
 
 ![arecords](images/arecords.png)
-
 
 ### Step 5 - Run the install script
 
