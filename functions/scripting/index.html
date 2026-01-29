@@ -1,0 +1,4490 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A remote monitoring and management tool">
+      
+      
+        <meta name="author" content="amidaware">
+      
+      
+        <link rel="canonical" href="https://docs.tacticalrmm.com/functions/scripting/">
+      
+      
+        <link rel="prev" href="../settings_override/">
+      
+      
+        <link rel="next" href="../snmp_checks/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Scripting - Tactical RMM Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/neoteroi-mkdocs.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#scripting" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Tactical RMM Documentation" class="md-header__button md-logo" aria-label="Tactical RMM Documentation" data-md-component="logo">
+      
+  <img src="../../images/onit.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tactical RMM Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Scripting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="light" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/amidaware/tacticalrmm/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    amidaware/tacticalrmm
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Tactical RMM Documentation" class="md-nav__button md-logo" aria-label="Tactical RMM Documentation" data-md-component="logo">
+      
+  <img src="../../images/onit.ico" alt="logo">
+
+    </a>
+    Tactical RMM Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/amidaware/tacticalrmm/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    amidaware/tacticalrmm
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sponsor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sponsor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code_signing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Signing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide_gettingstarted/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RMM Server Installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RMM Server Installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install_considerations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install Considerations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Traditional Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install_docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RMM Server Updating
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RMM Server Updating
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../update_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updating the RMM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../update_docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updating the RMM (Docker)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Agents
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../update_agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updating Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functionality
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Functionality
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howitallworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How it all Works
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alerting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alerting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automated_checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automated_tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automated Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automation_policies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automation Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom_fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../django_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Django Admin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../emailsms_alert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Email & SMS Alerts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../keystore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Keystore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintenance_mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remote_bg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote Background
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings_override/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overriding / Customizing Default Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scripting
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adding-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Scripts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloading-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downloading Scripts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#community-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Community Scripts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Community Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hiding-community-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hiding Community Scripts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Scripts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-run-on-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual run on agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#script-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Script Arguments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Script Arguments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-script-on-many-agents-at-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run Script on many agents at once
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-command-on-many-agents-at-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run Command on many agents at once
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#script-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Script Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alert-failureresolve-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alert Failure/Resolve Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-dashboard-data-in-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using dashboard data in scripts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using dashboard data in scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-custom-field-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Custom Field values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-values-from-the-global-keystore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting values from the Global Keystore
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-snippets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Script Snippets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Script Snippets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-script-snippets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Script Snippets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-script-snippets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Script Snippets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powershell-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PowerShell 7
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-on-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python on windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-on-posix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python on posix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-version-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python version references
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#targeting-a-specific-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Targeting a specific version
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nushell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nushell
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nushell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-nushell-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Nushell Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deno
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deno">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-deno-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Deno Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Scripts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-powershell-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example PowerShell Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-shell-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Shell Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snmp_checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNMP Checks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/sso/sso/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Single Sign-On (SSO)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Tab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../url_actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    URL Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Interface Preferences
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webhooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Hooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web_terminal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Terminal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../script_variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference: Script Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reporting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/reporting_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/reporting_basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - The Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/reporting_basetemplates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Base Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/reporting_variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/reporting_dataqueries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Data Queries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/reporting_assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Assets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/tipsntricks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Tips n' Tricks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../av/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Antivirus Exclusions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../management_cmds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Management Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mesh_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MeshCentral Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" >
+        
+          
+          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3rd Party Integrations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3rd Party Integrations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_grafana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grafana
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_anydesk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AnyDesk
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_n-able-takecontrol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    N-Able
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_bomgar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bomgar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_screenconnect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ConnectWise Control / ScreenConnect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_rustdesk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RustDesk
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_splashtop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Splashtop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_supremo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supremo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_teamviewer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TeamViewer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_bitdefender_gravityzone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BitDefender GravityZone
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_bitdefender_total_security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BitDefender Total Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_zammad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zammad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_dashy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
+        
+          
+          <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unsupported Extras
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_20">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unsupported Extras
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unsupported_guidelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unsupported Guidelines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unsupported_scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unsupported Configs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../securing_nginx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Securing nginx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unsupported_proxies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unsupported Proxies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unsupported_synology_docker_install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installing in Synology Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unsupported_platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installing on other platforms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tipsntricks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tips n' Tricks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" >
+        
+          
+          <label class="md-nav__link" for="__nav_22" id="__nav_22_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_22">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contributing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing to Docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing_community_scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing to Community Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing_reporting_templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing to Reporting Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing_using_browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing using a browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing_using_vscode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing using VS Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing_using_docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing using Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing_using_a_remote_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing using a Remote Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adding-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Scripts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloading-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downloading Scripts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#community-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Community Scripts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Community Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hiding-community-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hiding Community Scripts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Scripts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-run-on-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual run on agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#script-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Script Arguments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Script Arguments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-script-on-many-agents-at-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run Script on many agents at once
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-command-on-many-agents-at-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run Command on many agents at once
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#script-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Script Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alert-failureresolve-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alert Failure/Resolve Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-dashboard-data-in-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using dashboard data in scripts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using dashboard data in scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-custom-field-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Custom Field values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-values-from-the-global-keystore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting values from the Global Keystore
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-snippets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Script Snippets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Script Snippets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-script-snippets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Script Snippets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-script-snippets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Script Snippets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powershell-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PowerShell 7
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-on-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python on windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-on-posix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python on posix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-version-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python version references
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#targeting-a-specific-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Targeting a specific version
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nushell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nushell
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nushell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-nushell-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Nushell Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deno
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deno">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-deno-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Deno Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Scripts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-powershell-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example PowerShell Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-shell-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Shell Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="scripting">Scripting<a class="headerlink" href="#scripting" title="Permanent link">&para;</a></h1>
+<p>Tactical RMM supports uploading existing scripts or creating new scripts from within the web interface.</p>
+<p>Windows agent languages supported:</p>
+<ul>
+<li>PowerShell</li>
+<li>Windows Batch</li>
+<li>Python</li>
+<li><a href="https://www.nushell.sh/">Nushell</a></li>
+<li><a href="https://deno.com/">Deno</a></li>
+</ul>
+<p>There is <a href="../../howitallworks/#runasuser-functionality">RunAsUser</a> functionality for Windows.</p>
+<p>Linux/Mac languages supported:</p>
+<ul>
+<li>Any language that is installed on the remote machine (use a shebang at the top of the script to set the interpreter)</li>
+<li>nu</li>
+<li>deno (Javascript and TypeScript)</li>
+</ul>
+<h2 id="adding-scripts">Adding Scripts<a class="headerlink" href="#adding-scripts" title="Permanent link">&para;</a></h2>
+<p>In the dashboard, browse to <strong>Settings &gt; Scripts Manager</strong>. Click the <strong>New</strong> button and select either Upload Script or New Script. The available options for scripts are:</p>
+<ul>
+<li><strong>Name</strong> - This identifies the script in the dashboard.</li>
+<li><strong>Description</strong> - Optional description for the script.</li>
+<li><strong>Category</strong> - Optional way to group similar scripts together.</li>
+<li>
+<p><strong>Type</strong> - This sets the language of the script. Available options are:</p>
+<ul>
+<li>PowerShell</li>
+<li>Windows Batch</li>
+<li>Python</li>
+<li>Shell (use for Linux/macOS scripts)</li>
+<li>Nushell</li>
+<li>Deno</li>
+</ul>
+</li>
+<li>
+<p><strong>Script Arguments</strong> - Optional way to set default arguments for scripts. These will auto populate when running scripts and can be changed at runtime. Logged on Windows Event Viewer &gt; Applications and Services Logs &gt; Microsoft &gt; Windows&gt; PowerShell &gt; Operational</p>
+</li>
+<li><strong>Environment vars</strong> - Optional way to set default arguments for scripts using Environment Variables. These will auto populate when running scripts and can be changed at runtime. Not logged, better to use when passing data you don't want logged</li>
+<li><strong>Default Timeout</strong> - Sets the default timeout of the script and will stop script execution if the duration surpasses the configured timeout. Can be changed at script runtime.</li>
+<li><strong>Favorite</strong> - Favorites the script.</li>
+</ul>
+<h2 id="downloading-scripts">Downloading Scripts<a class="headerlink" href="#downloading-scripts" title="Permanent link">&para;</a></h2>
+<p>To download a Tactical RMM Script, click on the script in the Script Manager to select it. Then click the <strong>Download Script</strong> button on the top. You can also right-click on the script and select download.</p>
+<h2 id="community-scripts">Community Scripts<a class="headerlink" href="#community-scripts" title="Permanent link">&para;</a></h2>
+<p>These are script that are built into Tactical RMM. They are provided and maintained by the <a href="https://github.com/amidaware/community-scripts">Tactical RMM community</a>. These scripts are updated whenever Tactical RMM is updated and can't be modified or deleted in the dashboard.</p>
+<h3 id="hiding-community-scripts">Hiding Community Scripts<a class="headerlink" href="#hiding-community-scripts" title="Permanent link">&para;</a></h3>
+<p>You can choose to hide community script throughout the dashboard by opening <strong>Script Manager</strong> and clicking the <strong>Show/Hide Community Scripts</strong> toggle button.</p>
+<h2 id="using-scripts">Using Scripts<a class="headerlink" href="#using-scripts" title="Permanent link">&para;</a></h2>
+<h3 id="manual-run-on-agent">Manual run on agent<a class="headerlink" href="#manual-run-on-agent" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Agent Table</strong>, you can right-click on an agent and select <strong>Run Script</strong>. You have the options of:</p>
+<ul>
+<li><strong>Wait for Output</strong> - Runs the script and waits for the script to finish running and displays the output.</li>
+<li><strong>Fire and Forget</strong> - Starts the script and does not wait for output.</li>
+<li><strong>Email Output</strong> - Starts the script and will email the output. Allows for using the default email address in the global settings or adding a new email address.</li>
+<li><strong>Save as Note</strong> - Saves the output as a Note that can be views in the agent Notes tab.</li>
+<li><strong>Collector</strong> - Saves to output to the specified custom field.</li>
+</ul>
+<p>There is also an option on the agent context menu called <strong>Run Favorited Script</strong>. This will pre-populate the script run dialog with the script of your choice.</p>
+<p><a href="../../howitallworks/#windows-agent">Script Execution Process</a></p>
+<h3 id="script-arguments">Script Arguments<a class="headerlink" href="#script-arguments" title="Permanent link">&para;</a></h3>
+<p>The <code>Script Arguments</code> field should be pre-filled with information for any script that can accept or requires parameters. <a href="../../tipsntricks/#scripts">Use the (i)</a></p>
+<p style="background-color:#1e1e1e;">
+&nbsp;<span style=color:#d4d4d4><</span><span style="color:#358cd6">Required Parameter Name</span><span style=color:#d4d4d4>></span> <span style=color:#d4d4d4><</span><span style="color:#358cd6">string</span><span style=color:#d4d4d4>></span><br>
+&nbsp;<span style="color:#ffd70a">[</span><span style=color:#d4d4d4>-<</span><span style="color:#358cd6">Optional Parameter Name</span><span style=color:#d4d4d4>></span> <span style=color:#d4d4d4><</span><span style="color:#358cd6">string</span><span style=color:#d4d4d4>></span><span style="color:#ffd70a">]</span><br>
+&nbsp;<span style="color:#ffd70a">[</span><span style=color:#d4d4d4>-<</span><span style="color:#358cd6">string</span><span style=color:#d4d4d4>></span> <span style="color:#c586b6">{</span><span style=color:#87cefa>(</span><span style=color:#d4d4d4><</span><span style="color:#358cd6">default string if not specified</span><span style=color:#d4d4d4>></span><span style=color:#87cefa>)</span> <span style=color:#d4d4d4>|</span> <span style=color:#d4d4d4><</span><span style="color:#358cd6">string2</span><span style=color:#d4d4d4>></span> <span style=color:#d4d4d4>|</span> <span style=color:#d4d4d4><</span><span style="color:#358cd6">string3</span><span style=color:#d4d4d4>></span><span style="color:#c586b6">}</span><span style="color:#ffd70a">]</span></p>
+
+<p>Where <code>[]</code> indicates an optional parameter</p>
+<p>and <code>{}</code> indicates a parameter with several preconfigured parameter</p>
+<p>and <code>()</code> indicates a default parameter if none is specified.</p>
+<p>Starting with 0.15.4 you can use environment variables to pass them too!</p>
+<h4 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h4>
+<p>Script Arguments</p>
+<div class="highlight"><pre><span></span><code>-hello world
+-foo bar
+-data {{agent.public_ip}}
+</code></pre></div>
+<p>Environment vars</p>
+<div class="highlight"><pre><span></span><code>ehello=eworld
+efoo=ebar
+edata={{agent.hostname}}
+</code></pre></div>
+<p><img alt="Script Args" src="../images/script_args.png" /></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5zm-4.28 11.79c-.4 0-.72.3-.72.89s.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68zM9.14 5.71c.4 0 .72-.3.72-.89s-.32-.71-.72-.71c-.39 0-.71.12-.71.71s.32.89.71.89"/></svg></span> Batch</label><label for="__tabbed_1_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.83 4c.49 0 .8.4.67.89l-3.16 14.22c-.11.49-.59.89-1.08.89H2.17c-.49 0-.8-.4-.67-.89L4.66 4.89C4.77 4.4 5.25 4 5.74 4zm-6 12h-4c-.46 0-.83.38-.83.84 0 .47.37.85.83.85h4c.47 0 .85-.38.85-.85 0-.46-.38-.84-.85-.84m-10.05.28a.87.87 0 0 0-.21 1.22c.28.42.84.5 1.24.23 7.35-5.17 7.4-5.23 7.45-5.26.18-.16.27-.38.28-.6.01-.2-.04-.37-.16-.56L9.46 6.03A.867.867 0 0 0 8.21 6c-.36.32-.38.88-.05 1.24l4.15 4.44z"/></svg></span> Powershell</label><label for="__tabbed_1_3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5zm-4.28 11.79c-.4 0-.72.3-.72.89s.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68zM9.14 5.71c.4 0 .72-.3.72-.89s-.32-.71-.72-.71c-.39 0-.71.12-.71.71s.32.89.71.89"/></svg></span> Python</label><label for="__tabbed_1_4"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9h2.31l.32-3h2l-.32 3h2l.32-3h2l-.32 3H15v2h-1.9l-.2 2H15v2h-2.31l-.32 3h-2l.32-3h-2l-.32 3h-2l.32-3H5v-2h1.9l.2-2H5zm4.1 2-.2 2h2l.2-2M19 6h-2v8h2m0 2h-2v2h2Z"/></svg></span> Shell</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Script</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">echo</span> off
+<span class="k">setlocal</span>
+
+<span class="c1">rem Parameters. Batch only accepts positional params not named ones</span>
+<span class="k">set</span> <span class="nv">hello</span><span class="p">=</span><span class="nv">%1</span>
+<span class="k">set</span> <span class="nv">foo</span><span class="p">=</span><span class="nv">%2</span>
+<span class="k">set</span> <span class="nv">data</span><span class="p">=</span><span class="nv">%3</span>
+
+<span class="k">echo</span> Script Args
+<span class="k">echo</span> hello: <span class="nv">%hello%</span>
+<span class="k">echo</span> foo: <span class="nv">%foo%</span>
+<span class="k">echo</span> data: <span class="nv">%data%</span>
+
+<span class="k">echo</span>.
+<span class="k">echo</span> Environment Vars
+<span class="k">echo</span> ehello: <span class="nv">%ehello%</span>
+<span class="k">echo</span> efoo: <span class="nv">%efoo%</span>
+<span class="k">echo</span> edata: <span class="nv">%edata%</span>
+
+<span class="k">endlocal</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Script</p>
+<div class="highlight"><pre><span></span><code>param(
+    [string]$hello,
+    [string]$foo,
+    [string]$data
+)
+
+Write-Output &quot;Script Args&quot;
+Write-Output &quot;hello: $hello&quot;
+Write-Output &quot;foo: $foo&quot;
+Write-Output &quot;data: $data&quot;
+
+Write-Output &quot;&quot;
+Write-Output &quot;Environment Vars&quot;
+Write-Output &quot;ehello: $env:ehello&quot;
+Write-Output &quot;efoo: $env:efoo&quot;
+Write-Output &quot;edata: $env:edata&quot;
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Script</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/python3</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
+
+<span class="c1">#Note: named args in python require -- and = between name and value eg </span>
+<span class="c1"># --hello=world </span>
+<span class="c1"># --foo=bar</span>
+<span class="c1"># --data={{agent.public_ip}}</span>
+<span class="c1"># Parse command-line arguments</span>
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Process some strings.&quot;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--hello&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Value for hello&quot;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--foo&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Value for foo&quot;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--data&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Value for data&quot;</span><span class="p">)</span>
+
+<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+<span class="c1"># Script Args</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Script Args&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;hello: </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">hello</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;foo: </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">foo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data: </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Environment Vars</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Environment Vars&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ehello: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;ehello&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;efoo: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;efoo&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;edata: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;edata&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Script</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#Bash only accepts positional params not named ones</span>
+<span class="nv">hello</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="nv">foo</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span>
+<span class="nv">data</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$3</span><span class="s2">&quot;</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Script Args&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello: </span><span class="nv">$hello</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;foo: </span><span class="nv">$foo</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;data: </span><span class="nv">$data</span><span class="s2">&quot;</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Environment Vars&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ehello: </span><span class="nv">$ehello</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;efoo: </span><span class="nv">$efoo</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;edata: </span><span class="nv">$edata</span><span class="s2">&quot;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="video-wrapper">
+  <iframe width="400" height="225" src="https://www.youtube.com/embed/YrnN11XPot8" frameborder="0" allowfullscreen></iframe>
+  <iframe width="400" height="225" src="https://www.youtube.com/embed/jLpfN2SOD1U" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="run-script-on-many-agents-at-once">Run Script on many agents at once<a class="headerlink" href="#run-script-on-many-agents-at-once" title="Permanent link">&para;</a></h3>
+<p>Under the <code>Tools menu</code> -&gt; <code>Bulk Script</code> you can execute scripts against Clients/Sites/Selected Agents/All based on All/Servers/Workstations. The history is saved in the history tab of the agent. The history can also be retrieved from the API from the <code>/agents/history/</code> endpoint.</p>
+<h3 id="run-command-on-many-agents-at-once">Run Command on many agents at once<a class="headerlink" href="#run-command-on-many-agents-at-once" title="Permanent link">&para;</a></h3>
+<p>Under the <code>Tools menu</code> -&gt; <code>Bulk Command</code> you can execute a command against Clients/Sites/Selected Agents/All based on All/Servers/Workstations. The history is saved in the history tab of the agent. The history can also be retrieved from the API from the <code>/agents/history/</code> endpoint.</p>
+<h3 id="automated-tasks">Automated Tasks<a class="headerlink" href="#automated-tasks" title="Permanent link">&para;</a></h3>
+<p>Tactical RMM allows scheduling tasks to run on agents. This leverages the Windows Task Scheduler and has the same scheduling options.</p>
+<p>See <a href="../automated_tasks/">Automated Tasks</a> for configuring automated tasks.</p>
+<h3 id="script-checks">Script Checks<a class="headerlink" href="#script-checks" title="Permanent link">&para;</a></h3>
+<p>Scripts can also be run periodically on an agent and trigger an alert if it fails in case you want any kind of warning code to alert you.</p>
+<p>Important: When utilizing PowerShell scripts and manually assigning an exit code, it's essential to define the exit code using the following syntax: <code>$host.SetShouldExit(EXITCODE)</code>. Here, EXITCODE represents the desired exit code number. For instance, to assign an exit code of 3, use <code>$host.SetShouldExit(3)</code>.</p>
+<h3 id="alert-failureresolve-actions">Alert Failure/Resolve Actions<a class="headerlink" href="#alert-failureresolve-actions" title="Permanent link">&para;</a></h3>
+<p>Scripts can be triggered when an alert is triggered and resolved.</p>
+<p>For configuring <strong>Alert Templates</strong>, see <a href="../alerting/">Alerting</a></p>
+<p>See below for populating dashboard data in scripts and the available options.</p>
+<h2 id="using-dashboard-data-in-scripts">Using dashboard data in scripts<a class="headerlink" href="#using-dashboard-data-in-scripts" title="Permanent link">&para;</a></h2>
+<p>Tactical RMM allows passing in dashboard data to scripts as arguments or environment variables. The below PowerShell arguments will get the client name of the agent and also the agent's public IP address.</p>
+<div class="highlight"><pre><span></span><code>-ClientName {{client.name}} -PublicIP {{agent.public_ip}}
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Everything between {{}} is CaSe sEnSiTive</p>
+</div>
+<p>See a full list of possible built-in variables <a href="../../script_variables/">Here</a></p>
+<h3 id="getting-custom-field-values">Getting Custom Field values<a class="headerlink" href="#getting-custom-field-values" title="Permanent link">&para;</a></h3>
+<p>Tactical RMM supports pulling data from custom fields using the {{model.custom_field_name}} syntax.</p>
+<p>See <a href="../custom_fields/#using-custom-fields-in-scripts">Using Custom Fields in Scripts</a>.</p>
+<h3 id="getting-values-from-the-global-keystore">Getting values from the Global Keystore<a class="headerlink" href="#getting-values-from-the-global-keystore" title="Permanent link">&para;</a></h3>
+<p>Tactical RMM supports getting values from the global key store using the {{global.key_name}} syntax.</p>
+<p>See <a href="../keystore/">Global Keystore</a>.</p>
+<h2 id="script-snippets">Script Snippets<a class="headerlink" href="#script-snippets" title="Permanent link">&para;</a></h2>
+<p>Script Snippets allow you to create common code blocks or comments and apply them to all of your scripts. This could be initialization code, common error checking, or even code comments.</p>
+<h3 id="adding-script-snippets">Adding Script Snippets<a class="headerlink" href="#adding-script-snippets" title="Permanent link">&para;</a></h3>
+<p>In the dashboard, browse to <strong>Settings &gt; Scripts Manager</strong>. Click the <strong>Script Snippets</strong> button.</p>
+<ul>
+<li><strong>Name</strong> - This identifies the script snippet in the dashboard</li>
+<li><strong>Description</strong> - Optional description for the script snippet</li>
+<li><strong>Shell</strong> - This sets the language of the script. Available options are:<ul>
+<li>PowerShell</li>
+<li>Windows Batch</li>
+<li>Python</li>
+</ul>
+</li>
+</ul>
+<h3 id="using-script-snippets">Using Script Snippets<a class="headerlink" href="#using-script-snippets" title="Permanent link">&para;</a></h3>
+<p>When editing a script, you can add template tags to the script body that contains the script snippet name. For example, if a script snippet exists with the name "Check WMF", you would put {{Check WMF}} in the script body and the snippet code will be replaced.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Everything between {{}} is CaSe sEnSiTive</p>
+</div>
+<p>The template tags will only be visible when Editing the script. When downloading or viewing the script code the template tags will be replaced with the script snippet code.</p>
+<h3 id="powershell-7">PowerShell 7<a class="headerlink" href="#powershell-7" title="Permanent link">&para;</a></h3>
+<p><a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.2">https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.2</a></p>
+<p>Shell Type: PowerShell</p>
+<p>Command: <code>Start-Process nohup 'pwsh -noprofile -c "1..120 | % { Write-Host . -NoNewline; sleep 1 }"'</code></p>
+<h2 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h2>
+<h3 id="python-on-windows">Python on windows<a class="headerlink" href="#python-on-windows" title="Permanent link">&para;</a></h3>
+<p>Tactical ships with a portable python distribution on windows.</p>
+<table>
+<thead>
+<tr>
+<th>OS</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows &gt;= 8.1</td>
+<td>3.11.9</td>
+</tr>
+<tr>
+<td>Windows &lt; 8.1</td>
+<td>3.8.7</td>
+</tr>
+</tbody>
+</table>
+<p>The following 3rd party packages are also bundled with this distribution:</p>
+<ul>
+<li><a href="https://github.com/pyca/cryptography">cryptography</a></li>
+<li><a href="https://github.com/encode/httpx">httpx</a></li>
+<li><a href="https://github.com/msgpack/msgpack-python">msgpack</a></li>
+<li><a href="https://github.com/giampaolo/psutil">psutil</a></li>
+<li><a href="https://github.com/pysnmp/pysnmp">pysnmplib</a></li>
+<li><a href="https://github.com/mhammond/pywin32">pywin32</a></li>
+<li><a href="https://github.com/enthought/pywin32-ctypes">pywin32-ctypes</a></li>
+<li><a href="https://github.com/psf/requests">requests</a></li>
+<li><a href="https://github.com/python-websockets/websockets">websockets</a></li>
+<li><a href="https://timgolden.me.uk/python/wmi/index.html">WMI</a></li>
+<li><a href="https://github.com/python-validators/validators">validators</a></li>
+</ul>
+<h3 id="python-on-posix">Python on posix<a class="headerlink" href="#python-on-posix" title="Permanent link">&para;</a></h3>
+<p>How do you target a specific version? The <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang</a> can specify the interpreter on macOS and Linux, but since Windows
+does not use the shebang, the interpreter needs to be specified by the calling program.</p>
+<p>Ok, so how do you use the shebang? Take this hello world script for example. The shebang <code>#!</code> in this script will
+use <code>/usr/bin/python3</code>. This is easy enough until you run across a system where the system Python is not the expected
+3.8 or later.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/python3</span>
+print<span class="o">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="o">)</span>
+</code></pre></div>
+<p>This is where <a href="https://www.gnu.org/software/coreutils/manual/html_node/env-invocation.html#env-invocation">env</a> comes into play. <code>env</code> will search the <code>$PATH</code> for the executable that matches the argument. In
+this case, the script will be run by the first "python3" found in $PATH. However, what if <code>python3</code> points
+to <code>python3.6</code>? You're in the same boat you were in before.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+print<span class="o">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="o">)</span>
+</code></pre></div>
+<p>Or are you? If you read the <a href="https://www.gnu.org/software/coreutils/manual/html_node/env-invocation.html#env-invocation">env man page</a>, it states you can add parameters to the command line. In case you
+didn't know, the shebang is the command line! <code>env</code> will modify the <code>$PATH</code> before searching for <code>python3</code>, allowing
+you to use a custom python location.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env PATH=&quot;/opt/my-python/3.8/:$PATH&quot; python3</span>
+print<span class="o">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="o">)</span>
+</code></pre></div>
+<p>Wait! Isn't the shebang a shell script, not a Python script? In TRMM, a "Shell" script and a "Python" script are
+treated the same <em>except</em> that Python scripts also work on Windows. On Linux and macOS, "Shell" and "Python" scripts
+are treated the same.</p>
+<table>
+<thead>
+<tr>
+<th>Script Type</th>
+<th>OS</th>
+<th>Supported</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td>Windows</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>Linux</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>macOS</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Shell</td>
+<td>Windows</td>
+<td><strong>No</strong></td>
+</tr>
+<tr>
+<td>Shell</td>
+<td>Linux</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Shell</td>
+<td>macOS</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="python-version-references">Python version references<a class="headerlink" href="#python-version-references" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.python.org/doc/sunset-python-2/">Python 2 was sunset</a> in January 2020.</li>
+<li><a href="https://devguide.python.org/versions/">Python versions</a>: Python 3.7 is end of life in June 2023.</li>
+<li><a href="https://wiki.debian.org/DebianReleases#Production_Releases">Debian releases</a> including the end of life date.</li>
+<li><a href="https://wiki.debian.org/Python#Supported_Python_Versions">Python support in Debian</a> to determine the Python version included in Debian.</li>
+<li><a href="https://wiki.ubuntu.com/Python">Ubuntu inherits from Debian</a>; see previous line.</li>
+<li><a href="https://askubuntu.com/questions/445487/what-debian-version-are-the-different-ubuntu-versions-based-on">Ubuntu vs Debian OS versions</a>; to map Ubuntu version to Debian version to determine the Python version.</li>
+<li><a href="https://wiki.ubuntu.com/Releases">Ubuntu Release Notes</a> may contain the Python version included.</li>
+<li><a href="https://support.apple.com/en-us/HT201260">macOS versions</a>; macOS version number mapped to the OS name.</li>
+<li><a href="https://en.wikipedia.org/wiki/MacOS_version_history#Releases">macOS release history</a>; includes supported/maintained/unsupported and last update date.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>OS</th>
+<th>Python version</th>
+<th>Installed by TRMM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows</td>
+<td>3.11</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Linux, Debian 10 (Buster) (end of life)</td>
+<td>3.7</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Linux, Debian 11 (Bullseye)</td>
+<td>3.9</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Linux, Debian 12 (Bookworm)</td>
+<td>3.12</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Linux, Ubuntu 20.04 LTS</td>
+<td>3.8</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Linux, Ubuntu 22.04 LTS</td>
+<td>3.10</td>
+<td>No</td>
+</tr>
+<tr>
+<td>macOS Ventura</td>
+<td>3.8</td>
+<td>No</td>
+</tr>
+<tr>
+<td><a href="https://developer.apple.com/documentation/macos-release-notes/macos-12_3-release-notes#Python">macOS Monterey 12.3</a></td>
+<td>2.7 removed</td>
+<td>No</td>
+</tr>
+<tr>
+<td><a href="https://developer.apple.com/documentation/macos-release-notes/macos-catalina-10_15-release-notes#Scripting-Language-Runtimes">macOS Catalina 10.15</a></td>
+<td>2.7 (not recommended to use)</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="targeting-a-specific-version">Targeting a specific version<a class="headerlink" href="#targeting-a-specific-version" title="Permanent link">&para;</a></h3>
+<p>Python compiles the script into bytecode and then executes it. Because of the compilation step, errors due to
+language constructs introduced in a later version of Python will cause the script to fail. For example,
+<a href="https://docs.python.org/3/whatsnew/3.10.html#pep-634-structural-pattern-matching">Python 3.10 introduced the "match" term</a> as their version of a case or switch statement.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="k">match</span> <span class="s2">&quot;term&quot;</span><span class="p">:</span>
+    <span class="k">case</span> <span class="s2">&quot;Nope&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No match found&quot;</span><span class="p">)</span>
+    <span class="k">case</span> <span class="s2">&quot;term&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found match!&quot;</span><span class="p">)</span>
+    <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Default if nothing matches&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>The same code will work on Python 3.10.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>python3.10<span class="w"> </span>test-python-version.py
+Found<span class="w"> </span>match!
+</code></pre></div>
+<p>The same code fails on versions prior to 3.10.
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>python3.6<span class="w"> </span>test-python-version.py
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;test-python-version.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">3</span>
+<span class="w">    </span>match<span class="w"> </span><span class="s2">&quot;term&quot;</span>:
+<span class="w">               </span>^
+SyntaxError:<span class="w"> </span>invalid<span class="w"> </span>syntax
+</code></pre></div></p>
+<h2 id="nushell">Nushell<a class="headerlink" href="#nushell" title="Permanent link">&para;</a></h2>
+<p>Nu is a new type of shell. Like PowerShell, Nu passes objects from one command to the next. For example, this script will list processes that are more than 100MB.</p>
+<div class="highlight"><pre><span></span><code>ps | where mem &gt;= 100MB
+</code></pre></div>
+<p>There are some important points to keep in mind when writing Nu scripts. See the <a href="https://www.nushell.sh/book/thinking_in_nu.html">Thinking in Nu</a> for details. Some highlights:</p>
+<ol>
+<li>The <code>&gt;</code> is the greater-than operator, not redirection. Use <code>| save some-file.txt</code></li>
+<li>Variables are immutable, or constant. Use <a href="https://www.nushell.sh/commands/docs/mut.html#frontmatter-title-for-core"><code>mut</code></a> to make a variable mutable.</li>
+<li>Currently Nu does not support background tasks. <code>long-running-command &amp;</code> will not work.</li>
+</ol>
+<p>Nu has a <a href="https://discord.gg/NtAbbGn">Discord</a> server if you have questions.</p>
+<p>To disable this feature, add the following to <code>local_settings.py</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">INSTALL_NUSHELL</span> <span class="o">=</span> <span class="kc">False</span>
+</code></pre></div>
+<h3 id="example-nushell-script">Example Nushell Script<a class="headerlink" href="#example-nushell-script" title="Permanent link">&para;</a></h3>
+<p>The below script find processes sorted by greatest cpu utilization.</p>
+<div class="highlight"><pre><span></span><code>ps | sort-by cpu | reverse
+</code></pre></div>
+<h2 id="deno">Deno<a class="headerlink" href="#deno" title="Permanent link">&para;</a></h2>
+<p>Deno is considered to be the next iteration of Node.js. Deno uses ECMAScript modules (a.k.a ES Modules or ESM) syntax, not CommonJS (CJS). I.e. use <code>import * from https://example.com/package/module.ts</code> instead of <code>require('./local/file.js')</code>.</p>
+<p>Tactical RMM runs Deno scripts with the following permissions:</p>
+<div class="highlight"><pre><span></span><code>DENO_PERMISSIONS=--allow-all
+</code></pre></div>
+<p>See the <a href="https://docs.deno.com/runtime/manual/basics/permissions">documentation on permissions</a> for details.</p>
+<p>To override this, either:</p>
+<ol>
+<li>Add the <code>DENO_DEFAULT_PERMISSIONS</code> <a href="https://github.com/amidaware/tacticalrmm/blob/1a325a66b45be4c2b8fb2098abb20ef348848651/api/tacticalrmm/tacticalrmm/settings.py#L81">string variable</a> with the permissions requested to <code>local_settings.py</code>
+or</li>
+<li>Set the <code>DENO_PERMISSIONS</code> environment variable to the permissions requested in your script.</li>
+</ol>
+<p>To disable this feature, add the following to <code>local_settings.py</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">INSTALL_DENO</span> <span class="o">=</span> <span class="kc">False</span>
+</code></pre></div>
+<h3 id="example-deno-script">Example Deno Script<a class="headerlink" href="#example-deno-script" title="Permanent link">&para;</a></h3>
+<p>The below script prints basic system information:</p>
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">gatherSystemInfo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">os</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Deno</span><span class="p">.</span><span class="nx">build</span><span class="p">.</span><span class="nx">os</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">arch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Deno</span><span class="p">.</span><span class="nx">build</span><span class="p">.</span><span class="nx">arch</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">memory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Deno</span><span class="p">.</span><span class="nx">systemMemoryInfo</span><span class="p">();</span>
+
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span>
+<span class="sb">OS: </span><span class="si">${</span><span class="nx">os</span><span class="si">}</span>
+<span class="sb">Architecture: </span><span class="si">${</span><span class="nx">arch</span><span class="si">}</span>
+<span class="sb">Total Memory: </span><span class="si">${</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">memory</span><span class="p">).</span><span class="nx">total</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1024</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1024</span><span class="si">}</span><span class="sb"> MB</span>
+<span class="sb">Free Memory: </span><span class="si">${</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">memory</span><span class="p">).</span><span class="nx">free</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1024</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1024</span><span class="si">}</span><span class="sb"> MB</span>
+<span class="sb">`</span><span class="p">;</span>
+
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">info</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">gatherSystemInfo</span><span class="p">().</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="example-scripts">Example Scripts<a class="headerlink" href="#example-scripts" title="Permanent link">&para;</a></h2>
+<h3 id="example-powershell-script">Example PowerShell Script<a class="headerlink" href="#example-powershell-script" title="Permanent link">&para;</a></h3>
+<p>The below script takes five named values. The arguments will look like this: <code>-SiteName {{site.name}}</code> <code>-ClientName {{client.name}}</code> <code>-PublicIP {{agent.public_ip}}</code> <code>-CustomField {{client.AV_KEY}}</code> <code>-Global {{global.API_KEY}}</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">param</span> <span class="p">(</span>
+   <span class="no">[string]</span> <span class="nv">$SiteName</span><span class="p">,</span>
+   <span class="no">[string]</span> <span class="nv">$ClientName</span><span class="p">,</span>
+   <span class="no">[string]</span> <span class="nv">$PublicIp</span><span class="p">,</span>
+   <span class="no">[string]</span> <span class="nv">$CustomField</span><span class="p">,</span>
+   <span class="no">[string]</span> <span class="nv">$Global</span>
+<span class="p">)</span>
+
+<span class="nb">Write-Output</span> <span class="s2">&quot;Site: $SiteName&quot;</span>
+<span class="nb">Write-Output</span> <span class="s2">&quot;Client: $ClientName&quot;</span>
+<span class="nb">Write-Output</span> <span class="s2">&quot;Public IP: $PublicIp&quot;</span>
+<span class="nb">Write-Output</span> <span class="s2">&quot;Custom Fields: $CustomField&quot;</span>
+<span class="nb">Write-Output</span> <span class="s2">&quot;Global: $Global&quot;</span>
+</code></pre></div>
+<h3 id="example-shell-script">Example Shell Script<a class="headerlink" href="#example-shell-script" title="Permanent link">&para;</a></h3>
+<p>The below script prints the user running the script.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
+<span class="nx">whoami</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/amidaware/tacticalrmm" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/image-zoom.js"></script>
+      
+        <script src="../../js/copy-to-clipboard.js"></script>
+      
+    
+  </body>
+</html>

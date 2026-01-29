@@ -1,0 +1,3980 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A remote monitoring and management tool">
+      
+      
+        <meta name="author" content="amidaware">
+      
+      
+        <link rel="canonical" href="https://docs.tacticalrmm.com/troubleshooting/">
+      
+      
+        <link rel="prev" href="../av/">
+      
+      
+        <link rel="next" href="../faq/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Troubleshooting - Tactical RMM Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/neoteroi-mkdocs.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#troubleshooting" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tactical RMM Documentation" class="md-header__button md-logo" aria-label="Tactical RMM Documentation" data-md-component="logo">
+      
+  <img src="../images/onit.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tactical RMM Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Troubleshooting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="light" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/amidaware/tacticalrmm/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    amidaware/tacticalrmm
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tactical RMM Documentation" class="md-nav__button md-logo" aria-label="Tactical RMM Documentation" data-md-component="logo">
+      
+  <img src="../images/onit.ico" alt="logo">
+
+    </a>
+    Tactical RMM Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/amidaware/tacticalrmm/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    amidaware/tacticalrmm
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sponsor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sponsor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code_signing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Signing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide_gettingstarted/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RMM Server Installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RMM Server Installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_considerations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install Considerations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Traditional Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RMM Server Updating
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RMM Server Updating
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updating the RMM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updating the RMM (Docker)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Agents
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updating Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functionality
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Functionality
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howitallworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How it all Works
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/global_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/alerting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alerting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/automated_checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/automated_tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automated Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/automation_policies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automation Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/custom_fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/django_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Django Admin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/emailsms_alert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Email & SMS Alerts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/keystore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Keystore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/maintenance_mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/remote_bg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote Background
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/settings_override/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overriding / Customizing Default Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/snmp_checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNMP Checks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/sso/sso/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Single Sign-On (SSO)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Tab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/url_actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    URL Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/user_ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Interface Preferences
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/webhooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Hooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/web_terminal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Terminal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../script_variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference: Script Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reporting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/reporting_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - The Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_basetemplates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Base Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_dataqueries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Data Queries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/reporting_assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Assets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/tipsntricks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Tips n' Tricks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ee/reporting/functions/examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../av/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Antivirus Exclusions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#server-troubleshooting-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server Troubleshooting Script
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celery-queue-stuck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Celery queue stuck
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#make-sure-dns-name-resolution-was-setup-properly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Make sure DNS (name resolution) was setup properly
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Make sure DNS (name resolution) was setup properly">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-the-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From the agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problems-after-new-server-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problems after new server install
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bad-credentials-error-when-trying-to-login-to-the-web-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        "Bad credentials" error when trying to login to the web UI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agents-not-installing-or-updating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agents not installing or updating
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agents not installing or updating">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#did-you-customize-meshcentral-options-and-now-agents-wont-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Did you customize MeshCentral options and now agents won't install?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agents-not-checking-in-or-showing-up-general-agent-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agents not checking in or showing up / General agent issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agents not checking in or showing up / General agent issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-admin-web-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Admin Web Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-ssh-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server SSH login
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-agent-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Agent Install
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all-other-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        All other errors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-cloudflare-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Cloudflare DNS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-network-connectivity-between-agent-and-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing network connectivity between agent and server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#take-control-or-remote-background-missing-button-cant-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Take Control or Remote Background missing button / can't connect
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#need-to-recover-your-mesh-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Need to recover your Mesh token?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mesh-agent-not-connecting-to-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mesh Agent not connecting to server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-500" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error 500
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cant-login-on-server-after-first-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can't login on server after first setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error 0:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executable-file-not-found-in-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        executable file not found in %PATH%
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issues-with-agents-offline-after-reboot-or-new-install-on-aws-and-other-cloud-platforms-using-cloudinit-or-similar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issues with agents offline after reboot or new install on AWS and other cloud platforms using cloudinit or similar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-20162019-agent-not-updating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server 2016/2019 agent not updating
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../management_cmds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Management Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesh_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MeshCentral Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" >
+        
+          
+          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3rd Party Integrations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3rd Party Integrations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_grafana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grafana
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_anydesk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AnyDesk
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_n-able-takecontrol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    N-Able
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_bomgar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bomgar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_screenconnect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ConnectWise Control / ScreenConnect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_rustdesk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RustDesk
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_splashtop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Splashtop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_supremo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supremo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_teamviewer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TeamViewer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_bitdefender_gravityzone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BitDefender GravityZone
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_bitdefender_total_security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BitDefender Total Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_zammad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zammad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3rdparty_dashy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
+        
+          
+          <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unsupported Extras
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_20">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unsupported Extras
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_guidelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unsupported Guidelines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unsupported Configs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../securing_nginx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Securing nginx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_proxies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unsupported Proxies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_synology_docker_install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installing in Synology Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupported_platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installing on other platforms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tipsntricks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tips n' Tricks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" >
+        
+          
+          <label class="md-nav__link" for="__nav_22" id="__nav_22_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_22">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contributing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing to Docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_community_scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing to Community Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_reporting_templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing to Reporting Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing using a browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_vscode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing using VS Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing using Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing_using_a_remote_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing using a Remote Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#server-troubleshooting-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server Troubleshooting Script
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celery-queue-stuck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Celery queue stuck
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#make-sure-dns-name-resolution-was-setup-properly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Make sure DNS (name resolution) was setup properly
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Make sure DNS (name resolution) was setup properly">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-the-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From the agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problems-after-new-server-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problems after new server install
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bad-credentials-error-when-trying-to-login-to-the-web-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        "Bad credentials" error when trying to login to the web UI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agents-not-installing-or-updating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agents not installing or updating
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agents not installing or updating">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#did-you-customize-meshcentral-options-and-now-agents-wont-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Did you customize MeshCentral options and now agents won't install?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agents-not-checking-in-or-showing-up-general-agent-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agents not checking in or showing up / General agent issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agents not checking in or showing up / General agent issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-admin-web-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Admin Web Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-ssh-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server SSH login
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-agent-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Agent Install
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all-other-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        All other errors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-cloudflare-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Cloudflare DNS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-network-connectivity-between-agent-and-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing network connectivity between agent and server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#take-control-or-remote-background-missing-button-cant-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Take Control or Remote Background missing button / can't connect
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#need-to-recover-your-mesh-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Need to recover your Mesh token?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mesh-agent-not-connecting-to-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mesh Agent not connecting to server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-500" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error 500
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cant-login-on-server-after-first-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can't login on server after first setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error 0:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executable-file-not-found-in-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        executable file not found in %PATH%
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issues-with-agents-offline-after-reboot-or-new-install-on-aws-and-other-cloud-platforms-using-cloudinit-or-similar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issues with agents offline after reboot or new install on AWS and other cloud platforms using cloudinit or similar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-20162019-agent-not-updating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server 2016/2019 agent not updating
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h1>
+<h2 id="server-troubleshooting-script">Server Troubleshooting Script<a class="headerlink" href="#server-troubleshooting-script" title="Permanent link">&para;</a></h2>
+<p>If you've asked for help in <a href="https://discord.com/channels/736478043522072608/744282073870630912">#support</a> please run this, and send a screenshot at the top of the thread created for troubleshooting your issue.</p>
+<p>Blur your domains if you desire privacy (or DM the person that's helping you to make everyones life easier).</p>
+<p>First, ensure that dig is installed via the dnsutils package:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>dnsutils
+</code></pre></div>
+<p>Next, download and run the troubleshooting script:</p>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-N<span class="w"> </span>https://raw.githubusercontent.com/amidaware/tacticalrmm/develop/troubleshoot_server.sh
+chmod<span class="w"> </span>+x<span class="w"> </span>troubleshoot_server.sh
+./troubleshoot_server.sh
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you're working with a support person please provide the full script output. If you don't want to post publicly, feel free to DM the person working with you in Discord #support channel</p>
+</div>
+<h2 id="celery-queue-stuck">Celery queue stuck<a class="headerlink" href="#celery-queue-stuck" title="Permanent link">&para;</a></h2>
+<p>If you notice issues such as bulk scripts or commands not executing, client/site colors not clearing, or alerts not resetting, it's possible that the Celery queue is stuck. Follow these steps to check and resolve the issue:</p>
+<p>Navigate to the following directory and activate the virtual environment:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/rmm/api/tacticalrmm
+<span class="nb">source</span><span class="w"> </span>../env/bin/activate
+</code></pre></div>
+<p>Download the management command:</p>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/rmm/api/tacticalrmm/core/management/commands/get_celery_queue_length.py<span class="w"> </span><span class="s1">&#39;https://raw.githubusercontent.com/amidaware/tacticalrmm/refs/heads/develop/api/tacticalrmm/core/management/commands/get_celery_queue_length.py&#39;</span>
+</code></pre></div>
+<p>Check the number of items in the Celery queue:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>manage.py<span class="w"> </span>get_celery_queue_length
+</code></pre></div>
+<p>If the number of items in the queue is very high (greater than 100), the queue is likely stuck.</p>
+<p>Purge the Celery queue:</p>
+<div class="highlight"><pre><span></span><code>celery<span class="w"> </span>-A<span class="w"> </span>tacticalrmm<span class="w"> </span>purge<span class="w"> </span>-f
+</code></pre></div>
+<p>Restart Celery and Celery Beat:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>celery<span class="w"> </span>celerybeat
+</code></pre></div>
+<p>After completing these steps, the queue should be cleared, and Celery should resume normal operation.</p>
+<h2 id="make-sure-dns-name-resolution-was-setup-properly">Make sure DNS (name resolution) was setup properly<a class="headerlink" href="#make-sure-dns-name-resolution-was-setup-properly" title="Permanent link">&para;</a></h2>
+<h3 id="from-the-agent">From the agent<a class="headerlink" href="#from-the-agent" title="Permanent link">&para;</a></h3>
+<p>Open command prompt:</p>
+<div class="highlight"><pre><span></span><code>ping rmm.example.com
+ping api.example.com
+ping mesh.example.com
+</code></pre></div>
+<p>The IP address for all 3 should reflect your Tactical RMM server.</p>
+<h2 id="problems-after-new-server-install">Problems after new server install<a class="headerlink" href="#problems-after-new-server-install" title="Permanent link">&para;</a></h2>
+<p>In the very unlikely event you have issues after install please wipe the box and install again (following all the steps including downloading the install script <em>but not running it yet</em>) use the following command which will log the install progress and if you continue to have issues will assist with support of the installation.</p>
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>-x<span class="w"> </span>install.sh<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>install.log
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Logging of installs isn’t desirable as it logs extremely sensitive information which is why this isn’t done by default! <strong>Do not</strong> post the raw log publicly only provide it if requested and then by dm only. Authorized users in Discord are: @BurningTimes#1938 @sadnub#6992 @dinger1986#1734 @silversword#9652</p>
+</div>
+<h2 id="bad-credentials-error-when-trying-to-login-to-the-web-ui">"Bad credentials" error when trying to login to the web UI<a class="headerlink" href="#bad-credentials-error-when-trying-to-login-to-the-web-ui" title="Permanent link">&para;</a></h2>
+<p>If you are sure you are using the correct credentials and still getting a "bad credentials" error, open your browser's dev tools (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-j">J</kbd></span> on Chrome) and check the Console tab to see the real error.</p>
+<p>It will most probably be a CORS error which means you need to check your DNS settings and make sure whatever computer you're trying to access the UI from resolves your 3 subdomains to the correct IP of the server running the RMM (public IP if running in the cloud, or private IP if running behind NAT).</p>
+<p>If you see an error about SSL or certificate expired, then your Let's Encrypt cert has probably expired and you'll need to renew it.</p>
+<p>Refer to the Let's Encrypt cert renewal instructions <a href="../update_server/#keeping-your-ssl-certificates-up-to-date">here</a>.</p>
+<h2 id="agents-not-installing-or-updating">Agents not installing or updating<a class="headerlink" href="#agents-not-installing-or-updating" title="Permanent link">&para;</a></h2>
+<p>The most common problem we've seen of agents not installing or updating is due to Antivirus blocking the updater executable.</p>
+<p>Windows Defender will 100% of the time block the updater from running unless an exclusion is set.</p>
+<p>Refer to the <a href="../install_agent/">Agent Installation</a> instructions for AV exceptions to set and manually doing an agent update with logging to troubleshoot further.</p>
+<p>Agents will also not automatically update if they are too old.</p>
+<p>If you have agents that are relatively old, you will need to uninstall them manually and reinstall using the latest version.</p>
+<p>The mesh installer is created at time of install. Make sure it's working by running this on your TRMM server.</p>
+<details class="note" open="open">
+<summary>Check TRMM connection to MeshCentral</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 19v-3h8v3zm-4.5-6L2.47 7h4.24l4.96 4.95c.58.59.58 1.55 0 2.12L6.74 19H2.5z"/></svg></span> Standard Install</label><label for="__tabbed_1_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.81 10.25c-.06-.04-.56-.43-1.64-.43-.28 0-.56.03-.84.08-.21-1.4-1.38-2.11-1.43-2.14l-.29-.17-.18.27c-.24.36-.43.77-.51 1.19-.2.8-.08 1.56.33 2.21-.49.28-1.29.35-1.46.35H2.62c-.34 0-.62.28-.62.63 0 1.15.18 2.3.58 3.38.45 1.19 1.13 2.07 2 2.61.98.6 2.59.94 4.42.94.79 0 1.61-.07 2.42-.22 1.12-.2 2.2-.59 3.19-1.16A8.3 8.3 0 0 0 16.78 16c1.05-1.17 1.67-2.5 2.12-3.65h.19c1.14 0 1.85-.46 2.24-.85.26-.24.45-.53.59-.87l.08-.24zm-17.96.99h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H3.85c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.43 0h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H6.28c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.47 0h1.75c.1 0 .17-.07.17-.16V9.5c0-.08-.06-.16-.17-.16H8.75c-.08 0-.15.07-.15.16v1.58c0 .09.06.16.15.16m2.44 0h1.77c.08 0 .15-.07.15-.16V9.5c0-.08-.06-.16-.15-.16h-1.77c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16M6.28 9h1.76c.08 0 .16-.09.16-.18V7.25c0-.09-.07-.16-.16-.16H6.28c-.09 0-.16.06-.16.16v1.57c.01.09.07.18.16.18m2.47 0h1.75c.1 0 .17-.09.17-.18V7.25c0-.09-.06-.16-.17-.16H8.75c-.08 0-.15.06-.15.16v1.57c0 .09.06.18.15.18m2.44 0h1.77c.08 0 .15-.09.15-.18V7.25c0-.09-.07-.16-.15-.16h-1.77c-.08 0-.15.06-.15.16v1.57c0 .09.07.18.15.18m0-2.28h1.77c.08 0 .15-.07.15-.16V5c0-.1-.07-.17-.15-.17h-1.77c-.08 0-.15.06-.15.17v1.56c0 .08.07.16.15.16m2.46 4.52h1.76c.09 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16h-1.76c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16"/></svg></span> docker</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>/rmm/api/env/bin/python<span class="w"> </span>/rmm/api/tacticalrmm/manage.py<span class="w"> </span>check_mesh
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>tactical-backend<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>check_mesh
+</code></pre></div>
+</div>
+</div>
+</div>
+</details>
+<p><img alt="if sharing" src="../images/meshcheck_sharing.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>As of v0.12.0 <code>Error 1005</code> usually means something doesn't match and / or the mesh username has to be all lower case.<br>
+If you customize the "Mesh Device Group Name" in Tactical's settings you <strong>MUST</strong> also manually match that Mesh Group in mesh itself.</p>
+</div>
+<p><a href="../update_agents/#manually-updating-from-the-command-line-on-the-agent">Collect Update debug logs for troubleshooting agents that don't update</a></p>
+<p><a href="../install_agent/#stuck-at-downloading-mesh-agent">Make sure TRMM can connect to mesh</a></p>
+<h3 id="did-you-customize-meshcentral-options-and-now-agents-wont-install">Did you customize MeshCentral options and now agents won't install?<a class="headerlink" href="#did-you-customize-meshcentral-options-and-now-agents-wont-install" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>fork/exec C:\Program Files\TacticalAgent\meshagent.exe: This version of %1 is not compatible with the version of Windows you&#39;re running. Check your computer&#39;s system information and then contact the software publisher
+</code></pre></div>
+<p><img alt="images" src="../images/mesh_settings.png" /></p>
+<p>or MeshCentrals Group name</p>
+<p><img alt="images" src="../images/mesh_tacticalrmm.png" /></p>
+<p>These two sets of settings must match for the install to download the mesh installer. Fix it till the <a href="#agents-not-installing-or-updating">test above</a> works.</p>
+<h2 id="agents-not-checking-in-or-showing-up-general-agent-issues">Agents not checking in or showing up / General agent issues<a class="headerlink" href="#agents-not-checking-in-or-showing-up-general-agent-issues" title="Permanent link">&para;</a></h2>
+<p>Eg. Agent Boot time: 53 years ago</p>
+<p>These are NATS problems. Try the quick fixes first:</p>
+<h3 id="from-admin-web-interface">From Admin Web Interface<a class="headerlink" href="#from-admin-web-interface" title="Permanent link">&para;</a></h3>
+<p>First, reload NATS from Tactical's web UI:<br>
+<strong>Tools &gt; Server Maintenance &gt; Reload Nats Configuration</strong></p>
+<p>If that doesn't work, check each part starting with the server:</p>
+<h3 id="server-ssh-login">Server SSH login<a class="headerlink" href="#server-ssh-login" title="Permanent link">&para;</a></h3>
+<p>Reload NATS:</p>
+<div class="highlight"><pre><span></span><code>/rmm/api/env/bin/python<span class="w"> </span>/rmm/api/tacticalrmm/manage.py<span class="w"> </span>reload_nats
+sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>nats.service
+</code></pre></div>
+<p>Look at NATS service errors (make sure it's running):</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>nats.service
+</code></pre></div>
+<p>If NATS isn't running see detailed reason why it isn't:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>nats.service
+nats-server<span class="w"> </span>-DVV<span class="w"> </span>-c<span class="w"> </span>/rmm/api/tacticalrmm/nats-rmm.conf
+</code></pre></div>
+<p>Fix the problem, then restart NATS:</p>
+<div class="highlight"><pre><span></span><code>sudo systemctl restart nats.service
+</code></pre></div>
+<h3 id="from-agent-install">From Agent Install<a class="headerlink" href="#from-agent-install" title="Permanent link">&para;</a></h3>
+<p>Open CMD as admin on the problem computer and stop the agent services:</p>
+<div class="highlight"><pre><span></span><code>net stop tacticalrmm
+</code></pre></div>
+<p>Run the tacticalrmm service manually with debug logging:</p>
+<div class="highlight"><pre><span></span><code>&quot;C:\Program Files\TacticalAgent\tacticalrmm.exe&quot; -m rpc -log debug -logto stdout
+</code></pre></div>
+<p>This will print out a ton of info. You should be able to see the error from the debug log output.</p>
+<p>Please then copy / paste the logs and post them either in our <a href="https://discord.gg/upGTkWp">Discord support chat</a>, or create a <a href="https://github.com/amidaware/tacticalrmm/issues">github issue</a>.</p>
+<p>If all else fails, simply uninstall the agent either from control panel or silently with <code>"C:\Program Files\TacticalAgent\unins000.exe" /VERYSILENT</code> and then reinstall the agent.</p>
+<h2 id="all-other-errors">All other errors<a class="headerlink" href="#all-other-errors" title="Permanent link">&para;</a></h2>
+<p>First, run the <a href="../update_server/#updating-to-the-latest-rmm-version">update script</a> with the <code>--force</code> flag.</p>
+<p>This will fix permissions and reinstall python / node packages that might have gotten corrupted.</p>
+<div class="highlight"><pre><span></span><code>./update.sh<span class="w"> </span>--force
+</code></pre></div>
+<p>Check the debug log from the web UI: <strong>File &gt; Debug Log</strong></p>
+<p>Open your browser's dev tools (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-j">J</kbd></span> on Chrome) and check the Console tab for any errors.</p>
+<p>Check all the systemd services that the rmm uses to function and check to make sure they're all active / running and enabled:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>rmm.service
+sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>daphne.service
+sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>celery.service
+sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>celerybeat.service
+sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>nginx.service
+sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>nats.service
+sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>nats-api.service
+sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>meshcentral.service
+sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>mongod.service
+sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>postgresql.service
+sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>redis-server.service
+</code></pre></div>
+<p>Or you can use <code>systemctl --failed</code> to see any failed services on your machine.</p>
+<p>Read through the log files in the following folders and check for errors:</p>
+<div class="highlight"><pre><span></span><code>/rmm/api/tacticalrmm/tacticalrmm/private/log
+/var/log/celery
+</code></pre></div>
+<h2 id="using-cloudflare-dns">Using Cloudflare DNS<a class="headerlink" href="#using-cloudflare-dns" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>rmm.example.com can be proxied.</p>
+</li>
+<li>
+<p>api.example.com can be proxied when using (the default) agent configuration which utilizes websockets.</p>
+</li>
+<li>
+<p>mesh.example.com can NOT be proxied because Cloudflare changed something in Aug 2023 and now it doesn't work. See <a href="https://github.com/Ylianst/MeshCentral/issues/5302">5302</a>.</p>
+</li>
+</ul>
+<p>If you're getting <code>Invalid group id</code> at the end of the install you're probably doing something wrong / wrong IP for api.</p>
+<h2 id="testing-network-connectivity-between-agent-and-server">Testing network connectivity between agent and server<a class="headerlink" href="#testing-network-connectivity-between-agent-and-server" title="Permanent link">&para;</a></h2>
+<p>Using PowerShell, make sure you can connect to 443 from agent to server:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Test-NetConnection</span> <span class="n">-ComputerName</span> <span class="n">api</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="n">-Port</span> <span class="n">443</span>
+</code></pre></div>
+<p>Check your SSL certs to make sure they are what they should be (no proxy stuff): <a href="https://www.digicert.com/help/">https://www.digicert.com/help/</a></p>
+<p>Are you trying to use a reverse proxy to share your single public IP with multiple services on 443? This is complicated and <a href="../unsupported_scripts/">unsupported by Tactical RMM</a>. Test your setup.</p>
+<h2 id="take-control-or-remote-background-missing-button-cant-connect">Take Control or Remote Background missing button / can't connect<a class="headerlink" href="#take-control-or-remote-background-missing-button-cant-connect" title="Permanent link">&para;</a></h2>
+<p>This is a MeshCentral connection problem.</p>
+<ol>
+<li>Don't use Firefox (test in vanilla Chrome first).</li>
+<li>Open <code>mesh.domain.com</code> and see if the agent is listed there.</li>
+<li>If you don't see your agent (or it's offline), restart TRMM server (or <a href="../howitallworks/#meshcentral">service</a>).</li>
+<li>Restart Mesh Agent on client PC.</li>
+<li>Check again. Still not appearing in <code>mesh.domain.com</code> in Mesh go to <strong>"My Server" &gt; Trace tab &gt; Click tracing button &gt; Check MeshAgent traffic</strong>.</li>
+<li>Restart Mesh Agent on client PC. You should see something in trace like <img alt="mesh trace" src="../images/mesh_trace.png" />.</li>
+<li>If you don't, you have firewall / connectivity issues (open <code>mesh.domain.com</code> from agent and troubleshoot. You aren't using a proxy right?).</li>
+</ol>
+<h2 id="need-to-recover-your-mesh-token">Need to recover your Mesh token?<a class="headerlink" href="#need-to-recover-your-mesh-token" title="Permanent link">&para;</a></h2>
+<p>Login to server with SSH and run:</p>
+<div class="highlight"><pre><span></span><code>node<span class="w"> </span>/meshcentral/node_modules/meshcentral<span class="w"> </span>--logintokenkey
+</code></pre></div>
+<h2 id="mesh-agent-not-connecting-to-server">Mesh Agent not connecting to server<a class="headerlink" href="#mesh-agent-not-connecting-to-server" title="Permanent link">&para;</a></h2>
+<p>When agents don't show up in your Mesh console (after logging into https://mesh.EXAMPLE.COM), and all data is blank. Your AV has most likely blocked the agent.</p>
+<p><img alt="Mesh Not Connecting" src="../images/mesh_no_data.png" /></p>
+<h2 id="error-500">Error 500<a class="headerlink" href="#error-500" title="Permanent link">&para;</a></h2>
+<p>These are always logged to <code>/rmm/api/tacticalrmm/tacticalrmm/private/log/django_debug.log</code> use <a href="../howitallworks/#log-files">this</a> to check.</p>
+<h2 id="cant-login-on-server-after-first-setup">Can't login on server after first setup<a class="headerlink" href="#cant-login-on-server-after-first-setup" title="Permanent link">&para;</a></h2>
+<p>You're sure you're typing in everything right, giving it 2FA code, and getting error 400 login error.</p>
+<p><a href="https://en.wikipedia.org/wiki/Time-based_one-time_password">TOTP</a> is time sensitive, check your time/NTP and make sure it's right! :)</p>
+<h2 id="error-0">Error 0:<a class="headerlink" href="#error-0" title="Permanent link">&para;</a></h2>
+<p>If you're trying to login <a href="https://github.com/amidaware/tacticalrmm/issues/1136">check dns</a>, <a href="https://docs.tacticalrmm.com/troubleshooting/#cant-login-on-server-after-first-setup">check server and client time</a>, and check your certs.</p>
+<h2 id="executable-file-not-found-in-path">executable file not found in %PATH%<a class="headerlink" href="#executable-file-not-found-in-path" title="Permanent link">&para;</a></h2>
+<p>This error can show up for PowerShell or choco.</p>
+<ul>
+<li><code>exec: "Powershell": executable file not found in %PATH%</code></li>
+<li><code>exec: "choco.exe": executable file not found in %PATH%</code></li>
+<li><code>choco : The term 'choco' is not recognized as the name of a cmdlet</code></li>
+</ul>
+<p>Run the <a href="https://github.com/amidaware/community-scripts/blob/main/scripts/Win_Powershell_TestPATH.bat">Win_Powershell_TestPATH.bat</a> script to gather information about your environment. This script will output either <code>ExpandString</code> or <code>String</code>. See <a href="https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry-value-types">Microsoft's docs</a> for details.</p>
+<ul>
+<li><strong>ExpandString</strong> (REG_EXPAND_SZ) means <code>%SystemRoot%</code> will expand to <code>C:\Windows</code>. Reboot and choco will most likely work.</li>
+<li><strong>String</strong> (REG_SZ) means <code>%SystemRoot%</code> will not be expanded. Changing the registry value type will most likely work.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If your path does not have Path variables like <code>%SystemRoot%</code>, the registry type does not matter because the paths are already expanded.</p>
+</div>
+<p>If the script outputs "String", changing the registry type and restarting the Tactical service will most likely work. This script will output the value type and the $PATH. Make note of the $PATH because <code>Set-ItemProperty</code> needs the value to change the type. Run this as administrator and uncomment <code>Set-ItemProperty</code> to change the registry type to ExpandString. Run the first two commands to get the type and $PATH to make sure everything is good. Restart the TacticalRMM service and try the command again.</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$kind</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-Item</span> <span class="n">-Path</span> <span class="s1">&#39;Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment&#39;</span><span class="p">).</span><span class="n">GetValueKind</span><span class="p">(</span><span class="s1">&#39;PATH&#39;</span><span class="p">)</span>
+<span class="nb">Write-Output</span> <span class="s2">&quot;Path kind before the change: ${kind}&quot;</span>
+
+<span class="nv">$path</span> <span class="p">=</span> <span class="nb">Get-ItemPropertyValue</span> <span class="n">-Path</span> <span class="s1">&#39;Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment&#39;</span> <span class="n">-Name</span> <span class="n">Path</span>
+<span class="nb">Write-Output</span> <span class="s2">&quot;Path before changing the type:&quot;</span><span class="p">,</span> <span class="nv">$path</span>
+
+<span class="nb">Write-Output</span> <span class="s2">&quot;Changing the registry key type&quot;</span>
+<span class="c"># Needs to be run as administrator</span>
+<span class="c"># Set-ItemProperty -Path &#39;Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment&#39; -Name PATH -Value $path -Type ExpandString</span>
+<span class="nb">Write-Output</span> <span class="s2">&quot;&quot;</span>
+
+<span class="nv">$kind</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-Item</span> <span class="n">-Path</span> <span class="s1">&#39;Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment&#39;</span><span class="p">).</span><span class="n">GetValueKind</span><span class="p">(</span><span class="s1">&#39;PATH&#39;</span><span class="p">)</span>
+<span class="nb">Write-Output</span> <span class="s2">&quot;Path kind after the change: ${kind}&quot;</span>
+
+<span class="nv">$path</span> <span class="p">=</span> <span class="nb">Get-ItemPropertyValue</span> <span class="n">-Path</span> <span class="s1">&#39;Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment&#39;</span> <span class="n">-Name</span> <span class="n">Path</span>
+<span class="nb">Write-Output</span> <span class="s2">&quot;Path after changing the type:&quot;</span><span class="p">,</span> <span class="nv">$path</span>
+</code></pre></div>
+<h2 id="issues-with-agents-offline-after-reboot-or-new-install-on-aws-and-other-cloud-platforms-using-cloudinit-or-similar">Issues with agents offline after reboot or new install on AWS and other cloud platforms using cloudinit or similar<a class="headerlink" href="#issues-with-agents-offline-after-reboot-or-new-install-on-aws-and-other-cloud-platforms-using-cloudinit-or-similar" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Run <code>cat /etc/hosts</code></li>
+<li>If the output shows that the hosts file is managed by another process follow the instructions to change the config.</li>
+<li>Add in your api, rmm and mesh urls on the line for 127.0.1.1 in the hosts file</li>
+<li>Save the hosts file</li>
+<li>Restart services or run <code>update.sh --force</code></li>
+</ol>
+<p>54 year agents in the dashboard can be a sign of this NATS problem</p>
+<h2 id="server-20162019-agent-not-updating">Server 2016/2019 agent not updating<a class="headerlink" href="#server-20162019-agent-not-updating" title="Permanent link">&para;</a></h2>
+<p>If you're seeing things like</p>
+<div class="highlight"><pre><span></span><code>time=&quot;2025-03-17T01:02:11-07:00&quot; level=error msg=&quot;error creating NewUpdateSession: ole.CoInitializeEx(0, ole.COINIT_MULTITHREADED): Cannot change thread mode after it is set.&quot;
+time=&quot;2025-04-30T09:28:47-07:00&quot; level=error msg=&quot;SyncMeshNodeID() getMeshNodeID() exit status 0xc0000142: &quot;
+time=&quot;2025-04-30T09:28:55-07:00&quot; level=error msg=&quot;Checkrunner RunChecks exit status 0xc0000142: &quot;
+time=&quot;2025-04-30T09:29:07-07:00&quot; level=error msg=&quot;SyncMeshNodeID() getMeshNodeID() exit status 0xc0000142: &quot;
+time=&quot;2025-04-30T09:29:54-07:00&quot; level=error msg=&quot;Checkrunner RunChecks exit status 0xc0000142: &quot;
+time=&quot;2025-04-30T09:30:46-07:00&quot; level=error msg=&quot;Checkrunner RunChecks exit status 0xc0000142: &quot;
+time=&quot;2025-04-30T09:35:07-07:00&quot; level=info msg=&quot;Agent updating from 2.9.0 to 2.9.1&quot;
+</code></pre></div>
+<p>This is a problem with the non-interactive heap stack filling up. The default value is 768KB, and needs to be updated to 4MB.</p>
+<p><a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/performance/desktop-heap-limitation-out-of-memory">Microsoft KB</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/amidaware/tacticalrmm" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../js/image-zoom.js"></script>
+      
+        <script src="../js/copy-to-clipboard.js"></script>
+      
+    
+  </body>
+</html>
