@@ -8,6 +8,7 @@
 6. Enjoy :)
 
 ## Install Script Replace IPADDRESS and KEY
+
 ```
 $ErrorActionPreference= 'silentlycontinue'
 
@@ -76,6 +77,7 @@ else
 ```
 
 ## RustDesk Set and Get Password (Collector Script needs Custom Agent Field) to run on Check Failure
+
 ```
 $ErrorActionPreference= 'silentlycontinue'
 
@@ -97,10 +99,22 @@ net start rustdesk > null
 New-Item $confirmation_file > null
 
 ```
+
 ## RustDesk URL Action
+
+Remote Control
+
 ```
 rustdesk://connection/new/{{agent.rustdeskid}}?password={{agent.rustdeskpwd}}
- ```
+```
+
+File Transfer
+
+```
+rustdesk://file-transfer/{{agent.rustdeskid}}?password={{agent.rustdeskpwd}}
+```
+
+
 ## Add Custom Agent Fields
 `rustdeskid Type = Text` </br>
 `rustdeskpwd Type = Text`
