@@ -31,8 +31,6 @@ See *Section 14 - Embedding MeshCentral* in the [MeshCentral User Guide](https:/
 
 The Tactical RMM agent keeps track of your Mesh agents, and periodically interacts with them to synchronize the Mesh agent's unique ID with the Tactical RMM database.
 
-When you do a take control / terminal / file browser on an agent using the Tactical UI, behind the scenes, Tactical generates a login token for MeshCentral's website and then "wraps" MeshCentral's UI in an iframe for that specific agent only, using it's unique ID to know what agent to render in the iframe.
-
 ## Customize Take Control Username
 
 If you've enabled any of the [remote control options](./tipsntricks.md#enable-remote-control-options) such as "Notify user", "Prompt for consent" and "Show connection toolbar" and you'd like to change the name that users see, make sure the user has a First and/or Last name set TRMM (Settings > User Administration). If you would also like your company name to show, you can set your company name in TRMM > Settings > Global Settings > MeshCentral.
@@ -126,9 +124,6 @@ Is a browser based RDP client. It connects to the native RDP in versions of Wind
 !!!note
     It does not work for Windows Home because Home doesn't support incoming RDP connections.
 
-## Remote Terminal how it works
-
-For the remote terminal, we launch a shell on the remote system and pipe VT100 terminal emulation to/from the browser. On the browser, we use XTermJS to view the terminal session.
 
 ## MeshCentral Options
 

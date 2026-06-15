@@ -101,7 +101,7 @@ Specify the full path to the directory containing `MeshAgent.exe` if using custo
 --nomesh
 ```
 
-Do not install MeshCentral agent during Tactical agent install. Note: Take Control, Remote Terminal and File Browser will not work.
+Do not install MeshCentral agent during Tactical agent install. Note: Take Control and File Browser will not work.
 
 You can get full command line options from (`--help`).
 

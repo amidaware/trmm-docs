@@ -161,3 +161,30 @@ To customize this behavior, add the following variable to `/rmm/api/tacticalrmm/
 ```python
 CHECK_INTERVAL_JITTER = (1, 60)
 ```
+
+
+### Configuring Maximum Request Size
+
+*Version added: v0.18.0*
+
+When agents submit results back to the server, the request body can occasionally be very large — for instance, a script that produces an enormous amount of output. Processing and storing requests of this size places unnecessary load on the server and database.
+
+To guard against this, incoming requests are checked against a maximum size. If a request's content length exceeds the configured limit, its output is discarded: stdout is cleared, stderr is set to a message indicating the content was truncated, and the return code is set to 1. The default limit is 10 MiB.
+
+To customize this behavior, add the following variable to `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py`, set the value (in bytes) as needed, then restart the RMM service (`sudo systemctl restart rmm`):
+```python
+TRMM_MAX_REQUEST_SIZE = 10 * 2**20
+```
+
+### Configuring Audit Log Maximum Value Size
+
+*Version added: v1.5.0*
+
+The audit log records user actions, including script executions on endpoints. Some actions store large amounts of data — for example, scripts that embed binary blobs as base64 text, which can be several megabytes in size. Storing this data verbatim causes the audit log table to grow excessively.
+
+To prevent this, each of these fields is checked when an audit entry is created. If a field's serialized size exceeds the configured limit, its contents are discarded and replaced with a small placeholder noting that the value was too large. The default limit is 512 KiB (512 * 2**10, or 524,288 bytes), which comfortably accommodates normal scripts and diffs while excluding oversized payloads.
+
+To customize this behavior, add the following variable to `/rmm/api/tacticalrmm/tacticalrmm/local_settings.py`, set the value (in bytes) as needed, then restart the RMM service (`sudo systemctl restart rmm`):
+```python
+AUDIT_MAX_VALUE_BYTES = 512 * 2**10
+```

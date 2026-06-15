@@ -132,10 +132,6 @@ If you want to enable automatic clipboard transfers just click the option under 
 
 ### Adjust Settings
 
-Right-click the connect button in **Remote Background > Terminal** for shell options.
-
-![Terminal](images/tipsntricks_meshterminal.png)
-
 Right-click the connect button in **Take Control** for connection options.
 
 ![Terminal](images/tipsntricks_meshcontrol.png)

@@ -309,7 +309,8 @@ Tactical ships with a portable python distribution on windows.
 
 | OS | Version |
 | --- | --- |
-| Windows >= 8.1 | 3.11.9 |
+| Windows >= 10 | 3.14.5 |
+| Windows >= 8.1 and < 10 | 3.11.9 |
 | Windows < 8.1 | 3.8.7 |
 
 The following 3rd party packages are also bundled with this distribution:

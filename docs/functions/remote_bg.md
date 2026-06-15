@@ -1,26 +1,28 @@
 # Remote Background
 
-To access: **Right click** on an agent > **Remote Background**
+To access: **Right click** on an agent > **Remote Background**:
+
+![agent_remote_bg](../images/agent_remote_bg.png)
 
 ## Terminal Tab
 
-Meshcentral Integration: This will allow you to open a terminal on the remote agent. 
+This allows you to open a terminal on the remote agent.
 
-![Terminal Menu](images/remote_background_terminal.png)
+![terminal1](../images/terminal_1.png)
 
-Right-clicking will allow:
+- Windows: CMD, PowerShell, or a custom shell specified by full path (e.g. C:\Program Files\PowerShell\7\pwsh.exe)
+- Linux: Bash or a custom shell (e.g. /usr/bin/fish)
+- macOS: zsh/bash or a custom shell (e.g. /bin/zsh)
 
-- Admin Shell
-- Admin PowerShell
-- User Shell
-- User PowerShell
-- Ask Admin Shell
-- Ask Admin PowerShell
-- Ask User Shell
-- Ask User PowerShell
+Global shell defaults can be configured under *Global Settings > General*, applied to all agents:
 
-!!!tip
-    If you don't see any Connect button in the top left the problem is either the TRMM user doesn't have meshcentral permissions or the mesh agent is having connectivity problems. Try either the "Recover Connection" button or script "TacticalRMM - Check Mesh Agent for problems"
+![terminal_global](../images/terminal_global_settings.png)
+
+Individual agents inherit the global default but can be overridden under the agent's edit settings, allowing a different shell per agent:
+
+![terminal_edit_agent](../images/terminal_edit_agent.png)
+
+Terminal access is controlled by the *Use Terminal* permission.
 
 ## File Browser
 

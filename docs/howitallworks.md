@@ -380,7 +380,7 @@ Log located at `/var/log/redis`
 
 #### MeshCentral
 
-[MeshCentral](https://github.com/Ylianst/MeshCentral) is used for "Take Control" (connecting to machine for remote access), and 2 screens of the "Remote Background" (Terminal, and File Browser).
+[MeshCentral](https://github.com/Ylianst/MeshCentral) is used for "Take Control" (connecting to machine for remote access), and 1 screen of the "Remote Background" (File Browser).
 
 Config file location:
 
