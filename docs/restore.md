@@ -40,7 +40,7 @@ chmod +x restore.sh
 Call the restore script, passing it the backup tarball as the first argument:
 
 ```bash
-./restore.sh rmm-backup-XXXXXXXXX.tar
+bash -x restore.sh rmm-backup-XXXXXXXXX.tar 2>&1 | tee "restore_$(date +'%Y-%m-%d-%H-%M-%S').log" 
 ```
 
 
