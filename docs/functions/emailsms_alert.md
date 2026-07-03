@@ -76,7 +76,9 @@ Section-specific variables are also available, for example:
 - Checks: `{check_name}`, `{check_description}`, `{details}`, `{more_info}`,
   `{stdout}`, `{stderr}`, `{retcode}`
 - Tasks: `{task_name}`, `{details}`, `{stdout}`, `{stderr}`, `{retcode}`
-- Agent offline / recovered: `{details}`, `{alert_status}`
+- Agent offline / recovered: `{details}`, `{alert_status}`, `{last_response}`
+
+`{last_response}` uses the Default Date Format from Global Settings.
 
 Example subject template:
 
