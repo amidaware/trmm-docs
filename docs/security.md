@@ -1,7 +1,9 @@
 # Security
 
-If you think that you have found a security vulnerability in Tactical RMM, please disclose it to us via our security e-mail address at **security@amidaware.com**.
+If you believe you have found a real, exploitable security vulnerability in Tactical RMM, report it to **security@amidaware.com**.
 
-Please do not make vulnerabilities public without notifying us and giving us at least 3 days to respond.
+Do not send low-effort, speculative, automated, or AI-generated reports. Paying $20 a month for ChatGPT does not make you a security researcher, and “an attacker with access to the RMM can use the RMM to do bad things” is not a vulnerability.
 
-If you are going to write about Tactical RMM's security, please get in touch, so we can make sure that all claims are correct.
+Reports that describe intended functionality, require existing admin/RMM access, or fail to show real security impact will be ignored. Repeated garbage reports may result in your emails being blocked and your access to our services being restricted.
+
+Do not publicly disclose vulnerabilities or alleged vulnerabilities without first coordinating with us and receiving our approval to disclose.
