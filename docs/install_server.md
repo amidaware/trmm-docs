@@ -93,7 +93,6 @@ ufw allow https
 
         ```bash
         ufw allow proto tcp from X.X.X.X to any port 22
-        ufw allow proto tcp from X.X.X.X to any port 22
         ```
 
     === ":material-console-line: Allow all SSH"

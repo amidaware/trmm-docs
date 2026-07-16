@@ -60,6 +60,9 @@ If you are providing your own publicly signed certificates, ensure you download 
 
 Limit access to Tactical RMM's administration panel in Nginx to specific locations:
 
+!!!note
+    This does not provide any meaningful security, the rmm. subdomain is just a web app that sends commands to your api. URL. Anyone can build the web app and point it at your api. url (obviously they will still need credentials from your TRMM server to be able to "login and send commands").
+
 ### Using DNS
 
 Create a file allowed-domain.list which contains the DNS names you want to grant access to your rmm:
