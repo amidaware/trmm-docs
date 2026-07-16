@@ -5,11 +5,10 @@
 Tactical RMM integrates with [MeshCentral](https://github.com/Ylianst/MeshCentral) for the following 3 functions:
 
 - Take Control.
-- Real time shell.
 - Real time file browser.
 
 !!!note
-    MeshCentral has issues with Firefox, use a Chromium-based browser.
+    MeshCentral has had issues with Firefox in the past, prefer Chromium-based browsers.
 
 It should be noted that Tactical RMM and MeshCentral are 2 completely separate products and can run independently of each other.
 

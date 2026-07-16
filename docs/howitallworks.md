@@ -21,6 +21,19 @@ Still need graphics for:
 
     2. Agent checks / tasks and how they work on the workstation/interact with server
 
+## URLs in TRMM
+
+A standard install uses 3 subdomains. What each one does and who needs to be able to reach it:
+
+| URL | What it's for | Required for Agents | Required for Admins |
+| --- | --- | :---: | :---: |
+| `rmm.example.com` | The web UI (Vue frontend). It's just a web app served to your browser that sends commands to the `api.` URL. | No | Yes |
+| `api.example.com` | The Django backend and NATS. All agent communication (check-ins, tasks, checks, script results) and all web UI API calls/websockets go here. | Yes | Yes |
+| `mesh.example.com` | MeshCentral. Used for Take Control (remote desktop) and file browser. The mesh agent on each device maintains a connection here. | Yes | Yes, when using [MeshCentral features](mesh_integration.md) |
+
+!!!note
+    While admins need *a* `rmm.` web app to manage the server, it doesn't have to be yours. The web app is a static frontend that anyone can build and point at any `api.` URL. This means restricting access to your `rmm.` URL provides no meaningful security - the `api.` URL is the actual server, and valid credentials are what protect it.
+
 ## Server
 
 Has a Postgres database located here:
