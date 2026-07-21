@@ -12,7 +12,7 @@
 
 ## General Information
 
-Paid Hosting Available: Auto-maintained/updated servers with Code Signing for you. [Get in touch](https://support.amidaware.com) to find out what we can do for you!
+Paid Hosting Available:  [Request an instance](https://tacticalrmm.com/pricing).
 
 ### System Requirements
 

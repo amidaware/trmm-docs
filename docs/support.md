@@ -12,7 +12,7 @@ We may give pointers, or provide additional troubleshooting steps if we believe 
 
 Paid Support: See [pricing table](./sponsor.md#sponsor-with-stripe-or-paypal) for support plans.
 
-Fully managed [hosted servers](https://support.amidaware.com) are also available.
+Fully managed [hosted servers](https://tacticalrmm.com/pricing) are also available.
 
 ## Public RSA Keys
 

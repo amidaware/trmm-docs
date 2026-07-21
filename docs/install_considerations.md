@@ -1,7 +1,7 @@
 # Install Considerations
 
 !!!exclamation
-    Paid Hosted TRMM is available! Stop reading now and [open a ticket for pricing](https://support.amidaware.com).
+    Managed Hosted TRMM is available! Stop reading now and [request an instance](https://tacticalrmm.com/pricing).
 
 There's pluses and minuses to each install type (Standard vs Docker *which is currently unsupported*). Be aware that:
 

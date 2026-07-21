@@ -27,6 +27,10 @@ Once you've set that up a Super User role and assigned your primary user, you ca
 
 ## Permissions with extra Security implications
 
+* Reporting Viewer / Manager
+
+The Reporting permission operates on a global access model, granting users full visibility into report history and data across all clients and sites regardless of traditional object-scope restrictions.
+
 !!!warning
     **DO NOT** use the Web Terminal for running the Tactical [update]() script as it will stop the service running the web terminal and bork your update.
 
