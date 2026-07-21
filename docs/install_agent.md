@@ -1,21 +1,5 @@
 # Installing a Windows Agent
 
-!!!warning
-    You must add antivirus exclusions for the tactical agent.<br/>
-    AV will usually flag the agent as a virus, since it technically is one due to the nature of this software.<br/>
-    Adding the [following exclusions](https://github.com/amidaware/community-scripts/blob/main/scripts/Win_TRMM_AV_Update_Exclusion.ps1) will make sure everything works, including agent update:<br/>
-    ```ps
-    #Windows Defender Exclusions for Tactical
-    Add-MpPreference -ExclusionPath "C:\Program Files\Mesh Agent\*"
-    Add-MpPreference -ExclusionPath "C:\Program Files\TacticalAgent\*"
-    Add-MpPreference -ExclusionPath "C:\ProgramData\TacticalRMM\*"
-    Add-MpPreference -ExclusionPath "C:\Windows\Temp\is-*.tmp\tacticalagent*"
-    Add-MpPreference -ExclusionProcess "C:\Program Files\TacticalAgent\tacticalrmm.exe"
-    Add-MpPreference -ExclusionProcess "C:\ProgramData\TacticalRMM\tacticalagent*"
-    Add-MpPreference -ExclusionProcess "C:\Windows\Temp\is-*.tmp\tacticalagent*"
-    ```
-    See [here for other screenshot examples](av.md).
-
 ## UI
 
 Click **Agents > Install Agent**.

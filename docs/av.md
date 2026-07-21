@@ -28,10 +28,16 @@ Be aware there is also [a PowerShell script](https://github.com/amidaware/commun
 !!!note
     If you need to use 3rd party AV, add the necessary exclusions (see below for examples) and submit the exes as safe.
 
-## Your TODO List
-
-1. You need to manage your AV exclusions.
-2. If AV incorrectly flags TRMM agent or mesh agent, submit a report to the relevant AV vendor.
+## Windows Defender
+```ps
+Add-MpPreference -ExclusionPath "C:\Program Files\Mesh Agent\*"
+Add-MpPreference -ExclusionPath "C:\Program Files\TacticalAgent\*"
+Add-MpPreference -ExclusionPath "C:\ProgramData\TacticalRMM\*"
+Add-MpPreference -ExclusionPath "C:\Windows\Temp\is-*.tmp\tacticalagent*"
+Add-MpPreference -ExclusionProcess "C:\Program Files\TacticalAgent\tacticalrmm.exe"
+Add-MpPreference -ExclusionProcess "C:\ProgramData\TacticalRMM\tacticalagent*"
+Add-MpPreference -ExclusionProcess "C:\Windows\Temp\is-*.tmp\tacticalagent*"
+```
 
 ## Bitdefender Gravityzone
 
