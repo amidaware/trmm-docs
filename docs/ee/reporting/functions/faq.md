@@ -38,6 +38,3 @@ If there's a problem, [open a ticket](https://support.amidaware.com).
   <iframe width="400" height="225" src="https://www.youtube.com/embed/etXFk_bW1L8" frameborder="0" allowfullscreen></iframe>
 </div>
 
-## How do I add charts/graphs to my report templates?
-
-A bug was discovered with the chart/graph implementation right before release and it had to be pulled. It wil be released in a future update.
