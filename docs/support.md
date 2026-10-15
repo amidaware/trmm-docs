@@ -34,7 +34,7 @@ chmod 600 ~/.ssh/authorized_keys
 
 3. Ensure the `tactical` linux user has passwordless sudo:
 ```
-sudo visudo
+visudo -f /etc/sudoers.d/tactical
 ```
 Add the following line to the end of the file which will be opened by running the above command, then save and exit the file.
 ```
