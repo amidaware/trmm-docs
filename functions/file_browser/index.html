@@ -1,0 +1,3937 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A remote monitoring and management tool">
+      
+      
+        <meta name="author" content="amidaware">
+      
+      
+        <link rel="canonical" href="https://docs.tacticalrmm.com/functions/file_browser/">
+      
+      
+        <link rel="prev" href="../remote_bg/">
+      
+      
+        <link rel="next" href="../settings_override/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>File Browser - Tactical RMM Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/neoteroi-mkdocs.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#file-browser" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Tactical RMM Documentation" class="md-header__button md-logo" aria-label="Tactical RMM Documentation" data-md-component="logo">
+      
+  <img src="../../images/onit.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tactical RMM Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              File Browser
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="light" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/amidaware/tacticalrmm/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    amidaware/tacticalrmm
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Tactical RMM Documentation" class="md-nav__button md-logo" aria-label="Tactical RMM Documentation" data-md-component="logo">
+      
+  <img src="../../images/onit.ico" alt="logo">
+
+    </a>
+    Tactical RMM Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/amidaware/tacticalrmm/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    amidaware/tacticalrmm
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sponsor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sponsor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code_signing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Signing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide_gettingstarted/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RMM Server Installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RMM Server Installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install_considerations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install Considerations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Traditional Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install_docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RMM Server Updating
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RMM Server Updating
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../update_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updating the RMM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../update_docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updating the RMM (Docker)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Agents
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../update_agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updating Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functionality
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Functionality
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howitallworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How it all Works
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alerting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alerting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automated_checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automated_tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automated Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automation_policies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automation Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom_fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../django_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Django Admin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../emailsms_alert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Email & SMS Alerts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../keystore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Keystore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintenance_mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rate_limit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rate Limits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remote_bg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote Background
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Browser
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#permission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permission
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#browse-and-navigate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Browse and Navigate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Browse and Navigate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#large-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Large Folders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-by-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filter by Name
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upload
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Upload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name-conflicts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Name Conflicts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Queue
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Download
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Download">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#folder-zip-download" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Folder / ZIP Download
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#browsers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Browsers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract-zip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extract ZIP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resume-refresh-and-other-tabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resume, Refresh, and Other Tabs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection Problems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concurrent-transfers-waiting-for-slot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concurrent Transfers (Waiting for Slot)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customizing-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing Limits
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings_override/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overriding / Customizing Default Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snmp_checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNMP Checks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/sso/sso/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Single Sign-On (SSO)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Tab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../url_actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    URL Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Interface Preferences
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webhooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Hooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web_terminal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Terminal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../script_variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference: Script Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reporting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/reporting_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/reporting_basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - The Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/reporting_basetemplates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Base Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/reporting_variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/reporting_dataqueries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Data Queries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/reporting_assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Assets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/tipsntricks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Tips n' Tricks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee/reporting/functions/examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../av/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Antivirus Exclusions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../management_cmds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Management Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mesh_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MeshCentral Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" >
+        
+          
+          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3rd Party Integrations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3rd Party Integrations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_grafana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grafana
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_anydesk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AnyDesk
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_n-able-takecontrol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    N-Able
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_bomgar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bomgar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_screenconnect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ConnectWise Control / ScreenConnect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_rustdesk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RustDesk
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_splashtop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Splashtop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_supremo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supremo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_teamviewer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TeamViewer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_bitdefender_gravityzone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BitDefender GravityZone
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_bitdefender_total_security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BitDefender Total Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_zammad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zammad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty_dashy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
+        
+          
+          <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unsupported Extras
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_20">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unsupported Extras
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unsupported_guidelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unsupported Guidelines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unsupported_scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unsupported Configs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../securing_nginx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Securing nginx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unsupported_proxies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unsupported Proxies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unsupported_synology_docker_install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installing in Synology Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unsupported_platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installing on other platforms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tipsntricks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tips n' Tricks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" >
+        
+          
+          <label class="md-nav__link" for="__nav_22" id="__nav_22_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_22">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contributing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing to Docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing_community_scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing to Community Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing_reporting_templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing to Reporting Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing_using_browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing using a browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing_using_vscode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing using VS Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing_using_docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing using Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing_using_a_remote_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing using a Remote Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#permission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permission
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#browse-and-navigate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Browse and Navigate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Browse and Navigate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#large-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Large Folders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-by-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filter by Name
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upload
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Upload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name-conflicts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Name Conflicts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Queue
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Download
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Download">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#folder-zip-download" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Folder / ZIP Download
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#browsers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Browsers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract-zip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extract ZIP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resume-refresh-and-other-tabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resume, Refresh, and Other Tabs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection Problems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concurrent-transfers-waiting-for-slot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concurrent Transfers (Waiting for Slot)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customizing-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing Limits
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="file-browser">File Browser<a class="headerlink" href="#file-browser" title="Permanent link">&para;</a></h1>
+<p>The File Browser lets you browse, create, rename, delete, upload, download, and extract files on an agent.</p>
+<p>To access: <strong>Right click</strong> on an agent &gt; <strong>Remote Background</strong> &gt; <strong>File Browser</strong>:</p>
+<p><img alt="file_browser_overview" src="../../images/file_browser_overview.png" /></p>
+<h2 id="permission">Permission<a class="headerlink" href="#permission" title="Permanent link">&para;</a></h2>
+<p>File Browser access is controlled by the <em>Use File Browser</em> permission (<em>Settings &gt; Permissions Manager</em>). Without it, the tab shows a lock message.</p>
+<p><img alt="file_browser_permission" src="../../images/file_browser_permission.png" /></p>
+<p>Roles that already had <em>Use MeshCentral</em> were given <em>Use File Browser</em> when this permission was added. New roles need the box ticked. Super Users still have all permissions.</p>
+<h2 id="browse-and-navigate">Browse and Navigate<a class="headerlink" href="#browse-and-navigate" title="Permanent link">&para;</a></h2>
+<p>When you open File Browser, it starts in the first default folder the agent can open:</p>
+<ul>
+<li>Windows: <code>%PUBLIC%</code> (usually <code>C:\Users\Public</code>), then <code>Users\Public</code>, <code>Users</code>, or a drive root</li>
+<li>Linux: <code>/home</code>, then <code>/</code></li>
+<li>macOS: <code>/Users</code>, then <code>/</code></li>
+</ul>
+<p>The path bar shows that location. Use back / forward, click a breadcrumb, or click the path to type an absolute path and press Enter.</p>
+<p>Refresh reloads the current folder. If a name filter is active, Refresh keeps the filter.</p>
+<p>Columns are Name, Date modified, Type, and Size. Folders stay at the top when you sort. Names sort as 1, 2, 10 (not 1, 10, 2). A file that is still uploading is hidden from the list until it finishes.</p>
+<h3 id="large-folders">Large Folders<a class="headerlink" href="#large-folders" title="Permanent link">&para;</a></h3>
+<p>The first load shows about <strong>500</strong> items. Scroll near the bottom to load more. Loading stops after about <strong>10,000</strong> items in that folder. The footer shows how many are loaded when more remain.</p>
+<h3 id="filter-by-name">Filter by Name<a class="headerlink" href="#filter-by-name" title="Permanent link">&para;</a></h3>
+<p><em>Filter by name in this folder</em> matches names in the <strong>current folder only</strong> (not subfolders, not file contents). Matching is a case-insensitive part of the name.</p>
+<p><img alt="file_browser_filter" src="../../images/file_browser_filter.png" /></p>
+<ul>
+<li>Same-folder Refresh keeps the filter</li>
+<li>Navigate, back, forward, opening a folder, or switching agent clears it</li>
+<li>Escape, the search X, or <em>Clear filter</em> reloads the full listing</li>
+<li>Ctrl+F (Cmd+F on Mac) focuses the filter when the File Browser tab is visible</li>
+</ul>
+<h2 id="file-operations">File Operations<a class="headerlink" href="#file-operations" title="Permanent link">&para;</a></h2>
+<p>Toolbar, <em>More</em> menu, and row right-click:</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New Folder</td>
+<td>Creates a folder in the current path</td>
+</tr>
+<tr>
+<td>Rename</td>
+<td>One selected item</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td>One or many items, up to <strong>100</strong> at a time. System folders (for example <code>C:\Windows</code>, <code>/etc</code>, drive roots) and the agent's own files cannot be deleted</td>
+</tr>
+<tr>
+<td>Properties</td>
+<td>Details for one selected item. Large or deep folders may show a partial summary</td>
+</tr>
+<tr>
+<td>Copy Path</td>
+<td>Copies the full path (or paths)</td>
+</tr>
+<tr>
+<td>Extract to…</td>
+<td>One <code>.zip</code> file, see <a href="#extract-zip">Extract ZIP</a></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="file_browser_properties" src="../../images/file_browser_properties.png" /></p>
+<p>Names cannot contain <code>\ / : * ? " &lt; &gt; |</code> or control characters, cannot be <code>.</code> or <code>..</code>, and cannot be longer than <strong>255</strong> characters (the agent counts bytes, so names with non-Latin characters may be refused sooner). On Windows agents, names also cannot end with a space or a period, and cannot be a reserved device name (<code>CON</code>, <code>PRN</code>, <code>AUX</code>, <code>NUL</code>, <code>COM0</code>-<code>COM9</code>, <code>LPT0</code>-<code>LPT9</code>, with or without an extension).</p>
+<p>Every New Folder, Rename, Delete, upload, download, ZIP download and extract is recorded in the Audit Log (<em>File &gt; Audit Log</em>) with the user, agent and paths.</p>
+<h2 id="upload">Upload<a class="headerlink" href="#upload" title="Permanent link">&para;</a></h2>
+<p>Use Upload or drag files onto the file table (not the path bar, toolbar, or transfer queues). Folder drops are not supported. If a drop mixes files and folders, the files can still be queued.</p>
+<p><img alt="file_browser_drag_drop" src="../../images/file_browser_drag_drop.png" /></p>
+<ul>
+<li>Up to <strong>100</strong> files per pick or drop. If you pick more, the first 100 are queued; if you drop more, the drop is refused</li>
+<li>Up to <strong>500</strong> items in the upload queue</li>
+<li>File size is unlimited by default (see <a href="#customizing-limits">Customizing Limits</a>). If a limit is set, the upload queue shows it and larger files are skipped</li>
+<li>The agent must have enough free disk space for the file, or the upload is refused before it starts</li>
+</ul>
+<p>One File Browser tab uploads one file at a time. Other queued files wait.</p>
+<p>Only one upload to the same file can be active at a time. If another upload to that file is running or paused (for example in another tab, or by another technician), the new one is refused until the first is finished or cancelled.</p>
+<h3 id="name-conflicts">Name Conflicts<a class="headerlink" href="#name-conflicts" title="Permanent link">&para;</a></h3>
+<p>If some names already exist in the folder, one dialog covers the whole set:</p>
+<ul>
+<li><em>Cancel upload</em> - nothing is queued</li>
+<li><em>Skip existing</em> - skip names that already exist; upload the rest (those remaining files will not overwrite if a matching name appears later)</li>
+<li><em>Replace existing</em> - overwrite names that already exist after a successful transfer</li>
+</ul>
+<p><img alt="file_browser_upload_conflict" src="../../images/file_browser_upload_conflict.png" /></p>
+<h3 id="queue">Queue<a class="headerlink" href="#queue" title="Permanent link">&para;</a></h3>
+<p><img alt="file_browser_upload_queue" src="../../images/file_browser_upload_queue.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pause</td>
+<td>Stops the transfer. You can Resume for about <strong>1 hour</strong> from last progress. If the transfer had already started, it still counts toward the per-agent / per-user limit</td>
+</tr>
+<tr>
+<td>Cancel</td>
+<td>Stops the transfer, frees the slot, and removes the temporary <code>.partial</code> file on the agent</td>
+</tr>
+<tr>
+<td>Hide / Hide all</td>
+<td>Hides paused rows; they still count on the Transfers badge</td>
+</tr>
+<tr>
+<td>Dismiss / Clear finished</td>
+<td>Removes completed, failed, and cancelled rows from the list</td>
+</tr>
+</tbody>
+</table>
+<p>Uploads are written as <code>filename.partial</code> on the agent and renamed when the transfer completes successfully.</p>
+<h2 id="download">Download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Selection</th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 file</td>
+<td>Progress panel</td>
+</tr>
+<tr>
+<td>2-10 files (files only)</td>
+<td>Sequential download queue, one at a time</td>
+</tr>
+<tr>
+<td>Any folder, or more than 10 files</td>
+<td>ZIP archive (one transfer), after a <em>Download as ZIP?</em> confirmation</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="file_browser_download" src="../../images/file_browser_download.png" /></p>
+<p>The download queue holds up to <strong>100</strong> items.</p>
+<h3 id="folder-zip-download">Folder / ZIP Download<a class="headerlink" href="#folder-zip-download" title="Permanent link">&para;</a></h3>
+<p>The agent builds a temporary ZIP, then downloads it like a normal file. <em>Building archive…</em> means the ZIP is still being prepared. A ZIP download can't start while other downloads are in progress.</p>
+<p><img alt="file_browser_archive_building" src="../../images/file_browser_archive_building.png" /></p>
+<p>If some nested items could not be included (symlinks, files locked by another program, pipes or device files, or folders more than <strong>32</strong> levels deep), the rest of the ZIP is still built and a warning appears when the download finishes. The temp ZIP is deleted when the transfer completes, is cancelled, or expires.</p>
+<p>By default, ZIP downloads are limited to <strong>100</strong> items in the selection, <strong>10,000</strong> files, <strong>4 GB</strong> uncompressed, and <strong>32</strong> folders deep. The agent also refuses if there isn't enough free disk space in its temp folder for the ZIP (on Windows, <code>C:\ProgramData\TacticalRMM</code> unless <a href="../settings_override/#configuring-custom-temp-dirs-on-windows-agents">changed</a>; on Linux and macOS, the system temp folder, usually <code>/tmp</code>, unless <code>tmpdir</code> is set in <code>/etc/tacticalagent</code>).</p>
+<h3 id="browsers">Browsers<a class="headerlink" href="#browsers" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Chrome / Edge:</strong> save directly to disk. Resume after a page refresh works; the browser may ask you to allow access to the file again.</li>
+<li><strong>Firefox / Safari:</strong> the file is buffered in memory, capped at <strong>512 MB</strong>. Use Chrome or Edge for larger downloads. A copy is kept in the browser's storage so the download can resume after a page refresh, unless the browser's storage limit is reached (the download then continues, but cannot resume after a refresh).</li>
+</ul>
+<p>The download queue supports Pause, Resume, Hide, Dismiss, Pause all, and Clear finished. If a download fails (not Pause), that slot is freed so you can try again.</p>
+<h2 id="extract-zip">Extract ZIP<a class="headerlink" href="#extract-zip" title="Permanent link">&para;</a></h2>
+<p>To unpack a <code>.zip</code> file on the agent, right-click it and choose <em>Extract to…</em>, or select it and use <em>More</em> &gt; <em>Extract to…</em>. The ZIP is extracted by the agent; nothing is transferred through your browser.</p>
+<p><img alt="file_browser_extract_menu" src="../../images/file_browser_extract_menu.png" /></p>
+<p><img alt="file_browser_extract" src="../../images/file_browser_extract.png" /></p>
+<ul>
+<li><em>Extract to</em> is filled in with a folder named after the ZIP, next to it. You can change it to any full path. The folder is created if it doesn't exist; if it exists, the files are added to it. It can't be an existing file or a link</li>
+<li><em>If a file already exists</em>: <em>Skip existing files</em> (default) leaves the existing file alone, <em>Replace existing files</em> overwrites it. Where the ZIP has a file and the destination has a folder with the same name (or the other way round), that item is always skipped</li>
+</ul>
+<p>A progress panel shows how much has been written and how many files are done. You can close or refresh the page: the extraction keeps running on the agent, and the panel comes back when you open the File Browser for that agent again. When it finishes, a message shows how many files were extracted and skipped.</p>
+<p><img alt="file_browser_extract_progress" src="../../images/file_browser_extract_progress.png" /></p>
+<p><em>Cancel</em> stops the extraction. Files already extracted are kept, and the file that was being written is removed. If the agent goes offline or restarts during an extraction, it is stopped and reported as failed after about 10 minutes without word from the agent; files extracted until then are kept.</p>
+<p>Some items in a ZIP are skipped, and listed in a warning when the extraction finishes:</p>
+<ul>
+<li>symbolic links and other special files</li>
+<li>names that would end up outside the destination (for example <code>../file</code> or <code>C:\file</code>), or that contain <code>:</code></li>
+<li>names that are not valid on the agent (see the naming rules under <a href="#file-operations">File Operations</a>)</li>
+<li>duplicate names; the first one in the ZIP is kept. On Windows and macOS, names that differ only by upper/lower case count as duplicates</li>
+<li>items that would have to go through a link or junction already in the destination</li>
+</ul>
+<p>The extraction is refused, before anything is written, if the ZIP:</p>
+<ul>
+<li>is password-protected</li>
+<li>uses a compression method other than Store or Deflate (for example LZMA or BZip2, which 7-Zip can produce)</li>
+<li>has more than <strong>10,000</strong> files, more than <strong>4 GB</strong> of uncompressed data, or folders more than <strong>32</strong> levels deep (see <a href="#customizing-limits">Customizing Limits</a>)</li>
+<li>needs more free disk space than the destination has</li>
+</ul>
+<p>A damaged ZIP, or one whose contents are larger than it claims, stops the extraction with an error; files extracted before that point are kept. If nothing in the ZIP could be extracted (for example, the agent isn't allowed to write to the destination), the extraction is reported as failed, with the first reason.</p>
+<p>File modification times are restored from the ZIP (times stored without a time zone, as Windows' own zip tools write them, are read as the agent's local time). On Linux and macOS, file permissions recorded by Linux and macOS zip tools are kept (a private file stays private), except setuid, setgid and sticky; files from other tools get read/write for the owner and read for everyone else, plus execute if they were marked executable. Names in ZIPs made by older Windows tools (not UTF-8) are read as code page 437.</p>
+<p>An extraction uses one of the transfer slots described in <a href="#concurrent-transfers-waiting-for-slot">Concurrent Transfers</a> while it runs. It does not wait for a slot: if none is free, it is refused with a message. Each extraction is recorded in the Audit Log with the ZIP, the destination and the <em>If a file already exists</em> choice.</p>
+<h2 id="resume-refresh-and-other-tabs">Resume, Refresh, and Other Tabs<a class="headerlink" href="#resume-refresh-and-other-tabs" title="Permanent link">&para;</a></h2>
+<p>Paused transfers and the toolbar Transfers badge survive a page refresh. Transfers are <strong>not</strong> started automatically after reload.</p>
+<p><img alt="file_browser_transfers_badge" src="../../images/file_browser_transfers_badge.png" /></p>
+<ul>
+<li>Resume window is <strong>1 hour</strong>, renewed as the transfer makes progress. A running transfer only times out if it moves less than about 25 MB in an hour</li>
+<li>After refresh, an upload needs <em>Select file</em>. Pick the same file (name, size, and date modified)</li>
+<li>Firefox / Safari downloads can resume after refresh unless the browser's storage limit was reached (see <a href="#browsers">Browsers</a>)</li>
+<li>If another browser tab is already working on that item, Resume / <em>Select file</em> may show <em>Open in another tab</em>. Cancel still works from any tab</li>
+<li>Hide does not remove the item from the paused count on the badge</li>
+</ul>
+<h2 id="connection-problems">Connection Problems<a class="headerlink" href="#connection-problems" title="Permanent link">&para;</a></h2>
+<p>Transfers recover from short outages on their own: network drops, a server restart or update, or the agent restarting. You don't need to do anything.</p>
+<ul>
+<li><em>Waiting for agent…</em> appears when no data has arrived for 30 seconds. This is normal on a very slow agent connection, where one chunk can take longer than that</li>
+<li><em>Reconnecting…</em> appears when the transfer has stalled (about 2.5 minutes without progress, for example after an agent restart). The transfer is paused and resumed automatically, retrying every 15 seconds while the agent is still unreachable</li>
+<li><em>Connection lost. Click Resume to continue.</em> appears if 5 automatic attempts in a row make no progress. The transfer stays paused and can be resumed within the resume window</li>
+</ul>
+<h2 id="concurrent-transfers-waiting-for-slot">Concurrent Transfers (Waiting for Slot)<a class="headerlink" href="#concurrent-transfers-waiting-for-slot" title="Permanent link">&para;</a></h2>
+<p>How many items sit in the queue is not the same as how many can run at once.</p>
+<p>By default each agent can have <strong>3</strong> transfers in progress (all users combined), and each user can have <strong>10</strong> across all agents. Extra new uploads or downloads wait instead of failing. The queue row shows <em>Waiting for slot…</em> until a slot frees or you Pause / Cancel. If no slot frees up within about 8 minutes, the item fails with a message and can be started again. Both limits can be changed, see <a href="#customizing-limits">Customizing Limits</a>.</p>
+<p><img alt="file_browser_waiting_for_slot" src="../../images/file_browser_waiting_for_slot.png" /></p>
+<ul>
+<li>Resuming an existing transfer does <strong>not</strong> take a new slot</li>
+<li>Pause after a transfer has started still holds a slot</li>
+<li>Pause before it starts does not</li>
+<li>Cancel or finish a started transfer to free a slot</li>
+<li>You can only see and cancel your own transfers. If another user holds the slots, wait for them to finish</li>
+<li>A transfer that was started but never moved any data (for example the browser tab was closed) frees its slot after 10 minutes</li>
+</ul>
+<h2 id="customizing-limits">Customizing Limits<a class="headerlink" href="#customizing-limits" title="Permanent link">&para;</a></h2>
+<p>The limits above can be changed by adding any of the following variables to <code>/rmm/api/tacticalrmm/tacticalrmm/local_settings.py</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>What it controls</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FILE_TRANSFER_MAX_SESSIONS_PER_AGENT</code></td>
+<td>Transfers in progress per agent, all users combined. <code>0</code> means unlimited</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>FILE_TRANSFER_MAX_SESSIONS_PER_USER</code></td>
+<td>Transfers in progress per user, across all agents. <code>0</code> means unlimited</td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>FILE_BROWSER_MAX_UPLOAD_FILE_SIZE_BYTES</code></td>
+<td>Largest file that can be uploaded, in bytes. <code>0</code> means unlimited</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>FILE_TRANSFER_SESSION_TTL_HOURS</code></td>
+<td>Resume window for a paused or interrupted transfer, in hours</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>FILE_TRANSFER_IDLE_EXPIRE_MINUTES</code></td>
+<td>How long a transfer that never moved any data holds its slot, and how long an extraction may go without word from the agent before it is reported as failed, in minutes</td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>FILE_TRANSFER_SESSION_RETENTION_HOURS</code></td>
+<td>How long finished transfers are kept in the database, in hours</td>
+<td>24</td>
+</tr>
+<tr>
+<td><code>FILE_BROWSER_MAX_ARCHIVE_FILES</code></td>
+<td>Most files in one ZIP download</td>
+<td>10000</td>
+</tr>
+<tr>
+<td><code>FILE_BROWSER_MAX_ARCHIVE_SIZE_BYTES</code></td>
+<td>Largest total uncompressed size of one ZIP download, in bytes</td>
+<td>4294967296 (4 GiB)</td>
+</tr>
+<tr>
+<td><code>FILE_BROWSER_MAX_ARCHIVE_DEPTH</code></td>
+<td>Deepest folder level included in a ZIP download</td>
+<td>32</td>
+</tr>
+<tr>
+<td><code>FILE_BROWSER_MAX_ARCHIVE_PATHS</code></td>
+<td>Most selected items in one ZIP download</td>
+<td>100</td>
+</tr>
+<tr>
+<td><code>FILE_BROWSER_ARCHIVE_BUILD_TTL_MINUTES</code></td>
+<td>How long the agent may take to build a ZIP, in minutes</td>
+<td>60</td>
+</tr>
+<tr>
+<td><code>FILE_BROWSER_MAX_EXTRACT_FILES</code></td>
+<td>Most files in one ZIP that is extracted</td>
+<td>10000</td>
+</tr>
+<tr>
+<td><code>FILE_BROWSER_MAX_EXTRACT_SIZE_BYTES</code></td>
+<td>Largest total uncompressed size of one ZIP that is extracted, in bytes</td>
+<td>4294967296 (4 GiB)</td>
+</tr>
+<tr>
+<td><code>FILE_BROWSER_MAX_EXTRACT_DEPTH</code></td>
+<td>Deepest folder level in a ZIP that is extracted</td>
+<td>32</td>
+</tr>
+<tr>
+<td><code>FILE_BROWSER_MAX_DELETE_PATHS</code></td>
+<td>Most items in one delete</td>
+<td>100</td>
+</tr>
+<tr>
+<td><code>FILE_BROWSER_PROPERTIES_MAX_FILES</code></td>
+<td>Files counted by folder Properties before it shows a partial summary</td>
+<td>100000</td>
+</tr>
+<tr>
+<td><code>FILE_BROWSER_PROPERTIES_MAX_DEPTH</code></td>
+<td>Deepest folder level counted by folder Properties</td>
+<td>32</td>
+</tr>
+<tr>
+<td><code>FILE_BROWSER_PROPERTIES_MAX_DURATION_SECONDS</code></td>
+<td>Time allowed for a folder Properties summary, in seconds (at most 40)</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">FILE_TRANSFER_MAX_SESSIONS_PER_AGENT</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">FILE_TRANSFER_MAX_SESSIONS_PER_USER</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">FILE_BROWSER_MAX_UPLOAD_FILE_SIZE_BYTES</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="mi">30</span>  <span class="c1"># 2 GiB</span>
+</code></pre></div>
+<p>After adding/editing values, run <code>sudo systemctl restart rmm celery celerybeat</code> for changes to take effect.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The ZIP download, extract, delete and Properties file and depth limits can be lowered but not raised: the agent (for delete, the web UI) enforces the defaults as the maximum, so higher values have no effect. The same applies to <code>FILE_BROWSER_ARCHIVE_BUILD_TTL_MINUTES</code>, because the web UI stops waiting for a ZIP after 60 minutes. <code>FILE_BROWSER_PROPERTIES_MAX_DURATION_SECONDS</code> can be raised up to 40.</p>
+<p>Raising <code>FILE_TRANSFER_SESSION_TTL_HOURS</code> above 1 hour only helps downloads. The agent deletes the partial file of a paused upload after about an hour without activity, so resuming an upload after that starts it again from the beginning.</p>
+<p>Every transfer in progress keeps a request to the server busy almost all the time. Raising the transfer limits far beyond the number of uwsgi workers can slow down the web UI and agent check-ins.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/amidaware/tacticalrmm" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/image-zoom.js"></script>
+      
+        <script src="../../js/copy-to-clipboard.js"></script>
+      
+    
+  </body>
+</html>
