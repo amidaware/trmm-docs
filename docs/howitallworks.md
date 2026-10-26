@@ -29,7 +29,7 @@ A standard install uses 3 subdomains. What each one does and who needs to be abl
 | --- | --- | :---: | :---: |
 | `rmm.example.com` | The web UI (Vue frontend). It's just a web app served to your browser that sends commands to the `api.` URL. | No | Yes |
 | `api.example.com` | The Django backend and NATS. All agent communication (check-ins, tasks, checks, script results) and all web UI API calls/websockets go here. | Yes | Yes |
-| `mesh.example.com` | MeshCentral. Used for Take Control (remote desktop) and file browser. The mesh agent on each device maintains a connection here. | Yes | Yes, when using [MeshCentral features](mesh_integration.md) |
+| `mesh.example.com` | MeshCentral. Used for Take Control (remote desktop). The mesh agent on each device maintains a connection here.| Yes, when using Mesh features | Yes, when using [MeshCentral features](mesh_integration.md) |
 
 !!!note
     While admins need *a* `rmm.` web app to manage the server, it doesn't have to be yours. The web app is a static frontend that anyone can build and point at any `api.` URL. This means restricting access to your `rmm.` URL provides no meaningful security - the `api.` URL is the actual server, and valid credentials are what protect it.
@@ -393,7 +393,7 @@ Log located at `/var/log/redis`
 
 #### MeshCentral
 
-[MeshCentral](https://github.com/Ylianst/MeshCentral) is used for "Take Control" (connecting to machine for remote access), and 1 screen of the "Remote Background" (File Browser).
+[MeshCentral](https://github.com/Ylianst/MeshCentral) is used for "Take Control" (connecting to machine for remote access).
 
 Config file location:
 

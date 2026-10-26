@@ -7,11 +7,11 @@ You should periodically run `sudo apt update` and `sudo apt -y upgrade` to keep 
 Other than this, you should avoid making any changes to your server and let the `update.sh` script handle everything else for you.
 
 !!!danger
-    Do **NOT** attempt in-place OS upgrades, such as trying to in-place upgrade from Debian 11 to 12. You will break your server!
+    Do **NOT** attempt in-place OS upgrades, such as trying to in-place upgrade from Debian 12 to 13. You will break your server!
 
 Instead, you must [backup](./backup.md) and [restore](./restore.md) to the new OS. 
 
-Backup/restore functionality supports transition not only between different operating systems but also between architectures! For instance, you can back up an Ubuntu 20.04 system on an x86 architecture and restore it to an Oracle Cloud Free Tier ARM architecture running Debian 12.
+Backup/restore functionality supports transition not only between different operating systems but also between architectures! For instance, you can back up an Ubuntu 22.04 system on an x86 architecture and restore it to an Oracle Cloud Free Tier ARM architecture running Debian 13.
 
 ## Updating to the latest RMM version
 

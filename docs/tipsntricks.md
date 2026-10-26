@@ -39,7 +39,9 @@ The endpoint returns a JSON object with the following structure:
   | `cert_expired`           | `bool`           | Indicates if the SSL certificate has already expired.                                              | `false`           |
   | `redis_ping`             | `bool`           | Indicates if the Redis service is responding.                                                      | `true`            |
   | `celery_queue_len`       | `int`            | The current number of tasks in the Celery queue.<br>**Note**: a high number here (> 100) usually means your queue is stuck.<br> See [here](./troubleshooting.md#celery-queue-stuck) for how to resolve.                                                  | `0`            |
-  | `celery_queue_health`    | `str`            | The health status of the Celery queue. Possible values are `"healthy"` or `"unhealthy"`.           | `"healthy"`       |
+  | `celery_queue_health`    | `str`            | The health status of the Celery queue. Possible values are `"healthy"` or `"unhealthy"`. `"unhealthy"` means the queue could not be read (`celery_queue_len` is then `-1`); it does not look at the queue length.           | `"healthy"`       |
+  | `celery_heartbeat_age`   | `int`            | Seconds since background tasks last ran. Celery runs a heartbeat task every 60 seconds, so this normally stays under 60.<br>`-1` means no heartbeat has been recorded yet or Redis can't be reached.                                                  | `16`            |
+  | `celery_heartbeat_health`| `str`            | `"healthy"` if the last heartbeat is at most 300 seconds old, otherwise `"unhealthy"` (also when `celery_heartbeat_age` is `-1`). The limit can be changed with `CELERY_HEARTBEAT_MAX_AGE` (seconds) in `local_settings.py`.           | `"healthy"`       |
   | `nats_std_ping`          | `bool`           | Indicates if the NATS standard service is responding.                                              | `true`            |
   | `nats_ws_ping`           | `bool`           | Indicates if the NATS WebSocket service is responding.                                             | `true`            |
   | `mesh_ping`              | `bool`           | Indicates if the MeshCentral service is responding.                                                | `true`            |
@@ -62,6 +64,8 @@ The endpoint returns a JSON object with the following structure:
       "redis_ping": true,
       "celery_queue_len": 0,
       "celery_queue_health": "healthy",
+      "celery_heartbeat_age": 16,
+      "celery_heartbeat_health": "healthy",
       "nats_std_ping": true,
       "nats_ws_ping": true,
       "mesh_ping": true,
@@ -120,13 +124,13 @@ https://rmm.yourdomain.com/?search=server01
 
 This will automatically populate the search filter with "server01" when the page loads.
 
+## File Browser
+
+To download multiple files or folders from the File Browser, select them and use **Download**. Folders and large selections become a ZIP built on the agent. See [File Browser](functions/file_browser.md#download).
+
 ## MeshCentral
 
-Tactical RMM is actually 2 products: An RMM service with agent, and a secondary [MeshCentral](https://github.com/Ylianst/MeshCentral) install that handles the `Take Control` and `Remote Background` stuff.
-
-Want to download multiple files?
-
-> ZIP zip's the currently selected file(s) and saves it in the current directory. Then you can download the ZIP. It doesn't download and ZIP on the fly.
+Tactical RMM is actually 2 products: an RMM service with agent, and a secondary [MeshCentral](https://github.com/Ylianst/MeshCentral) install that handles **Take Control**.
 
 If you want to enable automatic clipboard transfers just click the option under [Settings button](https://ylianst.github.io/MeshCentral/meshcentral/devicetabs/#during-a-desktop-session)
 

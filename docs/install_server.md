@@ -16,7 +16,7 @@ Paid Hosting Available:  [Request an instance](https://tacticalrmm.com/pricing).
 
 ### System Requirements
 
-A fresh Linux VM running either Debian 11, Debian 12 or Ubuntu 22.04 LTS with at least **4GB RAM** on x64 or aarch64 (arm64) architecture.
+A fresh Linux VM running either Debian 13 or Ubuntu 26.04 LTS with at least **4GB RAM** on x64 or aarch64 (arm64) architecture.
 
 !!!warning
     The provided install script assumes a fresh server with no software installed on it. Attempting to run it on an existing server with other services **will** break things and the install will fail.

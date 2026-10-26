@@ -85,7 +85,7 @@ Specify the full path to the directory containing `MeshAgent.exe` if using custo
 --nomesh
 ```
 
-Do not install MeshCentral agent during Tactical agent install. Note: Take Control and File Browser will not work.
+Do not install MeshCentral agent during Tactical agent install. **Take Control** will not work.
 
 You can get full command line options from (`--help`).
 
@@ -265,6 +265,65 @@ chmod +x rmm.sh
 ```
 
 ## Mac Agent Permissions
+
+### Code Signing
+
+Starting with agent v2.12.0, the macOS agent (`/opt/tacticalagent/tacticalagent`) is signed with Amidaware's Apple Developer ID. Because macOS ties privacy permissions (TCC) to the signature rather than to the file itself, permissions such as Full Disk Access stay in place when the agent updates. You can also pre-approve them with a PPPC (Privacy Preferences Policy Control) profile from your MDM.
+
+!!! warning "Updating existing Mac agents to v2.12.0"
+    Agents before v2.12.0 were not signed, so macOS treats the signed v2.12.0 agent as a different program. After updating to v2.12.0, each Mac agent loses its *Full Disk Access* and *Accessibility* permissions **once**, and they need to be granted again (see [Screen Control](#screen-control) below). Until then, scripts, checks and the File Browser can't access protected folders such as Desktop, Documents and Downloads. If you manage your Macs with an MDM, deploy the PPPC profile below **before** your Mac agents update and the permissions carry over. Later updates keep the permissions.
+
+| Property | Value |
+| --- | --- |
+| Team ID | `BNV5D8647R` |
+| Signing identifier | `com.tacticalrmm.tacticalagent` |
+| Signing certificate | `Developer ID Application: Amidaware Inc. (BNV5D8647R)` |
+| Binary path | `/opt/tacticalagent/tacticalagent` |
+
+Code requirement (designated requirement), for the `CodeRequirement` field of a PPPC profile:
+
+```text
+identifier "com.tacticalrmm.tacticalagent" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] and certificate leaf[field.1.2.840.113635.100.6.1.13] and certificate leaf[subject.OU] = BNV5D8647R
+```
+
+To check the signature on a Mac:
+
+```bash
+codesign -dv --verbose=4 /opt/tacticalagent/tacticalagent
+codesign -d -r- /opt/tacticalagent/tacticalagent
+```
+
+The agent is a standalone binary, not an app bundle, so in a PPPC profile use the path as the identifier:
+
+| PPPC field | Value |
+| --- | --- |
+| Identifier | `/opt/tacticalagent/tacticalagent` |
+| Identifier Type | `path` |
+| Code Requirement | the code requirement above |
+| Services | `SystemPolicyAllFiles` (Full Disk Access) and `Accessibility`, set to Allow |
+
+Example `Services` entry for Full Disk Access (repeat the same dictionary under `Accessibility`):
+
+```xml
+<key>SystemPolicyAllFiles</key>
+<array>
+    <dict>
+        <key>Identifier</key>
+        <string>/opt/tacticalagent/tacticalagent</string>
+        <key>IdentifierType</key>
+        <string>path</string>
+        <key>CodeRequirement</key>
+        <string>identifier "com.tacticalrmm.tacticalagent" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] and certificate leaf[field.1.2.840.113635.100.6.1.13] and certificate leaf[subject.OU] = BNV5D8647R</string>
+        <key>StaticCode</key>
+        <false/>
+        <key>Authorization</key>
+        <string>Allow</string>
+    </dict>
+</array>
+```
+
+!!! note
+    This covers the Tactical RMM agent only. The MeshCentral agent (`/opt/tacticalmesh/meshagent`) is a separate program; grant its permissions as described below. Apple doesn't let MDM pre-approve Screen Recording, so that permission still has to be granted on the Mac.
 
 ### Screen Control
 

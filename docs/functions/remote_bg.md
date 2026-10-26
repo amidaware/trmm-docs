@@ -26,7 +26,11 @@ Terminal access is controlled by the *Use Terminal* permission.
 
 ## File Browser
 
-Meshcentral Integration: This will allow you to open a File Manager where you can manage and transfer files to and from the agent.
+The **File Browser** tab lets you browse, upload, download, and extract files on the agent.
+
+See [File Browser](file_browser.md).
+
+File Browser access is controlled by the *Use File Browser* permission.
 
 ## Services Tab
 

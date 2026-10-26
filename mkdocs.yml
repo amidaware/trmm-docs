@@ -32,6 +32,7 @@ nav:
       - "Permissions": functions/permissions.md
       - "Rate Limits": functions/rate_limit.md
       - "Remote Background": functions/remote_bg.md
+      - "File Browser": functions/file_browser.md
       - "Overriding / Customizing Default Settings": functions/settings_override.md
       - "Scripting": functions/scripting.md
       - "SNMP Checks": functions/snmp_checks.md

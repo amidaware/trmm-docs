@@ -16,8 +16,22 @@ Make sure you've setup at least 1 valid (Super User aka Administrator) role unde
 
 Once you've set that up a Super User role and assigned your primary user, you can create other Roles with more limited access.
 
+
 !!!tip
     If you are only trying to give permissions to one or more sites within a client, but not all of the sites, then leave the "Allowed Clients" field blank and only add sites to "Allowed Sites". If a client is set in "Allowed Clients" that will override any site perms and give access to all sites within that client, regardless of what sites are set.
+
+### Allowed Clients vs Allowed Sites
+
+A role with only "Allowed Sites" works with its sites, but doesn't manage the client record itself:
+
+| | Client in "Allowed Clients" | Only sites in "Allowed Sites" |
+|---|---|---|
+| Client in the client tree | Shown with all its sites | Shown with only the allowed sites |
+| Agents | All agents of the client | Only agents in the allowed sites |
+| Client-wide actions (bulk command, script or patch actions, *Run Checks*, maintenance mode, patch policy reset, URL actions) | Apply to all agents of the client | Apply only to agents in the allowed sites |
+| Edit or delete the client | Yes (with *Manage Clients*) | No |
+
+To let a role edit or delete a client, add the client to "Allowed Clients". If both fields are left blank, the role has access to all clients and sites.
 
 ## Video Walkthru
 

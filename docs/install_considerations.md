@@ -17,7 +17,7 @@ There's pluses and minuses to each install type (Standard vs Docker *which is cu
 | 80MB | Clean install of Debian |
 | 300MB | Clean install of Ubuntu |
 
-Because of RAM usage alone, we recommend Debian 12.
+Because of RAM usage alone, we recommend Debian 13.
 
 ## Traditional Install - **Officially supported**
 
