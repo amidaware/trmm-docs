@@ -97,6 +97,76 @@ Plain text template types can be output in PDF or text. This template type doesn
 Putting markdown or anything else in a plain text template will just output the same markdown. It isn't processed through
 the markdown library.
 
+## Escaping values in reports
+
+Reporting is built to be flexible, so you can write whatever you need: custom HTML, scripts, charts, API calls and interactive dashboards. To keep that possible, Tactical RMM intentionally doesn't sanitize or filter report content. What your template and its values produce is exactly what gets rendered.
+
+This also applies to the values you print with `{{ }}`, including data reported by agents like hostnames, logged in users and installed software. Reports viewed in the browser are displayed as HTML, and that includes Markdown templates. If a value contains HTML or JavaScript, the browser treats it as part of the page, and any script runs with the same access as the person viewing the report.
+
+If a report prints values that come from endpoints or that you don't fully control, you can escape them so they always show as plain text.
+
+### Escape a section
+
+Wrap any part of a template in an `autoescape` block. This works in both Markdown and HTML templates:
+
+```
+{% autoescape true %}
+{% for agent in data_sources.agents %}
+* {{ agent.hostname }}
+{% endfor %}
+{% endautoescape %}
+```
+
+Only values printed with `{{ }}` are escaped. HTML and scripts that you write in the template itself keep working:
+
+```html
+<h2>Agents</h2>
+{% autoescape true %}
+<table>
+  {% for agent in data_sources.agents %}
+  <tr><td>{{ agent.hostname }}</td></tr>
+  {% endfor %}
+</table>
+{% endautoescape %}
+```
+
+If you use a [base template](reporting_basetemplates.md), put the `autoescape` block inside your `block`:
+
+```
+{% block content %}
+{% autoescape true %}
+{{ agent.hostname }}
+{% endautoescape %}
+{% endblock %}
+```
+
+### Escape a single value
+
+Use the `e` filter to escape one value:
+
+```
+{{ agent.hostname | e }}
+```
+
+### Passing data to a script
+
+Inside an `autoescape` block, use the `tojson` filter when a script needs a value:
+
+```html
+{% autoescape true %}
+<script>
+  const agents = {{ data_sources.agents | tojson }};
+</script>
+{% endautoescape %}
+```
+
+### Good to know
+
+- To print a value as HTML inside an `autoescape` block, use the `safe` filter: `{{ my_html | safe }}`.
+- Escaping doesn't check URLs, so take care with values you use in attributes like `href` and `src`.
+- Plain text output viewed in the browser is also displayed as HTML. Escaping isn't a good fit for it because it changes the text (`&` becomes `&amp;`, for example), so download the report or output it as a PDF instead.
+- Scripts don't run in reports output as PDF.
+
 ## CSS
 
 CSS can be embedded in the report template using the CSS tab on the top right on the
