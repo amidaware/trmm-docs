@@ -47,6 +47,73 @@ Gmail in this example
 10. Change the port to 587
 11. Click Save
 
+### Customizing alert email subjects and bodies
+
+Tactical RMM supports customizable email templates for alert emails directly in
+**Settings > Global Settings > Email Alerts**.
+
+You can define custom subject and body templates for:
+
+- Checks
+- Tasks
+- Agent Offline
+- Agent Recovered
+
+If a template field is left blank, Tactical RMM will continue using the built-in
+subject or body for that alert type.
+
+The original generated values are still available as template variables:
+
+- `{subject}`
+- `{body}`
+
+Depending on the alert type, additional variables are available.
+
+`{agent}`, `{client}`, `{site}`, `{site_id}`, `{policy}`, `{alert_name}`
+
+Section-specific variables are also available, for example:
+
+- Checks: `{check_name}`, `{check_description}`, `{details}`, `{more_info}`,
+  `{stdout}`, `{stderr}`, `{retcode}`
+- Tasks: `{task_name}`, `{details}`, `{stdout}`, `{stderr}`, `{retcode}`
+- Agent offline / recovered: `{details}`, `{alert_status}`, `{last_response}`
+
+`{last_response}` uses the Default Date Format from Global Settings.
+
+Example subject template:
+
+```text
+[{client}] {agent} - {alert_name}
+```
+
+Example body template:
+
+```text
+Alert: {alert_name}
+Agent: {agent}
+Site ID: {site_id}
+
+{details}
+```
+
+Original built-in subject examples:
+
+```text
+{client}, {site}, {agent} - {alert_name} Failed
+{client}, {site}, {agent} - {alert_name} Resolved
+{client}, {site}, {agent} - data overdue
+{client}, {site}, {agent} - data received
+```
+
+Original built-in body examples:
+
+```text
+{client}, {site}, {agent} - {alert_name} Failed - {details}
+{client}, {site}, {agent} - {alert_name} Resolved - {details}
+Data has not been received from client {client}, site {site}, agent {agent} within the expected time.
+Data has been received from client {client}, site {site}, agent {agent} after an interruption in data transmission.
+```
+
 ## SMS Alerts
 
 Under **Settings > Global Settings > SMS Alerts**
