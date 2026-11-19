@@ -3259,6 +3259,10 @@
 <p>Tactical RMM allows passing dashboard data into script as arguments or environment variables. This uses the syntax <code>{{model.field}}</code>. </p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
+<p>Tactical RMM intentionally does not sanitize these values, so it doesn't strip characters your scripts may need. Use common sense with anything that could contain untrusted input, like custom fields filled by collector tasks or alert output: it can break your script arguments or be abused to run code, so make sure it's properly escaped. Where possible, pass untrusted values as environment variables instead (for example <code>MyVar={{client.name}}</code>) and read them in the script with <code>$env:MyVar</code> in PowerShell, <code>!MyVar!</code> in Batch (with <code>setlocal EnableDelayedExpansion</code>, not <code>%MyVar%</code>), <code>"$MyVar"</code> in shell scripts or <code>os.environ["MyVar"]</code> in Python. Environment variables aren't parsed as part of the command line, so quotes and other special characters in the value are much less likely to cause problems.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>Nested relations are followed so something like <code>{{agent.site.name}}</code> will work.</p>
 </div>
 <p>For a full list of available fields, refer to the variables in the <code>models.py</code> files:</p>
