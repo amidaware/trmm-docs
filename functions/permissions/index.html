@@ -3308,6 +3308,8 @@
 <li>Reporting Viewer / Manager</li>
 </ul>
 <p>The Reporting permission operates on a global access model, granting users full visibility into report history and data across all clients and sites regardless of traditional object-scope restrictions.</p>
+<p>Reporting is a highly privileged permission that should only be granted to trusted administrators. Reporting templates support the execution of arbitrary code, making them an extremely powerful and flexible tool. By design, we do not impose restrictions on what can be done within a reporting template, as many capabilities that could be misused in the wrong hands also serve legitimate and valuable use cases.</p>
+<p>Administrators should exercise caution when granting this permission and ensure that authorized users understand both the capabilities and the associated security risks.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p><strong>DO NOT</strong> use the Web Terminal for running the Tactical <a href="">update</a> script as it will stop the service running the web terminal and bork your update.</p>
